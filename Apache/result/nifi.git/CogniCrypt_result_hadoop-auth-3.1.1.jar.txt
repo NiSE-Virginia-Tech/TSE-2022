@@ -1,0 +1,152 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 465.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>(r1)
+		Method: <org.apache.hadoop.security.authentication.util.RandomSignerSecretProvider: byte[] generateNewSecret()>
+		SHA-256: f07ea8888e8fa069e348a1089d2c1fcd397859ee9e3d7ad3ebce3a71c48d3efb
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.security.authentication.util.ZKSignerSecretProvider: void <init>()>
+		SHA-256: 585ce6ccbf5ae43c1d2f86be6e92629a14c441950daa5d155af6b40d0a209f04
+		Secure: true
+	Object:
+		Variable: r18
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer140)
+		Method: <org.apache.hadoop.security.authentication.util.Signer: java.lang.String computeSignature(byte[],java.lang.String)>
+		SHA-256: 64dfe7b2498fef00413d9f3720172fcb6a9055e9fb36003d6118288cf2d84266
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.Mac
+		Statement: r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer142)
+		Method: <org.apache.hadoop.security.authentication.util.Signer: java.lang.String computeSignature(byte[],java.lang.String)>
+		SHA-256: fcc8f2ac6ff93693819e94e422101c55d34814689953fd8edcb7c648c3d41ca7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.security.authentication.util.RandomSignerSecretProvider: void <init>()>
+		SHA-256: 2d7518067ad02f34530e32081d9f1279db84b07a201c5f81854ccd238b545481
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: r4 = virtualinvoke r3.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.apache.hadoop.security.authentication.util.Signer: java.lang.String computeSignature(byte[],java.lang.String)>
+		SHA-256: 353c605eacc58381c1c644d2a909ba46c750ead39c40ef4553a15915e13297ff
+		Secure: true
+	Object:
+		Variable: varReplacer140
+		Type: java.lang.String
+		Statement: specialinvoke r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer140)
+		Method: <org.apache.hadoop.security.authentication.util.Signer: java.lang.String computeSignature(byte[],java.lang.String)>
+		SHA-256: edec08e0127fdf9d178abd757e373640bab2169485dcc54720637a401d8216c0
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: r4 = virtualinvoke r3.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.apache.hadoop.security.authentication.util.Signer: java.lang.String computeSignature(byte[],java.lang.String)>
+		SHA-256: 8c38088ff535484fbcc1d10b85bcf3e0c9febccb68b86423dd312e4fec09f67
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>(r1)
+		Method: <org.apache.hadoop.security.authentication.util.ZKSignerSecretProvider: byte[] generateRandomSecret()>
+		SHA-256: ab2a6d6ef5884e5952262eeb1fdeb42b62f4440c70ffc23be9eb8e44869278f7
+		Secure: true
+
+Findings in Java Class: org.apache.hadoop.security.authentication.util.Signer
+
+	 in Method: java.lang.String computeSignature(byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer140)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.274 s
+

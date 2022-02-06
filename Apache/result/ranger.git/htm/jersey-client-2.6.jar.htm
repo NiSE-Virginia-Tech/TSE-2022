@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/ranger.git/jersey-client-2.6.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>3237 lines of code analyzed,
+	in 98 classes, 
+	in 5 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.31</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.31</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>2</b>
+</td>
+<td align="right">
+<b>0.62</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>2</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65625');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65625" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.glassfish.jersey.client.authentication.DigestAuthenticator<br/>In method org.glassfish.jersey.client.authentication.DigestAuthenticator.md5(String[])<br/>At DigestAuthenticator.java:[line 359]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.glassfish.jersey.client.HttpUrlConnectorProvider$DefaultConnectionFactory<br/>In method org.glassfish.jersey.client.HttpUrlConnectorProvider$DefaultConnectionFactory.getConnection(URL)<br/>At HttpUrlConnectorProvider.java:[line 284]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/glassfish/jersey/client/HttpUrlConnectorProvider$DefaultConnectionFactory.getConnection(Ljava/net/URL;)Ljava/net/HttpURLConnection; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

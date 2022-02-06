@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/ignite.git/commons-math3-3.6.1.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>65927 lines of code analyzed,
+	in 1301 classes, 
+	in 75 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+<td align="right">
+<b>0.21</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">14</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66157');">
+<td>
+<span class="priority-2">SECBHC</span>
+</td>
+<td>Leading zeros are omitted in the concatenation increasing collision potential</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66157" style="display: none;">
+<a href="#BAD_HEXA_CONVERSION">Bug type BAD_HEXA_CONVERSION (click for details)</a>
+<br/>In class org.apache.commons.math3.random.RandomDataGenerator<br/>In method org.apache.commons.math3.random.RandomDataGenerator.nextSecureHexString(int)<br/>At RandomDataGenerator.java:[lines 276-321]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.commons.math3.exception.util.ExceptionContext.deSerializeContext(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.commons.math3.exception.util.ExceptionContext<br/>In method org.apache.commons.math3.exception.util.ExceptionContext.deSerializeContext(ObjectInputStream)<br/>At ExceptionContext.java:[line 317]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.commons.math3.exception.util.ExceptionContext.deSerializeContext(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.commons.math3.exception.util.ExceptionContext<br/>In method org.apache.commons.math3.exception.util.ExceptionContext.deSerializeContext(ObjectInputStream)<br/>At ExceptionContext.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.commons.math3.exception.util.ExceptionContext.deSerializeMessages(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.commons.math3.exception.util.ExceptionContext<br/>In method org.apache.commons.math3.exception.util.ExceptionContext.deSerializeMessages(ObjectInputStream)<br/>At ExceptionContext.java:[line 264]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65713');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.commons.math3.exception.util.ExceptionContext.deSerializeMessages(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65713" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.commons.math3.exception.util.ExceptionContext<br/>In method org.apache.commons.math3.exception.util.ExceptionContext.deSerializeMessages(ObjectInputStream)<br/>At ExceptionContext.java:[line 271]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65925');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65925" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.math3.random.JDKRandomGenerator<br/>In method new org.apache.commons.math3.random.JDKRandomGenerator()<br/>At JDKRandomGenerator.java:[line 36]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65983');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65983" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.math3.random.JDKRandomGenerator<br/>In method new org.apache.commons.math3.random.JDKRandomGenerator(int)<br/>At JDKRandomGenerator.java:[line 45]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66041');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66041" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.math3.random.RandomAdaptor<br/>In method new org.apache.commons.math3.random.RandomAdaptor()<br/>At RandomAdaptor.java:[line 39]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66099');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66099" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.math3.random.RandomAdaptor<br/>In method new org.apache.commons.math3.random.RandomAdaptor(RandomGenerator)<br/>At RandomAdaptor.java:[line 46]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66348');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66348" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.math3.util.FastMath<br/>In method org.apache.commons.math3.util.FastMath.random()<br/>At FastMath.java:[line 840]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66211');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66211" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class org.apache.commons.math3.random.RandomDataGenerator<br/>In method org.apache.commons.math3.random.RandomDataGenerator.nextSecureHexString(int)<br/>At RandomDataGenerator.java:[line 284]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65767');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65767" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.math3.random.EmpiricalDistribution<br/>In method org.apache.commons.math3.random.EmpiricalDistribution.load(URL)<br/>At EmpiricalDistribution.java:[line 264]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/math3/random/EmpiricalDistribution.load(Ljava/net/URL;)V parameter 0<br/>At ValueServer.java:[line 219]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65846');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65846" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.math3.random.EmpiricalDistribution<br/>In method org.apache.commons.math3.random.EmpiricalDistribution.load(URL)<br/>At EmpiricalDistribution.java:[line 273]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/math3/random/EmpiricalDistribution.load(Ljava/net/URL;)V parameter 0<br/>At ValueServer.java:[line 219]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66269');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66269" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.math3.random.ValueServer<br/>In method org.apache.commons.math3.random.ValueServer.resetReplayFile()<br/>At ValueServer.java:[line 300]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/math3/random/ValueServer.valuesFileURL<br/>At ValueServer.java:[line 300]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="BAD_HEXA_CONVERSION">BAD_HEXA_CONVERSION: Bad hexadecimal concatenation</a>
+</h2>
+            
+<p>When converting a byte array containing a hash signature to a human readable string, a conversion mistake can be made if
+the array is read byte by byte. The following sample illustrates the use of the method <code>Integer.toHexString()</code> which will trim any leading zeroes
+from each byte of the computed hash value.
+<pre>
+MessageDigest md = MessageDigest.getInstance("SHA-256");
+byte[] resultBytes = md.digest(password.getBytes("UTF-8"));
+
+StringBuilder stringBuilder = new StringBuilder();
+for(byte b :resultBytes) {
+    stringBuilder.append( Integer.toHexString( b & 0xFF ) );
+}
+
+return stringBuilder.toString();</pre>
+</p>
+<p>
+This mistake weakens the hash value computed since it introduces more collisions.
+For example, the hash values "0x0679" and "0x6709" would both output as "679" for the above function.
+</p>
+
+<p>
+In this situation, the method <code>Integer.toHexString()</code> should be replaced with <code>String.format()</code> as follows:
+<pre>stringBuilder.append( String.format( "%02X", b ) );</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

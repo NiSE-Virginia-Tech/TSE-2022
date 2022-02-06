@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/accumulo.git/bcpkix-jdk15on-1.62.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>20555 lines of code analyzed,
+	in 731 classes, 
+	in 45 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">8</td>
+<td align="right">0.39</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>8</b>
+</td>
+<td align="right">
+<b>0.39</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>8</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65633');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^[0-9a-zA-Z_\\-.~!$&amp;'()*+,;=]+" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65633" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^[0-9a-zA-Z_\\-.~!$&amp;'()*+,;=]+<br/>In class org.bouncycastle.est.ESTService<br/>In method org.bouncycastle.est.ESTService.&lt;static initializer for ESTService&gt;()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils<br/>In method new org.bouncycastle.cert.jcajce.JcaX509ExtensionUtils()<br/>In &lt;Unknown&gt;<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65828');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65828" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.bouncycastle.pkix.jcajce.X509RevocationChecker<br/>In method org.bouncycastle.pkix.jcajce.X509RevocationChecker.downloadCRLs(X500Principal, Date, ASN1Primitive, JcaJceHelper)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/asn1/x509/GeneralName.getName()Lorg/bouncycastle/asn1/ASN1Encodable;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65676');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65676" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.bouncycastle.est.jcajce.JcaJceUtils$1<br/>In method org.bouncycastle.est.jcajce.JcaJceUtils$1.checkClientTrusted(X509Certificate[], String)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65714');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65714" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.bouncycastle.est.jcajce.JcaJceUtils$1<br/>In method org.bouncycastle.est.jcajce.JcaJceUtils$1.checkServerTrusted(X509Certificate[], String)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65752');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65752" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.bouncycastle.est.jcajce.JcaJceUtils$1<br/>In method org.bouncycastle.est.jcajce.JcaJceUtils$1.getAcceptedIssuers()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65790');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65790" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.bouncycastle.est.jcajce.JcaJceUtils$2<br/>In method org.bouncycastle.est.jcajce.JcaJceUtils$2.checkClientTrusted(X509Certificate[], String)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65594');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65594" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.cms.jcajce.JcePasswordRecipientInfoGenerator<br/>In method org.bouncycastle.cms.jcajce.JcePasswordRecipientInfoGenerator.generateEncryptedBytes(AlgorithmIdentifier, byte[], GenericKey)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="WEAK_TRUST_MANAGER">WEAK_TRUST_MANAGER: TrustManager that accept any certificates</a>
+</h2>
+            
+<p>Empty TrustManager implementations are often used to connect easily to a host that is not signed by a root
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a>. As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a TrustStore for example) should be built.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>class TrustAllManager implements X509TrustManager {
+
+    @Override
+    public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any client connecting (no certificate validation)
+    }
+
+    @Override
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any remote server (no certificate validation)
+    }
+
+    @Override
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

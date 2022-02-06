@@ -1,0 +1,112 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 478.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke r8.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.apache.abdera.ext.wsse.WSSEAuthScheme: java.lang.String generateNonce()>
+		SHA-256: 9d6d4bfad6bd39b14d8a3a9036147ce10100838bfd6ae9b126abbaae62956886
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: $r12 = virtualinvoke r17.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.apache.abdera.ext.wsse.WSSEAuthScheme: java.lang.String generatePasswordDigest(java.lang.String,java.lang.String,org.apache.abdera.model.AtomDate)>
+		SHA-256: a4ab9583bf478a72be660b46620ce586c2835ca944b9699ace1051967f1ccf8b
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke r17.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.apache.abdera.ext.wsse.WSSEAuthScheme: java.lang.String generatePasswordDigest(java.lang.String,java.lang.String,org.apache.abdera.model.AtomDate)>
+		SHA-256: b8628c7350b774d5e08874c54183b8de5b9e4db1e95887b60029887ba2851ab8
+		Secure: false
+	Object:
+		Variable: r17
+		Type: java.security.MessageDigest
+		Statement: r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10)
+		Method: <org.apache.abdera.ext.wsse.WSSEAuthScheme: java.lang.String generatePasswordDigest(java.lang.String,java.lang.String,org.apache.abdera.model.AtomDate)>
+		SHA-256: 742eef597ee01145df9ec5c829da2661cf32e7d29ae571b315024f0268da7c7c
+		Secure: false
+	Object:
+		Variable: r8
+		Type: java.security.SecureRandom
+		Statement: r8 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer11)
+		Method: <org.apache.abdera.ext.wsse.WSSEAuthScheme: java.lang.String generateNonce()>
+		SHA-256: aa93654365c297cfd9b287030f1fb132480b011c50ca77141137c28ae363b341
+		Secure: true
+
+Findings in Java Class: org.apache.abdera.ext.wsse.WSSEAuthScheme
+
+	 in Method: java.lang.String generatePasswordDigest(java.lang.String,java.lang.String,org.apache.abdera.model.AtomDate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #742eef597ee01145df9ec5c829da2661cf32e7d29ae571b315024f0268da7c7c)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.426 s
+

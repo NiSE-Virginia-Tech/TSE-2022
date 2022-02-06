@@ -1,0 +1,350 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 831.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 15 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.07
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.81
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r4 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.KeyManagerFactory getKeyManagerFactoryInstance()>
+		SHA-256: 48c487dce20855b1d1432cb51eb8a1fedf70a7045049133c4a2bd07c1b22d829
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.SSLContext
+		Statement: $r10 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r1)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.SSLContext getSSLContextInstance()>
+		SHA-256: 8e9516804508e1ef568b87c2e2a409ecb0549ffe689e33d1c9e50eb67bab392e
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: java.security.MessageDigest
+		Statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2098)
+		Method: <org.eclipse.jetty.util.security.Credential$MD5: boolean check(java.lang.Object)>
+		SHA-256: 736be4af0482dd7efeb38e27b6db1dd9522224d1f1a301ed1901575f560f5a6e
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.net.ssl.CertPathTrustManagerParameters
+		Statement: specialinvoke $r6.<javax.net.ssl.CertPathTrustManagerParameters: void <init>(java.security.cert.CertPathParameters)>(r8)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 4133ed5794b3549692ace0c42818ab4f42654f28c0f03821dd6ad2a428185494
+		Secure: false
+	Object:
+		Variable: r13
+		Type: java.security.KeyStore
+		Statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r1)
+		Method: <org.eclipse.jetty.util.security.CertificateUtils: java.security.KeyStore getKeyStore(org.eclipse.jetty.util.resource.Resource,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: c905d34ee6d4a6b5d9cf316851d0fa22f94662adc5298f57f9e38f7dec18d563
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r10 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(r1)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManagerFactory getTrustManagerFactoryInstance()>
+		SHA-256: 6066b365f7c2af7c1093dc04d414a526df2d5b8818debb5cf31e1b50b432b888
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: $r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: java.security.SecureRandom getSecureRandomInstance()>
+		SHA-256: 9054a0d6ed54b20446ada9efac19a589ff8417c54f2144d1eeb265a65074ef51
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.cert.PKIXBuilderParameters
+		Statement: specialinvoke $r4.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>(r1, $r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: java.security.cert.PKIXBuilderParameters newPKIXBuilderParameters(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 6bed0ac2c15e1d30a37b2f93ffd3b98ca590c1fdef403424df6ab708ac33d3a9
+		Secure: false
+	Object:
+		Variable: r24
+		Type: java.lang.Object[]
+		Statement: r24 = virtualinvoke r2.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.KeyManager[] getKeyManagers(java.security.KeyStore)>
+		SHA-256: e4908b95e7b3228693e9ad6bdd85f0241577b833775f8f3927bb9b6dfad7bb2b
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r10 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(r1)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.KeyManagerFactory getKeyManagerFactoryInstance()>
+		SHA-256: 7792ebfd0187cf43d8529d8f799faee2ed1a6826a550b09c9a53f5ed4cca9bf9
+		Secure: false
+	Object:
+		Variable: r13
+		Type: java.security.KeyStore
+		Statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.eclipse.jetty.util.security.CertificateUtils: java.security.KeyStore getKeyStore(org.eclipse.jetty.util.resource.Resource,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 9f690b253c597246c16aa082c018d004582d11010736eb7a87a58d8445ccfce3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.SSLContext getSSLContextInstance()>
+		SHA-256: a3ce5c5609e44d849c340f04e3356bb9ef9567447d74739e67e89fbb95a4b5aa
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.SecureRandom
+		Statement: $r10 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(r1)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: java.security.SecureRandom getSecureRandomInstance()>
+		SHA-256: 829b1d59c55ceafddb323233769d200c71bd6f1fca2dda169d071cea3785489c
+		Secure: true
+	Object:
+		Variable: r42
+		Type: java.security.cert.PKIXBuilderParameters
+		Statement: specialinvoke r42.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r8, r34)
+		Method: <org.eclipse.jetty.util.security.CertificateValidator: void validate(java.security.cert.Certificate[])>
+		SHA-256: d542c10b479e0344518ad7923016bd042f68ba48f85d2b416dfafdfdfde57636
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: java.security.MessageDigest
+		Statement: $r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2106)
+		Method: <org.eclipse.jetty.util.security.Credential$MD5: java.lang.String digest(java.lang.String)>
+		SHA-256: 9602d339eef2f0ec3f296983b65ee505dd3c361411236ce6ce338bb8cbe0c333
+		Secure: false
+	Object:
+		Variable: r7
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r7 = virtualinvoke r9.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: ab7b40e9cc123dc93b85146fa24a8cc6a0e0c50db3ada2371f9969d1120e6139
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManagerFactory getTrustManagerFactoryInstance()>
+		SHA-256: 6d5a96b6afa95e63cd61140fd11cb80518f68533b81d284ba783f73a4cb618d5
+		Secure: false
+	Object:
+		Variable: r7
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r7 = virtualinvoke r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 43fdffc3e6b00f04c5daa5cdc0e9db5581ffcbed6ae4aa7cfbd5666a45fd8d5f
+		Secure: false
+
+Findings in Java Class: org.eclipse.jetty.util.ssl.SslContextFactory
+
+	 in Method: void dump(java.lang.Appendable,java.lang.String)
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+	 in Method: java.util.List selectionDump()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+	 in Method: javax.net.ssl.KeyManager[] getKeyManagers(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r2.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r1, $r27)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #7792ebfd0187cf43d8529d8f799faee2ed1a6826a550b09c9a53f5ed4cca9bf9)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r2.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r1, $r27)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #7792ebfd0187cf43d8529d8f799faee2ed1a6826a550b09c9a53f5ed4cca9bf9)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r2.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r1, $r27)
+
+
+	 in Method: void load()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r52.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2633, r55, $r56)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r52.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r65, r66, $r17)
+
+
+	 in Method: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Manager Factory Parameters
+			at statement: virtualinvoke r3.<javax.net.ssl.TrustManagerFactory: void init(javax.net.ssl.ManagerFactoryParameters)>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.CertPathTrustManagerParameters
+			First parameter was not properly generated as generated Cert Path Parameters
+			at statement: specialinvoke $r6.<javax.net.ssl.CertPathTrustManagerParameters: void <init>(java.security.cert.CertPathParameters)>(r8)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r9.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r1)
+
+
+	 in Method: java.security.cert.PKIXBuilderParameters newPKIXBuilderParameters(java.security.KeyStore,java.util.Collection)
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXBuilderParameters
+			First parameter was not properly generated as generated Key Store
+			at statement: specialinvoke $r4.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>(r1, $r5)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.CertificateUtils
+
+	 in Method: java.security.KeyStore getKeyStore(org.eclipse.jetty.util.resource.Resource,java.lang.String,java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #9f690b253c597246c16aa082c018d004582d11010736eb7a87a58d8445ccfce3)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>(r1, r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #c905d34ee6d4a6b5d9cf316851d0fa22f94662adc5298f57f9e38f7dec18d563)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>(r1, r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #9f690b253c597246c16aa082c018d004582d11010736eb7a87a58d8445ccfce3)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #c905d34ee6d4a6b5d9cf316851d0fa22f94662adc5298f57f9e38f7dec18d563)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r13 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r1)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #9f690b253c597246c16aa082c018d004582d11010736eb7a87a58d8445ccfce3)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r4, $r14)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.Credential$MD5
+
+	 in Method: boolean check(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #736be4af0482dd7efeb38e27b6db1dd9522224d1f1a301ed1901575f560f5a6e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2098)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #736be4af0482dd7efeb38e27b6db1dd9522224d1f1a301ed1901575f560f5a6e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke $r6.<java.security.MessageDigest: void update(byte[])>($r9)
+
+
+	 in Method: java.lang.String digest(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #9602d339eef2f0ec3f296983b65ee505dd3c361411236ce6ce338bb8cbe0c333)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke $r8.<java.security.MessageDigest: void update(byte[])>($r9)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9602d339eef2f0ec3f296983b65ee505dd3c361411236ce6ce338bb8cbe0c333)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2106)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.CertificateValidator
+
+	 in Method: void validate(java.security.cert.Certificate[])
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXBuilderParameters
+			First parameter was not properly generated as generated Key Store
+			at statement: specialinvoke r42.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r8, r34)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 18
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 3
+	ForbiddenMethodError: 2
+	ConstraintError: 2
+	RequiredPredicateError: 8
+	IncompleteOperationError: 6
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 6.292 s
+

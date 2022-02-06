@@ -1,0 +1,139 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 828.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.springframework.util.AlternativeJdkIdGenerator: void <init>()>
+		SHA-256: 77b06c4da1ec49a91081968bb969ea4f167c1c1089c7bf1116d0fb66ec9a647
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.springframework.util.DigestUtils: byte[] digest(java.lang.String,java.io.InputStream)>
+		SHA-256: 32e95255d165a0c4b784defa5ec36828e8acc605959a56722d18541ed2f8a825
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <org.springframework.util.DigestUtils: byte[] digest(java.lang.String,byte[])>
+		SHA-256: 586acebc1495e001b8caeefd0de7b41628a19245b85bf0eeb45fc1afabe6ed35
+		Secure: false
+	Object:
+		Variable: r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.springframework.util.MimeTypeUtils: java.util.Random initRandom()>
+		SHA-256: 29e536c90162e177538f90a43afcd7f743b6976a0623e2162083d179272018ab
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <org.springframework.util.DigestUtils: byte[] digest(java.lang.String,byte[])>
+		SHA-256: bd3481636b3a2a8f66d0affbe68a40b58961c166d7d08c839bf6cd0a9a5dfe66
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.springframework.util.DigestUtils: java.security.MessageDigest getDigest(java.lang.String)>
+		SHA-256: e94efa5cd6a074cbc7f340e6b0489579fadcb1ac712ddde46b23e0f79b389337
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: virtualinvoke r1.<java.security.SecureRandom: void nextBytes(byte[])>(r2)
+		Method: <org.springframework.util.AlternativeJdkIdGenerator: void <init>()>
+		SHA-256: 4dd87bd6d08d16ce83a24868cdd5668e40b0074cd9388c98efcdd0f4d2a7e2b7
+		Secure: true
+
+Findings in Java Class: org.springframework.util.DigestUtils
+
+	 in Method: java.security.MessageDigest getDigest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e94efa5cd6a074cbc7f340e6b0489579fadcb1ac712ddde46b23e0f79b389337)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+
+	 in Method: byte[] digest(java.lang.String,java.io.InputStream)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #e94efa5cd6a074cbc7f340e6b0489579fadcb1ac712ddde46b23e0f79b389337)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r4 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 5.631 s
+

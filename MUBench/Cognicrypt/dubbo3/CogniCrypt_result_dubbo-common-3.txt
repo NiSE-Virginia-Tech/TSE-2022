@@ -1,0 +1,110 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/dubbo3/dubbo-common/target/dubbo-common-3.0.0-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 404.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.alibaba.dubbo.common.io.Bytes: byte[] getMD5(java.io.InputStream,int)>
+		SHA-256: 34e5037a4ada76804675aae3aacd6d81962f5731c82832efdd98322f79ffa21a
+		Secure: false
+	Object:
+		Variable: r6
+		Type: java.security.MessageDigest
+		Statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1391)
+		Method: <com.alibaba.dubbo.common.io.Bytes: java.security.MessageDigest getMessageDigest()>
+		SHA-256: 4e978ad4d7003050706a9a031286f934c606d93d3846d8aad6a043b1a9dce216
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.alibaba.dubbo.common.io.Bytes: byte[] getMD5(byte[])>
+		SHA-256: e0e1afab8b97d7d75cf85b4ec86174857ed022b45564a682480604dc61e1956e
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.alibaba.dubbo.common.io.Bytes: byte[] getMD5(byte[])>
+		SHA-256: 66efaffed6e68e9ee35e3d34eb758d4d81546377f3c17d27ab5eb60ea1a0ffbe
+		Secure: false
+
+Findings in Java Class: com.alibaba.dubbo.common.io.Bytes
+
+	 in Method: java.security.MessageDigest getMessageDigest()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4e978ad4d7003050706a9a031286f934c606d93d3846d8aad6a043b1a9dce216)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1391)
+
+
+	 in Method: byte[] getMD5(java.io.InputStream,int)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #4e978ad4d7003050706a9a031286f934c606d93d3846d8aad6a043b1a9dce216)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r3 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 4
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	TypestateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.317 s

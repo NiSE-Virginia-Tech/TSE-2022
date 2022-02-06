@@ -1,0 +1,1050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pdfbox.git/bcprov-jdk15on-1.64.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>202543 lines of code analyzed,
+	in 3636 classes, 
+	in 157 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">0.17</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>38</b>
+</td>
+<td align="right">
+<b>0.19</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">38</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>38</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67040');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67040" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.bouncycastle.util.test.SimpleTest<br/>In method org.bouncycastle.util.test.SimpleTest.runTest(Test, PrintStream)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67079');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67079" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.bouncycastle.util.test.SimpleTest<br/>In method org.bouncycastle.util.test.SimpleTest.runTests(Test[], PrintStream)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65994');">
+<td>
+<span class="priority-2">SECCMD</span>
+</td>
+<td>org.bouncycastle.jcajce.provider.digest.BCMessageDigest is a custom cryptographic hash function implementation</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65994" style="display: none;">
+<a href="#CUSTOM_MESSAGE_DIGEST">Bug type CUSTOM_MESSAGE_DIGEST (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.digest.BCMessageDigest<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65884');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65884" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class org.bouncycastle.crypto.params.DESParameters<br/>Value is hard coded in field org.bouncycastle.crypto.params.DESParameters.DES_weak_keys[B with suspicious name<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66667');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66667" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.bouncycastle.jce.provider.X509LDAPCertStoreSpi<br/>In method org.bouncycastle.jce.provider.X509LDAPCertStoreSpi.search(String, String, String[])<br/>In &lt;Unknown&gt;<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source org/bouncycastle/jce/provider/X509LDAPCertStoreSpi.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/Set; parameter 2<br/>Unknown source org/bouncycastle/jce/provider/X509LDAPCertStoreSpi.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/Set; parameter 1<br/>Unknown source org/bouncycastle/jce/provider/X509LDAPCertStoreSpi.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/Set; parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67195');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67195" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.bouncycastle.x509.util.LDAPStoreHelper<br/>In method org.bouncycastle.x509.util.LDAPStoreHelper.search(String[], String, String[])<br/>In &lt;Unknown&gt;<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source org/bouncycastle/x509/util/LDAPStoreHelper.search([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Unknown source org/bouncycastle/x509/util/LDAPStoreHelper.search([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List; parameter 0<br/>Unknown source org/bouncycastle/x509/util/LDAPStoreHelper.search([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List; parameter 2<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65916');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl.readObject(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65916" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl<br/>In method org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl.readObject(ObjectInputStream)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65955');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl.readObject(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65955" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl<br/>In method org.bouncycastle.jcajce.provider.asymmetric.util.PKCS12BagAttributeCarrierImpl.readObject(ObjectInputStream)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66872');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.bouncycastle.pqc.crypto.xmss.XMSSUtil.deserialize(byte[], Class)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66872" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.bouncycastle.pqc.crypto.xmss.XMSSUtil<br/>In method org.bouncycastle.pqc.crypto.xmss.XMSSUtil.deserialize(byte[], Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.asn1.ua.DSTU4145PointEncoder<br/>In method org.bouncycastle.asn1.ua.DSTU4145PointEncoder.solveQuadraticEquation(ECCurve, ECFieldElement)<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66743');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66743" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.math.ec.ECCurve$AbstractF2m<br/>In method org.bouncycastle.math.ec.ECCurve$AbstractF2m.solveQuadraticEquation(ECFieldElement)<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66786');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66786" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.math.ec.ECFieldElement$Fp<br/>In method org.bouncycastle.math.ec.ECFieldElement$Fp.sqrt()<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66829');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66829" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.math.raw.Mod<br/>In method org.bouncycastle.math.raw.Mod.random(int[])<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66954');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66954" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.pqc.math.linearalgebra.GF2nONBField<br/>In method org.bouncycastle.pqc.math.linearalgebra.GF2nONBField.elementOfOrder(int, int)<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66997');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66997" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.pqc.math.linearalgebra.GF2nPolynomialElement<br/>In method org.bouncycastle.pqc.math.linearalgebra.GF2nPolynomialElement.solveQuadraticEquation()<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66911');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66911" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.bouncycastle.pqc.math.linearalgebra.GF2Polynomial<br/>In method org.bouncycastle.pqc.math.linearalgebra.GF2Polynomial.&lt;static initializer for GF2Polynomial&gt;()<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65594');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65594" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.bouncycastle.asn1.util.Dump<br/>In method org.bouncycastle.asn1.util.Dump.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/bouncycastle/asn1/util/Dump.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65648');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65648" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.bouncycastle.crypto.examples.DESExample<br/>In method new org.bouncycastle.crypto.examples.DESExample(String, String, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/crypto/examples/DESExample.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65707');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65707" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.bouncycastle.crypto.examples.DESExample<br/>In method new org.bouncycastle.crypto.examples.DESExample(String, String, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/crypto/examples/DESExample.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65766');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65766" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.bouncycastle.crypto.examples.DESExample<br/>In method new org.bouncycastle.crypto.examples.DESExample(String, String, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/crypto/examples/DESExample.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65825');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65825" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.bouncycastle.crypto.examples.DESExample<br/>In method new org.bouncycastle.crypto.examples.DESExample(String, String, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/crypto/examples/DESExample.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66022');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66022" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.drbg.DRBG$URLSeededSecureRandom$1<br/>In method org.bouncycastle.jcajce.provider.drbg.DRBG$URLSeededSecureRandom$1.run()<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/bouncycastle/jcajce/provider/drbg/DRBG$URLSeededSecureRandom$1.val$url<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67118');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67118" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.bouncycastle.x509.PKIXCertPathReviewer<br/>In method org.bouncycastle.x509.PKIXCertPathReviewer.getCRL(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/bouncycastle/x509/PKIXCertPathReviewer.getCRL(Ljava/lang/String;)Ljava/security/cert/X509CRL; parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66082');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66082" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.keystore.pkcs12.PKCS12KeyStoreSpi<br/>In method org.bouncycastle.jcajce.provider.keystore.pkcs12.PKCS12KeyStoreSpi.createCipher(int, char[], AlgorithmIdentifier)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66121');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66121" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.AES$AlgParamsCCM<br/>In method org.bouncycastle.jcajce.provider.symmetric.AES$AlgParamsCCM.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66160');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66160" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.AES$AlgParamsGCM<br/>In method org.bouncycastle.jcajce.provider.symmetric.AES$AlgParamsGCM.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66199');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66199" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.ARIA$AlgParamsCCM<br/>In method org.bouncycastle.jcajce.provider.symmetric.ARIA$AlgParamsCCM.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66238');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66238" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.ARIA$AlgParamsGCM<br/>In method org.bouncycastle.jcajce.provider.symmetric.ARIA$AlgParamsGCM.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66277');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66277" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.CAST5$AlgParams<br/>In method org.bouncycastle.jcajce.provider.symmetric.CAST5$AlgParams.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66316');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66316" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.GOST28147$AlgParams<br/>In method org.bouncycastle.jcajce.provider.symmetric.GOST28147$AlgParams.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66355');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66355" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.GOST28147$BaseAlgParams<br/>In method org.bouncycastle.jcajce.provider.symmetric.GOST28147$BaseAlgParams.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66394');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66394" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.IDEA$AlgParams<br/>In method org.bouncycastle.jcajce.provider.symmetric.IDEA$AlgParams.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66433');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66433" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.RC2$AlgParams<br/>In method org.bouncycastle.jcajce.provider.symmetric.RC2$AlgParams.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66472');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66472" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher<br/>In method org.bouncycastle.jcajce.provider.symmetric.util.BaseBlockCipher.engineGetParameters()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66511');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66511" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.util.BaseStreamCipher<br/>In method org.bouncycastle.jcajce.provider.symmetric.util.BaseStreamCipher.engineGetParameters()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66550');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66550" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.util.BaseWrapCipher<br/>In method org.bouncycastle.jcajce.provider.symmetric.util.BaseWrapCipher.engineGetParameters()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66589');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66589" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.provider.symmetric.util.IvAlgorithmParameters<br/>In method org.bouncycastle.jcajce.provider.symmetric.util.IvAlgorithmParameters.localEngineGetParameterSpec(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66628');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66628" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.bouncycastle.jcajce.spec.AEADParameterSpec<br/>In method new org.bouncycastle.jcajce.spec.AEADParameterSpec(byte[], int, byte[])<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CUSTOM_MESSAGE_DIGEST">CUSTOM_MESSAGE_DIGEST: Message digest is custom</a>
+</h2>
+            
+<p>Implementing a custom MessageDigest is error-prone.</p>
+<p><a href="https://csrc.nist.gov/projects/hash-functions">NIST</a> recommends the use of SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, or SHA-512/256.</p>
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>MyProprietaryMessageDigest extends MessageDigest {
+    @Override
+    protected byte[] engineDigest() {
+        [...]
+        //Creativity is a bad idea
+        return [...];
+    }
+}</pre>
+</p>
+<p>
+<p>Upgrade your implementation to use one of the approved algorithms. Use an algorithm that is sufficiently strong for your specific security needs.</p>
+<p>
+    <b>Example Solution:</b><br/>
+<pre>MessageDigest sha256Digest = MessageDigest.getInstance("SHA256");
+sha256Digest.update(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://csrc.nist.gov/projects/hash-functions">NIST Approved Hash Functions</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

@@ -1,0 +1,268 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 402.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.81
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: javax.crypto.KeyGenerator
+		Statement: r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(r2)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: void initialize()>
+		SHA-256: 9e130988e0dd363aefeb4366c6ce9aff53851a22551c9ac75a005f05a60cd3fd
+		Secure: true
+	Object:
+		Variable: $r29
+		Type: javax.crypto.SecretKey
+		Statement: $r29 = virtualinvoke r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.apache.archiva.redback.authentication.TokenManager: void initialize()>
+		SHA-256: 1c9825ef2879c6f8b6d988b8511ffc505833757f87069053fc84041813805589
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r3)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doDecrypt(byte[])>
+		SHA-256: 36e5683afd35a05fe7528f60c76cc1f0507d277b9137bcab969ae171c41a983a
+		Secure: false
+	Object:
+		Variable: r8
+		Type: byte[]
+		Statement: r8 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r7)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doEncrypt(byte[],long)>
+		SHA-256: 38355f288a70895cc9d658a792e83a1b5f7d2b4b3dfa7fab9003b1c525d7959a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.archiva.redback.authentication.TokenManager: java.security.SecureRandom getRandomGenerator()>
+		SHA-256: 1f95026c5ce86d28b07dfd250802e5f032edb9478e34d93a4b67365360919355
+		Secure: true
+	Object:
+		Variable: r35
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r35.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.archiva.redback.authentication.TokenManager: void initialize()>
+		SHA-256: 90c12837fac656d08699d62a4bba0270c97bf79a6a5730750ab02d21baf37670
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r6)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doEncrypt(byte[],long)>
+		SHA-256: 8973ef71cfe1c7e3648000ec0cb373bed6f0002740af9b68a5ba7ec0de8f38e4
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r1)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doDecrypt(byte[])>
+		SHA-256: 5d51a57318a6585a98350e8b9fd4c88069c6ae27918653a7dfacee1022d7dd6b
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r1)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doDecrypt(byte[])>
+		SHA-256: 7c6896550fcb0bd1ff83738184e575c0a51ad544133b1c44a917c0fd2d6da5e7
+		Secure: false
+	Object:
+		Variable: r28
+		Type: javax.crypto.Cipher
+		Statement: r28 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r7)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: void initialize()>
+		SHA-256: 9f62f7803db214d3107c0df9ddf5dac3123e87ce691ffcc7659f6cf61e089212
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.archiva.redback.authentication.TokenManager: long createNonce()>
+		SHA-256: 6a5fa41aa6f6137726918a133e2da7afb53140668c8b54314fb721725dfa7fc1
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r1)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: javax.crypto.Cipher getDeCipher()>
+		SHA-256: 56700485107063b5b18d7426f19cae090d9635443af22f788ad183b0f127c0b3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r1)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: javax.crypto.Cipher getEnCipher()>
+		SHA-256: c9f535dd9a4bdf48afca7bd720b59fb2b54bfc49edf1bd2757650f7d24b29844
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>(r1, $i5, $i4)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doDecrypt(byte[])>
+		SHA-256: 5bce0dbda679e1502f04185f35ce714ff71d09d25d0f01a869adb32a84608b17
+		Secure: false
+	Object:
+		Variable: r7
+		Type: byte[]
+		Statement: r8 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r7)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doEncrypt(byte[],long)>
+		SHA-256: afa340b6f5a0d819c476596d3d3fe71dce396f88d314ba552026c9dd675955b8
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>(r1, $i5, $i4)
+		Method: <org.apache.archiva.redback.authentication.TokenManager: byte[] doDecrypt(byte[])>
+		SHA-256: 2ffbbd4bd4ffdf091e6f3177f5d7d772e58d8ecfdd47abd1034a0bd4efa9f039
+		Secure: false
+
+Findings in Java Class: org.apache.archiva.redback.authentication.TokenManager
+
+	 in Method: void initialize()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #9f62f7803db214d3107c0df9ddf5dac3123e87ce691ffcc7659f6cf61e089212)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r8 = virtualinvoke r28.<javax.crypto.Cipher: java.lang.String getAlgorithm()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #9f62f7803db214d3107c0df9ddf5dac3123e87ce691ffcc7659f6cf61e089212)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: $r9 = virtualinvoke r28.<javax.crypto.Cipher: byte[] getIV()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #9f62f7803db214d3107c0df9ddf5dac3123e87ce691ffcc7659f6cf61e089212)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: $r31 = virtualinvoke r28.<javax.crypto.Cipher: byte[] getIV()>()
+
+
+	 in Method: byte[] doDecrypt(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer72, $r7, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r3)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer70, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as prepared G C M
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer72, $r7, $r6)
+
+
+	 in Method: byte[] doEncrypt(byte[],long)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer67, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as prepared I V
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer68, $r5, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as prepared G C M
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer68, $r5, $r4)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 16
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 3
+	RequiredPredicateError: 7
+	ForbiddenMethodError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.350 s
+

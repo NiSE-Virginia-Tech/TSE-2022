@@ -1,0 +1,2048 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/dble/target/dble-9.9.9.9.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>96913 lines of code analyzed,
+	in 1476 classes, 
+	in 153 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">96</td>
+<td align="right">0.99</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>99</b>
+</td>
+<td align="right">
+<b>1.02</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">99</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>99</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69290');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69290" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.actiontech.dble.cache.CacheService<br/>In method com.actiontech.dble.cache.CacheService.createLayeredPool(String, String, int, int)<br/>At CacheService.java:[line 202]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/cache/CacheService.createLayeredPool(Ljava/lang/String;Ljava/lang/String;II)V parameter 2<br/>Unknown source com/actiontech/dble/cache/CacheService.createLayeredPool(Ljava/lang/String;Ljava/lang/String;II)V parameter 3<br/>Method usage with tainted arguments detected<br/>At CacheService.java:[line 58]<br/>At CacheService.java:[line 62]<br/>At CacheService.java:[line 85]<br/>At CacheService.java:[line 101]<br/>At CacheService.java:[line 104]<br/>At CacheService.java:[line 109]<br/>At CacheService.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69439');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69439" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.actiontech.dble.cache.DefaultLayedCachePool<br/>In method com.actiontech.dble.cache.DefaultLayedCachePool.createChildCache(String, int, int)<br/>At DefaultLayedCachePool.java:[line 59]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/cache/DefaultLayedCachePool.name<br/>Unknown source com/actiontech/dble/cache/DefaultLayedCachePool.createChildCache(Ljava/lang/String;II)Lcom/actiontech/dble/cache/CachePool; parameter 2<br/>Method usage with tainted arguments detected<br/>At CacheService.java:[line 58]<br/>At CacheService.java:[line 63]<br/>At CacheService.java:[line 116]<br/>At CacheService.java:[line 117]<br/>At CacheService.java:[line 132]<br/>At CacheService.java:[line 135]<br/>At CacheService.java:[line 139]<br/>At CacheService.java:[line 155]<br/>At DefaultLayedCachePool.java:[line 42]<br/>At DefaultLayedCachePool.java:[line 59]<br/>At DefaultLayedCachePool.java:[line 68]<br/>At DefaultLayedCachePool.java:[line 73]<br/>At DefaultLayedCachePool.java:[line 82]<br/>At DefaultLayedCachePool.java:[line 87]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72776');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72776" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.actiontech.dble.manager.response.ReloadConfig<br/>In method com.actiontech.dble.manager.response.ReloadConfig.reloadAll(int)<br/>At ReloadConfig.java:[line 363]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/datasource/PhysicalDBPool.hostName<br/>Tainted source java/util/Properties.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source com/actiontech/dble/config/util/DnPropertyUtil.loadDnIndexProps()Ljava/util/Properties;<br/>Tainted source java/util/Properties.load(Ljava/io/InputStream;)V<br/>Unknown source com/actiontech/dble/backend/datasource/PhysicalDBPool.getHostName()Ljava/lang/String;<br/>At PhysicalDBPool.java:[line 185]<br/>At DnPropertyUtil.java:[line 40]<br/>At ReloadConfig.java:[line 361]<br/>At ReloadConfig.java:[line 363]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73335');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73335" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.actiontech.dble.route.function.AutoPartitionByLong<br/>In method com.actiontech.dble.route.function.AutoPartitionByLong.initialize()<br/>At AutoPartitionByLong.java:[line 143]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/route/function/AutoPartitionByLong.mapFile<br/>At AutoPartitionByLong.java:[line 136]<br/>At AutoPartitionByLong.java:[line 137]<br/>At AutoPartitionByLong.java:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73439');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73439" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.actiontech.dble.route.function.PartitionByPattern<br/>In method com.actiontech.dble.route.function.PartitionByPattern.initialize()<br/>At PartitionByPattern.java:[line 192]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/route/function/PartitionByPattern.mapFile<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At PartitionByPattern.java:[line 184]<br/>At PartitionByPattern.java:[line 185]<br/>At PartitionByPattern.java:[line 192]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74189');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74189" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.actiontech.dble.server.variables.SystemVariables<br/>In method com.actiontech.dble.server.variables.SystemVariables.pickSessionVariables()<br/>At SystemVariables.java:[line 75]<br/>Sink method java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74253');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74253" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.actiontech.dble.server.variables.SystemVariables<br/>In method com.actiontech.dble.server.variables.SystemVariables.pickSessionVariables()<br/>At SystemVariables.java:[line 151]<br/>Sink method java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74317');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74317" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.actiontech.dble.util.DecryptUtil<br/>In method com.actiontech.dble.util.DecryptUtil.dbHostDecrypt(String, String, String, String)<br/>At DecryptUtil.java:[line 95]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/security/PublicKey;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.dbHostDecrypt(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/security/PublicKey;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;)Ljava/lang/String;<br/>At XMLSchemaLoader.java:[line 519]<br/>At DecryptUtil.java:[line 54]<br/>At DecryptUtil.java:[line 61]<br/>At DecryptUtil.java:[line 86]<br/>At DecryptUtil.java:[line 94]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74466');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74466" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.actiontech.dble.util.DecryptUtil<br/>In method com.actiontech.dble.util.DecryptUtil.decrypt(String, String, String)<br/>At DecryptUtil.java:[line 42]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/security/PublicKey;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/security/PublicKey;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/actiontech/dble/util/DecryptUtil.decrypt(Ljava/lang/String;)Ljava/lang/String;<br/>At UserConfigLoader.java:[line 34]<br/>At UserConfigLoader.java:[line 35]<br/>At UserConfigLoader.java:[line 37]<br/>At ConfigUtil.java:[line 136]<br/>At ConfigUtil.java:[line 138]<br/>At DecryptUtil.java:[line 41]<br/>At DecryptUtil.java:[line 54]<br/>At DecryptUtil.java:[line 61]<br/>At DecryptUtil.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69742');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.actiontech.dble.cache.impl.LevelDBPool.toObject(byte[])</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69742" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.actiontech.dble.cache.impl.LevelDBPool<br/>In method com.actiontech.dble.cache.impl.LevelDBPool.toObject(byte[])<br/>At LevelDBPool.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71037');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.actiontech.dble.config.util.ReflectionProvider.instantiateUsingSerialization(Class)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71037" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.actiontech.dble.config.util.ReflectionProvider<br/>In method com.actiontech.dble.config.util.ReflectionProvider.instantiateUsingSerialization(Class)<br/>At ReflectionProvider.java:[line 130]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74655');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.actiontech.dble.util.ObjectUtil.copyObject(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74655" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.actiontech.dble.util.ObjectUtil<br/>In method com.actiontech.dble.util.ObjectUtil.copyObject(Object)<br/>At ObjectUtil.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65809');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65809" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.backend.datasource.PhysicalDBPool<br/>In method new com.actiontech.dble.backend.datasource.PhysicalDBPool(String, DataHostConfig, PhysicalDatasource[], Map, Map, int)<br/>At PhysicalDBPool.java:[line 51]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66235');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66235" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePath<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePath.getNextTempFileNamePart(boolean)<br/>At FilePath.java:[line 264]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70430');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70430" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.SchemaConfig<br/>In method new com.actiontech.dble.config.model.SchemaConfig(SchemaConfig)<br/>At SchemaConfig.java:[line 14]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70488');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70488" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.SchemaConfig<br/>In method new com.actiontech.dble.config.model.SchemaConfig(String, String, Map, int)<br/>At SchemaConfig.java:[line 14]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70734');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70734" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.TableConfig<br/>In method new com.actiontech.dble.config.model.TableConfig(String, String, boolean, boolean, TableConfig$TableTypeEnum, String, RuleConfig, boolean, TableConfig, String, String)<br/>At TableConfig.java:[line 33]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70792');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70792" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.TableConfig<br/>In method new com.actiontech.dble.config.model.TableConfig(String, String, boolean, boolean, TableConfig$TableTypeEnum, ArrayList, RuleConfig, boolean, TableConfig, String, String)<br/>At TableConfig.java:[line 33]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73277');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73277" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.plan.common.item.function.mathsfunc.ItemFuncRand<br/>In method com.actiontech.dble.plan.common.item.function.mathsfunc.ItemFuncRand.valReal()<br/>At ItemFuncRand.java:[line 30]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73543');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73543" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.server.NonBlockingSession<br/>In method com.actiontech.dble.server.NonBlockingSession.setRequestTime()<br/>At NonBlockingSession.java:[line 125]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74709');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74709" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.actiontech.dble.util.StringUtil<br/>In method com.actiontech.dble.util.StringUtil.&lt;static initializer for StringUtil&gt;()<br/>At StringUtil.java:[line 27]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65867');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65867" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.LoadDataUtil<br/>In method com.actiontech.dble.backend.mysql.LoadDataUtil.requestFileDataResponse(byte[], BackendConnection)<br/>At LoadDataUtil.java:[line 49]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/sqlengine/mpp/LoadData.getFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/sqlengine/mpp/LoadData.fileName<br/>At LoadDataUtil.java:[line 49]<br/>At LoadData.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66077');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66077" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FileNio<br/>In method new com.actiontech.dble.backend.mysql.store.fs.FileNio(String, String)<br/>At FileNio.java:[line 29]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FileNio.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FilePathNio.java:[line 23]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66156');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66156" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FileNioMapped<br/>In method new com.actiontech.dble.backend.mysql.store.fs.FileNioMapped(String, String)<br/>At FileNioMapped.java:[line 49]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FileNioMapped.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FilePathNioMapped.java:[line 19]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66293');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66293" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.canWrite()<br/>At FilePathDisk.java:[line 163]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66372');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66372" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.createDirectory()<br/>At FilePathDisk.java:[line 235]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 235]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66451');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66451" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.createFile()<br/>At FilePathDisk.java:[line 113]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66530');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66530" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.createTempFile(String, boolean)<br/>At FilePathDisk.java:[line 317]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 316]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66609');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66609" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.delete()<br/>At FilePathDisk.java:[line 132]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66688');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66688" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.exists()<br/>At FilePathDisk.java:[line 127]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66767');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66767" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.getParent()<br/>At FilePathDisk.java:[line 184]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 184]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66846');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66846" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.isAbsolute()<br/>At FilePathDisk.java:[line 195]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 195]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66925');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66925" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.isDirectory()<br/>At FilePathDisk.java:[line 190]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 190]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67004');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67004" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.lastModified()<br/>At FilePathDisk.java:[line 200]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67083');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67083" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.moveTo(FilePath)<br/>At FilePathDisk.java:[line 81]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67162');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67162" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.moveTo(FilePath)<br/>At FilePathDisk.java:[line 82]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePath.name<br/>At FilePathDisk.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67241');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67241" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newDirectoryStream()<br/>At FilePathDisk.java:[line 146]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67320');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67320" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newInputStream()<br/>At FilePathDisk.java:[line 292]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 292]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67399');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67399" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newOutputStream(boolean)<br/>At FilePathDisk.java:[line 253]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67478');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67478" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.setReadOnly()<br/>At FilePathDisk.java:[line 168]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 168]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67557');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67557" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.size()<br/>At FilePathDisk.java:[line 61]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67636');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67636" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.toRealPath()<br/>At FilePathDisk.java:[line 175]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67957');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67957" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk$FileDisk<br/>In method new com.actiontech.dble.backend.mysql.store.fs.FilePathDisk$FileDisk(String, String)<br/>At FilePathDisk.java:[line 332]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk$FileDisk.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FilePathDisk.java:[line 35]<br/>At FilePathDisk.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68046');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68046" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.view.FileSystemRepository<br/>In method com.actiontech.dble.backend.mysql.view.FileSystemRepository.createBaseDir()<br/>At FileSystemRepository.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/view/FileSystemRepository.baseDir<br/>At FileSystemRepository.java:[line 236]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68125');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68125" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.view.FileSystemRepository<br/>In method com.actiontech.dble.backend.mysql.view.FileSystemRepository.init()<br/>At FileSystemRepository.java:[line 51]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/view/FileSystemRepository.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/view/FileSystemRepository.baseDir<br/>At FileSystemRepository.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68209');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68209" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.view.FileSystemRepository<br/>In method com.actiontech.dble.backend.mysql.view.FileSystemRepository.readFromFile()<br/>At FileSystemRepository.java:[line 206]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/view/FileSystemRepository.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/view/FileSystemRepository.baseDir<br/>At FileSystemRepository.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69191');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69191" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.recovery.impl.FileSystemRepository<br/>In method com.actiontech.dble.backend.mysql.xa.recovery.impl.FileSystemRepository.createBaseDir(String)<br/>At FileSystemRepository.java:[line 219]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/recovery/impl/FileSystemRepository.createBaseDir(Ljava/lang/String;)V parameter 0<br/>At FileSystemRepository.java:[line 43]<br/>At FileSystemRepository.java:[line 50]<br/>At SystemConfig.java:[line 248]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68293');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68293" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.discardBackupVersion()<br/>At VersionedFile.java:[line 189]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBackupVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 89]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 187]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68427');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68427" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.extractLastValidVersionNumberFromFileNames()<br/>At VersionedFile.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseDir()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 55]<br/>At VersionedFile.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68521');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68521" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.getSize()<br/>At VersionedFile.java:[line 222]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getCurrentVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 93]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 222]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.openLastValidVersionForReading()<br/>At VersionedFile.java:[line 124]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getCurrentVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 93]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 124]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68789');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68789" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.openNewVersionForNioWriting()<br/>At VersionedFile.java:[line 160]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getCurrentVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 93]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68923');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68923" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.rotateFileVersion()<br/>At VersionedFile.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getCurrentVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 93]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 165]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69057');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69057" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.xa.VersionedFile<br/>In method com.actiontech.dble.backend.mysql.xa.VersionedFile.rotateFileVersion()<br/>At VersionedFile.java:[line 167]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBackupVersionFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getSuffix()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseName<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.suffix<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.getBaseUrl()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/backend/mysql/xa/VersionedFile.baseDir<br/>At VersionedFile.java:[line 89]<br/>At VersionedFile.java:[line 97]<br/>At VersionedFile.java:[line 109]<br/>At VersionedFile.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69658');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69658" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.cache.impl.LevelDBCachePooFactory<br/>In method com.actiontech.dble.cache.impl.LevelDBCachePooFactory.createCachePool(String, int, int)<br/>At LevelDBCachePooFactory.java:[line 33]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/cache/impl/LevelDBCachePooFactory.createCachePool(Ljava/lang/String;II)Lcom/actiontech/dble/cache/CachePool; parameter 2<br/>Method usage not detected<br/>At LevelDBCachePooFactory.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69796');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69796" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.comm.ConfFileRWUtils<br/>In method com.actiontech.dble.config.loader.zkprocess.comm.ConfFileRWUtils.writeFile(String, String)<br/>At ConfFileRWUtils.java:[line 51]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>At ConfFileRWUtils.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70044');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70044" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.parse.XmlProcessBase<br/>In method com.actiontech.dble.config.loader.zkprocess.parse.XmlProcessBase.baseParseAndWriteToXml(Object, String, String)<br/>At XmlProcessBase.java:[line 104]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/config/loader/zkprocess/parse/XmlProcessBase.baseParseAndWriteToXml(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected<br/>At RuleParseXmlImpl.java:[line 25]<br/>At RuleParseXmlImpl.java:[line 57]<br/>At SchemasParseXmlImpl.java:[line 22]<br/>At SchemasParseXmlImpl.java:[line 54]<br/>At ServerParseXmlImpl.java:[line 25]<br/>At ServerParseXmlImpl.java:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70178');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70178" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.parse.XmlProcessBase<br/>In method com.actiontech.dble.config.loader.zkprocess.parse.XmlProcessBase.baseParseAndWriteToXml(Object, String, String, Map)<br/>At XmlProcessBase.java:[line 148]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/config/loader/zkprocess/parse/XmlProcessBase.baseParseAndWriteToXml(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V parameter 2<br/>Method usage not detected<br/>At EhcacheParseXmlImpl.java:[line 28]<br/>At EhcacheParseXmlImpl.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70272');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70272" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.zktoxml.listen.BinDataPathChildrenCacheListener<br/>In method com.actiontech.dble.config.loader.zkprocess.zktoxml.listen.BinDataPathChildrenCacheListener.add(ChildData, boolean)<br/>At BinDataPathChildrenCacheListener.java:[line 45]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/curator/framework/recipes/cache/ChildData.getPath()Ljava/lang/String;<br/>At BinDataPathChildrenCacheListener.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70351');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70351" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.zktoxml.listen.BinDataPathChildrenCacheListener<br/>In method com.actiontech.dble.config.loader.zkprocess.zktoxml.listen.BinDataPathChildrenCacheListener.delete(ChildData)<br/>At BinDataPathChildrenCacheListener.java:[line 57]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/curator/framework/recipes/cache/ChildData.getPath()Ljava/lang/String;<br/>At BinDataPathChildrenCacheListener.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70546');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70546" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.SystemConfig<br/>In method com.actiontech.dble.config.model.SystemConfig.getHomePath()<br/>At SystemConfig.java:[line 322]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70640');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70640" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.model.SystemConfig<br/>In method com.actiontech.dble.config.model.SystemConfig.getHomePath()<br/>At SystemConfig.java:[line 327]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70908');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70908" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.config.util.DnPropertyUtil<br/>In method com.actiontech.dble.config.util.DnPropertyUtil.loadDnIndexProps()<br/>At DnPropertyUtil.java:[line 33]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]<br/>At DnPropertyUtil.java:[line 33]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.DbleServer<br/>In method com.actiontech.dble.DbleServer.initZkDnindex()<br/>At DbleServer.java:[line 511]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At DbleServer.java:[line 511]<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65680');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65680" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.DbleServer<br/>In method com.actiontech.dble.DbleServer.saveDataHostIndex(String, int, boolean)<br/>At DbleServer.java:[line 630]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At DbleServer.java:[line 630]<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71091');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71091" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.createDirectories(String)<br/>At DailyRotateLogStore.java:[line 85]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.createDirectories(Ljava/lang/String;)V parameter 0<br/>At DailyRotateLogStore.java:[line 56]<br/>At DailyRotateLogStore.java:[line 88]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71180');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71180" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.dateRollOver()<br/>At DailyRotateLogStore.java:[line 126]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.fileName<br/>At DailyRotateLogStore.java:[line 126]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71259');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71259" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.indexRollOver()<br/>At DailyRotateLogStore.java:[line 137]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.buildRollFileName(I)Ljava/lang/String;<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.prefix<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.dateString<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.suffix<br/>At DailyRotateLogStore.java:[line 137]<br/>At DailyRotateLogStore.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71363');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71363" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.indexRollOver()<br/>At DailyRotateLogStore.java:[line 148]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.fileName<br/>At DailyRotateLogStore.java:[line 148]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71442');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71442" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.indexRollOver()<br/>At DailyRotateLogStore.java:[line 150]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.fileName<br/>At DailyRotateLogStore.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71521');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71521" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.open()<br/>At DailyRotateLogStore.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.fileName<br/>At DailyRotateLogStore.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71600');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71600" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.log.DailyRotateLogStore<br/>In method com.actiontech.dble.log.DailyRotateLogStore.open()<br/>At DailyRotateLogStore.java:[line 69]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/log/DailyRotateLogStore.fileName<br/>At DailyRotateLogStore.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71679');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71679" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.checkXMLFile(String, byte[])<br/>At ConfFileHandler.java:[line 107]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]<br/>At ConfFileHandler.java:[line 107]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71808');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71808" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.listConfigFiles(ManagerConnection, ByteBuffer, byte)<br/>At ConfFileHandler.java:[line 277]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]<br/>At ConfFileHandler.java:[line 277]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71937');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71937" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.showConfigFile(ManagerConnection, ByteBuffer, byte, String)<br/>At ConfFileHandler.java:[line 231]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.showConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 0<br/>Method usage not detected<br/>At ManagerQueryHandler.java:[line 82]<br/>At ConfFileHandler.java:[line 77]<br/>At ConfFileHandler.java:[line 78]<br/>At ConfFileHandler.java:[line 231]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72051');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72051" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.upLoadConfigFile(ManagerConnection, ByteBuffer, byte, String, String)<br/>At ConfFileHandler.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 1<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 0<br/>Method usage not detected<br/>At ManagerQueryHandler.java:[line 82]<br/>At ConfFileHandler.java:[line 85]<br/>At ConfFileHandler.java:[line 86]<br/>At ConfFileHandler.java:[line 87]<br/>At ConfFileHandler.java:[line 163]<br/>At ConfFileHandler.java:[line 164]<br/>At ConfFileHandler.java:[line 165]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72200');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72200" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.upLoadConfigFile(ManagerConnection, ByteBuffer, byte, String, String)<br/>At ConfFileHandler.java:[line 193]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 1<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 0<br/>Method usage not detected<br/>At ManagerQueryHandler.java:[line 82]<br/>At ConfFileHandler.java:[line 85]<br/>At ConfFileHandler.java:[line 86]<br/>At ConfFileHandler.java:[line 87]<br/>At ConfFileHandler.java:[line 163]<br/>At ConfFileHandler.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72339');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72339" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.upLoadConfigFile(ManagerConnection, ByteBuffer, byte, String, String)<br/>At ConfFileHandler.java:[line 197]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 1<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 0<br/>Method usage not detected<br/>At ManagerQueryHandler.java:[line 82]<br/>At ConfFileHandler.java:[line 85]<br/>At ConfFileHandler.java:[line 86]<br/>At ConfFileHandler.java:[line 87]<br/>At ConfFileHandler.java:[line 163]<br/>At ConfFileHandler.java:[line 195]<br/>At ConfFileHandler.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72488');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72488" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ConfFileHandler<br/>In method com.actiontech.dble.manager.handler.ConfFileHandler.upLoadConfigFile(ManagerConnection, ByteBuffer, byte, String, String)<br/>At ConfFileHandler.java:[line 204]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 1<br/>Unknown source com/actiontech/dble/manager/handler/ConfFileHandler.upLoadConfigFile(Lcom/actiontech/dble/manager/ManagerConnection;Ljava/nio/ByteBuffer;BLjava/lang/String;Ljava/lang/String;)Lcom/actiontech/dble/manager/handler/PackageBufINf; parameter 0<br/>Method usage not detected<br/>At ManagerQueryHandler.java:[line 82]<br/>At ConfFileHandler.java:[line 85]<br/>At ConfFileHandler.java:[line 86]<br/>At ConfFileHandler.java:[line 87]<br/>At ConfFileHandler.java:[line 163]<br/>At ConfFileHandler.java:[line 195]<br/>At ConfFileHandler.java:[line 197]<br/>At ConfFileHandler.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72647');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72647" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.handler.ShowServerLog<br/>In method com.actiontech.dble.manager.handler.ShowServerLog.showLogSum(ManagerConnection, ByteBuffer, byte)<br/>At ShowServerLog.java:[line 176]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/config/model/SystemConfig.getHomePath()Ljava/lang/String;<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]<br/>At ShowServerLog.java:[line 176]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72905');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72905" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.manager.response.ShowSysLog<br/>In method com.actiontech.dble.manager.response.ShowSysLog.getLinesByLogFile(String, int)<br/>At ShowSysLog.java:[line 107]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/manager/response/ShowSysLog.getLinesByLogFile(Ljava/lang/String;I)[Ljava/lang/String; parameter 1<br/>At SystemConfig.java:[line 321]<br/>At SystemConfig.java:[line 322]<br/>At SystemConfig.java:[line 326]<br/>At SystemConfig.java:[line 327]<br/>At ShowSysLog.java:[line 68]<br/>At ShowSysLog.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73034');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73034" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.memory.unsafe.utils.JavaUtils<br/>In method com.actiontech.dble.memory.unsafe.utils.JavaUtils.isSymlink(File)<br/>At JavaUtils.java:[line 100]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73601');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73601" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.clear()<br/>At ServerLoadDataInfileHandler.java:[line 697]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.tempFile<br/>At ServerLoadDataInfileHandler.java:[line 697]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73680');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73680" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.clear()<br/>At ServerLoadDataInfileHandler.java:[line 702]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.tempPath<br/>At ServerLoadDataInfileHandler.java:[line 702]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73759');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73759" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.deleteFile(String)<br/>At ServerLoadDataInfileHandler.java:[line 744]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.deleteFile(Ljava/lang/String;)V parameter 0<br/>At ServerLoadDataInfileHandler.java:[line 703]<br/>At ServerLoadDataInfileHandler.java:[line 758]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73848');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73848" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.parseFileByLine(String, String, String)<br/>At ServerLoadDataInfileHandler.java:[line 615]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.parseFileByLine(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 2<br/>At ServerLoadDataInfileHandler.java:[line 183]<br/>At ServerLoadDataInfileHandler.java:[line 536]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73937');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73937" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.saveByteOrToFile(byte[], boolean)<br/>At ServerLoadDataInfileHandler.java:[line 225]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.tempFile<br/>At ServerLoadDataInfileHandler.java:[line 225]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74016');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74016" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.saveDataToFile(LoadData, String)<br/>At ServerLoadDataInfileHandler.java:[line 365]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/sqlengine/mpp/LoadData.getFileName()Ljava/lang/String;<br/>Unknown source com/actiontech/dble/sqlengine/mpp/LoadData.fileName<br/>At ServerLoadDataInfileHandler.java:[line 365]<br/>At LoadData.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74110');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74110" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.actiontech.dble.server.handler.ServerLoadDataInfileHandler<br/>In method com.actiontech.dble.server.handler.ServerLoadDataInfileHandler.start(String)<br/>At ServerLoadDataInfileHandler.java:[line 179]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/server/handler/ServerLoadDataInfileHandler.fileName<br/>At ServerLoadDataInfileHandler.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67715');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67715" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newOutputStream(boolean)<br/>At FilePathDisk.java:[line 258]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67794');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67794" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newOutputStream(boolean)<br/>At FilePathDisk.java:[line 262]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>At FilePathDisk.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69870');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69870" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.actiontech.dble.config.loader.zkprocess.comm.ConfFileRWUtils<br/>In method com.actiontech.dble.config.loader.zkprocess.comm.ConfFileRWUtils.writeFile(String, String)<br/>At ConfFileRWUtils.java:[line 59]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/config/loader/zkprocess/comm/ConfFileRWUtils.writeFile(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At UCacheserviceResponse.java:[line 42]<br/>At UPropertySequenceLoader.java:[line 45]<br/>At UPropertySequenceLoader.java:[line 50]<br/>At UXmlRuleLoader.java:[line 162]<br/>At ConfFileRWUtils.java:[line 51]<br/>At Property.java:[line 34]<br/>At EcacheszkToxmlLoader.java:[line 102]<br/>At RuleszkToxmlLoader.java:[line 153]<br/>At SequenceTopropertiesLoader.java:[line 81]<br/>At ZkDataImpl.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73103');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(-?[0-9]+)([a-z]+)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73103" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (-?[0-9]+)([a-z]+)?<br/>In class com.actiontech.dble.memory.unsafe.utils.JavaUtils<br/>In method com.actiontech.dble.memory.unsafe.utils.JavaUtils.timeStringAs(String, TimeUnit)<br/>At JavaUtils.java:[line 139]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73161');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([0-9]+)([a-z]+)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73161" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([0-9]+)([a-z]+)?<br/>In class com.actiontech.dble.memory.unsafe.utils.JavaUtils<br/>In method com.actiontech.dble.memory.unsafe.utils.JavaUtils.byteStringAs(String, ByteUnit)<br/>At JavaUtils.java:[line 187]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73219');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([0-9]+\\.[0-9]+)([a-z]+)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73219" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([0-9]+\\.[0-9]+)([a-z]+)?<br/>In class com.actiontech.dble.memory.unsafe.utils.JavaUtils<br/>In method com.actiontech.dble.memory.unsafe.utils.JavaUtils.byteStringAs(String, ByteUnit)<br/>At JavaUtils.java:[line 188]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65961');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65961" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.SecurityUtil<br/>In method com.actiontech.dble.backend.mysql.SecurityUtil.scramble411(byte[], byte[])<br/>At SecurityUtil.java:[line 21]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67873');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67873" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.store.fs.FilePathDisk<br/>In method com.actiontech.dble.backend.mysql.store.fs.FilePathDisk.newInputStream()<br/>At FilePathDisk.java:[line 289]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source com/actiontech/dble/backend/mysql/store/fs/FilePathDisk.name<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>At FilePathDisk.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66019');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to com.actiontech.dble.backend.mysql.nio.MySQLDataSource (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66019" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class com.actiontech.dble.backend.mysql.nio.MySQLDataSource<br/>In method com.actiontech.dble.backend.mysql.nio.MySQLDataSource.testConnection(String)<br/>At MySQLDataSource.java:[line 91]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70850');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70850" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class com.actiontech.dble.config.util.ConfigUtil<br/>In method com.actiontech.dble.config.util.ConfigUtil.getDocument(InputStream, InputStream)<br/>At ConfigUtil.java:[line 91]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

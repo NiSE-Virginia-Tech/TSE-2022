@@ -1,0 +1,186 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 493.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 8 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.22
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r6
+		Type: javax.net.ssl.SSLContext
+		Statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer554)
+		Method: <org.apache.http.ssl.SSLContexts: javax.net.ssl.SSLContext createDefault()>
+		SHA-256: e8da8e644455d4c5c70ae2af85f39b05a0ad75c3201575ce736344425e2885c6
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r6)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadTrustMaterial(java.security.KeyStore,org.apache.http.ssl.TrustStrategy)>
+		SHA-256: 6b27f20073a702916ea38984a07c41336f9d5c31df3fe292ab1e805babfe473c
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.security.KeyStore
+		Statement: r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r8)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadTrustMaterial(java.net.URL,char[],org.apache.http.ssl.TrustStrategy)>
+		SHA-256: 2ae9e45495be98490a8cf7e986c1da4f46ec3d08c04f0de79430b0d6741fcb4e
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r4 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r7)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadKeyMaterial(java.security.KeyStore,char[],org.apache.http.ssl.PrivateKeyStrategy)>
+		SHA-256: e583fd691e38f136ba11f1fe50c9350acdc0da5a7df79230440be603a5329624
+		Secure: true
+	Object:
+		Variable: r5
+		Type: java.security.KeyStore
+		Statement: r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r9)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadKeyMaterial(java.net.URL,char[],char[],org.apache.http.ssl.PrivateKeyStrategy)>
+		SHA-256: 513ef26476cf54f06d8fd0c0bf6830fe9958034d3d24bd143d2cff5a8db93c51
+		Secure: true
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.SSLContext
+		Statement: r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r6)
+		Method: <org.apache.http.ssl.SSLContextBuilder: javax.net.ssl.SSLContext build()>
+		SHA-256: a98f09e34e807dc9fdcfdb6f6416b49f66f0b6eb30c0a0cb79c8266e90f7ee00
+		Secure: false
+	Object:
+		Variable: r5
+		Type: java.security.KeyStore
+		Statement: r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r9)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadKeyMaterial(java.io.File,char[],char[],org.apache.http.ssl.PrivateKeyStrategy)>
+		SHA-256: 513ef26476cf54f06d8fd0c0bf6830fe9958034d3d24bd143d2cff5a8db93c51
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.security.KeyStore
+		Statement: r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r8)
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadTrustMaterial(java.io.File,char[],org.apache.http.ssl.TrustStrategy)>
+		SHA-256: 2ae9e45495be98490a8cf7e986c1da4f46ec3d08c04f0de79430b0d6741fcb4e
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.lang.Object[]
+		Statement: r4 = virtualinvoke r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadTrustMaterial(java.security.KeyStore,org.apache.http.ssl.TrustStrategy)>
+		SHA-256: 958cd47db3f267cb4a37c5d640c89a98379a425baeaf193a6b47be852863fe2
+		Secure: true
+	Object:
+		Variable: r5
+		Type: java.lang.Object[]
+		Statement: r5 = virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.http.ssl.SSLContextBuilder: org.apache.http.ssl.SSLContextBuilder loadKeyMaterial(java.security.KeyStore,char[],org.apache.http.ssl.PrivateKeyStrategy)>
+		SHA-256: 1ea876b37c6abd161a04a567c7b9ddb00b7d622ff55d3e071ea3a5e796fe943e
+		Secure: true
+
+Findings in Java Class: org.apache.http.ssl.SSLContexts
+
+	 in Method: javax.net.ssl.SSLContext createSystemDefault()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>.
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+	 in Method: javax.net.ssl.SSLContext createDefault()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer555, varReplacer555, varReplacer555)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e8da8e644455d4c5c70ae2af85f39b05a0ad75c3201575ce736344425e2885c6)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer554)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer555, varReplacer555, varReplacer555)
+
+
+Findings in Java Class: org.apache.http.ssl.SSLContextBuilder
+
+	 in Method: javax.net.ssl.SSLContext build()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a98f09e34e807dc9fdcfdb6f6416b49f66f0b6eb30c0a0cb79c8266e90f7ee00)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r6)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ForbiddenMethodError: 1
+	ConstraintError: 2
+	RequiredPredicateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.328 s
+

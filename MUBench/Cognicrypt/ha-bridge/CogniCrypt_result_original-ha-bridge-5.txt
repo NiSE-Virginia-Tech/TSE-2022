@@ -1,0 +1,239 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/ha-bridge/target/original-ha-bridge-5.2.2.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 407.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.92
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r2 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3086)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: ae4517c58cd4c59c49eb3b687492330d5d4dc723fccf9988bab795f0b4afb9d
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: $r11 = virtualinvoke r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 4440eba52a31632f271d2dbc9ffbf24dc6ea1cb84dff7f132b88881eea07d850
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3085)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: ca2bcc2d784cd141dc1ca07d31b1a7f6e17557dc57568d5cd350d83bb023691
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3093)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 829d245d86de3b30a5828e80b2dd9ecfc3369219a322572a466365d53401aeba
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r11 = virtualinvoke r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 7c6527e226933dcffe3a88178516df4e48a4c305450832adffed5d8ac8495b4f
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Cipher
+		Statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3088)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 7f66ba866fd996b9d6a1e4902024c47744562a11d81245ec1f7f421b16715690
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r2 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3092)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 2bb260c099cbb78d2110a006eae6de3e982a7474ec307a00a55e955ff55fe6ea
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Cipher
+		Statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3090)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 4400e24c34a127283c78d8045e079311e383f00c0690c718c76a795798652b30
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 35cf621538100a520d62383f8cd2a839328229df8d558f459aed18e7aa1d1d23
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.SecretKey
+		Statement: r3 = virtualinvoke r2.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String decrypt(java.lang.String)>
+		SHA-256: b6ce07d14742c926d6dcbb6db43480a19e87b660985c77d7b0d085be9dec911a
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.SecretKey
+		Statement: r3 = virtualinvoke r2.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: ad666ddc6d294bd9d73b331f78cbf0f9112fa417fb9b722c56e730f5c5b38dc5
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.bwssystems.HABridge.BridgeSecurity: java.lang.String encrypt(java.lang.String)>
+		SHA-256: deddcc6774ec63fbe4febdae80f8e468513f3ca8eb098d160674d50525c2653e
+		Secure: false
+
+Findings in Java Class: com.bwssystems.HABridge.BridgeSecurity
+
+	 in Method: java.lang.String encrypt(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r3 = virtualinvoke r2.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r6)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #ca2bcc2d784cd141dc1ca07d31b1a7f6e17557dc57568d5cd350d83bb023691)
+			Second parameter (with value 20)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3085)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3085)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #7f66ba866fd996b9d6a1e4902024c47744562a11d81245ec1f7f421b16715690)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3088)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #ae4517c58cd4c59c49eb3b687492330d5d4dc723fccf9988bab795f0b4afb9d)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r2 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3086)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3087, r3, $r7)
+
+
+	 in Method: java.lang.String decrypt(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #829d245d86de3b30a5828e80b2dd9ecfc3369219a322572a466365d53401aeba)
+			Second parameter (with value 20)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3093)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r8, varReplacer3093)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r3 = virtualinvoke r2.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3094, r3, $r7)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r6)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #2bb260c099cbb78d2110a006eae6de3e982a7474ec307a00a55e955ff55fe6ea)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r2 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3092)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #4400e24c34a127283c78d8045e079311e383f00c0690c718c76a795798652b30)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3090)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 12
+
+	CogniCrypt found the following violations. For details see description above.
+	ForbiddenMethodError: 2
+	RequiredPredicateError: 6
+	ConstraintError: 6
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.497 s

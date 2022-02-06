@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/flink.git/amazon-kinesis-producer-0.13.1.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>11725 lines of code analyzed,
+	in 117 classes, 
+	in 2 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">19</td>
+<td align="right">1.62</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+<td align="right">
+<b>1.62</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">19</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.createPipesUnix()<br/>At Daemon.java:[line 406]<br/>Sink method java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At Daemon.java:[line 406]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;(Ljava/util/List;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.startChildProcess()<br/>At Daemon.java:[line 447]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;(Ljava/util/List;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/Daemon.pathToExecutable<br/>Unknown source java/util/Arrays.asList([Ljava/lang/Object;)Ljava/util/List;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At Daemon.java:[line 434]<br/>At Daemon.java:[line 442]<br/>At Daemon.java:[line 443]<br/>At Daemon.java:[line 445]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66952');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.warn(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66952" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer._ConfigTemplate<br/>In method com.amazonaws.services.kinesis.producer._ConfigTemplate.fromProperties(Properties)<br/>At _ConfigTemplate.java:[line 223]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>Unknown source java/util/Enumeration.nextElement()Ljava/lang/Object;<br/>Unknown source com/amazonaws/services/kinesis/producer/_ConfigTemplate.fromProperties(Ljava/util/Properties;)Lcom/amazonaws/services/kinesis/producer/_ConfigTemplate; parameter 0<br/>Unknown source java/util/Properties.propertyNames()Ljava/util/Enumeration;<br/>Method usage with tainted arguments detected<br/>At _ConfigTemplate.java:[line 173]<br/>At _ConfigTemplate.java:[line 178]<br/>At _ConfigTemplate.java:[line 199]<br/>At _ConfigTemplate.java:[line 202]<br/>At _ConfigTemplate.java:[line 223]<br/>At _ConfigTemplate.java:[line 224]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66729');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.warn(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66729" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducerConfiguration<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducerConfiguration.fromProperties(Properties)<br/>At KinesisProducerConfiguration.java:[line 214]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.fromProperties(Ljava/util/Properties;)Lcom/amazonaws/services/kinesis/producer/KinesisProducerConfiguration; parameter 0<br/>Unknown source java/util/Enumeration.nextElement()Ljava/lang/Object;<br/>Unknown source java/util/Properties.propertyNames()Ljava/util/Enumeration;<br/>Method usage with tainted arguments detected<br/>At KinesisProducerConfiguration.java:[line 162]<br/>At KinesisProducerConfiguration.java:[line 167]<br/>At KinesisProducerConfiguration.java:[line 188]<br/>At KinesisProducerConfiguration.java:[line 191]<br/>At KinesisProducerConfiguration.java:[line 214]<br/>At KinesisProducerConfiguration.java:[line 215]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67101');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67101" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer._ConfigTemplate<br/>In method com.amazonaws.services.kinesis.producer._ConfigTemplate.fromPropertiesFile(String)<br/>At _ConfigTemplate.java:[line 172]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/_ConfigTemplate.fromPropertiesFile(Ljava/lang/String;)Lcom/amazonaws/services/kinesis/producer/_ConfigTemplate; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65749');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65749" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.connectToChild()<br/>At Daemon.java:[line 347]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65818');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65818" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.connectToChild()<br/>At Daemon.java:[line 348]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65887');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65887" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.createPipesUnix()<br/>At Daemon.java:[line 390]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/Daemon.workingDir<br/>At Daemon.java:[line 390]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65966');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65966" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.createPipesUnix()<br/>At Daemon.java:[line 396]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66035');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66035" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.Daemon<br/>In method com.amazonaws.services.kinesis.producer.Daemon.createPipesUnix()<br/>At Daemon.java:[line 401]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66104');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66104" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.HashedFileCopier<br/>In method com.amazonaws.services.kinesis.producer.HashedFileCopier.copyFileFrom(InputStream, File, String)<br/>At HashedFileCopier.java:[line 46]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/HashedFileCopier.copyFileFrom(Ljava/io/InputStream;Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 1<br/>At KinesisProducer.java:[line 883]<br/>At KinesisProducer.java:[line 894]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66378');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66378" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducer<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducer.extractBinaries()<br/>At KinesisProducer.java:[line 858]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.getTempDirectory()Ljava/lang/String;<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.tempDirectory<br/>At KinesisProducer.java:[line 854]<br/>At KinesisProducerConfiguration.java:[line 733]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66472');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66472" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducer<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducer.extractBinaries()<br/>At KinesisProducer.java:[line 866]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.nativeExecutable<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.getNativeExecutable()Ljava/lang/String;<br/>At KinesisProducer.java:[line 861]<br/>At KinesisProducerConfiguration.java:[line 609]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66566');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66566" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducer<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducer.extractBinaries()<br/>At KinesisProducer.java:[line 883]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/nio/file/Path.toString()Ljava/lang/String;<br/>Unknown source java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>At KinesisProducer.java:[line 858]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66650');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66650" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducer<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducer.extractBinaries()<br/>At KinesisProducer.java:[line 901]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducer.pathToTmpDir<br/>At KinesisProducer.java:[line 901]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66878');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66878" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.KinesisProducerConfiguration<br/>In method com.amazonaws.services.kinesis.producer.KinesisProducerConfiguration.fromPropertiesFile(String)<br/>At KinesisProducerConfiguration.java:[line 161]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/amazonaws/services/kinesis/producer/KinesisProducerConfiguration.fromPropertiesFile(Ljava/lang/String;)Lcom/amazonaws/services/kinesis/producer/KinesisProducerConfiguration; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66262');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66262" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.HashedFileCopier<br/>In method com.amazonaws.services.kinesis.producer.HashedFileCopier.copyFileFrom(InputStream, File, String)<br/>At HashedFileCopier.java:[line 51]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66320');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66320" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.HashedFileCopier<br/>In method com.amazonaws.services.kinesis.producer.HashedFileCopier.copyFileFrom(InputStream, File, String)<br/>At HashedFileCopier.java:[line 65]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66193');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66193" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.amazonaws.services.kinesis.producer.HashedFileCopier<br/>In method com.amazonaws.services.kinesis.producer.HashedFileCopier.copyFileFrom(InputStream, File, String)<br/>At HashedFileCopier.java:[line 74]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source java/security/MessageDigest.digest()[B</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        </body>
+</html>

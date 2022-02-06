@@ -1,0 +1,550 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/flink.git/avro-1.8.2.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>33952 lines of code analyzed,
+	in 1172 classes, 
+	in 18 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.29</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.09</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+<td align="right">
+<b>0.38</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class avro.shaded.com.google.common.base.Throwables<br/>In method avro.shaded.com.google.common.base.Throwables.getStackTraceAsString(Throwable)<br/>At Throwables.java:[line 213]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66110');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66110" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.apache.avro.file.DataFileWriter<br/>In method org.apache.avro.file.DataFileWriter.generateSync()<br/>At DataFileWriter.java:[line 240]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66052');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66052" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.apache.avro.Protocol<br/>In method org.apache.avro.Protocol.getMD5()<br/>At Protocol.java:[line 357]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy.readEntries(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy<br/>In method avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy.readEntries(ObjectInputStream)<br/>At MapMakerInternalMap.java:[line 4020]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy.readEntries(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy<br/>In method avro.shaded.com.google.common.collect.MapMakerInternalMap$AbstractSerializationProxy.readEntries(ObjectInputStream)<br/>At MapMakerInternalMap.java:[line 4024]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65713');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.Serialization.populateMap(Map, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65713" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.Serialization<br/>In method avro.shaded.com.google.common.collect.Serialization.populateMap(Map, ObjectInputStream, int)<br/>At Serialization.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65767');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.Serialization.populateMap(Map, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65767" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.Serialization<br/>In method avro.shaded.com.google.common.collect.Serialization.populateMap(Map, ObjectInputStream, int)<br/>At Serialization.java:[line 91]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65821');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.Serialization.populateMultimap(Multimap, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65821" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.Serialization<br/>In method avro.shaded.com.google.common.collect.Serialization.populateMultimap(Multimap, ObjectInputStream, int)<br/>At Serialization.java:[line 184]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65875');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.Serialization.populateMultimap(Multimap, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65875" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.Serialization<br/>In method avro.shaded.com.google.common.collect.Serialization.populateMultimap(Multimap, ObjectInputStream, int)<br/>At Serialization.java:[line 189]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65929');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in avro.shaded.com.google.common.collect.Serialization.populateMultiset(Multiset, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65929" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class avro.shaded.com.google.common.collect.Serialization<br/>In method avro.shaded.com.google.common.collect.Serialization.populateMultiset(Multiset, ObjectInputStream, int)<br/>At Serialization.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65983');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65983" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.avro.Protocol<br/>In method org.apache.avro.Protocol.main(String[])<br/>At Protocol.java:[line 555]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/avro/Protocol.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66168');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66168" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.avro.file.SyncableFileOutputStream<br/>In method new org.apache.avro.file.SyncableFileOutputStream(String)<br/>At SyncableFileOutputStream.java:[line 47]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/avro/file/SyncableFileOutputStream.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66242');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66242" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.avro.file.SyncableFileOutputStream<br/>In method new org.apache.avro.file.SyncableFileOutputStream(String, boolean)<br/>At SyncableFileOutputStream.java:[line 74]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source org/apache/avro/file/SyncableFileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

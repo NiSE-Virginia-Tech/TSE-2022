@@ -1,0 +1,130 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 874.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r17
+		Type: java.security.MessageDigest
+		Statement: r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4433)
+		Method: <org.apache.commons.math3.random.RandomDataGenerator: java.lang.String nextSecureHexString(int)>
+		SHA-256: c183ffcc46cc80ba5f088cd45b1e3496631cf48263e18f086aa6fbdcf64080e0
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: r4 = virtualinvoke r17.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.commons.math3.random.RandomDataGenerator: java.lang.String nextSecureHexString(int)>
+		SHA-256: e3ec533bbf832d766056a691b1d59b63352c2e8bde298216789565be597ebeae
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: $r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String,java.lang.String)>(r1, r2)
+		Method: <org.apache.commons.math3.random.RandomDataGenerator: void setSecureAlgorithm(java.lang.String,java.lang.String)>
+		SHA-256: 703d6810f8469b96429d8e0ac1a174031412f117e6bb4e9998ed71003ffe7713
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.commons.math3.random.RandomDataGenerator: org.apache.commons.math3.random.RandomGenerator getSecRan()>
+		SHA-256: 500b3528bca33ac16d149d98af9246fee30025ba65a1f99cc3c5228f068c2070
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>(r1)
+		Method: <org.apache.commons.math3.random.RandomGeneratorFactory$1: void nextBytes(byte[])>
+		SHA-256: 5e1cade0201991a49fa66ccf7aa84e74054e9fcbb1990a101ab4d18416c9e5d9
+		Secure: true
+
+Findings in Java Class: org.apache.commons.math3.random.RandomDataGenerator
+
+	 in Method: java.lang.String nextSecureHexString(int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c183ffcc46cc80ba5f088cd45b1e3496631cf48263e18f086aa6fbdcf64080e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke r17.<java.security.MessageDigest: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c183ffcc46cc80ba5f088cd45b1e3496631cf48263e18f086aa6fbdcf64080e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to update, java.security.MessageDigest: byte[] digest(byte[])
+			at statement: r4 = virtualinvoke r17.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c183ffcc46cc80ba5f088cd45b1e3496631cf48263e18f086aa6fbdcf64080e0)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4433)
+
+
+Findings in Java Class: org.apache.commons.math3.random.RandomGeneratorFactory$1
+
+	 in Method: void setSeed(long)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #500b3528bca33ac16d149d98af9246fee30025ba65a1f99cc3c5228f068c2070)
+			Unexpected call to method setSeed on object of type java.security.SecureRandom. Expect a call to one of the following methods next,generateSeed,nextBytes
+			at statement: virtualinvoke $r1.<java.util.Random: void setSeed(long)>(l0)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	TypestateError: 1
+	IncompleteOperationError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 10.84 s
+

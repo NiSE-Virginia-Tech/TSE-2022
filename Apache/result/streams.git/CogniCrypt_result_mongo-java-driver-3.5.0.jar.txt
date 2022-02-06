@@ -1,0 +1,443 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 811.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 14 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.07
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.37
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 21
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 22
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.41
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 22
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.48
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.52
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.61
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.65
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.74
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 19 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 20 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.87
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 21 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.91
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 22 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.96
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, r2, i0, varReplacer2453)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hi(java.lang.String,byte[],int)>
+		SHA-256: 4fc7d5efc2f7d3d1d28edc52894445d573ee1e57aa4bf7a35d22ffe257e9e5e2
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Mac
+		Statement: r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer2457)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hmac(byte[],java.lang.String)>
+		SHA-256: c0738bbabff5b742c087f78e8f5117514007bd9faa8072bb7c25cb61f0e8cedc
+		Secure: true
+	Object:
+		Variable: varReplacer2456
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer2456)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hmac(byte[],java.lang.String)>
+		SHA-256: b5fa8c95acf772ff7dc432ac69fa32574828948b4c38da52fa489c41af4a3a4d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2451)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] h(byte[])>
+		SHA-256: cd334cd558af5fa3f87422fd4a8da8b577332609a864309f0d168ee16c10e550
+		Secure: false
+	Object:
+		Variable: r59
+		Type: java.security.MessageDigest
+		Statement: r59 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10)
+		Method: <com.mongodb.gridfs.CLI: void main(java.lang.String[])>
+		SHA-256: 20e94d202f64b194d3e3e5c7745b211bb46f8532e225a21a5f2ec20ed2761e8e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bson.types.ObjectId: void <clinit>()>
+		SHA-256: 99eb94eecac36541583dd850926cad75d030e84ec51d1770a56cbd9de0468b63
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer2456)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hmac(byte[],java.lang.String)>
+		SHA-256: 7cd4ea93111dde2926b66a78d50f7202582f3902735fdae260a9c1d872d2edf7
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bson.types.ObjectId: short createProcessIdentifier()>
+		SHA-256: 6ce7ed2bd5adb4bb038437abe8670d4db664e8fe5956bd95a769ad2edbe8a002
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hmac(byte[],java.lang.String)>
+		SHA-256: f78828cd009c98247a256529a9d223f69bd5dfde5b85a3de9a673836150ba0e6
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: java.security.MessageDigest
+		Statement: $r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer375)
+		Method: <com.mongodb.client.gridfs.GridFSUploadStreamImpl: void <init>(com.mongodb.client.MongoCollection,com.mongodb.client.MongoCollection,org.bson.BsonValue,java.lang.String,int,org.bson.Document)>
+		SHA-256: 64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.SecretKey
+		Statement: $r7 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r3)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hi(java.lang.String,byte[],int)>
+		SHA-256: 4d42b14896c0931f7a9f456e31470b874487a422a030b1e77dc6b17d03814cb9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hmac(byte[],java.lang.String)>
+		SHA-256: dea7cee226e2e5d8466316defa19c405200f0507a77d9f149b13789ddbe61367
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] h(byte[])>
+		SHA-256: 31ee1480fe1f004f96090e9592bc1987e6250d07d690fd5a4285894d97560e4f
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r9.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r10, r59)
+		Method: <com.mongodb.gridfs.CLI: void main(java.lang.String[])>
+		SHA-256: ace0ce6225d6328fe3e64ea6057e74d1ff79859f4f1a26196998294a4a4dfbea
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.mongodb.client.gridfs.GridFSUploadStreamImpl: void close()>
+		SHA-256: 685ff837ec078a4ec7df9907100aba1091b7920850701e96ce57909294252335
+		Secure: false
+	Object:
+		Variable: varReplacer2453
+		Type: int
+		Statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, r2, i0, varReplacer2453)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hi(java.lang.String,byte[],int)>
+		SHA-256: c19417466838e1f1e1b53d0106b58c747f18968b0707a19c7cbeb7b67e5558a7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <com.mongodb.connection.ScramSha1Authenticator$DefaultRandomStringGenerator: java.lang.String generate(int)>
+		SHA-256: 3c9f917efee28098c5f8afd3f740ed72246134663b84fb5e0c8903362b4e7f0f
+		Secure: true
+	Object:
+		Variable: r5
+		Type: java.security.MessageDigest
+		Statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3842)
+		Method: <com.mongodb.internal.HexUtils: java.lang.String hexMD5(byte[])>
+		SHA-256: fd687d779442969b31b931bec77779d2e5a6227cfb60d9d2d56984aa34eff60b
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r14.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bson.types.ObjectId: int createMachineIdentifier()>
+		SHA-256: a00d65631f0d440d724b7003eb514ed02f7c5843deb9719efa4840488a31d883
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r1 = virtualinvoke r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.mongodb.internal.HexUtils: java.lang.String hexMD5(byte[])>
+		SHA-256: b3364508dc9860b87494328c8b0412f27a11992c5b51748bdb5748d897807497
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3693)
+		Method: <com.mongodb.gridfs.GridFSInputFile: void <init>(com.mongodb.gridfs.GridFS,java.io.InputStream,java.lang.String,boolean)>
+		SHA-256: fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] h(byte[])>
+		SHA-256: 42e3ebebfc5841b3be8dbb8b08e863aaaa19d2c7eb39bd295eed4b7218dc2ca5
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer2454)
+		Method: <com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient: byte[] hi(java.lang.String,byte[],int)>
+		SHA-256: 47187f5c121dfe7c42c88c30f54c579b3299344e242933bff897b297b518eed7
+		Secure: false
+
+Findings in Java Class: com.mongodb.connection.netty.NettyStream
+
+	 in Method: javax.net.ssl.SSLContext getSslContext()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+Findings in Java Class: com.mongodb.connection.SocketStreamFactory
+
+	 in Method: javax.net.ssl.SSLContext getSslContext()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+Findings in Java Class: com.mongodb.gridfs.CLI
+
+	 in Method: void main(java.lang.String[])
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #20e94d202f64b194d3e3e5c7745b211bb46f8532e225a21a5f2ec20ed2761e8e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: r60 = virtualinvoke r59.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #20e94d202f64b194d3e3e5c7745b211bb46f8532e225a21a5f2ec20ed2761e8e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r59 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10)
+
+
+Findings in Java Class: com.mongodb.client.gridfs.GridFSUploadStreamImpl
+
+	 in Method: void <init>(com.mongodb.client.MongoCollection,com.mongodb.client.MongoCollection,org.bson.BsonValue,java.lang.String,int,org.bson.Document)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer375)
+
+
+	 in Method: void close()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: void write(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<com.mongodb.client.gridfs.GridFSUploadStreamImpl: void checkClosed()>()
+
+
+Findings in Java Class: com.mongodb.client.gridfs.GridFSBucketImpl
+
+	 in Method: void uploadFromStream(org.bson.BsonValue,java.lang.String,java.io.InputStream,com.mongodb.client.gridfs.model.GridFSUploadOptions)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke r5.<com.mongodb.client.gridfs.GridFSUploadStream: void close()>()
+
+
+	 in Method: com.mongodb.client.gridfs.GridFSUploadStream openUploadStream(java.lang.String,com.mongodb.client.gridfs.model.GridFSUploadOptions)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r4
+
+
+	 in Method: com.mongodb.client.gridfs.GridFSUploadStream openUploadStream(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #64b7ee91163c94f551ed809affafe47c474a717c90966cb5d3aa5c4ec71dcf7e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r3
+
+
+Findings in Java Class: com.mongodb.connection.ScramSha1Authenticator$ScramSha1SaslClient
+
+	 in Method: byte[] h(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #cd334cd558af5fa3f87422fd4a8da8b577332609a864309f0d168ee16c10e550)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2451)
+
+
+	 in Method: byte[] hi(java.lang.String,byte[],int)
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #47187f5c121dfe7c42c88c30f54c579b3299344e242933bff897b297b518eed7)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer2454)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4fc7d5efc2f7d3d1d28edc52894445d573ee1e57aa4bf7a35d22ffe257e9e5e2)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r7 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: $r7 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, r2, i0, varReplacer2453)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4fc7d5efc2f7d3d1d28edc52894445d573ee1e57aa4bf7a35d22ffe257e9e5e2)
+			Third parameter (with value 0)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, r2, i0, varReplacer2453)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4fc7d5efc2f7d3d1d28edc52894445d573ee1e57aa4bf7a35d22ffe257e9e5e2)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, r2, i0, varReplacer2453)
+
+
+	 in Method: byte[] hmac(byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer2456)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #7cd4ea93111dde2926b66a78d50f7202582f3902735fdae260a9c1d872d2edf7)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, varReplacer2456)
+
+
+Findings in Java Class: com.mongodb.gridfs.GridFSInputFile
+
+	 in Method: void <init>(com.mongodb.gridfs.GridFS,java.io.InputStream,java.lang.String,boolean)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3693)
+
+
+Findings in Java Class: com.mongodb.gridfs.GridFS
+
+	 in Method: com.mongodb.gridfs.GridFSInputFile createFile()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+	 in Method: com.mongodb.gridfs.GridFSInputFile createFile(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r2
+
+
+	 in Method: com.mongodb.gridfs.GridFSInputFile createFile(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r2
+
+
+	 in Method: com.mongodb.gridfs.GridFSInputFile createFile(byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #fe663374535b6fa40e92588e279c2427957b08d00f4239b3c7dc5feba0432a80)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r3
+
+
+Findings in Java Class: com.mongodb.internal.HexUtils
+
+	 in Method: java.lang.String hexMD5(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fd687d779442969b31b931bec77779d2e5a6227cfb60d9d2d56984aa34eff60b)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3842)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 23
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 8
+	NeverTypeOfError: 1
+	TypestateError: 2
+	ForbiddenMethodError: 2
+	RequiredPredicateError: 3
+	IncompleteOperationError: 9
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 7.363 s
+

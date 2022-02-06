@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pulsar.git/presto-main-0.206.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>100611 lines of code analyzed,
+	in 2420 classes, 
+	in 62 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">0.20</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+<td align="right">
+<b>0.20</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.execution.QueryIdGenerator<br/>In method new com.facebook.presto.execution.QueryIdGenerator()<br/>At QueryIdGenerator.java:[line 64]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.execution.resourceGroups.StochasticPriorityQueue<br/>In method com.facebook.presto.execution.resourceGroups.StochasticPriorityQueue.poll()<br/>At StochasticPriorityQueue.java:[line 94]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65667" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.execution.scheduler.ResettableRandomizedIterator<br/>In method com.facebook.presto.execution.scheduler.ResettableRandomizedIterator.next()<br/>At ResettableRandomizedIterator.java:[line 52]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65725');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65725" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.exchange.RandomExchanger<br/>In method com.facebook.presto.operator.exchange.RandomExchanger.accept(Page)<br/>At RandomExchanger.java:[line 45]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65783');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65783" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.ArrayShuffleFunction<br/>In method com.facebook.presto.operator.scalar.ArrayShuffleFunction.shuffle(Type, Block)<br/>At ArrayShuffleFunction.java:[line 59]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65841');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65841" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.MathFunctions<br/>In method com.facebook.presto.operator.scalar.MathFunctions.random()<br/>At MathFunctions.java:[line 572]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65899');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65899" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.MathFunctions<br/>In method com.facebook.presto.operator.scalar.MathFunctions.random(long)<br/>At MathFunctions.java:[line 608]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65957');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65957" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.MathFunctions<br/>In method com.facebook.presto.operator.scalar.MathFunctions.randomInteger(long)<br/>At MathFunctions.java:[line 599]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66015');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66015" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.MathFunctions<br/>In method com.facebook.presto.operator.scalar.MathFunctions.randomSmallint(long)<br/>At MathFunctions.java:[line 590]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66073');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66073" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.operator.scalar.MathFunctions<br/>In method com.facebook.presto.operator.scalar.MathFunctions.randomTinyint(long)<br/>At MathFunctions.java:[line 581]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66455');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66455" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.server.TaskResource<br/>In method com.facebook.presto.server.TaskResource.randomizeWaitTime(Duration)<br/>At TaskResource.java:[line 345]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66770');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66770" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.facebook.presto.split.SampledSplitSource<br/>In method com.facebook.presto.split.SampledSplitSource.lambda$null$0(Split)<br/>At SampledSplitSource.java:[line 62]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66131');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66131" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.facebook.presto.security.FileBasedSystemAccessControl$Factory<br/>In method com.facebook.presto.security.FileBasedSystemAccessControl$Factory.create(Map)<br/>At FileBasedSystemAccessControl.java:[line 80]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source com/facebook/presto/security/FileBasedSystemAccessControl$Factory.create(Ljava/util/Map;)Lcom/facebook/presto/spi/security/SystemAccessControl; parameter 0<br/>Method usage not detected<br/>At FileBasedSystemAccessControl.java:[line 72]<br/>At FileBasedSystemAccessControl.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66346');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66346" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.facebook.presto.server.PluginManager<br/>In method com.facebook.presto.server.PluginManager.buildClassLoader(String)<br/>At PluginManager.java:[line 232]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/facebook/presto/server/PluginManager.buildClassLoader(Ljava/lang/String;)Ljava/net/URLClassLoader; parameter 0<br/>At PluginManager.java:[line 137]<br/>At PluginManager.java:[line 141]<br/>At PluginManager.java:[line 142]<br/>At PluginManager.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66582');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66582" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.facebook.presto.server.security.JsonWebTokenAuthenticator$DynamicKeyLoader<br/>In method com.facebook.presto.server.security.JsonWebTokenAuthenticator$DynamicKeyLoader.loadKey(String)<br/>At JsonWebTokenAuthenticator.java:[line 189]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/facebook/presto/server/security/JsonWebTokenAuthenticator$DynamicKeyLoader.keyFile<br/>Unknown source com/facebook/presto/server/security/JsonWebTokenAuthenticator$DynamicKeyLoader.loadKey(Ljava/lang/String;)Lcom/facebook/presto/server/security/JsonWebTokenAuthenticator$LoadedKey; parameter 0<br/>Method usage not detected<br/>At JsonWebTokenAuthenticator.java:[line 189]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66671');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66671" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.facebook.presto.server.security.JsonWebTokenAuthenticator$StaticKeyLoader<br/>In method new com.facebook.presto.server.security.JsonWebTokenAuthenticator$StaticKeyLoader(String)<br/>At JsonWebTokenAuthenticator.java:[line 144]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/facebook/presto/server/security/JsonWebTokenAuthenticator$StaticKeyLoader.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At JsonWebTokenAuthenticator.java:[line 71]<br/>At JsonWebTokenAuthenticator.java:[line 142]<br/>At JsonWebTokenConfig.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66828');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66828" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.facebook.presto.sql.analyzer.FeaturesConfig<br/>In method com.facebook.presto.sql.analyzer.FeaturesConfig.lambda$setSpillerSpillPaths$0(String)<br/>At FeaturesConfig.java:[line 584]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/facebook/presto/sql/analyzer/FeaturesConfig.lambda$setSpillerSpillPaths$0(Ljava/lang/String;)Ljava/nio/file/Path; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66230');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(?&lt;MAJOR&gt;[1-9][0-9]*)(\\.(?&lt;MINOR&gt;(0|[1-9][0-9]*))(\\.(?:(0|[1-9][0-9]*)))?)?(?:-(?:[a-zA-Z0-9]+))?(?:(?:\\+)(?:0|[1-9][0-9]*)?)?(?:-(?:[-a-zA-Z0-9.]+))?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66230" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (?&lt;MAJOR&gt;[1-9][0-9]*)(\\.(?&lt;MINOR&gt;(0|[1-9][0-9]*))(\\.(?:(0|[1-9][0-9]*)))?)?(?:-(?:[a-zA-Z0-9]+))?(?:(?:\\+)(?:0|[1-9][0-9]*)?)?(?:-(?:[-a-zA-Z0-9.]+))?<br/>In class com.facebook.presto.server.JavaVersion<br/>In method com.facebook.presto.server.JavaVersion.&lt;static initializer for JavaVersion&gt;()<br/>At JavaVersion.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66288');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "1\\.(?&lt;MAJOR&gt;[0-9]+)(\\.(?&lt;MINOR&gt;(0|[1-9][0-9]*)))?(_(?&lt;UPDATE&gt;[1-9][0-9]*))?(?:-(?:[-a-zA-Z0-9.]+))?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66288" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value 1\\.(?&lt;MAJOR&gt;[0-9]+)(\\.(?&lt;MINOR&gt;(0|[1-9][0-9]*)))?(_(?&lt;UPDATE&gt;[1-9][0-9]*))?(?:-(?:[-a-zA-Z0-9.]+))?<br/>In class com.facebook.presto.server.JavaVersion<br/>In method com.facebook.presto.server.JavaVersion.&lt;static initializer for JavaVersion&gt;()<br/>At JavaVersion.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66513');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66513" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.facebook.presto.server.security.AuthenticationFilter<br/>In method com.facebook.presto.server.security.AuthenticationFilter.doFilter(ServletRequest, ServletResponse, FilterChain)<br/>At AuthenticationFilter.java:[line 105]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/google/common/base/Joiner.join(Ljava/lang/Iterable;)Ljava/lang/String;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

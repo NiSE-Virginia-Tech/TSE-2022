@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/streams.git/maven-plugin-tools-generators-3.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>1010 lines of code analyzed,
+	in 8 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">11</td>
+<td align="right">10.89</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>11</b>
+</td>
+<td align="right">
+<b>10.89</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">11</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>11</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.GeneratorUtils<br/>In method org.apache.maven.tools.plugin.generator.GeneratorUtils.isMavenReport(String, MavenProject)<br/>At GeneratorUtils.java:[line 687]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/project/MavenProject.getCompileClasspathElements()Ljava/util/List;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>At GeneratorUtils.java:[line 674]<br/>At GeneratorUtils.java:[line 683]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65703');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65703" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginDescriptorGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginDescriptorGenerator.execute(File, PluginToolsRequest)<br/>At PluginDescriptorGenerator.java:[line 87]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/project/MavenProject.getArtifactId()Ljava/lang/String;<br/>Unknown source org/apache/maven/tools/plugin/generator/PluginHelpGenerator.getPluginHelpPath(Lorg/apache/maven/project/MavenProject;)Ljava/lang/String;<br/>Unknown source org/apache/maven/project/MavenProject.getGroupId()Ljava/lang/String;<br/>At PluginDescriptorGenerator.java:[line 87]<br/>At PluginHelpGenerator.java:[line 279]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65802');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65802" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.execute(File, PluginToolsRequest)<br/>At PluginHelpGenerator.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/tools/plugin/generator/PluginHelpGenerator.helpPackageName<br/>Unknown source org/apache/maven/tools/plugin/generator/PluginHelpGenerator.getImplementation(Lorg/apache/maven/plugin/descriptor/PluginDescriptor;)Ljava/lang/String;<br/>At PluginHelpGenerator.java:[line 116]<br/>At PluginHelpGenerator.java:[line 145]<br/>At PluginHelpGenerator.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65906');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65906" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.rewriteHelpClassToMojoPackage(PluginToolsRequest, File, Log)<br/>At PluginHelpGenerator.java:[line 344]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/maven/model/Build.getOutputDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65975');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65975" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.rewriteHelpClassToMojoPackage(PluginToolsRequest, File, Log)<br/>At PluginHelpGenerator.java:[line 359]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/plexus/util/StringUtils.replace(Ljava/lang/String;CC)Ljava/lang/String;<br/>At PluginHelpGenerator.java:[line 359]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66054');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66054" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.rewriteHelpClassToMojoPackage(PluginToolsRequest, File, Log)<br/>At PluginHelpGenerator.java:[line 390]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/codehaus/plexus/util/StringUtils.replace(Ljava/lang/String;CC)Ljava/lang/String;<br/>Unknown source org/apache/maven/model/Build.getOutputDirectory()Ljava/lang/String;<br/>At PluginHelpGenerator.java:[line 359]<br/>At PluginHelpGenerator.java:[line 390]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66148');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66148" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.rewriteHelpMojo(PluginToolsRequest, Log)<br/>At PluginHelpGenerator.java:[line 292]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/maven/model/Build.getDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66217');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66217" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.rewriteHelpMojo(PluginToolsRequest, Log)<br/>At PluginHelpGenerator.java:[line 321]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/codehaus/plexus/util/PropertyUtils.loadProperties(Ljava/io/File;)Ljava/util/Properties;<br/>At PluginHelpGenerator.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66301');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66301" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginHelpGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginHelpGenerator.writeHelpPropertiesFile(PluginToolsRequest, File)<br/>At PluginHelpGenerator.java:[line 249]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/maven/model/Build.getDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66370');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66370" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.tools.plugin.generator.PluginXdocGenerator<br/>In method org.apache.maven.tools.plugin.generator.PluginXdocGenerator.processMojoDescriptor(MojoDescriptor, File)<br/>At PluginXdocGenerator.java:[line 137]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/tools/plugin/generator/PluginXdocGenerator.getMojoFilename(Lorg/apache/maven/plugin/descriptor/MojoDescriptor;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/maven/plugin/descriptor/MojoDescriptor.getGoal()Ljava/lang/String;<br/>Unknown source org/apache/maven/tools/plugin/generator/PluginXdocGenerator.getMojoFilename(Lorg/apache/maven/plugin/descriptor/MojoDescriptor;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At PluginXdocGenerator.java:[line 137]<br/>At PluginXdocGenerator.java:[line 162]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65645');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(([^#\\.\\s]+\\.)*([^#\\.\\s]+))?(#([^\\(\\s]*)(\\([^\\)]*\\))?\\s*(\\S.*)?)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65645" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (([^#\\.\\s]+\\.)*([^#\\.\\s]+))?(#([^\\(\\s]*)(\\([^\\)]*\\))?\\s*(\\S.*)?)?<br/>In class org.apache.maven.tools.plugin.generator.GeneratorUtils<br/>In method org.apache.maven.tools.plugin.generator.GeneratorUtils.decodeJavadocTags(String)<br/>At GeneratorUtils.java:[line 221]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        </body>
+</html>

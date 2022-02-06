@@ -1,0 +1,1772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/aspectjweaver-1.8.2.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>68654 lines of code analyzed,
+	in 933 classes, 
+	in 37 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">82</td>
+<td align="right">1.19</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>91</b>
+</td>
+<td align="right">
+<b>1.33</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">91</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>91</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67440');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67440" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.bridge.AbortException<br/>In method org.aspectj.bridge.AbortException.printStackTrace(PrintStream)<br/>At AbortException.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67494');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67494" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.bridge.AbortException<br/>In method org.aspectj.bridge.AbortException.printStackTrace(PrintWriter)<br/>At AbortException.java:[line 216]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67548');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67548" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.lang.SoftException<br/>In method org.aspectj.lang.SoftException.printStackTrace(PrintStream)<br/>At SoftException.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67602');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67602" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.lang.SoftException<br/>In method org.aspectj.lang.SoftException.printStackTrace(PrintWriter)<br/>At SoftException.java:[line 77]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69038');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69038" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.util.LangUtil<br/>In method org.aspectj.util.LangUtil.stackToString(Throwable, boolean)<br/>At LangUtil.java:[line 882]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70431');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70431" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.BcelWeaver<br/>In method org.aspectj.weaver.bcel.BcelWeaver.weave(UnwovenClassFile, BcelObjectType, boolean)<br/>At BcelWeaver.java:[line 1722]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69409');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69409" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.weaver.BCException<br/>In method org.aspectj.weaver.BCException.printStackTrace(PrintWriter)<br/>At BCException.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69463');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69463" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.aspectj.weaver.Dump<br/>In method org.aspectj.weaver.Dump.println(Throwable)<br/>At Dump.java:[line 437]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69092');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69092" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.aspectj.util.LangUtil$ProcessController<br/>In method org.aspectj.util.LangUtil$ProcessController.start()<br/>At LangUtil.java:[line 1261]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/LangUtil$ProcessController.command<br/>At LangUtil.java:[line 1261]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70391');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70391" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class org.aspectj.weaver.WeaverStateInfo<br/>Value is hard coded in field org.aspectj.weaver.WeaverStateInfo.key[B with suspicious name<br/>At WeaverStateInfo.java:[lines 55-555]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66302');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.asm.AsmManager.readStructureModel(String)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66302" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.readStructureModel(String)<br/>At AsmManager.java:[line 255]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66356');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.asm.AsmManager.readStructureModel(String)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66356" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.readStructureModel(String)<br/>At AsmManager.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69789');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69789" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.ResolvedTypeMunger<br/>In method org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)<br/>At ResolvedTypeMunger.java:[line 215]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69843');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69843" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.ResolvedTypeMunger<br/>In method org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)<br/>At ResolvedTypeMunger.java:[line 217]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69897');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69897" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.ResolvedTypeMunger<br/>In method org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)<br/>At ResolvedTypeMunger.java:[line 218]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69951');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69951" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.ResolvedTypeMunger<br/>In method org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)<br/>At ResolvedTypeMunger.java:[line 219]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72857');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.tools.cache.AbstractIndexedFileCacheBacking.readIndex(File)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72857" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.AbstractIndexedFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.AbstractIndexedFileCacheBacking.readIndex(File)<br/>At AbstractIndexedFileCacheBacking.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73598');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.init(String, int)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73598" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap<br/>In method org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.init(String, int)<br/>At SimpleCache.java:[line 151]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68848');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68848" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.randomFileString()<br/>At FileUtil.java:[line 1182]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68906');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68906" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.randomFileString()<br/>At FileUtil.java:[line 1187]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.classfile.ClassParser<br/>In method new org.aspectj.apache.bcel.classfile.ClassParser(String)<br/>At ClassParser.java:[line 111]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/classfile/ClassParser.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65704');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65704" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.classfile.JavaClass<br/>In method org.aspectj.apache.bcel.classfile.JavaClass.dump(File)<br/>At JavaClass.java:[line 203]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65773');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65773" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.classfile.JavaClass<br/>In method org.aspectj.apache.bcel.classfile.JavaClass.dump(String)<br/>At JavaClass.java:[line 216]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/classfile/JavaClass.dump(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66019');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66019" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.util.ClassPath<br/>In method new org.aspectj.apache.bcel.util.ClassPath(String)<br/>At ClassPath.java:[line 95]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/util/ClassPath.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>At ClassPath.java:[line 88]<br/>At ClassPath.java:[line 92]<br/>At ClassPath.java:[line 119]<br/>At ClassPath.java:[line 142]<br/>At ClassPath.java:[line 145]<br/>At ClassPath.java:[line 149]<br/>At ClassPath.java:[line 183]<br/>At ClassPath.java:[line 188]<br/>At ClassPath.java:[line 189]<br/>At ClassPath.java:[line 195]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66198');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66198" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.util.ClassPath$Dir<br/>In method org.aspectj.apache.bcel.util.ClassPath$Dir.getClassFile(String, String)<br/>At ClassPath.java:[line 336]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/util/ClassPath$Dir.getClassFile(Ljava/lang/String;Ljava/lang/String;)Lorg/aspectj/apache/bcel/util/ClassPath$ClassFile; parameter 1<br/>Unknown source org/aspectj/apache/bcel/util/ClassPath$Dir.getClassFile(Ljava/lang/String;Ljava/lang/String;)Lorg/aspectj/apache/bcel/util/ClassPath$ClassFile; parameter 0<br/>Unknown source org/aspectj/apache/bcel/util/ClassPath$Dir.dir<br/>Method usage not detected<br/>At ClassPath.java:[line 336]<br/>At ClassPath.java:[line 337]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66410');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66410" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.getHandleElementForInpath(String)<br/>At AsmManager.java:[line 1302]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.getHandleElementForInpath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At ResolvedType.java:[line 2754]<br/>At AsmRelationshipProvider.java:[line 219]<br/>At AsmRelationshipProvider.java:[line 237]<br/>At AsmRelationshipProvider.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66519');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66519" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.readStructureModel(String)<br/>At AsmManager.java:[line 253]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.genExternFilePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/aspectj/asm/AsmManager.genExternFilePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.readStructureModel(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At AsmManager.java:[line 252]<br/>At AsmManager.java:[line 283]<br/>At AsmManager.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66633');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66633" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.setReporting(String, boolean, boolean, boolean, boolean)<br/>At AsmManager.java:[line 408]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.setReporting(Ljava/lang/String;ZZZZ)V parameter 4<br/>Method usage not detected<br/>At AsmManager.java:[line 415]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67024');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67024" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.internal.AspectJElementHierarchy<br/>In method org.aspectj.asm.internal.AspectJElementHierarchy.createFileStructureNode(String)<br/>At AspectJElementHierarchy.java:[line 436]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/internal/AspectJElementHierarchy.createFileStructureNode(Ljava/lang/String;)Lorg/aspectj/asm/IProgramElement; parameter 0<br/>At AsmManager.java:[line 289]<br/>At AsmManager.java:[line 385]<br/>At AsmManager.java:[line 388]<br/>At AspectJElementHierarchy.java:[line 332]<br/>At AspectJElementHierarchy.java:[line 338]<br/>At AspectJElementHierarchy.java:[line 351]<br/>At AspectJElementHierarchy.java:[line 372]<br/>At AspectJElementHierarchy.java:[line 418]<br/>At AspectJElementHierarchy.java:[line 547]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67183');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67183" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.internal.AspectJElementHierarchy<br/>In method org.aspectj.asm.internal.AspectJElementHierarchy.findElementForOffSet(String, int, int)<br/>At AspectJElementHierarchy.java:[line 413]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/internal/AspectJElementHierarchy.findElementForOffSet(Ljava/lang/String;II)Lorg/aspectj/asm/IProgramElement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67257');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67257" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.internal.AspectJElementHierarchy<br/>In method org.aspectj.asm.internal.AspectJElementHierarchy.findElementForSourceFile(String)<br/>At AspectJElementHierarchy.java:[line 332]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/internal/AspectJElementHierarchy.findElementForSourceFile(Ljava/lang/String;)Lorg/aspectj/asm/IProgramElement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67331');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67331" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.asm.internal.AspectJElementHierarchy<br/>In method org.aspectj.asm.internal.AspectJElementHierarchy.findElementForSourceLine(String, int)<br/>At AspectJElementHierarchy.java:[line 365]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/internal/AspectJElementHierarchy.findElementForSourceLine(Ljava/lang/String;I)Lorg/aspectj/asm/IProgramElement; parameter 1<br/>At AsmManager.java:[line 289]<br/>At AsmManager.java:[line 385]<br/>At AsmManager.java:[line 388]<br/>At AspectJElementHierarchy.java:[line 351]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67656');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67656" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.copyDir(File, File, String, String, FileFilter)<br/>At FileUtil.java:[line 627]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67730');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67730" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.copyDir(File, File, String, String, FileFilter)<br/>At FileUtil.java:[line 630]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67804');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67804" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.copyDir(File, File, String, String, FileFilter)<br/>At FileUtil.java:[line 638]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;<br/>Unknown source org/aspectj/util/FileUtil.copyDir(Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/io/FileFilter;)I parameter 1<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>At FileUtil.java:[line 537]<br/>At FileUtil.java:[line 551]<br/>At FileUtil.java:[line 633]<br/>At FileUtil.java:[line 636]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67923');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67923" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.copyFile(File, File)<br/>At FileUtil.java:[line 806]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67992');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67992" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.deleteContents(File, FileFilter, boolean)<br/>At FileUtil.java:[line 510]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68061');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68061" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.getBaseDirFiles(File, String[], String[])<br/>At FileUtil.java:[line 724]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.getBaseDirFiles(Ljava/io/File;[Ljava/lang/String;[Ljava/lang/String;)[Ljava/io/File; parameter 1<br/>Method usage not detected<br/>At FileUtil.java:[line 703]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68145');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68145" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.getBestFile(String[])<br/>At FileUtil.java:[line 400]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.getBestFile([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Unknown source java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At FileUtil.java:[line 391]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68234');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68234" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.lineSeek(String, String, boolean, ArrayList)<br/>At FileUtil.java:[line 1272]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.lineSeek(Ljava/lang/String;Ljava/lang/String;ZLjava/util/ArrayList;)Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At FileUtil.java:[line 1244]<br/>At FileUtil.java:[line 1245]<br/>At FileUtil.java:[line 1246]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68338');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68338" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.listFiles(File, String, ArrayList)<br/>At FileUtil.java:[line 1381]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.listFiles(Ljava/io/File;Ljava/lang/String;Ljava/util/ArrayList;)V parameter 1<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At FileUtil.java:[line 657]<br/>At FileUtil.java:[line 1380]<br/>At FileUtil.java:[line 1381]<br/>At FileUtil.java:[line 1385]<br/>At FileUtil.java:[line 1387]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68462');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68462" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.listFiles(File, String, ArrayList)<br/>At FileUtil.java:[line 1384]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68531');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68531" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.makeNewChildDir(File, String)<br/>At FileUtil.java:[line 919]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.makeNewChildDir(Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At FileUtil.java:[line 949]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68615');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68615" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.makeNewChildDir(File, String)<br/>At FileUtil.java:[line 922]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.randomFileString()Ljava/lang/String;<br/>Unknown source org/aspectj/util/FileUtil.makeNewChildDir(Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At FileUtil.java:[line 921]<br/>At FileUtil.java:[line 922]<br/>At FileUtil.java:[line 949]<br/>At FileUtil.java:[line 1189]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68734');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68734" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil<br/>In method org.aspectj.util.FileUtil.newFile(File, String)<br/>At FileUtil.java:[line 757]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil.newFile(Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At FileUtil.java:[line 703]<br/>At FileUtil.java:[line 733]<br/>At FileUtil.java:[line 780]<br/>At FileUtil.java:[line 781]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68964');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68964" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.FileUtil$4<br/>In method org.aspectj.util.FileUtil$4.accept(File, String)<br/>At FileUtil.java:[line 618]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/FileUtil$4.accept(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69171');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69171" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.Reflection<br/>In method org.aspectj.util.Reflection.runMainInSameVM(String, String, String[])<br/>At Reflection.java:[line 110]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/LangUtil.splitClasspath(Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>Unknown source org/aspectj/util/Reflection.runMainInSameVM(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V parameter 2<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source org/aspectj/util/LangUtil.splitClasspath(Ljava/lang/String;)[Ljava/lang/String;<br/>Method usage not detected<br/>At LangUtil.java:[line 252]<br/>At LangUtil.java:[line 255]<br/>At LangUtil.java:[line 257]<br/>At LangUtil.java:[line 260]<br/>At Reflection.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69315');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69315" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.util.UtilClassLoader<br/>In method org.aspectj.util.UtilClassLoader.readClass(String)<br/>At UtilClassLoader.java:[line 106]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/util/UtilClassLoader.readClass(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected<br/>At UtilClassLoader.java:[line 87]<br/>At UtilClassLoader.java:[line 104]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70485');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70485" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.BcelWeaver<br/>In method org.aspectj.weaver.bcel.BcelWeaver.addClassFile(File, File, File)<br/>At BcelWeaver.java:[line 469]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At BcelWeaver.java:[line 468]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70564');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70564" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.BcelWeaver<br/>In method org.aspectj.weaver.bcel.BcelWeaver.addJarFile(File, File, boolean)<br/>At BcelWeaver.java:[line 397]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/jar/JarEntry.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70633');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70633" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.ClassPathManager<br/>In method org.aspectj.weaver.bcel.ClassPathManager.addPath(String, IMessageHandler)<br/>At ClassPathManager.java:[line 73]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/bcel/ClassPathManager.addPath(Ljava/lang/String;Lorg/aspectj/bridge/IMessageHandler;)V parameter 1<br/>At ClassPath.java:[line 142]<br/>At ClassPath.java:[line 145]<br/>At ClassPath.java:[line 149]<br/>At ClassPath.java:[line 183]<br/>At ClassPath.java:[line 188]<br/>At ClassPath.java:[line 189]<br/>At ClassPath.java:[line 195]<br/>At FileUtil.java:[line 1401]<br/>At FileUtil.java:[line 1409]<br/>At FileUtil.java:[line 1415]<br/>At BcelWorld.java:[line 100]<br/>At BcelWorld.java:[line 104]<br/>At BcelWorld.java:[line 268]<br/>At BcelWorld.java:[line 269]<br/>At BcelWorld.java:[line 276]<br/>At BcelWorld.java:[line 278]<br/>At BcelWorld.java:[line 285]<br/>At BcelWorld.java:[line 331]<br/>At ClassPathManager.java:[line 61]<br/>At ClassPathManager.java:[line 62]<br/>At ClassPathManager.java:[line 63]<br/>At ExtensibleURLClassLoader.java:[line 30]<br/>At ExtensibleURLClassLoader.java:[line 34]<br/>At ExtensibleURLClassLoader.java:[line 44]<br/>At LazyClassGen.java:[line 231]<br/>At WeavingURLClassLoader.java:[line 52]<br/>At WeavingURLClassLoader.java:[line 57]<br/>At WeavingURLClassLoader.java:[line 66]<br/>At WeavingURLClassLoader.java:[line 116]<br/>At WeavingAdaptor.java:[line 109]<br/>At WeavingAdaptor.java:[line 124]<br/>At WeavingAdaptor.java:[line 132]<br/>At WeavingAdaptor.java:[line 138]<br/>At WeavingAdaptor.java:[line 176]<br/>At WeavingAdaptor.java:[line 583]<br/>At WeavingAdaptor.java:[line 585]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71062');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71062" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.ClassPathManager$DirEntry<br/>In method org.aspectj.weaver.bcel.ClassPathManager$DirEntry.find(String)<br/>At ClassPathManager.java:[line 199]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/bcel/ClassPathManager$DirEntry.dirPath<br/>Unknown source org/aspectj/weaver/bcel/ClassPathManager$DirEntry.find(Ljava/lang/String;)Lorg/aspectj/weaver/bcel/ClassPathManager$ClassFile; parameter 0<br/>Method usage not detected<br/>At ClassPathManager.java:[line 199]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71151');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71151" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.LazyClassGen<br/>In method org.aspectj.weaver.bcel.LazyClassGen.reportClassTooBigProblem()<br/>At LazyClassGen.java:[line 682]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/generic/ClassGen.filename<br/>Unknown source org/aspectj/apache/bcel/generic/ClassGen.getFileName()Ljava/lang/String;<br/>At ClassGen.java:[line 349]<br/>At LazyClassGen.java:[line 682]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71245');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71245" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.UnwovenClassFile<br/>In method org.aspectj.weaver.bcel.UnwovenClassFile.deleteChildClassFile(String)<br/>At UnwovenClassFile.java:[line 125]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.makeInnerFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.makeInnerFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.deleteChildClassFile(Ljava/lang/String;)V parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.filename<br/>At UnwovenClassFile.java:[line 51]<br/>At UnwovenClassFile.java:[line 52]<br/>At UnwovenClassFile.java:[line 120]<br/>At UnwovenClassFile.java:[line 125]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71369');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71369" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.UnwovenClassFile<br/>In method org.aspectj.weaver.bcel.UnwovenClassFile.writeChildClassFile(String, byte[])<br/>At UnwovenClassFile.java:[line 113]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.writeChildClassFile(Ljava/lang/String;[B)V parameter 1<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.makeInnerFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.makeInnerFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.filename<br/>At UnwovenClassFile.java:[line 51]<br/>At UnwovenClassFile.java:[line 52]<br/>At UnwovenClassFile.java:[line 105]<br/>At UnwovenClassFile.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71493');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71493" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.bcel.UnwovenClassFile<br/>In method org.aspectj.weaver.bcel.UnwovenClassFile.writeWovenBytes(byte[], List)<br/>At UnwovenClassFile.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/bcel/UnwovenClassFile.filename<br/>At UnwovenClassFile.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69517');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69517" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.Dump<br/>In method org.aspectj.weaver.Dump.dumpFullClasspath()<br/>At Dump.java:[line 353]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/Dump.saveFullClasspath(Ljava/util/List;)V parameter 0<br/>Unknown source org/aspectj/weaver/Dump.savedFullClasspath<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage not detected<br/>At Dump.java:[line 351]<br/>At Dump.java:[line 352]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69621');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69621" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.Dump<br/>In method org.aspectj.weaver.Dump.openDump()<br/>At Dump.java:[line 396]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/Dump.fileName<br/>At Dump.java:[line 396]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69700');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69700" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.Dump<br/>In method org.aspectj.weaver.Dump.setDumpDirectory(String)<br/>At Dump.java:[line 204]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/Dump.setDumpDirectory(Ljava/lang/String;)Z parameter 0<br/>At Dump.java:[line 200]<br/>At Dump.java:[line 506]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71572');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71572" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.loadtime.ClassLoaderWeavingAdaptor<br/>In method org.aspectj.weaver.loadtime.ClassLoaderWeavingAdaptor.parseDefinitions(ClassLoader)<br/>At ClassLoaderWeavingAdaptor.java:[line 251]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>At ClassLoaderWeavingAdaptor.java:[line 241]<br/>At ClassLoaderWeavingAdaptor.java:[line 244]<br/>At ClassLoaderWeavingAdaptor.java:[line 247]<br/>At ClassLoaderWeavingAdaptor.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71994');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71994" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.model.AsmRelationshipProvider<br/>In method org.aspectj.weaver.model.AsmRelationshipProvider.createFileStructureNode(AsmManager, String)<br/>At AsmRelationshipProvider.java:[line 294]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/model/AsmRelationshipProvider.createFileStructureNode(Lorg/aspectj/asm/AsmManager;Ljava/lang/String;)Lorg/aspectj/asm/IProgramElement; parameter 0<br/>At AsmManager.java:[line 289]<br/>At AsmManager.java:[line 385]<br/>At AsmManager.java:[line 388]<br/>At AsmRelationshipProvider.java:[line 213]<br/>At AsmRelationshipProvider.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72113');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72113" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.model.AsmRelationshipProvider<br/>In method org.aspectj.weaver.model.AsmRelationshipProvider.getBinaryFile(ResolvedType)<br/>At AsmRelationshipProvider.java:[line 365]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/ResolvedType.binaryPath<br/>Unknown source org/aspectj/weaver/ResolvedType.getBinaryPath()Ljava/lang/String;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At ResolvedType.java:[line 2754]<br/>At AsmRelationshipProvider.java:[line 355]<br/>At AsmRelationshipProvider.java:[line 361]<br/>At AsmRelationshipProvider.java:[line 363]<br/>At AsmRelationshipProvider.java:[line 365]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70005');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70005" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.ResolvedTypeMunger<br/>In method org.aspectj.weaver.ResolvedTypeMunger.readSourceLocation(VersionedDataInputStream)<br/>At ResolvedTypeMunger.java:[line 227]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/VersionedDataInputStream.readUtf8(I)Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/ConstantPoolReader.readUtf8(I)Ljava/lang/String;<br/>At ResolvedTypeMunger.java:[line 226]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70089');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70089" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.ShadowMunger<br/>In method org.aspectj.weaver.ShadowMunger.getBinaryFile()<br/>At ShadowMunger.java:[line 226]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/ResolvedType.binaryPath<br/>Unknown source org/aspectj/weaver/ResolvedType.getBinaryPath()Ljava/lang/String;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At ResolvedType.java:[line 2754]<br/>At ShadowMunger.java:[line 200]<br/>At ShadowMunger.java:[line 222]<br/>At ShadowMunger.java:[line 224]<br/>At ShadowMunger.java:[line 226]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70218');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70218" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.ShadowMunger<br/>In method org.aspectj.weaver.ShadowMunger.getBinaryFile()<br/>At ShadowMunger.java:[line 228]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/ResolvedType.binaryPath<br/>Unknown source org/aspectj/weaver/ResolvedType.getBinaryPath()Ljava/lang/String;<br/>At ResolvedType.java:[line 2754]<br/>At ShadowMunger.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70312');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70312" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.SourceContextImpl<br/>In method org.aspectj.weaver.SourceContextImpl.getSourceFile()<br/>At SourceContextImpl.java:[line 40]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/SourceContextImpl.sourceFilename<br/>At SourceContextImpl.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72768');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72768" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.AbstractFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.AbstractFileCacheBacking.writeClassBytes(String, byte[])<br/>At AbstractFileCacheBacking.java:[line 42]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/AbstractFileCacheBacking.writeClassBytes(Ljava/lang/String;[B)V parameter 1<br/>At AsynchronousFileCacheBacking.java:[line 236]<br/>At AsynchronousFileCacheBacking.java:[line 397]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72911');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72911" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.DefaultFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.DefaultFileCacheBacking.createBacking(String)<br/>At DefaultFileCacheBacking.java:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/DefaultFileCacheBacking.createBacking(Ljava/lang/String;)Lorg/aspectj/weaver/tools/cache/CacheBacking; parameter 0<br/>Method usage not detected<br/>At DefaultCacheFactory.java:[line 24]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72995');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72995" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.DefaultFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.DefaultFileCacheBacking.get(CachedClassReference, byte[])<br/>At DefaultFileCacheBacking.java:[line 163]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.getKey()Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.key<br/>At CachedClassReference.java:[line 51]<br/>At DefaultFileCacheBacking.java:[line 162]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73089');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73089" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.DefaultFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.DefaultFileCacheBacking.put(CachedClassEntry, byte[])<br/>At DefaultFileCacheBacking.java:[line 199]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.getKey()Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassEntry.getKey()Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.key<br/>At CachedClassEntry.java:[line 44]<br/>At CachedClassReference.java:[line 51]<br/>At DefaultFileCacheBacking.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73198');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73198" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.DefaultFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.DefaultFileCacheBacking.remove(CachedClassReference)<br/>At DefaultFileCacheBacking.java:[line 222]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.getKey()Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/tools/cache/CachedClassReference.key<br/>At CachedClassReference.java:[line 51]<br/>At DefaultFileCacheBacking.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73292');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73292" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.DefaultFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.DefaultFileCacheBacking.resolveIndexMapEntry(File, AbstractIndexedFileCacheBacking$IndexEntry)<br/>At DefaultFileCacheBacking.java:[line 81]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/AbstractIndexedFileCacheBacking$IndexEntry.key<br/>At DefaultFileCacheBacking.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73371');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73371" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.FlatFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.FlatFileCacheBacking.removeClassBytes(String)<br/>At FlatFileCacheBacking.java:[line 133]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/FlatFileCacheBacking.removeClassBytes(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73445');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73445" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.FlatFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.FlatFileCacheBacking.resolveIndexMapEntry(File, AbstractIndexedFileCacheBacking$IndexEntry)<br/>At FlatFileCacheBacking.java:[line 112]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/AbstractIndexedFileCacheBacking$IndexEntry.key<br/>At FlatFileCacheBacking.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73524');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73524" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.FlatFileCacheBacking<br/>In method org.aspectj.weaver.tools.cache.FlatFileCacheBacking.writeClassBytes(String, byte[])<br/>At FlatFileCacheBacking.java:[line 122]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/FlatFileCacheBacking.writeClassBytes(Ljava/lang/String;[B)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73652');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73652" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap<br/>In method org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.init(String, int)<br/>At SimpleCache.java:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap.init(Ljava/lang/String;I)Lorg/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap; parameter 1<br/>Method usage not detected<br/>At SimpleCache.java:[line 140]<br/>At SimpleCache.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73746');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73746" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap<br/>In method org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.readFromPath(String)<br/>At SimpleCache.java:[line 229]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap.readFromPath(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected<br/>At SimpleCache.java:[line 169]<br/>At SimpleCache.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73840');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73840" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap<br/>In method org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.storeMap()<br/>At SimpleCache.java:[line 212]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap.folder<br/>At SimpleCache.java:[line 212]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72242');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72242" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.WeavingAdaptor<br/>In method org.aspectj.weaver.tools.WeavingAdaptor.addAspectLibrary(String)<br/>At WeavingAdaptor.java:[line 567]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/WeavingAdaptor.addAspectLibrary(Ljava/lang/String;)V parameter 0<br/>At FileUtil.java:[line 1401]<br/>At FileUtil.java:[line 1409]<br/>At FileUtil.java:[line 1415]<br/>At WeavingAdaptor.java:[line 109]<br/>At WeavingAdaptor.java:[line 124]<br/>At WeavingAdaptor.java:[line 148]<br/>At WeavingAdaptor.java:[line 184]<br/>At WeavingAdaptor.java:[line 549]<br/>At WeavingAdaptor.java:[line 550]<br/>At WeavingAdaptor.java:[line 551]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72411');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72411" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.WeavingAdaptor<br/>In method org.aspectj.weaver.tools.WeavingAdaptor.addURL(URL)<br/>At WeavingAdaptor.java:[line 268]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source org/aspectj/weaver/tools/WeavingAdaptor.addURL(Ljava/net/URL;)V parameter 0<br/>Method usage not detected<br/>At WeavingURLClassLoader.java:[line 115]<br/>At WeavingAdaptor.java:[line 268]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72510');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72510" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.WeavingAdaptor<br/>In method org.aspectj.weaver.tools.WeavingAdaptor.dump(String, byte[], boolean)<br/>At WeavingAdaptor.java:[line 637]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/WeavingAdaptor.dump(Ljava/lang/String;[BZ)V parameter 2<br/>At ClassLoaderWeavingAdaptor.java:[line 50]<br/>At ClassLoaderWeavingAdaptor.java:[line 126]<br/>At WeavingAdaptor.java:[line 634]<br/>At WeavingAdaptor.java:[line 637]<br/>At WeavingAdaptor.java:[line 848]<br/>At WeavingAdaptor.java:[line 881]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Play<br/>In method Play.main(String[])<br/>At Play.java:[line 33]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source Play.main([Ljava/lang/String;)V parameter 0<br/>At Play.java:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66717');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66717" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.processDelta(Collection, Set, Set)<br/>At AsmManager.java:[line 584]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source org/aspectj/asm/AsmManager.setReporting(Ljava/lang/String;ZZZZ)V parameter 4<br/>Unknown source org/aspectj/asm/AsmManager.dumpFilename<br/>Method usage not detected<br/>At AsmManager.java:[line 440]<br/>At AsmManager.java:[line 584]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66816');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66816" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.reportModelInfo(String)<br/>At AsmManager.java:[line 440]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source org/aspectj/asm/AsmManager.setReporting(Ljava/lang/String;ZZZZ)V parameter 4<br/>Unknown source org/aspectj/asm/AsmManager.dumpFilename<br/>Method usage not detected<br/>At AsmManager.java:[line 440]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66905');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66905" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.aspectj.asm.AsmManager<br/>In method org.aspectj.asm.AsmManager.writeStructureModel(String)<br/>At AsmManager.java:[line 228]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.genExternFilePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/aspectj/asm/AsmManager.genExternFilePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/aspectj/asm/AsmManager.writeStructureModel(Ljava/lang/String;)V parameter 0<br/>At AsmManager.java:[line 138]<br/>At AsmManager.java:[line 227]<br/>At AsmManager.java:[line 283]<br/>At AsmManager.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73919');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73919" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap<br/>In method org.aspectj.weaver.tools.cache.SimpleCache$StoreableCachingMap.writeToPath(String, byte[])<br/>At SimpleCache.java:[line 254]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap.writeToPath(Ljava/lang/String;[B)Ljava/lang/String; parameter 1<br/>Unknown source org/aspectj/weaver/tools/cache/SimpleCache$StoreableCachingMap.folder<br/>Method usage not detected<br/>At SimpleCache.java:[line 193]<br/>At SimpleCache.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72639');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72639" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.aspectj.weaver.tools.WeavingAdaptor<br/>In method org.aspectj.weaver.tools.WeavingAdaptor.dump(String, byte[], boolean)<br/>At WeavingAdaptor.java:[line 645]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/tools/WeavingAdaptor.dump(Ljava/lang/String;[BZ)V parameter 2<br/>At ClassLoaderWeavingAdaptor.java:[line 50]<br/>At ClassLoaderWeavingAdaptor.java:[line 126]<br/>At WeavingAdaptor.java:[line 634]<br/>At WeavingAdaptor.java:[line 642]<br/>At WeavingAdaptor.java:[line 848]<br/>At WeavingAdaptor.java:[line 881]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65847');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65847" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.generic.ClassGen<br/>In method org.aspectj.apache.bcel.generic.ClassGen.getSUID()<br/>At ClassGen.java:[line 576]<br/>Value SHA</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65905');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65905" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.aspectj.apache.bcel.util.ClassLoaderRepository<br/>In method org.aspectj.apache.bcel.util.ClassLoaderRepository.loadClass(String)<br/>At ClassLoaderRepository.java:[line 317]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/aspectj/apache/bcel/util/ClassLoaderRepository$SoftHashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; parameter 0<br/>Unknown source org/aspectj/apache/bcel/util/ClassLoaderRepository.toURL(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source org/aspectj/apache/bcel/util/ClassLoaderRepository$SoftHashMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/aspectj/apache/bcel/util/ClassLoaderRepository$SoftHashMap$SpecialValue.get()Ljava/lang/Object;<br/>At ClassLoaderRepository.java:[line 273]<br/>At ClassLoaderRepository.java:[line 289]<br/>At ClassLoaderRepository.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71696');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71696" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.aspectj.weaver.loadtime.definition.DocumentParser<br/>In method org.aspectj.weaver.loadtime.definition.DocumentParser.saxParsing(URL)<br/>At DocumentParser.java:[line 157]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/loadtime/definition/DocumentParser.saxParsing(Ljava/net/URL;)Lorg/aspectj/weaver/loadtime/definition/Definition; parameter 0<br/>At BcelWorld.java:[line 970]<br/>At ClassLoaderWeavingAdaptor.java:[line 235]<br/>At ClassLoaderWeavingAdaptor.java:[line 255]<br/>At ClassLoaderWeavingAdaptor.java:[line 266]<br/>At ClassLoaderWeavingAdaptor.java:[line 268]<br/>At ClassLoaderWeavingAdaptor.java:[line 270]<br/>At ClassLoaderWeavingAdaptor.java:[line 272]<br/>At DocumentParser.java:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71845');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71845" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.aspectj.weaver.loadtime.definition.SimpleAOPParser<br/>In method org.aspectj.weaver.loadtime.definition.SimpleAOPParser.parse(URL)<br/>At SimpleAOPParser.java:[line 76]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/aspectj/weaver/loadtime/definition/SimpleAOPParser.parse(Ljava/net/URL;)Lorg/aspectj/weaver/loadtime/definition/Definition; parameter 0<br/>At BcelWorld.java:[line 970]<br/>At ClassLoaderWeavingAdaptor.java:[line 235]<br/>At ClassLoaderWeavingAdaptor.java:[line 255]<br/>At ClassLoaderWeavingAdaptor.java:[line 266]<br/>At ClassLoaderWeavingAdaptor.java:[line 268]<br/>At ClassLoaderWeavingAdaptor.java:[line 270]<br/>At ClassLoaderWeavingAdaptor.java:[line 272]<br/>At DocumentParser.java:[line 121]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

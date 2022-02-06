@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/ignite.git/ignite-hadoop-2.9.0-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>13156 lines of code analyzed,
+	in 325 classes, 
+	in 31 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">30</td>
+<td align="right">2.28</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+<td align="right">
+<b>2.28</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">30</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>30</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66514');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66514" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils<br/>In method org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils.transformException(Throwable)<br/>At HadoopUtils.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67957');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67957" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter.main(String[])<br/>At HadoopExternalProcessStarter.java:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67389');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67389" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.HadoopExternalTaskExecutor<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.HadoopExternalTaskExecutor.initJavaCommand()<br/>At HadoopExternalTaskExecutor.java:[line 469]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.javaCmd<br/>At HadoopExternalTaskExecutor.java:[line 469]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67468');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;(Ljava/util/List;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67468" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.HadoopExternalTaskExecutor<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.HadoopExternalTaskExecutor.startJavaProcess(UUID, HadoopExternalTaskMetadata, HadoopJobEx, String)<br/>At HadoopExternalTaskExecutor.java:[line 558]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;(Ljava/util/List;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.startJavaProcess(Ljava/util/UUID;Lorg/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskMetadata;Lorg/apache/ignite/internal/processors/hadoop/HadoopJobEx;Ljava/lang/String;)Ljava/lang/Process; parameter 3<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.buildClasspath(Ljava/util/Collection;)Ljava/lang/String;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.procId<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.pathSep<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskMetadata.classpath<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.addr<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskMetadata.classpath()Ljava/util/Collection;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.processId()Ljava/util/UUID;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.jobWorkFolder(Lorg/apache/ignite/internal/processors/hadoop/HadoopJobId;)Ljava/lang/String;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskMetadata.jvmOptions()Ljava/util/Collection;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.javaCmd<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.outputBase<br/>Unknown source java/util/Collection.iterator()Ljava/util/Iterator;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.jobWorkFolder(Lorg/apache/ignite/internal/processors/hadoop/HadoopJobId;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopJobEx.id()Lorg/apache/ignite/internal/processors/hadoop/HadoopJobId;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskMetadata.jvmOpts<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.parentNodeId()Ljava/util/UUID;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.address()Ljava/lang/String;<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopProcessDescriptor.parentNodeId<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/HadoopExternalTaskExecutor.buildClasspath(Ljava/util/Collection;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At HadoopExternalTaskExecutor.java:[line 527]<br/>At HadoopExternalTaskExecutor.java:[line 536]<br/>At HadoopExternalTaskExecutor.java:[line 537]<br/>At HadoopExternalTaskExecutor.java:[line 538]<br/>At HadoopExternalTaskExecutor.java:[line 539]<br/>At HadoopExternalTaskExecutor.java:[line 540]<br/>At HadoopExternalTaskExecutor.java:[line 541]<br/>At HadoopExternalTaskExecutor.java:[line 542]<br/>At HadoopExternalTaskExecutor.java:[line 543]<br/>At HadoopExternalTaskExecutor.java:[line 544]<br/>At HadoopExternalTaskExecutor.java:[line 545]<br/>At HadoopExternalTaskExecutor.java:[line 546]<br/>At HadoopExternalTaskExecutor.java:[line 547]<br/>At HadoopExternalTaskExecutor.java:[line 548]<br/>At HadoopExternalTaskExecutor.java:[line 549]<br/>At HadoopExternalTaskExecutor.java:[line 550]<br/>At HadoopExternalTaskExecutor.java:[line 551]<br/>At HadoopExternalTaskExecutor.java:[line 552]<br/>At HadoopExternalTaskExecutor.java:[line 553]<br/>At HadoopExternalTaskExecutor.java:[line 554]<br/>At HadoopExternalTaskExecutor.java:[line 555]<br/>At HadoopExternalTaskExecutor.java:[line 556]<br/>At HadoopExternalTaskExecutor.java:[line 571]<br/>At HadoopExternalTaskExecutor.java:[line 583]<br/>At HadoopExternalTaskExecutor.java:[line 584]<br/>At HadoopExternalTaskExecutor.java:[line 588]<br/>At HadoopExternalTaskMetadata.java:[line 39]<br/>At HadoopExternalTaskMetadata.java:[line 53]<br/>At HadoopProcessDescriptor.java:[line 61]<br/>At HadoopProcessDescriptor.java:[line 70]<br/>At HadoopProcessDescriptor.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner<br/>In method org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner.assignRemoteReducers(int, HadoopMapReducePlanTopology, IgniteHadoopWeightedMapReducePlanner$Mappers, Map)<br/>At IgniteHadoopWeightedMapReducePlanner.java:[line 514]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner<br/>In method org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner.assignRemoteReducers(int, HadoopMapReducePlanTopology, IgniteHadoopWeightedMapReducePlanner$Mappers, Map)<br/>At IgniteHadoopWeightedMapReducePlanner.java:[line 519]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65667" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner<br/>In method org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner.bestMapperNodeForGroup(HadoopMapReducePlanGroup, IgniteHadoopWeightedMapReducePlanner$MapperPriority, Collection, UUID)<br/>At IgniteHadoopWeightedMapReducePlanner.java:[line 322]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65725');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65725" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner<br/>In method org.apache.ignite.hadoop.mapreduce.IgniteHadoopWeightedMapReducePlanner.bestMapperNodeForGroup(HadoopMapReducePlanGroup, IgniteHadoopWeightedMapReducePlanner$MapperPriority, Collection, UUID)<br/>At IgniteHadoopWeightedMapReducePlanner.java:[line 339]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65783');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65783" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.checkIgniteHome(String)<br/>At HadoopSetup.java:[line 335]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopSetup.checkIgniteHome(Ljava/lang/String;)V parameter 0<br/>At HadoopSetup.java:[line 92]<br/>At HadoopSetup.java:[line 94]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65872');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65872" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.configureHadoop()<br/>At HadoopSetup.java:[line 188]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/util/typedef/internal/U.getIgniteHome()Ljava/lang/String;<br/>At HadoopSetup.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65951');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65951" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.configureHadoop()<br/>At HadoopSetup.java:[line 201]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66020');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66020" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.configureHadoop()<br/>At HadoopSetup.java:[line 225]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66089');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66089" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.igniteHadoopConfig(String)<br/>At HadoopSetup.java:[line 290]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopSetup.igniteHadoopConfig(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At HadoopSetup.java:[line 92]<br/>At HadoopSetup.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66178');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66178" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.igniteHadoopConfig(String)<br/>At HadoopSetup.java:[line 293]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopSetup.igniteHadoopConfig(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At HadoopSetup.java:[line 92]<br/>At HadoopSetup.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66267');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66267" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.igniteHadoopConfig(String)<br/>At HadoopSetup.java:[line 298]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopSetup.igniteHadoopConfig(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At HadoopSetup.java:[line 92]<br/>At HadoopSetup.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66356');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66356" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.processCmdFiles(File, String[])<br/>At HadoopSetup.java:[line 485]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopSetup.processCmdFiles(Ljava/io/File;[Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66430');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66430" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.HadoopSetup<br/>In method org.apache.ignite.internal.processors.hadoop.HadoopSetup.renameToBak(File)<br/>At HadoopSetup.java:[line 374]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/text/DateFormat.format(Ljava/util/Date;)Ljava/lang/String;<br/>At HadoopSetup.java:[line 374]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66945');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66945" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.fs.HadoopRawLocalFileSystem<br/>In method org.apache.ignite.internal.processors.hadoop.impl.fs.HadoopRawLocalFileSystem.convert(Path)<br/>At HadoopRawLocalFileSystem.java:[line 65]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/fs/Path.toUri()Ljava/net/URI;<br/>Unknown source java/net/URI.getPath()Ljava/lang/String;<br/>At HadoopRawLocalFileSystem.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67029');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67029" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.fs.HadoopRawLocalFileSystem<br/>In method org.apache.ignite.internal.processors.hadoop.impl.fs.HadoopRawLocalFileSystem.convert(Path)<br/>At HadoopRawLocalFileSystem.java:[line 67]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/fs/Path.toUri()Ljava/net/URI;<br/>Unknown source java/net/URI.getPath()Ljava/lang/String;<br/>At HadoopRawLocalFileSystem.java:[line 67]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66568');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66568" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils<br/>In method org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils.jobLocalDir(String, UUID, HadoopJobId)<br/>At HadoopUtils.java:[line 306]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/impl/HadoopUtils.jobLocalDir(Ljava/lang/String;Ljava/util/UUID;Lorg/apache/ignite/internal/processors/hadoop/HadoopJobId;)Ljava/io/File; parameter 0<br/>At HadoopUtils.java:[line 306]<br/>At HadoopUtils.java:[line 320]<br/>At HadoopV2Job.java:[line 332]<br/>At HadoopV2Job.java:[line 371]<br/>At HadoopV2Job.java:[line 339]<br/>At HadoopV2Job.java:[line 340]<br/>At HadoopV2TaskContext.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66707');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66707" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils<br/>In method org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils.jobLocalDir(String, UUID, HadoopJobId)<br/>At HadoopUtils.java:[line 306]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/impl/HadoopUtils.jobLocalDir(Ljava/lang/String;Ljava/util/UUID;Lorg/apache/ignite/internal/processors/hadoop/HadoopJobId;)Ljava/io/File; parameter 1<br/>At HadoopUtils.java:[line 306]<br/>At HadoopUtils.java:[line 320]<br/>At HadoopV2Job.java:[line 332]<br/>At HadoopV2Job.java:[line 371]<br/>At HadoopV2Job.java:[line 459]<br/>At HadoopV2Job.java:[line 468]<br/>At HadoopV2Job.java:[line 339]<br/>At HadoopV2TaskContext.java:[line 302]<br/>At HadoopV2TaskContext.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66866');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66866" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils<br/>In method org.apache.ignite.internal.processors.hadoop.impl.HadoopUtils.taskLocalDir(String, UUID, HadoopTaskInfo)<br/>At HadoopUtils.java:[line 322]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/HadoopTaskInfo.type()Lorg/apache/ignite/internal/processors/hadoop/HadoopTaskType;<br/>At HadoopUtils.java:[line 322]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67113');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67113" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager<br/>In method org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager.prepareTaskWorkDir(File)<br/>At HadoopV2JobResourceManager.java:[line 275]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67182');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67182" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager<br/>In method org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager.processFiles(File, Object[], boolean, boolean, Collection, String)<br/>At HadoopV2JobResourceManager.java:[line 205]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/fs/Path.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67251');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67251" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager<br/>In method org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager.processFiles(File, Object[], boolean, boolean, Collection, String)<br/>At HadoopV2JobResourceManager.java:[line 224]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67320');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67320" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager<br/>In method org.apache.ignite.internal.processors.hadoop.impl.v2.HadoopV2JobResourceManager.processFiles(File, Object[], boolean, boolean, Collection, String)<br/>At HadoopV2JobResourceManager.java:[line 230]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/fs/Path.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68011');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68011" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter.initializeStreams(File)<br/>At HadoopExternalProcessStarter.java:[line 127]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/child/HadoopExternalProcessStarter$Args.childProcId<br/>At HadoopExternalProcessStarter.java:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68090');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68090" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter.initializeStreams(File)<br/>At HadoopExternalProcessStarter.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/child/HadoopExternalProcessStarter$Args.childProcId<br/>At HadoopExternalProcessStarter.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68169');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68169" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter.outputDirectory()<br/>At HadoopExternalProcessStarter.java:[line 136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/child/HadoopExternalProcessStarter$Args.out<br/>At HadoopExternalProcessStarter.java:[line 136]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68248');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68248" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter$1<br/>In method org.apache.ignite.internal.processors.hadoop.taskexecutor.external.child.HadoopExternalProcessStarter$1.apply(String)<br/>At HadoopExternalProcessStarter.java:[line 172]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/internal/processors/hadoop/taskexecutor/external/child/HadoopExternalProcessStarter$Args.childProcId<br/>At HadoopExternalProcessStarter.java:[line 172]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,267 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 824.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.46
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.54
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.62
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.77
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.85
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.92
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r7
+		Type: javax.net.ssl.SSLContext
+		Statement: r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2117)
+		Method: <com.amazonaws.internal.SdkSSLContext: javax.net.ssl.SSLContext getPreferredSSLContext(java.security.SecureRandom)>
+		SHA-256: f12ee43ea6e7d5d6efac1f4bed5d79cca2bf4e1a4a07fec5d3ee6158733dcf89
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: b71fac4888cd35c6d0dcee0ace6be898e22d1c19a7b131d0ed37fbef397b9cb0
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <com.amazonaws.auth.SigningAlgorithm$1: javax.crypto.Mac initialValue()>
+		SHA-256: 6241535ba00eed89475763ad3b47d8ef2bc21380a24be339f72208180e9987b3
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1651)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 5a93d9c64220a38be2d934617d2b0e14661993db77e0402d1161ccd6c0d0453d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer569)
+		Method: <com.amazonaws.auth.AbstractAWSSigner$1: java.security.MessageDigest initialValue()>
+		SHA-256: 3d8d61bd65cd639cbba463dcae20f6351c71e5aaecd408246ee188bc8f7a4ef4
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: ffb583fb4e7c7af4fbed8fa829cd6901dd1bf12b3dac4f05c6de83e149686286
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 9c0f83367340309257a4739cceb2b169666255825a980bc07b1910da2d2425d0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 38379e9dc4b48cabe7efeb171b23324abb63e7718804635ee47f1ee5c4db42c3
+		Secure: false
+	Object:
+		Variable: r0
+		Type: com.amazonaws.internal.SdkDigestInputStream
+		Statement: specialinvoke r0.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r1, r2)
+		Method: <com.amazonaws.internal.SdkDigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>
+		SHA-256: 6f3668597d15dd4767c7c3b7e8ff16191513524ae676799ae79c13e925e3ad87
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r23.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: 3b752115953e965e7db8afc37093696a1c9491ae4332aac8de00ef884fa2a8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.ClientConfiguration: java.security.SecureRandom getSecureRandom()>
+		SHA-256: f2622055671fb6da37196ba867aea52de160248c65ea7a00cf853ca73eb07531
+		Secure: true
+	Object:
+		Variable: r5
+		Type: javax.net.ssl.SSLContext
+		Statement: r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2375)
+		Method: <com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory$TrustingSocketFactory: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: d5b079c53a78b04cfc48dcfcf555f7b889da7c07e13cfa6041d13cfaf9f61cfb
+		Secure: false
+	Object:
+		Variable: r23
+		Type: java.security.MessageDigest
+		Statement: r23 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1650)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: ba31dd74e9667b763562e9cc89f2ec7e33bf9bc188a368b011fd9d6c2a523748
+		Secure: false
+
+Findings in Java Class: com.amazonaws.auth.SigningAlgorithm$1
+
+	 in Method: java.lang.Object initialValue()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6241535ba00eed89475763ad3b47d8ef2bc21380a24be339f72208180e9987b3)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: return $r1
+
+
+Findings in Java Class: com.amazonaws.auth.AbstractAWSSigner$1
+
+	 in Method: java.lang.Object initialValue()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3d8d61bd65cd639cbba463dcae20f6351c71e5aaecd408246ee188bc8f7a4ef4)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+Findings in Java Class: com.amazonaws.util.Md5Utils
+
+	 in Method: byte[] computeMD5Hash(java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ba31dd74e9667b763562e9cc89f2ec7e33bf9bc188a368b011fd9d6c2a523748)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r23 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1650)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ba31dd74e9667b763562e9cc89f2ec7e33bf9bc188a368b011fd9d6c2a523748)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: r3 = virtualinvoke r23.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: byte[] computeMD5Hash(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5a93d9c64220a38be2d934617d2b0e14661993db77e0402d1161ccd6c0d0453d)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1651)
+
+
+Findings in Java Class: com.amazonaws.internal.SdkSSLContext
+
+	 in Method: javax.net.ssl.SSLContext getPreferredSSLContext(java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2115, varReplacer2115, r0)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2115, varReplacer2115, r0)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #f12ee43ea6e7d5d6efac1f4bed5d79cca2bf4e1a4a07fec5d3ee6158733dcf89)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2117)
+
+
+Findings in Java Class: com.amazonaws.auth.AbstractAWSSigner
+
+	 in Method: byte[] hash(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #6f3668597d15dd4767c7c3b7e8ff16191513524ae676799ae79c13e925e3ad87)
+			Operation on object of type com.amazonaws.internal.SdkDigestInputStream object not completed. Expected call to read
+			at statement: $r5 = virtualinvoke r2.<java.security.DigestInputStream: java.security.MessageDigest getMessageDigest()>()
+
+
+	 in Method: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+
+
+Findings in Java Class: com.amazonaws.http.apache.client.impl.ApacheConnectionManagerFactory$TrustingSocketFactory
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2373, r9, varReplacer2373)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2373, r9, varReplacer2373)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d5b079c53a78b04cfc48dcfcf555f7b889da7c07e13cfa6041d13cfaf9f61cfb)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2375)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 13
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 4
+	IncompleteOperationError: 3
+	TypestateError: 1
+	RequiredPredicateError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.290 s
+

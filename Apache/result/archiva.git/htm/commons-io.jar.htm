@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/archiva.git/commons-io.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>6255 lines of code analyzed,
+	in 110 classes, 
+	in 6 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">5.44</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+<td align="right">
+<b>5.44</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">34</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.commons.io.FileSystemUtils<br/>In method org.apache.commons.io.FileSystemUtils.openProcess(String[])<br/>At FileSystemUtils.java:[line 535]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileSystemUtils.openProcess([Ljava/lang/String;)Ljava/lang/Process; parameter 0<br/>Method usage not detected<br/>At FileSystemUtils.java:[line 264]<br/>At FileSystemUtils.java:[line 266]<br/>At FileSystemUtils.java:[line 268]<br/>At FileSystemUtils.java:[line 288]<br/>At FileSystemUtils.java:[line 290]<br/>At FileSystemUtils.java:[line 294]<br/>At FileSystemUtils.java:[line 297]<br/>At FileSystemUtils.java:[line 392]<br/>At FileSystemUtils.java:[line 396]<br/>At FileSystemUtils.java:[line 439]<br/>At FileSystemUtils.java:[line 446]<br/>At FileSystemUtils.java:[line 482]<br/>At FilenameUtils.java:[line 242]<br/>At FilenameUtils.java:[line 432]<br/>At FilenameUtils.java:[line 435]<br/>At FilenameUtils.java:[line 437]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66876');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66876" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class org.apache.commons.io.HexDump<br/>Value is hard coded in field org.apache.commons.io.HexDump._hexcodes[C with suspicious name<br/>At HexDump.java:[lines 38-158]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileCleaningTracker$Tracker<br/>In method org.apache.commons.io.FileCleaningTracker$Tracker.delete()<br/>At FileCleaningTracker.java:[line 278]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileCleaningTracker$Tracker.path<br/>At FileCleaningTracker.java:[line 278]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67124');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67124" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.filefilter.AbstractFileFilter<br/>In method org.apache.commons.io.filefilter.AbstractFileFilter.accept(File, String)<br/>At AbstractFileFilter.java:[line 51]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/filefilter/AbstractFileFilter.accept(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>At DelegateFileFilter.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67208');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67208" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.filefilter.WildcardFilter<br/>In method org.apache.commons.io.filefilter.WildcardFilter.accept(File, String)<br/>At WildcardFilter.java:[line 109]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/filefilter/WildcardFilter.accept(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65864');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65864" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.copyDirectory(File, File, FileFilter, boolean)<br/>At FileUtils.java:[line 1384]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65933');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65933" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.copyDirectoryToDirectory(File, File)<br/>At FileUtils.java:[line 1202]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66002');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66002" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.copyFileToDirectory(File, File, boolean)<br/>At FileUtils.java:[line 1012]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66071');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66071" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.doCopyDirectory(File, File, FileFilter, boolean, List)<br/>At FileUtils.java:[line 1423]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66140');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66140" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.getFile(File, String[])<br/>At FileUtils.java:[line 200]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.getFile(Ljava/io/File;[Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66214');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66214" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.getFile(String[])<br/>At FileUtils.java:[line 219]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.getFile([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66288');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66288" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.getFile(String[])<br/>At FileUtils.java:[line 221]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.getFile([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66362');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66362" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.isSymlink(File)<br/>At FileUtils.java:[line 2932]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66431');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66431" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.moveDirectoryToDirectory(File, File, boolean)<br/>At FileUtils.java:[line 2794]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66500');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66500" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.moveFileToDirectory(File, File, boolean)<br/>At FileUtils.java:[line 2871]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66569');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66569" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.toFile(URL)<br/>At FileUtils.java:[line 846]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.toFile(Ljava/net/URL;)Ljava/io/File; parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/nio/CharBuffer.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/nio/charset/Charset.decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source org/apache/commons/io/FileUtils.decodeUrl(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/commons/io/FileUtils.decodeUrl(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At FileUtils.java:[line 844]<br/>At FileUtils.java:[line 845]<br/>At FileUtils.java:[line 885]<br/>At FileUtils.java:[line 892]<br/>At FileUtils.java:[line 928]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67356');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67356" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.monitor.FileAlterationObserver<br/>In method new org.apache.commons.io.monitor.FileAlterationObserver(String)<br/>At FileAlterationObserver.java:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/monitor/FileAlterationObserver.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67430');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67430" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.monitor.FileAlterationObserver<br/>In method new org.apache.commons.io.monitor.FileAlterationObserver(String, FileFilter)<br/>At FileAlterationObserver.java:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/monitor/FileAlterationObserver.&lt;init&gt;(Ljava/lang/String;Ljava/io/FileFilter;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67504');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67504" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.monitor.FileAlterationObserver<br/>In method new org.apache.commons.io.monitor.FileAlterationObserver(String, FileFilter, IOCase)<br/>At FileAlterationObserver.java:[line 157]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/monitor/FileAlterationObserver.&lt;init&gt;(Ljava/lang/String;Ljava/io/FileFilter;Lorg/apache/commons/io/IOCase;)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67578');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67578" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.DeferredFileOutputStream<br/>In method org.apache.commons.io.output.DeferredFileOutputStream.thresholdReached()<br/>At DeferredFileOutputStream.java:[line 176]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/DeferredFileOutputStream.directory<br/>At DeferredFileOutputStream.java:[line 176]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67657');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67657" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, String)<br/>At FileWriterWithEncoding.java:[line 66]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67731');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67731" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, String, boolean)<br/>At FileWriterWithEncoding.java:[line 79]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Z)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67805');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67805" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, Charset)<br/>At FileWriterWithEncoding.java:[line 91]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/nio/charset/Charset;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67879');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67879" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, Charset, boolean)<br/>At FileWriterWithEncoding.java:[line 104]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/nio/charset/Charset;Z)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67953');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67953" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, CharsetEncoder)<br/>At FileWriterWithEncoding.java:[line 116]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68027');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68027" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.FileWriterWithEncoding<br/>In method new org.apache.commons.io.output.FileWriterWithEncoding(String, CharsetEncoder, boolean)<br/>At FileWriterWithEncoding.java:[line 129]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/FileWriterWithEncoding.&lt;init&gt;(Ljava/lang/String;Ljava/nio/charset/CharsetEncoder;Z)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68101');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68101" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.LockableFileWriter<br/>In method new org.apache.commons.io.output.LockableFileWriter(File, Charset, boolean, String)<br/>At LockableFileWriter.java:[line 197]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At LockableFileWriter.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68180');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68180" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.io.output.LockableFileWriter<br/>In method new org.apache.commons.io.output.LockableFileWriter(String, boolean, String)<br/>At LockableFileWriter.java:[line 99]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/output/LockableFileWriter.&lt;init&gt;(Ljava/lang/String;ZLjava/lang/String;)V parameter 2<br/>Method usage not detected<br/>At LockableFileWriter.java:[line 74]<br/>At LockableFileWriter.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68274');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68274" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.commons.io.output.LockableFileWriter<br/>In method org.apache.commons.io.output.LockableFileWriter.initWriter(File, Charset, boolean)<br/>At LockableFileWriter.java:[line 273]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66728');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66728" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.copyURLToFile(URL, File)<br/>At FileUtils.java:[line 1460]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.copyURLToFile(Ljava/net/URL;Ljava/io/File;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66802');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66802" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.io.FileUtils<br/>In method org.apache.commons.io.FileUtils.copyURLToFile(URL, File, int, int)<br/>At FileUtils.java:[line 1486]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/FileUtils.copyURLToFile(Ljava/net/URL;Ljava/io/File;II)V parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67282');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67282" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.io.input.XmlStreamReader<br/>In method new org.apache.commons.io.input.XmlStreamReader(URL)<br/>At XmlStreamReader.java:[line 241]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/input/XmlStreamReader.&lt;init&gt;(Ljava/net/URL;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66916');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66916" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.io.IOUtils<br/>In method org.apache.commons.io.IOUtils.toByteArray(URL)<br/>At IOUtils.java:[line 633]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/IOUtils.toByteArray(Ljava/net/URL;)[B parameter 0<br/>Method usage not detected<br/>At IOUtils.java:[line 617]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67000');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67000" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.io.IOUtils<br/>In method org.apache.commons.io.IOUtils.toString(URL, Charset)<br/>At IOUtils.java:[line 894]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/io/IOUtils.toString(Ljava/net/URL;Ljava/nio/charset/Charset;)Ljava/lang/String; parameter 1<br/>Method usage not detected<br/>At IOUtils.java:[line 833]<br/>At IOUtils.java:[line 848]<br/>At IOUtils.java:[line 866]<br/>At IOUtils.java:[line 879]<br/>At IOUtils.java:[line 917]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

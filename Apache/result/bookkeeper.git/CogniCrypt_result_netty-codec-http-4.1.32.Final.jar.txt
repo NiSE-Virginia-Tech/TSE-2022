@@ -1,0 +1,103 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 509.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer535)
+		Method: <io.netty.handler.codec.http.websocketx.WebSocketUtil$2: java.security.MessageDigest initialValue()>
+		SHA-256: 33d5899be8f885e4011c0174bb7d1d1c0f605bbc19f05c7e8b8280e19774eeb2
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1893)
+		Method: <io.netty.handler.codec.http.websocketx.WebSocketUtil$1: java.security.MessageDigest initialValue()>
+		SHA-256: 5865d20a9e643627ad495ced18b817e4c8fbc3a0b7328b9b0861029e6b37cf55
+		Secure: false
+
+Findings in Java Class: io.netty.handler.codec.http.websocketx.WebSocketUtil$2
+
+	 in Method: java.security.MessageDigest initialValue()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #33d5899be8f885e4011c0174bb7d1d1c0f605bbc19f05c7e8b8280e19774eeb2)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer535)
+
+
+	 in Method: java.lang.Object initialValue()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #33d5899be8f885e4011c0174bb7d1d1c0f605bbc19f05c7e8b8280e19774eeb2)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+Findings in Java Class: io.netty.handler.codec.http.websocketx.WebSocketUtil$1
+
+	 in Method: java.security.MessageDigest initialValue()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5865d20a9e643627ad495ced18b817e4c8fbc3a0b7328b9b0861029e6b37cf55)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1893)
+
+
+	 in Method: java.lang.Object initialValue()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5865d20a9e643627ad495ced18b817e4c8fbc3a0b7328b9b0861029e6b37cf55)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 2
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.957 s
+

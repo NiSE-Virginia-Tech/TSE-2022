@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/zheng/zheng-upms/zheng-upms-client/target/zheng-upms-client.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>380 lines of code analyzed,
+	in 11 classes, 
+	in 6 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">10.53</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">7.89</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>7</b>
+</td>
+<td align="right">
+<b>18.42</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">7</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>7</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.validateClient(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 146]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 1<br/>Tainted source javax/servlet/ServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At UpmsAuthenticationFilter.java:[line 124]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECHTTPCLIENT</span>
+</td>
+<td>DefaultHttpClient with default constructor is not compatible with TLS 1.2</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#DEFAULT_HTTP_CLIENT">Bug type DEFAULT_HTTP_CLIENT (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.validateClient(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 130]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66354');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.zheng.upms.client.util.SerializableUtil.deserialize(String)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66354" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.zheng.upms.client.util.SerializableUtil<br/>In method com.zheng.upms.client.util.SerializableUtil.deserialize(String)<br/>At SerializableUtil.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65683');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65683" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.onAccessDenied(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 89]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getQueryString()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/net/URLEncoder.encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/zheng/common/util/PropertiesFileUtil.get(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURL()Ljava/lang/StringBuffer;<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>At UpmsAuthenticationFilter.java:[line 73]<br/>At UpmsAuthenticationFilter.java:[line 80]<br/>At UpmsAuthenticationFilter.java:[line 83]<br/>At UpmsAuthenticationFilter.java:[line 84]<br/>At UpmsAuthenticationFilter.java:[line 86]<br/>At UpmsAuthenticationFilter.java:[line 88]<br/>At UpmsAuthenticationFilter.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65852');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65852" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.validateClient(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 115]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Map.entrySet()Ljava/util/Set;<br/>Tainted source com/zheng/upms/client/util/RequestParameterUtil.getParameterWithOutCode(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameterMap()Ljava/util/Map;<br/>Tainted source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURL()Ljava/lang/StringBuffer;<br/>Tainted source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>At UpmsAuthenticationFilter.java:[line 112]<br/>At UpmsAuthenticationFilter.java:[line 115]<br/>At RequestParameterUtil.java:[line 20]<br/>At RequestParameterUtil.java:[line 22]<br/>At RequestParameterUtil.java:[line 23]<br/>At RequestParameterUtil.java:[line 26]<br/>At RequestParameterUtil.java:[line 28]<br/>At RequestParameterUtil.java:[line 33]<br/>At RequestParameterUtil.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66051');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66051" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.validateClient(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 155]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Map.entrySet()Ljava/util/Set;<br/>Tainted source com/zheng/upms/client/util/RequestParameterUtil.getParameterWithOutCode(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameterMap()Ljava/util/Map;<br/>Tainted source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURL()Ljava/lang/StringBuffer;<br/>Tainted source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>At UpmsAuthenticationFilter.java:[line 148]<br/>At UpmsAuthenticationFilter.java:[line 155]<br/>At RequestParameterUtil.java:[line 20]<br/>At RequestParameterUtil.java:[line 22]<br/>At RequestParameterUtil.java:[line 23]<br/>At RequestParameterUtil.java:[line 26]<br/>At RequestParameterUtil.java:[line 28]<br/>At RequestParameterUtil.java:[line 33]<br/>At RequestParameterUtil.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66250');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66250" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter<br/>In method com.zheng.upms.client.shiro.filter.UpmsAuthenticationFilter.onAccessDenied(ServletRequest, ServletResponse)<br/>At UpmsAuthenticationFilter.java:[line 77]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source com/zheng/common/util/PropertiesFileUtil.get(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>At UpmsAuthenticationFilter.java:[line 73]<br/>At UpmsAuthenticationFilter.java:[line 77]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="DEFAULT_HTTP_CLIENT">DEFAULT_HTTP_CLIENT: DefaultHttpClient with default constructor is not compatible with TLS 1.2</a>
+</h2>
+            
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>HttpClient client = new DefaultHttpClient();</pre>
+</p>
+<p>
+<p><b>Solution:</b><br/>
+
+Upgrade your implementation to use one of the recommended constructs and configure <code>https.protocols</code> JVM option to include TLSv1.2:</p>
+
+<p>
+<ul>
+  <li>Use <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/SystemDefaultHttpClient.html">SystemDefaultHttpClient</a> instead</li>
+<p>
+    <b>Sample Code:</b><br/>
+<pre>HttpClient client = new SystemDefaultHttpClient();</pre>
+</p>
+  <li>Create an HttpClient based on SSLSocketFactory - get an SSLScoketFactory instance with <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/conn/ssl/SSLSocketFactory.html#getSystemSocketFactory()"><code>getSystemSocketFactory()</code></a> and use this instance for HttpClient creation</li>
+  <li>Create an HttpClient based on SSLConnectionSocketFactory - get an instance with <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/conn/ssl/SSLConnectionSocketFactory.html#getSystemSocketFactory()"><code>getSystemSocketFactory()</code></a> and use this instance for HttpClient creation</li>
+  <li>Use HttpClientBuilder - call <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/HttpClientBuilder.html#useSystemProperties()"><code>useSystemProperties()</code></a> before calling <code>build()</code></li>
+<p>
+    <b>Sample Code:</b><br/>
+<pre>HttpClient client = HttpClientBuilder.create().useSystemProperties().build();</pre>
+</p>
+  <li>HttpClients - call <a href="https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/HttpClients.html#createSystem()"><code>createSystem()</code></a> to create an instance</li>
+<p>
+    <b>Sample Code:</b><br/>
+<pre>HttpClient client = HttpClients.createSystem();</pre>
+</p>
+</ul>
+</p>
+<br/>
+
+<p>
+<b>References</b><br/>
+<a href="https://blogs.oracle.com/java-platform-group/entry/diagnosing_tls_ssl_and_https">Diagnosing TLS, SSL, and HTTPS</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        </body>
+</html>

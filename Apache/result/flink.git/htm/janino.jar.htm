@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/flink.git/janino.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>14525 lines of code analyzed,
+	in 376 classes, 
+	in 6 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">12</td>
+<td align="right">0.83</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">1.38</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>32</b>
+</td>
+<td align="right">
+<b>2.20</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">32</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>32</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66614');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66614" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.codehaus.janino.SimpleCompiler<br/>In method org.codehaus.janino.SimpleCompiler.compile(String)<br/>At SimpleCompiler.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67661');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67661" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.codehaus.janino.util.CausedException<br/>In method org.codehaus.janino.util.CausedException.printStackTrace(PrintStream)<br/>At CausedException.java:[line 98]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67715');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67715" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.codehaus.janino.util.CausedException<br/>In method org.codehaus.janino.util.CausedException.printStackTrace(PrintWriter)<br/>At CausedException.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler<br/>In method org.codehaus.janino.Compiler.main(String[])<br/>At Compiler.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/Compiler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler<br/>In method org.codehaus.janino.Compiler.main(String[])<br/>At Compiler.java:[line 141]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/Compiler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65689');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65689" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler<br/>In method org.codehaus.janino.Compiler.compile(Resource[])<br/>At Compiler.java:[line 514]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Java$CompilationUnit.optionalFileName<br/>At Compiler.java:[line 514]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65768');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65768" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler<br/>In method org.codehaus.janino.Compiler.getClassFile(String, File, File)<br/>At Compiler.java:[line 591]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/Compiler.getClassFile(Ljava/lang/String;Ljava/io/File;Ljava/io/File;)Ljava/io/File; parameter 2<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At Compiler.java:[line 591]<br/>At ClassFile.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65882');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65882" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler<br/>In method org.codehaus.janino.Compiler.getClassFile(String, File, File)<br/>At Compiler.java:[line 594]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/Compiler.getClassFile(Ljava/lang/String;Ljava/io/File;Ljava/io/File;)Ljava/io/File; parameter 2<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At Compiler.java:[line 594]<br/>At ClassFile.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65996');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65996" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler$3<br/>In method org.codehaus.janino.Compiler$3.getFile(String)<br/>At Compiler.java:[line 617]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Compiler$3.getFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At Compiler.java:[line 617]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66080');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66080" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Compiler$CompilerIClassLoader<br/>In method org.codehaus.janino.Compiler$CompilerIClassLoader.findIClass(String)<br/>At Compiler.java:[line 699]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/Compiler$CompilerIClassLoader.findIClass(Ljava/lang/String;)Lorg/codehaus/janino/IClass; parameter 0<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/codehaus/janino/Descriptor.toClassName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/Descriptor.toClassName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At Compiler.java:[line 673]<br/>At Compiler.java:[line 699]<br/>At Descriptor.java:[line 174]<br/>At Descriptor.java:[line 179]<br/>At ClassFile.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66234');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66234" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Cookable<br/>In method org.codehaus.janino.Cookable.cookFile(String, String)<br/>At Cookable.java:[line 133]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Cookable.cookFile(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected<br/>At Cookable.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66318');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66318" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.JavaSourceClassLoader<br/>In method org.codehaus.janino.JavaSourceClassLoader.main(String[])<br/>At JavaSourceClassLoader.java:[line 153]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/JavaSourceClassLoader.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66387');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66387" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Scanner<br/>In method new org.codehaus.janino.Scanner(String)<br/>At Scanner.java:[line 63]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Scanner.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66461');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66461" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Scanner<br/>In method new org.codehaus.janino.Scanner(String, Reader, short, short)<br/>At Scanner.java:[line 213]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At Scanner.java:[line 212]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66540');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66540" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.Scanner<br/>In method new org.codehaus.janino.Scanner(String, String)<br/>At Scanner.java:[line 77]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Scanner.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66668');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66668" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.SimpleCompiler<br/>In method org.codehaus.janino.SimpleCompiler.main(String[])<br/>At SimpleCompiler.java:[line 91]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/SimpleCompiler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66994');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66994" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.Disassembler<br/>In method org.codehaus.janino.tools.Disassembler.main(String[])<br/>At Disassembler.java:[line 74]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/tools/Disassembler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67063');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67063" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.Disassembler<br/>In method org.codehaus.janino.tools.Disassembler.main(String[])<br/>At Disassembler.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/tools/Disassembler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67132');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67132" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.Disassembler<br/>In method org.codehaus.janino.tools.Disassembler.disasmClassFile(DataInputStream)<br/>At Disassembler.java:[line 227]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/tools/Disassembler$ConstantUtf8Info.getValue()Ljava/lang/String;<br/>Unknown source org/codehaus/janino/tools/Disassembler$ConstantUtf8Info.value<br/>At Disassembler.java:[line 224]<br/>At Disassembler.java:[line 1365]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67295');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67295" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.HprofScrubber<br/>In method org.codehaus.janino.tools.HprofScrubber.main(String[])<br/>At HprofScrubber.java:[line 72]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/tools/HprofScrubber.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67364');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67364" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.JGrep<br/>In method org.codehaus.janino.tools.JGrep.main(String[])<br/>At JGrep.java:[line 136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/tools/JGrep.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67433');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67433" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.JGrep<br/>In method org.codehaus.janino.tools.JGrep.getClassFile(String, File, File)<br/>At JGrep.java:[line 641]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/codehaus/janino/tools/JGrep.getClassFile(Ljava/lang/String;Ljava/io/File;Ljava/io/File;)Ljava/io/File; parameter 2<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At JGrep.java:[line 641]<br/>At ClassFile.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67547');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67547" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.tools.JGrep<br/>In method org.codehaus.janino.tools.JGrep.getClassFile(String, File, File)<br/>At JGrep.java:[line 644]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/codehaus/janino/tools/JGrep.getClassFile(Ljava/lang/String;Ljava/io/File;Ljava/io/File;)Ljava/io/File; parameter 2<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/codehaus/janino/util/ClassFile.getClassFileResourceName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At JGrep.java:[line 644]<br/>At ClassFile.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66737');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66737" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.UnitCompiler<br/>In method org.codehaus.janino.UnitCompiler.compile2(Java$ClassDeclaration)<br/>At UnitCompiler.java:[line 174]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Location.getFileName()Ljava/lang/String;<br/>Unknown source org/codehaus/janino/Location.optionalFileName<br/>At Location.java:[line 48]<br/>At UnitCompiler.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66831');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66831" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.UnitCompiler<br/>In method org.codehaus.janino.UnitCompiler.compile2(Java$InterfaceDeclaration)<br/>At UnitCompiler.java:[line 408]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/Location.getFileName()Ljava/lang/String;<br/>Unknown source org/codehaus/janino/Location.optionalFileName<br/>At Location.java:[line 48]<br/>At UnitCompiler.java:[line 406]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66925');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66925" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.UnparseVisitor<br/>In method org.codehaus.janino.UnparseVisitor.main(String[])<br/>At UnparseVisitor.java:[line 62]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/UnparseVisitor.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67769');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67769" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.util.resource.DirectoryResourceCreator<br/>In method org.codehaus.janino.util.resource.DirectoryResourceCreator.getFile(String)<br/>At DirectoryResourceCreator.java:[line 51]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/util/resource/DirectoryResourceCreator.getFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At DirectoryResourceCreator.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67853');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67853" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.util.resource.DirectoryResourceFinder<br/>In method org.codehaus.janino.util.resource.DirectoryResourceFinder.findResourceAsFile(String)<br/>At DirectoryResourceFinder.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/util/resource/DirectoryResourceFinder.findResourceAsFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At DirectoryResourceFinder.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67937');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67937" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.util.resource.DirectoryResourceFinder<br/>In method org.codehaus.janino.util.resource.DirectoryResourceFinder.findResourceAsFile(String)<br/>At DirectoryResourceFinder.java:[line 80]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/util/resource/DirectoryResourceFinder.findResourceAsFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At DirectoryResourceFinder.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68021');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68021" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.util.resource.PathResourceFinder<br/>In method org.codehaus.janino.util.resource.PathResourceFinder.parsePath(String)<br/>At PathResourceFinder.java:[line 99]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/util/resource/PathResourceFinder.parsePath(Ljava/lang/String;)[Ljava/io/File; parameter 0<br/>Method usage with tainted arguments detected<br/>At Compiler.java:[line 92]<br/>At Compiler.java:[line 95]<br/>At Compiler.java:[line 98]<br/>At Compiler.java:[line 101]<br/>At JavaSourceClassLoader.java:[line 90]<br/>At JGrep.java:[line 100]<br/>At JGrep.java:[line 103]<br/>At JGrep.java:[line 106]<br/>At PathResourceFinder.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68185');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68185" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.codehaus.janino.util.resource.PathResourceFinder<br/>In method org.codehaus.janino.util.resource.PathResourceFinder.parsePath(String)<br/>At PathResourceFinder.java:[line 102]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/janino/util/resource/PathResourceFinder.parsePath(Ljava/lang/String;)[Ljava/io/File; parameter 0<br/>Method usage with tainted arguments detected<br/>At Compiler.java:[line 92]<br/>At Compiler.java:[line 95]<br/>At Compiler.java:[line 98]<br/>At Compiler.java:[line 101]<br/>At JavaSourceClassLoader.java:[line 90]<br/>At JGrep.java:[line 100]<br/>At JGrep.java:[line 103]<br/>At JGrep.java:[line 106]<br/>At PathResourceFinder.java:[line 102]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67226');">
+<td>
+<span class="priority-1">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67226" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.codehaus.janino.tools.Disassembler<br/>In method org.codehaus.janino.tools.Disassembler.main(String[])<br/>At Disassembler.java:[line 68]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/codehaus/janino/tools/Disassembler.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

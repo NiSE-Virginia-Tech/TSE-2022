@@ -1,0 +1,152 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 692.6 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r5
+		Type: java.security.MessageDigest
+		Statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1576)
+		Method: <com.datastax.driver.core.PagingState: byte[] hash(com.datastax.driver.core.Statement,com.datastax.driver.core.ProtocolVersion,com.datastax.driver.core.CodecRegistry)>
+		SHA-256: e988021b2bd9e382a9ba524c1a2dd67eddfc4d8dd532512e6009f9a56f831d56
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.datastax.driver.core.Token$RPToken$RPTokenFactory: java.math.BigInteger md5(java.nio.ByteBuffer)>
+		SHA-256: b2e4b770ac11b4ecaca44b2180af53ccb99a21444a3cb1778714dcdc83a72c6a
+		Secure: false
+	Object:
+		Variable: r8
+		Type: java.security.MessageDigest
+		Statement: r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2410)
+		Method: <com.datastax.driver.core.Token$RPToken$RPTokenFactory: java.math.BigInteger md5(java.nio.ByteBuffer)>
+		SHA-256: 77e5cb3dcc91c0bed47e1cfd5c31044adaf35a0b8524c6982dd04fbb9aa82fdf
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: r4 = virtualinvoke r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.datastax.driver.core.PagingState: byte[] hash(com.datastax.driver.core.Statement,com.datastax.driver.core.ProtocolVersion,com.datastax.driver.core.CodecRegistry)>
+		SHA-256: 98bb0e6f5f9166e519db80b99a23a4cb4416c3377f290561ae390a267bc54e11
+		Secure: false
+	Object:
+		Variable: r10
+		Type: java.security.MessageDigest
+		Statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3551)
+		Method: <com.datastax.driver.core.utils.UUIDs: long makeNode()>
+		SHA-256: f03c5e48175ea7784fc12462f1505ec120b1cc91461bedaafb6b09433595927f
+		Secure: false
+	Object:
+		Variable: r14
+		Type: byte[]
+		Statement: r14 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.datastax.driver.core.utils.UUIDs: long makeNode()>
+		SHA-256: 3057e34bfb34b17544aa3ee0d01e23f7cc7c0194e426562afa7a4dd50e9cc962
+		Secure: false
+
+Findings in Java Class: com.datastax.driver.core.JdkSSLOptions
+
+	 in Method: javax.net.ssl.SSLContext makeDefaultContext()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>.
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+Findings in Java Class: com.datastax.driver.core.PagingState
+
+	 in Method: byte[] hash(com.datastax.driver.core.Statement,com.datastax.driver.core.ProtocolVersion,com.datastax.driver.core.CodecRegistry)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e988021b2bd9e382a9ba524c1a2dd67eddfc4d8dd532512e6009f9a56f831d56)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1576)
+
+
+Findings in Java Class: com.datastax.driver.core.Token$RPToken$RPTokenFactory
+
+	 in Method: java.math.BigInteger md5(java.nio.ByteBuffer)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #77e5cb3dcc91c0bed47e1cfd5c31044adaf35a0b8524c6982dd04fbb9aa82fdf)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2410)
+
+
+Findings in Java Class: com.datastax.driver.core.utils.UUIDs
+
+	 in Method: long makeNode()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f03c5e48175ea7784fc12462f1505ec120b1cc91461bedaafb6b09433595927f)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r14 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f03c5e48175ea7784fc12462f1505ec120b1cc91461bedaafb6b09433595927f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3551)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 6
+
+	CogniCrypt found the following violations. For details see description above.
+	ForbiddenMethodError: 1
+	TypestateError: 1
+	ConstraintError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.244 s
+

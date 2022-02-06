@@ -1,0 +1,1785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/activemq-core-5.2.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>72831 lines of code analyzed,
+	in 1361 classes, 
+	in 74 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.14</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">77</td>
+<td align="right">1.06</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>87</b>
+</td>
+<td align="right">
+<b>1.19</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">87</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>87</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72579');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72579" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.activemq.transport.stomp.ProtocolConverter<br/>In method org.apache.activemq.transport.stomp.ProtocolConverter.handleException(Throwable, StompFrame)<br/>At ProtocolConverter.java:[line 207]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66601');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66601" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.apache.activemq.jaas.LDAPLoginModule<br/>In method org.apache.activemq.jaas.LDAPLoginModule.authenticate(String, String)<br/>At LDAPLoginModule.java:[line 206]<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source java/text/MessageFormat.format(Ljava/lang/Object;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66670');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66670" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.apache.activemq.jaas.LDAPLoginModule<br/>In method org.apache.activemq.jaas.LDAPLoginModule.getRoles(DirContext, String, String, ArrayList)<br/>At LDAPLoginModule.java:[line 274]<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source java/text/MessageFormat.format(Ljava/lang/Object;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67404');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67404" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.apache.activemq.network.LdapNetworkConnector<br/>In method org.apache.activemq.network.LdapNetworkConnector.start()<br/>At LdapNetworkConnector.java:[line 242]<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source org/apache/activemq/network/LdapNetworkConnector.searchFilter<br/>At LdapNetworkConnector.java:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69082');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69082" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.apache.activemq.security.LDAPAuthorizationMap<br/>In method org.apache.activemq.security.LDAPAuthorizationMap.getACLs(ActiveMQDestination, String, String)<br/>At LDAPAuthorizationMap.java:[line 344]<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 1<br/>Unknown source org/apache/activemq/security/LDAPAuthorizationMap.getACLs(Lorg/apache/activemq/command/ActiveMQDestination;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Set; parameter 1<br/>At LDAPAuthorizationMap.java:[line 154]<br/>At LDAPAuthorizationMap.java:[line 158]<br/>At LDAPAuthorizationMap.java:[line 162]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66431');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.activemq.command.ActiveMQObjectMessage.getObject()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66431" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.activemq.command.ActiveMQObjectMessage<br/>In method org.apache.activemq.command.ActiveMQObjectMessage.getObject()<br/>At ActiveMQObjectMessage.java:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67113');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.activemq.kaha.ObjectMarshaller.readPayload(DataInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67113" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.activemq.kaha.ObjectMarshaller<br/>In method org.apache.activemq.kaha.ObjectMarshaller.readPayload(DataInput)<br/>At ObjectMarshaller.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72756');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.activemq.wireformat.ObjectStreamWireFormat.unmarshal(DataInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72756" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.activemq.wireformat.ObjectStreamWireFormat<br/>In method org.apache.activemq.wireformat.ObjectStreamWireFormat.unmarshal(DataInput)<br/>At ObjectStreamWireFormat.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67055');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67055" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.activemq.jmdns.JmDNS<br/>In method org.apache.activemq.jmdns.JmDNS.&lt;static initializer for JmDNS&gt;()<br/>At JmDNS.java:[line 121]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.activemq.RedeliveryPolicy<br/>In method org.apache.activemq.RedeliveryPolicy.getRandomNumberGenerator()<br/>At RedeliveryPolicy.java:[line 127]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72521');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72521" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.activemq.transport.failover.FailoverTransport<br/>In method org.apache.activemq.transport.failover.FailoverTransport.getConnectList()<br/>At FailoverTransport.java:[line 554]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65877');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65877" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.broker.BrokerService<br/>In method org.apache.activemq.broker.BrokerService.getBrokerDataDirectory()<br/>At BrokerService.java:[line 638]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/broker/BrokerService.getBrokerName()Ljava/lang/String;<br/>Unknown source org/apache/activemq/broker/BrokerService.brokerName<br/>At BrokerService.java:[line 602]<br/>At BrokerService.java:[line 637]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65971');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65971" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.broker.BrokerService<br/>In method org.apache.activemq.broker.BrokerService.setDataDirectory(String)<br/>At BrokerService.java:[line 648]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/broker/BrokerService.setDataDirectory(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66045');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66045" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.broker.PropertiesBrokerFactory<br/>In method org.apache.activemq.broker.PropertiesBrokerFactory.loadProperties(URI)<br/>At PropertiesBrokerFactory.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/activemq/broker/PropertiesBrokerFactory.loadProperties(Ljava/net/URI;)Ljava/util/Map; parameter 0<br/>Method usage not detected<br/>At PropertiesBrokerFactory.java:[line 41]<br/>At PropertiesBrokerFactory.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66739');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66739" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.jaas.PropertiesLoginModule<br/>In method org.apache.activemq.jaas.PropertiesLoginModule.login()<br/>At PropertiesLoginModule.java:[line 83]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/jaas/PropertiesLoginModule.usersFile<br/>At PropertiesLoginModule.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66818');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66818" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.jaas.PropertiesLoginModule<br/>In method org.apache.activemq.jaas.PropertiesLoginModule.login()<br/>At PropertiesLoginModule.java:[line 91]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/jaas/PropertiesLoginModule.groupsFile<br/>At PropertiesLoginModule.java:[line 91]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66897');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66897" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.jaas.TextFileCertificateLoginModule<br/>In method org.apache.activemq.jaas.TextFileCertificateLoginModule.getUserGroups(String)<br/>At TextFileCertificateLoginModule.java:[line 120]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/jaas/TextFileCertificateLoginModule.groupsFilePathname<br/>At TextFileCertificateLoginModule.java:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66976');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66976" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.jaas.TextFileCertificateLoginModule<br/>In method org.apache.activemq.jaas.TextFileCertificateLoginModule.getUserNameForCertificates(X509Certificate[])<br/>At TextFileCertificateLoginModule.java:[line 85]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/jaas/TextFileCertificateLoginModule.usersFilePathname<br/>At TextFileCertificateLoginModule.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67167');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67167" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.kaha.impl.async.AsyncDataManager<br/>In method org.apache.activemq.kaha.impl.async.AsyncDataManager.allocateLocation(Location)<br/>At AsyncDataManager.java:[line 271]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/kaha/impl/async/AsyncDataManager.filePrefix<br/>At AsyncDataManager.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67246');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67246" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.kaha.impl.async.AsyncDataManager<br/>In method org.apache.activemq.kaha.impl.async.AsyncDataManager.lock()<br/>At AsyncDataManager.java:[line 201]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/kaha/impl/async/AsyncDataManager.filePrefix<br/>At AsyncDataManager.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67325');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67325" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.kaha.impl.data.DataManagerImpl<br/>In method org.apache.activemq.kaha.impl.data.DataManagerImpl.createAndAddDataFile(int)<br/>At DataManagerImpl.java:[line 93]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/kaha/impl/data/DataManagerImpl.dataFilePrefix<br/>At DataManagerImpl.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67483');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67483" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CGeneratorTask.main(String[])<br/>At CGeneratorTask.java:[line 49]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67552');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67552" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CGeneratorTask.main(String[])<br/>At CGeneratorTask.java:[line 53]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67621');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67621" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CGeneratorTask.execute()<br/>At CGeneratorTask.java:[line 68]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CGeneratorTask.source<br/>At CGeneratorTask.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67700');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67700" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CHeadersGenerator<br/>In method org.apache.activemq.openwire.tool.CHeadersGenerator.run()<br/>At CHeadersGenerator.java:[line 44]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CHeadersGenerator.targetDir<br/>At CHeadersGenerator.java:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68233');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68233" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CppClassesGenerator<br/>In method org.apache.activemq.openwire.tool.CppClassesGenerator.run()<br/>At CppClassesGenerator.java:[line 37]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CppClassesGenerator.targetDir<br/>At CppClassesGenerator.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68312');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68312" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CppGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CppGeneratorTask.main(String[])<br/>At CppGeneratorTask.java:[line 49]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CppGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68381');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68381" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CppGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CppGeneratorTask.main(String[])<br/>At CppGeneratorTask.java:[line 53]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CppGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68450');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68450" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CppGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CppGeneratorTask.execute()<br/>At CppGeneratorTask.java:[line 68]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CppGeneratorTask.source<br/>At CppGeneratorTask.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68529');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68529" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CppMarshallingHeadersGenerator<br/>In method org.apache.activemq.openwire.tool.CppMarshallingHeadersGenerator.run()<br/>At CppMarshallingHeadersGenerator.java:[line 32]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CppMarshallingHeadersGenerator.targetDir<br/>At CppMarshallingHeadersGenerator.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67779');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67779" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSharpClassesGenerator<br/>In method org.apache.activemq.openwire.tool.CSharpClassesGenerator.run()<br/>At CSharpClassesGenerator.java:[line 38]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CSharpClassesGenerator.targetDir<br/>At CSharpClassesGenerator.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67858');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67858" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSharpGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CSharpGeneratorTask.main(String[])<br/>At CSharpGeneratorTask.java:[line 49]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CSharpGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67927');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67927" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSharpGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CSharpGeneratorTask.main(String[])<br/>At CSharpGeneratorTask.java:[line 53]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/CSharpGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67996');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67996" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSharpGeneratorTask<br/>In method org.apache.activemq.openwire.tool.CSharpGeneratorTask.execute()<br/>At CSharpGeneratorTask.java:[line 68]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CSharpGeneratorTask.source<br/>At CSharpGeneratorTask.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68075');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68075" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSharpMarshallingGenerator<br/>In method org.apache.activemq.openwire.tool.CSharpMarshallingGenerator.run()<br/>At CSharpMarshallingGenerator.java:[line 42]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CSharpMarshallingGenerator.targetDir<br/>At CSharpMarshallingGenerator.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68154');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68154" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.CSourcesGenerator<br/>In method org.apache.activemq.openwire.tool.CSourcesGenerator.run()<br/>At CSourcesGenerator.java:[line 38]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/CSourcesGenerator.targetDir<br/>At CSourcesGenerator.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68608');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68608" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.JavaGeneratorTask<br/>In method org.apache.activemq.openwire.tool.JavaGeneratorTask.main(String[])<br/>At JavaGeneratorTask.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/activemq/openwire/tool/JavaGeneratorTask.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68677');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68677" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.JavaGeneratorTask<br/>In method org.apache.activemq.openwire.tool.JavaGeneratorTask.execute()<br/>At JavaGeneratorTask.java:[line 63]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/JavaGeneratorTask.basedir<br/>At JavaGeneratorTask.java:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68756');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68756" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.JavaMarshallingGenerator<br/>In method org.apache.activemq.openwire.tool.JavaMarshallingGenerator.processFactory()<br/>At JavaMarshallingGenerator.java:[line 268]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/JavaMarshallingGenerator.factoryFileName<br/>Unknown source org/apache/activemq/openwire/tool/JavaMarshallingGenerator.filePostFix<br/>At JavaMarshallingGenerator.java:[line 268]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68840');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68840" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.JavaMarshallingGenerator<br/>In method org.apache.activemq.openwire.tool.JavaMarshallingGenerator.run()<br/>At JavaMarshallingGenerator.java:[line 47]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/JavaMarshallingGenerator.targetDir<br/>At JavaMarshallingGenerator.java:[line 47]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68919');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68919" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.JavaTestsGenerator<br/>In method org.apache.activemq.openwire.tool.JavaTestsGenerator.run()<br/>At JavaTestsGenerator.java:[line 38]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/JavaTestsGenerator.targetDir<br/>At JavaTestsGenerator.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68998');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68998" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.openwire.tool.MultiSourceGenerator<br/>In method org.apache.activemq.openwire.tool.MultiSourceGenerator.processClass(JClass)<br/>At MultiSourceGenerator.java:[line 100]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/openwire/tool/MultiSourceGenerator.className<br/>Unknown source org/apache/activemq/openwire/tool/MultiSourceGenerator.filePostFix<br/>At MultiSourceGenerator.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69181');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69181" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.DataSourceSupport<br/>In method org.apache.activemq.store.jdbc.DataSourceSupport.getDataDirectoryFile()<br/>At DataSourceSupport.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/DataSourceSupport.dataDirectory<br/>Unknown source org/apache/activemq/store/jdbc/DataSourceSupport.getDataDirectory()Ljava/lang/String;<br/>At DataSourceSupport.java:[line 48]<br/>At DataSourceSupport.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72633');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72633" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.util.IOHelper<br/>In method org.apache.activemq.util.IOHelper.moveFile(File, File)<br/>At IOHelper.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72810');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72810" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.activemq.xbean.XBeanBrokerFactory<br/>In method org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(String)<br/>At XBeanBrokerFactory.java:[line 88]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/xbean/XBeanBrokerFactory.createApplicationContext(Ljava/lang/String;)Lorg/springframework/context/ApplicationContext; parameter 0<br/>Method usage not detected<br/>At XBeanBrokerFactory.java:[line 51]<br/>At XBeanBrokerFactory.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66258');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66258" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.activemq.broker.view.DotFileInterceptorSupport<br/>In method org.apache.activemq.broker.view.DotFileInterceptorSupport.generateFile()<br/>At DotFileInterceptorSupport.java:[line 46]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/broker/view/DotFileInterceptorSupport.file<br/>At DotFileInterceptorSupport.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69463');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69463" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter.doAddMessage(Connection, long, String, String, byte[])<br/>At BlobJDBCAdapter.java:[line 59]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.addMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getAddMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 109]<br/>At BlobJDBCAdapter.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69557');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69557" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter.doAddMessage(Connection, long, String, String, byte[])<br/>At BlobJDBCAdapter.java:[line 71]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 138]<br/>At BlobJDBCAdapter.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69651');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69651" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter.doAddMessage(Connection, long, String, String, byte[])<br/>At BlobJDBCAdapter.java:[line 86]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getUpdateMessageStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.updateMessageStatement<br/>At Statements.java:[line 116]<br/>At BlobJDBCAdapter.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69745');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69745" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.BlobJDBCAdapter.doGetMessage(TransactionContext, long)<br/>At BlobJDBCAdapter.java:[line 109]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 138]<br/>At BlobJDBCAdapter.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69839');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69839" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doAddMessage(TransactionContext, MessageId, ActiveMQDestination, byte[], long)<br/>At DefaultJDBCAdapter.java:[line 173]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.addMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getAddMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 109]<br/>At DefaultJDBCAdapter.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69933');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69933" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doAddMessageReference(TransactionContext, MessageId, ActiveMQDestination, long, String)<br/>At DefaultJDBCAdapter.java:[line 204]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.addMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getAddMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 109]<br/>At DefaultJDBCAdapter.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70027');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70027" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doCreateTables(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 93]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Unknown source java/sql/SQLException.getSQLState()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.createSchemaStatements<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getCreateSchemaStatements()[Ljava/lang/String;<br/>Unknown source java/sql/SQLException.getMessage()Ljava/lang/String;<br/>At Statements.java:[line 91]<br/>At DefaultJDBCAdapter.java:[line 87]<br/>At DefaultJDBCAdapter.java:[line 96]<br/>At DefaultJDBCAdapter.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70151');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70151" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doDeleteOldMessages(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 573]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.deleteOldMessagesStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getDeleteOldMessagesStatement()Ljava/lang/String;<br/>At Statements.java:[line 299]<br/>At DefaultJDBCAdapter.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70245');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70245" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doDeleteSubscription(TransactionContext, ActiveMQDestination, String, String)<br/>At DefaultJDBCAdapter.java:[line 559]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getDeleteSubscriptionStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.deleteSubscriptionStatement<br/>At Statements.java:[line 202]<br/>At DefaultJDBCAdapter.java:[line 559]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70339');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70339" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doDropTables(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 126]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getDropSchemaStatements()[Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.dropSchemaStatements<br/>Unknown source java/sql/SQLException.getSQLState()Ljava/lang/String;<br/>Unknown source java/sql/SQLException.getMessage()Ljava/lang/String;<br/>At Statements.java:[line 100]<br/>At DefaultJDBCAdapter.java:[line 120]<br/>At DefaultJDBCAdapter.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70453');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70453" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetAllSubscriptions(TransactionContext, ActiveMQDestination)<br/>At DefaultJDBCAdapter.java:[line 518]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findAllDurableSubsStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindAllDurableSubsStatement()Ljava/lang/String;<br/>At Statements.java:[line 186]<br/>At DefaultJDBCAdapter.java:[line 518]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70547');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70547" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetDestinations(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 627]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findAllDestinationsStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindAllDestinationsStatement()Ljava/lang/String;<br/>At Statements.java:[line 273]<br/>At DefaultJDBCAdapter.java:[line 627]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70641');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70641" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetDurableSubscriberMessageCount(TransactionContext, ActiveMQDestination, String, String)<br/>At DefaultJDBCAdapter.java:[line 431]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getDurableSubscriberMessageCountStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.durableSubscriberMessageCountStatement<br/>At Statements.java:[line 266]<br/>At DefaultJDBCAdapter.java:[line 431]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70735');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70735" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetLastAckedDurableSubscriberMessageId(TransactionContext, ActiveMQDestination, String, String)<br/>At DefaultJDBCAdapter.java:[line 590]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getLastAckedDurableSubscriberMessageStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.lastAckedDurableSubscriberMessageStatement<br/>At Statements.java:[line 351]<br/>At DefaultJDBCAdapter.java:[line 590]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70829');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70829" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetLastMessageBrokerSequenceId(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 147]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindLastSequenceIdInMsgsStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findLastSequenceIdInMsgsStatement<br/>At Statements.java:[line 153]<br/>At DefaultJDBCAdapter.java:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70923');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70923" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetLastMessageBrokerSequenceId(TransactionContext)<br/>At DefaultJDBCAdapter.java:[line 155]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindLastSequenceIdInAcksStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findLastSequenceIdInAcksStatement<br/>At Statements.java:[line 160]<br/>At DefaultJDBCAdapter.java:[line 155]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71017');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71017" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetMessage(TransactionContext, long)<br/>At DefaultJDBCAdapter.java:[line 250]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 138]<br/>At DefaultJDBCAdapter.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71111');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71111" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetMessageCount(TransactionContext, ActiveMQDestination)<br/>At DefaultJDBCAdapter.java:[line 687]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getDestinationMessageCountStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.destinationMessageCountStatement<br/>At Statements.java:[line 328]<br/>At DefaultJDBCAdapter.java:[line 687]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71205');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71205" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetMessageReference(TransactionContext, long)<br/>At DefaultJDBCAdapter.java:[line 267]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 138]<br/>At DefaultJDBCAdapter.java:[line 267]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71299');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71299" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetNextDurableSubscriberMessageStatement(TransactionContext, ActiveMQDestination, String, String)<br/>At DefaultJDBCAdapter.java:[line 666]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.nextDurableSubscriberMessageStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getNextDurableSubscriberMessageStatement()Ljava/lang/String;<br/>At Statements.java:[line 249]<br/>At DefaultJDBCAdapter.java:[line 666]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71393');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71393" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doGetSubscriberEntry(TransactionContext, ActiveMQDestination, String, String)<br/>At DefaultJDBCAdapter.java:[line 491]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findDurableSubStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindDurableSubStatement()Ljava/lang/String;<br/>At Statements.java:[line 178]<br/>At DefaultJDBCAdapter.java:[line 491]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71487');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71487" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRecover(TransactionContext, ActiveMQDestination, JDBCMessageRecoveryListener)<br/>At DefaultJDBCAdapter.java:[line 307]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findAllMessagesStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindAllMessagesStatement()Ljava/lang/String;<br/>At Statements.java:[line 146]<br/>At DefaultJDBCAdapter.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71581');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71581" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRecoverNextMessages(TransactionContext, ActiveMQDestination, long, int, JDBCMessageRecoveryListener)<br/>At DefaultJDBCAdapter.java:[line 705]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findNextMessagesStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindNextMessagesStatement()Ljava/lang/String;<br/>At Statements.java:[line 339]<br/>At DefaultJDBCAdapter.java:[line 705]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71675');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71675" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRecoverNextMessages(TransactionContext, ActiveMQDestination, String, String, long, int, JDBCMessageRecoveryListener)<br/>At DefaultJDBCAdapter.java:[line 393]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindDurableSubMessagesStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findDurableSubMessagesStatement<br/>At Statements.java:[line 224]<br/>At DefaultJDBCAdapter.java:[line 393]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71769');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71769" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRecoverSubscription(TransactionContext, ActiveMQDestination, String, String, JDBCMessageRecoveryListener)<br/>At DefaultJDBCAdapter.java:[line 363]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindAllDurableSubMessagesStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findAllDurableSubMessagesStatement<br/>At Statements.java:[line 213]<br/>At DefaultJDBCAdapter.java:[line 363]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71863');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71863" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRemoveAllMessages(TransactionContext, ActiveMQDestination)<br/>At DefaultJDBCAdapter.java:[line 543]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getRemoveAllMessagesStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.removeAllMessagesStatement<br/>At Statements.java:[line 280]<br/>At DefaultJDBCAdapter.java:[line 543]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71957');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71957" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRemoveAllMessages(TransactionContext, ActiveMQDestination)<br/>At DefaultJDBCAdapter.java:[line 547]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getRemoveAllSubscriptionsStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.removeAllSubscriptionsStatement<br/>At Statements.java:[line 287]<br/>At DefaultJDBCAdapter.java:[line 547]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72051');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72051" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doRemoveMessage(TransactionContext, long)<br/>At DefaultJDBCAdapter.java:[line 284]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getRemoveMessageStatment()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.removeMessageStatment<br/>At Statements.java:[line 123]<br/>At DefaultJDBCAdapter.java:[line 284]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72145');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72145" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doSetLastAck(TransactionContext, ActiveMQDestination, String, String, long)<br/>At DefaultJDBCAdapter.java:[line 334]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getUpdateLastAckOfDurableSubStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.updateLastAckOfDurableSubStatement<br/>At Statements.java:[line 194]<br/>At DefaultJDBCAdapter.java:[line 334]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72239');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72239" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doSetSubscriberEntry(TransactionContext, SubscriptionInfo, boolean)<br/>At DefaultJDBCAdapter.java:[line 458]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindLastSequenceIdInMsgsStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findLastSequenceIdInMsgsStatement<br/>At Statements.java:[line 153]<br/>At DefaultJDBCAdapter.java:[line 458]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72333');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72333" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.doSetSubscriberEntry(TransactionContext, SubscriptionInfo, boolean)<br/>At DefaultJDBCAdapter.java:[line 470]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getCreateDurableSubStatement()Ljava/lang/String;<br/>Unknown source org/apache/activemq/store/jdbc/Statements.createDurableSubStatement<br/>At Statements.java:[line 170]<br/>At DefaultJDBCAdapter.java:[line 470]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72427');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72427" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter<br/>In method org.apache.activemq.store.jdbc.adapter.DefaultJDBCAdapter.getBrokerSequenceId(TransactionContext, MessageId)<br/>At DefaultJDBCAdapter.java:[line 232]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.findMessageSequenceIdStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getFindMessageSequenceIdStatement()Ljava/lang/String;<br/>At Statements.java:[line 131]<br/>At DefaultJDBCAdapter.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69275');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69275" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.DefaultDatabaseLocker<br/>In method org.apache.activemq.store.jdbc.DefaultDatabaseLocker.keepAlive()<br/>At DefaultDatabaseLocker.java:[line 116]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.lockUpdateStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getLockUpdateStatement()Ljava/lang/String;<br/>At DefaultDatabaseLocker.java:[line 116]<br/>At Statements.java:[line 317]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69369');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69369" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.activemq.store.jdbc.DefaultDatabaseLocker<br/>In method org.apache.activemq.store.jdbc.DefaultDatabaseLocker.start()<br/>At DefaultDatabaseLocker.java:[line 66]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/store/jdbc/Statements.lockCreateStatement<br/>Unknown source org/apache/activemq/store/jdbc/Statements.getLockCreateStatement()Ljava/lang/String;<br/>At DefaultDatabaseLocker.java:[line 65]<br/>At Statements.java:[line 310]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.activemq.blob.DefaultBlobUploadStrategy<br/>In method org.apache.activemq.blob.DefaultBlobUploadStrategy.deleteFile(ActiveMQBlobMessage)<br/>At DefaultBlobUploadStrategy.java:[line 80]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/activemq/blob/BlobTransferPolicy.uploadUrl<br/>Unknown source org/apache/activemq/command/MessageId.toString()Ljava/lang/String;<br/>Unknown source org/apache/activemq/blob/BlobTransferPolicy.getUploadUrl()Ljava/lang/String;<br/>Unknown source org/apache/activemq/command/MessageId.key<br/>Unknown source org/apache/activemq/blob/DefaultBlobUploadStrategy.createUploadURL(Lorg/apache/activemq/command/ActiveMQBlobMessage;)Ljava/net/URL;<br/>At BlobTransferPolicy.java:[line 51]<br/>At DefaultBlobUploadStrategy.java:[line 78]<br/>At DefaultBlobUploadStrategy.java:[line 96]<br/>At MessageId.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65743');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65743" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.activemq.blob.DefaultBlobUploadStrategy<br/>In method org.apache.activemq.blob.DefaultBlobUploadStrategy.uploadStream(ActiveMQBlobMessage, InputStream)<br/>At DefaultBlobUploadStrategy.java:[line 50]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/activemq/blob/BlobTransferPolicy.uploadUrl<br/>Unknown source org/apache/activemq/command/MessageId.toString()Ljava/lang/String;<br/>Unknown source org/apache/activemq/blob/BlobTransferPolicy.getUploadUrl()Ljava/lang/String;<br/>Unknown source org/apache/activemq/command/MessageId.key<br/>Unknown source org/apache/activemq/blob/DefaultBlobUploadStrategy.createUploadURL(Lorg/apache/activemq/command/ActiveMQBlobMessage;)Ljava/net/URL;<br/>At BlobTransferPolicy.java:[line 51]<br/>At DefaultBlobUploadStrategy.java:[line 48]<br/>At DefaultBlobUploadStrategy.java:[line 96]<br/>At MessageId.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66144');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66144" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.activemq.broker.PropertiesBrokerFactory<br/>In method org.apache.activemq.broker.PropertiesBrokerFactory.loadProperties(URI)<br/>At PropertiesBrokerFactory.java:[line 72]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/activemq/broker/PropertiesBrokerFactory.loadProperties(Ljava/net/URI;)Ljava/util/Map; parameter 0<br/>Method usage not detected<br/>At PropertiesBrokerFactory.java:[line 41]<br/>At PropertiesBrokerFactory.java:[line 53]<br/>At PropertiesBrokerFactory.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66337');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66337" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.activemq.command.ActiveMQBlobMessage<br/>In method org.apache.activemq.command.ActiveMQBlobMessage.getInputStream()<br/>At ActiveMQBlobMessage.java:[line 130]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/activemq/command/ActiveMQBlobMessage.getURL()Ljava/net/URL;<br/>Unknown source org/apache/activemq/command/ActiveMQBlobMessage.url<br/>At ActiveMQBlobMessage.java:[line 126]<br/>At ActiveMQBlobMessage.java:[line 141]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72702');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72702" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class org.apache.activemq.util.IdGenerator<br/>In method org.apache.activemq.util.IdGenerator.&lt;static initializer for IdGenerator&gt;()<br/>At IdGenerator.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66485');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66485" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.activemq.filter.XalanXPathEvaluator<br/>In method org.apache.activemq.filter.XalanXPathEvaluator.evaluate(String)<br/>At XalanXPathEvaluator.java:[line 83]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66543');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66543" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.activemq.filter.XalanXPathEvaluator<br/>In method org.apache.activemq.filter.XalanXPathEvaluator.evaluate(byte[])<br/>At XalanXPathEvaluator.java:[line 65]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="https://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,1509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pulsar.git/bookkeeper-server-4.10.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>49849 lines of code analyzed,
+	in 1310 classes, 
+	in 43 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">74</td>
+<td align="right">1.48</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>75</b>
+</td>
+<td align="right">
+<b>1.50</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">75</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>75</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69323');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69323" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.cookie.CookieCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.cookie.CookieCommand.apply(ServiceURI, CompositeConfiguration, BKFlags, CliFlags)<br/>At CookieCommand.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69614');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69614" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.HardLink<br/>In method org.apache.bookkeeper.util.HardLink.createHardLink(File, File)<br/>At HardLink.java:[line 421]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/HardLink$HardLinkCommandGetter.linkOne(Ljava/io/File;Ljava/io/File;)[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69683');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69683" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.HardLink<br/>In method org.apache.bookkeeper.util.HardLink.createHardLinkMult(File, String[], File, int)<br/>At HardLink.java:[line 513]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;<br/>Sink parameter 2<br/>Unknown source org/apache/bookkeeper/util/HardLink$HardLinkCommandGetter.linkMult([Ljava/lang/String;Ljava/io/File;)[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69752');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69752" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.HardLink<br/>In method org.apache.bookkeeper.util.HardLink.getLinkCount(File)<br/>At HardLink.java:[line 558]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/HardLink$HardLinkCommandGetter.linkCount(Ljava/io/File;)[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69821');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69821" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.HardLink<br/>In method org.apache.bookkeeper.util.HardLink.makeShellPath(File)<br/>At HardLink.java:[line 656]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/HardLink.makeShellPath(Ljava/io/File;)Ljava/lang/String; parameter 0<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Method usage not detected<br/>At HardLink.java:[line 652]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70773');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70773" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.Shell<br/>In method org.apache.bookkeeper.util.Shell.runCommand()<br/>At Shell.java:[line 107]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/Shell.getExecString()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65901');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65901" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.BookieStatus<br/>In method org.apache.bookkeeper.bookie.BookieStatus.parse(BufferedReader)<br/>At BookieStatus.java:[line 207]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At BookieStatus.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70073');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70073" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.main(String[])<br/>At LocalBookKeeper.java:[line 450]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/apache/bookkeeper/util/LocalBookKeeper.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70142');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70142" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.main(String[])<br/>At LocalBookKeeper.java:[line 461]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/bookkeeper/util/LocalBookKeeper.main([Ljava/lang/String;)V parameter 0<br/>At LocalBookKeeper.java:[line 461]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70221');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70221" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.main(String[])<br/>At LocalBookKeeper.java:[line 464]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Tainted source org/apache/bookkeeper/util/LocalBookKeeper.main([Ljava/lang/String;)V parameter 0<br/>At LocalBookKeeper.java:[line 464]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66676');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66676" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.LedgerDirsManager<br/>In method new org.apache.bookkeeper.bookie.LedgerDirsManager(ServerConfiguration, File[], DiskChecker, StatsLogger)<br/>At LedgerDirsManager.java:[line 52]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66892');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66892" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.BookKeeperAdmin<br/>In method new org.apache.bookkeeper.client.BookKeeperAdmin(BookKeeper, StatsLogger)<br/>At BookKeeperAdmin.java:[line 112]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66950');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66950" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.BookKeeperAdmin<br/>In method new org.apache.bookkeeper.client.BookKeeperAdmin(ClientConfiguration)<br/>At BookKeeperAdmin.java:[line 112]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67008');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67008" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.DynamicWeightedRandomSelectionImpl<br/>In method new org.apache.bookkeeper.client.DynamicWeightedRandomSelectionImpl(int)<br/>At DynamicWeightedRandomSelectionImpl.java:[line 57]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67066');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67066" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.EnsemblePlacementPolicy<br/>In method org.apache.bookkeeper.client.EnsemblePlacementPolicy.getStickyReadBookieIndex(LedgerMetadata, Optional)<br/>At EnsemblePlacementPolicy.java:[line 388]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67124');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67124" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.LedgerChecker<br/>In method org.apache.bookkeeper.client.LedgerChecker.verifyLedgerFragment(LedgerFragment, int, BookkeeperInternalCallbacks$GenericCallback, long)<br/>At LedgerChecker.java:[line 224]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67182');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67182" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.TopologyAwareEnsemblePlacementPolicy<br/>In method org.apache.bookkeeper.client.TopologyAwareEnsemblePlacementPolicy.shuffleWithMask(DistributionSchedule$WriteSet, int, int)<br/>At TopologyAwareEnsemblePlacementPolicy.java:[line 613]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67240');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67240" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.WeightedRandomSelectionImpl<br/>In method org.apache.bookkeeper.client.WeightedRandomSelectionImpl.getNextRandom()<br/>At WeightedRandomSelectionImpl.java:[line 149]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67298');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67298" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.client.ZoneawareEnsemblePlacementPolicyImpl<br/>In method new org.apache.bookkeeper.client.ZoneawareEnsemblePlacementPolicyImpl()<br/>At ZoneawareEnsemblePlacementPolicyImpl.java:[line 151]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67628');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67628" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.meta.AbstractZkLedgerManager<br/>In method org.apache.bookkeeper.meta.AbstractZkLedgerManager.createLedgerMetadata(long, LedgerMetadata)<br/>At AbstractZkLedgerManager.java:[line 259]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67686');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67686" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.net.NetworkTopologyImpl<br/>In method org.apache.bookkeeper.net.NetworkTopologyImpl.&lt;static initializer for NetworkTopologyImpl&gt;()<br/>At NetworkTopologyImpl.java:[line 696]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67876');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67876" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.sasl.TGTRefreshThread<br/>In method org.apache.bookkeeper.sasl.TGTRefreshThread.&lt;static initializer for TGTRefreshThread&gt;()<br/>At TGTRefreshThread.java:[line 42]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68008');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68008" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.server.service.ScrubberService<br/>In method new org.apache.bookkeeper.server.service.ScrubberService(StatsLogger, BookieConfiguration, LedgerStorage)<br/>At ScrubberService.java:[line 57]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71000');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71000" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.verifier.BookkeeperVerifier<br/>In method new org.apache.bookkeeper.verifier.BookkeeperVerifier(BookkeeperVerifier$BookkeeperDriver, int, int, int, int, int, int, int, int, int, int, long, int, int, double)<br/>At BookkeeperVerifier.java:[line 416]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71058');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71058" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.verifier.BookkeeperVerifier$EntryInfo<br/>In method org.apache.bookkeeper.verifier.BookkeeperVerifier$EntryInfo.getBuffer()<br/>At BookkeeperVerifier.java:[line 191]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71116');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71116" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.verifier.BookkeeperVerifier$LedgerInfo$EntryIterator<br/>In method org.apache.bookkeeper.verifier.BookkeeperVerifier$LedgerInfo$EntryIterator.seek(long)<br/>At BookkeeperVerifier.java:[line 270]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71174');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71174" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.bookkeeper.zookeeper.ExponentialBackoffRetryPolicy<br/>In method new org.apache.bookkeeper.zookeeper.ExponentialBackoffRetryPolicy(long, int)<br/>At ExponentialBackoffRetryPolicy.java:[line 37]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.Bookie<br/>In method org.apache.bookkeeper.bookie.Bookie.checkDirectoryStructure(File)<br/>At Bookie.java:[line 199]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.Bookie<br/>In method org.apache.bookkeeper.bookie.Bookie.lambda$getKnownDirs$2(String)<br/>At Bookie.java:[line 495]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/bookie/Bookie.lambda$getKnownDirs$2(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65694');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65694" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.BookieShell<br/>In method org.apache.bookkeeper.bookie.BookieShell.main(String[])<br/>At BookieShell.java:[line 2044]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/cli/CommandLine.getOptionValue(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65763');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65763" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.BookieShell$FilesTimeComparator<br/>In method org.apache.bookkeeper.bookie.BookieShell$FilesTimeComparator.compare(File, File)<br/>At BookieShell.java:[line 2003]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65832');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65832" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.BookieShell$FilesTimeComparator<br/>In method org.apache.bookkeeper.bookie.BookieShell$FilesTimeComparator.compare(File, File)<br/>At BookieShell.java:[line 2004]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65980');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65980" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileInfo<br/>In method org.apache.bookkeeper.bookie.FileInfo.moveToNewLocation(File, long)<br/>At FileInfo.java:[line 515]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At FileInfo.java:[line 515]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66059');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66059" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileSystemUpgrade<br/>In method org.apache.bookkeeper.bookie.FileSystemUpgrade.linkIndexDirectories(File, File)<br/>At FileSystemUpgrade.java:[line 140]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66128');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66128" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileSystemUpgrade<br/>In method org.apache.bookkeeper.bookie.FileSystemUpgrade.linkIndexDirectories(File, File)<br/>At FileSystemUpgrade.java:[line 144]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66197');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66197" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileSystemUpgrade<br/>In method org.apache.bookkeeper.bookie.FileSystemUpgrade.main(String[])<br/>At FileSystemUpgrade.java:[line 366]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/cli/CommandLine.getOptionValue(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66266');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66266" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileSystemUpgrade$1<br/>In method org.apache.bookkeeper.bookie.FileSystemUpgrade$1.containsIndexFiles(File, String)<br/>At FileSystemUpgrade.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/bookie/FileSystemUpgrade$1.containsIndexFiles(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>At FileSystemUpgrade.java:[line 77]<br/>At FileSystemUpgrade.java:[line 94]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66355');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66355" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.FileSystemUpgrade$2<br/>In method org.apache.bookkeeper.bookie.FileSystemUpgrade$2.accept(File, String)<br/>At FileSystemUpgrade.java:[line 199]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/bookie/FileSystemUpgrade$2.accept(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66429');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66429" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.IndexPersistenceMgr<br/>In method org.apache.bookkeeper.bookie.IndexPersistenceMgr.getActiveLedgers()<br/>At IndexPersistenceMgr.java:[line 284]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At IndexPersistenceMgr.java:[line 276]<br/>At IndexPersistenceMgr.java:[line 284]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66518');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66518" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.Journal$LastLogMark<br/>In method org.apache.bookkeeper.bookie.Journal$LastLogMark.readLog()<br/>At Journal.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/bookie/Journal.lastMarkFileName<br/>At Journal.java:[line 236]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66597');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66597" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.Journal$LastLogMark<br/>In method org.apache.bookkeeper.bookie.Journal$LastLogMark.rollLog(Journal$LastLogMark)<br/>At Journal.java:[line 207]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/bookie/Journal.lastMarkFileName<br/>At Journal.java:[line 207]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66734');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66734" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.TransactionalEntryLogCompactor<br/>In method org.apache.bookkeeper.bookie.TransactionalEntryLogCompactor.getCompactedLogFile(File, long)<br/>At TransactionalEntryLogCompactor.java:[line 389]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At TransactionalEntryLogCompactor.java:[line 388]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66813');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66813" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.bookie.TransactionalEntryLogCompactor$UpdateIndexPhase<br/>In method org.apache.bookkeeper.bookie.TransactionalEntryLogCompactor$UpdateIndexPhase.start()<br/>At TransactionalEntryLogCompactor.java:[line 312]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At TransactionalEntryLogCompactor.java:[line 312]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67356');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67356" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.conf.ServerConfiguration<br/>In method org.apache.bookkeeper.conf.ServerConfiguration.getIndexDirs()<br/>At ServerConfiguration.java:[line 1229]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getStringArray(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getIndexDirNames()[Ljava/lang/String;<br/>At ServerConfiguration.java:[line 1223]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67440');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67440" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.conf.ServerConfiguration<br/>In method org.apache.bookkeeper.conf.ServerConfiguration.getJournalDirs()<br/>At ServerConfiguration.java:[line 1136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getJournalDirNames()[Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getStringArray(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getJournalDirName()Ljava/lang/String;<br/>At ServerConfiguration.java:[line 1078]<br/>At ServerConfiguration.java:[line 1133]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67544');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67544" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.conf.ServerConfiguration<br/>In method org.apache.bookkeeper.conf.ServerConfiguration.getLedgerDirs()<br/>At ServerConfiguration.java:[line 1188]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getStringArray(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getLedgerDirNames()[Ljava/lang/String;<br/>At ServerConfiguration.java:[line 1184]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67802');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67802" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.replication.AutoRecoveryMain<br/>In method org.apache.bookkeeper.replication.AutoRecoveryMain.loadConfFile(ServerConfiguration, String)<br/>At AutoRecoveryMain.java:[line 263]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/replication/AutoRecoveryMain.loadConfFile(Lorg/apache/bookkeeper/conf/ServerConfiguration;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67934');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67934" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.server.Main<br/>In method org.apache.bookkeeper.server.Main.loadConfFile(ServerConfiguration, String)<br/>At Main.java:[line 103]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/server/Main.loadConfFile(Lorg/apache/bookkeeper/conf/ServerConfiguration;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68066');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68066" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.FileModifiedTimeUpdater<br/>In method org.apache.bookkeeper.tls.FileModifiedTimeUpdater.updateLastModifiedTime()<br/>At FileModifiedTimeUpdater.java:[line 46]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/apache/bookkeeper/tls/FileModifiedTimeUpdater.fileName<br/>At FileModifiedTimeUpdater.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68145');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68145" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.createClientContext()<br/>At TLSContextFactory.java:[line 207]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getTLSTrustStore()Ljava/lang/String;<br/>At TLSContextFactory.java:[line 207]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68229');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68229" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.createClientContext()<br/>At TLSContextFactory.java:[line 253]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getTLSCertificatePath()Ljava/lang/String;<br/>At TLSContextFactory.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68313');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68313" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.createClientContext()<br/>At TLSContextFactory.java:[line 254]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ClientConfiguration.getTLSKeyStore()Ljava/lang/String;<br/>At TLSContextFactory.java:[line 254]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68397');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68397" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.getPasswordFromFile(String)<br/>At TLSContextFactory.java:[line 94]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tls/TLSContextFactory.getPasswordFromFile(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At TLSContextFactory.java:[line 131]<br/>At TLSContextFactory.java:[line 154]<br/>At TLSContextFactory.java:[line 218]<br/>At TLSContextFactory.java:[line 219]<br/>At TLSContextFactory.java:[line 248]<br/>At TLSContextFactory.java:[line 259]<br/>At TLSContextFactory.java:[line 260]<br/>At TLSContextFactory.java:[line 331]<br/>At TLSContextFactory.java:[line 349]<br/>At TLSContextFactory.java:[line 351]<br/>At TLSContextFactory.java:[line 378]<br/>At TLSContextFactory.java:[line 379]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68586');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68586" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.loadKeyStore(String, String, String)<br/>At TLSContextFactory.java:[line 109]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tls/TLSContextFactory.loadKeyStore(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 1<br/>At TLSContextFactory.java:[line 135]<br/>At TLSContextFactory.java:[line 158]<br/>At TLSContextFactory.java:[line 218]<br/>At TLSContextFactory.java:[line 219]<br/>At TLSContextFactory.java:[line 259]<br/>At TLSContextFactory.java:[line 260]<br/>At TLSContextFactory.java:[line 349]<br/>At TLSContextFactory.java:[line 350]<br/>At TLSContextFactory.java:[line 378]<br/>At TLSContextFactory.java:[line 379]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68755');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68755" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.updateServerContext()<br/>At TLSContextFactory.java:[line 337]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getTLSCertificatePath()Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At TLSContextFactory.java:[line 337]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68839');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68839" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.updateServerContext()<br/>At TLSContextFactory.java:[line 338]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getTLSKeyStore()Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At TLSContextFactory.java:[line 338]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68923');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68923" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tls.TLSContextFactory<br/>In method org.apache.bookkeeper.tls.TLSContextFactory.updateServerContext()<br/>At TLSContextFactory.java:[line 373]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getTLSTrustStore()Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At TLSContextFactory.java:[line 373]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69007');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69007" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.bookie.ReadJournalCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.bookie.ReadJournalCommand.handler(ServerConfiguration, ReadJournalCommand$ReadJournalFlags)<br/>At ReadJournalCommand.java:[line 132]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/bookie/ReadJournalCommand$ReadJournalFlags.dir<br/>At ReadJournalCommand.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69086');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69086" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.bookie.ReadJournalCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.bookie.ReadJournalCommand.handler(ServerConfiguration, ReadJournalCommand$ReadJournalFlags)<br/>At ReadJournalCommand.java:[line 151]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/bookie/ReadJournalCommand$ReadJournalFlags.fileName<br/>At ReadJournalCommand.java:[line 151]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69165');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69165" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.bookie.ReadLogCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.bookie.ReadLogCommand.readLog(ServerConfiguration, ReadLogCommand$ReadLogFlags)<br/>At ReadLogCommand.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/bookie/ReadLogCommand$ReadLogFlags.filename<br/>At ReadLogCommand.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69244');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69244" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.bookie.ReadLogMetadataCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.bookie.ReadLogMetadataCommand.readLogMetadata(ServerConfiguration, ReadLogMetadataCommand$ReadLogMetadataFlags)<br/>At ReadLogMetadataCommand.java:[line 115]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/bookie/ReadLogMetadataCommand$ReadLogMetadataFlags.logFilename<br/>At ReadLogMetadataCommand.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69377');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69377" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.cookie.CookieCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.cookie.CookieCommand.readCookieDataFromFile(String)<br/>At CookieCommand.java:[line 108]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/cookie/CookieCommand.readCookieDataFromFile(Ljava/lang/String;)[B parameter 0<br/>At CreateCookieCommand.java:[line 86]<br/>At UpdateCookieCommand.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69466');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69466" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.tools.cli.commands.cookie.GenerateCookieCommand<br/>In method org.apache.bookkeeper.tools.cli.commands.cookie.GenerateCookieCommand.apply(RegistrationManager, GenerateCookieCommand$Flags)<br/>At GenerateCookieCommand.java:[line 122]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/tools/cli/commands/cookie/GenerateCookieCommand$Flags.outputFile<br/>At GenerateCookieCommand.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69545');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69545" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.DiskChecker<br/>In method org.apache.bookkeeper.util.DiskChecker.mkdirsWithExistsCheck(File)<br/>At DiskChecker.java:[line 131]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69910');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69910" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.IOUtils<br/>In method org.apache.bookkeeper.util.IOUtils.createTempDir(String, String, File)<br/>At IOUtils.java:[line 150]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/IOUtils.createTempDir(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 0<br/>At LocalBookKeeper.java:[line 361]<br/>At LocalBookKeeper.java:[line 370]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69999');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69999" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.IOUtils<br/>In method org.apache.bookkeeper.util.IOUtils.createTempFileAndDeleteOnExit(String, String)<br/>At IOUtils.java:[line 172]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/IOUtils.createTempFileAndDeleteOnExit(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70300');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70300" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.main(String[])<br/>At LocalBookKeeper.java:[line 460]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/bookkeeper/util/LocalBookKeeper.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70369');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70369" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.runBookies(List, String)<br/>At LocalBookKeeper.java:[line 221]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getJournalDirName()Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At LocalBookKeeper.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70453');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70453" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.runBookies(List, String)<br/>At LocalBookKeeper.java:[line 239]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getStringArray(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/bookkeeper/conf/ServerConfiguration.getLedgerDirWithoutDefault()[Ljava/lang/String;<br/>At LocalBookKeeper.java:[line 234]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70542');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70542" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.serializeLocalBookieConfig(ServerConfiguration, String)<br/>At LocalBookKeeper.java:[line 417]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/LocalBookKeeper.serializeLocalBookieConfig(Lorg/apache/bookkeeper/conf/ServerConfiguration;Ljava/lang/String;)V parameter 0<br/>At BookieSocketAddress.java:[line 120]<br/>At LocalBookKeeper.java:[line 272]<br/>At LocalBookKeeper.java:[line 273]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70641');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70641" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.startLocalBookiesInternal(ServerConfiguration, String, int, int, boolean, int, boolean, String, String, String)<br/>At LocalBookKeeper.java:[line 361]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/LocalBookKeeper.startLocalBookiesInternal(Lorg/apache/bookkeeper/conf/ServerConfiguration;Ljava/lang/String;IIZIZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70842');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70842" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.ZkUtils$1<br/>In method org.apache.bookkeeper.util.ZkUtils$1.processResult(int, String, Object, String)<br/>At ZkUtils.java:[line 87]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/ZkUtils$1.val$originalPath<br/>At ZkUtils.java:[line 87]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70921');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70921" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.ZkUtils$2<br/>In method org.apache.bookkeeper.util.ZkUtils$2.processResult(int, String, Object)<br/>At ZkUtils.java:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bookkeeper/util/ZkUtils$2.val$originalPath<br/>At ZkUtils.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67744');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67744" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class org.apache.bookkeeper.proto.checksum.MacDigestManager<br/>In method org.apache.bookkeeper.proto.checksum.MacDigestManager.genDigest(String, byte[])<br/>At MacDigestManager.java:[line 82]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70715');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.apache.bookkeeper.util.LocalBookKeeper (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70715" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.apache.bookkeeper.util.LocalBookKeeper<br/>In method org.apache.bookkeeper.util.LocalBookKeeper.waitForServerUp(String, long)<br/>At LocalBookKeeper.java:[line 505]<br/>Value remote host</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        </body>
+</html>

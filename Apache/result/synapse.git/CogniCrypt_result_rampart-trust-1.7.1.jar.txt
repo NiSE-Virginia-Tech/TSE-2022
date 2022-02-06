@@ -1,0 +1,162 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 519.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r7
+		Type: java.security.SecureRandom
+		Statement: r7 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer656)
+		Method: <org.apache.rahas.TrustUtil: byte[] generateEphemeralKey(byte[],byte[],java.lang.String,int)>
+		SHA-256: b5576dec49d68a96ff5dd307d6478b277eddbc9211a8e7754680fe6f1a008d81
+		Secure: true
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: virtualinvoke r3.<java.security.SecureRandom: void nextBytes(byte[])>(r0)
+		Method: <org.apache.rahas.impl.TokenIssuerUtil: byte[] generateEphemeralKey(int)>
+		SHA-256: 35d89505670c6c5515d58e541f3730b1e31bbc00e5e00008ef7ba9fc2e9b090d
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke r4.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.apache.rahas.TrustUtil: byte[] generateEphemeralKey(int)>
+		SHA-256: d80cd6afb34551860f1387f261523de14d3ad458e934811c9d18df77bf629f91
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.security.SecureRandom
+		Statement: r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer654)
+		Method: <org.apache.rahas.TrustUtil: byte[] generateEphemeralKey(int)>
+		SHA-256: bc7f1f12aced51b7070b15c255596bfec58045fef8754d9d72dfa406b4edac91
+		Secure: true
+	Object:
+		Variable: r10
+		Type: byte[]
+		Statement: r10 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.rahas.impl.util.SAMLUtils: java.lang.String getThumbprintSha1(java.security.cert.X509Certificate)>
+		SHA-256: 2a8f621c0f6117ded3c941389e67296e5f3f857c7a5cbc87905d585d1b40c2fa
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.SecureRandom
+		Statement: r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer311)
+		Method: <org.apache.rahas.impl.TokenIssuerUtil: byte[] generateEphemeralKey(int)>
+		SHA-256: 1f47b5f4fc25a5f10e6cea42da0b0897153d84d076644d6976ad36291a1c52ed
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke r4.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.apache.rahas.impl.SAMLTokenIssuer: byte[] generateEphemeralKey(int)>
+		SHA-256: 5100807781413aefa95511702205364bc0cc73d443325f908e900ec2bdfbda7b
+		Secure: true
+	Object:
+		Variable: r1
+		Type: java.security.MessageDigest
+		Statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer417)
+		Method: <org.apache.rahas.impl.util.SAMLUtils: java.lang.String getThumbprintSha1(java.security.cert.X509Certificate)>
+		SHA-256: 165adc58bb984a2e7af8025f8b63894d1b6d78f4d16b11d58a06020ddccacdef
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: virtualinvoke r7.<java.security.SecureRandom: void nextBytes(byte[])>(r4)
+		Method: <org.apache.rahas.TrustUtil: byte[] generateEphemeralKey(byte[],byte[],java.lang.String,int)>
+		SHA-256: f1cd28d83d9ecdae4ec607dc272b33032ac55aadd203e2075a56675f6578025e
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.security.SecureRandom
+		Statement: r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer208)
+		Method: <org.apache.rahas.impl.SAMLTokenIssuer: byte[] generateEphemeralKey(int)>
+		SHA-256: 8f98031949b33a5da18fcc3ee11d099da863588e7fc79e95beb5b748e1118b18
+		Secure: true
+
+Findings in Java Class: org.apache.rahas.impl.util.SAMLUtils
+
+	 in Method: java.lang.String getThumbprintSha1(java.security.cert.X509Certificate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #165adc58bb984a2e7af8025f8b63894d1b6d78f4d16b11d58a06020ddccacdef)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer417)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.553 s
+

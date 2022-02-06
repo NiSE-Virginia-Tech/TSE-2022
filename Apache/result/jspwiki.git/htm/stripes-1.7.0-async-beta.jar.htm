@@ -1,0 +1,1546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/jspwiki.git/stripes-1.7.0-async-beta.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>13854 lines of code analyzed,
+	in 322 classes, 
+	in 19 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">16</td>
+<td align="right">1.15</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">2.45</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>50</b>
+</td>
+<td align="right">
+<b>3.61</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">49</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>49</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67315');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67315" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class net.sourceforge.stripes.mock.MockServletContext<br/>In method net.sourceforge.stripes.mock.MockServletContext.log(String, Throwable)<br/>At MockServletContext.java:[line 139]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68522');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68522" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Log<br/>In method net.sourceforge.stripes.util.Log.debug(Throwable, Object[])<br/>At Log.java:[line 118]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String; parameter 0<br/>Unknown source net/sourceforge/stripes/util/Log.debug(Ljava/lang/Throwable;[Ljava/lang/Object;)V parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source java/lang/reflect/Array.get(Ljava/lang/Object;I)Ljava/lang/Object;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object; parameter 0<br/>Unknown source java/util/Arrays.toString([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At DefaultActionBeanPropertyBinder.java:[line 114]<br/>At DefaultActionBeanPropertyBinder.java:[line 126]<br/>At DefaultActionBeanPropertyBinder.java:[line 128]<br/>At DefaultActionBeanPropertyBinder.java:[line 199]<br/>At DefaultActionBeanPropertyBinder.java:[line 210]<br/>At DefaultActionBeanPropertyBinder.java:[line 213]<br/>At DefaultActionBeanPropertyBinder.java:[line 214]<br/>At DefaultActionBeanPropertyBinder.java:[line 223]<br/>At DefaultActionBeanPropertyBinder.java:[line 289]<br/>At DefaultActionBeanPropertyBinder.java:[line 312]<br/>At DefaultActionBeanPropertyBinder.java:[line 422]<br/>At DefaultActionBeanPropertyBinder.java:[line 427]<br/>At DefaultActionBeanPropertyBinder.java:[line 430]<br/>At DefaultActionBeanPropertyBinder.java:[line 851]<br/>At DynamicMappingFilter.java:[line 743]<br/>At DynamicMappingFilter.java:[line 762]<br/>At DynamicMappingFilter.java:[line 779]<br/>At DynamicMappingFilter.java:[line 820]<br/>At Log.java:[line 118]<br/>At StringUtil.java:[line 57]<br/>At StringUtil.java:[line 60]<br/>At StringUtil.java:[line 64]<br/>At JBoss6VFS.java:[line 91]<br/>At JBoss6VFS.java:[line 92]<br/>At JBoss6VFS.java:[line 94]<br/>At VFS.java:[line 123]<br/>At VFS.java:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68896');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68896" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Log<br/>In method net.sourceforge.stripes.util.Log.debug(Object[])<br/>At Log.java:[line 187]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String; parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source java/lang/reflect/Array.get(Ljava/lang/Object;I)Ljava/lang/Object;<br/>Unknown source net/sourceforge/stripes/util/Log.debug([Ljava/lang/Object;)V parameter 0<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object; parameter 0<br/>Unknown source java/util/Arrays.toString([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At ActionBeanContext.java:[line 109]<br/>At JavaScriptBuilder.java:[line 253]<br/>At BootstrapPropertyResolver.java:[line 79]<br/>At BootstrapPropertyResolver.java:[line 102]<br/>At BootstrapPropertyResolver.java:[line 111]<br/>At BootstrapPropertyResolver.java:[line 121]<br/>At BootstrapPropertyResolver.java:[line 142]<br/>At BootstrapPropertyResolver.java:[line 159]<br/>At BootstrapPropertyResolver.java:[line 161]<br/>At BootstrapPropertyResolver.java:[line 162]<br/>At BootstrapPropertyResolver.java:[line 190]<br/>At BootstrapPropertyResolver.java:[line 221]<br/>At BootstrapPropertyResolver.java:[line 223]<br/>At BootstrapPropertyResolver.java:[line 224]<br/>At BootstrapPropertyResolver.java:[line 226]<br/>At BootstrapPropertyResolver.java:[line 242]<br/>At BootstrapPropertyResolver.java:[line 254]<br/>At BootstrapPropertyResolver.java:[line 256]<br/>At BootstrapPropertyResolver.java:[line 258]<br/>At DefaultConfiguration.java:[line 131]<br/>At DefaultConfiguration.java:[line 134]<br/>At DefaultConfiguration.java:[line 135]<br/>At DefaultConfiguration.java:[line 480]<br/>At RuntimeConfiguration.java:[line 114]<br/>At RuntimeConfiguration.java:[line 124]<br/>At RuntimeConfiguration.java:[line 129]<br/>At RuntimeConfiguration.java:[line 134]<br/>At RuntimeConfiguration.java:[line 139]<br/>At RuntimeConfiguration.java:[line 144]<br/>At RuntimeConfiguration.java:[line 149]<br/>At RuntimeConfiguration.java:[line 154]<br/>At RuntimeConfiguration.java:[line 159]<br/>At RuntimeConfiguration.java:[line 164]<br/>At RuntimeConfiguration.java:[line 169]<br/>At RuntimeConfiguration.java:[line 174]<br/>At RuntimeConfiguration.java:[line 179]<br/>At RuntimeConfiguration.java:[line 184]<br/>At RuntimeConfiguration.java:[line 197]<br/>At RuntimeConfiguration.java:[line 214]<br/>At RuntimeConfiguration.java:[line 255]<br/>At RuntimeConfiguration.java:[line 293]<br/>At RuntimeConfiguration.java:[line 294]<br/>At RuntimeConfiguration.java:[line 295]<br/>At RuntimeConfiguration.java:[line 300]<br/>At RuntimeConfiguration.java:[line 301]<br/>At RuntimeConfiguration.java:[line 311]<br/>At RuntimeConfiguration.java:[line 312]<br/>At RuntimeConfiguration.java:[line 317]<br/>At RuntimeConfiguration.java:[line 318]<br/>At RuntimeConfiguration.java:[line 319]<br/>At RuntimeConfiguration.java:[line 324]<br/>At RuntimeConfiguration.java:[line 325]<br/>At RuntimeConfiguration.java:[line 335]<br/>At RuntimeConfiguration.java:[line 336]<br/>At AnnotatedClassActionResolver.java:[line 175]<br/>At AnnotatedClassActionResolver.java:[line 183]<br/>At AnnotatedClassActionResolver.java:[line 199]<br/>At AnnotatedClassActionResolver.java:[line 200]<br/>At AnnotatedClassActionResolver.java:[line 204]<br/>At AnnotatedClassActionResolver.java:[line 237]<br/>At AnnotatedClassActionResolver.java:[line 253]<br/>At AnnotatedClassActionResolver.java:[line 265]<br/>At AnnotatedClassActionResolver.java:[line 271]<br/>At AnnotatedClassActionResolver.java:[line 282]<br/>At AnnotatedClassActionResolver.java:[line 293]<br/>At AnnotatedClassActionResolver.java:[line 330]<br/>At AnnotatedClassActionResolver.java:[line 344]<br/>At AnnotatedClassActionResolver.java:[line 345]<br/>At AnnotatedClassActionResolver.java:[line 346]<br/>At AnnotatedClassActionResolver.java:[line 365]<br/>At AnnotatedClassActionResolver.java:[line 577]<br/>At AnnotatedClassActionResolver.java:[line 578]<br/>At AnnotatedClassActionResolver.java:[line 727]<br/>At BeforeAfterMethodInterceptor.java:[line 90]<br/>At BeforeAfterMethodInterceptor.java:[line 104]<br/>At BeforeAfterMethodInterceptor.java:[line 129]<br/>At BeforeAfterMethodInterceptor.java:[line 151]<br/>At BindingPolicyManager.java:[line 111]<br/>At BindingPolicyManager.java:[line 122]<br/>At BindingPolicyManager.java:[line 125]<br/>At BindingPolicyManager.java:[line 128]<br/>At BindingPolicyManager.java:[line 231]<br/>At BindingPolicyManager.java:[line 233]<br/>At BindingPolicyManager.java:[line 268]<br/>At BindingPolicyManager.java:[line 270]<br/>At BindingPolicyManager.java:[line 276]<br/>At BindingPolicyManager.java:[line 278]<br/>At BindingPolicyManager.java:[line 282]<br/>At BindingPolicyManager.java:[line 285]<br/>At BindingPolicyManager.java:[line 288]<br/>At BindingPolicyManager.java:[line 290]<br/>At BindingPolicyManager.java:[line 300]<br/>At BindingPolicyManager.java:[line 305]<br/>At BindingPolicyManager.java:[line 310]<br/>At BindingPolicyManager.java:[line 311]<br/>At BindingPolicyManager.java:[line 315]<br/>At DefaultActionBeanContextFactory.java:[line 48]<br/>At DefaultActionBeanPropertyBinder.java:[line 114]<br/>At DefaultActionBeanPropertyBinder.java:[line 126]<br/>At DefaultActionBeanPropertyBinder.java:[line 128]<br/>At DefaultActionBeanPropertyBinder.java:[line 199]<br/>At DefaultActionBeanPropertyBinder.java:[line 285]<br/>At DefaultActionBeanPropertyBinder.java:[line 312]<br/>At DefaultActionBeanPropertyBinder.java:[line 422]<br/>At DefaultActionBeanPropertyBinder.java:[line 427]<br/>At DefaultActionBeanPropertyBinder.java:[line 430]<br/>At DefaultActionBeanPropertyBinder.java:[line 457]<br/>At DefaultActionBeanPropertyBinder.java:[line 478]<br/>At DefaultActionBeanPropertyBinder.java:[line 479]<br/>At DefaultActionBeanPropertyBinder.java:[line 484]<br/>At DefaultActionBeanPropertyBinder.java:[line 489]<br/>At DefaultActionBeanPropertyBinder.java:[line 490]<br/>At DefaultActionBeanPropertyBinder.java:[line 500]<br/>At DefaultActionBeanPropertyBinder.java:[line 792]<br/>At DefaultActionBeanPropertyBinder.java:[line 813]<br/>At DefaultActionBeanPropertyBinder.java:[line 851]<br/>At DefaultObjectFactory.java:[line 133]<br/>At DefaultObjectFactory.java:[line 138]<br/>At DefaultObjectFactory.java:[line 149]<br/>At DefaultObjectFactory.java:[line 153]<br/>At DefaultObjectFactory.java:[line 156]<br/>At DefaultObjectFactory.java:[line 157]<br/>At DefaultObjectFactory.java:[line 162]<br/>At DefaultObjectFactory.java:[line 327]<br/>At DispatcherHelper.java:[line 462]<br/>At DispatcherHelper.java:[line 465]<br/>At DispatcherHelper.java:[line 510]<br/>At DispatcherHelper.java:[line 744]<br/>At DispatcherHelper.java:[line 748]<br/>At DispatcherHelper.java:[line 234]<br/>At DispatcherHelper.java:[line 649]<br/>At DispatcherServlet.java:[line 355]<br/>At DynamicMappingFilter.java:[line 474]<br/>At DynamicMappingFilter.java:[line 518]<br/>At DynamicMappingFilter.java:[line 519]<br/>At DynamicMappingFilter.java:[line 607]<br/>At DynamicMappingFilter.java:[line 610]<br/>At DynamicMappingFilter.java:[line 612]<br/>At DynamicMappingFilter.java:[line 618]<br/>At DynamicMappingFilter.java:[line 628]<br/>At DynamicMappingFilter.java:[line 633]<br/>At DynamicMappingFilter.java:[line 797]<br/>At DynamicMappingFilter.java:[line 798]<br/>At DynamicMappingFilter.java:[line 799]<br/>At DynamicMappingFilter.java:[line 816]<br/>At ExecutionContext.java:[line 155]<br/>At ExecutionContext.java:[line 172]<br/>At HttpCacheInterceptor.java:[line 81]<br/>At HttpCacheInterceptor.java:[line 89]<br/>At HttpCacheInterceptor.java:[line 95]<br/>At HttpCacheInterceptor.java:[line 135]<br/>At NameBasedActionResolver.java:[line 265]<br/>At NameBasedActionResolver.java:[line 268]<br/>At NameBasedActionResolver.java:[line 296]<br/>At ParameterName.java:[line 72]<br/>At StripesFilter.java:[line 128]<br/>At StripesFilter.java:[line 231]<br/>At StripesFilter.java:[line 237]<br/>At StripesFilter.java:[line 240]<br/>At UrlBinding.java:[line 95]<br/>At UrlBinding.java:[line 110]<br/>At UrlBinding.java:[line 118]<br/>At UrlBinding.java:[line 138]<br/>At UrlBinding.java:[line 139]<br/>At UrlBinding.java:[line 141]<br/>At UrlBinding.java:[line 144]<br/>At UrlBinding.java:[line 147]<br/>At UrlBindingFactory.java:[line 100]<br/>At UrlBindingFactory.java:[line 115]<br/>At UrlBindingFactory.java:[line 117]<br/>At UrlBindingFactory.java:[line 129]<br/>At UrlBindingFactory.java:[line 131]<br/>At UrlBindingFactory.java:[line 138]<br/>At UrlBindingFactory.java:[line 142]<br/>At UrlBindingFactory.java:[line 149]<br/>At UrlBindingFactory.java:[line 193]<br/>At UrlBindingFactory.java:[line 195]<br/>At UrlBindingFactory.java:[line 200]<br/>At UrlBindingFactory.java:[line 217]<br/>At UrlBindingFactory.java:[line 230]<br/>At UrlBindingFactory.java:[line 313]<br/>At UrlBindingFactory.java:[line 356]<br/>At UrlBindingFactory.java:[line 357]<br/>At UrlBindingFactory.java:[line 359]<br/>At UrlBindingFactory.java:[line 360]<br/>At UrlBindingFactory.java:[line 371]<br/>At UrlBindingFactory.java:[line 376]<br/>At UrlBindingFactory.java:[line 377]<br/>At UrlBindingFactory.java:[line 380]<br/>At UrlBindingFactory.java:[line 382]<br/>At UrlBindingFactory.java:[line 390]<br/>At UrlBindingFactory.java:[line 399]<br/>At UrlBindingFactory.java:[line 402]<br/>At UrlBindingFactory.java:[line 412]<br/>At UrlBindingFactory.java:[line 430]<br/>At UrlBindingFactory.java:[line 431]<br/>At UrlBindingFactory.java:[line 433]<br/>At UrlBindingFactory.java:[line 435]<br/>At UrlBindingFactory.java:[line 452]<br/>At UrlBindingFactory.java:[line 454]<br/>At UrlBindingFactory.java:[line 456]<br/>At UrlBindingFactory.java:[line 458]<br/>At UrlBindingFactory.java:[line 474]<br/>At UrlBindingFactory.java:[line 477]<br/>At UrlBindingFactory.java:[line 480]<br/>At UrlBindingFactory.java:[line 483]<br/>At UrlBindingFactory.java:[line 489]<br/>At UrlBindingFactory.java:[line 504]<br/>At UrlBindingFactory.java:[line 508]<br/>At UrlBindingFactory.java:[line 514]<br/>At UrlBindingFactory.java:[line 526]<br/>At JsonContentTypeRequestWrapper.java:[line 47]<br/>At JsonContentTypeRequestWrapper.java:[line 56]<br/>At JsonContentTypeRequestWrapper.java:[line 68]<br/>At JsonContentTypeRequestWrapper.java:[line 91]<br/>At JsonContentTypeRequestWrapper.java:[line 104]<br/>At JsonContentTypeRequestWrapper.java:[line 128]<br/>At JsonContentTypeRequestWrapper.java:[line 131]<br/>At JsonContentTypeRequestWrapper.java:[line 134]<br/>At JsonContentTypeRequestWrapper.java:[line 137]<br/>At DefaultMultipartWrapperFactory.java:[line 75]<br/>At DefaultMultipartWrapperFactory.java:[line 79]<br/>At DefaultMultipartWrapperFactory.java:[line 86]<br/>At DefaultMultipartWrapperFactory.java:[line 122]<br/>At DefaultExceptionHandler.java:[line 288]<br/>At DefaultExceptionHandler.java:[line 409]<br/>At DefaultExceptionHandler.java:[line 426]<br/>At DelegatingExceptionHandler.java:[line 94]<br/>At DelegatingExceptionHandler.java:[line 95]<br/>At DelegatingExceptionHandler.java:[line 97]<br/>At DelegatingExceptionHandler.java:[line 113]<br/>At DelegatingExceptionHandler.java:[line 117]<br/>At DelegatingExceptionHandler.java:[line 120]<br/>At DelegatingExceptionHandler.java:[line 126]<br/>At DelegatingExceptionHandler.java:[line 134]<br/>At DefaultFormatterFactory.java:[line 91]<br/>At SpringHelper.java:[line 119]<br/>At SpringHelper.java:[line 135]<br/>At SpringHelper.java:[line 267]<br/>At SpringHelper.java:[line 290]<br/>At SpringInjectionPostProcessor.java:[line 65]<br/>At DefaultLocalePicker.java:[line 74]<br/>At DefaultLocalePicker.java:[line 126]<br/>At DefaultLocalePicker.java:[line 127]<br/>At DefaultLocalizationBundleFactory.java:[line 56]<br/>At DefaultLocalizationBundleFactory.java:[line 62]<br/>At DefaultTagErrorRendererFactory.java:[line 54]<br/>At PageOptionsTag.java:[line 75]<br/>At UseActionBeanTag.java:[line 145]<br/>At LayoutComponentRenderer.java:[line 107]<br/>At LayoutComponentRenderer.java:[line 134]<br/>At LayoutComponentRenderer.java:[line 138]<br/>At LayoutComponentRenderer.java:[line 158]<br/>At LayoutComponentRenderer.java:[line 180]<br/>At LayoutComponentRenderer.java:[line 191]<br/>At LayoutComponentTag.java:[line 47]<br/>At LayoutComponentTag.java:[line 114]<br/>At LayoutComponentTag.java:[line 119]<br/>At LayoutComponentTag.java:[line 124]<br/>At LayoutComponentTag.java:[line 128]<br/>At LayoutComponentTag.java:[line 132]<br/>At LayoutComponentTag.java:[line 136]<br/>At LayoutComponentTag.java:[line 142]<br/>At LayoutComponentTag.java:[line 160]<br/>At LayoutComponentTag.java:[line 176]<br/>At LayoutComponentTag.java:[line 180]<br/>At LayoutComponentTag.java:[line 186]<br/>At LayoutContext.java:[line 65]<br/>At LayoutContext.java:[line 71]<br/>At LayoutContext.java:[line 123]<br/>At LayoutContext.java:[line 157]<br/>At LayoutContext.java:[line 410]<br/>At LayoutContext.java:[line 422]<br/>At LayoutRenderTag.java:[line 119]<br/>At LayoutRenderTag.java:[line 124]<br/>At LayoutRenderTag.java:[line 170]<br/>At LayoutRenderTag.java:[line 173]<br/>At LayoutRenderTag.java:[line 176]<br/>At LayoutRenderTag.java:[line 204]<br/>At LayoutWriter.java:[line 53]<br/>At LayoutWriter.java:[line 120]<br/>At CryptoUtil.java:[line 363]<br/>At HttpUtil.java:[line 50]<br/>At HttpUtil.java:[line 52]<br/>At HttpUtil.java:[line 55]<br/>At HttpUtil.java:[line 56]<br/>At HttpUtil.java:[line 64]<br/>At HttpUtil.java:[line 90]<br/>At Log.java:[line 187]<br/>At ReflectUtil.java:[line 254]<br/>At ReflectUtil.java:[line 470]<br/>At ReflectUtil.java:[line 481]<br/>At ReflectUtil.java:[line 488]<br/>At ReflectUtil.java:[line 489]<br/>At ResolverUtil.java:[line 129]<br/>At StringUtil.java:[line 57]<br/>At StringUtil.java:[line 60]<br/>At StringUtil.java:[line 64]<br/>At StringUtil.java:[line 90]<br/>At TypeHandlerCache.java:[line 145]<br/>At TypeHandlerCache.java:[line 166]<br/>At TypeHandlerCache.java:[line 170]<br/>At TypeHandlerCache.java:[line 172]<br/>At TypeHandlerCache.java:[line 195]<br/>At TypeHandlerCache.java:[line 201]<br/>At TypeHandlerCache.java:[line 207]<br/>At TypeHandlerCache.java:[line 208]<br/>At TypeHandlerCache.java:[line 209]<br/>At TypeHandlerCache.java:[line 210]<br/>At TypeHandlerCache.java:[line 219]<br/>At TypeHandlerCache.java:[line 227]<br/>At TypeHandlerCache.java:[line 228]<br/>At TypeHandlerCache.java:[line 249]<br/>At TypeHandlerCache.java:[line 250]<br/>At TypeHandlerCache.java:[line 252]<br/>At TypeHandlerCache.java:[line 253]<br/>At TypeHandlerCache.java:[line 255]<br/>At TypeHandlerCache.java:[line 256]<br/>At TypeHandlerCache.java:[line 273]<br/>At TypeHandlerCache.java:[line 277]<br/>At TypeHandlerCache.java:[line 286]<br/>At UrlBuilder.java:[line 390]<br/>At UrlBuilder.java:[line 444]<br/>At JavaBeanPropertyAccessor.java:[line 44]<br/>At JavaBeanPropertyAccessor.java:[line 86]<br/>At PropertyExpressionEvaluation.java:[line 117]<br/>At PropertyExpressionEvaluation.java:[line 120]<br/>At PropertyExpressionEvaluation.java:[line 143]<br/>At PropertyExpressionEvaluation.java:[line 147]<br/>At PropertyExpressionEvaluation.java:[line 154]<br/>At PropertyExpressionEvaluation.java:[line 179]<br/>At PropertyExpressionEvaluation.java:[line 190]<br/>At PropertyExpressionEvaluation.java:[line 224]<br/>At PropertyExpressionEvaluation.java:[line 362]<br/>At PropertyExpressionEvaluation.java:[line 394]<br/>At PropertyExpressionEvaluation.java:[line 397]<br/>At PropertyExpressionEvaluation.java:[line 472]<br/>At PropertyExpressionEvaluation.java:[line 486]<br/>At PropertyExpressionEvaluation.java:[line 516]<br/>At PropertyExpressionEvaluation.java:[line 518]<br/>At DefaultTypeConverterFactory.java:[line 116]<br/>At DefaultValidationMetadataProvider.java:[line 69]<br/>At DefaultValidationMetadataProvider.java:[line 70]<br/>At DefaultValidationMetadataProvider.java:[line 78]<br/>At DefaultValidationMetadataProvider.java:[line 97]<br/>At DefaultValidationMetadataProvider.java:[line 100]<br/>At DefaultValidationMetadataProvider.java:[line 111]<br/>At DefaultValidationMetadataProvider.java:[line 126]<br/>At DefaultValidationMetadataProvider.java:[line 131]<br/>At DefaultValidationMetadataProvider.java:[line 142]<br/>At DefaultValidationMetadataProvider.java:[line 164]<br/>At DefaultValidationMetadataProvider.java:[line 194]<br/>At DefaultValidationMetadataProvider.java:[line 198]<br/>At DefaultValidationMetadataProvider.java:[line 311]<br/>At DefaultValidationMetadataProvider.java:[line 313]<br/>At DefaultValidationMetadataProvider.java:[line 315]<br/>At DefaultValidationMetadataProvider.java:[line 316]<br/>At DefaultValidationMetadataProvider.java:[line 317]<br/>At DefaultValidationMetadataProvider.java:[line 319]<br/>At SimpleError.java:[line 112]<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 61]<br/>At DefaultVFS.java:[line 67]<br/>At DefaultVFS.java:[line 72]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 100]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 115]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 225]<br/>At DefaultVFS.java:[line 241]<br/>At DefaultVFS.java:[line 242]<br/>At DefaultVFS.java:[line 272]<br/>At DefaultVFS.java:[line 289]<br/>At JBoss6VFS.java:[line 87]<br/>At JBoss6VFS.java:[line 88]<br/>At JBoss6VFS.java:[line 136]<br/>At VFS.java:[line 68]<br/>At VFS.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72890');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.trace(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72890" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Log<br/>In method net.sourceforge.stripes.util.Log.trace(Object[])<br/>At Log.java:[line 198]<br/>Sink method org/apache/commons/logging/Log.trace(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String; parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/Log.trace([Ljava/lang/Object;)V parameter 0<br/>Unknown source java/lang/reflect/Array.get(Ljava/lang/Object;I)Ljava/lang/Object;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object; parameter 0<br/>Unknown source java/util/Arrays.toString([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At ForwardResolution.java:[line 149]<br/>At ForwardResolution.java:[line 152]<br/>At RedirectResolution.java:[line 222]<br/>At BootstrapPropertyResolver.java:[line 161]<br/>At BootstrapPropertyResolver.java:[line 163]<br/>At BootstrapPropertyResolver.java:[line 223]<br/>At BootstrapPropertyResolver.java:[line 225]<br/>At BootstrapPropertyResolver.java:[line 226]<br/>At BootstrapPropertyResolver.java:[line 266]<br/>At BootstrapPropertyResolver.java:[line 268]<br/>At BootstrapPropertyResolver.java:[line 270]<br/>At BootstrapPropertyResolver.java:[line 274]<br/>At RuntimeConfiguration.java:[line 293]<br/>At RuntimeConfiguration.java:[line 294]<br/>At RuntimeConfiguration.java:[line 295]<br/>At RuntimeConfiguration.java:[line 296]<br/>At RuntimeConfiguration.java:[line 317]<br/>At RuntimeConfiguration.java:[line 318]<br/>At RuntimeConfiguration.java:[line 319]<br/>At RuntimeConfiguration.java:[line 320]<br/>At DefaultActionBeanPropertyBinder.java:[line 114]<br/>At DefaultActionBeanPropertyBinder.java:[line 126]<br/>At DefaultActionBeanPropertyBinder.java:[line 128]<br/>At DefaultActionBeanPropertyBinder.java:[line 134]<br/>At DefaultActionBeanPropertyBinder.java:[line 159]<br/>At DefaultActionBeanPropertyBinder.java:[line 210]<br/>At DefaultActionBeanPropertyBinder.java:[line 213]<br/>At DefaultActionBeanPropertyBinder.java:[line 214]<br/>At DefaultActionBeanPropertyBinder.java:[line 215]<br/>At DefaultActionBeanPropertyBinder.java:[line 422]<br/>At DefaultActionBeanPropertyBinder.java:[line 427]<br/>At DefaultActionBeanPropertyBinder.java:[line 430]<br/>At DefaultActionBeanPropertyBinder.java:[line 851]<br/>At DefaultObjectFactory.java:[line 133]<br/>At DefaultObjectFactory.java:[line 138]<br/>At DefaultObjectFactory.java:[line 149]<br/>At DefaultObjectFactory.java:[line 153]<br/>At DefaultObjectFactory.java:[line 156]<br/>At DefaultObjectFactory.java:[line 157]<br/>At DefaultObjectFactory.java:[line 327]<br/>At DispatcherServlet.java:[line 101]<br/>At ParameterName.java:[line 72]<br/>At StripesFilter.java:[line 220]<br/>At DefaultFormatterFactory.java:[line 91]<br/>At DefaultFormatterFactory.java:[line 102]<br/>At LayoutComponentRenderer.java:[line 115]<br/>At LayoutComponentTag.java:[line 47]<br/>At LayoutComponentTag.java:[line 65]<br/>At LayoutContext.java:[line 410]<br/>At LayoutWriter.java:[line 79]<br/>At LayoutWriter.java:[line 88]<br/>At LayoutWriter.java:[line 102]<br/>At LayoutWriter.java:[line 103]<br/>At HttpUtil.java:[line 50]<br/>At HttpUtil.java:[line 52]<br/>At HttpUtil.java:[line 55]<br/>At HttpUtil.java:[line 56]<br/>At HttpUtil.java:[line 64]<br/>At HttpUtil.java:[line 90]<br/>At Log.java:[line 198]<br/>At ResolverUtil.java:[line 129]<br/>At ResolverUtil.java:[line 164]<br/>At ResolverUtil.java:[line 182]<br/>At ResolverUtil.java:[line 202]<br/>At ResolverUtil.java:[line 203]<br/>At ResolverUtil.java:[line 205]<br/>At ResolverUtil.java:[line 235]<br/>At ResolverUtil.java:[line 237]<br/>At StringUtil.java:[line 57]<br/>At StringUtil.java:[line 60]<br/>At StringUtil.java:[line 64]<br/>At StringUtil.java:[line 90]<br/>At TypeHandlerCache.java:[line 73]<br/>At TypeHandlerCache.java:[line 149]<br/>At TypeHandlerCache.java:[line 255]<br/>At DefaultTypeConverterFactory.java:[line 116]<br/>At DefaultTypeConverterFactory.java:[line 127]<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 74]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 91]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 113]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 174]<br/>At DefaultVFS.java:[line 178]<br/>At DefaultVFS.java:[line 197]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 203]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 215]<br/>At DefaultVFS.java:[line 218]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 230]<br/>At DefaultVFS.java:[line 231]<br/>At DefaultVFS.java:[line 240]<br/>At DefaultVFS.java:[line 252]<br/>At VFS.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74044');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74044" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Log<br/>In method net.sourceforge.stripes.util.Log.warn(Object[])<br/>At Log.java:[line 165]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String; parameter 0<br/>Unknown source net/sourceforge/stripes/util/StringUtil.combineParts([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/Log.warn([Ljava/lang/Object;)V parameter 0<br/>Unknown source java/lang/reflect/Array.get(Ljava/lang/Object;I)Ljava/lang/Object;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object; parameter 0<br/>Unknown source java/util/Arrays.toString([Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/CollectionUtil.asObjectArray(Ljava/lang/Object;)[Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At ObjectOutputBuilder.java:[line 107]<br/>At StreamingResolution.java:[line 355]<br/>At StreamingResolution.java:[line 436]<br/>At StreamingResolution.java:[line 489]<br/>At ValidationErrorReportResolution.java:[line 89]<br/>At BootstrapPropertyResolver.java:[line 82]<br/>At BootstrapPropertyResolver.java:[line 159]<br/>At BootstrapPropertyResolver.java:[line 160]<br/>At BootstrapPropertyResolver.java:[line 221]<br/>At BootstrapPropertyResolver.java:[line 222]<br/>At BootstrapPropertyResolver.java:[line 223]<br/>At BootstrapPropertyResolver.java:[line 226]<br/>At DefaultConfiguration.java:[line 226]<br/>At DefaultConfiguration.java:[line 234]<br/>At DefaultConfiguration.java:[line 235]<br/>At RuntimeConfiguration.java:[line 293]<br/>At RuntimeConfiguration.java:[line 294]<br/>At RuntimeConfiguration.java:[line 304]<br/>At RuntimeConfiguration.java:[line 317]<br/>At RuntimeConfiguration.java:[line 318]<br/>At RuntimeConfiguration.java:[line 328]<br/>At AnnotatedClassActionResolver.java:[line 143]<br/>At AnnotatedClassActionResolver.java:[line 545]<br/>At AnnotatedClassActionResolver.java:[line 546]<br/>At AnnotatedClassActionResolver.java:[line 547]<br/>At AnnotatedClassActionResolver.java:[line 554]<br/>At AnnotatedClassActionResolver.java:[line 606]<br/>At AnnotatedClassActionResolver.java:[line 615]<br/>At AnnotatedClassActionResolver.java:[line 617]<br/>At AnnotatedClassActionResolver.java:[line 618]<br/>At AnnotatedClassActionResolver.java:[line 666]<br/>At AnnotatedClassActionResolver.java:[line 737]<br/>At AnnotatedClassActionResolver.java:[line 739]<br/>At BeforeAfterMethodInterceptor.java:[line 207]<br/>At BeforeAfterMethodInterceptor.java:[line 220]<br/>At BeforeAfterMethodInterceptor.java:[line 270]<br/>At BindingPolicyManager.java:[line 122]<br/>At BindingPolicyManager.java:[line 125]<br/>At BindingPolicyManager.java:[line 128]<br/>At BindingPolicyManager.java:[line 231]<br/>At BindingPolicyManager.java:[line 233]<br/>At BindingPolicyManager.java:[line 268]<br/>At BindingPolicyManager.java:[line 270]<br/>At BindingPolicyManager.java:[line 276]<br/>At BindingPolicyManager.java:[line 278]<br/>At BindingPolicyManager.java:[line 288]<br/>At BindingPolicyManager.java:[line 293]<br/>At DefaultActionBeanPropertyBinder.java:[line 259]<br/>At DefaultActionBeanPropertyBinder.java:[line 263]<br/>At DefaultObjectFactory.java:[line 141]<br/>At DispatcherHelper.java:[line 710]<br/>At DispatcherHelper.java:[line 668]<br/>At DispatcherServlet.java:[line 283]<br/>At ExecutionContext.java:[line 155]<br/>At FlashScope.java:[line 413]<br/>At HttpCacheInterceptor.java:[line 139]<br/>At HttpCacheInterceptor.java:[line 143]<br/>At NameBasedActionResolver.java:[line 412]<br/>At DefaultMultipartWrapperFactory.java:[line 95]<br/>At DefaultMultipartWrapperFactory.java:[line 115]<br/>At DefaultExceptionHandler.java:[line 409]<br/>At DefaultExceptionHandler.java:[line 420]<br/>At DelegatingExceptionHandler.java:[line 113]<br/>At DelegatingExceptionHandler.java:[line 126]<br/>At DelegatingExceptionHandler.java:[line 133]<br/>At ErrorsTag.java:[line 333]<br/>At FieldMetadataTag.java:[line 70]<br/>At LinkTagSupport.java:[line 220]<br/>At LayoutComponentTag.java:[line 47]<br/>At LayoutComponentTag.java:[line 153]<br/>At CryptoUtil.java:[line 370]<br/>At Log.java:[line 165]<br/>At ReflectUtil.java:[line 556]<br/>At ReflectUtil.java:[line 600]<br/>At ResolverUtil.java:[line 129]<br/>At ResolverUtil.java:[line 164]<br/>At ResolverUtil.java:[line 182]<br/>At ResolverUtil.java:[line 202]<br/>At ResolverUtil.java:[line 203]<br/>At ResolverUtil.java:[line 205]<br/>At ResolverUtil.java:[line 209]<br/>At ResolverUtil.java:[line 245]<br/>At StringUtil.java:[line 57]<br/>At StringUtil.java:[line 60]<br/>At StringUtil.java:[line 64]<br/>At MapPropertyAccessor.java:[line 60]<br/>At MapPropertyAccessor.java:[line 61]<br/>At MapPropertyAccessor.java:[line 64]<br/>At MapPropertyAccessor.java:[line 114]<br/>At Node.java:[line 53]<br/>At PropertyExpression.java:[line 74]<br/>At DefaultValidationMetadataProvider.java:[line 97]<br/>At DefaultValidationMetadataProvider.java:[line 100]<br/>At DefaultValidationMetadataProvider.java:[line 106]<br/>At DefaultValidationMetadataProvider.java:[line 114]<br/>At DefaultValidationMetadataProvider.java:[line 126]<br/>At DefaultValidationMetadataProvider.java:[line 128]<br/>At DefaultValidationMetadataProvider.java:[line 134]<br/>At DefaultValidationMetadataProvider.java:[line 194]<br/>At DefaultValidationMetadataProvider.java:[line 198]<br/>At DefaultValidationMetadataProvider.java:[line 336]<br/>At ExpressionExecutorSupport.java:[line 160]<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 231]<br/>At DefaultVFS.java:[line 249]<br/>At JBoss6VFS.java:[line 126]<br/>At VFS.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75348');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75348" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class net.sourceforge.stripes.validation.expression.Jsp21ExpressionExecutor<br/>In method net.sourceforge.stripes.validation.expression.Jsp21ExpressionExecutor.evaluate(ActionBean, ParameterName, List, ValidationMetadata, ValidationErrors)<br/>At Jsp21ExpressionExecutor.java:[line 214]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source net/sourceforge/stripes/validation/ValidationMetadata.expression()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/validation/ValidationMetadata.expression<br/>At ValidationMetadata.java:[line 200]<br/>At Jsp21ExpressionExecutor.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67072');">
+<td>
+<span class="priority-2">SECFUN</span>
+</td>
+<td>The filename read can be tampered with by the client</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67072" style="display: none;">
+<a href="#FILE_UPLOAD_FILENAME">Bug type FILE_UPLOAD_FILENAME (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper<br/>In method net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper.getFileParameterValue(String)<br/>At CommonsMultipartWrapper.java:[line 170]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67125');">
+<td>
+<span class="priority-2">SECFUN</span>
+</td>
+<td>The filename read can be tampered with by the client</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67125" style="display: none;">
+<a href="#FILE_UPLOAD_FILENAME">Bug type FILE_UPLOAD_FILENAME (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper<br/>In method net.sourceforge.stripes.controller.multipart.CommonsMultipartWrapper.getFileParameterValue(String)<br/>At CommonsMultipartWrapper.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67724');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in net.sourceforge.stripes.util.Base64.decodeToObject(String)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67724" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.decodeToObject(String)<br/>At Base64.java:[line 1063]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66195');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66195" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class net.sourceforge.stripes.ajax.JavaScriptBuilder<br/>In method new net.sourceforge.stripes.ajax.JavaScriptBuilder(Object, Object[])<br/>At JavaScriptBuilder.java:[line 87]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67014');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67014" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.FlashScope<br/>In method net.sourceforge.stripes.controller.FlashScope.&lt;static initializer for FlashScope&gt;()<br/>At FlashScope.java:[line 90]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67257');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67257" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class net.sourceforge.stripes.mock.MockHttpSession<br/>In method new net.sourceforge.stripes.mock.MockHttpSession(ServletContext)<br/>At MockHttpSession.java:[line 34]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67369');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67369" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class net.sourceforge.stripes.tag.FieldMetadataTag$Var<br/>In method new net.sourceforge.stripes.tag.FieldMetadataTag$Var(FieldMetadataTag, String)<br/>At FieldMetadataTag.java:[line 421]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67480');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67480" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class net.sourceforge.stripes.tag.InputTagSupport<br/>In method net.sourceforge.stripes.tag.InputTagSupport.setFocus(boolean)<br/>At InputTagSupport.java:[line 488]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67178');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67178" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.multipart.CosMultipartWrapper$1<br/>In method net.sourceforge.stripes.controller.multipart.CosMultipartWrapper$1.rename(File)<br/>At CosMultipartWrapper.java:[line 89]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/controller/multipart/CosMultipartWrapper$1.val$tempDir<br/>At CosMultipartWrapper.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67778');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67778" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.decodeFileToFile(String, String)<br/>At Base64.java:[line 1312]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.decodeFileToFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>Method usage with tainted arguments detected<br/>At Base64.java:[line 402]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67862');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67862" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.encodeFileToFile(String, String)<br/>At Base64.java:[line 1275]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.encodeFileToFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>Method usage with tainted arguments detected<br/>At Base64.java:[line 399]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67946');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67946" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.decodeFromFile(String)<br/>At Base64.java:[line 1171]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.decodeFromFile(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68020');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68020" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.encodeFromFile(String)<br/>At Base64.java:[line 1228]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.encodeFromFile(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75442');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75442" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.findJarForResource(URL)<br/>At DefaultVFS.java:[line 232]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.findJarForResource(Ljava/net/URL;)Ljava/net/URL; parameter 0<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 231]<br/>At DefaultVFS.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75691');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75691" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.findJarForResource(URL)<br/>At DefaultVFS.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URLDecoder.decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/StringUtil.urlDecode(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/util/StringUtil.urlDecode(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.findJarForResource(Ljava/net/URL;)Ljava/net/URL; parameter 0<br/>Method usage with tainted arguments detected<br/>At StringUtil.java:[line 90]<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 231]<br/>At DefaultVFS.java:[line 236]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75965');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75965" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.list(URL, String)<br/>At DefaultVFS.java:[line 112]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.list(Ljava/net/URL;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 112]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68094');">
+<td>
+<span class="priority-1">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68094" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.decodeFileToFile(String, String)<br/>At Base64.java:[line 1316]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.decodeFileToFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage with tainted arguments detected<br/>At Base64.java:[line 402]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68178');">
+<td>
+<span class="priority-1">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68178" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.encodeFileToFile(String, String)<br/>At Base64.java:[line 1279]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.encodeFileToFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage with tainted arguments detected<br/>At Base64.java:[line 399]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68262');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68262" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.decodeToFile(String, String)<br/>At Base64.java:[line 1135]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.decodeToFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68336');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68336" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.Base64<br/>In method net.sourceforge.stripes.util.Base64.encodeToFile(byte[], String)<br/>At Base64.java:[line 1101]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Base64.encodeToFile([BLjava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.ForwardResolution<br/>In method net.sourceforge.stripes.action.ForwardResolution.execute(HttpServletRequest, HttpServletResponse)<br/>At ForwardResolution.java:[line 150]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source net/sourceforge/stripes/action/ForwardResolution.getUrl(Ljava/util/Locale;)Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At ForwardResolution.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65713');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65713" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.ForwardResolution<br/>In method net.sourceforge.stripes.action.ForwardResolution.execute(HttpServletRequest, HttpServletResponse)<br/>At ForwardResolution.java:[line 153]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source net/sourceforge/stripes/action/ForwardResolution.getUrl(Ljava/util/Locale;)Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At ForwardResolution.java:[line 153]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66253');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66253" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter.issueRequests(List, HttpServletRequest, HttpServletResponse)<br/>At DynamicMappingFilter.java:[line 740]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source net/sourceforge/stripes/controller/DynamicMappingFilter.issueRequests(Ljava/util/List;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At DynamicMappingFilter.java:[line 521]<br/>At DynamicMappingFilter.java:[line 546]<br/>At DynamicMappingFilter.java:[line 618]<br/>At DynamicMappingFilter.java:[line 628]<br/>At DynamicMappingFilter.java:[line 688]<br/>At DynamicMappingFilter.java:[line 689]<br/>At DynamicMappingFilter.java:[line 691]<br/>At DynamicMappingFilter.java:[line 692]<br/>At DynamicMappingFilter.java:[line 733]<br/>At DynamicMappingFilter.java:[line 735]<br/>At DynamicMappingFilter.java:[line 739]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66441');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66441" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter.issueRequests(List, HttpServletRequest, HttpServletResponse)<br/>At DynamicMappingFilter.java:[line 759]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source net/sourceforge/stripes/controller/DynamicMappingFilter.issueRequests(Ljava/util/List;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At DynamicMappingFilter.java:[line 521]<br/>At DynamicMappingFilter.java:[line 546]<br/>At DynamicMappingFilter.java:[line 618]<br/>At DynamicMappingFilter.java:[line 628]<br/>At DynamicMappingFilter.java:[line 688]<br/>At DynamicMappingFilter.java:[line 689]<br/>At DynamicMappingFilter.java:[line 691]<br/>At DynamicMappingFilter.java:[line 692]<br/>At DynamicMappingFilter.java:[line 752]<br/>At DynamicMappingFilter.java:[line 754]<br/>At DynamicMappingFilter.java:[line 758]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67591');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67591" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class net.sourceforge.stripes.tag.layout.LayoutContext<br/>In method net.sourceforge.stripes.tag.layout.LayoutContext.doIncludeHack(PageContext, String)<br/>At LayoutContext.java:[line 387]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source net/sourceforge/stripes/tag/layout/LayoutContext.doIncludeHack(Ljavax/servlet/jsp/PageContext;Ljava/lang/String;)V parameter 0<br/>At LayoutComponentRenderer.java:[line 137]<br/>At LayoutContext.java:[line 202]<br/>At LayoutContext.java:[line 387]<br/>At LayoutContext.java:[line 410]<br/>At LayoutRenderTag.java:[line 47]<br/>At LayoutRenderTag.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68464');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68464" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.CryptoUtil<br/>In method net.sourceforge.stripes.util.CryptoUtil.getSecretKey()<br/>At CryptoUtil.java:[line 329]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66629');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66629" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter.requestRemotely(HttpServletRequest, String)<br/>At DynamicMappingFilter.java:[line 800]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getLocalAddr()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Tainted source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Tainted source java/net/URL.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V<br/>Tainted source java/net/URL.getProtocol()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/controller/DynamicMappingFilter.requestRemotely(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)V parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURL()Ljava/lang/StringBuffer;<br/>At DynamicMappingFilter.java:[line 797]<br/>At DynamicMappingFilter.java:[line 798]<br/>At DynamicMappingFilter.java:[line 799]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76154');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76154" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.isJar(URL, byte[])<br/>At DefaultVFS.java:[line 286]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.isJar(Ljava/net/URL;[B)Z parameter 1<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 67]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 225]<br/>At DefaultVFS.java:[line 241]<br/>At DefaultVFS.java:[line 242]<br/>At DefaultVFS.java:[line 272]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76418');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76418" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.list(URL, String)<br/>At DefaultVFS.java:[line 60]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/io/File.toURI()Ljava/net/URI;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.findJarForResource(Ljava/net/URL;)Ljava/net/URL;<br/>Unknown source java/net/URI.toURL()Ljava/net/URL;<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.list(Ljava/net/URL;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.findJarForResource(Ljava/net/URL;)Ljava/net/URL; parameter 0<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 58]<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]<br/>At DefaultVFS.java:[line 202]<br/>At DefaultVFS.java:[line 211]<br/>At DefaultVFS.java:[line 224]<br/>At DefaultVFS.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76677');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76677" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.list(URL, String)<br/>At DefaultVFS.java:[line 70]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.list(Ljava/net/URL;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76851');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76851" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class net.sourceforge.stripes.vfs.DefaultVFS<br/>In method net.sourceforge.stripes.vfs.DefaultVFS.list(URL, String)<br/>At DefaultVFS.java:[line 87]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/vfs/DefaultVFS.list(Ljava/net/URL;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Method usage with tainted arguments detected<br/>At DefaultVFS.java:[line 75]<br/>At DefaultVFS.java:[line 90]<br/>At DefaultVFS.java:[line 92]<br/>At DefaultVFS.java:[line 101]<br/>At DefaultVFS.java:[line 116]<br/>At DefaultVFS.java:[line 126]<br/>At DefaultVFS.java:[line 128]<br/>At DefaultVFS.java:[line 131]<br/>At DefaultVFS.java:[line 134]<br/>At DefaultVFS.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65796');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65796" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.RedirectResolution<br/>In method net.sourceforge.stripes.action.RedirectResolution.execute(HttpServletRequest, HttpServletResponse)<br/>At RedirectResolution.java:[line 224]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65865');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65865" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.RedirectResolution<br/>In method net.sourceforge.stripes.action.RedirectResolution.execute(HttpServletRequest, HttpServletResponse)<br/>At RedirectResolution.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67427');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67427" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class net.sourceforge.stripes.tag.FormTag<br/>In method net.sourceforge.stripes.tag.FormTag.buildAction()<br/>At FormTag.java:[line 524]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67538');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67538" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class net.sourceforge.stripes.tag.LinkTagSupport<br/>In method net.sourceforge.stripes.tag.LinkTagSupport.buildUrl()<br/>At LinkTagSupport.java:[line 224]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66758');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66758" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter.eval(String, Node, QName)<br/>At DynamicMappingFilter.java:[line 593]<br/>Sink method javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object;<br/>Sink parameter 2<br/>Unknown source net/sourceforge/stripes/controller/DynamicMappingFilter.eval(Ljava/lang/String;Lorg/w3c/dom/Node;Ljavax/xml/namespace/QName;)Ljava/lang/Object; parameter 2<br/>At DynamicMappingFilter.java:[line 607]<br/>At DynamicMappingFilter.java:[line 610]<br/>At DynamicMappingFilter.java:[line 612]<br/>At DynamicMappingFilter.java:[line 624]<br/>At DynamicMappingFilter.java:[line 625]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.ErrorResolution<br/>In method net.sourceforge.stripes.action.ErrorResolution.execute(HttpServletRequest, HttpServletResponse)<br/>At ErrorResolution.java:[line 56]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/action/ErrorResolution.errorMessage<br/>At ErrorResolution.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65918');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write([CII)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65918" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.StreamingResolution<br/>In method net.sourceforge.stripes.action.StreamingResolution.stream(HttpServletResponse)<br/>At StreamingResolution.java:[line 428]<br/>Sink method java/io/PrintWriter.write([CII)V<br/>Sink parameter 2<br/>At StreamingResolution.java:[line 427]<br/>At StreamingResolution.java:[line 428]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66002');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66002" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.StreamingResolution<br/>In method net.sourceforge.stripes.action.StreamingResolution.stream(HttpServletResponse)<br/>At StreamingResolution.java:[line 457]<br/>Sink method javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/action/StreamingResolution.contentType<br/>At StreamingResolution.java:[line 457]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66081');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66081" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class net.sourceforge.stripes.action.StreamingResolution<br/>In method net.sourceforge.stripes.action.StreamingResolution.stream(HttpServletResponse)<br/>At StreamingResolution.java:[line 458]<br/>Sink method javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/util/Range.getEnd()Ljava/lang/Comparable;<br/>Unknown source net/sourceforge/stripes/util/Range.getStart()Ljava/lang/Comparable;<br/>Unknown source net/sourceforge/stripes/util/Range.end<br/>Unknown source net/sourceforge/stripes/util/Range.start<br/>At StreamingResolution.java:[line 458]<br/>At Range.java:[line 43]<br/>At Range.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66935');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66935" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter$ErrorTrappingResponseWrapper<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter$ErrorTrappingResponseWrapper.proceed()<br/>At DynamicMappingFilter.java:[line 288]<br/>Sink method javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source net/sourceforge/stripes/controller/DynamicMappingFilter$ErrorTrappingResponseWrapper.errorMessage<br/>At DynamicMappingFilter.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66877');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66877" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class net.sourceforge.stripes.controller.DynamicMappingFilter<br/>In method net.sourceforge.stripes.controller.DynamicMappingFilter.parseWebXml()<br/>At DynamicMappingFilter.java:[line 576]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68410');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68410" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class net.sourceforge.stripes.util.CryptoUtil<br/>In method net.sourceforge.stripes.util.CryptoUtil.getCipher(SecretKey, int, byte[], int, int)<br/>At CryptoUtil.java:[line 298]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="EL_INJECTION">EL_INJECTION: Potential code injection when using Expression Language (EL)</a>
+</h2>
+            
+<p>
+    An expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>public void evaluateExpression(String expression) {
+    FacesContext context = FacesContext.getCurrentInstance();
+    ExpressionFactory expressionFactory = context.getApplication().getExpressionFactory();
+    ELContext elContext = context.getELContext();
+    ValueExpression vex = expressionFactory.createValueExpression(elContext, expression, String.class);
+    return (String) vex.getValue(elContext);
+}</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://blog.mindedsecurity.com/2015/11/reliable-os-shell-with-el-expression.html">Minded Security: Abusing EL for executing OS commands</a><br/>
+    <a href="https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html">The Java EE 6 Tutorial: Expression Language</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="http://danamodio.com/appsec/research/spring-remote-code-with-expression-language-injection/">Dan Amodio's blog: Remote Code with Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+</p>
+
+        
+<h2>
+<a name="FILE_UPLOAD_FILENAME">FILE_UPLOAD_FILENAME: Tainted filename read</a>
+</h2>
+            
+<p>The filename provided by the FileUpload API can be tampered with by the client to reference unauthorized files.</p>
+<p>For example:</p>
+<ul>
+<li><code>"../../../config/overide_file"</code></li>
+<li><code>"shell.jsp\u0000expected.gif"</code></li>
+</ul>
+<p>Therefore, such values should not be passed directly to the filesystem API. If acceptable, the application should generate its
+own file names and use those. Otherwise, the provided filename should be properly validated to ensure it's properly structured,
+contains no unauthorized path characters (e.g., / \), and refers to an authorized file.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://blogs.securiteam.com/index.php/archives/1268">Securiteam: File upload security recommendations</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="URL_REWRITING">URL_REWRITING: URL rewriting method</a>
+</h2>
+            
+<p>
+The implementation of this method includes the logic to determine whether the session ID needs to be encoded in the URL.<br/>
+URL rewriting has significant security risks. Since session ID appears in the URL, it may be easily seen by third parties. Session ID in the URL can be disclosed in many ways, for example:<br/>
+<ul>
+    <li>Log files,</li>
+    <li>The browser history,</li>
+    <li>By copy-and-pasting it into an e-mail or posting,</li>
+    <li>The HTTP Referrer.</li>
+</ul>
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>out.println("Click &lt;a href=" +
+                res.encodeURL(HttpUtils.getRequestURL(req).toString()) +
+                "&gt;here&lt;/a&gt;");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid using those methods. If you are looking to encode a URL String or form parameters do not confuse the URL rewriting methods with the URLEncoder class.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A3-Broken_Authentication_and_Session_Management">OWASP Top 10 2010-A3-Broken Authentication and Session Management</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XPATH_INJECTION">XPATH_INJECTION: Potential XPath Injection</a>
+</h2>
+            
+<p>
+XPath injection risks are similar to SQL injection. If the XPath query contains untrusted user input, the complete data source
+could be exposed. This could allow an attacker to access unauthorized data or maliciously modify the target XML.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-39: XPath Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/643.html">CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61407250">CERT: IDS09-J. Prevent XPath Injection (archive)</a><br/>
+<a href="https://media.blackhat.com/bh-eu-12/Siddharth/bh-eu-12-Siddharth-Xpath-WP.pdf">Black Hat Europe 2012: Hacking XPath 2.0</a><br/>
+<a href="https://www.balisage.net/Proceedings/vol7/html/Vlist02/BalisageVol7-Vlist02.html">Balisage.net: XQuery Injection</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

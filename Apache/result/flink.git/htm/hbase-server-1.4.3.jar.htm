@@ -1,0 +1,2676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/flink.git/hbase-server-1.4.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>107265 lines of code analyzed,
+	in 2017 classes, 
+	in 67 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">14</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">122</td>
+<td align="right">1.14</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>136</b>
+</td>
+<td align="right">
+<b>1.27</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">136</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>136</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71110');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71110" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.HFilePrettyPrinter$SimpleReporter<br/>In method org.apache.hadoop.hbase.io.hfile.HFilePrettyPrinter$SimpleReporter.run()<br/>At HFilePrettyPrinter.java:[line 565]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73472');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73472" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.CompactSplitThread$CompactionRunner<br/>In method org.apache.hadoop.hbase.regionserver.CompactSplitThread$CompactionRunner.formatStackTrace(Exception)<br/>At CompactSplitThread.java:[line 581]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72529');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72529" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.HMaster$RedirectServlet<br/>In method org.apache.hadoop.hbase.master.HMaster$RedirectServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At HMaster.java:[line 394]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getServerName()Ljava/lang/String;<br/>At HMaster.java:[line 392]<br/>At HMaster.java:[line 394]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74482');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.fatal(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74482" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.wal.FSHLog<br/>In method org.apache.hadoop.hbase.regionserver.wal.FSHLog.main(String[])<br/>At FSHLog.java:[line 2033]<br/>Sink method org/apache/commons/logging/Log.fatal(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/apache/hadoop/hbase/regionserver/wal/FSHLog.main([Ljava/lang/String;)V parameter 0<br/>At FSHLog.java:[line 2033]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76401');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.info(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76401" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.hbck.OfflineMetaRepair<br/>In method org.apache.hadoop.hbase.util.hbck.OfflineMetaRepair.main(String[])<br/>At OfflineMetaRepair.java:[line 109]<br/>Sink method org/apache/commons/logging/Log.info(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/apache/hadoop/hbase/util/hbck/OfflineMetaRepair.main([Ljava/lang/String;)V parameter 0<br/>At OfflineMetaRepair.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75179');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.trace(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75179" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 146]<br/>Sink method org/apache/commons/logging/Log.trace(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 146]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75373');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75373" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 149]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 149]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75567');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75567" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 155]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 155]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75761');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75761" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 160]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 160]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75955');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75955" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 166]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 166]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76149');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76149" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.JSONBean<br/>In method org.apache.hadoop.hbase.util.JSONBean.write(JsonGenerator, MBeanServer, ObjectName, String, boolean)<br/>At JSONBean.java:[line 172]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source javax/management/MBeanServer.queryNames(Ljavax/management/ObjectName;Ljavax/management/QueryExp;)Ljava/util/Set;<br/>Unknown source org/apache/hadoop/hbase/util/JSONBean.write(Lorg/codehaus/jackson/JsonGenerator;Ljavax/management/MBeanServer;Ljavax/management/ObjectName;Ljava/lang/String;Z)I parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At JMXJsonServlet.java:[line 179]<br/>At JMXJsonServlet.java:[line 181]<br/>At JMXJsonServlet.java:[line 189]<br/>At JMXJsonServlet.java:[line 202]<br/>At JSONBean.java:[line 56]<br/>At JSONBean.java:[line 120]<br/>At JSONBean.java:[line 122]<br/>At JSONBean.java:[line 128]<br/>At JSONBean.java:[line 135]<br/>At JSONBean.java:[line 172]<br/>At JSONBean.java:[line 99]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.JMXListener<br/>In method org.apache.hadoop.hbase.JMXListener.startConnectorServer(int, int)<br/>At JMXListener.java:[line 127]<br/>Sink method java/util/HashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72058');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72058" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.HashTable$ResultHasher<br/>In method new org.apache.hadoop.hbase.mapreduce.HashTable$ResultHasher()<br/>At HashTable.java:[line 477]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71222');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71222" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.BucketCache<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])<br/>At BucketCache.java:[line 1045]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71276');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71276" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.BucketCache<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])<br/>At BucketCache.java:[line 1047]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74835');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.hadoop.hbase.security.access.HbaseObjectWritableFor96Migration.readObject(DataInput, HbaseObjectWritableFor96Migration, Configuration)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74835" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.security.access.HbaseObjectWritableFor96Migration<br/>In method org.apache.hadoop.hbase.security.access.HbaseObjectWritableFor96Migration.readObject(DataInput, HbaseObjectWritableFor96Migration, Configuration)<br/>At HbaseObjectWritableFor96Migration.java:[line 740]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65669');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (org.apache.commons.lang.math.RandomUtilsnextInt()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65669" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.coordination.ZkSplitLogWorkerCoordination<br/>In method org.apache.hadoop.hbase.coordination.ZkSplitLogWorkerCoordination.grabTask(String)<br/>At ZkSplitLogWorkerCoordination.java:[line 271]<br/>Value org.apache.commons.lang.math.RandomUtilsnextInt()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65727');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65727" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.coordination.ZkSplitLogWorkerCoordination<br/>In method org.apache.hadoop.hbase.coordination.ZkSplitLogWorkerCoordination.taskLoop()<br/>At ZkSplitLogWorkerCoordination.java:[line 419]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71164');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71164" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.PrefetchExecutor<br/>In method org.apache.hadoop.hbase.io.hfile.PrefetchExecutor.&lt;static initializer for PrefetchExecutor&gt;()<br/>At PrefetchExecutor.java:[line 74]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71884');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71884" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.ipc.RpcExecutor$RandomQueueBalancer<br/>In method org.apache.hadoop.hbase.ipc.RpcExecutor$RandomQueueBalancer.getNextQueue()<br/>At RpcExecutor.java:[line 361]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71942');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71942" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.ipc.RpcServer$Listener<br/>In method new org.apache.hadoop.hbase.ipc.RpcServer$Listener(RpcServer, String)<br/>At RpcServer.java:[line 642]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72000');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72000" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.CopyTable<br/>In method org.apache.hadoop.hbase.mapreduce.CopyTable.createSubmittableJob(String[])<br/>At CopyTable.java:[line 155]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72471');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72471" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.AssignmentManager<br/>In method org.apache.hadoop.hbase.master.AssignmentManager.prepareDaughterReplicaForAssignment(HRegionInfo, HRegionInfo, int, Map)<br/>At AssignmentManager.java:[line 4481]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73171');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73171" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.balancer.BaseLoadBalancer<br/>In method org.apache.hadoop.hbase.master.balancer.BaseLoadBalancer.&lt;static initializer for BaseLoadBalancer&gt;()<br/>At BaseLoadBalancer.java:[line 1101]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73229');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73229" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.balancer.FavoredNodeAssignmentHelper<br/>In method new org.apache.hadoop.hbase.master.balancer.FavoredNodeAssignmentHelper(List, RackManager)<br/>At FavoredNodeAssignmentHelper.java:[line 84]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73287');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73287" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.balancer.SimpleLoadBalancer<br/>In method org.apache.hadoop.hbase.master.balancer.SimpleLoadBalancer.&lt;static initializer for SimpleLoadBalancer&gt;()<br/>At SimpleLoadBalancer.java:[line 62]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73345');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73345" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.balancer.StochasticLoadBalancer<br/>In method org.apache.hadoop.hbase.master.balancer.StochasticLoadBalancer.&lt;static initializer for StochasticLoadBalancer&gt;()<br/>At StochasticLoadBalancer.java:[line 119]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73113');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73113" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.RegionPlacementMaintainer$RandomizedMatrix<br/>In method new org.apache.hadoop.hbase.master.RegionPlacementMaintainer$RandomizedMatrix(int, int)<br/>At RegionPlacementMaintainer.java:[line 523]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74424');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74424" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.compactions.SortedCompactionPolicy<br/>In method new org.apache.hadoop.hbase.regionserver.compactions.SortedCompactionPolicy(Configuration, StoreConfigInformation)<br/>At SortedCompactionPolicy.java:[line 116]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73526');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73526" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.ConstantSizeRegionSplitPolicy<br/>In method org.apache.hadoop.hbase.regionserver.ConstantSizeRegionSplitPolicy.&lt;static initializer for ConstantSizeRegionSplitPolicy&gt;()<br/>At ConstantSizeRegionSplitPolicy.java:[line 41]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73584');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (org.apache.commons.lang.RandomStringUtilsrandomNumeric()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73584" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.HRegion<br/>In method org.apache.hadoop.hbase.regionserver.HRegion.createHRegion(HRegionInfo, Path, Path, Configuration, HTableDescriptor, WAL, boolean, boolean)<br/>At HRegion.java:[line 6770]<br/>Value org.apache.commons.lang.RandomStringUtilsrandomNumeric()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73642');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (org.apache.commons.lang.math.RandomUtilsnextInt()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73642" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.HRegionServer$PeriodicMemstoreFlusher<br/>In method org.apache.hadoop.hbase.regionserver.HRegionServer$PeriodicMemstoreFlusher.chore()<br/>At HRegionServer.java:[line 1671]<br/>Value org.apache.commons.lang.math.RandomUtilsnextInt()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74719');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74719" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.replication.regionserver.ReplicationSinkManager<br/>In method new org.apache.hadoop.hbase.replication.regionserver.ReplicationSinkManager(HConnection, String, HBaseReplicationEndpoint, Configuration)<br/>At ReplicationSinkManager.java:[line 101]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74777');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74777" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.replication.regionserver.ReplicationSourceManager<br/>In method new org.apache.hadoop.hbase.replication.regionserver.ReplicationSourceManager(ReplicationQueues, ReplicationPeers, ReplicationTracker, Configuration, Server, FileSystem, Path, Path, UUID)<br/>At ReplicationSourceManager.java:[line 170]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74889');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74889" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.snapshot.ExportSnapshot$ExportMapper<br/>In method org.apache.hadoop.hbase.snapshot.ExportSnapshot$ExportMapper.injectTestFailure(Mapper$Context, SnapshotProtos$SnapshotFileInfo)<br/>At ExportSnapshot.java:[line 235]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74947');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74947" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.tool.Canary$RegionServerMonitor<br/>In method org.apache.hadoop.hbase.tool.Canary$RegionServerMonitor.monitorRegionServers(Map, Canary$RegionServerStdOutSink)<br/>At Canary.java:[line 1418]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75005');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75005" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.ByteBloomFilter<br/>In method org.apache.hadoop.hbase.util.ByteBloomFilter.setFakeLookupMode(boolean)<br/>At ByteBloomFilter.java:[line 603]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75063');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75063" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.HBaseFsckRepair<br/>In method org.apache.hadoop.hbase.util.HBaseFsckRepair.fixMetaHoleOnlineAndAddReplicas(Configuration, HRegionInfo, Collection, int)<br/>At HBaseFsckRepair.java:[line 179]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75121');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75121" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.HMerge<br/>In method org.apache.hadoop.hbase.util.HMerge.&lt;static initializer for HMerge&gt;()<br/>At HMerge.java:[line 61]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76343');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76343" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.util.MultiHConnection<br/>In method org.apache.hadoop.hbase.util.MultiHConnection.processBatchCallback(List, TableName, Object[], Batch$Callback)<br/>At MultiHConnection.java:[line 124]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76480');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76480" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster<br/>In method org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster.selectClientPort(int)<br/>At MiniZooKeeperCluster.java:[line 144]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71330');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71330" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.BucketCache<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])<br/>At BucketCache.java:[line 1019]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/BucketCache.persistencePath<br/>At BucketCache.java:[line 1019]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71409');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71409" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.BucketCache<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.retrieveFromFile(int[])<br/>At BucketCache.java:[line 1030]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/BucketCache.persistencePath<br/>At BucketCache.java:[line 1030]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71567');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71567" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine<br/>In method new org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine(long, String[])<br/>At FileIOEngine.java:[line 61]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/FileIOEngine.&lt;init&gt;(J[Ljava/lang/String;)V parameter 0<br/>At CacheConfig.java:[line 659]<br/>At BucketCache.java:[line 248]<br/>At BucketCache.java:[line 256]<br/>At BucketCache.java:[line 373]<br/>At BucketCache.java:[line 375]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71686');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71686" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine<br/>In method new org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine(long, String[])<br/>At FileIOEngine.java:[line 62]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/FileIOEngine.&lt;init&gt;(J[Ljava/lang/String;)V parameter 0<br/>At CacheConfig.java:[line 659]<br/>At BucketCache.java:[line 248]<br/>At BucketCache.java:[line 256]<br/>At BucketCache.java:[line 373]<br/>At BucketCache.java:[line 375]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71805');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71805" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.FileIOEngine.refreshFileConnection(int)<br/>At FileIOEngine.java:[line 247]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/FileIOEngine.filePaths<br/>At FileIOEngine.java:[line 247]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72116');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72116" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.ImportTsv<br/>In method org.apache.hadoop.hbase.mapreduce.ImportTsv.createSubmittableJob(Configuration, String[])<br/>At ImportTsv.java:[line 496]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/conf/Configuration.get(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72185');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72185" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.JarFinder<br/>In method org.apache.hadoop.hbase.mapreduce.JarFinder.getJar(Class)<br/>At JarFinder.java:[line 170]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsoluteFile()Ljava/io/File;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72254');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72254" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.JarFinder<br/>In method org.apache.hadoop.hbase.mapreduce.JarFinder.getJar(Class)<br/>At JarFinder.java:[line 171]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At JarFinder.java:[line 171]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72333');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72333" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.JarFinder<br/>In method org.apache.hadoop.hbase.mapreduce.JarFinder.zipDir(File, String, ZipOutputStream, boolean)<br/>At JarFinder.java:[line 97]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72402');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72402" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.mapreduce.JarFinder<br/>In method org.apache.hadoop.hbase.mapreduce.JarFinder.zipDir(File, String, ZipOutputStream, boolean)<br/>At JarFinder.java:[line 106]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72727');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72727" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.HMasterCommandLine<br/>In method org.apache.hadoop.hbase.master.HMasterCommandLine.startMaster()<br/>At HMasterCommandLine.java:[line 157]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/conf/Configuration.get(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73403');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73403" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.monitoring.LogMonitoring<br/>In method org.apache.hadoop.hbase.monitoring.LogMonitoring.getActiveLogFiles()<br/>At LogMonitoring.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/log4j/FileAppender.getFile()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74561');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74561" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.replication.regionserver.DefaultSourceFSConfigurationProvider<br/>In method org.apache.hadoop.hbase.replication.regionserver.DefaultSourceFSConfigurationProvider.getConf(Configuration, String)<br/>At DefaultSourceFSConfigurationProvider.java:[line 63]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/conf/Configuration.get(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/hbase/replication/regionserver/DefaultSourceFSConfigurationProvider.getConf(Lorg/apache/hadoop/conf/Configuration;Ljava/lang/String;)Lorg/apache/hadoop/conf/Configuration; parameter 0<br/>Method usage not detected<br/>At DefaultSourceFSConfigurationProvider.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74650');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74650" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.replication.regionserver.DefaultSourceFSConfigurationProvider<br/>In method org.apache.hadoop.hbase.replication.regionserver.DefaultSourceFSConfigurationProvider.getConf(Configuration, String)<br/>At DefaultSourceFSConfigurationProvider.java:[line 66]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/fs/FileUtil.list(Ljava/io/File;)[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71488');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71488" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.io.hfile.bucket.BucketCache<br/>In method org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.persistToFile()<br/>At BucketCache.java:[line 1003]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source org/apache/hadoop/hbase/io/hfile/bucket/BucketCache.persistencePath<br/>At BucketCache.java:[line 1003]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74366');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^([0-9a-f]+(?:_SeqId_[0-9]+_)?)" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74366" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^([0-9a-f]+(?:_SeqId_[0-9]+_)?)<br/>In class org.apache.hadoop.hbase.regionserver.StoreFileInfo<br/>In method org.apache.hadoop.hbase.regionserver.StoreFileInfo.&lt;static initializer for StoreFileInfo&gt;()<br/>At StoreFileInfo.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70230');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70230" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel<br/>In method org.apache.hadoop.hbase.http.log.LogLevel.process(String)<br/>At LogLevel.java:[line 73]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/hadoop/hbase/http/log/LogLevel.process(Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At LogLevel.java:[line 56]<br/>At LogLevel.java:[line 60]<br/>At LogLevel.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72618');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72618" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.HMaster$RedirectServlet<br/>In method org.apache.hadoop.hbase.master.HMaster$RedirectServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At HMaster.java:[line 411]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster$RedirectServlet.regionServerHostname<br/>Tainted source javax/servlet/http/HttpServletRequest.getServerName()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At HMaster.java:[line 390]<br/>At HMaster.java:[line 392]<br/>At HMaster.java:[line 408]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76538');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76538" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster<br/>In method org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster.waitForServerDown(int, long)<br/>At MiniZooKeeperCluster.java:[line 407]<br/>Value localhost</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76596');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76596" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster<br/>In method org.apache.hadoop.hbase.zookeeper.MiniZooKeeperCluster.waitForServerUp(int, long)<br/>At MiniZooKeeperCluster.java:[line 436]<br/>Value localhost</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65615');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65615" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.SslRMIServerSocketFactorySecure$1<br/>In method new org.apache.hadoop.hbase.SslRMIServerSocketFactorySecure$1(SslRMIServerSocketFactorySecure, int)<br/>At SslRMIServerSocketFactorySecure.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65785');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65785" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 83]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.serverName<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At procedures_jsp.java:[line 83]<br/>At HMaster.java:[line 2597]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65879');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65879" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 118]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanSize(D)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65948');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65948" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 136]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanSize(D)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66017');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66017" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 148]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanTimeDiff(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66086');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66086" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 150]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanTimeDiff(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66155');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66155" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 158]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanTimeDiff(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66224');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66224" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 162]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanSize(D)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66293');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66293" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.procedures_jsp<br/>In method org.apache.hadoop.hbase.generated.master.procedures_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At procedures_jsp.java:[line 164]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/procedure2/util/StringUtils.humanSize(D)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66362');">
+<td>
+<span class="priority-1">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66362" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 88]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At snapshot_jsp.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66441');">
+<td>
+<span class="priority-1">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66441" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 103]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At snapshot_jsp.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66520');">
+<td>
+<span class="priority-1">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66520" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 107]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At snapshot_jsp.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66599');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66599" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 84]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.serverName<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At snapshot_jsp.java:[line 84]<br/>At HMaster.java:[line 2597]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66693');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66693" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 111]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66762');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66762" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 113]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66831');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66831" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 117]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66900');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66900" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 123]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/protobuf/generated/HBaseProtos$SnapshotDescription.getType()Lorg/apache/hadoop/hbase/protobuf/generated/HBaseProtos$SnapshotDescription$Type;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66969');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66969" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 137]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67038');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67038" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 141]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67107');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67107" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshot_jsp.java:[line 145]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67275');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67275" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 84]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.serverName<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At snapshotsStats_jsp.java:[line 84]<br/>At HMaster.java:[line 2597]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67369');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67369" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 95]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/protobuf/generated/HBaseProtos$SnapshotDescription.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67438');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67438" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 97]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/protobuf/generated/HBaseProtos$SnapshotDescription.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67507');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67507" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 109]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67576');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67576" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 111]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67645');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67645" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 115]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/TableName.getNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67714');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67714" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 121]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67783');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67783" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 123]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67852');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67852" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 125]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67921');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67921" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 133]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67990');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67990" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 135]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68059');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68059" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 137]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68128');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68128" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshotsStats_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At snapshotsStats_jsp.java:[line 139]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.humanReadableInt(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68197');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68197" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 259]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68266');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68266" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 263]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68335');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68335" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 286]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/client/Admin.getCompactionState(Lorg/apache/hadoop/hbase/TableName;)Lorg/apache/hadoop/hbase/protobuf/generated/AdminProtos$GetRegionInfoResponse$CompactionState;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68404');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68404" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 382]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68473');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68473" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 386]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68542');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68542" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 617]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68611');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68611" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 621]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils.byteDesc(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68680');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68680" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 679]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/apache/hadoop/hbase/client/HTable.getRegionLocations()Ljava/util/NavigableMap;<br/>Unknown source java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>At table_jsp.java:[line 557]<br/>At table_jsp.java:[line 582]<br/>At table_jsp.java:[line 669]<br/>At table_jsp.java:[line 679]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68814');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68814" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 685]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/apache/hadoop/hbase/client/HTable.getRegionLocations()Ljava/util/NavigableMap;<br/>Unknown source java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>At table_jsp.java:[line 557]<br/>At table_jsp.java:[line 586]<br/>At table_jsp.java:[line 685]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68923');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68923" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.table_jsp<br/>In method org.apache.hadoop.hbase.generated.master.table_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At table_jsp.java:[line 706]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/StringUtils$TraditionalBinaryPrefix.long2String(JLjava/lang/String;I)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68992');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68992" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.tablesDetailed_jsp<br/>In method org.apache.hadoop.hbase.generated.master.tablesDetailed_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At tablesDetailed_jsp.java:[line 57]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.serverName<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At tablesDetailed_jsp.java:[line 57]<br/>At HMaster.java:[line 2597]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69086');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69086" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.tablesDetailed_jsp<br/>In method org.apache.hadoop.hbase.generated.master.tablesDetailed_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At tablesDetailed_jsp.java:[line 74]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/HTableDescriptor.toString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69155');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69155" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.region_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.region_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At region_jsp.java:[line 68]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.serverName<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At region_jsp.java:[line 68]<br/>At HRegionServer.java:[line 2699]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69249');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69249" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.region_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.region_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At region_jsp.java:[line 75]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/HRegionInfo.getRegionNameAsString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69318');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69318" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.region_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.region_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At region_jsp.java:[line 83]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/Store.getColumnFamilyName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69387');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69387" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.region_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.region_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At region_jsp.java:[line 89]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/StoreFile.getPath()Lorg/apache/hadoop/fs/Path;<br/>Unknown source org/apache/hadoop/hbase/regionserver/StoreFileInfo.getPath()Lorg/apache/hadoop/fs/Path;<br/>At region_jsp.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69471');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69471" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.region_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.region_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At region_jsp.java:[line 92]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/StoreFile.getPath()Lorg/apache/hadoop/fs/Path;<br/>Unknown source org/apache/hadoop/hbase/regionserver/StoreFileInfo.getPath()Lorg/apache/hadoop/fs/Path;<br/>At region_jsp.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69555');">
+<td>
+<span class="priority-1">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69555" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At storeFile_jsp.java:[line 67]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At storeFile_jsp.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69634');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69634" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At storeFile_jsp.java:[line 60]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.serverName<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At storeFile_jsp.java:[line 60]<br/>At HRegionServer.java:[line 2699]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69728');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69728" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At storeFile_jsp.java:[line 81]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/ByteArrayOutputStream.toString()Ljava/lang/String;<br/>Unknown source java/io/ByteArrayOutputStream.&lt;init&gt;()V<br/>At storeFile_jsp.java:[line 71]<br/>At storeFile_jsp.java:[line 72]<br/>At storeFile_jsp.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69832');">
+<td>
+<span class="priority-2">SECXSS1</span>
+</td>
+<td>Potential XSS in JSP</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69832" style="display: none;">
+<a href="#XSS_JSP_PRINT">Bug type XSS_JSP_PRINT (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>At storeFile_jsp.java:[line 88]<br/>Sink method javax/servlet/jsp/JspWriter.print(Ljava/lang/Object;)V<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70062');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70062" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.conf.ConfServlet<br/>In method org.apache.hadoop.hbase.http.conf.ConfServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At ConfServlet.java:[line 80]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/http/conf/ConfServlet$BadFormatException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69973');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69973" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.HttpServer<br/>In method org.apache.hadoop.hbase.http.HttpServer.hasAdministratorAccess(ServletContext, HttpServletRequest, HttpServletResponse)<br/>At HttpServer.java:[line 1257]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRemoteUser()Ljava/lang/String;<br/>At HttpServer.java:[line 1247]<br/>At HttpServer.java:[line 1257]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70131');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70131" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.jmx.JMXJsonServlet<br/>In method org.apache.hadoop.hbase.http.jmx.JMXJsonServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At JMXJsonServlet.java:[line 170]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/hbase/http/jmx/JMXJsonServlet.checkCallbackName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source org/apache/hadoop/hbase/http/jmx/JMXJsonServlet.checkCallbackName(Ljava/lang/String;)Ljava/lang/String;<br/>At JMXJsonServlet.java:[line 164]<br/>At JMXJsonServlet.java:[line 170]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70339');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70339" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At LogLevel.java:[line 115]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/ServletUtil.getParameter(Ljavax/servlet/ServletRequest;Ljava/lang/String;)Ljava/lang/String;<br/>At LogLevel.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70418');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70418" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At LogLevel.java:[line 122]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/ServletUtil.getParameter(Ljavax/servlet/ServletRequest;Ljava/lang/String;)Ljava/lang/String;<br/>At LogLevel.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70497');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70497" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At LogLevel.java:[line 132]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Object.getClass()Ljava/lang/Class;<br/>At LogLevel.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70576');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70576" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At LogLevel.java:[line 137]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/util/ServletUtil.HTML_TAIL<br/>At LogLevel.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70655');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70655" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.process(Logger, String, PrintWriter)<br/>At LogLevel.java:[line 167]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/http/log/LogLevel$Servlet.process(Ljava/util/logging/Logger;Ljava/lang/String;Ljava/io/PrintWriter;)V parameter 1<br/>At LogLevel.java:[line 122]<br/>At LogLevel.java:[line 129]<br/>At LogLevel.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70754');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70754" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.process(Logger, String, PrintWriter)<br/>At LogLevel.java:[line 172]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/logging/Logger.getLevel()Ljava/util/logging/Level;<br/>At LogLevel.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70833');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70833" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.process(Logger, String, PrintWriter)<br/>At LogLevel.java:[line 153]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/http/log/LogLevel$Servlet.process(Lorg/apache/log4j/Logger;Ljava/lang/String;Ljava/io/PrintWriter;)V parameter 1<br/>At LogLevel.java:[line 122]<br/>At LogLevel.java:[line 126]<br/>At LogLevel.java:[line 153]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70932');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70932" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.process(Logger, String, PrintWriter)<br/>At LogLevel.java:[line 156]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/http/log/LogLevel$Servlet.process(Lorg/apache/log4j/Logger;Ljava/lang/String;Ljava/io/PrintWriter;)V parameter 1<br/>At LogLevel.java:[line 122]<br/>At LogLevel.java:[line 126]<br/>At LogLevel.java:[line 156]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71031');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71031" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.http.log.LogLevel$Servlet<br/>In method org.apache.hadoop.hbase.http.log.LogLevel$Servlet.process(Logger, String, PrintWriter)<br/>At LogLevel.java:[line 159]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/log4j/Logger.getEffectiveLevel()Lorg/apache/log4j/Level;<br/>At LogLevel.java:[line 159]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72796');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72796" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.MasterDumpServlet<br/>In method org.apache.hadoop.hbase.master.MasterDumpServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At MasterDumpServlet.java:[line 58]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.serverName<br/>Unknown source org/apache/hadoop/hbase/master/HMaster.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At HMaster.java:[line 2597]<br/>At MasterDumpServlet.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72890');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72890" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.MasterDumpServlet<br/>In method org.apache.hadoop.hbase.master.MasterDumpServlet.dumpRIT(HMaster, PrintWriter)<br/>At MasterDumpServlet.java:[line 123]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/HRegionInfo.getRegionNameAsString()Ljava/lang/String;<br/>Unknown source org/apache/hadoop/hbase/master/RegionState.toDescriptiveString()Ljava/lang/String;<br/>At MasterDumpServlet.java:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72974');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72974" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.master.MasterDumpServlet<br/>In method org.apache.hadoop.hbase.master.MasterDumpServlet.dumpServers(HMaster, PrintWriter)<br/>At MasterDumpServlet.java:[line 136]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/master/ServerManager.onlineServers<br/>Unknown source org/apache/hadoop/hbase/master/ServerManager.getOnlineServers()Ljava/util/Map;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source java/util/Collections.unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>At MasterDumpServlet.java:[line 134]<br/>At MasterDumpServlet.java:[line 135]<br/>At MasterDumpServlet.java:[line 136]<br/>At ServerManager.java:[line 535]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73700');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73700" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.RSDumpServlet<br/>In method org.apache.hadoop.hbase.regionserver.RSDumpServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At RSDumpServlet.java:[line 60]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.serverName<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegionServer.getServerName()Lorg/apache/hadoop/hbase/ServerName;<br/>At HRegionServer.java:[line 2699]<br/>At RSDumpServlet.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73794');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73794" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.RSDumpServlet<br/>In method org.apache.hadoop.hbase.regionserver.RSDumpServlet.dumpQueue(HRegionServer, PrintWriter)<br/>At RSDumpServlet.java:[line 128]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/concurrent/ThreadPoolExecutor.getQueue()Ljava/util/concurrent/BlockingQueue;<br/>Unknown source org/apache/hadoop/hbase/regionserver/CompactSplitThread.dumpQueue()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/concurrent/BlockingQueue.iterator()Ljava/util/Iterator;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At CompactSplitThread.java:[line 182]<br/>At CompactSplitThread.java:[line 184]<br/>At CompactSplitThread.java:[line 185]<br/>At CompactSplitThread.java:[line 189]<br/>At CompactSplitThread.java:[line 190]<br/>At CompactSplitThread.java:[line 192]<br/>At CompactSplitThread.java:[line 194]<br/>At CompactSplitThread.java:[line 195]<br/>At CompactSplitThread.java:[line 199]<br/>At CompactSplitThread.java:[line 200]<br/>At CompactSplitThread.java:[line 202]<br/>At CompactSplitThread.java:[line 204]<br/>At CompactSplitThread.java:[line 205]<br/>At CompactSplitThread.java:[line 208]<br/>At CompactSplitThread.java:[line 209]<br/>At CompactSplitThread.java:[line 211]<br/>At CompactSplitThread.java:[line 213]<br/>At CompactSplitThread.java:[line 214]<br/>At CompactSplitThread.java:[line 217]<br/>At RSDumpServlet.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74088');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74088" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.RSDumpServlet<br/>In method org.apache.hadoop.hbase.regionserver.RSDumpServlet.dumpQueue(HRegionServer, PrintWriter)<br/>At RSDumpServlet.java:[line 135]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/MemStoreFlusher.flushQueue<br/>Unknown source org/apache/hadoop/hbase/regionserver/MemStoreFlusher.dumpQueue()Ljava/lang/String;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/concurrent/BlockingQueue.iterator()Ljava/util/Iterator;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At MemStoreFlusher.java:[line 641]<br/>At MemStoreFlusher.java:[line 644]<br/>At MemStoreFlusher.java:[line 645]<br/>At MemStoreFlusher.java:[line 648]<br/>At RSDumpServlet.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74227');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74227" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.regionserver.RSDumpServlet<br/>In method org.apache.hadoop.hbase.regionserver.RSDumpServlet.dumpRowLock(HRegionServer, PrintWriter)<br/>At RSDumpServlet.java:[line 116]<br/>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegion$RowLockContext.toString()Ljava/lang/String;<br/>Unknown source org/apache/hadoop/hbase/HTableDescriptor.getTableName()Lorg/apache/hadoop/hbase/TableName;<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegion$RowLockContext.count<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegion$RowLockContext.threadName<br/>Unknown source org/apache/hadoop/hbase/HRegionInfo.getEncodedName()Ljava/lang/String;<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegion$RowLockContext.row<br/>Unknown source org/apache/hadoop/hbase/regionserver/HRegion$RowLockContext.readWriteLock<br/>At HRegion.java:[line 5674]<br/>At RSDumpServlet.java:[line 113]<br/>At RSDumpServlet.java:[line 115]<br/>At RSDumpServlet.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67176');">
+<td>
+<span class="priority-1">XSS</span>
+</td>
+<td>HTTP parameter directly written to JSP output, giving reflected XSS vulnerability in org.apache.hadoop.hbase.generated.master.snapshot_jsp</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67176" style="display: none;">
+<a href="#XSS_REQUEST_PARAMETER_TO_JSP_WRITER">Bug type XSS_REQUEST_PARAMETER_TO_JSP_WRITER (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.master.snapshot_jsp<br/>In method org.apache.hadoop.hbase.generated.master.snapshot_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>Parameter "name"<br/>Value generated at snapshot_jsp.java:[line 60]<br/>Local variable named snapshotName<br/>At snapshot_jsp.java:[line 88]<br/>Another occurrence at snapshot_jsp.java:[line 103]<br/>Another occurrence at snapshot_jsp.java:[line 107]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69896');">
+<td>
+<span class="priority-1">XSS</span>
+</td>
+<td>HTTP parameter directly written to JSP output, giving reflected XSS vulnerability in org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69896" style="display: none;">
+<a href="#XSS_REQUEST_PARAMETER_TO_JSP_WRITER">Bug type XSS_REQUEST_PARAMETER_TO_JSP_WRITER (click for details)</a>
+<br/>In class org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp<br/>In method org.apache.hadoop.hbase.generated.regionserver.storeFile_jsp._jspService(HttpServletRequest, HttpServletResponse)<br/>Parameter "name"<br/>Value generated at storeFile_jsp.java:[line 55]<br/>Local variable named storeFile<br/>At storeFile_jsp.java:[line 67]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XSS_JSP_PRINT">XSS_JSP_PRINT: Potential XSS in JSP</a>
+</h2>
+            
+<p>A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+    <pre><%
+String taintedInput = (String) request.getAttribute("input");
+%>
+[...]
+&lt;%= taintedInput %&gt;</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>
+&lt;%
+String taintedInput = (String) request.getAttribute("input");
+%&gt;
+[...]
+&lt;%= Encode.forHtml(taintedInput) %&gt;
+    </pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_REQUEST_PARAMETER_TO_JSP_WRITER">XSS_REQUEST_PARAMETER_TO_JSP_WRITER: JSP reflected cross site scripting vulnerability</a>
+</h2>
+
+    <p>This code directly writes an HTTP parameter to JSP output, which allows for a cross site scripting
+vulnerability. See <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">http://en.wikipedia.org/wiki/Cross-site_scripting</a>
+for more information.</p>
+<p>SpotBugs looks only for the most blatant, obvious cases of cross site scripting.
+If SpotBugs found <em>any</em>, you <em>almost certainly</em> have more cross site scripting
+vulnerabilities that SpotBugs doesn't report. If you are concerned about cross site scripting, you should seriously
+consider using a commercial static analysis or pen-testing tool.
+</p>
+
+    </body>
+</html>

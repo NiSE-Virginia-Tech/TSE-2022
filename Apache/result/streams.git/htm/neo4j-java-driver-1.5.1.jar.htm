@@ -1,0 +1,1036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/streams.git/neo4j-java-driver-1.5.1.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>69094 lines of code analyzed,
+	in 1648 classes, 
+	in 65 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">26</td>
+<td align="right">0.38</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>28</b>
+</td>
+<td align="right">
+<b>0.41</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">28</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>28</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67483');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67483" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.ThrowableUtil<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.ThrowableUtil.stackTraceToString(Throwable)<br/>At ThrowableUtil.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65883');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65883" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoder<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)<br/>At ObjectDecoder.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65937');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65937" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoderInputStream<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()<br/>At ObjectDecoderInputStream.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67205');">
+<td>
+<span class="priority-2">SECOPFP</span>
+</td>
+<td>Overly permissive file permission can lead to privilege escalation or information leakage.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67205" style="display: none;">
+<a href="#OVERLY_PERMISSIVE_FILE_PERMISSION">Bug type OVERLY_PERMISSIVE_FILE_PERMISSION (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector.canExecuteExecutable(File)<br/>At NativeLibraryLoader.java:[line 351]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.neo4j.driver.internal.retry.ExponentialBackoffRetryLogic<br/>In method org.neo4j.driver.internal.retry.ExponentialBackoffRetryLogic.computeDelayWithJitter(long)<br/>At ExponentialBackoffRetryLogic.java:[line 226]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67367');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67367" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent$2<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent$2.current()<br/>At PlatformDependent.java:[line 120]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67425');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67425" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.ThreadLocalRandom<br/>In method new org.neo4j.driver.internal.shaded.io.netty.util.internal.ThreadLocalRandom()<br/>At ThreadLocalRandom.java:[line 255]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 164]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66650');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66650" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66749');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66749" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 239]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 239]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66833');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66833" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 270]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66917');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66917" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader.&lt;static initializer for NativeLibraryLoader&gt;()<br/>At NativeLibraryLoader.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>At NativeLibraryLoader.java:[line 50]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67046');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67046" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.NativeLibraryLoader.load(String, ClassLoader)<br/>At NativeLibraryLoader.java:[line 151]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/PlatformDependent.TMPDIR<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/NativeLibraryLoader.WORKDIR<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/PlatformDependent.tmpdir()Ljava/io/File;<br/>Unknown source java/io/File.getAbsoluteFile()Ljava/io/File;<br/>At NativeLibraryLoader.java:[line 52]<br/>At NativeLibraryLoader.java:[line 62]<br/>At NativeLibraryLoader.java:[line 64]<br/>At NativeLibraryLoader.java:[line 65]<br/>At NativeLibraryLoader.java:[line 121]<br/>At NativeLibraryLoader.java:[line 151]<br/>At PlatformDependent.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67258');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67258" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent<br/>In method org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent.toDirectory(String)<br/>At PlatformDependent.java:[line 1117]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/util/internal/PlatformDependent.toDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At PlatformDependent.java:[line 1055]<br/>At PlatformDependent.java:[line 1061]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65991');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65991" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter.&lt;static initializer for CipherSuiteConverter&gt;()<br/>At CipherSuiteConverter.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67537');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(Neo4j/)?(\\d+)\\.(\\d+)(?:\\.)?(\\d*)(\\.|-|\\+)?([0-9A-Za-z-.]*)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67537" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (Neo4j/)?(\\d+)\\.(\\d+)(?:\\.)?(\\d*)(\\.|-|\\+)?([0-9A-Za-z-.]*)?<br/>In class org.neo4j.driver.internal.util.ServerVersion<br/>In method org.neo4j.driver.internal.util.ServerVersion.&lt;static initializer for ServerVersion&gt;()<br/>At ServerVersion.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66385');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66385" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1.initialValue()<br/>At FingerprintTrustManagerFactory.java:[line 84]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66049');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66049" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 358]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66138');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66138" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 360]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66227');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66227" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter.toJavaUncached(String)<br/>At CipherSuiteConverter.java:[line 336]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source java/util/regex/Matcher.group(I)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66296');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66296" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.CipherSuiteConverter.toOpenSslHandshakeAlgo(String)<br/>At CipherSuiteConverter.java:[line 212]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/neo4j/driver/internal/shaded/io/netty/handler/ssl/CipherSuiteConverter.toOpenSslHandshakeAlgo(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At CipherSuiteConverter.java:[line 194]<br/>At CipherSuiteConverter.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65825');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.neo4j.driver.internal.shaded.io.netty.channel.socket.oio.OioSocketChannel (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65825" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.channel.socket.oio.OioSocketChannel<br/>In method new org.neo4j.driver.internal.shaded.io.netty.channel.socket.oio.OioSocketChannel()<br/>At OioSocketChannel.java:[line 54]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65771');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65771" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.channel.socket.oio.OioServerSocketChannel<br/>In method org.neo4j.driver.internal.shaded.io.netty.channel.socket.oio.OioServerSocketChannel.newServerSocket()<br/>At OioServerSocketChannel.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.neo4j.driver.internal.security.TrustAllTrustManager<br/>In method org.neo4j.driver.internal.security.TrustAllTrustManager.checkServerTrusted(X509Certificate[], String)<br/>At TrustAllTrustManager.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65663');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65663" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.neo4j.driver.internal.security.TrustAllTrustManager<br/>In method org.neo4j.driver.internal.security.TrustAllTrustManager.getAcceptedIssuers()<br/>At TrustAllTrustManager.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65717');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65717" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.neo4j.driver.internal.security.TrustOnFirstUseTrustManager<br/>In method org.neo4j.driver.internal.security.TrustOnFirstUseTrustManager.getAcceptedIssuers()<br/>At TrustOnFirstUseTrustManager.java:[line 260]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66443');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66443" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2.getAcceptedIssuers()<br/>At FingerprintTrustManagerFactory.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66497');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66497" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.InsecureTrustManagerFactory$1<br/>In method org.neo4j.driver.internal.shaded.io.netty.handler.ssl.util.InsecureTrustManagerFactory$1.getAcceptedIssuers()<br/>At InsecureTrustManagerFactory.java:[line 57]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="OVERLY_PERMISSIVE_FILE_PERMISSION">OVERLY_PERMISSIVE_FILE_PERMISSION: Overly permissive file permission</a>
+</h2>
+            
+<p>
+It is generally a bad practices to set overly permissive file permission such as read+write+exec for all users.
+If the file affected is a configuration, a binary, a script or sensitive data, it can lead to privilege escalation or information leakage.
+</p>
+<p>
+It is possible that another service, running on the same host as your application, gets compromised.
+Services typically run under a different user. A compromised service account could be use to read your configuration, add execution instruction to scripts or alter the data file.
+To limite the damage from other services or local users, you should limited to permission of your application files.
+</p>
+
+<p>
+<b>Vulnerable Code 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw-rw-"));
+</pre>
+</p>
+
+<p>
+<b>Solution 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw----"));
+</pre>
+</p>
+
+
+<p>
+<b>Vulnerable Code 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+
+perms.add(PosixFilePermission.OTHERS_READ);
+perms.add(PosixFilePermission.OTHERS_WRITE);
+perms.add(PosixFilePermission.OTHERS_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>Solution 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/732.html">CWE-732: Incorrect Permission Assignment for Critical Resource</a><br/>
+<a href="https://payatu.com/guide-linux-privilege-escalation/">A guide to Linux Privilege Escalation</a><br/>
+<a href="https://en.wikipedia.org/wiki/File_system_permissions">File system permissions</a><br/>
+</p>
+
+            
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_TRUST_MANAGER">WEAK_TRUST_MANAGER: TrustManager that accept any certificates</a>
+</h2>
+            
+<p>Empty TrustManager implementations are often used to connect easily to a host that is not signed by a root
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a>. As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a TrustStore for example) should be built.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>class TrustAllManager implements X509TrustManager {
+
+    @Override
+    public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any client connecting (no certificate validation)
+    }
+
+    @Override
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any remote server (no certificate validation)
+    }
+
+    @Override
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        </body>
+</html>

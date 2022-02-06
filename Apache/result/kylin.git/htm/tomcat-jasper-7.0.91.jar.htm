@@ -1,0 +1,1579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/kylin.git/tomcat-jasper-7.0.91.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>22468 lines of code analyzed,
+	in 263 classes, 
+	in 11 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">6</td>
+<td align="right">0.27</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">64</td>
+<td align="right">2.85</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>70</b>
+</td>
+<td align="right">
+<b>3.12</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">70</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>70</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71871');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71871" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.log(String, Throwable)<br/>At JspCServletContext.java:[line 468]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70076');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70076" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Node$JspAttribute<br/>In method org.apache.jasper.compiler.Node$JspAttribute.validateEL(ExpressionFactory, ELContext)<br/>At Node.java:[line 2169]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/jasper/compiler/Node$JspAttribute.value<br/>At Node.java:[line 2169]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70933');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70933" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Validator$ValidateVisitor<br/>In method org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(ELNode$Nodes, Node, String)<br/>At Validator.java:[line 1627]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/jasper/compiler/Validator$ValidateVisitor.prepareExpression(Lorg/apache/jasper/compiler/ELNode$Nodes;Lorg/apache/jasper/compiler/Node;Ljava/lang/String;)V parameter 0<br/>At Node.java:[line 332]<br/>At Node.java:[line 955]<br/>At Validator.java:[line 746]<br/>At Validator.java:[line 747]<br/>At Validator.java:[line 753]<br/>At Validator.java:[line 1473]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71146');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71146" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.jasper.el.ExpressionEvaluatorImpl<br/>In method org.apache.jasper.el.ExpressionEvaluatorImpl.parseExpression(String, Class, FunctionMapper)<br/>At ExpressionEvaluatorImpl.java:[line 48]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/jasper/el/ExpressionEvaluatorImpl.parseExpression(Ljava/lang/String;Ljava/lang/Class;Ljavax/servlet/jsp/el/FunctionMapper;)Ljavax/servlet/jsp/el/Expression; parameter 2<br/>Method usage not detected<br/>At ExpressionEvaluatorImpl.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71482');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71482" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.jasper.runtime.PageContextImpl<br/>In method org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate(String, Class, PageContext, ProtectedFunctionMapper, boolean)<br/>At PageContextImpl.java:[line 949]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/jasper/runtime/PageContextImpl.proprietaryEvaluate(Ljava/lang/String;Ljava/lang/Class;Ljavax/servlet/jsp/PageContext;Lorg/apache/jasper/runtime/ProtectedFunctionMapper;Z)Ljava/lang/Object; parameter 4<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71556');">
+<td>
+<span class="priority-1">SECJSPINC</span>
+</td>
+<td>Dynamic JSP inclusion could lead to arbitrary code execution</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71556" style="display: none;">
+<a href="#JSP_INCLUDE">Bug type JSP_INCLUDE (click for details)</a>
+<br/>In class org.apache.jasper.runtime.PageContextImpl<br/>In method org.apache.jasper.runtime.PageContextImpl.doInclude(String, boolean)<br/>At PageContextImpl.java:[line 688]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71610');">
+<td>
+<span class="priority-1">SECJSPINC</span>
+</td>
+<td>Dynamic JSP inclusion could lead to arbitrary code execution</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71610" style="display: none;">
+<a href="#JSP_INCLUDE">Bug type JSP_INCLUDE (click for details)</a>
+<br/>In class org.apache.jasper.runtime.PageContextImpl<br/>In method org.apache.jasper.runtime.PageContextImpl.include(String)<br/>At PageContextImpl.java:[line 656]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68207');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68207" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.AntCompiler<br/>In method org.apache.jasper.compiler.AntCompiler.generateClass(String[])<br/>At AntCompiler.java:[line 153]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassPath()Ljava/lang/String;<br/>Unknown source org/apache/jasper/compiler/JspRuntimeContext.classpath<br/>Unknown source org/apache/jasper/compiler/JspRuntimeContext.getClassPath()Ljava/lang/String;<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.classPath<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>At JspCompilationContext.java:[line 152]<br/>At JspCompilationContext.java:[line 154]<br/>At AntCompiler.java:[line 131]<br/>At AntCompiler.java:[line 137]<br/>At AntCompiler.java:[line 150]<br/>At AntCompiler.java:[line 152]<br/>At JspRuntimeContext.java:[line 458]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68371');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68371" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.AntCompiler<br/>In method org.apache.jasper.compiler.AntCompiler.generateClass(String[])<br/>At AntCompiler.java:[line 252]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 559]<br/>At AntCompiler.java:[line 130]<br/>At AntCompiler.java:[line 136]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68475');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68475" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.compile(boolean, boolean)<br/>At Compiler.java:[line 375]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>At JspCompilationContext.java:[line 559]<br/>At Compiler.java:[line 375]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68569');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68569" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.compile(boolean, boolean)<br/>At Compiler.java:[line 382]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.classFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 600]<br/>At Compiler.java:[line 382]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68663');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68663" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.generateJava()<br/>At Compiler.java:[line 276]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 559]<br/>At Compiler.java:[line 173]<br/>At Compiler.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68767');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68767" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.isOutDated(boolean)<br/>At Compiler.java:[line 459]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.classFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 600]<br/>At Compiler.java:[line 459]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68861');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68861" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.isOutDated(boolean)<br/>At Compiler.java:[line 461]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>At JspCompilationContext.java:[line 559]<br/>At Compiler.java:[line 461]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68955');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68955" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.removeGeneratedClassFiles()<br/>At Compiler.java:[line 582]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.classFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 600]<br/>At Compiler.java:[line 582]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69049');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69049" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.removeGeneratedFiles()<br/>At Compiler.java:[line 563]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>At JspCompilationContext.java:[line 559]<br/>At Compiler.java:[line 563]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69772');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69772" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JavacErrorDetail<br/>In method new org.apache.jasper.compiler.JavacErrorDetail(String, int, String, int, StringBuilder, JspCompilationContext)<br/>At JavacErrorDetail.java:[line 106]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>At JspCompilationContext.java:[line 559]<br/>At JavacErrorDetail.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69416');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69416" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JDTCompiler<br/>In method org.apache.jasper.compiler.JDTCompiler.generateClass(String[])<br/>At JDTCompiler.java:[line 529]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getServletJavaFileName()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.servletJavaFileName<br/>At JspCompilationContext.java:[line 559]<br/>At JDTCompiler.java:[line 529]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69510');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69510" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JDTCompiler$1CompilationUnit<br/>In method org.apache.jasper.compiler.JDTCompiler$1CompilationUnit.getContents()<br/>At JDTCompiler.java:[line 141]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/JDTCompiler$1CompilationUnit.sourceFile<br/>At JDTCompiler.java:[line 141]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69982');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69982" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JspRuntimeContext<br/>In method org.apache.jasper.compiler.JspRuntimeContext.initSecurity()<br/>At JspRuntimeContext.java:[line 541]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.toString()Ljava/lang/String;<br/>Unknown source org/apache/jasper/Options.getScratchDir()Ljava/io/File;<br/>At JspRuntimeContext.java:[line 535]<br/>At JspRuntimeContext.java:[line 539]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70155');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70155" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.SmapUtil<br/>In method org.apache.jasper.compiler.SmapUtil.generateSmap(JspCompilationContext, Node$Nodes)<br/>At SmapUtil.java:[line 107]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.classFileName<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 600]<br/>At SmapUtil.java:[line 107]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70249');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70249" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.SmapUtil<br/>In method org.apache.jasper.compiler.SmapUtil.generateSmap(JspCompilationContext, Node$Nodes)<br/>At SmapUtil.java:[line 138]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/SmapUtil$PreScanVisitor.map<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source org/apache/jasper/JspCompilationContext.classFileName<br/>Unknown source org/apache/jasper/compiler/SmapUtil.evaluateNodes(Lorg/apache/jasper/compiler/Node$Nodes;Lorg/apache/jasper/compiler/SmapStratum;Ljava/util/HashMap;Z)V parameter 1<br/>Unknown source org/apache/jasper/compiler/SmapUtil$PreScanVisitor.getMap()Ljava/util/HashMap;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/jasper/JspCompilationContext.getClassFileName()Ljava/lang/String;<br/>At JspCompilationContext.java:[line 600]<br/>At SmapUtil.java:[line 75]<br/>At SmapUtil.java:[line 117]<br/>At SmapUtil.java:[line 124]<br/>At SmapUtil.java:[line 126]<br/>At SmapUtil.java:[line 127]<br/>At SmapUtil.java:[line 134]<br/>At SmapUtil.java:[line 138]<br/>At SmapUtil.java:[line 478]<br/>At SmapUtil.java:[line 723]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70448');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70448" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.SmapUtil<br/>In method org.apache.jasper.compiler.SmapUtil.installSmap(String[])<br/>At SmapUtil.java:[line 162]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/SmapUtil.installSmap([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At AntCompiler.java:[line 283]<br/>At JDTCompiler.java:[line 551]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70542');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70542" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.SmapUtil$SDEInstaller<br/>In method org.apache.jasper.compiler.SmapUtil$SDEInstaller.install(File, byte[])<br/>At SmapUtil.java:[line 198]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At SmapUtil.java:[line 198]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70621');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70621" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.TagLibraryInfoImpl<br/>In method org.apache.jasper.compiler.TagLibraryInfoImpl.getResourceAsStream(String)<br/>At TagLibraryInfoImpl.java:[line 118]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/TagLibraryInfoImpl.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>At TagLibraryInfoImpl.java:[line 118]<br/>At TagLibraryInfoImpl.java:[line 157]<br/>At TagLibraryInfoImpl.java:[line 163]<br/>At TldLocation.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70730');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70730" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.compiler.TagLibraryInfoImpl<br/>In method org.apache.jasper.compiler.TagLibraryInfoImpl.getResourceAsStream(String)<br/>At TagLibraryInfoImpl.java:[line 126]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/TagLibraryInfoImpl.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getRealPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source javax/servlet/ServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>At JspCompilationContext.java:[line 330]<br/>At TagLibraryInfoImpl.java:[line 122]<br/>At TagLibraryInfoImpl.java:[line 157]<br/>At TagLibraryInfoImpl.java:[line 163]<br/>At TldLocation.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.EmbeddedServletOptions<br/>In method new org.apache.jasper.EmbeddedServletOptions(ServletConfig, ServletContext)<br/>At EmbeddedServletOptions.java:[line 658]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletConfig.getInitParameter(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.execute()<br/>At JspC.java:[line 1429]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.pages<br/>At JspC.java:[line 1428]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.execute()<br/>At JspC.java:[line 1441]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.uriRoot<br/>At JspC.java:[line 1441]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65778');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65778" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.execute()<br/>At JspC.java:[line 1469]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/jasper/JspC.pages<br/>At JspC.java:[line 1468]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65862');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65862" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.execute()<br/>At JspC.java:[line 1471]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/jasper/JspC.pages<br/>At JspC.java:[line 1468]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65946');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65946" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.initClassLoader()<br/>At JspC.java:[line 1657]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspC.classPath<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>At JspC.java:[line 1652]<br/>At JspC.java:[line 1655]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66045');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66045" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.initClassLoader()<br/>At JspC.java:[line 1667]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.uriRoot<br/>At JspC.java:[line 1667]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66124');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66124" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.initClassLoader()<br/>At JspC.java:[line 1697]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66193');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66193" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.initServletContext(ClassLoader)<br/>At JspC.java:[line 1617]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.uriRoot<br/>At JspC.java:[line 1617]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66272');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66272" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.initWebXml()<br/>At JspC.java:[line 1569]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.webxmlFile<br/>At JspC.java:[line 1569]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66351');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66351" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.locateUriRoot(File)<br/>At JspC.java:[line 1730]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66420');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66420" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.locateUriRoot(File)<br/>At JspC.java:[line 1751]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66489');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66489" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.locateUriRoot(File)<br/>At JspC.java:[line 1760]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.uriRoot<br/>At JspC.java:[line 1760]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66568');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66568" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.mergeIntoWebXml()<br/>At JspC.java:[line 1138]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.uriRoot<br/>At JspC.java:[line 1138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66647');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66647" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.mergeIntoWebXml()<br/>At JspC.java:[line 1151]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.webxmlFile<br/>At JspC.java:[line 1151]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66726');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66726" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.mergeIntoWebXml()<br/>At JspC.java:[line 1254]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspC.webxmlFile<br/>At JspC.java:[line 1254]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66805');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66805" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.processFile(String)<br/>At JspC.java:[line 1309]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66874');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66874" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.scanFiles(File)<br/>At JspC.java:[line 1392]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Stack.push(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspC.scanFiles(Ljava/io/File;)V parameter 0<br/>Unknown source java/io/File.toString()Ljava/lang/String;<br/>Unknown source java/util/Stack.pop()Ljava/lang/Object;<br/>At JspC.java:[line 1382]<br/>At JspC.java:[line 1391]<br/>At JspC.java:[line 1399]<br/>At JspC.java:[line 1441]<br/>At JspC.java:[line 1455]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67013');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67013" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspC<br/>In method org.apache.jasper.JspC.scanFiles(File)<br/>At JspC.java:[line 1397]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67082');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67082" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspCompilationContext<br/>In method org.apache.jasper.JspCompilationContext.checkOutputDir()<br/>At JspCompilationContext.java:[line 720]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.outputDir<br/>At JspCompilationContext.java:[line 720]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67161');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67161" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspCompilationContext<br/>In method org.apache.jasper.JspCompilationContext.getLastModified(String)<br/>At JspCompilationContext.java:[line 446]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getLastModified(Ljava/lang/String;)Ljava/lang/Long; parameter 0<br/>Unknown source java/net/URI.&lt;init&gt;(Ljava/lang/String;)V<br/>At JspCompilationContext.java:[line 395]<br/>At JspCompilationContext.java:[line 446]<br/>At Compiler.java:[line 376]<br/>At Compiler.java:[line 449]<br/>At ImplicitTagLibraryInfo.java:[line 205]<br/>At ImplicitTagLibraryInfo.java:[line 212]<br/>At JspDocumentParser.java:[line 247]<br/>At JspDocumentParser.java:[line 249]<br/>At JspDocumentParser.java:[line 257]<br/>At JspDocumentParser.java:[line 934]<br/>At JspDocumentParser.java:[line 1395]<br/>At Parser.java:[line 329]<br/>At Parser.java:[line 366]<br/>At Parser.java:[line 375]<br/>At Parser.java:[line 377]<br/>At Parser.java:[line 384]<br/>At ParserController.java:[line 102]<br/>At ParserController.java:[line 119]<br/>At ParserController.java:[line 136]<br/>At ParserController.java:[line 154]<br/>At ParserController.java:[line 185]<br/>At ParserController.java:[line 195]<br/>At ParserController.java:[line 539]<br/>At ParserController.java:[line 541]<br/>At TagFileProcessor.java:[line 496]<br/>At TagFileProcessor.java:[line 642]<br/>At TagFileProcessor.java:[line 647]<br/>At TagLibraryInfoImpl.java:[line 157]<br/>At TagLibraryInfoImpl.java:[line 175]<br/>At TagLibraryInfoImpl.java:[line 474]<br/>At TagLibraryInfoImpl.java:[line 504]<br/>At TldLocation.java:[line 49]<br/>At TreeNode.java:[line 227]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67565');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67565" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.JspCompilationContext<br/>In method org.apache.jasper.JspCompilationContext.makeOutputDir()<br/>At JspCompilationContext.java:[line 730]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.outputDir<br/>At JspCompilationContext.java:[line 730]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71230');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71230" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.runtime.JspRuntimeLibrary<br/>In method org.apache.jasper.runtime.JspRuntimeLibrary.convert(String, String, Class, Class)<br/>At JspRuntimeLibrary.java:[line 233]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/runtime/JspRuntimeLibrary.convert(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/Object; parameter 2<br/>Method usage with tainted arguments detected<br/>At JspRuntimeLibrary.java:[line 253]<br/>At JspRuntimeLibrary.java:[line 254]<br/>At JspRuntimeLibrary.java:[line 300]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71925');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71925" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.getRealPath(String)<br/>At JspCServletContext.java:[line 251]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.myResourceBaseURL<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage not detected<br/>At JspCServletContext.java:[line 251]<br/>At JspCServletContext.java:[line 288]<br/>At JspCServletContext.java:[line 339]<br/>At JspCServletContext.java:[line 340]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72064');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72064" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.getResourcePaths(String)<br/>At JspCServletContext.java:[line 343]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At JspCServletContext.java:[line 340]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72148');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72148" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.getResourcePaths(String)<br/>At JspCServletContext.java:[line 351]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At JspCServletContext.java:[line 340]<br/>At JspCServletContext.java:[line 351]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69143');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69143" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.setupContextWriter(String)<br/>At Compiler.java:[line 318]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/Compiler.setupContextWriter(Ljava/lang/String;)Lorg/apache/jasper/compiler/ServletWriter; parameter 0<br/>At JspCompilationContext.java:[line 559]<br/>At Compiler.java:[line 173]<br/>At Compiler.java:[line 209]<br/>At Compiler.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69589');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69589" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JDTCompiler$2<br/>In method org.apache.jasper.compiler.JDTCompiler$2.acceptResult(CompilationResult)<br/>At JDTCompiler.java:[line 494]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/JDTCompiler$2.val$outputDir<br/>At JDTCompiler.java:[line 481]<br/>At JDTCompiler.java:[line 490]<br/>At JDTCompiler.java:[line 494]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71334');">
+<td>
+<span class="priority-1">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71334" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.apache.jasper.runtime.JspRuntimeLibrary<br/>In method org.apache.jasper.runtime.JspRuntimeLibrary.include(ServletRequest, ServletResponse, String, JspWriter, boolean)<br/>At JspRuntimeLibrary.java:[line 903]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source org/apache/jasper/runtime/JspRuntimeLibrary.getContextRelativePath(Ljavax/servlet/ServletRequest;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source javax/servlet/ServletRequest.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>Tainted source javax/servlet/ServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Tainted source javax/servlet/http/HttpServletRequest.getServletPath()Ljava/lang/String;<br/>Tainted source org/apache/jasper/runtime/JspRuntimeLibrary.getContextRelativePath(Ljavax/servlet/ServletRequest;Ljava/lang/String;)Ljava/lang/String;<br/>At JspRuntimeLibrary.java:[line 857]<br/>At JspRuntimeLibrary.java:[line 861]<br/>At JspRuntimeLibrary.java:[line 863]<br/>At JspRuntimeLibrary.java:[line 865]<br/>At JspRuntimeLibrary.java:[line 900]<br/>At JspRuntimeLibrary.java:[line 901]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71664');">
+<td>
+<span class="priority-1">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71664" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.apache.jasper.runtime.PageContextImpl<br/>In method org.apache.jasper.runtime.PageContextImpl.doForward(String)<br/>At PageContextImpl.java:[line 750]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletRequest.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source org/apache/jasper/runtime/PageContextImpl.getAbsolutePathRelativeToContext(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source org/apache/jasper/runtime/PageContextImpl.getAbsolutePathRelativeToContext(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Tainted source javax/servlet/http/HttpServletRequest.getServletPath()Ljava/lang/String;<br/>At PageContextImpl.java:[line 645]<br/>At PageContextImpl.java:[line 646]<br/>At PageContextImpl.java:[line 647]<br/>At PageContextImpl.java:[line 743]<br/>At PageContextImpl.java:[line 750]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69252');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69252" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.compiler.Compiler<br/>In method org.apache.jasper.compiler.Compiler.isOutDated(boolean)<br/>At Compiler.java:[line 507]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/compiler/JarResource.getEntry(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Unknown source org/apache/jasper/servlet/JspServletWrapper.getDependants()Ljava/util/Map;<br/>At JspCompilationContext.java:[line 311]<br/>At Compiler.java:[line 491]<br/>At Compiler.java:[line 493]<br/>At Compiler.java:[line 496]<br/>At Compiler.java:[line 499]<br/>At Compiler.java:[line 501]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69688');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69688" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JarURLResource<br/>In method org.apache.jasper.compiler.JarURLResource.getJarFile()<br/>At JarURLResource.java:[line 41]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/JarURLResource.jarUrl<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>At JarURLResource.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70864');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70864" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.compiler.TagLibraryInfoImpl<br/>In method new org.apache.jasper.compiler.TagLibraryInfoImpl(JspCompilationContext, ParserController, PageInfo, String, String, TldLocation, ErrorDispatcher, Mark)<br/>At TagLibraryInfoImpl.java:[line 181]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/compiler/JarResource.getEntry(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71062');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71062" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.compiler.WebXml<br/>In method new org.apache.jasper.compiler.WebXml(ServletContext)<br/>At WebXml.java:[line 72]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletContext.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>At WebXml.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67644');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67644" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.JspCompilationContext<br/>In method org.apache.jasper.JspCompilationContext.getJspLastModified()<br/>At JspCompilationContext.java:[line 412]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getJspFile()Ljava/lang/String;<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.jspUri<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/compiler/JarResource.getEntry(Ljava/lang/String;)Ljava/net/URL;<br/>At JspCompilationContext.java:[line 311]<br/>At JspCompilationContext.java:[line 395]<br/>At JspCompilationContext.java:[line 407]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67768');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67768" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.JspCompilationContext<br/>In method org.apache.jasper.JspCompilationContext.getLastModified(String)<br/>At JspCompilationContext.java:[line 459]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getLastModified(Ljava/lang/String;)Ljava/lang/Long; parameter 0<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source org/apache/jasper/JspCompilationContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/compiler/JarResource.getEntry(Ljava/lang/String;)Ljava/net/URL;<br/>At JspCompilationContext.java:[line 311]<br/>At JspCompilationContext.java:[line 395]<br/>At JspCompilationContext.java:[line 454]<br/>At Compiler.java:[line 376]<br/>At Compiler.java:[line 449]<br/>At ImplicitTagLibraryInfo.java:[line 125]<br/>At ImplicitTagLibraryInfo.java:[line 205]<br/>At ImplicitTagLibraryInfo.java:[line 212]<br/>At JspDocumentParser.java:[line 247]<br/>At JspDocumentParser.java:[line 249]<br/>At JspDocumentParser.java:[line 257]<br/>At JspDocumentParser.java:[line 934]<br/>At JspDocumentParser.java:[line 1395]<br/>At Parser.java:[line 329]<br/>At Parser.java:[line 366]<br/>At Parser.java:[line 375]<br/>At Parser.java:[line 377]<br/>At Parser.java:[line 384]<br/>At ParserController.java:[line 102]<br/>At ParserController.java:[line 119]<br/>At ParserController.java:[line 136]<br/>At ParserController.java:[line 154]<br/>At ParserController.java:[line 185]<br/>At ParserController.java:[line 195]<br/>At ParserController.java:[line 539]<br/>At ParserController.java:[line 541]<br/>At TagFileProcessor.java:[line 496]<br/>At TagFileProcessor.java:[line 642]<br/>At TagFileProcessor.java:[line 647]<br/>At TagLibraryInfoImpl.java:[line 157]<br/>At TagLibraryInfoImpl.java:[line 175]<br/>At TagLibraryInfoImpl.java:[line 474]<br/>At TagLibraryInfoImpl.java:[line 504]<br/>At TldLocation.java:[line 49]<br/>At TreeNode.java:[line 227]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71802');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71802" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JasperLoader<br/>In method org.apache.jasper.servlet.JasperLoader.getResourceAsStream(String)<br/>At JasperLoader.java:[line 148]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/servlet/JasperLoader.findResource(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72247');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72247" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.getResource(String)<br/>At JspCServletContext.java:[line 291]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.myResourceBaseURL<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage not detected<br/>At JspCServletContext.java:[line 251]<br/>At JspCServletContext.java:[line 288]<br/>At JspCServletContext.java:[line 319]<br/>At JspCServletContext.java:[line 339]<br/>At JspCServletContext.java:[line 340]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72381');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72381" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspCServletContext<br/>In method org.apache.jasper.servlet.JspCServletContext.getResourceAsStream(String)<br/>At JspCServletContext.java:[line 319]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.myResourceBaseURL<br/>Unknown source org/apache/jasper/servlet/JspCServletContext.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage not detected<br/>At JspCServletContext.java:[line 288]<br/>At JspCServletContext.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72495');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72495" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspServlet<br/>In method org.apache.jasper.servlet.JspServlet.handleMissingResource(HttpServletRequest, HttpServletResponse, String)<br/>At JspServlet.java:[line 420]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At JspServlet.java:[line 420]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72574');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72574" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.jasper.servlet.JspServletWrapper<br/>In method org.apache.jasper.servlet.JspServletWrapper.service(HttpServletRequest, HttpServletResponse, boolean)<br/>At JspServletWrapper.java:[line 471]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/UnavailableException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72643');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72643" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.jasper.xmlparser.ParserUtils<br/>In method org.apache.jasper.xmlparser.ParserUtils.parseXMLDocument(String, InputSource)<br/>At ParserUtils.java:[line 133]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69866');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69866" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JspDocumentParser<br/>In method org.apache.jasper.compiler.JspDocumentParser.parse(ParserController, String, JarFile, Node, boolean, boolean, String, String, boolean, boolean)<br/>At JspDocumentParser.java:[line 195]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69924');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69924" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.jasper.compiler.JspDocumentParser<br/>In method org.apache.jasper.compiler.JspDocumentParser.parse(ParserController, String, JarFile, Node, boolean, boolean, String, String, boolean, boolean)<br/>At JspDocumentParser.java:[line 206]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="EL_INJECTION">EL_INJECTION: Potential code injection when using Expression Language (EL)</a>
+</h2>
+            
+<p>
+    An expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>public void evaluateExpression(String expression) {
+    FacesContext context = FacesContext.getCurrentInstance();
+    ExpressionFactory expressionFactory = context.getApplication().getExpressionFactory();
+    ELContext elContext = context.getELContext();
+    ValueExpression vex = expressionFactory.createValueExpression(elContext, expression, String.class);
+    return (String) vex.getValue(elContext);
+}</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://blog.mindedsecurity.com/2015/11/reliable-os-shell-with-el-expression.html">Minded Security: Abusing EL for executing OS commands</a><br/>
+    <a href="https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html">The Java EE 6 Tutorial: Expression Language</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="http://danamodio.com/appsec/research/spring-remote-code-with-expression-language-injection/">Dan Amodio's blog: Remote Code with Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+</p>
+
+        
+<h2>
+<a name="JSP_INCLUDE">JSP_INCLUDE: Dynamic JSP inclusion</a>
+</h2>
+            
+<p>The inclusion of JSP file allow the entry of dynamic value. It may allow an attacker to control the JSP page included.
+If this is the case, an attacker will try to include a file on disk that he controls. By including arbitrary files, the
+attacker gets the ability to execute any code.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+    <pre>&lt;jsp:include page="${param.secret_param}" /&gt;</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>&lt;c:if test="${param.secret_param == 'page1'}"&gt;
+    &lt;jsp:include page="page1.jsp" /&gt;
+&lt;/c:if&gt;</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://resources.infosecinstitute.com/file-inclusion-attacks/">InfosecInstitute: File Inclusion Attacks</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246955/Remote%20File%20Inclusion">WASC-05: Remote File Inclusion</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_SAXPARSER">XXE_SAXPARSER: XML parsing vulnerable to XXE (SAXParser)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

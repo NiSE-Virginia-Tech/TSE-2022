@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/saturn-console-core/saturn-core/target/saturn-core-master-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>7252 lines of code analyzed,
+	in 176 classes, 
+	in 23 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">21</td>
+<td align="right">2.90</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+<td align="right">
+<b>2.90</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">21</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65688');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.command([Ljava/lang/String;)Ljava/lang/ProcessBuilder; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65688" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.RestartAndDumpService<br/>In method com.vip.saturn.job.executor.RestartAndDumpService.executeRestartOrDumpCmd(String)<br/>At RestartAndDumpService.java:[line 134]<br/>Sink method java/lang/ProcessBuilder.command([Ljava/lang/String;)Ljava/lang/ProcessBuilder;<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/executor/RestartAndDumpService.executeRestartOrDumpCmd(Ljava/lang/String;)V parameter 0<br/>Unknown source com/vip/saturn/job/utils/SystemEnvProperties.VIP_SATURN_PRG<br/>Method usage not detected<br/>At RestartAndDumpService.java:[line 131]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66014');">
+<td>
+<span class="priority-2">SECHPP</span>
+</td>
+<td>Concatenating user-controlled input into a URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66014" style="display: none;">
+<a href="#HTTP_PARAMETER_POLLUTION">Bug type HTTP_PARAMETER_POLLUTION (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.SaturnExecutor<br/>In method com.vip.saturn.job.executor.SaturnExecutor.discoverZK()<br/>At SaturnExecutor.java:[line 225]<br/>Sink method org/apache/http/client/methods/HttpGet.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/executor/SaturnExecutor.namespace<br/>At SaturnExecutor.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.PeriodicTruncateNohupOutService<br/>In method com.vip.saturn.job.executor.PeriodicTruncateNohupOutService.start()<br/>At PeriodicTruncateNohupOutService.java:[line 40]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66092');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66092" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.internal.statistics.StatisticsService<br/>In method com.vip.saturn.job.internal.statistics.StatisticsService.startProcessCountJob()<br/>At StatisticsService.java:[line 86]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66239');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66239" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.shell.SaturnScriptJob<br/>In method new com.vip.saturn.job.shell.SaturnScriptJob()<br/>At SaturnScriptJob.java:[line 35]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.PeriodicTruncateNohupOutService$TruncateLogRunnable<br/>In method com.vip.saturn.job.executor.PeriodicTruncateNohupOutService$TruncateLogRunnable.run()<br/>At PeriodicTruncateNohupOutService.java:[line 56]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/vip/saturn/job/utils/SystemEnvProperties.VIP_SATURN_LOG_OUTFILE<br/>At PeriodicTruncateNohupOutService.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65777');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65777" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.RestartAndDumpService<br/>In method com.vip.saturn.job.executor.RestartAndDumpService.executeRestartOrDumpCmd(String)<br/>At RestartAndDumpService.java:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/SystemEnvProperties.VIP_SATURN_LOG_OUTFILE<br/>At RestartAndDumpService.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65856');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65856" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.RestartAndDumpService<br/>In method com.vip.saturn.job.executor.RestartAndDumpService.executeRestartOrDumpCmd(String)<br/>At RestartAndDumpService.java:[line 136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/SystemEnvProperties.VIP_SATURN_LOG_OUTFILE<br/>At RestartAndDumpService.java:[line 136]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65935');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65935" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.executor.RestartAndDumpService<br/>In method com.vip.saturn.job.executor.RestartAndDumpService.validateFile(String, String)<br/>At RestartAndDumpService.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/executor/RestartAndDumpService.validateFile(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At RestartAndDumpService.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66150');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66150" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.reg.zookeeper.NestedZookeeperServers<br/>In method com.vip.saturn.job.reg.zookeeper.NestedZookeeperServers.startServerIfNotStarted(int, String)<br/>At NestedZookeeperServers.java:[line 64]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/reg/zookeeper/NestedZookeeperServers.startServerIfNotStarted(ILjava/lang/String;)V parameter 0<br/>At ZookeeperConfiguration.java:[line 206]<br/>At ZookeeperRegistryCenter.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66297');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66297" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.shell.ScriptJobRunner<br/>In method com.vip.saturn.job.shell.ScriptJobRunner.createSaturnJobReturnFile()<br/>At ScriptJobRunner.java:[line 69]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/shell/ScriptJobRunner.envMap<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>At ScriptJobRunner.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66381');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66381" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils._getPidFromFile(String, String, String)<br/>At ScriptPidUtils.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils._getPidFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils._getPidFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 1<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils._getPidFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J parameter 2<br/>At AbstractSaturnService.java:[line 42]<br/>At JobNodePath.java:[line 41]<br/>At SaturnExecuteWatchdog.java:[line 57]<br/>At SaturnScriptJob.java:[line 160]<br/>At SaturnScriptJob.java:[line 176]<br/>At ScriptPidUtils.java:[line 126]<br/>At ScriptPidUtils.java:[line 148]<br/>At ScriptPidUtils.java:[line 166]<br/>At ScriptPidUtils.java:[line 357]<br/>At ScriptPidUtils.java:[line 358]<br/>At ScriptPidUtils.java:[line 372]<br/>At ScriptPidUtils.java:[line 386]<br/>At ScriptPidUtils.java:[line 404]<br/>At ScriptPidUtils.java:[line 408]<br/>At ScriptPidUtils.java:[line 417]<br/>At ScriptPidUtils.java:[line 420]<br/>At ScriptPidUtils.java:[line 425]<br/>At ScriptPidUtils.java:[line 492]<br/>At ScriptPidUtils.java:[line 493]<br/>At ScriptPidUtils.java:[line 458]<br/>At ScriptPidUtils.java:[line 459]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66670');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66670" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.getItemsPaths(String, String)<br/>At ScriptPidUtils.java:[line 205]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.getItemsPaths(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.getItemsPaths(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String; parameter 1<br/>At SaturnScriptJob.java:[line 160]<br/>At ScriptPidUtils.java:[line 203]<br/>At ScriptPidUtils.java:[line 357]<br/>At ScriptPidUtils.java:[line 358]<br/>At ScriptPidUtils.java:[line 363]<br/>At ScriptPidUtils.java:[line 386]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66804');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66804" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.getPidsFromFile(String, String, String)<br/>At ScriptPidUtils.java:[line 173]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.getPidsFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List; parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.getPidsFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.getPidsFromFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List; parameter 2<br/>At AbstractSaturnService.java:[line 42]<br/>At JobNodePath.java:[line 41]<br/>At SaturnExecuteWatchdog.java:[line 57]<br/>At SaturnScriptJob.java:[line 160]<br/>At SaturnScriptJob.java:[line 176]<br/>At ScriptPidUtils.java:[line 148]<br/>At ScriptPidUtils.java:[line 171]<br/>At ScriptPidUtils.java:[line 357]<br/>At ScriptPidUtils.java:[line 358]<br/>At ScriptPidUtils.java:[line 372]<br/>At ScriptPidUtils.java:[line 386]<br/>At ScriptPidUtils.java:[line 404]<br/>At ScriptPidUtils.java:[line 408]<br/>At ScriptPidUtils.java:[line 417]<br/>At ScriptPidUtils.java:[line 420]<br/>At ScriptPidUtils.java:[line 425]<br/>At ScriptPidUtils.java:[line 492]<br/>At ScriptPidUtils.java:[line 493]<br/>At ScriptPidUtils.java:[line 458]<br/>At ScriptPidUtils.java:[line 459]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67083');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67083" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.getSaturnExecutingHome()<br/>At ScriptPidUtils.java:[line 86]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.EXECUTINGPATH<br/>At ScriptPidUtils.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67162');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67162" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.isPidRunning(String)<br/>At ScriptPidUtils.java:[line 531]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.isPidRunning(Ljava/lang/String;)Z parameter 0<br/>At ScriptPidUtils.java:[line 279]<br/>At ScriptPidUtils.java:[line 280]<br/>At ScriptPidUtils.java:[line 282]<br/>At ScriptPidUtils.java:[line 288]<br/>At ScriptPidUtils.java:[line 289]<br/>At ScriptPidUtils.java:[line 331]<br/>At ScriptPidUtils.java:[line 333]<br/>At ScriptPidUtils.java:[line 338]<br/>At ScriptPidUtils.java:[line 530]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67321');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67321" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.removeAllPidFile(String, String, String)<br/>At ScriptPidUtils.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removeAllPidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removeAllPidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removeAllPidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>At AbstractSaturnService.java:[line 42]<br/>At JobNodePath.java:[line 41]<br/>At SaturnExecuteWatchdog.java:[line 57]<br/>At SaturnScriptJob.java:[line 160]<br/>At SaturnScriptJob.java:[line 183]<br/>At ScriptPidUtils.java:[line 234]<br/>At ScriptPidUtils.java:[line 264]<br/>At ScriptPidUtils.java:[line 357]<br/>At ScriptPidUtils.java:[line 358]<br/>At ScriptPidUtils.java:[line 379]<br/>At ScriptPidUtils.java:[line 386]<br/>At ScriptPidUtils.java:[line 404]<br/>At ScriptPidUtils.java:[line 408]<br/>At ScriptPidUtils.java:[line 420]<br/>At ScriptPidUtils.java:[line 425]<br/>At ScriptPidUtils.java:[line 429]<br/>At ScriptPidUtils.java:[line 493]<br/>At ScriptPidUtils.java:[line 495]<br/>At ScriptPidUtils.java:[line 458]<br/>At ScriptPidUtils.java:[line 467]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67600');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67600" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.removePidFile(String, String, String, long)<br/>At ScriptPidUtils.java:[line 251]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removePidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Z parameter 2<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removePidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Z parameter 3<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.removePidFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Z parameter 4<br/>At AbstractElasticJob.java:[line 304]<br/>At ScriptJobRunner.java:[line 190]<br/>At ScriptPidUtils.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67709');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67709" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.writePidToFile(String, String, int, long)<br/>At ScriptPidUtils.java:[line 113]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.writePidToFile(Ljava/lang/String;Ljava/lang/String;IJ)V parameter 3<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.writePidToFile(Ljava/lang/String;Ljava/lang/String;IJ)V parameter 4<br/>At SaturnExecuteWatchdog.java:[line 92]<br/>At ScriptPidUtils.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67803');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67803" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.ScriptPidUtils<br/>In method com.vip.saturn.job.utils.ScriptPidUtils.writePidToFile(String, String, int, long)<br/>At ScriptPidUtils.java:[line 114]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.writePidToFile(Ljava/lang/String;Ljava/lang/String;IJ)V parameter 3<br/>Unknown source com/vip/saturn/job/utils/ScriptPidUtils.writePidToFile(Ljava/lang/String;Ljava/lang/String;IJ)V parameter 4<br/>At SaturnExecuteWatchdog.java:[line 92]<br/>At ScriptPidUtils.java:[line 111]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67897');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67897" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.vip.saturn.job.utils.StartCheckUtil<br/>In method com.vip.saturn.job.utils.StartCheckUtil.writeCheckResult(StartCheckUtil$CheckStatus)<br/>At StartCheckUtil.java:[line 45]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/vip/saturn/job/utils/StartCheckUtil.OUT_FILE<br/>At StartCheckUtil.java:[line 45]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="HTTP_PARAMETER_POLLUTION">HTTP_PARAMETER_POLLUTION: HTTP Parameter Pollution</a>
+</h2>
+            
+<p>
+Concatenating unvalidated user input into a URL can allow an attacker to override the value of a request parameter. Attacker may be able to override existing parameter values, inject a new parameter or exploit variables out of a direct reach. HTTP Parameter Pollution (HPP) attacks consist of injecting encoded query string delimiters into other existing parameters. If a web application does not properly sanitize the user input, a malicious user may compromise the logic of the application to perform either client-side or server-side attacks.<br/>
+In the following example the programmer has not considered the possibility that an attacker could provide a parameter <code>lang</code> such as <code>en&user_id=1</code>, which would enable him to change the <code>user_id</code> at will.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>String lang = request.getParameter("lang");
+GetMethod get = new GetMethod("http://www.host.com");
+get.setQueryString("lang=" + lang + "&user_id=" + user_id);
+get.execute();</pre>
+<p>
+    <b>Solution:</b><br/>
+Sanitize user input before using it in HTTP parameters.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://capec.mitre.org/data/definitions/460.html">CAPEC-460: HTTP Parameter Pollution (HPP)</a>
+</p>
+            
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

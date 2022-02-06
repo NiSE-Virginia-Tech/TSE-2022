@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/kylin.git/xercesImpl-2.11.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>71428 lines of code analyzed,
+	in 952 classes, 
+	in 40 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">0.18</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+<td align="right">
+<b>0.18</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66229');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66229" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.xerces.impl.dtd.XML11DTDValidator<br/>In method org.apache.xerces.impl.dtd.XML11DTDValidator.init()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66268');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66268" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.xerces.impl.dtd.XMLDTDValidator<br/>In method org.apache.xerces.impl.dtd.XMLDTDValidator.init()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.html.dom.ObjectFactory<br/>In method org.apache.html.dom.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/html/dom/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65626');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65626" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xerces.dom.ObjectFactory<br/>In method org.apache.xerces.dom.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/dom/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66307');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66307" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xerces.impl.dv.ObjectFactory<br/>In method org.apache.xerces.impl.dv.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/impl/dv/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65701');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65701" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xerces.impl.XMLEntityManager<br/>In method org.apache.xerces.impl.XMLEntityManager.createOutputStream(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/util/URI.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String; parameter 2<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/util/URI.m_queryString<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/xerces/util/URI.m_path<br/>Unknown source org/apache/xerces/util/URI.m_scheme<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.getPathWithoutEscapes(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.createOutputStream(Ljava/lang/String;)Ljava/io/OutputStream; parameter 0<br/>Unknown source org/apache/xerces/util/URI.m_userinfo<br/>Unknown source org/apache/xerces/util/URI.m_regAuthority<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.getPathWithoutEscapes(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_host<br/>Unknown source org/apache/xerces/util/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_fragment<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66425');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66425" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xerces.parsers.ObjectFactory<br/>In method org.apache.xerces.parsers.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/parsers/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66500');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66500" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xerces.xinclude.ObjectFactory<br/>In method org.apache.xerces.xinclude.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/xinclude/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66748');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66748" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.xml.serialize.ObjectFactory<br/>In method org.apache.xml.serialize.ObjectFactory.createObject(String, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/xml/serialize/SecuritySupport.getSystemProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65894');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65894" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.xerces.impl.XMLEntityManager<br/>In method org.apache.xerces.impl.XMLEntityManager.createOutputStream(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/util/URI.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String; parameter 2<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/util/URI.m_queryString<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/xerces/util/URI.m_path<br/>Unknown source org/apache/xerces/util/URI.m_scheme<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.createOutputStream(Ljava/lang/String;)Ljava/io/OutputStream; parameter 0<br/>Unknown source org/apache/xerces/util/URI.m_userinfo<br/>Unknown source org/apache/xerces/util/URI.m_regAuthority<br/>Unknown source org/apache/xerces/util/URI.m_host<br/>Unknown source org/apache/xerces/util/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_fragment<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66062');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66062" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.xerces.impl.XMLEntityManager<br/>In method org.apache.xerces.impl.XMLEntityManager.setupCurrentEntity(String, XMLInputSource, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/xni/parser/XMLInputSource.fSystemId<br/>Unknown source org/apache/xerces/util/URI.m_path<br/>Unknown source org/apache/xerces/util/URI.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_scheme<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String; parameter 2<br/>Unknown source org/apache/xerces/xni/parser/XMLInputSource.getSystemId()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_userinfo<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/xerces/util/URI.m_regAuthority<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/util/URI.m_host<br/>Unknown source org/apache/xerces/util/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_queryString<br/>Unknown source org/apache/xerces/util/URI.m_fragment<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66575');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66575" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.xerces.xinclude.XIncludeTextReader<br/>In method org.apache.xerces.xinclude.XIncludeTextReader.getReader(XMLInputSource)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/xerces/xni/parser/XMLInputSource.fSystemId<br/>Unknown source org/apache/xerces/util/URI.m_path<br/>Unknown source org/apache/xerces/util/URI.m_scheme<br/>Unknown source org/apache/xerces/util/URI.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String; parameter 2<br/>Unknown source org/apache/xerces/xni/parser/XMLInputSource.getSystemId()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_userinfo<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/xerces/util/URI.m_regAuthority<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOn(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/xerces/util/URI.m_host<br/>Unknown source org/apache/xerces/util/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemIdStrictOff(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/xerces/util/URI.m_queryString<br/>Unknown source org/apache/xerces/util/URI.m_fragment<br/>Unknown source org/apache/xerces/impl/XMLEntityManager.expandSystemId(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66382');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66382" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class org.apache.xerces.impl.xs.traversers.XSDHandler<br/>In method org.apache.xerces.impl.xs.traversers.XSDHandler.getSchemaDocument(String, SAXInputSource, boolean, short, Element)<br/>In &lt;Unknown&gt;<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XXE_XMLREADER">XXE_XMLREADER: XML parsing vulnerable to XXE (XMLReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setContentHandler(customHandler);
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,1474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/protools/all/target/original-all-3.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>5301 lines of code analyzed,
+	in 109 classes, 
+	in 26 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">3.77</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">43</td>
+<td align="right">8.11</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>63</b>
+</td>
+<td align="right">
+<b>11.88</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">63</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>63</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68788');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68788" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolAES<br/>In method pro.tools.security.ToolAES.decrypt(byte[], byte[])<br/>At ToolAES.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68842');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68842" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolAES<br/>In method pro.tools.security.ToolAES.encrypt(byte[], byte[])<br/>At ToolAES.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69356');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69356" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.decrypt(byte[], byte[])<br/>At ToolDES.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69410');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69410" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.encrypt(byte[], byte[])<br/>At ToolDES.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69764');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69764" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolDESede<br/>In method pro.tools.security.ToolDESede.decrypt(byte[], byte[])<br/>At ToolDESede.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69818');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69818" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolDESede<br/>In method pro.tools.security.ToolDESede.encrypt(byte[], byte[])<br/>At ToolDESede.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70364');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70364" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolIDEA<br/>In method pro.tools.security.ToolIDEA.decrypt(byte[], byte[])<br/>At ToolIDEA.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70418');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70418" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolIDEA<br/>In method pro.tools.security.ToolIDEA.encrypt(byte[], byte[])<br/>At ToolIDEA.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70472');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70472" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolPBE<br/>In method pro.tools.security.ToolPBE.decrypt(byte[], String, byte[])<br/>At ToolPBE.java:[line 150]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70526');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70526" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class pro.tools.security.ToolPBE<br/>In method pro.tools.security.ToolPBE.encrypt(byte[], String, byte[])<br/>At ToolPBE.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68704');">
+<td>
+<span class="priority-2">SCRIPTE</span>
+</td>
+<td>This use of javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object; can be vulnerable to code injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68704" style="display: none;">
+<a href="#SCRIPT_ENGINE_INJECTION">Bug type SCRIPT_ENGINE_INJECTION (click for details)</a>
+<br/>In class pro.tools.script.ToolScript<br/>In method pro.tools.script.ToolScript.render(String, Map)<br/>At ToolScript.java:[line 47]<br/>Sink method javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object;<br/>Sink parameter 0<br/>Unknown source pro/tools/script/ToolScript.render(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String; parameter 1<br/>Method usage not detected<br/>At ToolScript.java:[line 88]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69464');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69464" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.decrypt(byte[], byte[])<br/>At ToolDES.java:[line 82]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69528');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69528" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.encrypt(byte[], byte[])<br/>At ToolDES.java:[line 109]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69592');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69592" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.initKey()<br/>At ToolDES.java:[line 134]<br/>Sink method javax/crypto/KeyGenerator.getInstance(Ljava/lang/String;)Ljavax/crypto/KeyGenerator;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68896');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68896" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolAES<br/>In method pro.tools.security.ToolAES.decrypt(byte[], byte[])<br/>At ToolAES.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68950');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68950" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolAES<br/>In method pro.tools.security.ToolAES.encrypt(byte[], byte[])<br/>At ToolAES.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69656');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69656" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.decrypt(byte[], byte[])<br/>At ToolDES.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69710');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69710" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolDES<br/>In method pro.tools.security.ToolDES.encrypt(byte[], byte[])<br/>At ToolDES.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69872');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69872" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolDESede<br/>In method pro.tools.security.ToolDESede.decrypt(byte[], byte[])<br/>At ToolDESede.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69926');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69926" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class pro.tools.security.ToolDESede<br/>In method pro.tools.security.ToolDESede.encrypt(byte[], byte[])<br/>At ToolDESede.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67794');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67794" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.getFileMD5(File)<br/>At ToolFile.java:[line 1410]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70634');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD2 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70634" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class pro.tools.security.md.ToolMD2<br/>In method pro.tools.security.md.ToolMD2.encodeMD2(byte[])<br/>At ToolMD2.java:[line 30]<br/>Value MD2</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70692');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD4 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70692" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class pro.tools.security.md.ToolMD4<br/>In method pro.tools.security.md.ToolMD4.encodeMD4(byte[])<br/>At ToolMD4.java:[line 36]<br/>Value MD4</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70750');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70750" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class pro.tools.security.md.ToolMD5<br/>In method pro.tools.security.md.ToolMD5.encodeMD5(byte[])<br/>At ToolMD5.java:[line 35]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.overlapImage(BufferedImage, String, String, String, MatrixToLogoImageConfig)<br/>At ToolBarCode.java:[line 253]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.overlapImage(Ljava/awt/image/BufferedImage;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lpro/tools/data/image/MatrixToLogoImageConfig;)V parameter 1<br/>Method usage not detected<br/>At ToolBarCode.java:[line 213]<br/>At ToolBarCode.java:[line 237]<br/>At ToolBarCode.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.overlapImage(BufferedImage, String, String, String, MatrixToLogoImageConfig)<br/>At ToolBarCode.java:[line 272]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.overlapImage(Ljava/awt/image/BufferedImage;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lpro/tools/data/image/MatrixToLogoImageConfig;)V parameter 2<br/>Method usage not detected<br/>At ToolBarCode.java:[line 213]<br/>At ToolBarCode.java:[line 237]<br/>At ToolBarCode.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65759');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65759" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.writeToFile(BitMatrix, String, String, String)<br/>At ToolBarCode.java:[line 209]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.writeToFile(Lcom/google/zxing/common/BitMatrix;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65833');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65833" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.writeToFile(BitMatrix, String, String, String)<br/>At ToolBarCode.java:[line 212]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.writeToFile(Lcom/google/zxing/common/BitMatrix;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65907');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65907" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.writeToFile(BitMatrix, String, String, String, MatrixToLogoImageConfig)<br/>At ToolBarCode.java:[line 233]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.writeToFile(Lcom/google/zxing/common/BitMatrix;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lpro/tools/data/image/MatrixToLogoImageConfig;)V parameter 2<br/>Method usage not detected<br/>At ToolBarCode.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65991');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65991" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.MatrixToImageWriterEx<br/>In method pro.tools.data.image.MatrixToImageWriterEx.writeToFile(BitMatrix, String, String, String, MatrixToLogoImageConfig)<br/>At ToolBarCode.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/MatrixToImageWriterEx.writeToFile(Lcom/google/zxing/common/BitMatrix;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lpro/tools/data/image/MatrixToLogoImageConfig;)V parameter 2<br/>Method usage not detected<br/>At ToolBarCode.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66075');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66075" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolBarCode<br/>In method pro.tools.data.image.ToolBarCode.decode(String)<br/>At ToolBarCode.java:[line 96]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolBarCode.decode(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66149');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66149" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolBarCode<br/>In method pro.tools.data.image.ToolBarCode.encode(String, int, int, String, String)<br/>At ToolBarCode.java:[line 60]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolBarCode.encode(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66223');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66223" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImagePressText<br/>In method pro.tools.data.image.ToolImagePressText.pressImage(String, String, int, int)<br/>At ToolImagePressText.java:[line 32]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImagePressText.pressImage(Ljava/lang/String;Ljava/lang/String;II)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66297');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66297" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImagePressText<br/>In method pro.tools.data.image.ToolImagePressText.pressImage(String, String, int, int)<br/>At ToolImagePressText.java:[line 41]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImagePressText.pressImage(Ljava/lang/String;Ljava/lang/String;II)V parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66371');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66371" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImagePressText<br/>In method pro.tools.data.image.ToolImagePressText.pressImage(String, String, int, int)<br/>At ToolImagePressText.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImagePressText.pressImage(Ljava/lang/String;Ljava/lang/String;II)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66445');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66445" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImagePressText<br/>In method pro.tools.data.image.ToolImagePressText.pressText(String, String, String, int, Color, int, int, int)<br/>At ToolImagePressText.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImagePressText.pressText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/awt/Color;III)V parameter 6<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66519');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66519" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImagePressText<br/>In method pro.tools.data.image.ToolImagePressText.pressText(String, String, String, int, Color, int, int, int)<br/>At ToolImagePressText.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImagePressText.pressText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/awt/Color;III)V parameter 6<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66593');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66593" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImageResize<br/>In method pro.tools.data.image.ToolImageResize.resize(String, String, int, String)<br/>At ToolImageResize.java:[line 49]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImageResize.resize(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66667');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66667" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImageResize<br/>In method pro.tools.data.image.ToolImageResize.resize(String, String, int, String)<br/>At ToolImageResize.java:[line 50]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImageResize.resize(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66741');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66741" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImageTailor<br/>In method pro.tools.data.image.ToolImageTailor.cut(String, String, int, int, int, int)<br/>At ToolImageTailor.java:[line 53]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImageTailor.cut(Ljava/lang/String;Ljava/lang/String;IIII)V parameter 5<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66815');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66815" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.data.image.ToolImageTailor<br/>In method pro.tools.data.image.ToolImageTailor.cut(String, String, int, int, int, int)<br/>At ToolImageTailor.java:[line 83]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/data/image/ToolImageTailor.cut(Ljava/lang/String;Ljava/lang/String;IIII)V parameter 4<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66889');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66889" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.copyOrMoveDir(File, File, boolean)<br/>At ToolFile.java:[line 308]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At ToolFile.java:[line 294]<br/>At ToolFile.java:[line 308]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66983');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66983" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.getFileByPath(String)<br/>At ToolFile.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolFile.getFileByPath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At ToolFile.java:[line 60]<br/>At ToolFile.java:[line 86]<br/>At ToolFile.java:[line 131]<br/>At ToolFile.java:[line 155]<br/>At ToolFile.java:[line 179]<br/>At ToolFile.java:[line 204]<br/>At ToolFile.java:[line 235]<br/>At ToolFile.java:[line 272]<br/>At ToolFile.java:[line 337]<br/>At ToolFile.java:[line 383]<br/>At ToolFile.java:[line 411]<br/>At ToolFile.java:[line 439]<br/>At ToolFile.java:[line 467]<br/>At ToolFile.java:[line 493]<br/>At ToolFile.java:[line 530]<br/>At ToolFile.java:[line 554]<br/>At ToolFile.java:[line 606]<br/>At ToolFile.java:[line 643]<br/>At ToolFile.java:[line 687]<br/>At ToolFile.java:[line 733]<br/>At ToolFile.java:[line 778]<br/>At ToolFile.java:[line 823]<br/>At ToolFile.java:[line 866]<br/>At ToolFile.java:[line 911]<br/>At ToolFile.java:[line 958]<br/>At ToolFile.java:[line 997]<br/>At ToolFile.java:[line 1030]<br/>At ToolFile.java:[line 1088]<br/>At ToolFile.java:[line 1126]<br/>At ToolFile.java:[line 1153]<br/>At ToolFile.java:[line 1180]<br/>At ToolFile.java:[line 1218]<br/>At ToolFile.java:[line 1254]<br/>At ToolFile.java:[line 1279]<br/>At ToolFile.java:[line 1304]<br/>At ToolFile.java:[line 1342]<br/>At ToolZip.java:[line 55]<br/>At ToolZip.java:[line 75]<br/>At ToolZip.java:[line 142]<br/>At ToolZip.java:[line 162]<br/>At ToolZip.java:[line 280]<br/>At ToolZip.java:[line 324]<br/>At ToolZip.java:[line 362]<br/>At ToolZip.java:[line 363]<br/>At ToolZip.java:[line 495]<br/>At ToolZip.java:[line 541]<br/>At ToolZip.java:[line 601]<br/>At ToolZip.java:[line 641]<br/>At ToolZip.java:[line 682]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67547');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67547" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.getFileMD5(String)<br/>At ToolFile.java:[line 1382]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolFile.getFileMD5(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67621');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67621" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.getFileMD5ToString(String)<br/>At ToolFile.java:[line 1369]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolFile.getFileMD5ToString(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67695');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67695" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFile<br/>In method pro.tools.file.ToolFile.rename(File, String)<br/>At ToolFile.java:[line 116]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolFile.rename(Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;<br/>Method usage not detected<br/>At ToolFile.java:[line 86]<br/>At ToolFile.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67852');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67852" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolFileType<br/>In method pro.tools.file.ToolFileType.getType(String)<br/>At ToolFileType.java:[line 88]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolFileType.getType(Ljava/lang/String;)Lpro/tools/file/FileType; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67926');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67926" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolZip<br/>In method pro.tools.file.ToolZip.unrarFile(File, File)<br/>At ToolZip.java:[line 564]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source com/github/junrar/rarfile/FileHeader.getFileNameString()Ljava/lang/String;<br/>At ToolZip.java:[line 563]<br/>At ToolZip.java:[line 564]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68020');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68020" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolZip<br/>In method pro.tools.file.ToolZip.unzipFileByKeyword(File, File, String)<br/>At ToolZip.java:[line 394]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolZip.unzipFileByKeyword(Ljava/io/File;Ljava/io/File;Ljava/lang/String;)Ljava/util/List; parameter 1<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>At ToolFile.java:[line 48]<br/>At ToolZip.java:[line 280]<br/>At ToolZip.java:[line 302]<br/>At ToolZip.java:[line 324]<br/>At ToolZip.java:[line 342]<br/>At ToolZip.java:[line 362]<br/>At ToolZip.java:[line 363]<br/>At ToolZip.java:[line 393]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68174');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68174" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.file.ToolZip<br/>In method pro.tools.file.ToolZip.unzipFileByKeyword(File, File, String, Charset)<br/>At ToolZip.java:[line 454]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/file/ToolZip.unzipFileByKeyword(Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/util/List; parameter 2<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>At ToolFile.java:[line 48]<br/>At ToolZip.java:[line 280]<br/>At ToolZip.java:[line 302]<br/>At ToolZip.java:[line 324]<br/>At ToolZip.java:[line 342]<br/>At ToolZip.java:[line 362]<br/>At ToolZip.java:[line 363]<br/>At ToolZip.java:[line 393]<br/>At ToolZip.java:[line 417]<br/>At ToolZip.java:[line 453]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68348');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (javax/activation/FileDataSource.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68348" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.mail.clientpool.MailClientPool<br/>In method pro.tools.mail.clientpool.MailClientPool.createSimpleMail(Session, MailSend)<br/>At MailClientPool.java:[line 216]<br/>Sink method javax/activation/FileDataSource.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/mail/pojo/MailSend.attachFiles<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source pro/tools/mail/pojo/MailSend.getAttachFiles()Ljava/util/List;<br/>At MailClientPool.java:[line 209]<br/>At MailClientPool.java:[line 213]<br/>At MailSend.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68457');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68457" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.path.ToolPath<br/>In method pro.tools.path.ToolPath.getPath(String, String[])<br/>At ToolPath.java:[line 55]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 0<br/>Unknown source pro/tools/path/ToolPath.getPath(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path; parameter 0<br/>At ToolPath.java:[line 128]<br/>At ToolPath.java:[line 155]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.script.ToolScript<br/>In method pro.tools.script.ToolScript.makeHtml(String, Map, String)<br/>At ToolScript.java:[line 90]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source pro/tools/script/ToolScript.makeHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69004');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69004" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.security.ToolCertificate<br/>In method pro.tools.security.ToolCertificate.getCertificate(String)<br/>At ToolCertificate.java:[line 98]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/security/ToolCertificate.getCertificate(Ljava/lang/String;)Ljava/security/cert/Certificate; parameter 0<br/>Method usage not detected<br/>At ToolCertificate.java:[line 75]<br/>At ToolCertificate.java:[line 221]<br/>At ToolCertificate.java:[line 246]<br/>At ToolCertificate.java:[line 306]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69118');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69118" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.security.ToolCertificate2<br/>In method pro.tools.security.ToolCertificate2.getCertificate(String)<br/>At ToolCertificate2.java:[line 104]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/security/ToolCertificate2.getCertificate(Ljava/lang/String;)Ljava/security/cert/X509Certificate; parameter 0<br/>Method usage not detected<br/>At ToolCertificate2.java:[line 80]<br/>At ToolCertificate2.java:[line 210]<br/>At ToolCertificate2.java:[line 235]<br/>At ToolCertificate2.java:[line 262]<br/>At ToolCertificate2.java:[line 295]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69242');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69242" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.security.ToolCertificate2<br/>In method pro.tools.security.ToolCertificate2.getKeyStore(String, String)<br/>At ToolCertificate2.java:[line 129]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/security/ToolCertificate2.getKeyStore(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 1<br/>Method usage not detected<br/>At ToolCertificate2.java:[line 60]<br/>At ToolCertificate2.java:[line 156]<br/>At ToolCertificate2.java:[line 185]<br/>At ToolCertificate2.java:[line 268]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70096');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70096" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.security.ToolHTTPS<br/>In method pro.tools.security.ToolHTTPS.getKeyStore(String, String)<br/>At ToolHTTPS.java:[line 51]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/security/ToolHTTPS.getKeyStore(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 1<br/>Method usage not detected<br/>At ToolCertificate.java:[line 55]<br/>At ToolCertificate.java:[line 126]<br/>At ToolCertificate.java:[line 145]<br/>At ToolCertificate.java:[line 167]<br/>At ToolCertificate.java:[line 196]<br/>At ToolCertificate.java:[line 273]<br/>At ToolCertificate.java:[line 279]<br/>At ToolHTTPS.java:[line 82]<br/>At ToolHTTPS.java:[line 92]<br/>At ToolHTTPS.java:[line 126]<br/>At ToolHTTPS2.java:[line 68]<br/>At ToolHTTPS2.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70290');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70290" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class pro.tools.security.ToolHTTPS2<br/>In method pro.tools.security.ToolHTTPS2.getKeyStore(String, String)<br/>At ToolHTTPS2.java:[line 42]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source pro/tools/security/ToolHTTPS2.getKeyStore(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70580');">
+<td>
+<span class="priority-2">SECRKS</span>
+</td>
+<td>RSA usage with a short key</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70580" style="display: none;">
+<a href="#RSA_KEY_SIZE">Bug type RSA_KEY_SIZE (click for details)</a>
+<br/>In class pro.tools.security.ToolRSA<br/>In method pro.tools.security.ToolRSA.initKey()<br/>At ToolRSA.java:[line 212]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70808');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70808" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class pro.tools.security.md.ToolSHA1<br/>In method pro.tools.security.md.ToolSHA1.encodeSHA(byte[])<br/>At ToolSHA1.java:[line 30]<br/>Value SHA</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69980');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69980" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class pro.tools.security.ToolDSA<br/>In method pro.tools.security.ToolDSA.sign(byte[], byte[])<br/>At ToolDSA.java:[line 82]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70038');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70038" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class pro.tools.security.ToolDSA<br/>In method pro.tools.security.ToolDSA.verify(byte[], byte[], byte[])<br/>At ToolDSA.java:[line 120]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68546');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68546" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class pro.tools.path.ToolPath<br/>In method pro.tools.path.ToolPath.getContentType(Path)<br/>At ToolPath.java:[line 88]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URI.toURL()Ljava/net/URL;<br/>Unknown source java/nio/file/Path.toUri()Ljava/net/URI;<br/>At ToolPath.java:[line 87]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="SCRIPT_ENGINE_INJECTION">SCRIPT_ENGINE_INJECTION: Potential code injection when using Script Engine</a>
+</h2>
+            
+<p>
+    Dynamic code is being evaluate. A careful analysis of the code construction should be made. Malicious code execution
+    could lead to data leakage or operating system compromised.
+</p>
+<p>
+    If the evaluation of user code is intended, a proper sandboxing should be applied (see references).
+</p>
+
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void runCustomTrigger(String script) {
+    ScriptEngineManager factory = new ScriptEngineManager();
+    ScriptEngine engine = factory.getEngineByName("JavaScript");
+
+    engine.eval(script); //Bad things can happen here.
+}</pre>
+</p>
+
+<p><b>Solution:</b></p>
+<p>
+Safe evaluation of JavaScript code using "Cloudbees Rhino Sandbox" library.<br/>
+<pre>
+public void runCustomTrigger(String script) {
+    SandboxContextFactory contextFactory = new SandboxContextFactory();
+    Context context = contextFactory.makeContext();
+    contextFactory.enterContext(context);
+    try {
+        ScriptableObject prototype = context.initStandardObjects();
+        prototype.setParentScope(null);
+        Scriptable scope = context.newObject(prototype);
+        scope.setPrototype(prototype);
+
+        context.evaluateString(scope,script, null, -1, null);
+    } finally {
+        context.exit();
+    }
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://github.com/cloudbees/rhino-sandbox">Cloudbees Rhino Sandbox</a>: Utility to create sandbox with Rhino (block access to all classes)<br/>
+<a href="https://codeutopia.net/blog/2009/01/02/sandboxing-rhino-in-java/">CodeUtopia.net: Sandboxing Rhino in Java</a><br/>
+<a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+<a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+</p>
+
+        
+<h2>
+<a name="DES_USAGE">DES_USAGE: DES is insecure</a>
+</h2>
+            
+<p>
+DES is considered strong ciphers for modern applications. Currently, NIST recommends the
+usage of AES block ciphers instead of DES.
+</p>
+<p>
+    <b>Example weak code:</b>
+<pre>Cipher c = Cipher.getInstance("DES/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Example solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.nist.gov/news-events/news/2005/06/nist-withdraws-outdated-data-encryption-standard">NIST Withdraws Outdated Data Encryption Standard</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326: Inadequate Encryption Strength</a>
+</p>
+
+        
+<h2>
+<a name="ECB_MODE">ECB_MODE: ECB mode is insecure</a>
+</h2>
+            
+<p>An authentication cipher mode which provides better confidentiality of the encrypted data should be used instead of Electronic Code Book (ECB) mode,
+which does not provide good confidentiality. Specifically, ECB mode produces the same output for the same input each time. So,
+for example, if a user is sending a password, the encrypted value is the same each time. This allows an attacker to intercept
+and replay the data.</p>
+<p>
+To fix this, something like Galois/Counter Mode (GCM) should be used instead.
+</p>
+<p>
+<b>Code at risk:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/ECB/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+<a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+<a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29">Wikipedia: Block cipher modes of operation</a><br/>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-38a/final">NIST: Recommendation for Block Cipher Modes of Operation</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="RSA_KEY_SIZE">RSA_KEY_SIZE: RSA usage with short key</a>
+</h2>
+            
+<p>
+    The NIST recommends the use of <u>2048 bits and higher</u> keys for the RSA algorithm.
+</p>
+<blockquote>
+    "Digital Signature Verification | RSA: <code>1024 &le; len(n) &lt; 2048</code> | Legacy-use"<br/>
+    "Digital Signature Verification | RSA: <code>len(n) &ge; 2048</code> | Acceptable"<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths p.7</a>
+</blockquote>
+
+<p><b>Vulnerable Code:</b><br/>
+<pre>
+KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+keyGen.initialize(512);
+</pre>
+</p>
+
+<p><b>Solution:</b><br/>
+The KeyPairGenerator creation should be as follows with at least 2048 bit key size.<br/>
+<pre>
+KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
+keyGen.initialize(2048);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://csrc.nist.gov/projects/key-management">NIST: Latest publication on key management</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Recommendation for Transitioning the Use of Cryptographic Algorithms and Key Lengths p.7</a><br/>
+<a href="https://en.wikipedia.org/wiki/Key_size#Asymmetric%5Falgorithm%5Fkey%5Flengths">Wikipedia: Asymmetric algorithm key lengths</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326: Inadequate Encryption Strength</a><br/>
+<a href="https://www.keylength.com/en/compare/">Keylength.com (BlueKrypt): Aggregate key length recommendations.</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

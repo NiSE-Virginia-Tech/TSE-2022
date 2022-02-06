@@ -1,0 +1,81 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.778 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r3)
+		Method: <org.assertj.core.internal.Files: void assertHasDigest(org.assertj.core.api.AssertionInfo,java.io.File,java.lang.String,byte[])>
+		SHA-256: 6ec5e2b9d31dc8841e6d8da54425b8edd5525854435b3fc6e6a9e6acd08cd3fb
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r3)
+		Method: <org.assertj.core.internal.InputStreams: void assertHasDigest(org.assertj.core.api.AssertionInfo,java.io.InputStream,java.lang.String,byte[])>
+		SHA-256: d65c99fc47e4ece7e87ab166e110253d57ec852ca369af1f54fa4eab0a4e5e47
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r3)
+		Method: <org.assertj.core.internal.Paths: void assertHasDigest(org.assertj.core.api.AssertionInfo,java.nio.file.Path,java.lang.String,byte[])>
+		SHA-256: 9091c86305413ea06a395f7d7ad252d30d3cb2397f28db327c487a52c2674527
+		Secure: true
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 3
+No violation of any of the rules found.=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 13.33 s
+

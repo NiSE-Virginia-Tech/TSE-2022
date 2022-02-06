@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/deltaspike.git/picketlink-impl-2.7.0.Final.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>2361 lines of code analyzed,
+	in 56 classes, 
+	in 12 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">3.81</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">14</td>
+<td align="right">5.93</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>23</b>
+</td>
+<td align="right">
+<b>9.74</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">23</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>23</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66236');">
+<td>
+<span class="priority-2">HRS</span>
+</td>
+<td>HTTP parameter directly written to HTTP header output in org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66236" style="display: none;">
+<a href="#HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">Bug type HRS_REQUEST_PARAMETER_TO_HTTP_HEADER (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>Local variable named requestOrigin<br/>At CORS.java:[line 105]<br/>Another occurrence at CORS.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66308');">
+<td>
+<span class="priority-2">HRS</span>
+</td>
+<td>HTTP parameter directly written to HTTP header output in org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66308" style="display: none;">
+<a href="#HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">Bug type HRS_REQUEST_PARAMETER_TO_HTTP_HEADER (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>Local variable named rawRequestHeadersString<br/>At CORS.java:[line 215]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66369');">
+<td>
+<span class="priority-2">HRS</span>
+</td>
+<td>HTTP parameter directly written to HTTP header output in org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66369" style="display: none;">
+<a href="#HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">Bug type HRS_REQUEST_PARAMETER_TO_HTTP_HEADER (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>Local variable named requestOrigin<br/>At CORS.java:[line 191]<br/>Another occurrence at CORS.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66876');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66876" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 105]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 77]<br/>At CORS.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66964');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66964" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 108]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67027');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67027" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 110]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 77]<br/>At CORS.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67115');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67115" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 191]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 126]<br/>At CORS.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67203');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67203" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 194]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67266');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67266" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 196]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 126]<br/>At CORS.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67354');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67354" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.picketlink.internal.el.ELProcessor<br/>In method org.picketlink.internal.el.ELProcessor.eval(String)<br/>At ELProcessor.java:[line 78]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/picketlink/internal/el/ELProcessor.eval(Ljava/lang/String;)Ljava/lang/Object; parameter 0<br/>At ExpressionPathAuthorizer.java:[line 59]<br/>At ExpressionPathAuthorizer.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66441');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66441" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 105]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 77]<br/>At CORS.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66530');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66530" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handleActualRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 110]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 77]<br/>At CORS.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66619');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66619" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 191]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 126]<br/>At CORS.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66708');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66708" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 196]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 126]<br/>At CORS.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66797');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66797" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.picketlink.http.internal.cors.CORS<br/>In method org.picketlink.http.internal.cors.CORS.handlePreflightRequest(CORSConfiguration, HttpServletRequest, HttpServletResponse)<br/>At CORS.java:[line 215]<br/>Sink method javax/servlet/http/HttpServletResponse.addHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CORS.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66120');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66120" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.picketlink.http.internal.authentication.schemes.support.HTTPDigestUtil<br/>In method org.picketlink.http.internal.authentication.schemes.support.HTTPDigestUtil.clientResponseValue(Digest, char[])<br/>At HTTPDigestUtil.java:[line 164]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66178');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66178" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class org.picketlink.http.internal.authentication.schemes.support.HTTPDigestUtil<br/>In method org.picketlink.http.internal.authentication.schemes.support.HTTPDigestUtil.md5(String)<br/>At HTTPDigestUtil.java:[line 147]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65828');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65828" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.picketlink.http.internal.authentication.schemes.FormAuthenticationScheme<br/>In method org.picketlink.http.internal.authentication.schemes.FormAuthenticationScheme.forwardToPage(String, HttpServletRequest, HttpServletResponse)<br/>At FormAuthenticationScheme.java:[line 117]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/picketlink/http/internal/authentication/schemes/FormAuthenticationScheme.forwardToPage(Ljava/lang/String;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V parameter 2<br/>At FormAuthenticationScheme.java:[line 108]<br/>At FormAuthenticationScheme.java:[line 112]<br/>At FormAuthenticationScheme.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65927');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65927" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.picketlink.http.internal.authentication.schemes.FormAuthenticationScheme<br/>In method org.picketlink.http.internal.authentication.schemes.FormAuthenticationScheme.onPostAuthentication(HttpServletRequest, HttpServletResponse)<br/>At FormAuthenticationScheme.java:[line 93]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/picketlink/http/internal/authentication/schemes/support/SavedRequest.getRequestURI()Ljava/lang/String;<br/>Unknown source org/picketlink/http/internal/authentication/schemes/support/SavedRequest.requestURI<br/>At FormAuthenticationScheme.java:[line 93]<br/>At SavedRequest.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.picketlink.http.internal.SecurityFilter<br/>In method org.picketlink.http.internal.SecurityFilter.redirect(String, HttpServletRequest, HttpServletResponse)<br/>At SecurityFilter.java:[line 255]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/picketlink/http/internal/SecurityFilter.redirect(Ljava/lang/String;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V parameter 2<br/>Unknown source org/picketlink/http/internal/SecurityFilter.formatRedirectUrl(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/picketlink/http/internal/SecurityFilter.formatRedirectUrl(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At SecurityFilter.java:[line 235]<br/>At SecurityFilter.java:[line 249]<br/>At SecurityFilter.java:[line 252]<br/>At SecurityFilter.java:[line 286]<br/>At SecurityFilter.java:[line 307]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66021');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66021" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.picketlink.http.internal.authentication.schemes.TokenAuthenticationScheme<br/>In method org.picketlink.http.internal.authentication.schemes.TokenAuthenticationScheme.writeToken(String, HttpServletRequest, HttpServletResponse)<br/>At TokenAuthenticationScheme.java:[line 238]<br/>Sink method java/io/PrintWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/picketlink/http/internal/authentication/schemes/TokenAuthenticationScheme.writeToken(Ljava/lang/String;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V parameter 2<br/>At TokenAuthenticationScheme.java:[line 128]<br/>At TokenAuthenticationScheme.java:[line 130]<br/>At TokenAuthenticationScheme.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65680');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65680" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.picketlink.http.internal.SecurityFilter<br/>In method org.picketlink.http.internal.SecurityFilter.performOutboundProcessing(PathConfiguration, HttpServletRequest, HttpServletResponse, FilterChain)<br/>At SecurityFilter.java:[line 243]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At SecurityFilter.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65759');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65759" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.picketlink.http.internal.SecurityFilter<br/>In method org.picketlink.http.internal.SecurityFilter.handleException(PathConfiguration, HttpServletRequest, HttpServletResponse, Throwable)<br/>At SecurityFilter.java:[line 300]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Throwable.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">HRS_REQUEST_PARAMETER_TO_HTTP_HEADER: HTTP Response splitting vulnerability</a>
+</h2>
+            
+    <p>This code directly writes an HTTP parameter to an HTTP header, which allows for a HTTP response splitting
+vulnerability. See <a href="http://en.wikipedia.org/wiki/HTTP_response_splitting">http://en.wikipedia.org/wiki/HTTP_response_splitting</a>
+for more information.</p>
+<p>SpotBugs looks only for the most blatant, obvious cases of HTTP response splitting.
+If SpotBugs found <em>any</em>, you <em>almost certainly</em> have more
+vulnerabilities that SpotBugs doesn't report. If you are concerned about HTTP response splitting, you should seriously
+consider using a commercial static analysis or pen-testing tool.
+</p>
+
+
+        
+<h2>
+<a name="PERMISSIVE_CORS">PERMISSIVE_CORS: Overly permissive CORS policy</a>
+</h2>
+            
+<p>
+Prior to HTML5, Web browsers enforced the Same Origin Policy which ensures that in order for JavaScript to access the contents of a Web page, both the JavaScript and the Web page must originate from the same domain. Without the Same Origin Policy, a malicious website could serve up JavaScript that loads sensitive information from other websites using a client's credentials, cull through it, and communicate it back to the attacker. HTML5 makes it possible for JavaScript to access data across domains if a new HTTP header called Access-Control-Allow-Origin is defined. With this header, a Web server defines which other domains are allowed to access its domain using cross-origin requests. However, caution should be taken when defining the header because an overly permissive CORS policy will allow a malicious application to communicate with the victim application in an inappropriate way, leading to spoofing, data theft, relay and other attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>response.addHeader("Access-Control-Allow-Origin", "*");</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid using * as the value of the Access-Control-Allow-Origin header, which indicates that the application's data is accessible to JavaScript running on any domain.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.w3.org/TR/cors/">W3C Cross-Origin Resource Sharing</a><br/>
+<a href="https://enable-cors.org/">Enable Cross-Origin Resource Sharing</a><br/>
+</p>
+        
+<h2>
+<a name="EL_INJECTION">EL_INJECTION: Potential code injection when using Expression Language (EL)</a>
+</h2>
+            
+<p>
+    An expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>public void evaluateExpression(String expression) {
+    FacesContext context = FacesContext.getCurrentInstance();
+    ExpressionFactory expressionFactory = context.getApplication().getExpressionFactory();
+    ELContext elContext = context.getELContext();
+    ValueExpression vex = expressionFactory.createValueExpression(elContext, expression, String.class);
+    return (String) vex.getValue(elContext);
+}</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://blog.mindedsecurity.com/2015/11/reliable-os-shell-with-el-expression.html">Minded Security: Abusing EL for executing OS commands</a><br/>
+    <a href="https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html">The Java EE 6 Tutorial: Expression Language</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="http://danamodio.com/appsec/research/spring-remote-code-with-expression-language-injection/">Dan Amodio's blog: Remote Code with Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+</p>
+
+        
+<h2>
+<a name="HTTP_RESPONSE_SPLITTING">HTTP_RESPONSE_SPLITTING: Potential HTTP Response Splitting</a>
+</h2>
+            
+<p>
+    When an HTTP request contains unexpected <code>CR</code> and <code>LF</code> characters, the server may respond with an output stream
+    that is interpreted as two different HTTP responses (instead of one).
+    An attacker can control the second response and mount attacks such as cross-site scripting and cache poisoning attacks.
+    According to OWASP, the issue has been fixed in virtually all modern Java EE application servers, but it is still better to validate the input.
+    If you are concerned about this risk, you should test on the platform of concern to see
+    if the underlx platform allows for <code>CR</code> or <code>LF</code> characters to be injected into headers.
+    This weakness is reported with low priority because it requires the web container to be vulnerable.
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String author = request.getParameter(AUTHOR_PARAMETER);
+// ...
+Cookie cookie = new Cookie("author", author);
+response.addCookie(cookie);</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://www.owasp.org/index.php/HTTP_Response_Splitting">OWASP: HTTP Response Splitting</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

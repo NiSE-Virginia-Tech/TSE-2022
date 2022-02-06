@@ -1,0 +1,180 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 670.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r7
+		Type: java.security.MessageDigest
+		Statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2841)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: org.jboss.netty.buffer.ChannelBuffer md5(org.jboss.netty.buffer.ChannelBuffer)>
+		SHA-256: 74e6bd0d81a481c23bcacbae5747094f842d60535d6ab67e29e388c4b0bc5b93
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: org.jboss.netty.buffer.ChannelBuffer md5(org.jboss.netty.buffer.ChannelBuffer)>
+		SHA-256: 9efd8123184ac3d3d31829741d3a58f465d8571c583b07f2f46d624dcdb4bcc2
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] sha1(byte[])>
+		SHA-256: 9e269227ee7f51cd46bb4209a0c2b9705dc9ce55a953ec29694d5aa2ceeb6422
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2840)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] md5(byte[])>
+		SHA-256: c4ca4a97e25df71e205c6afa47c532ddf6d4b4d2b3b26d8a67557b416dfb91d6
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] md5(byte[])>
+		SHA-256: 9b720ab872dea7a4d9671781414089a8d1e6abee0a38511af8101234075ecfc1
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] sha1(byte[])>
+		SHA-256: e23c82b3a3d3fc9e084d1bad2786d3bc5de206cb3ee7ba9a818d564c3069896e
+		Secure: false
+	Object:
+		Variable: r7
+		Type: java.security.MessageDigest
+		Statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2845)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: org.jboss.netty.buffer.ChannelBuffer sha1(org.jboss.netty.buffer.ChannelBuffer)>
+		SHA-256: af13c03b5391aab1d22b506963455d3ff73279966edc9ba93ce5a06f117ae409
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] md5(byte[])>
+		SHA-256: a078fc31170b70d47c901d2d38663766a5bac64f14bddd71a651c66eb6269676
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: org.jboss.netty.buffer.ChannelBuffer sha1(org.jboss.netty.buffer.ChannelBuffer)>
+		SHA-256: 9ea1c40af166160b6e3665e99c660ca2cdb0e0a3172d057a894751e0895bd638
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2843)
+		Method: <org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil: byte[] sha1(byte[])>
+		SHA-256: 30ca6c92bbcbbffe22c24f63f072440f55170d9d5283bb05d560256020124271
+		Secure: false
+
+Findings in Java Class: org.jboss.netty.handler.codec.http.websocketx.WebSocketUtil
+
+	 in Method: byte[] md5(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c4ca4a97e25df71e205c6afa47c532ddf6d4b4d2b3b26d8a67557b416dfb91d6)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2840)
+
+
+	 in Method: org.jboss.netty.buffer.ChannelBuffer md5(org.jboss.netty.buffer.ChannelBuffer)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #74e6bd0d81a481c23bcacbae5747094f842d60535d6ab67e29e388c4b0bc5b93)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2841)
+
+
+	 in Method: byte[] sha1(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #30ca6c92bbcbbffe22c24f63f072440f55170d9d5283bb05d560256020124271)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2843)
+
+
+	 in Method: org.jboss.netty.buffer.ChannelBuffer sha1(org.jboss.netty.buffer.ChannelBuffer)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #af13c03b5391aab1d22b506963455d3ff73279966edc9ba93ce5a06f117ae409)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2845)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 4
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 5.168 s
+

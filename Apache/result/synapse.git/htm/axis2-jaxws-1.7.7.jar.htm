@@ -1,0 +1,1066 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/axis2-jaxws-1.7.7.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>21923 lines of code analyzed,
+	in 399 classes, 
+	in 69 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">24</td>
+<td align="right">1.09</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+<td align="right">
+<b>1.14</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">25</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66050');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66050" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.framework.JAXWSDeployer<br/>In method org.apache.axis2.jaxws.framework.JAXWSDeployer.storeFaultyService(DeploymentFileData, Throwable)<br/>At JAXWSDeployer.java:[line 181]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66584');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66584" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.marshaller.impl.alt.MethodMarshallerUtils<br/>In method org.apache.axis2.jaxws.marshaller.impl.alt.MethodMarshallerUtils.stackToString(Throwable)<br/>At MethodMarshallerUtils.java:[line 1397]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67372');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67372" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.utility.JavaUtils<br/>In method org.apache.axis2.jaxws.utility.JavaUtils.stackToString(Throwable)<br/>At JavaUtils.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65667" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.WebServiceExceptionLogger<br/>In method org.apache.axis2.jaxws.WebServiceExceptionLogger.stackToString(Throwable)<br/>At WebServiceExceptionLogger.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65721');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65721" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.context.utils.ContextUtils<br/>In method org.apache.axis2.jaxws.context.utils.ContextUtils.setProperty(SOAPMessageContext, String, Object, boolean)<br/>At ContextUtils.java:[line 263]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/jaxws/context/utils/ContextUtils.setProperty(Ljavax/xml/ws/handler/soap/SOAPMessageContext;Ljava/lang/String;Ljava/lang/Object;Z)V parameter 1<br/>Unknown source org/apache/axis2/jaxws/context/utils/ContextUtils.setProperty(Ljavax/xml/ws/handler/soap/SOAPMessageContext;Ljava/lang/String;Ljava/lang/Object;Z)V parameter 2<br/>Method usage with tainted arguments detected<br/>At ContextUtils.java:[line 85]<br/>At ContextUtils.java:[line 90]<br/>At ContextUtils.java:[line 92]<br/>At ContextUtils.java:[line 113]<br/>At ContextUtils.java:[line 117]<br/>At ContextUtils.java:[line 122]<br/>At ContextUtils.java:[line 129]<br/>At ContextUtils.java:[line 136]<br/>At ContextUtils.java:[line 140]<br/>At ContextUtils.java:[line 148]<br/>At ContextUtils.java:[line 149]<br/>At ContextUtils.java:[line 168]<br/>At ContextUtils.java:[line 175]<br/>At ContextUtils.java:[line 192]<br/>At ContextUtils.java:[line 205]<br/>At ContextUtils.java:[line 207]<br/>At ContextUtils.java:[line 222]<br/>At ContextUtils.java:[line 225]<br/>At ContextUtils.java:[line 231]<br/>At ContextUtils.java:[line 256]<br/>At ContextUtils.java:[line 263]<br/>At MessageContext.java:[line 220]<br/>At JavaUtils.java:[line 288]<br/>At JavaUtils.java:[line 292]<br/>At JavaUtils.java:[line 300]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66860');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.jaxws.message.util.MessageUtils.persistMessageContext(MessageContext)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66860" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.util.MessageUtils<br/>In method org.apache.axis2.jaxws.message.util.MessageUtils.persistMessageContext(MessageContext)<br/>At MessageUtils.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66104');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66104" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.framework.JAXWSDeployer<br/>In method org.apache.axis2.jaxws.framework.JAXWSDeployer.addJaxwsLibs(ArrayList, String)<br/>At JAXWSDeployer.java:[line 242]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/jaxws/framework/JAXWSDeployer.addJaxwsLibs(Ljava/util/ArrayList;Ljava/lang/String;)V parameter 0<br/>At JAXWSDeployer.java:[line 139]<br/>At JAXWSDeployer.java:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66193');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66193" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.framework.JAXWSDeployer<br/>In method org.apache.axis2.jaxws.framework.JAXWSDeployer.deploy(DeploymentFileData)<br/>At JAXWSDeployer.java:[line 143]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.getWebLocationString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66262');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66262" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.framework.JAXWSDeployer<br/>In method org.apache.axis2.jaxws.framework.JAXWSDeployer.deployServicesInWARClassPath()<br/>At JAXWSDeployer.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.getWebLocationString()Ljava/lang/String;<br/>At JAXWSDeployer.java:[line 72]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66341');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66341" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.framework.JAXWSDeployer<br/>In method org.apache.axis2.jaxws.framework.JAXWSDeployer.deployServicesInWARClassPath()<br/>At JAXWSDeployer.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.getWebLocationString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66638');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66638" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.databinding.impl.ClassFinderImpl<br/>In method org.apache.axis2.jaxws.message.databinding.impl.ClassFinderImpl.getClassesFromJarFile(String, ClassLoader)<br/>At ClassFinderImpl.java:[line 60]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URLClassLoader.getURLs()[Ljava/net/URL;<br/>Unknown source java/net/URI.getPath()Ljava/lang/String;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At ClassFinderImpl.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66727');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66727" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.databinding.impl.ClassFinderImpl$3<br/>In method org.apache.axis2.jaxws.message.databinding.impl.ClassFinderImpl$3.run()<br/>At ClassFinderImpl.java:[line 189]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/jaxws/message/databinding/impl/ClassFinderImpl$3.val$filePath<br/>At ClassFinderImpl.java:[line 189]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67030');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67030" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.runtime.description.marshal.impl.PackageSetBuilder$1<br/>In method org.apache.axis2.jaxws.runtime.description.marshal.impl.PackageSetBuilder$1.run()<br/>At PackageSetBuilder.java:[line 881]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/jaxws/runtime/description/marshal/impl/PackageSetBuilder$1.val$wsdlLocation<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>At PackageSetBuilder.java:[line 880]<br/>At PackageSetBuilder.java:[line 881]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67129');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67129" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.runtime.description.marshal.impl.PackageSetBuilder$1<br/>In method org.apache.axis2.jaxws.runtime.description.marshal.impl.PackageSetBuilder$1.run()<br/>At PackageSetBuilder.java:[line 882]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67198');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "\\*|((\\w|_)(\\w|\\.|-|_)*:)?(\\w|_)(\\w|\\.|-|_)*\\*?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67198" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value \\*|((\\w|_)(\\w|\\.|-|_)*:)?(\\w|_)(\\w|\\.|-|_)*\\*?<br/>In class org.apache.axis2.jaxws.spi.handler.BaseHandlerResolver<br/>In method org.apache.axis2.jaxws.spi.handler.BaseHandlerResolver.validatePattern(QName)<br/>At BaseHandlerResolver.java:[line 282]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66410');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66410" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.handler.LogicalMessageImpl<br/>In method org.apache.axis2.jaxws.handler.LogicalMessageImpl.createPayloads(Object)<br/>At LogicalMessageImpl.java:[line 219]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66806');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66806" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.databinding.impl.SourceBlockImpl<br/>In method org.apache.axis2.jaxws.message.databinding.impl.SourceBlockImpl._getReaderFromBO(Object, Object)<br/>At SourceBlockImpl.java:[line 230]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.datasource.SourceDataSource<br/>In method org.apache.axis2.datasource.SourceDataSource.getXMLBytes(String)<br/>At SourceDataSource.java:[line 94]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66468');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66468" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.handler.LogicalMessageImpl<br/>In method org.apache.axis2.jaxws.handler.LogicalMessageImpl.createPayloads(Object)<br/>At LogicalMessageImpl.java:[line 194]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66914');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66914" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.util.impl.SAAJConverterImpl<br/>In method org.apache.axis2.jaxws.message.util.impl.SAAJConverterImpl.toString(SOAPEnvelope)<br/>At SAAJConverterImpl.java:[line 196]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67256');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67256" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.utility.ConvertUtils<br/>In method org.apache.axis2.jaxws.utility.ConvertUtils.convert(Object, Class)<br/>At ConvertUtils.java:[line 224]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.datasource.SourceDataSource<br/>In method org.apache.axis2.datasource.SourceDataSource.getXMLBytes(String)<br/>At SourceDataSource.java:[line 94]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66526');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66526" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.handler.LogicalMessageImpl<br/>In method org.apache.axis2.jaxws.handler.LogicalMessageImpl.createPayloads(Object)<br/>At LogicalMessageImpl.java:[line 194]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66972');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66972" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.message.util.impl.SAAJConverterImpl<br/>In method org.apache.axis2.jaxws.message.util.impl.SAAJConverterImpl.toString(SOAPEnvelope)<br/>At SAAJConverterImpl.java:[line 196]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67314');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67314" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.jaxws.utility.ConvertUtils<br/>In method org.apache.axis2.jaxws.utility.ConvertUtils.convert(Object, Class)<br/>At ConvertUtils.java:[line 224]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,284 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 527.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 0 seconds!
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer440)
+		Method: <org.tukaani.xz.check.SHA256: void <init>()>
+		SHA-256: 8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913
+		Secure: false
+
+Findings in Java Class: org.tukaani.xz.check.SHA256
+
+	 in Method: void update(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>(r1, i0, i1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Third parameter (with value 0)Variable pre_lenmust be  greater than pre_off
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>(r1, i0, i1)
+
+
+Findings in Java Class: org.tukaani.xz.SimpleInputStream
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: i46 = virtualinvoke $r6.<java.io.InputStream: int read(byte[],int,int)>($r5, $i24, i45)
+
+
+Findings in Java Class: org.tukaani.xz.SingleXZInputStream
+
+	 in Method: void <init>(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.SingleXZInputStream: void <init>(java.io.InputStream,int)>(r1, varReplacer339)
+
+
+	 in Method: void <init>(java.io.InputStream,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.SingleXZInputStream: void <init>(java.io.InputStream,int,org.tukaani.xz.ArrayCache)>(r1, varReplacer340, r2)
+
+
+Findings in Java Class: org.tukaani.xz.XZOutputStream
+
+	 in Method: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions[],org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZOutputStream: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions[],int,org.tukaani.xz.ArrayCache)>(r1, r2, varReplacer413, r3)
+
+
+	 in Method: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZOutputStream: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions,int)>(r1, r2, varReplacer410)
+
+
+	 in Method: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZOutputStream: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions,int,org.tukaani.xz.ArrayCache)>(r1, r2, varReplacer411, r3)
+
+
+	 in Method: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZOutputStream: void <init>(java.io.OutputStream,org.tukaani.xz.FilterOptions[],int)>(r1, r2, varReplacer412)
+
+
+Findings in Java Class: org.tukaani.xz.CountingInputStream
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: i2 = virtualinvoke $r2.<java.io.InputStream: int read(byte[],int,int)>(r1, i0, i1)
+
+
+Findings in Java Class: org.tukaani.xz.index.IndexDecoder
+
+	 in Method: void <init>(org.tukaani.xz.SeekableInputStream,org.tukaani.xz.common.StreamFlags,long,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: l46 = staticinvoke <org.tukaani.xz.common.DecoderUtil: long decodeVLI(java.io.InputStream)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: l5 = staticinvoke <org.tukaani.xz.common.DecoderUtil: long decodeVLI(java.io.InputStream)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i29 = virtualinvoke r1.<org.tukaani.xz.SeekableInputStream: int read()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i32 = virtualinvoke r4.<java.util.zip.CheckedInputStream: int read()>()
+
+
+Findings in Java Class: org.tukaani.xz.common.DecoderUtil
+
+	 in Method: long decodeVLI(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: i6 = virtualinvoke r0.<java.io.InputStream: int read()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: i6 = virtualinvoke r0.<java.io.InputStream: int read()>()
+
+
+Findings in Java Class: org.tukaani.xz.BlockInputStream
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i14 = virtualinvoke $r4.<java.io.InputStream: int read()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: i2 = virtualinvoke $r2.<java.io.InputStream: int read(byte[],int,int)>(r1, i0, i1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke $r6.<org.tukaani.xz.check.Check: void update(byte[],int,int)>(r1, i0, i2)
+
+
+	 in Method: void <init>(java.io.InputStream,org.tukaani.xz.check.Check,boolean,int,long,long,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i57 = virtualinvoke r7.<java.io.ByteArrayInputStream: int read()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<java.io.InputStream: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i59 = virtualinvoke r7.<java.io.ByteArrayInputStream: int available()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: i74 = virtualinvoke r7.<java.io.ByteArrayInputStream: int available()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l65 = staticinvoke <org.tukaani.xz.common.DecoderUtil: long decodeVLI(java.io.InputStream)>(r7)
+
+
+Findings in Java Class: org.tukaani.xz.XZInputStream
+
+	 in Method: void <init>(java.io.InputStream,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZInputStream: void <init>(java.io.InputStream,int,org.tukaani.xz.ArrayCache)>(r1, varReplacer385, r2)
+
+
+	 in Method: void <init>(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<org.tukaani.xz.XZInputStream: void <init>(java.io.InputStream,int)>(r1, varReplacer384)
+
+
+Findings in Java Class: org.tukaani.xz.SeekableXZInputStream
+
+	 in Method: void seek()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l13 = virtualinvoke $r8.<org.tukaani.xz.BlockInputStream: long skip(long)>(l0)
+
+
+	 in Method: void <init>(org.tukaani.xz.SeekableInputStream,int,boolean,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r23 = staticinvoke <org.tukaani.xz.check.Check: org.tukaani.xz.check.Check getInstance(int)>($i12)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r24.<org.tukaani.xz.index.IndexDecoder: void <init>(org.tukaani.xz.SeekableInputStream,org.tukaani.xz.common.StreamFlags,long,int)>(r1, r39, l45, i43)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<org.tukaani.xz.SeekableInputStream: void <init>()>()
+
+
+	 in Method: void <init>(org.tukaani.xz.SeekableInputStream,org.tukaani.xz.ArrayCache)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<org.tukaani.xz.SeekableXZInputStream: void <init>(org.tukaani.xz.SeekableInputStream,int,org.tukaani.xz.ArrayCache)>(r1, varReplacer263, r2)
+
+
+	 in Method: void <init>(org.tukaani.xz.SeekableInputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<org.tukaani.xz.SeekableXZInputStream: void <init>(org.tukaani.xz.SeekableInputStream,int)>(r1, varReplacer262)
+
+
+Findings in Java Class: org.tukaani.xz.index.IndexHash
+
+	 in Method: void validate(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: l0 = staticinvoke <org.tukaani.xz.common.DecoderUtil: long decodeVLI(java.io.InputStream)>(r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: r4 = $r8
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r4.<org.tukaani.xz.index.IndexHash: void add(long,long)>(l1, l2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r13.<java.io.DataInputStream: void <init>(java.io.InputStream)>(r3)
+
+
+Findings in Java Class: org.tukaani.xz.index.IndexBase
+
+	 in Method: void add(long,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l20 = virtualinvoke r0.<org.tukaani.xz.index.IndexBase: long getIndexSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8736166514aee1fdf5998b46df1f62ad1e4189b478fa4b7d27662814441be913)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l22 = virtualinvoke r0.<org.tukaani.xz.index.IndexBase: long getStreamSize()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 1
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 36
+	TypestateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 21 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 23.48 s
+

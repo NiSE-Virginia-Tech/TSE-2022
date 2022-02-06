@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/deltaspike.git/jetty-servlet-8.1.9.v20130131.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>3156 lines of code analyzed,
+	in 36 classes, 
+	in 3 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">1.27</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">15</td>
+<td align="right">4.75</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+<td align="right">
+<b>6.02</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">19</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>19</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">HRS</span>
+</td>
+<td>HTTP parameter directly written to HTTP header output in org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">Bug type HRS_REQUEST_PARAMETER_TO_HTTP_HEADER (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 538]<br/>Another occurrence at DefaultServlet.java:[line 551]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65616');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65616" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 562]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/eclipse/jetty/servlet/DefaultServlet.getWelcomeFile(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/eclipse/jetty/servlet/DefaultServlet._welcomes<br/>Unknown source org/eclipse/jetty/util/URIUtil.addPaths(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At DefaultServlet.java:[line 542]<br/>At DefaultServlet.java:[line 558]<br/>At DefaultServlet.java:[line 651]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65729');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65729" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 566]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/eclipse/jetty/servlet/DefaultServlet.getWelcomeFile(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/eclipse/jetty/servlet/DefaultServlet._welcomes<br/>Unknown source org/eclipse/jetty/util/URIUtil.addPaths(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At DefaultServlet.java:[line 542]<br/>At DefaultServlet.java:[line 558]<br/>At DefaultServlet.java:[line 651]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 496]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65911');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65911" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 538]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65980');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65980" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 551]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66049');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66049" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 553]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66118');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66118" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 496]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66171');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66171" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 538]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66224');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66224" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 551]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66277');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66277" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 553]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66330');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66330" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DefaultServlet.java:[line 583]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/IllegalArgumentException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66399');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66399" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.DefaultServlet<br/>In method org.eclipse.jetty.servlet.DefaultServlet.passConditionalHeaders(HttpServletRequest, HttpServletResponse, Resource, HttpContent)<br/>At DefaultServlet.java:[line 795]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/IllegalArgumentException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66468');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66468" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.ServletHandler<br/>In method org.eclipse.jetty.servlet.ServletHandler.doHandle(String, Request, HttpServletRequest, HttpServletResponse)<br/>At ServletHandler.java:[line 528]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Throwable.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66537');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66537" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.ServletHandler<br/>In method org.eclipse.jetty.servlet.ServletHandler.doHandle(String, Request, HttpServletRequest, HttpServletResponse)<br/>At ServletHandler.java:[line 530]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Throwable.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66606');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66606" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.ServletHandler<br/>In method org.eclipse.jetty.servlet.ServletHandler.doHandle(String, Request, HttpServletRequest, HttpServletResponse)<br/>At ServletHandler.java:[line 533]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Throwable.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66675');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66675" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.ServletHandler<br/>In method org.eclipse.jetty.servlet.ServletHandler.doHandle(String, Request, HttpServletRequest, HttpServletResponse)<br/>At ServletHandler.java:[line 550]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Error.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66744');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66744" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.StatisticsServlet<br/>In method org.eclipse.jetty.servlet.StatisticsServlet.sendTextResponse(HttpServletResponse)<br/>At StatisticsServlet.java:[line 244]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/server/Connector.getName()Ljava/lang/String;<br/>Unknown source org/eclipse/jetty/server/handler/StatisticsHandler.toStatsHTML()Ljava/lang/String;<br/>At StatisticsServlet.java:[line 209]<br/>At StatisticsServlet.java:[line 211]<br/>At StatisticsServlet.java:[line 214]<br/>At StatisticsServlet.java:[line 218]<br/>At StatisticsServlet.java:[line 219]<br/>At StatisticsServlet.java:[line 220]<br/>At StatisticsServlet.java:[line 221]<br/>At StatisticsServlet.java:[line 222]<br/>At StatisticsServlet.java:[line 223]<br/>At StatisticsServlet.java:[line 224]<br/>At StatisticsServlet.java:[line 225]<br/>At StatisticsServlet.java:[line 226]<br/>At StatisticsServlet.java:[line 227]<br/>At StatisticsServlet.java:[line 228]<br/>At StatisticsServlet.java:[line 229]<br/>At StatisticsServlet.java:[line 233]<br/>At StatisticsServlet.java:[line 238]<br/>At StatisticsServlet.java:[line 239]<br/>At StatisticsServlet.java:[line 240]<br/>At StatisticsServlet.java:[line 244]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67018');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67018" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.eclipse.jetty.servlet.StatisticsServlet<br/>In method org.eclipse.jetty.servlet.StatisticsServlet.sendXmlResponse(HttpServletResponse)<br/>At StatisticsServlet.java:[line 203]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/server/Connector.getName()Ljava/lang/String;<br/>At StatisticsServlet.java:[line 172]<br/>At StatisticsServlet.java:[line 173]<br/>At StatisticsServlet.java:[line 174]<br/>At StatisticsServlet.java:[line 177]<br/>At StatisticsServlet.java:[line 178]<br/>At StatisticsServlet.java:[line 179]<br/>At StatisticsServlet.java:[line 180]<br/>At StatisticsServlet.java:[line 181]<br/>At StatisticsServlet.java:[line 182]<br/>At StatisticsServlet.java:[line 183]<br/>At StatisticsServlet.java:[line 184]<br/>At StatisticsServlet.java:[line 185]<br/>At StatisticsServlet.java:[line 186]<br/>At StatisticsServlet.java:[line 187]<br/>At StatisticsServlet.java:[line 188]<br/>At StatisticsServlet.java:[line 190]<br/>At StatisticsServlet.java:[line 192]<br/>At StatisticsServlet.java:[line 194]<br/>At StatisticsServlet.java:[line 195]<br/>At StatisticsServlet.java:[line 196]<br/>At StatisticsServlet.java:[line 197]<br/>At StatisticsServlet.java:[line 199]<br/>At StatisticsServlet.java:[line 203]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">HRS_REQUEST_PARAMETER_TO_HTTP_HEADER: HTTP Response splitting vulnerability</a>
+</h2>
+            
+    <p>This code directly writes an HTTP parameter to an HTTP header, which allows for a HTTP response splitting
+vulnerability. See <a href="http://en.wikipedia.org/wiki/HTTP_response_splitting">http://en.wikipedia.org/wiki/HTTP_response_splitting</a>
+for more information.</p>
+<p>SpotBugs looks only for the most blatant, obvious cases of HTTP response splitting.
+If SpotBugs found <em>any</em>, you <em>almost certainly</em> have more
+vulnerabilities that SpotBugs doesn't report. If you are concerned about HTTP response splitting, you should seriously
+consider using a commercial static analysis or pen-testing tool.
+</p>
+
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="URL_REWRITING">URL_REWRITING: URL rewriting method</a>
+</h2>
+            
+<p>
+The implementation of this method includes the logic to determine whether the session ID needs to be encoded in the URL.<br/>
+URL rewriting has significant security risks. Since session ID appears in the URL, it may be easily seen by third parties. Session ID in the URL can be disclosed in many ways, for example:<br/>
+<ul>
+    <li>Log files,</li>
+    <li>The browser history,</li>
+    <li>By copy-and-pasting it into an e-mail or posting,</li>
+    <li>The HTTP Referrer.</li>
+</ul>
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>out.println("Click &lt;a href=" +
+                res.encodeURL(HttpUtils.getRequestURL(req).toString()) +
+                "&gt;here&lt;/a&gt;");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid using those methods. If you are looking to encode a URL String or form parameters do not confuse the URL rewriting methods with the URLEncoder class.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A3-Broken_Authentication_and_Session_Management">OWASP Top 10 2010-A3-Broken Authentication and Session Management</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

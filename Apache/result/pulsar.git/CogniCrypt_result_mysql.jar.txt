@@ -1,0 +1,364 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 612.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.53
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.55
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.65
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.85
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 19 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.mysql.jdbc.Security: byte[] getBinaryPassword(int[],boolean)>
+		SHA-256: 723e325d7905a984f116479e84235f37e40c3393ab7dd667c570976e971164fa
+		Secure: false
+	Object:
+		Variable: r8
+		Type: byte[]
+		Statement: r8 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: 160adb374fd82283a4b11ddb94a84967969b23da5a93d0a964125f5f182bfdca
+		Secure: false
+	Object:
+		Variable: r131
+		Type: java.security.KeyStore
+		Statement: r131 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r3)
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: d707234ad31dd09fc87664bc60597e1b352470f4676676848b262789a81b19dd
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.mysql.jdbc.Security: byte[] passwordHashStage1(java.lang.String)>
+		SHA-256: 3cea70b0ca760258019b48d753fb86391af7de3f54d97a6c67b7f3d711a7c835
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.mysql.jdbc.Security: byte[] passwordHashStage2(byte[],byte[])>
+		SHA-256: eb285260da66efae60abac64fdee1fe25288b6e9751c64f5dddb59cd3d89101
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.MessageDigest
+		Statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11016)
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: c0754392926d730b12f62e613c543a220e123925110a47fe3787e6b26ad6ada0
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r6 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>(r5)
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: 657c65f77c5959d4c76bdd626de086a02658a677ebcc40ecb67dee9add08d219
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11010)
+		Method: <com.mysql.jdbc.Security: byte[] passwordHashStage2(byte[],byte[])>
+		SHA-256: ed5f986192324f438250cfbe57013d54cd4f062ba896d469a5793f88a00ca24
+		Secure: false
+	Object:
+		Variable: $r150
+		Type: java.lang.Object[]
+		Statement: $r150 = virtualinvoke r128.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: 14ed8cadb8a342dcb190e0984020b7ef46d9f1f455aff07129746cba27e1da31
+		Secure: false
+	Object:
+		Variable: r139
+		Type: java.security.KeyStore
+		Statement: r139 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r5)
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: c249ee9d3e65a18a3d520486fc86e7bc746d20bbe6ae6512411d1461ee5edb50
+		Secure: false
+	Object:
+		Variable: r128
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r128 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r127)
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: d7adc1a7fdaf161e0ddb10c04e3e027db4db58456774aaf812f0ee343534090e
+		Secure: false
+	Object:
+		Variable: r147
+		Type: javax.net.ssl.SSLContext
+		Statement: r147 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer7006)
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: 72899d3660e0ff9b07f33ff560a1a34e2fa02a6fd214b22e5a399a9979d48f2
+		Secure: false
+	Object:
+		Variable: r130
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r130 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r129)
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: 8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.MessageDigest
+		Statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11002)
+		Method: <com.mysql.jdbc.Security: byte[] getBinaryPassword(int[],boolean)>
+		SHA-256: 1feb8efd563043f9a16c21ce94827c4bcbfff997bf7e2b4347e0da572403dfe9
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r6 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>(r5)
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: b9a64d2388aaf667e204933fa754fdfe724156f81aaafe25feeed9331770513
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.mysql.jdbc.Security: byte[] passwordHashStage1(java.lang.String)>
+		SHA-256: 30e71443fe232cdb7c6a6a73f31ad3fc2a94c54b310b101158f209cd468e2352
+		Secure: false
+	Object:
+		Variable: $r149
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r149 = virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <com.mysql.jdbc.ExportControlled: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)>
+		SHA-256: 4e47afebb2aec9edadae292a4ce5867f9d8af807095ee4297aabc355eb09c9eb
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.MessageDigest
+		Statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11009)
+		Method: <com.mysql.jdbc.Security: byte[] passwordHashStage1(java.lang.String)>
+		SHA-256: 58db790ec72e570927ebd1108bd16a5358c6b9d1770bc35c3c333eaf71f0088e
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r5 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>($r10)
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: da07fb6f93391f716b4fe601028b026f43606a01f247d43aa86299b9039b8560
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: r5 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>($r10)
+		Method: <com.mysql.jdbc.Security: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)>
+		SHA-256: 17110fef47196d2d80bdd16dfacc4c0d5f7bbaca4fc366c386648aa5d3e4e09a
+		Secure: false
+
+Findings in Java Class: com.mysql.jdbc.ExportControlled
+
+	 in Method: javax.net.ssl.SSLSocketFactory getSSLSocketFactoryDefaultOrConfigured(com.mysql.jdbc.MysqlIO)
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r131, r134)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r147.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r149, r173, varReplacer7032)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Operation on object of type javax.net.ssl.KeyManagerFactory object not completed. Expected call to init
+			at statement: r130 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r129)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #c249ee9d3e65a18a3d520486fc86e7bc746d20bbe6ae6512411d1461ee5edb50)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r139.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r16, r142)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #d707234ad31dd09fc87664bc60597e1b352470f4676676848b262789a81b19dd)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r131.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r18, r134)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r147.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r149, r173, varReplacer7032)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r128.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r139)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #d7adc1a7fdaf161e0ddb10c04e3e027db4db58456774aaf812f0ee343534090e)
+			Operation on object of type javax.net.ssl.TrustManagerFactory object not completed. Expected call to javax.net.ssl.TrustManagerFactory: void init(javax.net.ssl.ManagerFactoryParameters), javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)
+			at statement: virtualinvoke r128.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r139)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #c249ee9d3e65a18a3d520486fc86e7bc746d20bbe6ae6512411d1461ee5edb50)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r139.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r16, r142)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r131, r134)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #d7adc1a7fdaf161e0ddb10c04e3e027db4db58456774aaf812f0ee343534090e)
+			Operation on object of type javax.net.ssl.TrustManagerFactory object not completed. Expected call to init
+			at statement: r128 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r127)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #72899d3660e0ff9b07f33ff560a1a34e2fa02a6fd214b22e5a399a9979d48f2)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r147 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer7006)
+
+		TypestateError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #d7adc1a7fdaf161e0ddb10c04e3e027db4db58456774aaf812f0ee343534090e)
+			Unexpected call to method getTrustManagers on object of type javax.net.ssl.TrustManagerFactory. Expect a call to one of the following methods init
+			at statement: $r150 = virtualinvoke r128.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #d7adc1a7fdaf161e0ddb10c04e3e027db4db58456774aaf812f0ee343534090e)
+			Operation on object of type javax.net.ssl.TrustManagerFactory object not completed. Expected call to init
+			at statement: $r150 = virtualinvoke r128.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+
+		TypestateError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Unexpected call to method getKeyManagers on object of type javax.net.ssl.KeyManagerFactory. Expect a call to one of the following methods init
+			at statement: $r149 = virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Operation on object of type javax.net.ssl.KeyManagerFactory object not completed. Expected call to init
+			at statement: $r149 = virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #d707234ad31dd09fc87664bc60597e1b352470f4676676848b262789a81b19dd)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r131.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r18, r134)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8cd1d7ffc8967227ef9bacadc92378969b12f417575aa47c082fcf225d584179)
+			Operation on object of type javax.net.ssl.KeyManagerFactory object not completed. Expected call to javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[]), javax.net.ssl.KeyManagerFactory: void init(javax.net.ssl.ManagerFactoryParameters)
+			at statement: virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r131, r134)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r130.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r131, r134)
+
+
+Findings in Java Class: com.mysql.jdbc.Security
+
+	 in Method: byte[] getBinaryPassword(int[],boolean)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1feb8efd563043f9a16c21ce94827c4bcbfff997bf7e2b4347e0da572403dfe9)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11002)
+
+
+	 in Method: byte[] passwordHashStage1(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #58db790ec72e570927ebd1108bd16a5358c6b9d1770bc35c3c333eaf71f0088e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11009)
+
+
+	 in Method: byte[] passwordHashStage2(byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ed5f986192324f438250cfbe57013d54cd4f062ba896d469a5793f88a00ca24)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11010)
+
+
+	 in Method: byte[] scramble411(java.lang.String,java.lang.String,com.mysql.jdbc.Connection)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c0754392926d730b12f62e613c543a220e123925110a47fe3787e6b26ad6ada0)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11016)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 20
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	IncompleteOperationError: 6
+	NeverTypeOfError: 6
+	ConstraintError: 5
+	TypestateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 7.378 s
+

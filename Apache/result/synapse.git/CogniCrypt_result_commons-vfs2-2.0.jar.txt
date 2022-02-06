@@ -1,0 +1,205 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 464.4 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.42
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.92
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: $i3 = virtualinvoke r4.<javax.crypto.Cipher: int doFinal(byte[],int)>(r5, i4)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: c98746e7ff5a5c136fae4a2ecf3fa27c153805261e9571b0b29cec81a9b027e4
+		Secure: false
+	Object:
+		Variable: varReplacer1555
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1555)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: c0c40740af49d3ba643fa99b47231301c694fd1d7191d49130c12ca9cb6a6892
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.Cipher
+		Statement: r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1556)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 82f71e2fe8ff925341e6a6ff8f378766681799d9d8a024d4252428ad6cedbc80
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: i4 = virtualinvoke r4.<javax.crypto.Cipher: int update(byte[],int,int,byte[],int)>(r2, varReplacer1550, $i2, r5, varReplacer1550)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 3956330180a67f0bcfb89177d2e1e195c26b7cb77eee06ca560e020c1f909808
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Cipher
+		Statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1553)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 8899c8886ea3bcae2f0ff086339eac372411a15e006bd006b44010fe2841fc49
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1555)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: b7b75b8b2d4959bc647b921428bce244a0c68e0ed3089d8dae913d986b965ba1
+		Secure: false
+	Object:
+		Variable: varReplacer1549
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1549)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 3a23494b45f4f1a3ca1531505ee0544ef3976c50fce981343ffa4993488a6cea
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: i4 = virtualinvoke r3.<javax.crypto.Cipher: int update(byte[],int,int,byte[],int)>(r4, varReplacer1558, $i2, r5, varReplacer1558)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 54992eb233951497d4199581c412a99a857bb39e55087a3601427e7052abe84c
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: $i3 = virtualinvoke r3.<javax.crypto.Cipher: int doFinal(byte[],int)>(r5, i4)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: a7fbe4a5669d0e36505adc09c32a4311818caed3a5d9132c1810aeedc34cb98d
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: i4 = virtualinvoke r3.<javax.crypto.Cipher: int update(byte[],int,int,byte[],int)>(r4, varReplacer1558, $i2, r5, varReplacer1558)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String decrypt(java.lang.String)>
+		SHA-256: 5b02ff91035bcaefd06b7257ce85ea4fd4ad2bd0e34d3403127640f66fbd85ce
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1549)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 69dc5f6ef4c74d12a8c303ea63ac29ba61109d5a3062299ee87eeb9fc5e0cea3
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: i4 = virtualinvoke r4.<javax.crypto.Cipher: int update(byte[],int,int,byte[],int)>(r2, varReplacer1550, $i2, r5, varReplacer1550)
+		Method: <org.apache.commons.vfs2.util.DefaultCryptor: java.lang.String encrypt(java.lang.String)>
+		SHA-256: 97aaedcf8021ccee0af26d4de94232a4376f8d71d283f6962aa07ea092b7e470
+		Secure: false
+
+Findings in Java Class: org.apache.commons.vfs2.util.DefaultCryptor
+
+	 in Method: java.lang.String encrypt(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #8899c8886ea3bcae2f0ff086339eac372411a15e006bd006b44010fe2841fc49)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1553)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer1552, r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1549)
+
+
+	 in Method: java.lang.String decrypt(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer1555)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #82f71e2fe8ff925341e6a6ff8f378766681799d9d8a024d4252428ad6cedbc80)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1556)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r3.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer1554, r2)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 12
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.788 s
+

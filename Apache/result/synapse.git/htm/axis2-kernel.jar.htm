@@ -1,0 +1,3120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/axis2-kernel.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>34692 lines of code analyzed,
+	in 464 classes, 
+	in 43 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">66</td>
+<td align="right">1.90</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">101</td>
+<td align="right">2.91</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>167</b>
+</td>
+<td align="right">
+<b>4.81</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">167</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>167</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72077');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72077" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ModuleDeployer<br/>In method org.apache.axis2.deployment.ModuleDeployer.deploy(DeploymentFileData)<br/>At ModuleDeployer.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72131');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72131" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ModuleDeployer<br/>In method org.apache.axis2.deployment.ModuleDeployer.deploy(DeploymentFileData)<br/>At ModuleDeployer.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72185');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72185" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.POJODeployer<br/>In method org.apache.axis2.deployment.POJODeployer.storeFaultyService(DeploymentFileData, Throwable)<br/>At POJODeployer.java:[line 208]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72843');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72843" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ServiceDeployer<br/>In method org.apache.axis2.deployment.ServiceDeployer.deploy(DeploymentFileData)<br/>At ServiceDeployer.java:[line 121]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72897');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72897" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ServiceDeployer<br/>In method org.apache.axis2.deployment.ServiceDeployer.deploy(DeploymentFileData)<br/>At ServiceDeployer.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72951');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72951" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ServiceDeployer<br/>In method org.apache.axis2.deployment.ServiceDeployer.deploy(DeploymentFileData)<br/>At ServiceDeployer.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73005');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73005" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.deployment.ServiceDeployer<br/>In method org.apache.axis2.deployment.ServiceDeployer.deploy(DeploymentFileData)<br/>At ServiceDeployer.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75421');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75421" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.description.AxisService<br/>In method org.apache.axis2.description.AxisService.printWSDLError(OutputStream, Exception)<br/>At AxisService.java:[line 1584]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76297');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76297" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.description.WSDLToAxisServiceBuilder<br/>In method org.apache.axis2.description.WSDLToAxisServiceBuilder.stackToString(Throwable)<br/>At WSDLToAxisServiceBuilder.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77096');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77096" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.axis2.util.JavaUtils<br/>In method org.apache.axis2.util.JavaUtils.stackToString(Throwable)<br/>At JavaUtils.java:[line 577]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70066');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.info(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70066" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.loadRepositoryFromURL(URL)<br/>At DeploymentEngine.java:[line 314]<br/>Sink method org/apache/commons/logging/Log.info(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/AxisModule.version<br/>Unknown source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source java/net/URL.toString()Ljava/lang/String;<br/>Tainted source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/axis2/description/AxisModule.name<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.modulesPath<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source org/apache/axis2/deployment/DeploymentEngine.getFileList(Ljava/net/URL;)Ljava/util/ArrayList;<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.loadRepositoryFromURL(Ljava/net/URL;)V parameter 0<br/>Unknown source java/net/URL.getProtocol()Ljava/lang/String;<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Unknown source org/apache/axis2/description/AxisModule.getArchiveName()Ljava/lang/String;<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/text/MessageFormat.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At DeploymentEngine.java:[line 283]<br/>At DeploymentEngine.java:[line 285]<br/>At DeploymentEngine.java:[line 287]<br/>At DeploymentEngine.java:[line 289]<br/>At DeploymentEngine.java:[line 290]<br/>At DeploymentEngine.java:[line 292]<br/>At DeploymentEngine.java:[line 294]<br/>At DeploymentEngine.java:[line 295]<br/>At DeploymentEngine.java:[line 297]<br/>At DeploymentEngine.java:[line 299]<br/>At DeploymentEngine.java:[line 314]<br/>At DeploymentEngine.java:[line 958]<br/>At DeploymentEngine.java:[line 959]<br/>At DeploymentEngine.java:[line 961]<br/>At AxisModule.java:[line 133]<br/>At MessageBundle.java:[line 116]<br/>At MessageBundle.java:[line 204]<br/>At Messages.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70420');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.info(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70420" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.loadServicesFromUrl(URL)<br/>At DeploymentEngine.java:[line 267]<br/>Sink method org/apache/commons/logging/Log.info(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source java/net/URL.toString()Ljava/lang/String;<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.servicesPath<br/>Tainted source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/axis2/i18n/Messages.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.loadServicesFromUrl(Ljava/net/URL;)V parameter 0<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source org/apache/axis2/deployment/DeploymentEngine.getFileList(Ljava/net/URL;)Ljava/util/ArrayList;<br/>Unknown source java/net/URL.getProtocol()Ljava/lang/String;<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Unknown source org/apache/axis2/i18n/MessageBundle.getMessage(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/text/MessageFormat.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source org/apache/axis2/description/AxisServiceGroup.serviceGroupName<br/>Unknown source org/apache/axis2/description/AxisServiceGroup.getServiceGroupName()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At DeploymentEngine.java:[line 243]<br/>At DeploymentEngine.java:[line 245]<br/>At DeploymentEngine.java:[line 247]<br/>At DeploymentEngine.java:[line 249]<br/>At DeploymentEngine.java:[line 250]<br/>At DeploymentEngine.java:[line 252]<br/>At DeploymentEngine.java:[line 254]<br/>At DeploymentEngine.java:[line 256]<br/>At DeploymentEngine.java:[line 258]<br/>At DeploymentEngine.java:[line 261]<br/>At DeploymentEngine.java:[line 267]<br/>At DeploymentEngine.java:[line 958]<br/>At DeploymentEngine.java:[line 959]<br/>At DeploymentEngine.java:[line 961]<br/>At AxisServiceGroup.java:[line 175]<br/>At MessageBundle.java:[line 116]<br/>At MessageBundle.java:[line 204]<br/>At Messages.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.addressing.EndpointReference.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.addressing.EndpointReference<br/>In method org.apache.axis2.addressing.EndpointReference.readExternal(ObjectInput)<br/>At EndpointReference.java:[line 704]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.addressing.RelatesTo.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.addressing.RelatesTo<br/>In method org.apache.axis2.addressing.RelatesTo.readExternal(ObjectInput)<br/>At RelatesTo.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.addressing.RelatesTo.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.addressing.RelatesTo<br/>In method org.apache.axis2.addressing.RelatesTo.readExternal(ObjectInput)<br/>At RelatesTo.java:[line 253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66788');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66788" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1220]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66842');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66842" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66896');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66896" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1228]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66950');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66950" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1231]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67004');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67004" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1234]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67058');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67058" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1237]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67112');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67112" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1240]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67166');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67166" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67220');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67220" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1256]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67274');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67274" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1259]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67328');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67328" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1262]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67382');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67382" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1267]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67436');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67436" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1272]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67490');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67490" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1277]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67544');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.client.Options.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67544" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.client.Options<br/>In method org.apache.axis2.client.Options.readExternal(ObjectInput)<br/>At Options.java:[line 1302]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69647');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.externalize.SafeObjectInputStream.readList(List)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69647" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.externalize.SafeObjectInputStream<br/>In method org.apache.axis2.context.externalize.SafeObjectInputStream.readList(List)<br/>At SafeObjectInputStream.java:[line 276]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69701');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.externalize.SafeObjectInputStream.readMap(Map)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69701" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.externalize.SafeObjectInputStream<br/>In method org.apache.axis2.context.externalize.SafeObjectInputStream.readMap(Map)<br/>At SafeObjectInputStream.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69755');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.externalize.SafeObjectInputStream.readMap(Map)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69755" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.externalize.SafeObjectInputStream<br/>In method org.apache.axis2.context.externalize.SafeObjectInputStream.readMap(Map)<br/>At SafeObjectInputStream.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69809');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.externalize.SafeObjectInputStream.readObjectOverride()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69809" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.externalize.SafeObjectInputStream<br/>In method org.apache.axis2.context.externalize.SafeObjectInputStream.readObjectOverride()<br/>At SafeObjectInputStream.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67919');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67919" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 2860]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67973');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67973" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 2939]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68027');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68027" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3086]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68081');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68081" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3173]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68135');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68135" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68189');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68189" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68243');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68243" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3222]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68297');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68297" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3227]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68351');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68351" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3251]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68405');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68405" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3270]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68459');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68459" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3275]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68513');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68513" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3299]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68567');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68567" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3318]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68621');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68621" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3335]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68675');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68675" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3344]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68729');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68729" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3349]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68783');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68783" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3354]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68837');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.MessageContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68837" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.MessageContext<br/>In method org.apache.axis2.context.MessageContext.readExternal(ObjectInput)<br/>At MessageContext.java:[line 3389]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68891');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.OperationContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68891" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.OperationContext<br/>In method org.apache.axis2.context.OperationContext.readExternal(ObjectInput)<br/>At OperationContext.java:[line 562]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68945');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.OperationContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68945" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.OperationContext<br/>In method org.apache.axis2.context.OperationContext.readExternal(ObjectInput)<br/>At OperationContext.java:[line 563]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68999');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.OperationContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68999" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.OperationContext<br/>In method org.apache.axis2.context.OperationContext.readExternal(ObjectInput)<br/>At OperationContext.java:[line 584]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69053');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.OperationContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69053" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.OperationContext<br/>In method org.apache.axis2.context.OperationContext.readExternal(ObjectInput)<br/>At OperationContext.java:[line 591]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69107');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.OperationContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69107" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.OperationContext<br/>In method org.apache.axis2.context.OperationContext.readExternal(ObjectInput)<br/>At OperationContext.java:[line 598]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69161');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69161" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceContext<br/>In method org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)<br/>At ServiceContext.java:[line 420]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69215');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69215" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceContext<br/>In method org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)<br/>At ServiceContext.java:[line 429]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69269');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69269" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceContext<br/>In method org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)<br/>At ServiceContext.java:[line 432]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69323');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69323" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceContext<br/>In method org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)<br/>At ServiceContext.java:[line 444]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69377');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69377" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceContext<br/>In method org.apache.axis2.context.ServiceContext.readExternal(ObjectInput)<br/>At ServiceContext.java:[line 451]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69431');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceGroupContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69431" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceGroupContext<br/>In method org.apache.axis2.context.ServiceGroupContext.readExternal(ObjectInput)<br/>At ServiceGroupContext.java:[line 376]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69485');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.ServiceGroupContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69485" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.ServiceGroupContext<br/>In method org.apache.axis2.context.ServiceGroupContext.readExternal(ObjectInput)<br/>At ServiceGroupContext.java:[line 389]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69539');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.SessionContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69539" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.SessionContext<br/>In method org.apache.axis2.context.SessionContext.readExternal(ObjectInput)<br/>At SessionContext.java:[line 273]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69593');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.context.SessionContext.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69593" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.context.SessionContext<br/>In method org.apache.axis2.context.SessionContext.readExternal(ObjectInput)<br/>At SessionContext.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75777');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.description.Parameter.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75777" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.description.Parameter<br/>In method org.apache.axis2.description.Parameter.readExternal(ObjectInput)<br/>At Parameter.java:[line 363]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75831');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.description.Parameter.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75831" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.description.Parameter<br/>In method org.apache.axis2.description.Parameter.readExternal(ObjectInput)<br/>At Parameter.java:[line 374]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75885');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.description.Parameter.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75885" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.description.Parameter<br/>In method org.apache.axis2.description.Parameter.readExternal(ObjectInput)<br/>At Parameter.java:[line 404]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77150');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77150" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.util.MetaDataEntry<br/>In method org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)<br/>At MetaDataEntry.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77204');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77204" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.util.MetaDataEntry<br/>In method org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)<br/>At MetaDataEntry.java:[line 320]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77258');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77258" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.util.MetaDataEntry<br/>In method org.apache.axis2.util.MetaDataEntry.readExternal(ObjectInput)<br/>At MetaDataEntry.java:[line 321]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77312');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.util.ObjectStateUtils.readObject(ObjectInput, String)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77312" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.util.ObjectStateUtils<br/>In method org.apache.axis2.util.ObjectStateUtils.readObject(ObjectInput, String)<br/>At ObjectStateUtils.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77366');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.util.ObjectStateUtils.readString(ObjectInput, String)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77366" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.util.ObjectStateUtils<br/>In method org.apache.axis2.util.ObjectStateUtils.readString(ObjectInput, String)<br/>At ObjectStateUtils.java:[line 98]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N79223');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.axis2.wsdl.util.WSDLWrapperSaveImpl.restore()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N79223" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.axis2.wsdl.util.WSDLWrapperSaveImpl<br/>In method org.apache.axis2.wsdl.util.WSDLWrapperSaveImpl.restore()<br/>At WSDLWrapperSaveImpl.java:[line 1598]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65713');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65713" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.DirectoryResourceLocation<br/>In method org.apache.axis2.classloader.DirectoryResourceLocation.getResourceHandle(String)<br/>At DirectoryResourceLocation.java:[line 39]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/classloader/DirectoryResourceLocation.getResourceHandle(Ljava/lang/String;)Lorg/apache/axis2/classloader/ResourceHandle; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65787');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65787" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileClassLoader<br/>In method org.apache.axis2.classloader.JarFileClassLoader.findLibrary(String)<br/>At JarFileClassLoader.java:[line 221]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/net/URI.create(Ljava/lang/String;)Ljava/net/URI;<br/>Unknown source org/apache/axis2/classloader/ResourceHandle.getUrl()Ljava/net/URL;<br/>Unknown source java/net/URL.toString()Ljava/lang/String;<br/>At JarFileClassLoader.java:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65876');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65876" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlConnection<br/>In method new org.apache.axis2.classloader.JarFileUrlConnection(URL, JarFile, JarEntry)<br/>At JarFileUrlConnection.java:[line 69]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/jar/JarFile.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65945');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65945" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlConnection<br/>In method org.apache.axis2.classloader.JarFileUrlConnection.getPermission()<br/>At JarFileUrlConnection.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/jar/JarFile.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66083');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66083" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlStreamHandler<br/>In method org.apache.axis2.classloader.JarFileUrlStreamHandler.createUrl(JarFile, JarEntry)<br/>At JarFileUrlStreamHandler.java:[line 37]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/jar/JarFile.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66152');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66152" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlStreamHandler<br/>In method org.apache.axis2.classloader.JarFileUrlStreamHandler.openConnection(URL)<br/>At JarFileUrlStreamHandler.java:[line 94]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source org/apache/axis2/classloader/JarFileUrlStreamHandler.openConnection(Ljava/net/URL;)Ljava/net/URLConnection; parameter 0<br/>Method usage not detected<br/>At JarFileUrlStreamHandler.java:[line 76]<br/>At JarFileUrlStreamHandler.java:[line 77]<br/>At JarFileUrlStreamHandler.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66355');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66355" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.UrlResourceFinder<br/>In method org.apache.axis2.classloader.UrlResourceFinder.cacheUrl(URL)<br/>At UrlResourceFinder.java:[line 229]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/classloader/UrlResourceFinder.cacheUrl(Ljava/net/URL;)Ljava/io/File; parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At UrlResourceFinder.java:[line 167]<br/>At UrlResourceFinder.java:[line 170]<br/>At UrlResourceFinder.java:[line 183]<br/>At UrlResourceFinder.java:[line 210]<br/>At UrlResourceFinder.java:[line 211]<br/>At UrlResourceFinder.java:[line 229]<br/>At UrlResourceFinder.java:[line 264]<br/>At UrlResourceFinder.java:[line 270]<br/>At UrlResourceFinder.java:[line 277]<br/>At UrlResourceFinder.java:[line 278]<br/>At UrlResourceFinder.java:[line 281]<br/>At UrlResourceFinder.java:[line 282]<br/>At UrlResourceFinder.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66559');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66559" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.classloader.UrlResourceFinder<br/>In method org.apache.axis2.classloader.UrlResourceFinder.rebuildClassPath()<br/>At UrlResourceFinder.java:[line 188]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/classloader/UrlResourceFinder.getManifestClassPath(Lorg/apache/axis2/classloader/ResourceLocation;)Ljava/util/List;<br/>Unknown source org/apache/axis2/classloader/UrlResourceFinder.urls<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source java/util/jar/Attributes.getValue(Ljava/util/jar/Attributes$Name;)Ljava/lang/String;<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source org/apache/axis2/classloader/ResourceLocation.getCodeSource()Ljava/net/URL;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source java/util/Collections.EMPTY_LIST<br/>At UrlResourceFinder.java:[line 167]<br/>At UrlResourceFinder.java:[line 170]<br/>At UrlResourceFinder.java:[line 188]<br/>At UrlResourceFinder.java:[line 210]<br/>At UrlResourceFinder.java:[line 211]<br/>At UrlResourceFinder.java:[line 264]<br/>At UrlResourceFinder.java:[line 270]<br/>At UrlResourceFinder.java:[line 277]<br/>At UrlResourceFinder.java:[line 278]<br/>At UrlResourceFinder.java:[line 281]<br/>At UrlResourceFinder.java:[line 282]<br/>At UrlResourceFinder.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67598');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67598" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.context.ConfigurationContext<br/>In method org.apache.axis2.context.ConfigurationContext.cleanupTemp()<br/>At ConfigurationContext.java:[line 770]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/axis2/java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67667');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67667" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.context.ConfigurationContext<br/>In method org.apache.axis2.context.ConfigurationContext.deleteTempFiles(File)<br/>At ConfigurationContext.java:[line 792]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67736');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67736" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.context.ConfigurationContext<br/>In method org.apache.axis2.context.ConfigurationContext.getRealPath(String)<br/>At ConfigurationContext.java:[line 517]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/engine/AxisConfiguration.axis2Repository<br/>Unknown source org/apache/axis2/engine/AxisConfiguration.getRepository()Ljava/net/URL;<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>At ConfigurationContext.java:[line 515]<br/>At ConfigurationContext.java:[line 517]<br/>At AxisConfiguration.java:[line 823]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67845');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67845" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.context.ConfigurationContext<br/>In method org.apache.axis2.context.ConfigurationContext.getRealPath(String)<br/>At ConfigurationContext.java:[line 518]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/context/ConfigurationContext.getRealPath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70769');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70769" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.addAsWebResources(File, String, AxisServiceGroup)<br/>At DeploymentEngine.java:[line 799]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.webLocationString<br/>At DeploymentEngine.java:[line 799]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70848');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70848" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.addAsWebResources(File, String, AxisServiceGroup)<br/>At DeploymentEngine.java:[line 800]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.addAsWebResources(Ljava/io/File;Ljava/lang/String;Lorg/apache/axis2/description/AxisServiceGroup;)V parameter 1<br/>At DeploymentEngine.java:[line 564]<br/>At AxisServiceGroup.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70937');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70937" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.addAsWebResources(File, String, AxisServiceGroup)<br/>At DeploymentEngine.java:[line 814]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>At DeploymentEngine.java:[line 811]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71016');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71016" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.addAsWebResources(File, String, AxisServiceGroup)<br/>At DeploymentEngine.java:[line 816]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>At DeploymentEngine.java:[line 811]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71095');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71095" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.loadRepository(String)<br/>At DeploymentEngine.java:[line 138]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.loadRepository(Ljava/lang/String;)V parameter 0<br/>At WarBasedAxisConfigurator.java:[line 205]<br/>At WarBasedAxisConfigurator.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71184');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71184" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.prepareRepository(String)<br/>At DeploymentEngine.java:[line 913]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.prepareRepository(Ljava/lang/String;)V parameter 0<br/>At DeploymentEngine.java:[line 144]<br/>At WarBasedAxisConfigurator.java:[line 205]<br/>At WarBasedAxisConfigurator.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71283');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71283" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.prepareRepository(String)<br/>At DeploymentEngine.java:[line 915]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.servicesPath<br/>At DeploymentEngine.java:[line 915]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71362');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71362" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.prepareRepository(String)<br/>At DeploymentEngine.java:[line 917]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.servicesPath<br/>At DeploymentEngine.java:[line 917]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71441');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71441" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.prepareRepository(String)<br/>At DeploymentEngine.java:[line 926]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.modulesPath<br/>At DeploymentEngine.java:[line 926]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71520');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71520" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.prepareRepository(String)<br/>At DeploymentEngine.java:[line 928]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.modulesPath<br/>At DeploymentEngine.java:[line 928]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71998');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71998" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.FileSystemConfigurator<br/>In method org.apache.axis2.deployment.FileSystemConfigurator.getAxisConfiguration()<br/>At FileSystemConfigurator.java:[line 111]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/FileSystemConfigurator.axis2xml<br/>At FileSystemConfigurator.java:[line 111]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72239');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72239" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.POJODeployer<br/>In method org.apache.axis2.deployment.POJODeployer.deploy(DeploymentFileData)<br/>At POJODeployer.java:[line 112]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/repository/util/DeploymentFileData.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At POJODeployer.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72323');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72323" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.POJODeployer<br/>In method org.apache.axis2.deployment.POJODeployer.deploy(DeploymentFileData)<br/>At POJODeployer.java:[line 143]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.getWebLocationString()Ljava/lang/String;<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.webLocationString<br/>At DeploymentEngine.java:[line 835]<br/>At POJODeployer.java:[line 141]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73291');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73291" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.processServiceGroup(String, DeploymentFileData, AxisServiceGroup, boolean, HashMap, ConfigurationContext)<br/>At ArchiveReader.java:[line 136]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/repository/util/ArchiveReader.processServiceGroup(Ljava/lang/String;Lorg/apache/axis2/deployment/repository/util/DeploymentFileData;Lorg/apache/axis2/description/AxisServiceGroup;ZLjava/util/HashMap;Lorg/apache/axis2/context/ConfigurationContext;)Ljava/util/ArrayList; parameter 5<br/>At ServiceDeployer.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73370');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73370" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.processServiceGroup(String, DeploymentFileData, AxisServiceGroup, boolean, HashMap, ConfigurationContext)<br/>At ArchiveReader.java:[line 168]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/axis2/deployment/repository/util/ArchiveReader.processServiceGroup(Ljava/lang/String;Lorg/apache/axis2/deployment/repository/util/DeploymentFileData;Lorg/apache/axis2/description/AxisServiceGroup;ZLjava/util/HashMap;Lorg/apache/axis2/context/ConfigurationContext;)Ljava/util/ArrayList; parameter 5<br/>At ServiceDeployer.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73449');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73449" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.processServiceGroup(String, DeploymentFileData, AxisServiceGroup, boolean, HashMap, ConfigurationContext)<br/>At ArchiveReader.java:[line 171]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/axis2/deployment/repository/util/ArchiveReader.processServiceGroup(Ljava/lang/String;Lorg/apache/axis2/deployment/repository/util/DeploymentFileData;Lorg/apache/axis2/description/AxisServiceGroup;ZLjava/util/HashMap;Lorg/apache/axis2/context/ConfigurationContext;)Ljava/util/ArrayList; parameter 5<br/>At ServiceDeployer.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73528');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73528" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.readModuleArchive(DeploymentFileData, AxisModule, boolean, AxisConfiguration)<br/>At ArchiveReader.java:[line 507]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/repository/util/DeploymentFileData.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At ArchiveReader.java:[line 507]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73612');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73612" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.readModuleArchive(DeploymentFileData, AxisModule, boolean, AxisConfiguration)<br/>At ArchiveReader.java:[line 532]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/axis2/deployment/repository/util/DeploymentFileData.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At ArchiveReader.java:[line 532]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73696');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73696" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.repository.util.ArchiveReader<br/>In method org.apache.axis2.deployment.repository.util.ArchiveReader.readModuleArchive(DeploymentFileData, AxisModule, boolean, AxisConfiguration)<br/>At ArchiveReader.java:[line 534]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/axis2/deployment/repository/util/DeploymentFileData.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At ArchiveReader.java:[line 534]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72417');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72417" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.RepositoryListener<br/>In method org.apache.axis2.deployment.RepositoryListener.findFileForGivenDirectory(String, String)<br/>At RepositoryListener.java:[line 271]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/RepositoryListener.findFileForGivenDirectory(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At DeploymentEngine.java:[line 1173]<br/>At RepositoryListener.java:[line 257]<br/>At RepositoryListener.java:[line 258]<br/>At RepositoryListener.java:[line 261]<br/>At RepositoryListener.java:[line 269]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72536');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72536" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.RepositoryListener<br/>In method org.apache.axis2.deployment.RepositoryListener.loadClassPathModules()<br/>At RepositoryListener.java:[line 168]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/JarURLConnection.getJarFileURL()Ljava/net/URL;<br/>Unknown source java/net/URL.toString()Ljava/lang/String;<br/>Unknown source java/security/CodeSource.getLocation()Ljava/net/URL;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/apache/axis2/deployment/RepositoryListener.getLocation()Ljava/lang/String;<br/>At RepositoryListener.java:[line 158]<br/>At RepositoryListener.java:[line 164]<br/>At RepositoryListener.java:[line 230]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.RepositoryListener<br/>In method org.apache.axis2.deployment.RepositoryListener.loadClassPathModules()<br/>At RepositoryListener.java:[line 197]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URLDecoder.decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/net/URLClassLoader.getURLs()[Ljava/net/URL;<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At RepositoryListener.java:[line 187]<br/>At RepositoryListener.java:[line 190]<br/>At RepositoryListener.java:[line 193]<br/>At RepositoryListener.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73780');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73780" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.TempFileManager<br/>In method org.apache.axis2.deployment.util.TempFileManager.&lt;static initializer for TempFileManager&gt;()<br/>At TempFileManager.java:[line 194]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At TempFileManager.java:[line 194]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73859');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73859" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.TempFileManager<br/>In method org.apache.axis2.deployment.util.TempFileManager.createTempFile(String, String)<br/>At TempFileManager.java:[line 71]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At TempFileManager.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73938');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73938" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.TempFileManager<br/>In method org.apache.axis2.deployment.util.TempFileManager.createTempFile(String, String)<br/>At TempFileManager.java:[line 82]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At TempFileManager.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74017');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74017" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.TempFileManager<br/>In method org.apache.axis2.deployment.util.TempFileManager.createTempFile(String, String)<br/>At TempFileManager.java:[line 101]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/axis2/deployment/util/TempFileManager.sTmpDir<br/>Unknown source java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>At TempFileManager.java:[line 71]<br/>At TempFileManager.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74116');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74116" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.Utils<br/>In method org.apache.axis2.deployment.util.Utils.toFile(URL)<br/>At Utils.java:[line 890]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/util/Utils.toFile(Ljava/net/URL;)Ljava/io/File; parameter 0<br/>Unknown source java/net/URLDecoder.decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At DeploymentEngine.java:[line 243]<br/>At DeploymentEngine.java:[line 245]<br/>At DeploymentEngine.java:[line 247]<br/>At DeploymentEngine.java:[line 249]<br/>At DeploymentEngine.java:[line 250]<br/>At DeploymentEngine.java:[line 252]<br/>At DeploymentEngine.java:[line 254]<br/>At DeploymentEngine.java:[line 256]<br/>At DeploymentEngine.java:[line 258]<br/>At DeploymentEngine.java:[line 261]<br/>At DeploymentEngine.java:[line 262]<br/>At DeploymentEngine.java:[line 426]<br/>At DeploymentEngine.java:[line 475]<br/>At DeploymentEngine.java:[line 958]<br/>At DeploymentEngine.java:[line 959]<br/>At DeploymentEngine.java:[line 961]<br/>At RepositoryListener.java:[line 227]<br/>At Utils.java:[line 889]<br/>At Utils.java:[line 890]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74390');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74390" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.Utils<br/>In method org.apache.axis2.deployment.util.Utils.getClassLoader(ClassLoader, String)<br/>At Utils.java:[line 309]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/util/Utils.getClassLoader(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/ClassLoader; parameter 0<br/>At DeploymentEngine.java:[line 146]<br/>At DeploymentEngine.java:[line 859]<br/>At WarBasedAxisConfigurator.java:[line 205]<br/>At WarBasedAxisConfigurator.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74499');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74499" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.Utils<br/>In method org.apache.axis2.deployment.util.Utils.getShortFileName(String)<br/>At Utils.java:[line 959]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/util/Utils.getShortFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At POJODeployer.java:[line 333]<br/>At ServiceDeployer.java:[line 165]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73138');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73138" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.deployment.WarBasedAxisConfigurator<br/>In method new org.apache.axis2.deployment.WarBasedAxisConfigurator(ServletConfig)<br/>At WarBasedAxisConfigurator.java:[line 116]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletConfig.getInitParameter(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75475');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75475" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.AxisService<br/>In method org.apache.axis2.description.AxisService.getBaseURI(String)<br/>At AxisService.java:[line 2222]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/AxisService.getBaseURI(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ServiceClient.java:[line 220]<br/>At MexClient.java:[line 51]<br/>At AxisService.java:[line 2197]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75579');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75579" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.AxisService<br/>In method org.apache.axis2.description.AxisService.getDocumentURI(String)<br/>At AxisService.java:[line 2237]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/AxisService.getDocumentURI(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ServiceClient.java:[line 220]<br/>At MexClient.java:[line 51]<br/>At AxisService.java:[line 2200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76351');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76351" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator<br/>In method org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator.loadCustomSchemaFile()<br/>At DefaultSchemaGenerator.java:[line 178]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/java2wsdl/DefaultSchemaGenerator.customSchemaLocation<br/>At DefaultSchemaGenerator.java:[line 178]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76430');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76430" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator<br/>In method org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator.loadMappingFile()<br/>At DefaultSchemaGenerator.java:[line 194]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/java2wsdl/DefaultSchemaGenerator.mappingFileLocation<br/>At DefaultSchemaGenerator.java:[line 194]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N75993');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N75993" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.WSDL20ToAxisServiceBuilder<br/>In method new org.apache.axis2.description.WSDL20ToAxisServiceBuilder(String, String, String)<br/>At WSDL20ToAxisServiceBuilder.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/WSDL20ToAxisServiceBuilder.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 2<br/>Method usage not detected<br/>At WSDL20ToAllAxisServicesBuilder.java:[line 53]<br/>At WSDL20ToAxisServiceBuilder.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76087');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76087" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.description.WSDL20ToAxisServiceBuilder<br/>In method org.apache.axis2.description.WSDL20ToAxisServiceBuilder.readInTheWSDLFile(Document)<br/>At WSDL20ToAxisServiceBuilder.java:[line 1213]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/WSDLToAxisServiceBuilder.baseUri<br/>Unknown source org/apache/axis2/description/WSDL20ToAxisServiceBuilder.getBaseUri()Ljava/lang/String;<br/>At WSDL20ToAxisServiceBuilder.java:[line 1208]<br/>At WSDLToAxisServiceBuilder.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76567');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76567" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.engine.AxisConfiguration<br/>In method org.apache.axis2.engine.AxisConfiguration.deployModule(String)<br/>At AxisConfiguration.java:[line 248]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/engine/AxisConfiguration.deployModule(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76641');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76641" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.transport.SimpleAxis2Server<br/>In method org.apache.axis2.transport.SimpleAxis2Server.main(String[])<br/>At SimpleAxis2Server.java:[line 85]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/CommandLineOption.getOptionValue()Ljava/lang/String;<br/>Unknown source org/apache/axis2/util/CommandLineOption.optionValues<br/>At SimpleAxis2Server.java:[line 84]<br/>At CommandLineOption.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76735');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76735" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.transport.SimpleAxis2Server<br/>In method org.apache.axis2.transport.SimpleAxis2Server.main(String[])<br/>At SimpleAxis2Server.java:[line 87]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/CommandLineOption.getOptionValue()Ljava/lang/String;<br/>Unknown source org/apache/axis2/util/CommandLineOption.optionValues<br/>At SimpleAxis2Server.java:[line 84]<br/>At CommandLineOption.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76829');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76829" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.transport.SimpleAxis2Server<br/>In method org.apache.axis2.transport.SimpleAxis2Server.main(String[])<br/>At SimpleAxis2Server.java:[line 92]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/CommandLineOption.getOptionValue()Ljava/lang/String;<br/>Unknown source org/apache/axis2/util/CommandLineOption.optionValues<br/>At SimpleAxis2Server.java:[line 91]<br/>At CommandLineOption.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76923');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76923" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.util.FileWriter<br/>In method org.apache.axis2.util.FileWriter.createClassFile(File, String, String, String)<br/>At FileWriter.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/FileWriter.createClassFile(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 2<br/>Method usage not detected<br/>At FileWriter.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77007');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77007" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.util.FileWriter<br/>In method org.apache.axis2.util.FileWriter.createClassFile(File, String, String, String)<br/>At FileWriter.java:[line 64]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/FileWriter.createClassFile(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 1<br/>Unknown source org/apache/axis2/util/FileWriter.createClassFile(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At FileWriter.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77420');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77420" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.util.Utils<br/>In method org.apache.axis2.util.Utils.getNewConfigurationContext(String)<br/>At Utils.java:[line 251]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/Utils.getNewConfigurationContext(Ljava/lang/String;)Lorg/apache/axis2/context/ConfigurationContext; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78692');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78692" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl<br/>In method org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl.getExplicitURI(URL)<br/>At WSDLWrapperReloadImpl.java:[line 1256]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getExplicitURI(Ljava/net/URL;)Ljava/lang/String; parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At WSDLWrapperReloadImpl.java:[line 167]<br/>At WSDLWrapperReloadImpl.java:[line 1228]<br/>At WSDLWrapperReloadImpl.java:[line 1247]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78796');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N78796" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl<br/>In method org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl.getURLFromJAR(URLClassLoader, URL)<br/>At WSDLWrapperReloadImpl.java:[line 1422]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URLClassLoader.getURLs()[Ljava/net/URL;<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At WSDLWrapperReloadImpl.java:[line 1422]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66014');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66014" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlConnection<br/>In method org.apache.axis2.classloader.JarFileUrlConnection.getPermission()<br/>At JarFileUrlConnection.java:[line 129]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/io/File.toURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66261');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66261" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.classloader.JarFileUrlStreamHandler<br/>In method org.apache.axis2.classloader.JarFileUrlStreamHandler.openConnection(URL)<br/>At JarFileUrlStreamHandler.java:[line 90]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>Unknown source org/apache/axis2/classloader/JarFileUrlStreamHandler.openConnection(Ljava/net/URL;)Ljava/net/URLConnection; parameter 0<br/>Method usage not detected<br/>At JarFileUrlStreamHandler.java:[line 90]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69863');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69863" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentClassLoader<br/>In method org.apache.axis2.deployment.DeploymentClassLoader.getJarAsStream(String)<br/>At DeploymentClassLoader.java:[line 218]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentClassLoader.urls<br/>At DeploymentClassLoader.java:[line 218]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69942');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69942" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentClassLoader<br/>In method org.apache.axis2.deployment.DeploymentClassLoader.getResourceAsStream(String)<br/>At DeploymentClassLoader.java:[line 256]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/net/URLClassLoader.findResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/util/zip/ZipEntry.getName()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V<br/>Unknown source org/apache/axis2/deployment/DeploymentClassLoader.findResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source org/apache/axis2/deployment/DeploymentClassLoader.embedded_jars<br/>Unknown source org/apache/axis2/deployment/DeploymentClassLoader.urls<br/>At DeploymentClassLoader.java:[line 105]<br/>At DeploymentClassLoader.java:[line 116]<br/>At DeploymentClassLoader.java:[line 250]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71599');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71599" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.DeploymentEngine<br/>In method org.apache.axis2.deployment.DeploymentEngine.getFileList(URL)<br/>At DeploymentEngine.java:[line 950]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/DeploymentEngine.getFileList(Ljava/net/URL;)Ljava/util/ArrayList; parameter 0<br/>At DeploymentEngine.java:[line 178]<br/>At DeploymentEngine.java:[line 179]<br/>At DeploymentEngine.java:[line 184]<br/>At DeploymentEngine.java:[line 185]<br/>At DeploymentEngine.java:[line 187]<br/>At DeploymentEngine.java:[line 189]<br/>At DeploymentEngine.java:[line 191]<br/>At DeploymentEngine.java:[line 192]<br/>At DeploymentEngine.java:[line 195]<br/>At DeploymentEngine.java:[line 196]<br/>At DeploymentEngine.java:[line 197]<br/>At DeploymentEngine.java:[line 243]<br/>At DeploymentEngine.java:[line 245]<br/>At DeploymentEngine.java:[line 247]<br/>At DeploymentEngine.java:[line 249]<br/>At DeploymentEngine.java:[line 250]<br/>At DeploymentEngine.java:[line 252]<br/>At DeploymentEngine.java:[line 253]<br/>At DeploymentEngine.java:[line 254]<br/>At DeploymentEngine.java:[line 273]<br/>At DeploymentEngine.java:[line 283]<br/>At DeploymentEngine.java:[line 285]<br/>At DeploymentEngine.java:[line 287]<br/>At DeploymentEngine.java:[line 289]<br/>At DeploymentEngine.java:[line 290]<br/>At DeploymentEngine.java:[line 292]<br/>At DeploymentEngine.java:[line 293]<br/>At DeploymentEngine.java:[line 294]<br/>At DeploymentEngine.java:[line 1173]<br/>At WarBasedAxisConfigurator.java:[line 212]<br/>At WarBasedAxisConfigurator.java:[line 238]<br/>At WarBasedAxisConfigurator.java:[line 277]<br/>At WarBasedAxisConfigurator.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72774');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72774" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.RepositoryListener<br/>In method org.apache.axis2.deployment.RepositoryListener.getLocation()<br/>At RepositoryListener.java:[line 223]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/security/CodeSource.getLocation()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73059');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73059" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.URLBasedAxisConfigurator<br/>In method org.apache.axis2.deployment.URLBasedAxisConfigurator.getAxisConfiguration()<br/>At URLBasedAxisConfigurator.java:[line 53]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/URLBasedAxisConfigurator.axis2xml<br/>At URLBasedAxisConfigurator.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74593');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74593" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.Utils<br/>In method org.apache.axis2.deployment.util.Utils.findLibJars(URL)<br/>At Utils.java:[line 811]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/util/Utils.findLibJars(Ljava/net/URL;)Ljava/util/List; parameter 0<br/>Method usage with tainted arguments detected<br/>At DeploymentEngine.java:[line 243]<br/>At DeploymentEngine.java:[line 245]<br/>At DeploymentEngine.java:[line 247]<br/>At DeploymentEngine.java:[line 249]<br/>At DeploymentEngine.java:[line 250]<br/>At DeploymentEngine.java:[line 252]<br/>At DeploymentEngine.java:[line 254]<br/>At DeploymentEngine.java:[line 256]<br/>At DeploymentEngine.java:[line 258]<br/>At DeploymentEngine.java:[line 261]<br/>At DeploymentEngine.java:[line 262]<br/>At DeploymentEngine.java:[line 283]<br/>At DeploymentEngine.java:[line 285]<br/>At DeploymentEngine.java:[line 287]<br/>At DeploymentEngine.java:[line 289]<br/>At DeploymentEngine.java:[line 290]<br/>At DeploymentEngine.java:[line 292]<br/>At DeploymentEngine.java:[line 294]<br/>At DeploymentEngine.java:[line 295]<br/>At DeploymentEngine.java:[line 297]<br/>At DeploymentEngine.java:[line 299]<br/>At DeploymentEngine.java:[line 300]<br/>At DeploymentEngine.java:[line 353]<br/>At DeploymentEngine.java:[line 958]<br/>At DeploymentEngine.java:[line 959]<br/>At DeploymentEngine.java:[line 961]<br/>At POJODeployer.java:[line 139]<br/>At POJODeployer.java:[line 140]<br/>At POJODeployer.java:[line 143]<br/>At POJODeployer.java:[line 145]<br/>At Utils.java:[line 865]<br/>At Utils.java:[line 882]<br/>At Utils.java:[line 910]<br/>At AxisConfiguration.java:[line 823]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75007');">
+<td>
+<span class="priority-1">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75007" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.util.Utils<br/>In method org.apache.axis2.deployment.util.Utils.getURLsForAllJars(URL, File)<br/>At Utils.java:[line 159]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/deployment/util/Utils.getURLsForAllJars(Ljava/net/URL;Ljava/io/File;)[Ljava/net/URL; parameter 1<br/>Method usage with tainted arguments detected<br/>At DeploymentEngine.java:[line 243]<br/>At DeploymentEngine.java:[line 245]<br/>At DeploymentEngine.java:[line 247]<br/>At DeploymentEngine.java:[line 249]<br/>At DeploymentEngine.java:[line 250]<br/>At DeploymentEngine.java:[line 252]<br/>At DeploymentEngine.java:[line 254]<br/>At DeploymentEngine.java:[line 256]<br/>At DeploymentEngine.java:[line 258]<br/>At DeploymentEngine.java:[line 261]<br/>At DeploymentEngine.java:[line 262]<br/>At DeploymentEngine.java:[line 283]<br/>At DeploymentEngine.java:[line 285]<br/>At DeploymentEngine.java:[line 287]<br/>At DeploymentEngine.java:[line 289]<br/>At DeploymentEngine.java:[line 290]<br/>At DeploymentEngine.java:[line 292]<br/>At DeploymentEngine.java:[line 294]<br/>At DeploymentEngine.java:[line 295]<br/>At DeploymentEngine.java:[line 297]<br/>At DeploymentEngine.java:[line 299]<br/>At DeploymentEngine.java:[line 300]<br/>At DeploymentEngine.java:[line 353]<br/>At DeploymentEngine.java:[line 958]<br/>At DeploymentEngine.java:[line 959]<br/>At DeploymentEngine.java:[line 961]<br/>At POJODeployer.java:[line 139]<br/>At POJODeployer.java:[line 140]<br/>At POJODeployer.java:[line 143]<br/>At POJODeployer.java:[line 145]<br/>At Utils.java:[line 865]<br/>At Utils.java:[line 868]<br/>At Utils.java:[line 899]<br/>At AxisConfiguration.java:[line 823]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73207');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73207" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.deployment.WarBasedAxisConfigurator<br/>In method new org.apache.axis2.deployment.WarBasedAxisConfigurator(ServletConfig)<br/>At WarBasedAxisConfigurator.java:[line 123]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source javax/servlet/ServletConfig.getInitParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At WarBasedAxisConfigurator.java:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75683');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75683" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.description.AxisService<br/>In method org.apache.axis2.description.AxisService.createClientSideAxisService(URL, QName, String, Options)<br/>At AxisService.java:[line 2193]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/description/AxisService.createClientSideAxisService(Ljava/net/URL;Ljavax/xml/namespace/QName;Ljava/lang/String;Lorg/apache/axis2/client/Options;)Lorg/apache/axis2/description/AxisService; parameter 3<br/>Method usage not detected<br/>At ServiceClient.java:[line 220]<br/>At MexClient.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77726');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77726" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLUtils<br/>In method org.apache.axis2.util.XMLUtils.getInputSourceFromURI(String, String, String)<br/>At XMLUtils.java:[line 443]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/XMLUtils.getInputSourceFromURI(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource; parameter 2<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Method usage not detected<br/>At XMLUtils.java:[line 232]<br/>At XMLUtils.java:[line 248]<br/>At XMLUtils.java:[line 426]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78880');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78880" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl<br/>In method org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl.getExplicitURI(URL)<br/>At WSDLWrapperReloadImpl.java:[line 1298]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getExplicitURI(Ljava/net/URL;)Ljava/lang/String; parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/util/jar/JarEntry.getName()Ljava/lang/String;<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getAbsoluteURL(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getURLFromJAR(Ljava/net/URLClassLoader;Ljava/net/URL;)Ljava/net/URL;<br/>At WSDLWrapperReloadImpl.java:[line 167]<br/>At WSDLWrapperReloadImpl.java:[line 1228]<br/>At WSDLWrapperReloadImpl.java:[line 1261]<br/>At WSDLWrapperReloadImpl.java:[line 1267]<br/>At WSDLWrapperReloadImpl.java:[line 1271]<br/>At WSDLWrapperReloadImpl.java:[line 1273]<br/>At WSDLWrapperReloadImpl.java:[line 1278]<br/>At WSDLWrapperReloadImpl.java:[line 1280]<br/>At WSDLWrapperReloadImpl.java:[line 1360]<br/>At WSDLWrapperReloadImpl.java:[line 1444]<br/>At WSDLWrapperReloadImpl.java:[line 1447]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N79089');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N79089" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl<br/>In method org.apache.axis2.wsdl.util.WSDLWrapperReloadImpl.getExplicitURI(URL)<br/>At WSDLWrapperReloadImpl.java:[line 1318]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/util/jar/JarEntry.getName()Ljava/lang/String;<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getAbsoluteURL(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/apache/axis2/wsdl/util/WSDLWrapperReloadImpl.getURLFromJAR(Ljava/net/URLClassLoader;Ljava/net/URL;)Ljava/net/URL;<br/>At WSDLWrapperReloadImpl.java:[line 1311]<br/>At WSDLWrapperReloadImpl.java:[line 1360]<br/>At WSDLWrapperReloadImpl.java:[line 1444]<br/>At WSDLWrapperReloadImpl.java:[line 1447]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78067');">
+<td>
+<span class="priority-2">SECXSLT</span>
+</td>
+<td>A malicious XSLT could be provided to trigger remote code execution</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78067" style="display: none;">
+<a href="#MALICIOUS_XSLT">Bug type MALICIOUS_XSLT (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, InputStream, InputStream)<br/>At XSLTTemplateProcessor.java:[line 58]<br/>Sink method javax/xml/transform/TransformerFactory.newTransformer(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Transformer;<br/>Sink parameter 0<br/>Unknown source javax/xml/transform/stream/StreamSource.&lt;init&gt;(Ljava/io/InputStream;)V<br/>Unknown source org/apache/axis2/util/XSLTTemplateProcessor.parse(Ljava/io/OutputStream;Ljava/io/InputStream;Ljava/io/InputStream;)V parameter 0<br/>Method usage not detected<br/>At XSLTTemplateProcessor.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78156');">
+<td>
+<span class="priority-2">SECXSLT</span>
+</td>
+<td>A malicious XSLT could be provided to trigger remote code execution</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N78156" style="display: none;">
+<a href="#MALICIOUS_XSLT">Bug type MALICIOUS_XSLT (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream)<br/>At XSLTTemplateProcessor.java:[line 98]<br/>Sink method javax/xml/transform/TransformerFactory.newTransformer(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Transformer;<br/>Sink parameter 0<br/>Unknown source org/apache/axis2/util/XSLTTemplateProcessor.parse(Ljava/io/OutputStream;Lorg/w3c/dom/Document;Ljava/io/InputStream;)V parameter 0<br/>Unknown source javax/xml/transform/stream/StreamSource.&lt;init&gt;(Ljava/io/InputStream;)V<br/>Method usage not detected<br/>At XSLTTemplateProcessor.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78245');">
+<td>
+<span class="priority-2">SECXSLT</span>
+</td>
+<td>A malicious XSLT could be provided to trigger remote code execution</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78245" style="display: none;">
+<a href="#MALICIOUS_XSLT">Bug type MALICIOUS_XSLT (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream, URIResolver, boolean)<br/>At XSLTTemplateProcessor.java:[line 146]<br/>Sink method javax/xml/transform/TransformerFactory.newTransformer(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Transformer;<br/>Sink parameter 0<br/>Unknown source javax/xml/transform/stream/StreamSource.&lt;init&gt;(Ljava/io/InputStream;)V<br/>Unknown source org/apache/axis2/util/XSLTTemplateProcessor.parse(Ljava/io/OutputStream;Lorg/w3c/dom/Document;Ljava/io/InputStream;Ljavax/xml/transform/URIResolver;Z)V parameter 2<br/>Method usage not detected<br/>At XSLTTemplateProcessor.java:[line 117]<br/>At XSLTTemplateProcessor.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76509');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76509" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator<br/>In method org.apache.axis2.description.java2wsdl.DefaultSchemaGenerator.loadCustomSchemaFile()<br/>At DefaultSchemaGenerator.java:[line 178]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N76181');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N76181" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.description.WSDL20ToAxisServiceBuilder<br/>In method org.apache.axis2.description.WSDL20ToAxisServiceBuilder.readInTheWSDLFile(InputStream)<br/>At WSDL20ToAxisServiceBuilder.java:[line 1188]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N76239');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N76239" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.description.WSDL20ToAxisServiceBuilder<br/>In method org.apache.axis2.description.WSDL20ToAxisServiceBuilder.readInTheWSDLFile(String)<br/>At WSDL20ToAxisServiceBuilder.java:[line 1168]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77835');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77835" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLUtils<br/>In method org.apache.axis2.util.XMLUtils.newDocument(InputSource)<br/>At XMLUtils.java:[line 204]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77893');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77893" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLUtils<br/>In method org.apache.axis2.util.XMLUtils.toDOM(OMElement)<br/>At XMLUtils.java:[line 567]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N75939');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N75939" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.apache.axis2.description.Parameter<br/>In method org.apache.axis2.description.Parameter.readExternal(ObjectInput)<br/>At Parameter.java:[line 381]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77494');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77494" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLPrettyPrinter<br/>In method org.apache.axis2.util.XMLPrettyPrinter.prettify(File)<br/>At XMLPrettyPrinter.java:[line 68]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77552');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77552" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLPrettyPrinter<br/>In method org.apache.axis2.util.XMLPrettyPrinter.prettify(OMElement, OutputStream)<br/>At XMLPrettyPrinter.java:[line 141]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77951');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77951" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLUtils<br/>In method org.apache.axis2.util.XMLUtils.toOM(Element, boolean)<br/>At XMLUtils.java:[line 533]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78344');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78344" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, InputStream, InputStream)<br/>At XSLTTemplateProcessor.java:[line 58]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78402');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N78402" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream)<br/>At XSLTTemplateProcessor.java:[line 98]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78460');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78460" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream, URIResolver, boolean)<br/>At XSLTTemplateProcessor.java:[line 135]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N77610');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N77610" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLPrettyPrinter<br/>In method org.apache.axis2.util.XMLPrettyPrinter.prettify(File)<br/>At XMLPrettyPrinter.java:[line 68]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N77668');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N77668" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLPrettyPrinter<br/>In method org.apache.axis2.util.XMLPrettyPrinter.prettify(OMElement, OutputStream)<br/>At XMLPrettyPrinter.java:[line 141]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78009');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N78009" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XMLUtils<br/>In method org.apache.axis2.util.XMLUtils.toOM(Element, boolean)<br/>At XMLUtils.java:[line 533]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78518');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78518" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, InputStream, InputStream)<br/>At XSLTTemplateProcessor.java:[line 58]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N78576');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N78576" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream)<br/>At XSLTTemplateProcessor.java:[line 98]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N78634');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N78634" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.axis2.util.XSLTTemplateProcessor<br/>In method org.apache.axis2.util.XSLTTemplateProcessor.parse(OutputStream, Document, InputStream, URIResolver, boolean)<br/>At XSLTTemplateProcessor.java:[line 135]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="MALICIOUS_XSLT">MALICIOUS_XSLT: A malicious XSLT could be provided</a>
+</h2>
+            
+<p>
+    "XSLT (Extensible Stylesheet Language Transformations) is a language for transforming XML documents into other XML documents".<sup>[1]</sup><br/>
+    It is possible to attach malicious behavior to those style sheets. Therefore, if an attacker can control the content or the source of the
+    style sheet, he might be able to trigger remote code execution.<sup>[2]</sup>
+</p>
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Source xslt = new StreamSource(new FileInputStream(inputUserFile)); //Dangerous source
+
+Transformer transformer = TransformerFactory.newInstance().newTransformer(xslt);
+
+Source text = new StreamSource(new FileInputStream("/data_2_process.xml"));
+transformer.transform(text, new StreamResult(...));
+</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+
+<p>The solution is to enable the secure processing mode which will block potential reference to Java classes such as <code>java.lang.Runtime</code>.</p>
+
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+Source xslt  = new StreamSource(new FileInputStream(inputUserFile));
+
+Transformer transformer = factory.newTransformer(xslt);
+</pre>
+
+<p>
+Alternatively, make sure the style sheet is loaded from a safe sources and make sure that vulnerabilities such as
+Path traversal <sup>[3][4]</sup> are not possible.
+</p>
+<p>
+<b>References</b><br/>
+[1] <a href="https://en.wikipedia.org/wiki/XSLT">Wikipedia: XSLT (Extensible Stylesheet Language Transformations)</a><br/>
+<a href="https://prezi.com/y_fuybfudgnd/offensive-xslt/">Offensive XSLT</a> by Nicolas Grégoire<br/>
+[2] <a href="https://www.agarri.fr/blog/archives/2012/07/02/from_xslt_code_execution_to_meterpreter_shells/index.html">From XSLT code execution to Meterpreter shells</a> by Nicolas Grégoire<br/>
+<a href="https://xhe.myxwiki.org/xwiki/bin/view/Main/">XSLT Hacking Encyclopedia</a> by Nicolas Grégoire<br/>
+<a href="https://www.acunetix.com/blog/articles/the-hidden-dangers-of-xsltprocessor-remote-xsl-injection/">Acunetix.com : The hidden dangers of XSLTProcessor - Remote XSL injection</a><br/>
+<a href="https://www.w3.org/TR/xslt">w3.org XSL Transformations (XSLT) Version 1.0</a> : w3c specification<br/>
+[3] <a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+[4] <a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        </body>
+</html>

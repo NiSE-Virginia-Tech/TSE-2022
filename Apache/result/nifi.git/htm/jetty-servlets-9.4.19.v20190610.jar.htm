@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/jetty-servlets-9.4.19.v20190610.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>2420 lines of code analyzed,
+	in 41 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">2.07</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">5.37</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+<td align="right">
+<b>7.44</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">18</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66132');">
+<td>
+<span class="priority-2">HRS</span>
+</td>
+<td>HTTP parameter directly written to HTTP header output in org.eclipse.jetty.servlets.CrossOriginFilter.handle(HttpServletRequest, HttpServletResponse, FilterChain)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66132" style="display: none;">
+<a href="#HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">Bug type HRS_REQUEST_PARAMETER_TO_HTTP_HEADER (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handle(HttpServletRequest, HttpServletResponse, FilterChain)<br/>Local variable named origin<br/>At CrossOriginFilter.java:[line 298]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.exec(File, String, HttpServletRequest, HttpServletResponse)<br/>At CGI.java:[line 352]<br/>Sink method java/lang/Runtime.exec(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;<br/>Sink parameter 1<br/>Unknown source java/util/Map.values()Ljava/util/Collection;<br/>Unknown source org/eclipse/jetty/servlets/CGI$EnvList.getEnvArray()[Ljava/lang/String;<br/>Unknown source org/eclipse/jetty/servlets/CGI$EnvList.envMap<br/>Unknown source java/util/Collection.toArray([Ljava/lang/Object;)[Ljava/lang/Object;<br/>At CGI.java:[line 352]<br/>At CGI.java:[line 560]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66470');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66470" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handlePreflightResponse(HttpServletRequest, HttpServletResponse, String)<br/>At CrossOriginFilter.java:[line 420]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/CrossOriginFilter.handlePreflightResponse(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At CrossOriginFilter.java:[line 270]<br/>At CrossOriginFilter.java:[line 284]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66563');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66563" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handleSimpleResponse(HttpServletRequest, HttpServletResponse, String)<br/>At CrossOriginFilter.java:[line 401]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/CrossOriginFilter.handleSimpleResponse(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At CrossOriginFilter.java:[line 270]<br/>At CrossOriginFilter.java:[line 279]<br/>At CrossOriginFilter.java:[line 293]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66193');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66193" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handle(HttpServletRequest, HttpServletResponse, FilterChain)<br/>At CrossOriginFilter.java:[line 298]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>At CrossOriginFilter.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66272');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66272" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handlePreflightResponse(HttpServletRequest, HttpServletResponse, String)<br/>At CrossOriginFilter.java:[line 420]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/CrossOriginFilter.handlePreflightResponse(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At CrossOriginFilter.java:[line 270]<br/>At CrossOriginFilter.java:[line 284]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66366');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66366" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CrossOriginFilter<br/>In method org.eclipse.jetty.servlets.CrossOriginFilter.handleSimpleResponse(HttpServletRequest, HttpServletResponse, String)<br/>At CrossOriginFilter.java:[line 401]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/CrossOriginFilter.handleSimpleResponse(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At CrossOriginFilter.java:[line 270]<br/>At CrossOriginFilter.java:[line 279]<br/>At CrossOriginFilter.java:[line 293]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.init()<br/>At CGI.java:[line 118]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/CGI.getInitParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At CGI.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65734');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65734" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.service(HttpServletRequest, HttpServletResponse)<br/>At CGI.java:[line 194]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/util/StringUtil.nonNull(Ljava/lang/String;)Ljava/lang/String;<br/>At CGI.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65813');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65813" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.service(HttpServletRequest, HttpServletResponse)<br/>At CGI.java:[line 208]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/util/StringUtil.nonNull(Ljava/lang/String;)Ljava/lang/String;<br/>At CGI.java:[line 193]<br/>At CGI.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66666');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66666" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.DataRateLimitedServlet<br/>In method org.eclipse.jetty.servlets.DataRateLimitedServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At DataRateLimitedServlet.java:[line 119]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getPathTranslated()Ljava/lang/String;<br/>At DataRateLimitedServlet.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66745');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66745" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.PutFilter<br/>In method org.eclipse.jetty.servlets.PutFilter.doFilter(ServletRequest, ServletResponse, FilterChain)<br/>At PutFilter.java:[line 146]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/util/URIUtil.addPaths(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/net/URI.&lt;init&gt;(Ljava/lang/String;)V<br/>At PutFilter.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66829');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66829" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.PutFilter<br/>In method org.eclipse.jetty.servlets.PutFilter.handleMove(HttpServletRequest, HttpServletResponse, String, File)<br/>At PutFilter.java:[line 319]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/util/URIUtil.addEncodedPaths(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/net/URI.&lt;init&gt;(Ljava/lang/String;)V<br/>At PutFilter.java:[line 319]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66913');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66913" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.PutFilter<br/>In method org.eclipse.jetty.servlets.PutFilter.handlePut(HttpServletRequest, HttpServletResponse, String, File)<br/>At PutFilter.java:[line 225]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/eclipse/jetty/servlets/PutFilter._tmpdir<br/>At PutFilter.java:[line 225]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66024');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66024" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.ConcatServlet<br/>In method org.eclipse.jetty.servlets.ConcatServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At ConcatServlet.java:[line 138]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/eclipse/jetty/util/URIUtil.canonicalPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At ConcatServlet.java:[line 129]<br/>At ConcatServlet.java:[line 131]<br/>At ConcatServlet.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66992');">
+<td>
+<span class="priority-1">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66992" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.WelcomeFilter<br/>In method org.eclipse.jetty.servlets.WelcomeFilter.doFilter(ServletRequest, ServletResponse, FilterChain)<br/>At WelcomeFilter.java:[line 66]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source org/eclipse/jetty/servlets/WelcomeFilter.welcome<br/>Tainted source javax/servlet/http/HttpServletRequest.getServletPath()Ljava/lang/String;<br/>Tainted source javax/servlet/ServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At WelcomeFilter.java:[line 64]<br/>At WelcomeFilter.java:[line 66]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65902');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65902" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.exec(File, String, HttpServletRequest, HttpServletResponse)<br/>At CGI.java:[line 400]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65971');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65971" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.eclipse.jetty.servlets.CGI<br/>In method org.eclipse.jetty.servlets.CGI.exec(File, String, HttpServletRequest, HttpServletResponse)<br/>At CGI.java:[line 400]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="HRS_REQUEST_PARAMETER_TO_HTTP_HEADER">HRS_REQUEST_PARAMETER_TO_HTTP_HEADER: HTTP Response splitting vulnerability</a>
+</h2>
+            
+    <p>This code directly writes an HTTP parameter to an HTTP header, which allows for a HTTP response splitting
+vulnerability. See <a href="http://en.wikipedia.org/wiki/HTTP_response_splitting">http://en.wikipedia.org/wiki/HTTP_response_splitting</a>
+for more information.</p>
+<p>SpotBugs looks only for the most blatant, obvious cases of HTTP response splitting.
+If SpotBugs found <em>any</em>, you <em>almost certainly</em> have more
+vulnerabilities that SpotBugs doesn't report. If you are concerned about HTTP response splitting, you should seriously
+consider using a commercial static analysis or pen-testing tool.
+</p>
+
+
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="PERMISSIVE_CORS">PERMISSIVE_CORS: Overly permissive CORS policy</a>
+</h2>
+            
+<p>
+Prior to HTML5, Web browsers enforced the Same Origin Policy which ensures that in order for JavaScript to access the contents of a Web page, both the JavaScript and the Web page must originate from the same domain. Without the Same Origin Policy, a malicious website could serve up JavaScript that loads sensitive information from other websites using a client's credentials, cull through it, and communicate it back to the attacker. HTML5 makes it possible for JavaScript to access data across domains if a new HTTP header called Access-Control-Allow-Origin is defined. With this header, a Web server defines which other domains are allowed to access its domain using cross-origin requests. However, caution should be taken when defining the header because an overly permissive CORS policy will allow a malicious application to communicate with the victim application in an inappropriate way, leading to spoofing, data theft, relay and other attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>response.addHeader("Access-Control-Allow-Origin", "*");</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid using * as the value of the Access-Control-Allow-Origin header, which indicates that the application's data is accessible to JavaScript running on any domain.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.w3.org/TR/cors/">W3C Cross-Origin Resource Sharing</a><br/>
+<a href="https://enable-cors.org/">Enable Cross-Origin Resource Sharing</a><br/>
+</p>
+        
+<h2>
+<a name="HTTP_RESPONSE_SPLITTING">HTTP_RESPONSE_SPLITTING: Potential HTTP Response Splitting</a>
+</h2>
+            
+<p>
+    When an HTTP request contains unexpected <code>CR</code> and <code>LF</code> characters, the server may respond with an output stream
+    that is interpreted as two different HTTP responses (instead of one).
+    An attacker can control the second response and mount attacks such as cross-site scripting and cache poisoning attacks.
+    According to OWASP, the issue has been fixed in virtually all modern Java EE application servers, but it is still better to validate the input.
+    If you are concerned about this risk, you should test on the platform of concern to see
+    if the underlx platform allows for <code>CR</code> or <code>LF</code> characters to be injected into headers.
+    This weakness is reported with low priority because it requires the web container to be vulnerable.
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String author = request.getParameter(AUTHOR_PARAMETER);
+// ...
+Cookie cookie = new Cookie("author", author);
+response.addCookie(cookie);</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://www.owasp.org/index.php/HTTP_Response_Splitting">OWASP: HTTP Response Splitting</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="URL_REWRITING">URL_REWRITING: URL rewriting method</a>
+</h2>
+            
+<p>
+The implementation of this method includes the logic to determine whether the session ID needs to be encoded in the URL.<br/>
+URL rewriting has significant security risks. Since session ID appears in the URL, it may be easily seen by third parties. Session ID in the URL can be disclosed in many ways, for example:<br/>
+<ul>
+    <li>Log files,</li>
+    <li>The browser history,</li>
+    <li>By copy-and-pasting it into an e-mail or posting,</li>
+    <li>The HTTP Referrer.</li>
+</ul>
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>out.println("Click &lt;a href=" +
+                res.encodeURL(HttpUtils.getRequestURL(req).toString()) +
+                "&gt;here&lt;/a&gt;");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid using those methods. If you are looking to encode a URL String or form parameters do not confuse the URL rewriting methods with the URLEncoder class.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A3-Broken_Authentication_and_Session_Management">OWASP Top 10 2010-A3-Broken Authentication and Session Management</a><br/>
+</p>
+            
+        </body>
+</html>

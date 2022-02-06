@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/hsweb-framework/hsweb-system/hsweb-system-file/hsweb-system-file-web/target/hsweb-system-file-web-3.0.0-RC-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>126 lines of code analyzed,
+	in 2 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">15.87</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>2</b>
+</td>
+<td align="right">
+<b>15.87</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">2</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>2</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECSPRCSRFURM</span>
+</td>
+<td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+<br/>In class org.hswebframework.web.controller.file.FileController<br/>In method org.hswebframework.web.controller.file.FileController.downloadTxt(String, String, HttpServletResponse)<br/>At FileController.java:[lines 132-136]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.hswebframework.web.controller.file.FileController<br/>In method org.hswebframework.web.controller.file.FileController.downloadTxt(String, String, HttpServletResponse)<br/>At FileController.java:[line 135]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hswebframework/web/controller/file/FileController.downloadTxt(Ljava/lang/String;Ljava/lang/String;Ljavax/servlet/http/HttpServletResponse;)V parameter 1</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING: Spring CSRF unrestricted RequestMapping</a>
+</h2>
+            
+<p>Methods annotated with <code>RequestMapping</code> are by default mapped to all the HTTP request methods.
+However, Spring Security's CSRF protection is not enabled by default
+for the HTTP request methods <code>GET</code>, <code>HEAD</code>, <code>TRACE</code>, and <code>OPTIONS</code>
+(as this could cause the tokens to be leaked).
+Therefore, state-changing methods annotated with <code>RequestMapping</code> and not narrowing the mapping
+to the HTTP request methods <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, or <code>PATCH</code>
+are vulnerable to CSRF attacks.</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@Controller
+public class UnsafeController {
+
+    @RequestMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Spring Framework 4.3 and later):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use @GetMapping.
+     */
+    @GetMapping("/path")
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either @PostMapping, @PutMapping, @DeleteMapping, or @PatchMapping.
+     */
+    @PostMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Before Spring Framework 4.3):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use either
+     * RequestMethod.GET, RequestMethod.HEAD, RequestMethod.TRACE, or RequestMethod.OPTIONS.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.GET)
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either
+     * RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, or RequestMethod.PATCH.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.POST)
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-use-proper-verbs">Spring Security Official Documentation: Use proper HTTP verbs (CSRF protection)</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">OWASP: Cross-Site Request Forgery</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet">OWASP: CSRF Prevention Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

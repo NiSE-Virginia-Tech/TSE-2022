@@ -1,0 +1,152 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/tls-attacker/Attacks/target/Attacks.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 355.6 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r12
+		Type: javax.crypto.Cipher
+		Statement: r12 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer135)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: java.util.List generatePkcs1Vectors(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.attacks.config.BleichenbacherCommandConfig$Type,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: 9a2cee2c90f197877d3d2c03034455c9df38390d15ec37a4a285e2129826b61
+		Secure: false
+	Object:
+		Variable: r8
+		Type: javax.crypto.Cipher
+		Statement: r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer139)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1Vector generateCorrectPkcs1Vector(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: 95054f5ebd891487ba8e7ea7d37989309a273a553c0501df0849c4728a90b416
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: r3 = virtualinvoke r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1Vector generateCorrectPkcs1Vector(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: 23434bea3a1dc1333075ac099c276b78158da258e9b89f3f23ae4a7f73bfdcc3
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1Vector generateCorrectPkcs1Vector(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: 3b8ab46c85ff2ac69d9a4c883edc76e93e35cab4c3758bd4b08779792452f6cd
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r6 = virtualinvoke r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: java.util.List generatePkcs1Vectors(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.attacks.config.BleichenbacherCommandConfig$Type,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: 125c6e38cdd63fc9503dacf068f37c34301414aae8f5603fb5966e5f27c4b634
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: r6 = virtualinvoke r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator: java.util.List generatePkcs1Vectors(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.attacks.config.BleichenbacherCommandConfig$Type,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)>
+		SHA-256: acfc137677e156004b083e8154fa227758f86ce2423861b322d367060c9a50bc
+		Secure: false
+
+Findings in Java Class: de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1VectorGenerator
+
+	 in Method: java.util.List generatePkcs1Vectors(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.attacks.config.BleichenbacherCommandConfig$Type,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #9a2cee2c90f197877d3d2c03034455c9df38390d15ec37a4a285e2129826b61)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to javax.crypto.Cipher: byte[] doFinal(byte[]), javax.crypto.Cipher: int doFinal(java.nio.ByteBuffer,java.nio.ByteBuffer), javax.crypto.Cipher: byte[] doFinal(byte[],int,int), javax.crypto.Cipher: int doFinal(byte[],int,int,byte[]), javax.crypto.Cipher: int doFinal(byte[],int,int,byte[],int), update, wrap
+			at statement: r6 = virtualinvoke r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #9a2cee2c90f197877d3d2c03034455c9df38390d15ec37a4a285e2129826b61)
+			First parameter (with value "RSA/NONE/NoPadding") should be any of RSA/{Empty String, ECB}
+			at statement: r12 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer135)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r12.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer136, r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #9a2cee2c90f197877d3d2c03034455c9df38390d15ec37a4a285e2129826b61)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher.
+			at statement: r6 = virtualinvoke r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #9a2cee2c90f197877d3d2c03034455c9df38390d15ec37a4a285e2129826b61)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: virtualinvoke r12.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer136, r0)
+
+
+	 in Method: de.rub.nds.tlsattacker.attacks.pkcs1.Pkcs1Vector generateCorrectPkcs1Vector(java.security.interfaces.RSAPublicKey,de.rub.nds.tlsattacker.core.constants.ProtocolVersion)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #95054f5ebd891487ba8e7ea7d37989309a273a553c0501df0849c4728a90b416)
+			First parameter (with value "RSA/NONE/NoPadding") should be any of RSA/{Empty String, ECB}
+			at statement: r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer139)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r8.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer137, r0)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 6
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	IncompleteOperationError: 2
+	RequiredPredicateError: 2
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.498 s

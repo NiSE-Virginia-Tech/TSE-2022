@@ -1,0 +1,1070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/ijpay/target/IJPay.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>4889 lines of code analyzed,
+	in 51 classes, 
+	in 8 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">6.95</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+<td align="right">
+<b>6.95</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">34</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69316');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69316" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.jpay.util.StringUtils<br/>In method com.jpay.util.StringUtils.&lt;static initializer for StringUtils&gt;()<br/>At StringUtils.java:[line 129]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66249');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66249" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.AcpService<br/>In method com.jpay.unionpay.AcpService.deCodeFileContent(Map, String, String)<br/>At AcpService.java:[line 178]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source com/jpay/unionpay/AcpService.deCodeFileContent(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source com/jpay/unionpay/AcpService.deCodeFileContent(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At AcpService.java:[line 172]<br/>At AcpService.java:[line 173]<br/>At AcpService.java:[line 174]<br/>At AcpService.java:[line 176]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66373');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66373" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.AcpService<br/>In method com.jpay.unionpay.AcpService.enCodeFileContent(String, String)<br/>At AcpService.java:[line 123]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.enCodeFileContent(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66447');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66447" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.CertUtil<br/>In method com.jpay.unionpay.CertUtil.getKeyInfo(String, String, String)<br/>At CertUtil.java:[line 492]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/CertUtil.getKeyInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 2<br/>Unknown source com/jpay/unionpay/CertUtil.getKeyInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 1<br/>Unknown source com/jpay/unionpay/CertUtil.getKeyInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 0<br/>At AcpService.java:[line 381]<br/>At AcpService.java:[line 438]<br/>At CertUtil.java:[line 135]<br/>At CertUtil.java:[line 136]<br/>At CertUtil.java:[line 137]<br/>At CertUtil.java:[line 266]<br/>At CertUtil.java:[line 342]<br/>At CertUtil.java:[line 491]<br/>At CertUtil.java:[line 517]<br/>At SDKConfig.java:[line 460]<br/>At SDKConfig.java:[line 468]<br/>At SDKConfig.java:[line 476]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66646');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66646" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.CertUtil<br/>In method com.jpay.unionpay.CertUtil.initCert(String)<br/>At CertUtil.java:[line 285]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/CertUtil.initCert(Ljava/lang/String;)Ljava/security/cert/X509Certificate; parameter 0<br/>At CertUtil.java:[line 151]<br/>At CertUtil.java:[line 164]<br/>At CertUtil.java:[line 177]<br/>At CertUtil.java:[line 373]<br/>At CertUtil.java:[line 375]<br/>At CertUtil.java:[line 460]<br/>At CertUtil.java:[line 462]<br/>At SDKConfig.java:[line 484]<br/>At SDKConfig.java:[line 644]<br/>At SDKConfig.java:[line 723]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66815');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66815" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.CertUtil<br/>In method com.jpay.unionpay.CertUtil.initValidateCertFromDir()<br/>At CertUtil.java:[line 224]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKConfig.getValidateCertDir()Ljava/lang/String;<br/>Unknown source com/jpay/unionpay/SDKConfig.validateCertDir<br/>At CertUtil.java:[line 207]<br/>At CertUtil.java:[line 208]<br/>At SDKConfig.java:[line 492]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66919');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66919" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.CertUtil<br/>In method com.jpay.unionpay.CertUtil.initValidateCertFromDir()<br/>At CertUtil.java:[line 229]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66988');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66988" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKConfig<br/>In method com.jpay.unionpay.SDKConfig.loadPropertiesFromPath(String)<br/>At SDKConfig.java:[line 208]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKConfig.loadPropertiesFromPath(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At SDKConfig.java:[line 206]<br/>At SDKConfig.java:[line 207]<br/>At SDKConfig.java:[line 208]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67092');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67092" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKUtil<br/>In method com.jpay.unionpay.SDKUtil.copyFile(String, String)<br/>At SDKUtil.java:[line 650]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKUtil.copyFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>At SDKConfig.java:[line 484]<br/>At SDKUtil.java:[line 592]<br/>At SDKUtil.java:[line 595]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67191');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67191" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKUtil<br/>In method com.jpay.unionpay.SDKUtil.readFileByNIO(String)<br/>At SDKUtil.java:[line 764]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKUtil.readFileByNIO(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67265');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67265" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKUtil<br/>In method com.jpay.unionpay.SDKUtil.writeFile(String, String, String)<br/>At SDKUtil.java:[line 707]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKUtil.writeFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2<br/>At SDKConfig.java:[line 484]<br/>At SDKUtil.java:[line 592]<br/>At SDKUtil.java:[line 598]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68688');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68688" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.util.HttpKitExt<br/>In method com.jpay.util.HttpKitExt.postSSL(String, String, String, String)<br/>At HttpKitExt.java:[line 155]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpKitExt.postSSL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Method usage not detected<br/>At HttpUtils.java:[line 507]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69168');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69168" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.util.HttpUtils$OkHttp3Delegate<br/>In method com.jpay.util.HttpUtils$OkHttp3Delegate.postSSL(String, String, String, String)<br/>At HttpUtils.java:[line 388]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpUtils$OkHttp3Delegate.postSSL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69242');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69242" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jpay.util.HttpUtils$OkHttpDelegate<br/>In method com.jpay.util.HttpUtils$OkHttpDelegate.postSSL(String, String, String, String)<br/>At HttpUtils.java:[line 222]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpUtils$OkHttpDelegate.postSSL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67364');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67364" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKUtil<br/>In method com.jpay.unionpay.SDKUtil.copyFile(String, String)<br/>At SDKUtil.java:[line 651]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKUtil.copyFile(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>At SDKConfig.java:[line 484]<br/>At SDKUtil.java:[line 592]<br/>At SDKUtil.java:[line 593]<br/>At SDKUtil.java:[line 595]<br/>At SDKUtil.java:[line 752]<br/>At SDKUtil.java:[line 753]<br/>At SDKUtil.java:[line 754]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67503');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67503" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jpay.unionpay.SDKUtil<br/>In method com.jpay.unionpay.SDKUtil.writeFile(String, String, String)<br/>At SDKUtil.java:[line 713]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/SDKUtil.writeFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2<br/>At SDKConfig.java:[line 484]<br/>At SDKUtil.java:[line 592]<br/>At SDKUtil.java:[line 598]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67602');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67602" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jpay.unionpay.SecureUtil<br/>In method com.jpay.unionpay.SecureUtil.sha1(byte[])<br/>At SecureUtil.java:[line 167]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67660');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67660" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jpay.unionpay.SecureUtil<br/>In method com.jpay.unionpay.SecureUtil.signBySoft(PrivateKey, byte[])<br/>At SecureUtil.java:[line 276]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67718');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67718" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jpay.unionpay.SecureUtil<br/>In method com.jpay.unionpay.SecureUtil.validateSignBySoft(PublicKey, byte[], byte[])<br/>At SecureUtil.java:[line 301]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68772');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68772" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.jpay.util.HttpKitExt<br/>In method com.jpay.util.HttpKitExt.downloadMaterial(String, String)<br/>At HttpKitExt.java:[line 115]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source com/jpay/util/HttpKitExt.downloadMaterial(Ljava/lang/String;Ljava/lang/String;)Ljava/io/InputStream; parameter 1<br/>Method usage not detected<br/>At HttpKitExt.java:[line 114]<br/>At HttpUtils.java:[line 513]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68871');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68871" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.jpay.util.HttpKitExt<br/>In method com.jpay.util.HttpKitExt.postSSL(String, String, InputStream, String)<br/>At HttpKitExt.java:[line 216]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpKitExt.postSSL(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)Ljava/lang/String; parameter 3<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Method usage not detected<br/>At HttpKitExt.java:[line 215]<br/>At HttpUtils.java:[line 502]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68970');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68970" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.jpay.util.HttpKitExt<br/>In method com.jpay.util.HttpKitExt.postSSL(String, String, String, String)<br/>At HttpKitExt.java:[line 164]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpKitExt.postSSL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 3<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Method usage not detected<br/>At HttpKitExt.java:[line 163]<br/>At HttpUtils.java:[line 507]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69069');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69069" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.jpay.util.HttpKitExt<br/>In method com.jpay.util.HttpKitExt.uploadMedia(String, File, String)<br/>At HttpKitExt.java:[line 45]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source com/jpay/util/HttpKitExt.uploadMedia(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Method usage not detected<br/>At HttpKitExt.java:[line 44]<br/>At HttpUtils.java:[line 522]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class com.jpay.alipay.AliPayApi<br/>In method com.jpay.alipay.AliPayApi.batchTrans(Map, String, String, HttpServletResponse)<br/>At AliPayApi.java:[line 885]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/alipay/AlipayCore.buildRequestPara(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map; parameter 0<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source com/jpay/alipay/AlipayCore.paraFilter(Ljava/util/Map;)Ljava/util/Map;<br/>Unknown source java/util/Map.keySet()Ljava/util/Set;<br/>Unknown source com/jpay/alipay/AlipayCore.buildRequestPara(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map; parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jpay/alipay/AlipayCore.createLinkString(Ljava/util/Map;)Ljava/lang/String;<br/>Unknown source com/jpay/ext/kit/DateKit.toStr(Ljava/util/Date;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jpay/alipay/AlipayCore.buildRequestPara(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source com/jpay/alipay/AliPayApi.batchTrans(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljavax/servlet/http/HttpServletResponse;)V parameter 3<br/>Unknown source com/jpay/alipay/AlipayCore.paraFilter(Ljava/util/Map;)Ljava/util/Map; parameter 0<br/>Unknown source com/jpay/alipay/AlipayCore.createLinkString(Ljava/util/Map;)Ljava/lang/String; parameter 0<br/>Unknown source com/jpay/alipay/AliPayApi.batchTrans(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljavax/servlet/http/HttpServletResponse;)V parameter 1<br/>Method usage not detected<br/>At AliPayApi.java:[line 881]<br/>At AliPayApi.java:[line 882]<br/>At AliPayApi.java:[line 883]<br/>At AliPayApi.java:[line 884]<br/>At AliPayApi.java:[line 885]<br/>At AlipayCore.java:[line 37]<br/>At AlipayCore.java:[line 42]<br/>At AlipayCore.java:[line 43]<br/>At AlipayCore.java:[line 59]<br/>At AlipayCore.java:[line 60]<br/>At AlipayCore.java:[line 65]<br/>At AlipayCore.java:[line 77]<br/>At AlipayCore.java:[line 78]<br/>At AlipayCore.java:[line 81]<br/>At AlipayCore.java:[line 82]<br/>At AlipayCore.java:[line 84]<br/>At AlipayCore.java:[line 86]<br/>At AlipayCore.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66033');">
+<td>
+<span class="priority-2">SECWHV</span>
+</td>
+<td>HostnameVerifier that accept any signed certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66033" style="display: none;">
+<a href="#WEAK_HOSTNAME_VERIFIER">Bug type WEAK_HOSTNAME_VERIFIER (click for details)</a>
+<br/>In class com.jpay.ext.kit.HttpKit$TrustAnyHostnameVerifier<br/>In method com.jpay.ext.kit.HttpKit$TrustAnyHostnameVerifier.verify(String, SSLSession)<br/>At HttpKit.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66087');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66087" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class com.jpay.ext.kit.HttpKit$TrustAnyTrustManager<br/>In method com.jpay.ext.kit.HttpKit$TrustAnyTrustManager.checkClientTrusted(X509Certificate[], String)<br/>At HttpKit.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66141');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66141" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class com.jpay.ext.kit.HttpKit$TrustAnyTrustManager<br/>In method com.jpay.ext.kit.HttpKit$TrustAnyTrustManager.checkServerTrusted(X509Certificate[], String)<br/>At HttpKit.java:[line 54]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66195');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66195" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class com.jpay.ext.kit.HttpKit$TrustAnyTrustManager<br/>In method com.jpay.ext.kit.HttpKit$TrustAnyTrustManager.getAcceptedIssuers()<br/>At HttpKit.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69374');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69374" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class com.jpay.util.XmlHelper<br/>In method com.jpay.util.XmlHelper.evalXPath(String, Object, QName)<br/>At XmlHelper.java:[line 105]<br/>Sink method javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object;<br/>Sink parameter 2<br/>Unknown source com/jpay/util/XmlHelper.evalXPath(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; parameter 2<br/>Method usage not detected<br/>At XmlHelper.java:[line 119]<br/>At XmlHelper.java:[line 130]<br/>At XmlHelper.java:[line 141]<br/>At XmlHelper.java:[line 152]<br/>At XmlHelper.java:[line 163]<br/>At XmlHelper.java:[line 176]<br/>At XmlHelper.java:[line 189]<br/>At XmlHelper.java:[line 202]<br/>At XmlHelper.java:[line 215]<br/>At XmlHelper.java:[line 228]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65880');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65880" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.jpay.alipay.AliPayApi<br/>In method com.jpay.alipay.AliPayApi.tradePage(HttpServletResponse, AlipayTradePagePayModel, String, String)<br/>At AliPayApi.java:[line 486]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/alipay/api/response/AlipayTradePagePayResponse.getBody()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65949');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65949" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.jpay.alipay.AliPayApi<br/>In method com.jpay.alipay.AliPayApi.wapPay(HttpServletResponse, AlipayTradeWapPayModel, String, String)<br/>At AliPayApi.java:[line 84]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/alipay/AliPayApi.wapPayStr(Ljavax/servlet/http/HttpServletResponse;Lcom/alipay/api/domain/AlipayTradeWapPayModel;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/alipay/api/response/AlipayTradeWapPayResponse.getBody()Ljava/lang/String;<br/>At AliPayApi.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67776');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67776" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.jpay.unionpay.UnionPayApi<br/>In method com.jpay.unionpay.UnionPayApi.frontConsume(HttpServletResponse, Map)<br/>At UnionPayApi.java:[line 33]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source com/jpay/unionpay/SDKConfig.getFrontRequestUrl()Ljava/lang/String;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jpay/unionpay/UnionPayApi.frontConsume(Ljavax/servlet/http/HttpServletResponse;Ljava/util/Map;)V parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source com/jpay/unionpay/SDKConfig.frontRequestUrl<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Method usage not detected<br/>At AcpService.java:[line 90]<br/>At AcpService.java:[line 91]<br/>At AcpService.java:[line 94]<br/>At AcpService.java:[line 95]<br/>At AcpService.java:[line 97]<br/>At AcpService.java:[line 98]<br/>At AcpService.java:[line 99]<br/>At AcpService.java:[line 100]<br/>At AcpService.java:[line 104]<br/>At AcpService.java:[line 105]<br/>At AcpService.java:[line 106]<br/>At AcpService.java:[line 107]<br/>At AcpService.java:[line 108]<br/>At AcpService.java:[line 109]<br/>At AcpService.java:[line 110]<br/>At SDKConfig.java:[line 444]<br/>At UnionPayApi.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68080');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68080" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.jpay.unionpay.UnionPayApi<br/>In method com.jpay.unionpay.UnionPayApi.frontRequest(HttpServletResponse, Map)<br/>At UnionPayApi.java:[line 46]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source com/jpay/unionpay/SDKConfig.getFrontRequestUrl()Ljava/lang/String;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source com/jpay/unionpay/UnionPayApi.frontRequest(Ljavax/servlet/http/HttpServletResponse;Ljava/util/Map;)V parameter 0<br/>Unknown source com/jpay/unionpay/SDKConfig.frontRequestUrl<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Method usage not detected<br/>At AcpService.java:[line 90]<br/>At AcpService.java:[line 91]<br/>At AcpService.java:[line 94]<br/>At AcpService.java:[line 95]<br/>At AcpService.java:[line 97]<br/>At AcpService.java:[line 98]<br/>At AcpService.java:[line 99]<br/>At AcpService.java:[line 100]<br/>At AcpService.java:[line 104]<br/>At AcpService.java:[line 105]<br/>At AcpService.java:[line 106]<br/>At AcpService.java:[line 107]<br/>At AcpService.java:[line 108]<br/>At AcpService.java:[line 109]<br/>At AcpService.java:[line 110]<br/>At SDKConfig.java:[line 444]<br/>At UnionPayApi.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68384');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68384" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.jpay.unionpay.UnionPayApi<br/>In method com.jpay.unionpay.UnionPayApi.jfFrontConsume(HttpServletResponse, Map)<br/>At UnionPayApi.java:[line 174]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source com/jpay/unionpay/UnionPayApi.jfFrontConsume(Ljavax/servlet/http/HttpServletResponse;Ljava/util/Map;)V parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jpay/unionpay/SDKConfig.jfFrontRequestUrl<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source com/jpay/unionpay/AcpService.createAutoFormHtml(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jpay/unionpay/SDKConfig.getJfFrontRequestUrl()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Method usage not detected<br/>At AcpService.java:[line 90]<br/>At AcpService.java:[line 91]<br/>At AcpService.java:[line 94]<br/>At AcpService.java:[line 95]<br/>At AcpService.java:[line 97]<br/>At AcpService.java:[line 98]<br/>At AcpService.java:[line 99]<br/>At AcpService.java:[line 100]<br/>At AcpService.java:[line 104]<br/>At AcpService.java:[line 105]<br/>At AcpService.java:[line 106]<br/>At AcpService.java:[line 107]<br/>At AcpService.java:[line 108]<br/>At AcpService.java:[line 109]<br/>At AcpService.java:[line 110]<br/>At SDKConfig.java:[line 572]<br/>At UnionPayApi.java:[line 173]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="WEAK_HOSTNAME_VERIFIER">WEAK_HOSTNAME_VERIFIER: HostnameVerifier that accept any signed certificates</a>
+</h2>
+            
+<p>A <code>HostnameVerifier</code> that accept any host are often use because of certificate reuse on many hosts.
+As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a truststore for example) should be built.
+Wildcard certificates should be created for reused on multiples subdomains.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>public class AllHosts implements HostnameVerifier {
+    public boolean verify(final String hostname, final SSLSession session) {
+        return true;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_TRUST_MANAGER">WEAK_TRUST_MANAGER: TrustManager that accept any certificates</a>
+</h2>
+            
+<p>Empty TrustManager implementations are often used to connect easily to a host that is not signed by a root
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a>. As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a TrustStore for example) should be built.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>class TrustAllManager implements X509TrustManager {
+
+    @Override
+    public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any client connecting (no certificate validation)
+    }
+
+    @Override
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any remote server (no certificate validation)
+    }
+
+    @Override
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="XPATH_INJECTION">XPATH_INJECTION: Potential XPath Injection</a>
+</h2>
+            
+<p>
+XPath injection risks are similar to SQL injection. If the XPath query contains untrusted user input, the complete data source
+could be exposed. This could allow an attacker to access unauthorized data or maliciously modify the target XML.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-39: XPath Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/643.html">CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61407250">CERT: IDS09-J. Prevent XPath Injection (archive)</a><br/>
+<a href="https://media.blackhat.com/bh-eu-12/Siddharth/bh-eu-12-Siddharth-Xpath-WP.pdf">Black Hat Europe 2012: Hacking XPath 2.0</a><br/>
+<a href="https://www.balisage.net/Proceedings/vol7/html/Vlist02/BalisageVol7-Vlist02.html">Balisage.net: XQuery Injection</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

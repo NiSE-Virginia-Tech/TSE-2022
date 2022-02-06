@@ -1,0 +1,216 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/minecraft-launcher/target/minecraft-launcher-1.0.1-jar-with-dependencies.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 635.4 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 7 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r8 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer4409)
+		Method: <net.minecraft.launcher.authentication.BaseAuthenticationService: javax.crypto.Cipher getCipher(int,java.lang.String)>
+		SHA-256: 775675ea04e0424f52db82ef939e0fb88a85ae34672bcfa8e9c04eb0df469bfb
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>(r2, varReplacer4408)
+		Method: <net.minecraft.launcher.authentication.BaseAuthenticationService: javax.crypto.Cipher getCipher(int,java.lang.String)>
+		SHA-256: a50c91379fc9e3843f799249ede3c5ae690966276550795993fa04388094416a
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Cipher
+		Statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4410)
+		Method: <net.minecraft.launcher.authentication.BaseAuthenticationService: javax.crypto.Cipher getCipher(int,java.lang.String)>
+		SHA-256: e3c5e040fc50183b7cc01f33795ceb0167ce35e30ff758b0f078cb8f1d58016d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r2.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r3, $r4)
+		Method: <net.minecraft.launcher.updater.download.Downloadable: java.lang.String getMD5(java.io.File)>
+		SHA-256: 187751e547a49fd0975ab07a30da0619903f4fc6f86b849c05e7e6aa9c2e1eab
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4072)
+		Method: <net.minecraft.launcher.updater.download.Downloadable: java.lang.String getMD5(java.io.File)>
+		SHA-256: 9dc1d8f836d4d577aad09278e0d8a4718723cfadf61f56c9e5fe229685523045
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r7.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r8, r11)
+		Method: <net.minecraft.launcher.authentication.BaseAuthenticationService: java.lang.String[] getStoredDetails(java.io.File)>
+		SHA-256: 3bbbd33cb5eebbc03170030c548c7bae4fe82abcc91396d87400546728bb9a9a
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.minecraft.launcher.updater.download.Downloadable: java.lang.String copyAndDigest(java.io.InputStream,java.io.OutputStream)>
+		SHA-256: e1e42eab62bba42dd8a5ba5ad0852ff52eedc89580e13f5dd0ea698542c3dfc4
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.SecretKey
+		Statement: r4 = virtualinvoke $r8.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r9)
+		Method: <net.minecraft.launcher.authentication.BaseAuthenticationService: javax.crypto.Cipher getCipher(int,java.lang.String)>
+		SHA-256: 124a6c73ba22fdfeb6c1c9de00ab52109c5f5b5e665657d0e8f5f74fc52a2eb9
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4061)
+		Method: <net.minecraft.launcher.updater.download.Downloadable: java.lang.String copyAndDigest(java.io.InputStream,java.io.OutputStream)>
+		SHA-256: 1f632467d93166bc06efdc781fe0915610519fcee2d320fe72a395a3de2b15be
+		Secure: false
+
+Findings in Java Class: net.minecraft.launcher.authentication.BaseAuthenticationService
+
+	 in Method: javax.crypto.Cipher getCipher(int,java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #e3c5e040fc50183b7cc01f33795ceb0167ce35e30ff758b0f078cb8f1d58016d)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4410)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #775675ea04e0424f52db82ef939e0fb88a85ae34672bcfa8e9c04eb0df469bfb)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r8 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer4409)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #a50c91379fc9e3843f799249ede3c5ae690966276550795993fa04388094416a)
+			Second parameter (with value 5)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>(r2, varReplacer4408)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r4 = virtualinvoke $r8.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>(r2, varReplacer4408)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r10)
+
+
+	 in Method: java.lang.String[] getStoredDetails(java.io.File)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #e3c5e040fc50183b7cc01f33795ceb0167ce35e30ff758b0f078cb8f1d58016d)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r7.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r8, r11)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #3bbbd33cb5eebbc03170030c548c7bae4fe82abcc91396d87400546728bb9a9a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r6.<java.io.DataInputStream: void <init>(java.io.InputStream)>($r7)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #e3c5e040fc50183b7cc01f33795ceb0167ce35e30ff758b0f078cb8f1d58016d)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: r11 = staticinvoke <net.minecraft.launcher.authentication.BaseAuthenticationService: javax.crypto.Cipher getCipher(int,java.lang.String)>(varReplacer4412, varReplacer4413)
+
+
+Findings in Java Class: net.minecraft.launcher.updater.download.Downloadable
+
+	 in Method: java.lang.String copyAndDigest(java.io.InputStream,java.io.OutputStream)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1f632467d93166bc06efdc781fe0915610519fcee2d320fe72a395a3de2b15be)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r7 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1f632467d93166bc06efdc781fe0915610519fcee2d320fe72a395a3de2b15be)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4061)
+
+
+	 in Method: java.lang.String getMD5(java.io.File)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #9dc1d8f836d4d577aad09278e0d8a4718723cfadf61f56c9e5fe229685523045)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r2.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r3, $r4)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9dc1d8f836d4d577aad09278e0d8a4718723cfadf61f56c9e5fe229685523045)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4072)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #187751e547a49fd0975ab07a30da0619903f4fc6f86b849c05e7e6aa9c2e1eab)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r7 = virtualinvoke r12.<java.security.DigestInputStream: java.security.MessageDigest getMessageDigest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	RequiredPredicateError: 2
+	ConstraintError: 5
+	IncompleteOperationError: 5
+	ForbiddenMethodError: 1
+=====================================================================
+

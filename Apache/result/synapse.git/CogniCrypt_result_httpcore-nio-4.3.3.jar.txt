@@ -1,0 +1,125 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 475.5 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r23
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r23 = virtualinvoke r3.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>(r25, i0)
+		Method: <org.apache.http.nio.reactor.ssl.SSLIOSession: void <init>(org.apache.http.nio.reactor.IOSession,org.apache.http.nio.reactor.ssl.SSLMode,javax.net.ssl.SSLContext,org.apache.http.nio.reactor.ssl.SSLSetupHandler)>
+		SHA-256: 16d75aaceb693a8b531877909c9528558ecca83943b7009b03f1dab012ae85e2
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLContext
+		Statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer785)
+		Method: <org.apache.http.impl.nio.SSLContextUtils: javax.net.ssl.SSLContext getDefault()>
+		SHA-256: a19735bab601136eeb674608b57472ddcfb09e7c3369b996c07d6821f36cc32a
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLContext
+		Statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer784)
+		Method: <org.apache.http.impl.nio.SSLContextUtils: javax.net.ssl.SSLContext getDefault()>
+		SHA-256: d49576da1ce9e46493fcafbc48da23d2b8a0c94e3bf5e7265b3f764daed5c5c6
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r20 = virtualinvoke r3.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <org.apache.http.nio.reactor.ssl.SSLIOSession: void <init>(org.apache.http.nio.reactor.IOSession,org.apache.http.nio.reactor.ssl.SSLMode,javax.net.ssl.SSLContext,org.apache.http.nio.reactor.ssl.SSLSetupHandler)>
+		SHA-256: c532801b20c75bf886ece3eca1d7b3dfc7554d4d4419721304ecc898b158453d
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r11 = virtualinvoke r3.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <org.apache.http.nio.reactor.ssl.SSLIOSession: void <init>(org.apache.http.nio.reactor.IOSession,org.apache.http.nio.reactor.ssl.SSLMode,javax.net.ssl.SSLContext,org.apache.http.nio.reactor.ssl.SSLSetupHandler)>
+		SHA-256: e86df6d92ad3277c278bb5e71aa9752663ca5766bc3446a2ebef3ea1562ee922
+		Secure: false
+
+Findings in Java Class: org.apache.http.impl.nio.SSLContextUtils
+
+	 in Method: javax.net.ssl.SSLContext getDefault()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a19735bab601136eeb674608b57472ddcfb09e7c3369b996c07d6821f36cc32a)
+			First parameter (with value "Default") should be any of {TLSv1.2}
+			at statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer785)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer780, varReplacer780, varReplacer780)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d49576da1ce9e46493fcafbc48da23d2b8a0c94e3bf5e7265b3f764daed5c5c6)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer784)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer780, varReplacer780, varReplacer780)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 2
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.568 s
+

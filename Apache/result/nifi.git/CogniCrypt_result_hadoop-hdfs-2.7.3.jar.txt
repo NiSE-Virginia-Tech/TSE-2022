@@ -1,0 +1,206 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 3.215 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 8 analysis seeds within 8 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.hdfs.security.token.block.BlockTokenSecretManager: void <init>(long,long,int,java.lang.String,java.lang.String)>
+		SHA-256: 71f201fa690ccf63f7574ad63a1e93888b75aaa67d18cc66d8062cadd66fb336
+		Secure: true
+	Object:
+		Variable: r13
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke r13.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r1, r2)
+		Method: <org.apache.hadoop.hdfs.util.MD5FileUtils: org.apache.hadoop.io.MD5Hash computeMd5ForFile(java.io.File)>
+		SHA-256: 444f78872f188cfcbca16979b7762417833495aeb5468c11dd633eace39537a3
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.hdfs.DFSUtil$2: java.security.SecureRandom initialValue()>
+		SHA-256: 3e422b639228b02d62658631ea0697a5d1f7d1e9a317a2484be295f75ca5a24d
+		Secure: true
+	Object:
+		Variable: r46
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke r46.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r45, r5)
+		Method: <org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf$Saver: void saveInternal(java.io.FileOutputStream,org.apache.hadoop.hdfs.server.namenode.FSImageCompression,java.lang.String)>
+		SHA-256: 336d20b637844ca5d903b8a61367081e65c2236c1bb8ea9a85f393ee2b5504ce
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r11.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r12, r4)
+		Method: <org.apache.hadoop.hdfs.server.namenode.FSImageFormat$Loader: void load(java.io.File)>
+		SHA-256: 62531ff07c81d5965ad386acdd63a577dc59a0a48091d380dadb00a62b7dec26
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.hdfs.security.token.block.BlockTokenSecretManager: void <init>(boolean,long,long,java.lang.String,java.lang.String)>
+		SHA-256: 71f201fa690ccf63f7574ad63a1e93888b75aaa67d18cc66d8062cadd66fb336
+		Secure: true
+	Object:
+		Variable: r89
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke r89.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r102, r76)
+		Method: <org.apache.hadoop.hdfs.server.namenode.TransferFsImage: org.apache.hadoop.io.MD5Hash receiveFile(java.lang.String,java.util.List,org.apache.hadoop.hdfs.server.common.Storage,boolean,long,org.apache.hadoop.io.MD5Hash,java.lang.String,java.io.InputStream,org.apache.hadoop.hdfs.util.DataTransferThrottler)>
+		SHA-256: 64841c8d2019445193e36f249b02de42596362778def1980e1f7a5ed6bd401a4
+		Secure: false
+	Object:
+		Variable: $r25
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r25.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r10, r9)
+		Method: <org.apache.hadoop.hdfs.server.namenode.FSImageFormat$Saver: void save(java.io.File,org.apache.hadoop.hdfs.server.namenode.FSImageCompression)>
+		SHA-256: ca6e15f1b2f33d11ab367c0981b839b3ca811d0b1586f7d739621e98b1feb7e0
+		Secure: false
+
+Findings in Java Class: org.apache.hadoop.hdfs.server.namenode.FSImageFormat$Loader
+
+	 in Method: void load(java.io.File)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #62531ff07c81d5965ad386acdd63a577dc59a0a48091d380dadb00a62b7dec26)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r13.<java.io.DataInputStream: void <init>(java.io.InputStream)>(r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #62531ff07c81d5965ad386acdd63a577dc59a0a48091d380dadb00a62b7dec26)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: r91 = virtualinvoke r92.<org.apache.hadoop.hdfs.server.namenode.FSImageCompression: java.io.DataInputStream unwrapInputStream(java.io.InputStream)>(r5)
+
+
+Findings in Java Class: org.apache.hadoop.hdfs.server.namenode.FSImageFormat$Saver
+
+	 in Method: void save(java.io.File,org.apache.hadoop.hdfs.server.namenode.FSImageCompression)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #ca6e15f1b2f33d11ab367c0981b839b3ca811d0b1586f7d739621e98b1feb7e0)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r25.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r10, r9)
+
+
+Findings in Java Class: org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf$Saver
+
+	 in Method: void saveInternal(java.io.FileOutputStream,org.apache.hadoop.hdfs.server.namenode.FSImageCompression,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #336d20b637844ca5d903b8a61367081e65c2236c1bb8ea9a85f393ee2b5504ce)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: $r17 = r0.<org.apache.hadoop.hdfs.server.namenode.FSImageFormatProtobuf$Saver: java.io.OutputStream underlxOutputStream>
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #336d20b637844ca5d903b8a61367081e65c2236c1bb8ea9a85f393ee2b5504ce)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: $r41 = interfaceinvoke $r40.<org.apache.hadoop.io.compress.CompressionCodec: org.apache.hadoop.io.compress.CompressionOutputStream createOutputStream(java.io.OutputStream)>($r39)
+
+
+	 in Method: void saveNameSystemSection(org.apache.hadoop.hdfs.server.namenode.FsImageProto$FileSummary$Builder)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #336d20b637844ca5d903b8a61367081e65c2236c1bb8ea9a85f393ee2b5504ce)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: virtualinvoke r6.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$NameSystemSection: void writeDelimitedTo(java.io.OutputStream)>(r3)
+
+
+Findings in Java Class: org.apache.hadoop.hdfs.server.namenode.TransferFsImage
+
+	 in Method: org.apache.hadoop.io.MD5Hash doGetUrl(java.net.URL,java.util.List,org.apache.hadoop.hdfs.server.common.Storage,boolean)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #64841c8d2019445193e36f249b02de42596362778def1980e1f7a5ed6bd401a4)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r16 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.TransferFsImage: org.apache.hadoop.io.MD5Hash receiveFile(java.lang.String,java.util.List,org.apache.hadoop.hdfs.server.common.Storage,boolean,long,org.apache.hadoop.io.MD5Hash,java.lang.String,java.io.InputStream,org.apache.hadoop.hdfs.util.DataTransferThrottler)>($r15, r1, r2, z0, l2, r5, r6, r7, varReplacer30134)
+
+
+	 in Method: org.apache.hadoop.io.MD5Hash receiveFile(java.lang.String,java.util.List,org.apache.hadoop.hdfs.server.common.Storage,boolean,long,org.apache.hadoop.io.MD5Hash,java.lang.String,java.io.InputStream,org.apache.hadoop.hdfs.util.DataTransferThrottler)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #64841c8d2019445193e36f249b02de42596362778def1980e1f7a5ed6bd401a4)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: r73 = r89
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #64841c8d2019445193e36f249b02de42596362778def1980e1f7a5ed6bd401a4)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r105.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: org.apache.hadoop.hdfs.server.namenode.ImageServlet$2
+
+	 in Method: java.lang.Void run()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #64841c8d2019445193e36f249b02de42596362778def1980e1f7a5ed6bd401a4)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: r2 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.TransferFsImage: org.apache.hadoop.io.MD5Hash handleUploadImageRequest(javax.servlet.http.HttpServletRequest,long,org.apache.hadoop.hdfs.server.common.Storage,java.io.InputStream,long,org.apache.hadoop.hdfs.util.DataTransferThrottler)>($r13, l0, $r14, r40, $l3, $r17)
+
+
+Findings in Java Class: org.apache.hadoop.hdfs.util.MD5FileUtils
+
+	 in Method: org.apache.hadoop.io.MD5Hash computeMd5ForFile(java.io.File)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #444f78872f188cfcbca16979b7762417833495aeb5468c11dd633eace39537a3)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: staticinvoke <org.apache.hadoop.io.IOUtils: void copyBytes(java.io.InputStream,java.io.OutputStream,int)>(r3, r16, varReplacer32959)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 11
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 9 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 28.41 s
+

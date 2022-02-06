@@ -1,0 +1,21 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 11.52 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+Exception in thread "main" soot.ResolutionFailedException: Resolved <org.apache.xerces.impl.Version: java.lang.String getVersion()> to <org.apache.xerces.impl.Version: java.lang.String getVersion()> which has wrong static-ness
+	at soot.SootMethodRefImpl.checkStatic(SootMethodRefImpl.java:195)
+	at soot.SootMethodRefImpl.tryResolve(SootMethodRefImpl.java:212)
+	at soot.SootMethodRefImpl.resolve(SootMethodRefImpl.java:263)
+	at soot.SootMethodRefImpl.resolve(SootMethodRefImpl.java:183)
+	at soot.jimple.internal.AbstractInvokeExpr.getMethod(AbstractInvokeExpr.java:56)
+	at crypto.analysis.ClassSpecification.invokesForbiddenMethod(ClassSpecification.java:83)
+	at crypto.analysis.CryptoScanner.initialize(CryptoScanner.java:133)
+	at crypto.analysis.CryptoScanner.scan(CryptoScanner.java:77)
+	at crypto.HeadlessCryptoScanner$3.internalTransform(HeadlessCryptoScanner.java:275)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.ScenePack.internalApply(ScenePack.java:35)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:199)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

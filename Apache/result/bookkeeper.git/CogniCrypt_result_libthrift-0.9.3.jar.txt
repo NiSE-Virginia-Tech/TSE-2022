@@ -1,0 +1,177 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 592.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r32
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r32 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r8)
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: 487d8c54227649d37ee3b46e3a24e54e0428bb328e99d89bd852a09b939713de
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke r31.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: 73a7cb57dfa285406dab27262df0b0a390c21f96cd1a8eeebefccf631660c76b
+		Secure: false
+	Object:
+		Variable: r33
+		Type: java.security.KeyStore
+		Statement: r33 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r16)
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: f52773fef7306be3819398f040ca3de14a4e14d80675480fd11c2b0a14b43742
+		Secure: false
+	Object:
+		Variable: r31
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r31 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r15)
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: 75b73ef22fbf6265d17a4bd12bcebc74ac76096dd8d80dc5b81841478c4d3780
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r7 = virtualinvoke r31.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: 8bf7e26f0e47485b81509dfa48ab5fdca9f93b8340f59c5e4e191de23e46f69b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r5 = virtualinvoke r32.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: 9f117d7df397e56f29d6a95d79e2ff328718fe107de7a2077b5ace3432eaa42d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r6 = virtualinvoke r32.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: aa8f00377d618701f36ab114d612ba63e87fcaf61a4c0392b2bd2501f392fb95
+		Secure: false
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.SSLContext
+		Statement: r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: c5a4027ce7fe2ef5bd4d4352a2446aac9265b9bb940151aa659790456ab2db97
+		Secure: false
+	Object:
+		Variable: r35
+		Type: java.security.KeyStore
+		Statement: r35 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r9)
+		Method: <org.apache.thrift.transport.TSSLTransportFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)>
+		SHA-256: f69cff538d7f70044b29c00789569e3b72c159af489b16c37f9b7822aba0f91c
+		Secure: false
+
+Findings in Java Class: org.apache.thrift.transport.TSSLTransportFactory
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext(org.apache.thrift.transport.TSSLTransportFactory$TSSLTransportParameters)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #f52773fef7306be3819398f040ca3de14a4e14d80675480fd11c2b0a14b43742)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r33.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r20, $r34)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #487d8c54227649d37ee3b46e3a24e54e0428bb328e99d89bd852a09b939713de)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r32.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r35, $r14)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r6, $r7, varReplacer957)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r31.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r33)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r5, varReplacer953, varReplacer953)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r32.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r35, $r14)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #f69cff538d7f70044b29c00789569e3b72c159af489b16c37f9b7822aba0f91c)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r35.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r30, $r12)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	NeverTypeOfError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.779 s
+

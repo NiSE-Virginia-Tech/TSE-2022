@@ -1,0 +1,150 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 710.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.avro.file.DataFileWriter: byte[] generateSync()>
+		SHA-256: 8cd387e9c6596a4ce5c275b5fd83b125a4e763fe5c1a30fb9d1571535af278b4
+		Secure: false
+	Object:
+		Variable: r10
+		Type: java.security.MessageDigest
+		Statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer702)
+		Method: <org.apache.avro.file.DataFileWriter: byte[] generateSync()>
+		SHA-256: 43c8e80792430138651ace9e6c68164a7e54b706c2ceeabd0e015fdc0635831e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <org.apache.avro.SchemaNormalization: byte[] fingerprint(java.lang.String,byte[])>
+		SHA-256: 10d410b00e5400651fbdc2e0b35899e3d480e0a7bb6016dfd21c8ed43f678cae
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer126)
+		Method: <org.apache.avro.Protocol: byte[] getMD5()>
+		SHA-256: 336199ef8c0b312eb2b01eeb71c85d0c089c7c5fe0cd7f44e686ed24b7f1376c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <org.apache.avro.Protocol: byte[] getMD5()>
+		SHA-256: 28c733dee49d3e464eea1055a8c3e1d77f44d2ffe6735cfe592e73ebefd27e8b
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <org.apache.avro.SchemaNormalization: byte[] fingerprint(java.lang.String,byte[])>
+		SHA-256: eac91554e5865570a2f5a0df4fb0d819c61a531e31365008d6caecdd4d265111
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <org.apache.avro.Protocol: byte[] getMD5()>
+		SHA-256: 32f5270fa7f059bf8d682325ea2f31b58cbd3aa2e887ba2bce37729593f04ecd
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.MessageDigest
+		Statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.apache.avro.SchemaNormalization: byte[] fingerprint(java.lang.String,byte[])>
+		SHA-256: 6f47be4aaef085441b4f6130973e05491388139da5edbba6a2a2bd157459eb43
+		Secure: true
+
+Findings in Java Class: org.apache.avro.Protocol
+
+	 in Method: byte[] getMD5()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #336199ef8c0b312eb2b01eeb71c85d0c089c7c5fe0cd7f44e686ed24b7f1376c)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer126)
+
+
+Findings in Java Class: org.apache.avro.file.DataFileWriter
+
+	 in Method: byte[] generateSync()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #43c8e80792430138651ace9e6c68164a7e54b706c2ceeabd0e015fdc0635831e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer702)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 5.376 s
+

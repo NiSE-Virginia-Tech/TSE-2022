@@ -1,0 +1,49 @@
+ INFO | 2021-01-04 05:49:47.673 | Interface.ArgumentsCheck (ArgumentsCheck.java:148) | Displax info level logs
+ INFO | 2021-01-04 05:49:47.762 | Interface.ArgumentsCheck (ArgumentsCheck.java:176) | Using the output: Default
+ INFO | 2021-01-04 05:49:47.767 | parameterChecks.Core (Core.java:145) | Scanning 1 source file(s).
+ INFO | 2021-01-04 05:49:47.782 | routing.EnvironmentInformation (EnvironmentInformation.java:376) | Building the Package Root Dir based on type
+ INFO | 2021-01-04 05:49:47.785 | routing.EnvironmentInformation (EnvironmentInformation.java:410) | Building the Root Directory
+ INFO | 2021-01-04 05:49:47.788 | Interface.SubRunner (SubRunner.java:57) | Starting the scanning process
+ INFO | 2021-01-04 05:49:47.793 | engine.JarEntry (JarEntry.java:25) | Checking the rule: InsecureAssymCryptoFinder
+java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+Exception in thread "main" java.lang.RuntimeException: Failed to apply jb to <org.hswebframework.web.datasource.AopDataSourceSwitcherAutoConfiguration$SwitcherMethodMatcherPointcutAdvisor: void <init>(java.util.List)>
+	at soot.asm.AsmMethodSource.getBody(AsmMethodSource.java:2191)
+	at soot.SootMethod.retrieveActiveBody(SootMethod.java:402)
+	at rule.DefaultExportGradeKeyFinder.getInfluencingInstructions(DefaultExportGradeKeyFinder.java:84)
+	at rule.DefaultExportGradeKeyFinder.getForwardSlice(DefaultExportGradeKeyFinder.java:60)
+	at rule.DefaultExportGradeKeyFinder.checkRule(DefaultExportGradeKeyFinder.java:109)
+	at rule.InsecureAssymCryptoFinder.checkAssym(InsecureAssymCryptoFinder.java:103)
+	at rule.InsecureAssymCryptoFinder.checkRule(InsecureAssymCryptoFinder.java:46)
+	at rule.engine.JarEntry.Scan(JarEntry.java:26)
+	at frontEnd.Interface.SubRunner.run(SubRunner.java:58)
+	at frontEnd.Interface.EntryPoint.main(EntryPoint.java:43)
+Caused by: java.lang.RuntimeException: This operation requires resolving level HIERARCHY but org.aopalliance.intercept.MethodInterceptor is at resolving level DANGLING
+If you are extending Soot, try to add the following call before calling soot.Main.main(..):
+Scene.v().addBasicClass(org.aopalliance.intercept.MethodInterceptor,HIERARCHY);
+Otherwise, try whole-program mode (-w).
+	at soot.SootClass.checkLevelIgnoreResolving(SootClass.java:198)
+	at soot.SootClass.checkLevel(SootClass.java:180)
+	at soot.FastHierarchy.canStoreClass(FastHierarchy.java:346)
+	at soot.FastHierarchy.canStoreType(FastHierarchy.java:267)
+	at soot.jimple.toolkits.typing.fast.BytecodeHierarchy.ancestor_(BytecodeHierarchy.java:224)
+	at soot.jimple.toolkits.typing.fast.BytecodeHierarchy.ancestor(BytecodeHierarchy.java:292)
+	at soot.jimple.toolkits.typing.fast.TypeResolver$CastInsertionUseVisitor.visit(TypeResolver.java:207)
+	at soot.jimple.toolkits.typing.fast.UseChecker.handleInvokeExpr(UseChecker.java:140)
+	at soot.jimple.toolkits.typing.fast.UseChecker.caseInvokeStmt(UseChecker.java:182)
+	at soot.jimple.internal.JInvokeStmt.apply(JInvokeStmt.java:91)
+	at soot.jimple.toolkits.typing.fast.UseChecker.check(UseChecker.java:127)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.insertCasts(TypeResolver.java:410)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.minCasts(TypeResolver.java:434)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.inferTypes(TypeResolver.java:155)
+	at soot.jimple.toolkits.typing.TypeAssigner.internalTransform(TypeAssigner.java:121)
+	at soot.BodyTransformer.transform(BodyTransformer.java:51)
+	at soot.Transform.apply(Transform.java:120)
+	at soot.JimpleBodyPack.applyPhaseOptions(JimpleBodyPack.java:73)
+	at soot.JimpleBodyPack.internalApply(JimpleBodyPack.java:105)
+	at soot.Pack.apply(Pack.java:125)
+	at soot.asm.AsmMethodSource.getBody(AsmMethodSource.java:2189)
+	... 9 more

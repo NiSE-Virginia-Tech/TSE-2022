@@ -1,0 +1,692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/flume-ng-core-1.6.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>7885 lines of code analyzed,
+	in 269 classes, 
+	in 18 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">25</td>
+<td align="right">3.17</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+<td align="right">
+<b>3.17</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">25</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>25</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66890');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66890" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.flume.source.ExecSource$ExecRunnable<br/>In method org.apache.flume.source.ExecSource$ExecRunnable.run()<br/>At ExecSource.java:[line 303]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/ExecSource$ExecRunnable.formulateShellCommand(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>Unknown source org/apache/flume/source/ExecSource$ExecRunnable.formulateShellCommand(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/flume/source/ExecSource$ExecRunnable.command<br/>At ExecSource.java:[line 302]<br/>At ExecSource.java:[line 395]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66989');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66989" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.flume.source.ExecSource$ExecRunnable<br/>In method org.apache.flume.source.ExecSource$ExecRunnable.run()<br/>At ExecSource.java:[line 306]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/ExecSource$ExecRunnable.command<br/>At ExecSource.java:[line 305]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.parseHeaders(CommandLine)<br/>At AvroCLIClient.java:[line 101]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Properties.entrySet()Ljava/util/Set;<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Tainted source java/util/Properties.load(Ljava/io/InputStream;)V<br/>Tainted source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Tainted source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>At AvroCLIClient.java:[line 97]<br/>At AvroCLIClient.java:[line 98]<br/>At AvroCLIClient.java:[line 99]<br/>At AvroCLIClient.java:[line 100]<br/>At AvroCLIClient.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67068');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67068" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.apache.flume.source.ExecSource$StderrReader<br/>In method org.apache.flume.source.ExecSource$StderrReader.run()<br/>At ExecSource.java:[line 457]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At ExecSource.java:[line 452]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65690');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65690" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.parseCommandLine(String[])<br/>At AvroCLIClient.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/AvroCLIClient.rpcClientPropsFile<br/>At AvroCLIClient.java:[line 161]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65769');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65769" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.parseHeaders(CommandLine)<br/>At AvroCLIClient.java:[line 95]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/cli/CommandLine.getOptionValue(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65838');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65838" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.run()<br/>At AvroCLIClient.java:[line 196]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/AvroCLIClient.rpcClientPropsFile<br/>At AvroCLIClient.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65917');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65917" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.run()<br/>At AvroCLIClient.java:[line 204]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/AvroCLIClient.fileName<br/>At AvroCLIClient.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65996');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65996" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.AvroCLIClient<br/>In method org.apache.flume.client.avro.AvroCLIClient.run()<br/>At AvroCLIClient.java:[line 206]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/AvroCLIClient.dirName<br/>At AvroCLIClient.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66075');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66075" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.ReliableSpoolingFileEventReader<br/>In method new org.apache.flume.client.avro.ReliableSpoolingFileEventReader(File, String, String, String, boolean, String, boolean, String, String, Context, String, String, DecodeErrorPolicy, SpoolDirectorySourceConfigurationConstants$ConsumeOrder)<br/>At ReliableSpoolingFileEventReader.java:[line 152]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/ReliableSpoolingFileEventReader.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;Ljava/lang/String;Lorg/apache/flume/Context;Ljava/lang/String;Ljava/lang/String;Lorg/apache/flume/serialization/DecodeErrorPolicy;Lorg/apache/flume/source/SpoolDirectorySourceConfigurationConstants$ConsumeOrder;)V parameter 13<br/>At ReliableSpoolingFileEventReader.java:[line 77]<br/>At ReliableSpoolingFileEventReader.java:[line 121]<br/>At ReliableSpoolingFileEventReader.java:[line 671]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66174');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66174" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.ReliableSpoolingFileEventReader<br/>In method new org.apache.flume.client.avro.ReliableSpoolingFileEventReader(File, String, String, String, boolean, String, boolean, String, String, Context, String, String, DecodeErrorPolicy, SpoolDirectorySourceConfigurationConstants$ConsumeOrder)<br/>At ReliableSpoolingFileEventReader.java:[line 180]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/ReliableSpoolingFileEventReader.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;Ljava/lang/String;Lorg/apache/flume/Context;Ljava/lang/String;Ljava/lang/String;Lorg/apache/flume/serialization/DecodeErrorPolicy;Lorg/apache/flume/source/SpoolDirectorySourceConfigurationConstants$ConsumeOrder;)V parameter 10<br/>At ReliableSpoolingFileEventReader.java:[line 77]<br/>At ReliableSpoolingFileEventReader.java:[line 124]<br/>At ReliableSpoolingFileEventReader.java:[line 671]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66273');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66273" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.ReliableSpoolingFileEventReader<br/>In method new org.apache.flume.client.avro.ReliableSpoolingFileEventReader(File, String, String, String, boolean, String, boolean, String, String, Context, String, String, DecodeErrorPolicy, SpoolDirectorySourceConfigurationConstants$ConsumeOrder)<br/>At ReliableSpoolingFileEventReader.java:[line 184]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/ReliableSpoolingFileEventReader.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;Ljava/lang/String;Lorg/apache/flume/Context;Ljava/lang/String;Ljava/lang/String;Lorg/apache/flume/serialization/DecodeErrorPolicy;Lorg/apache/flume/source/SpoolDirectorySourceConfigurationConstants$ConsumeOrder;)V parameter 10<br/>At ReliableSpoolingFileEventReader.java:[line 77]<br/>At ReliableSpoolingFileEventReader.java:[line 124]<br/>At ReliableSpoolingFileEventReader.java:[line 671]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66372');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66372" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.ReliableSpoolingFileEventReader<br/>In method org.apache.flume.client.avro.ReliableSpoolingFileEventReader.retireCurrentFile()<br/>At ReliableSpoolingFileEventReader.java:[line 315]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66441');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66441" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.client.avro.ReliableSpoolingFileEventReader<br/>In method org.apache.flume.client.avro.ReliableSpoolingFileEventReader.rollCurrentFile(File)<br/>At ReliableSpoolingFileEventReader.java:[line 347]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/client/avro/ReliableSpoolingFileEventReader.completedSuffix<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At ReliableSpoolingFileEventReader.java:[line 347]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66594');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66594" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.serialization.DurablePositionTracker<br/>In method org.apache.flume.serialization.DurablePositionTracker.getInstance(File, String)<br/>At DurablePositionTracker.java:[line 82]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.getParentFile()Ljava/io/File;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66663');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66663" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.sink.RollingFileSink<br/>In method org.apache.flume.sink.RollingFileSink.configure(Context)<br/>At RollingFileSink.java:[line 95]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/Context.getString(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66732');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66732" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.source.AvroSource<br/>In method org.apache.flume.source.AvroSource.configure(Context)<br/>At AvroSource.java:[line 197]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/AvroSource.keystore<br/>At AvroSource.java:[line 197]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66811');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66811" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.source.AvroSource$AdvancedChannelPipelineFactory<br/>In method org.apache.flume.source.AvroSource$AdvancedChannelPipelineFactory.createServerSSLContext()<br/>At AvroSource.java:[line 476]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/AvroSource$AdvancedChannelPipelineFactory.keystore<br/>At AvroSource.java:[line 476]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67147');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67147" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.source.SpoolDirectorySource<br/>In method org.apache.flume.source.SpoolDirectorySource.start()<br/>At SpoolDirectorySource.java:[line 83]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/SpoolDirectorySource.spoolDirectory<br/>At SpoolDirectorySource.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67226');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67226" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.flume.source.ThriftSource<br/>In method org.apache.flume.source.ThriftSource.configure(Context)<br/>At ThriftSource.java:[line 182]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/ThriftSource.keystore<br/>At ThriftSource.java:[line 182]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66525');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66525" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.flume.instrumentation.http.HTTPMetricsServer$HTTPMetricsHandler<br/>In method org.apache.flume.instrumentation.http.HTTPMetricsServer$HTTPMetricsHandler.handle(String, HttpServletRequest, HttpServletResponse, int)<br/>At HTTPMetricsServer.java:[line 131]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/google/gson/Gson.toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67305');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67305" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet<br/>In method org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet.doPost(HttpServletRequest, HttpServletResponse)<br/>At HTTPSource.java:[line 243]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/source/http/HTTPBadRequestException.getMessage()Ljava/lang/String;<br/>At HTTPSource.java:[line 243]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67384');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67384" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet<br/>In method org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet.doPost(HttpServletRequest, HttpServletResponse)<br/>At HTTPSource.java:[line 249]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Exception.getMessage()Ljava/lang/String;<br/>At HTTPSource.java:[line 249]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67463');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67463" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet<br/>In method org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet.doPost(HttpServletRequest, HttpServletResponse)<br/>At HTTPSource.java:[line 262]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/flume/ChannelException.getMessage()Ljava/lang/String;<br/>At HTTPSource.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67542');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67542" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet<br/>In method org.apache.flume.source.http.HTTPSource$FlumeHTTPServlet.doPost(HttpServletRequest, HttpServletResponse)<br/>At HTTPSource.java:[line 268]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/Exception.getMessage()Ljava/lang/String;<br/>At HTTPSource.java:[line 268]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

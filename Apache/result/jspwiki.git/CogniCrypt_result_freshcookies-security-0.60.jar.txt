@@ -1,0 +1,206 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 421.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r5)
+		Method: <org.freshcookies.security.policy.PolicyReader$5: java.lang.Object run()>
+		SHA-256: d336e8ba6188f8f6410bc6552b2eaee96f2f68799514274fbe960012f8e30319
+		Secure: false
+	Object:
+		Variable: r20
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r20 = virtualinvoke r21.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.freshcookies.security.cert.Trustee: javax.net.ssl.X509TrustManager initSSLTrustManager()>
+		SHA-256: fcb01c3270072c3e8e51efde2314a5346bf257a8e51d607894b360a104ef59e3
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.freshcookies.security.cert.Trustee: java.lang.String getCertFingerPrint(java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 5a5c3f5c0aea1816abb63857563693cb8308e8b463a0f50fd459014c949154cd
+		Secure: false
+	Object:
+		Variable: r54
+		Type: java.security.KeyStore
+		Statement: r54 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+		Method: <org.freshcookies.security.cert.Trustee: java.security.KeyStore initSystemCAStore()>
+		SHA-256: 2368259cc9094fd38783dfbb1e7b58c69c4b92e87e52fbc338c19ceb79879d0a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.freshcookies.security.cert.SSLHelper: javax.net.ssl.SSLSocket createSSLSocket(javax.net.ssl.TrustManager[],java.lang.String,int)>
+		SHA-256: dc10c68bcda253ca0d43bc55a1e77f08d12cbeef7c2bbbbd81e9b0e85a18dd8a
+		Secure: true
+	Object:
+		Variable: r21
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r21 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <org.freshcookies.security.cert.Trustee: javax.net.ssl.X509TrustManager initSSLTrustManager()>
+		SHA-256: b4046d1e7be219ac0b1c22a9ef106c5e43a8c92c1abfff008f08ab163aa4739f
+		Secure: false
+	Object:
+		Variable: r8
+		Type: javax.net.ssl.SSLContext
+		Statement: r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer71)
+		Method: <org.freshcookies.security.cert.SSLHelper: javax.net.ssl.SSLSocket createSSLSocket(javax.net.ssl.TrustManager[],java.lang.String,int)>
+		SHA-256: b1cbe4d4c60d9a23b50a454f83d8e42eabc1861fdfea758f37da8ad6cd2c22c1
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest(byte[])>(r6)
+		Method: <org.freshcookies.security.cert.Trustee: java.lang.String getCertFingerPrint(java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 9c13d1f9bc5e29cfef031cda8ad573225950f5d6c0bc7c40a8aa98c2cba65294
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest(byte[])>(r6)
+		Method: <org.freshcookies.security.cert.Trustee: java.lang.String getCertFingerPrint(java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 91f588d6c780b0e6a828a18ccab64760663babddc927f1144e0fd888aa4369a0
+		Secure: false
+
+Findings in Java Class: org.freshcookies.security.cert.SSLHelper
+
+	 in Method: javax.net.ssl.SSLSocket createSSLSocket(javax.net.ssl.TrustManager[],java.lang.String,int)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer70, r0, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer70, r0, $r3)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #b1cbe4d4c60d9a23b50a454f83d8e42eabc1861fdfea758f37da8ad6cd2c22c1)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer71)
+
+
+Findings in Java Class: org.freshcookies.security.cert.Trustee
+
+	 in Method: java.lang.String getCertFingerPrint(java.lang.String,java.security.cert.Certificate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5a5c3f5c0aea1816abb63857563693cb8308e8b463a0f50fd459014c949154cd)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5a5c3f5c0aea1816abb63857563693cb8308e8b463a0f50fd459014c949154cd)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+
+	 in Method: java.security.KeyStore initSystemCAStore()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #2368259cc9094fd38783dfbb1e7b58c69c4b92e87e52fbc338c19ceb79879d0a)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r54.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r55, $r13)
+
+
+	 in Method: boolean commit()
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #2368259cc9094fd38783dfbb1e7b58c69c4b92e87e52fbc338c19ceb79879d0a)
+			Unexpected call to method store on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r14.<java.security.KeyStore: void store(java.io.OutputStream,char[])>(r1, $r15)
+
+
+	 in Method: javax.net.ssl.X509TrustManager initSSLTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r21.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r2)
+
+
+Findings in Java Class: org.freshcookies.security.policy.PolicyReader$5
+
+	 in Method: java.lang.Object run()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #d336e8ba6188f8f6410bc6552b2eaee96f2f68799514274fbe960012f8e30319)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: staticinvoke <org.freshcookies.security.policy.PolicyReader: java.security.KeyStore access$102(org.freshcookies.security.policy.PolicyReader,java.security.KeyStore)>($r4, $r6)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #d336e8ba6188f8f6410bc6552b2eaee96f2f68799514274fbe960012f8e30319)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: staticinvoke <org.freshcookies.security.policy.PolicyReader: java.security.KeyStore access$102(org.freshcookies.security.policy.PolicyReader,java.security.KeyStore)>($r4, $r6)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	NeverTypeOfError: 1
+	ConstraintError: 3
+	IncompleteOperationError: 2
+	RequiredPredicateError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.003 s
+

@@ -1,0 +1,1430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/poi-ooxml-4.0.1.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>49727 lines of code analyzed,
+	in 828 classes, 
+	in 45 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">0.20</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">44</td>
+<td align="right">0.88</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>54</b>
+</td>
+<td align="right">
+<b>1.09</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">49</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>49</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67045');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67045" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.agile.AgileDecryptor<br/>Value is hard coded in field org.apache.poi.poifs.crypt.agile.AgileDecryptor.kIntegrityKeyBlock[B with suspicious name<br/>Value is hard coded in field org.apache.poi.poifs.crypt.agile.AgileDecryptor.kCryptoKeyBlock[B with suspicious name<br/>At AgileDecryptor.java:[lines 59-354]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.ooxml.extractor.CommandLineTextExtractor<br/>In method org.apache.poi.ooxml.extractor.CommandLineTextExtractor.main(String[])<br/>At CommandLineTextExtractor.java:[line 40]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/ooxml/extractor/CommandLineTextExtractor.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65736');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65736" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.ooxml.util.PackageHelper<br/>In method org.apache.poi.ooxml.util.PackageHelper.clone(OPCPackage, File)<br/>At PackageHelper.java:[line 77]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66818');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66818" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.internal.FileHelper<br/>In method org.apache.poi.openxml4j.opc.internal.FileHelper.getDirectory(File)<br/>At FileHelper.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At FileHelper.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66897');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66897" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.internal.ZipHelper<br/>In method org.apache.poi.openxml4j.opc.internal.ZipHelper.openZipFile(String)<br/>At ZipHelper.java:[line 216]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/internal/ZipHelper.openZipFile(Ljava/lang/String;)Lorg/apache/poi/openxml4j/util/ZipSecureFile; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65805');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65805" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.OPCPackage<br/>In method org.apache.poi.openxml4j.opc.OPCPackage.create(String)<br/>At OPCPackage.java:[line 337]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/OPCPackage.create(Ljava/lang/String;)Lorg/apache/poi/openxml4j/opc/OPCPackage; parameter 0<br/>Method usage with tainted arguments detected<br/>At PackageHelper.java:[line 54]<br/>At XSSFExcelExtractor.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65899');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65899" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.OPCPackage<br/>In method org.apache.poi.openxml4j.opc.OPCPackage.open(String, PackageAccess)<br/>At OPCPackage.java:[line 228]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/OPCPackage.open(Ljava/lang/String;Lorg/apache/poi/openxml4j/opc/PackageAccess;)Lorg/apache/poi/openxml4j/opc/OPCPackage; parameter 1<br/>Method usage with tainted arguments detected<br/>At POIXMLDocument.java:[line 89]<br/>At ExtractorFactory.java:[line 142]<br/>At PackageHelper.java:[line 78]<br/>At OPCPackage.java:[line 166]<br/>At OPCPackage.java:[line 323]<br/>At XDGFVisioExtractor.java:[line 61]<br/>At XSLFPowerPointExtractor.java:[line 76]<br/>At XSLFSlideShow.java:[line 99]<br/>At XSSFBEventBasedExcelExtractor.java:[line 58]<br/>At XSSFBEventBasedExcelExtractor.java:[line 71]<br/>At XSSFEventBasedExcelExtractor.java:[line 73]<br/>At XSSFWorkbook.java:[line 340]<br/>At XWPFWordExtractor.java:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66103');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66103" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.OPCPackage<br/>In method org.apache.poi.openxml4j.opc.OPCPackage.open(String, PackageAccess)<br/>At OPCPackage.java:[line 246]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/OPCPackage.open(Ljava/lang/String;Lorg/apache/poi/openxml4j/opc/PackageAccess;)Lorg/apache/poi/openxml4j/opc/OPCPackage; parameter 1<br/>Method usage with tainted arguments detected<br/>At POIXMLDocument.java:[line 89]<br/>At ExtractorFactory.java:[line 142]<br/>At PackageHelper.java:[line 78]<br/>At OPCPackage.java:[line 166]<br/>At OPCPackage.java:[line 323]<br/>At XDGFVisioExtractor.java:[line 61]<br/>At XSLFPowerPointExtractor.java:[line 76]<br/>At XSLFSlideShow.java:[line 99]<br/>At XSSFBEventBasedExcelExtractor.java:[line 58]<br/>At XSSFBEventBasedExcelExtractor.java:[line 71]<br/>At XSSFEventBasedExcelExtractor.java:[line 73]<br/>At XSSFWorkbook.java:[line 340]<br/>At XWPFWordExtractor.java:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66307');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66307" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.OPCPackage<br/>In method org.apache.poi.openxml4j.opc.OPCPackage.addThumbnail(String)<br/>At OPCPackage.java:[line 482]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/OPCPackage.addThumbnail(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66381');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66381" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.OPCPackage<br/>In method org.apache.poi.openxml4j.opc.OPCPackage.close()<br/>At OPCPackage.java:[line 442]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/OPCPackage.originalPackagePath<br/>At OPCPackage.java:[line 442]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66576');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66576" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.ZipPackage<br/>In method new org.apache.poi.openxml4j.opc.ZipPackage(String, PackageAccess)<br/>At ZipPackage.java:[line 123]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/ZipPackage.&lt;init&gt;(Ljava/lang/String;Lorg/apache/poi/openxml4j/opc/PackageAccess;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66650');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66650" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.ZipPackage<br/>In method org.apache.poi.openxml4j.opc.ZipPackage.closeImpl()<br/>At ZipPackage.java:[line 416]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/opc/ZipPackage.originalPackagePath<br/>At ZipPackage.java:[line 416]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66729');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66729" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.ZipPackage<br/>In method org.apache.poi.openxml4j.opc.ZipPackage.generateTempFileName(File)<br/>At ZipPackage.java:[line 455]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsoluteFile()Ljava/io/File;<br/>At ZipPackage.java:[line 454]<br/>At ZipPackage.java:[line 455]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66971');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66971" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.util.ZipSecureFile<br/>In method new org.apache.poi.openxml4j.util.ZipSecureFile(String)<br/>At ZipSecureFile.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/openxml4j/util/ZipSecureFile.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67519');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67519" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.HierarchyPrinter<br/>In method org.apache.poi.xdgf.util.HierarchyPrinter.main(String[])<br/>At HierarchyPrinter.java:[line 93]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/xdgf/util/HierarchyPrinter.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67588');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67588" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.HierarchyPrinter<br/>In method org.apache.poi.xdgf.util.HierarchyPrinter.printHierarchy(XDGFPage, File)<br/>At HierarchyPrinter.java:[line 45]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/xdgf/usermodel/XDGFPage.getName()Ljava/lang/String;<br/>Unknown source org/apache/poi/xdgf/util/Util.sanitizeFilename(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/microsoft/schemas/office/visio/x2012/main/PageType.getName()Ljava/lang/String;<br/>Unknown source org/apache/poi/xdgf/util/Util.sanitizeFilename(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At HierarchyPrinter.java:[line 45]<br/>At Util.java:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67692');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67692" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.HierarchyPrinter<br/>In method org.apache.poi.xdgf.util.HierarchyPrinter.printHierarchy(XmlVisioDocument, String)<br/>At HierarchyPrinter.java:[line 77]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/xdgf/util/HierarchyPrinter.printHierarchy(Lorg/apache/poi/xdgf/usermodel/XmlVisioDocument;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67766');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67766" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.VsdxToPng<br/>In method org.apache.poi.xdgf.util.VsdxToPng.main(String[])<br/>At VsdxToPng.java:[line 130]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/xdgf/util/VsdxToPng.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67835');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67835" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.VsdxToPng<br/>In method org.apache.poi.xdgf.util.VsdxToPng.renderToPng(XmlVisioDocument, String, double, ShapeRenderer)<br/>At VsdxToPng.java:[line 106]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/xdgf/util/VsdxToPng.renderToPng(Lorg/apache/poi/xdgf/usermodel/XmlVisioDocument;Ljava/lang/String;DLorg/apache/poi/xdgf/usermodel/shape/ShapeRenderer;)V parameter 3<br/>Method usage with tainted arguments detected<br/>At VsdxToPng.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67919');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67919" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.VsdxToPng<br/>In method org.apache.poi.xdgf.util.VsdxToPng.renderToPng(XDGFPage, String, double, ShapeRenderer)<br/>At VsdxToPng.java:[line 47]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/xdgf/util/VsdxToPng.renderToPng(Lorg/apache/poi/xdgf/usermodel/XDGFPage;Ljava/lang/String;DLorg/apache/poi/xdgf/usermodel/shape/ShapeRenderer;)V parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67993');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67993" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xdgf.util.VsdxToPng<br/>In method org.apache.poi.xdgf.util.VsdxToPng.renderToPngDir(XDGFPage, File, double, ShapeRenderer)<br/>At VsdxToPng.java:[line 54]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/poi/xdgf/usermodel/XDGFPage.getName()Ljava/lang/String;<br/>Unknown source org/apache/poi/xdgf/util/Util.sanitizeFilename(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/microsoft/schemas/office/visio/x2012/main/PageType.getName()Ljava/lang/String;<br/>Unknown source org/apache/poi/xdgf/util/Util.sanitizeFilename(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At Util.java:[line 35]<br/>At VsdxToPng.java:[line 54]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68097');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68097" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xslf.util.PPTX2PNG<br/>In method org.apache.poi.xslf.util.PPTX2PNG.main(String[])<br/>At PPTX2PNG.java:[line 83]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/xslf/util/PPTX2PNG.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68166');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68166" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xslf.util.PPTX2PNG<br/>In method org.apache.poi.xslf.util.PPTX2PNG.main(String[])<br/>At PPTX2PNG.java:[line 88]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/xslf/util/PPTX2PNG.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68235');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68235" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.poi.xslf.util.PPTX2PNG<br/>In method org.apache.poi.xslf.util.PPTX2PNG.main(String[])<br/>At PPTX2PNG.java:[line 159]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/poi/xslf/util/PPTX2PNG.main([Ljava/lang/String;)V parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At PPTX2PNG.java:[line 157]<br/>At PPTX2PNG.java:[line 158]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69233');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "[0-9]+(\\.[0-9]+)?%" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69233" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value [0-9]+(\\.[0-9]+)?%<br/>In class org.apache.poi.xwpf.usermodel.XWPFTable<br/>In method org.apache.poi.xwpf.usermodel.XWPFTable.setWidthPercentage(CTTblWidth, String)<br/>At XWPFTable.java:[line 1263]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69291');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "[0-9]+(\\.[0-9]+)?%" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69291" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value [0-9]+(\\.[0-9]+)?%<br/>In class org.apache.poi.xwpf.usermodel.XWPFTable<br/>In method org.apache.poi.xwpf.usermodel.XWPFTable.setWidthValue(String, CTTblWidth)<br/>At XWPFTable.java:[line 1245]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69349');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "auto|[0-9]+|[0-9]+(\\.[0-9]+)?%" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69349" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value auto|[0-9]+|[0-9]+(\\.[0-9]+)?%<br/>In class org.apache.poi.xwpf.usermodel.XWPFTable<br/>In method org.apache.poi.xwpf.usermodel.XWPFTable.setWidthValue(String, CTTblWidth)<br/>At XWPFTable.java:[line 1238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67425');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67425" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.dsig.services.TSPTimeStampService<br/>In method org.apache.poi.poifs.crypt.dsig.services.TSPTimeStampService.timeStamp(byte[], RevocationData)<br/>At TSPTimeStampService.java:[line 130]<br/>Sink method java/net/URL.openConnection(Ljava/net/Proxy;)Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/Proxy.&lt;init&gt;(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V<br/>Unknown source java/net/Proxy.NO_PROXY<br/>At TSPTimeStampService.java:[line 120]<br/>At TSPTimeStampService.java:[line 125]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67143');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67143" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.agile.AgileDecryptor<br/>In method org.apache.poi.poifs.crypt.agile.AgileDecryptor.verifyPassword(String)<br/>At AgileDecryptor.java:[line 184]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67207');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67207" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.dsig.SignatureConfig<br/>In method org.apache.poi.poifs.crypt.dsig.SignatureConfig.getDigestMethodAlgo(String)<br/>At SignatureConfig.java:[line 845]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69095');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69095" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.apache.poi.xssf.usermodel.helpers.XSSFPasswordHelper<br/>In method org.apache.poi.xssf.usermodel.helpers.XSSFPasswordHelper.validatePassword(XmlObject, String, String)<br/>At XSSFPasswordHelper.java:[line 126]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source org/apache/poi/poifs/crypt/CryptoFunctions.hashPassword(Ljava/lang/String;Lorg/apache/poi/poifs/crypt/HashAlgorithm;[BIZ)[B</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69164');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69164" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.apache.poi.xwpf.usermodel.XWPFSettings<br/>In method org.apache.poi.xwpf.usermodel.XWPFSettings.validateProtectionPassword(String)<br/>At XWPFSettings.java:[line 342]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source org/apache/poi/poifs/crypt/CryptoFunctions.hashPassword(Ljava/lang/String;Lorg/apache/poi/poifs/crypt/HashAlgorithm;[BIZ)[B</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67271');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.compile(Ljava/lang/String;)Ljavax/xml/xpath/XPathExpression; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67271" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.dsig.SignaturePart<br/>In method org.apache.poi.poifs.crypt.dsig.SignaturePart.extractConfig(Document, XMLSignature)<br/>At SignaturePart.java:[line 179]<br/>Sink method javax/xml/xpath/XPath.compile(Ljava/lang/String;)Ljavax/xml/xpath/XPathExpression;<br/>Sink parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>At SignaturePart.java:[line 172]<br/>At SignaturePart.java:[line 173]<br/>At SignaturePart.java:[line 174]<br/>At SignaturePart.java:[line 175]<br/>At SignaturePart.java:[line 176]<br/>At SignaturePart.java:[line 178]<br/>At SignaturePart.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68619');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68619" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFImportFromXML<br/>In method org.apache.poi.xssf.extractor.XSSFImportFromXML.importFromXML(String)<br/>At XSSFImportFromXML.java:[line 110]<br/>Sink method javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object;<br/>Sink parameter 2<br/>Unknown source org/openxmlformats/schemas/spreadsheetml/x2006/main/CTXmlPr.getXpath()Ljava/lang/String;<br/>Unknown source org/apache/poi/xssf/usermodel/helpers/XSSFSingleXmlCell.getXpath()Ljava/lang/String;<br/>At XSSFImportFromXML.java:[line 109]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68703');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68703" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFImportFromXML<br/>In method org.apache.poi.xssf.extractor.XSSFImportFromXML.importFromXML(String)<br/>At XSSFImportFromXML.java:[line 125]<br/>Sink method javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object;<br/>Sink parameter 2<br/>Unknown source org/apache/poi/xssf/usermodel/XSSFTable.getCommonXpath()Ljava/lang/String;<br/>Unknown source org/apache/poi/xssf/usermodel/XSSFTable.commonXPath<br/>At XSSFImportFromXML.java:[line 124]<br/>At XSSFTable.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68797');">
+<td>
+<span class="priority-2">SECXPI</span>
+</td>
+<td>This use of javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object; can be vulnerable to XPath Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68797" style="display: none;">
+<a href="#XPATH_INJECTION">Bug type XPATH_INJECTION (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFImportFromXML<br/>In method org.apache.poi.xssf.extractor.XSSFImportFromXML.importFromXML(String)<br/>At XSSFImportFromXML.java:[line 151]<br/>Sink method javax/xml/xpath/XPath.evaluate(Ljava/lang/String;Ljava/lang/Object;Ljavax/xml/namespace/QName;)Ljava/lang/Object;<br/>Sink parameter 2<br/>Unknown source org/apache/poi/xssf/usermodel/helpers/XSSFXmlColumnPr.getLocalXPath()Ljava/lang/String;<br/>Unknown source org/openxmlformats/schemas/spreadsheetml/x2006/main/CTXmlColumnPr.getXpath()Ljava/lang/String;<br/>At XSSFImportFromXML.java:[line 147]<br/>At XSSFImportFromXML.java:[line 148]<br/>At XSSFXmlColumnPr.java:[line 106]<br/>At XSSFXmlColumnPr.java:[line 108]<br/>At XSSFXmlColumnPr.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.poi.ooxml.util.DocumentHelper<br/>In method org.apache.poi.ooxml.util.DocumentHelper.readDocument(InputStream)<br/>At DocumentHelper.java:[line 165]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65678');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65678" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.poi.ooxml.util.DocumentHelper<br/>In method org.apache.poi.ooxml.util.DocumentHelper.readDocument(InputSource)<br/>At DocumentHelper.java:[line 175]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68921');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68921" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFImportFromXML<br/>In method org.apache.poi.xssf.extractor.XSSFImportFromXML.importFromXML(String)<br/>At XSSFImportFromXML.java:[line 92]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68329');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68329" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class org.apache.poi.xssf.eventusermodel.ReadOnlySharedStringsTable<br/>In method org.apache.poi.xssf.eventusermodel.ReadOnlySharedStringsTable.readFrom(InputStream)<br/>At ReadOnlySharedStringsTable.java:[line 178]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68387');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68387" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class org.apache.poi.xssf.eventusermodel.XSSFReader$SheetIterator<br/>In method org.apache.poi.xssf.eventusermodel.XSSFReader$SheetIterator.createSheetIteratorFromWB(PackagePart)<br/>At XSSFReader.java:[line 264]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68445');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68445" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFEventBasedExcelExtractor<br/>In method org.apache.poi.xssf.extractor.XSSFEventBasedExcelExtractor.processSheet(XSSFSheetXMLHandler$SheetContentsHandler, Styles, Comments, SharedStrings, InputStream)<br/>At XSSFEventBasedExcelExtractor.java:[line 251]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66460');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66460" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.StreamHelper<br/>In method org.apache.poi.openxml4j.opc.StreamHelper.&lt;static initializer for StreamHelper&gt;()<br/>At StreamHelper.java:[line 42]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68503');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68503" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFExportToXml<br/>In method org.apache.poi.xssf.extractor.XSSFExportToXml.exportToXML(OutputStream, String, boolean)<br/>At XSSFExportToXml.java:[line 220]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68979');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68979" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.xssf.usermodel.XSSFBuiltinTableStyle<br/>In method org.apache.poi.xssf.usermodel.XSSFBuiltinTableStyle.writeToString(Node)<br/>At XSSFBuiltinTableStyle.java:[line 442]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66518');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66518" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.openxml4j.opc.StreamHelper<br/>In method org.apache.poi.openxml4j.opc.StreamHelper.&lt;static initializer for StreamHelper&gt;()<br/>At StreamHelper.java:[line 42]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68561');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68561" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.xssf.extractor.XSSFExportToXml<br/>In method org.apache.poi.xssf.extractor.XSSFExportToXml.exportToXML(OutputStream, String, boolean)<br/>At XSSFExportToXml.java:[line 220]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69037');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69037" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.poi.xssf.usermodel.XSSFBuiltinTableStyle<br/>In method org.apache.poi.xssf.usermodel.XSSFBuiltinTableStyle.writeToString(Node)<br/>At XSSFBuiltinTableStyle.java:[line 442]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67089');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67089" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.apache.poi.poifs.crypt.agile.AgileDecryptor<br/>In method org.apache.poi.poifs.crypt.agile.AgileDecryptor.initCipherForBlock(Cipher, int, boolean, EncryptionInfo, SecretKey, int)<br/>At AgileDecryptor.java:[line 313]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="XPATH_INJECTION">XPATH_INJECTION: Potential XPath Injection</a>
+</h2>
+            
+<p>
+XPath injection risks are similar to SQL injection. If the XPath query contains untrusted user input, the complete data source
+could be exposed. This could allow an attacker to access unauthorized data or maliciously modify the target XML.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-39: XPath Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/643.html">CWE-643: Improper Neutralization of Data within XPath Expressions ('XPath Injection')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61407250">CERT: IDS09-J. Prevent XPath Injection (archive)</a><br/>
+<a href="https://media.blackhat.com/bh-eu-12/Siddharth/bh-eu-12-Siddharth-Xpath-WP.pdf">Black Hat Europe 2012: Hacking XPath 2.0</a><br/>
+<a href="https://www.balisage.net/Proceedings/vol7/html/Vlist02/BalisageVol7-Vlist02.html">Balisage.net: XQuery Injection</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLREADER">XXE_XMLREADER: XML parsing vulnerable to XXE (XMLReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setContentHandler(customHandler);
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

@@ -1,0 +1,2052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/qpid-broker-j.git/je-7.4.5.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>105903 lines of code analyzed,
+	in 1591 classes, 
+	in 52 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">15</td>
+<td align="right">0.14</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">88</td>
+<td align="right">0.83</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>103</b>
+</td>
+<td align="right">
+<b>0.97</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">98</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>98</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.dbi.CursorImpl<br/>In method com.sleepycat.je.dbi.CursorImpl.skip(boolean, long, RangeConstraint)<br/>At CursorImpl.java:[line 2891]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65807');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65807" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.dbi.EnvironmentImpl<br/>In method com.sleepycat.je.dbi.EnvironmentImpl.appendException(PrintWriter, Exception, String)<br/>At EnvironmentImpl.java:[line 2003]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70058');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70058" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbDumpGroup<br/>In method com.sleepycat.je.rep.utilint.DbDumpGroup.main(String[])<br/>At DbDumpGroup.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70275');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70275" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbNullNode<br/>In method com.sleepycat.je.rep.utilint.DbNullNode.main(String[])<br/>At DbNullNode.java:[line 142]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70403');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70403" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbRepRunAction<br/>In method com.sleepycat.je.rep.utilint.DbRepRunAction.main(String[])<br/>At DbRepRunAction.java:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70531');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70531" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbStreamVerify<br/>In method com.sleepycat.je.rep.utilint.DbStreamVerify.main(String[])<br/>At DbStreamVerify.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70585');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70585" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbStreamVerify<br/>In method com.sleepycat.je.rep.utilint.DbStreamVerify.run()<br/>At DbStreamVerify.java:[line 187]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70639');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70639" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbStreamVerify<br/>In method com.sleepycat.je.rep.utilint.DbStreamVerify.run()<br/>At DbStreamVerify.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72639');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72639" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbSpace<br/>In method com.sleepycat.je.util.DbSpace.main(String[])<br/>At DbSpace.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72693');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72693" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbSpace<br/>In method com.sleepycat.je.util.DbSpace.main(String[])<br/>At DbSpace.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72821');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72821" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbStat<br/>In method com.sleepycat.je.util.DbStat.main(String[])<br/>At DbStat.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73043');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73043" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbVerify<br/>In method com.sleepycat.je.util.DbVerify.main(String[])<br/>At DbVerify.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N93236');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N93236" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.utilint.LoggerUtils<br/>In method com.sleepycat.je.utilint.LoggerUtils.getStackTrace(Throwable)<br/>At LoggerUtils.java:[line 499]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N93290');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N93290" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class com.sleepycat.je.utilint.TracerFormatter<br/>In method com.sleepycat.je.utilint.TracerFormatter.getThrown(LogRecord, StringBuilder)<br/>At TracerFormatter.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71086');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71086" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.RepUtils<br/>In method com.sleepycat.je.rep.utilint.RepUtils.exec(String[])<br/>At RepUtils.java:[line 560]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/RepUtils.exec([Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73538');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73538" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.sleepycat.je.utilint.LoggerUtils<br/>In method com.sleepycat.je.utilint.LoggerUtils.logMsg(Logger, EnvironmentImpl, Level, String)<br/>At LoggerUtils.java:[line 363]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/utilint/LoggerUtils.logMsg(Ljava/util/logging/Logger;Lcom/sleepycat/je/dbi/EnvironmentImpl;Ljava/util/logging/Level;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At StoredClassCatalog.java:[line 297]<br/>At StoredClassCatalog.java:[line 305]<br/>At CurrentTransaction.java:[line 410]<br/>At CurrentTransaction.java:[line 420]<br/>At CurrentTransaction.java:[line 425]<br/>At DataCursor.java:[line 66]<br/>At DataCursor.java:[line 75]<br/>At DataCursor.java:[line 85]<br/>At DataCursor.java:[line 97]<br/>At DataCursor.java:[line 119]<br/>At DataCursor.java:[line 168]<br/>At DataCursor.java:[line 178]<br/>At MyRangeCursor.java:[line 36]<br/>At MyRangeCursor.java:[line 60]<br/>At StoredCollection.java:[line 600]<br/>At StoredCollection.java:[line 605]<br/>At DbCompat.java:[line 642]<br/>At DbCompat.java:[line 651]<br/>At Cursor.java:[line 213]<br/>At Cursor.java:[line 237]<br/>At Cursor.java:[line 264]<br/>At Cursor.java:[line 288]<br/>At Cursor.java:[line 783]<br/>At Cursor.java:[line 784]<br/>At Cursor.java:[line 809]<br/>At Cursor.java:[line 824]<br/>At Cursor.java:[line 885]<br/>At Cursor.java:[line 936]<br/>At Cursor.java:[line 992]<br/>At Cursor.java:[line 1056]<br/>At Cursor.java:[line 1058]<br/>At Cursor.java:[line 1232]<br/>At Cursor.java:[line 1234]<br/>At Cursor.java:[line 1235]<br/>At Cursor.java:[line 1298]<br/>At Cursor.java:[line 1308]<br/>At Cursor.java:[line 1314]<br/>At Cursor.java:[line 1317]<br/>At Cursor.java:[line 1364]<br/>At Cursor.java:[line 1416]<br/>At Cursor.java:[line 1468]<br/>At Cursor.java:[line 1524]<br/>At Cursor.java:[line 1577]<br/>At Cursor.java:[line 1634]<br/>At Cursor.java:[line 1690]<br/>At Cursor.java:[line 1743]<br/>At Cursor.java:[line 1800]<br/>At Cursor.java:[line 1877]<br/>At Cursor.java:[line 1953]<br/>At Cursor.java:[line 2004]<br/>At Cursor.java:[line 2061]<br/>At Cursor.java:[line 2112]<br/>At Cursor.java:[line 2172]<br/>At Cursor.java:[line 5442]<br/>At Cursor.java:[line 5443]<br/>At Cursor.java:[line 5446]<br/>At Cursor.java:[line 5449]<br/>At Cursor.java:[line 5452]<br/>At Cursor.java:[line 5454]<br/>At Cursor.java:[line 5455]<br/>At Cursor.java:[line 5473]<br/>At Cursor.java:[line 5476]<br/>At Cursor.java:[line 5479]<br/>At Cursor.java:[line 5482]<br/>At Cursor.java:[line 5484]<br/>At Cursor.java:[line 5485]<br/>At Cursor.java:[line 5501]<br/>At Cursor.java:[line 5504]<br/>At Cursor.java:[line 5506]<br/>At Cursor.java:[line 5507]<br/>At CursorConfig.java:[line 26]<br/>At CursorConfig.java:[line 32]<br/>At CursorConfig.java:[line 42]<br/>At CursorConfig.java:[line 45]<br/>At CursorConfig.java:[line 46]<br/>At Database.java:[line 66]<br/>At Database.java:[line 69]<br/>At Database.java:[line 688]<br/>At Database.java:[line 775]<br/>At Database.java:[line 828]<br/>At Database.java:[line 903]<br/>At Database.java:[line 913]<br/>At Database.java:[line 943]<br/>At Database.java:[line 946]<br/>At Database.java:[line 1036]<br/>At Database.java:[line 1114]<br/>At Database.java:[line 1316]<br/>At Database.java:[line 1318]<br/>At Database.java:[line 1319]<br/>At Database.java:[line 1401]<br/>At Database.java:[line 1450]<br/>At Database.java:[line 1553]<br/>At Database.java:[line 1560]<br/>At Database.java:[line 1561]<br/>At Database.java:[line 1627]<br/>At Database.java:[line 1676]<br/>At Database.java:[line 1724]<br/>At Database.java:[line 2132]<br/>At Database.java:[line 2387]<br/>At Database.java:[line 2388]<br/>At Database.java:[line 2390]<br/>At Database.java:[line 2392]<br/>At Database.java:[line 2394]<br/>At Database.java:[line 2397]<br/>At Database.java:[line 2399]<br/>At Database.java:[line 2400]<br/>At Database.java:[line 2418]<br/>At Database.java:[line 2420]<br/>At Database.java:[line 2422]<br/>At Database.java:[line 2424]<br/>At Database.java:[line 2427]<br/>At Database.java:[line 2429]<br/>At Database.java:[line 2430]<br/>At Database.java:[line 2446]<br/>At Database.java:[line 2447]<br/>At Database.java:[line 2449]<br/>At Database.java:[line 2452]<br/>At Database.java:[line 2454]<br/>At Database.java:[line 2455]<br/>At DatabaseConfig.java:[line 102]<br/>At DatabaseConfig.java:[line 1398]<br/>At DatabaseEntry.java:[line 471]<br/>At DatabaseException.java:[line 153]<br/>At DatabaseException.java:[line 161]<br/>At DbInternal.java:[line 249]<br/>At DbInternal.java:[line 332]<br/>At DiskOrderedCursor.java:[line 263]<br/>At DiskOrderedCursor.java:[line 301]<br/>At DiskOrderedCursor.java:[line 320]<br/>At DiskOrderedCursor.java:[line 370]<br/>At DiskOrderedCursor.java:[line 371]<br/>At DiskOrderedCursor.java:[line 265]<br/>At DiskOrderedCursorConfig.java:[line 27]<br/>At Durability.java:[line 309]<br/>At Environment.java:[line 646]<br/>At Environment.java:[line 652]<br/>At Environment.java:[line 735]<br/>At Environment.java:[line 737]<br/>At Environment.java:[line 740]<br/>At Environment.java:[line 777]<br/>At Environment.java:[line 2248]<br/>At EnvironmentFailureException.java:[line 255]<br/>At Get.java:[line 22]<br/>At Get.java:[line 36]<br/>At Get.java:[line 58]<br/>At Get.java:[line 73]<br/>At Get.java:[line 92]<br/>At Get.java:[line 108]<br/>At Get.java:[line 123]<br/>At Get.java:[line 138]<br/>At Get.java:[line 161]<br/>At Get.java:[line 179]<br/>At Get.java:[line 199]<br/>At Get.java:[line 222]<br/>At Get.java:[line 240]<br/>At Get.java:[line 260]<br/>At JEVersion.java:[line 118]<br/>At JEVersion.java:[line 120]<br/>At JoinCursor.java:[line 298]<br/>At JoinCursor.java:[line 304]<br/>At JoinCursor.java:[line 311]<br/>At JoinCursor.java:[line 388]<br/>At OperationStatus.java:[line 19]<br/>At OperationStatus.java:[line 24]<br/>At OperationStatus.java:[line 38]<br/>At Put.java:[line 21]<br/>At Put.java:[line 42]<br/>At Put.java:[line 53]<br/>At Put.java:[line 65]<br/>At Put.java:[line 97]<br/>At ReadOptions.java:[line 95]<br/>At SecondaryCursor.java:[line 338]<br/>At SecondaryCursor.java:[line 531]<br/>At SecondaryCursor.java:[line 533]<br/>At SecondaryCursor.java:[line 534]<br/>At SecondaryCursor.java:[line 603]<br/>At SecondaryCursor.java:[line 615]<br/>At SecondaryCursor.java:[line 621]<br/>At SecondaryCursor.java:[line 624]<br/>At SecondaryCursor.java:[line 689]<br/>At SecondaryCursor.java:[line 757]<br/>At SecondaryCursor.java:[line 825]<br/>At SecondaryCursor.java:[line 899]<br/>At SecondaryCursor.java:[line 968]<br/>At SecondaryCursor.java:[line 1042]<br/>At SecondaryCursor.java:[line 1117]<br/>At SecondaryCursor.java:[line 1186]<br/>At SecondaryCursor.java:[line 1260]<br/>At SecondaryCursor.java:[line 1329]<br/>At SecondaryCursor.java:[line 1402]<br/>At SecondaryCursor.java:[line 1467]<br/>At SecondaryCursor.java:[line 1538]<br/>At SecondaryDatabase.java:[line 135]<br/>At SecondaryDatabase.java:[line 285]<br/>At SecondaryDatabase.java:[line 495]<br/>At SecondaryDatabase.java:[line 670]<br/>At SecondaryDatabase.java:[line 680]<br/>At SecondaryDatabase.java:[line 718]<br/>At SecondaryDatabase.java:[line 854]<br/>At SecondaryDatabase.java:[line 947]<br/>At SecondaryDatabase.java:[line 949]<br/>At SecondaryDatabase.java:[line 950]<br/>At SecondaryDatabase.java:[line 1053]<br/>At SecondaryDatabase.java:[line 1121]<br/>At SecondaryDatabase.java:[line 1791]<br/>At SecondaryDatabase.java:[line 1792]<br/>At SecondaryDatabase.java:[line 1793]<br/>At SecondaryDatabase.java:[line 1795]<br/>At SecondaryDatabase.java:[line 1796]<br/>At Sequence.java:[line 495]<br/>At BaseUtilizationTracker.java:[line 73]<br/>At Cleaner.java:[line 705]<br/>At Cleaner.java:[line 761]<br/>At Cleaner.java:[line 845]<br/>At Cleaner.java:[line 847]<br/>At Cleaner.java:[line 862]<br/>At Cleaner.java:[line 864]<br/>At Cleaner.java:[line 916]<br/>At Cleaner.java:[line 931]<br/>At Cleaner.java:[line 933]<br/>At Cleaner.java:[line 938]<br/>At Cleaner.java:[line 942]<br/>At Cleaner.java:[line 1404]<br/>At Cleaner.java:[line 1406]<br/>At Cleaner.java:[line 1426]<br/>At Cleaner.java:[line 1428]<br/>At Cleaner.java:[line 1431]<br/>At Cleaner.java:[line 1432]<br/>At Cleaner.java:[line 1433]<br/>At Cleaner.java:[line 1434]<br/>At Cleaner.java:[line 1435]<br/>At Cleaner.java:[line 1437]<br/>At ExpirationProfile.java:[line 188]<br/>At ExpirationProfile.java:[line 287]<br/>At ExpirationProfile.java:[line 324]<br/>At FileProcessor.java:[line 325]<br/>At FileProcessor.java:[line 377]<br/>At FileProcessor.java:[line 463]<br/>At FileProcessor.java:[line 521]<br/>At FileSelector.java:[line 192]<br/>At FileSummary.java:[line 49]<br/>At UtilizationProfile.java:[line 146]<br/>At UtilizationProfile.java:[line 239]<br/>At UtilizationProfile.java:[line 240]<br/>At UtilizationProfile.java:[line 244]<br/>At UtilizationProfile.java:[line 247]<br/>At ConfigParam.java:[line 96]<br/>At CursorImpl.java:[line 4034]<br/>At CursorImpl.java:[line 4035]<br/>At CursorImpl.java:[line 4037]<br/>At CursorImpl.java:[line 4039]<br/>At CursorImpl.java:[line 4040]<br/>At CursorImpl.java:[line 4041]<br/>At CursorImpl.java:[line 4042]<br/>At CursorImpl.java:[line 4045]<br/>At CursorImpl.java:[line 3318]<br/>At DatabaseImpl.java:[line 378]<br/>At DatabaseImpl.java:[line 533]<br/>At DatabaseImpl.java:[line 2314]<br/>At DatabaseImpl.java:[line 2320]<br/>At DatabaseImpl.java:[line 2326]<br/>At DbTree.java:[line 1892]<br/>At DbTree.java:[line 1920]<br/>At DbTree.java:[line 1921]<br/>At DbTree.java:[line 1931]<br/>At DbTree.java:[line 1932]<br/>At DbTree.java:[line 1942]<br/>At DbTree.java:[line 1943]<br/>At DbType.java:[line 113]<br/>At EnvironmentImpl.java:[line 1861]<br/>At EnvironmentImpl.java:[line 1925]<br/>At EnvironmentImpl.java:[line 2404]<br/>At EnvironmentImpl.java:[line 2858]<br/>At EnvironmentImpl.java:[line 2860]<br/>At StartupTracker.java:[line 172]<br/>At StartupTracker.java:[line 174]<br/>At StartupTracker.java:[line 176]<br/>At StartupTracker.java:[line 202]<br/>At StartupTracker.java:[line 204]<br/>At StartupTracker.java:[line 206]<br/>At StartupTracker.java:[line 224]<br/>At StartupTracker.java:[line 225]<br/>At StartupTracker.java:[line 227]<br/>At StartupTracker.java:[line 228]<br/>At StartupTracker.java:[line 238]<br/>At StartupTracker.java:[line 239]<br/>At StartupTracker.java:[line 241]<br/>At StartupTracker.java:[line 62]<br/>At StartupTracker.java:[line 64]<br/>At StartupTracker.java:[line 65]<br/>At StartupTracker.java:[line 66]<br/>At StartupTracker.java:[line 67]<br/>At StartupTracker.java:[line 69]<br/>At StartupTracker.java:[line 70]<br/>At StartupTracker.java:[line 71]<br/>At StartupTracker.java:[line 73]<br/>At StartupTracker.java:[line 74]<br/>At StartupTracker.java:[line 75]<br/>At StartupTracker.java:[line 76]<br/>At StartupTracker.java:[line 77]<br/>At StartupTracker.java:[line 78]<br/>At StartupTracker.java:[line 79]<br/>At StartupTracker.java:[line 80]<br/>At StartupTracker.java:[line 81]<br/>At StartupTracker.java:[line 82]<br/>At StartupTracker.java:[line 96]<br/>At StartupTracker.java:[line 98]<br/>At StartupTracker.java:[line 106]<br/>At StartupTracker.java:[line 115]<br/>At StartupTracker.java:[line 119]<br/>At StartupTracker.java:[line 120]<br/>At StartupTracker.java:[line 121]<br/>At StartupTracker.java:[line 122]<br/>At StartupTracker.java:[line 124]<br/>At StartupTracker.java:[line 125]<br/>At StartupTracker.java:[line 126]<br/>At StartupTracker.java:[line 128]<br/>At StartupTracker.java:[line 129]<br/>At StartupTracker.java:[line 130]<br/>At StartupTracker.java:[line 131]<br/>At StartupTracker.java:[line 132]<br/>At StartupTracker.java:[line 133]<br/>At StartupTracker.java:[line 134]<br/>At StartupTracker.java:[line 136]<br/>At StartupTracker.java:[line 137]<br/>At Evictor.java:[line 3190]<br/>At Evictor.java:[line 3192]<br/>At OffHeapCache.java:[line 2622]<br/>At OffHeapCache.java:[line 2626]<br/>At JEMBeanHelper.java:[line 661]<br/>At JEMBeanHelper.java:[line 716]<br/>At JEMBeanHelper.java:[line 718]<br/>At JEMonitor.java:[line 421]<br/>At JEMonitor.java:[line 465]<br/>At JEMonitor.java:[line 466]<br/>At LatchSupport.java:[line 205]<br/>At CleanerFileReader.java:[line 60]<br/>At CleanerFileReader.java:[line 323]<br/>At FileDeletionDetector.java:[line 223]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At LNFileReader.java:[line 177]<br/>At LogEntryHeader.java:[line 318]<br/>At LogEntryType.java:[line 736]<br/>At LogFlusher.java:[line 240]<br/>At Checkpointer.java:[line 892]<br/>At Checkpointer.java:[line 926]<br/>At Checkpointer.java:[line 937]<br/>At Checkpointer.java:[line 938]<br/>At Checkpointer.java:[line 939]<br/>At Checkpointer.java:[line 941]<br/>At Checkpointer.java:[line 943]<br/>At RecoveryManager.java:[line 303]<br/>At RecoveryManager.java:[line 414]<br/>At RecoveryManager.java:[line 419]<br/>At RecoveryManager.java:[line 422]<br/>At RecoveryManager.java:[line 429]<br/>At RecoveryManager.java:[line 434]<br/>At RecoveryManager.java:[line 438]<br/>At RecoveryManager.java:[line 477]<br/>At RecoveryManager.java:[line 479]<br/>At RecoveryManager.java:[line 482]<br/>At RecoveryManager.java:[line 495]<br/>At RecoveryManager.java:[line 508]<br/>At RecoveryManager.java:[line 510]<br/>At RecoveryManager.java:[line 568]<br/>At RecoveryManager.java:[line 578]<br/>At RecoveryManager.java:[line 580]<br/>At RecoveryManager.java:[line 672]<br/>At RecoveryManager.java:[line 693]<br/>At RecoveryManager.java:[line 702]<br/>At RecoveryManager.java:[line 713]<br/>At RecoveryManager.java:[line 723]<br/>At RecoveryManager.java:[line 726]<br/>At RecoveryManager.java:[line 741]<br/>At RecoveryManager.java:[line 747]<br/>At RecoveryManager.java:[line 749]<br/>At RecoveryManager.java:[line 760]<br/>At RecoveryManager.java:[line 783]<br/>At RecoveryManager.java:[line 794]<br/>At RecoveryManager.java:[line 797]<br/>At RecoveryManager.java:[line 800]<br/>At RecoveryManager.java:[line 812]<br/>At RecoveryManager.java:[line 814]<br/>At RecoveryManager.java:[line 818]<br/>At RecoveryManager.java:[line 885]<br/>At RecoveryManager.java:[line 893]<br/>At RecoveryManager.java:[line 898]<br/>At RecoveryManager.java:[line 903]<br/>At RecoveryManager.java:[line 1712]<br/>At RecoveryManager.java:[line 1715]<br/>At RecoveryManager.java:[line 3042]<br/>At RecoveryManager.java:[line 3044]<br/>At RecoveryManager.java:[line 3084]<br/>At RecoveryManager.java:[line 3205]<br/>At RecoveryManager.java:[line 3229]<br/>At RecoveryManager.java:[line 3230]<br/>At RecoveryManager.java:[line 3232]<br/>At RecoveryManager.java:[line 3235]<br/>At RecoveryManager.java:[line 3236]<br/>At RecoveryManager.java:[line 3238]<br/>At RecoveryManager.java:[line 3240]<br/>At RecoveryManager.java:[line 3242]<br/>At RecoveryManager.java:[line 3244]<br/>At RecoveryManager.java:[line 3247]<br/>At RecoveryManager.java:[line 3248]<br/>At RecoveryManager.java:[line 3251]<br/>At RecoveryManager.java:[line 3252]<br/>At RecoveryManager.java:[line 3254]<br/>At RecoveryManager.java:[line 3256]<br/>At RecoveryManager.java:[line 3257]<br/>At RecoveryManager.java:[line 3259]<br/>At RecoveryManager.java:[line 3260]<br/>At GroupShutdownException.java:[line 61]<br/>At GroupShutdownException.java:[line 85]<br/>At InsufficientLogException.java:[line 328]<br/>At NetworkRestore.java:[line 243]<br/>At NetworkRestore.java:[line 245]<br/>At NetworkRestore.java:[line 266]<br/>At NetworkRestore.java:[line 268]<br/>At NetworkRestore.java:[line 270]<br/>At NetworkRestore.java:[line 276]<br/>At NetworkRestore.java:[line 278]<br/>At NetworkRestore.java:[line 279]<br/>At NetworkRestore.java:[line 282]<br/>At NetworkRestore.java:[line 283]<br/>At NetworkRestore.java:[line 285]<br/>At NetworkRestore.java:[line 289]<br/>At NetworkRestore.java:[line 291]<br/>At NetworkRestore.java:[line 292]<br/>At NetworkRestore.java:[line 294]<br/>At NetworkRestore.java:[line 296]<br/>At NetworkRestore.java:[line 297]<br/>At NetworkRestore.java:[line 310]<br/>At NetworkRestore.java:[line 312]<br/>At NetworkRestore.java:[line 313]<br/>At ReplicatedEnvironment.java:[line 1105]<br/>At ReplicatedEnvironment.java:[line 1112]<br/>At ReplicatedEnvironment.java:[line 1121]<br/>At ReplicatedEnvironment.java:[line 1130]<br/>At ReplicatedEnvironment.java:[line 1140]<br/>At ReplicatedEnvironment.java:[line 1146]<br/>At ReplicatedEnvironment.java:[line 1153]<br/>At ReplicatedEnvironment.java:[line 1161]<br/>At ReplicatedEnvironment.java:[line 1169]<br/>At ReplicatedEnvironment.java:[line 1177]<br/>At StateChangeEvent.java:[line 52]<br/>At StateChangeEvent.java:[line 88]<br/>At ArbBinaryStateService.java:[line 121]<br/>At ArbBinaryStateService.java:[line 125]<br/>At ArbBinaryStateService.java:[line 127]<br/>At ArbBinaryStateService.java:[line 130]<br/>At ArbBinaryStateService.java:[line 132]<br/>At ArbBinaryStateService.java:[line 134]<br/>At ArbBinaryStateService.java:[line 136]<br/>At ArbiterAcker.java:[line 292]<br/>At ArbiterAcker.java:[line 296]<br/>At ArbiterAcker.java:[line 322]<br/>At ArbiterAcker.java:[line 325]<br/>At ArbiterAcker.java:[line 330]<br/>At ArbiterAcker.java:[line 345]<br/>At ArbiterAcker.java:[line 347]<br/>At ArbiterAcker.java:[line 350]<br/>At ArbiterAcker.java:[line 352]<br/>At ArbiterAcker.java:[line 370]<br/>At ArbiterAcker.java:[line 371]<br/>At ArbiterAcker.java:[line 372]<br/>At ArbiterAcker.java:[line 381]<br/>At ArbiterAcker.java:[line 383]<br/>At ArbiterAcker.java:[line 387]<br/>At ArbiterAcker.java:[line 390]<br/>At ArbiterAcker.java:[line 392]<br/>At ArbiterAcker.java:[line 484]<br/>At ArbiterAcker.java:[line 505]<br/>At ArbiterAcker.java:[line 507]<br/>At ArbiterAcker.java:[line 513]<br/>At ArbiterAcker.java:[line 514]<br/>At ArbiterAcker.java:[line 517]<br/>At ArbiterAcker.java:[line 656]<br/>At ArbiterAcker.java:[line 701]<br/>At ArbiterAcker.java:[line 732]<br/>At ArbiterAcker.java:[line 834]<br/>At ArbiterAcker.java:[line 836]<br/>At ArbiterAcker.java:[line 839]<br/>At ArbiterAcker.java:[line 841]<br/>At ArbiterImpl.java:[line 208]<br/>At ArbiterImpl.java:[line 276]<br/>At ArbiterImpl.java:[line 300]<br/>At ArbiterImpl.java:[line 305]<br/>At ArbiterImpl.java:[line 310]<br/>At ArbiterImpl.java:[line 319]<br/>At ArbiterImpl.java:[line 321]<br/>At ArbiterImpl.java:[line 327]<br/>At ArbiterImpl.java:[line 329]<br/>At ArbiterImpl.java:[line 331]<br/>At ArbiterImpl.java:[line 333]<br/>At ArbiterImpl.java:[line 334]<br/>At ArbiterImpl.java:[line 341]<br/>At ArbiterImpl.java:[line 346]<br/>At ArbiterImpl.java:[line 394]<br/>At ArbiterImpl.java:[line 395]<br/>At ArbiterImpl.java:[line 413]<br/>At ArbiterImpl.java:[line 415]<br/>At ArbiterImpl.java:[line 423]<br/>At ArbiterImpl.java:[line 425]<br/>At ArbiterImpl.java:[line 439]<br/>At ArbiterImpl.java:[line 441]<br/>At ArbiterImpl.java:[line 450]<br/>At ArbiterImpl.java:[line 452]<br/>At ArbiterImpl.java:[line 460]<br/>At ArbiterImpl.java:[line 462]<br/>At ArbiterImpl.java:[line 466]<br/>At ArbiterImpl.java:[line 468]<br/>At ArbiterImpl.java:[line 470]<br/>At ArbiterImpl.java:[line 567]<br/>At ArbiterImpl.java:[line 588]<br/>At ArbiterImpl.java:[line 598]<br/>At ArbiterImpl.java:[line 678]<br/>At ArbiterImpl.java:[line 690]<br/>At ArbiterNodeStateService.java:[line 86]<br/>At ArbiterOutputThread.java:[line 44]<br/>At ArbiterVLSNTracker.java:[line 41]<br/>At ArbiterVLSNTracker.java:[line 42]<br/>At Acceptor.java:[line 86]<br/>At Acceptor.java:[line 102]<br/>At Acceptor.java:[line 124]<br/>At Acceptor.java:[line 145]<br/>At Acceptor.java:[line 146]<br/>At Acceptor.java:[line 179]<br/>At Acceptor.java:[line 180]<br/>At Acceptor.java:[line 189]<br/>At Acceptor.java:[line 212]<br/>At Acceptor.java:[line 213]<br/>At Acceptor.java:[line 218]<br/>At Acceptor.java:[line 220]<br/>At ElectionAgentThread.java:[line 91]<br/>At ElectionAgentThread.java:[line 94]<br/>At Elections.java:[line 569]<br/>At Elections.java:[line 573]<br/>At Elections.java:[line 796]<br/>At Elections.java:[line 799]<br/>At Elections.java:[line 800]<br/>At Elections.java:[line 806]<br/>At Elections.java:[line 809]<br/>At Elections.java:[line 960]<br/>At Elections.java:[line 961]<br/>At Elections.java:[line 967]<br/>At Elections.java:[line 975]<br/>At Elections.java:[line 977]<br/>At Elections.java:[line 979]<br/>At Elections.java:[line 988]<br/>At Elections.java:[line 989]<br/>At Learner.java:[line 144]<br/>At Learner.java:[line 160]<br/>At Learner.java:[line 161]<br/>At Learner.java:[line 181]<br/>At Learner.java:[line 209]<br/>At Learner.java:[line 213]<br/>At Learner.java:[line 216]<br/>At Learner.java:[line 236]<br/>At Learner.java:[line 237]<br/>At Learner.java:[line 103]<br/>At Learner.java:[line 356]<br/>At Learner.java:[line 420]<br/>At Learner.java:[line 423]<br/>At Proposer.java:[line 140]<br/>At Proposer.java:[line 260]<br/>At Proposer.java:[line 389]<br/>At Proposer.java:[line 401]<br/>At Proposer.java:[line 407]<br/>At Proposer.java:[line 215]<br/>At Proposer.java:[line 218]<br/>At Proposer.java:[line 221]<br/>At Proposer.java:[line 320]<br/>At Proposer.java:[line 324]<br/>At Proposer.java:[line 326]<br/>At Protocol.java:[line 425]<br/>At Protocol.java:[line 578]<br/>At Utils.java:[line 81]<br/>At Utils.java:[line 82]<br/>At Utils.java:[line 232]<br/>At Utils.java:[line 235]<br/>At Utils.java:[line 373]<br/>At Utils.java:[line 375]<br/>At BinaryNodeStateService.java:[line 121]<br/>At BinaryNodeStateService.java:[line 125]<br/>At BinaryNodeStateService.java:[line 127]<br/>At BinaryNodeStateService.java:[line 130]<br/>At BinaryNodeStateService.java:[line 132]<br/>At BinaryNodeStateService.java:[line 134]<br/>At BinaryNodeStateService.java:[line 136]<br/>At GroupService.java:[line 115]<br/>At GroupService.java:[line 116]<br/>At GroupService.java:[line 356]<br/>At NodeStateService.java:[line 86]<br/>At RepGroupDB.java:[line 541]<br/>At RepGroupDB.java:[line 544]<br/>At RepGroupDB.java:[line 546]<br/>At RepGroupDB.java:[line 600]<br/>At RepGroupDB.java:[line 602]<br/>At RepGroupDB.java:[line 654]<br/>At RepGroupDB.java:[line 655]<br/>At RepGroupDB.java:[line 665]<br/>At RepGroupDB.java:[line 669]<br/>At RepGroupDB.java:[line 670]<br/>At RepGroupDB.java:[line 671]<br/>At RepGroupDB.java:[line 672]<br/>At RepGroupDB.java:[line 695]<br/>At RepGroupDB.java:[line 711]<br/>At RepGroupDB.java:[line 712]<br/>At RepGroupDB.java:[line 713]<br/>At RepGroupDB.java:[line 714]<br/>At RepGroupDB.java:[line 859]<br/>At RepGroupDB.java:[line 875]<br/>At RepGroupDB.java:[line 877]<br/>At RepGroupDB.java:[line 882]<br/>At RepGroupDB.java:[line 903]<br/>At RepGroupDB.java:[line 1373]<br/>At RepGroupDB.java:[line 1500]<br/>At RepGroupDB.java:[line 1268]<br/>At RepGroupDB.java:[line 1270]<br/>At RepGroupDB.java:[line 1272]<br/>At RepGroupDB.java:[line 1277]<br/>At RepGroupDB.java:[line 1279]<br/>At RepGroupDB.java:[line 1281]<br/>At RepGroupDB.java:[line 1287]<br/>At RepGroupDB.java:[line 1289]<br/>At RepGroupDB.java:[line 1291]<br/>At RepGroupDB.java:[line 1294]<br/>At RepGroupDB.java:[line 1296]<br/>At RepGroupDB.java:[line 1307]<br/>At RepGroupDB.java:[line 1310]<br/>At RepGroupDB.java:[line 1321]<br/>At RepGroupDB.java:[line 1323]<br/>At RepGroupImpl.java:[line 1475]<br/>At RepImpl.java:[line 579]<br/>At RepImpl.java:[line 604]<br/>At RepImpl.java:[line 615]<br/>At RepImpl.java:[line 840]<br/>At RepImpl.java:[line 998]<br/>At RepImpl.java:[line 999]<br/>At RepImpl.java:[line 1255]<br/>At RepImpl.java:[line 1259]<br/>At RepImpl.java:[line 1260]<br/>At RepImpl.java:[line 1294]<br/>At RepImpl.java:[line 1328]<br/>At RepImpl.java:[line 1331]<br/>At RepImpl.java:[line 1433]<br/>At RepImpl.java:[line 1537]<br/>At RepImpl.java:[line 1545]<br/>At RepImpl.java:[line 2056]<br/>At RepImpl.java:[line 2057]<br/>At RepImpl.java:[line 2060]<br/>At RepImpl.java:[line 2064]<br/>At RepImpl.java:[line 2065]<br/>At RepImpl.java:[line 2069]<br/>At RepImpl.java:[line 2072]<br/>At RepImpl.java:[line 2081]<br/>At RepImpl.java:[line 2082]<br/>At RepImpl.java:[line 1072]<br/>At RepNodeImpl.java:[line 136]<br/>At RepNodeImpl.java:[line 175]<br/>At RepNodeImpl.java:[line 197]<br/>At RepNodeImpl.java:[line 224]<br/>At RepNodeImpl.java:[line 232]<br/>At RepNodeImpl.java:[line 244]<br/>At RepNodeImpl.java:[line 252]<br/>At RepNodeImpl.java:[line 325]<br/>At RepNodeImpl.java:[line 326]<br/>At RepNodeImpl.java:[line 328]<br/>At RepNodeImpl.java:[line 329]<br/>At TextProtocol.java:[line 932]<br/>At TextProtocol.java:[line 934]<br/>At TextProtocol.java:[line 951]<br/>At TextProtocol.java:[line 954]<br/>At TextProtocol.java:[line 958]<br/>At TextProtocol.java:[line 961]<br/>At TextProtocol.java:[line 1007]<br/>At TextProtocol.java:[line 1008]<br/>At TextProtocol.java:[line 1009]<br/>At TextProtocol.java:[line 1010]<br/>At TextProtocol.java:[line 1011]<br/>At TextProtocol.java:[line 1050]<br/>At TextProtocol.java:[line 1051]<br/>At TextProtocol.java:[line 1058]<br/>At TextProtocol.java:[line 1064]<br/>At TextProtocol.java:[line 1065]<br/>At TextProtocol.java:[line 1082]<br/>At TextProtocol.java:[line 1083]<br/>At TextProtocol.java:[line 1084]<br/>At TextProtocol.java:[line 1091]<br/>At TextProtocol.java:[line 1092]<br/>At TextProtocol.java:[line 1093]<br/>At TextProtocol.java:[line 1121]<br/>At TextProtocol.java:[line 1125]<br/>At TextProtocol.java:[line 698]<br/>At FeederManager.java:[line 182]<br/>At FeederManager.java:[line 183]<br/>At FeederManager.java:[line 198]<br/>At LogFileFeeder.java:[line 113]<br/>At LogFileFeeder.java:[line 117]<br/>At LogFileFeeder.java:[line 159]<br/>At LogFileFeeder.java:[line 160]<br/>At LogFileFeeder.java:[line 162]<br/>At LogFileFeeder.java:[line 163]<br/>At LogFileFeeder.java:[line 173]<br/>At LogFileFeeder.java:[line 175]<br/>At LogFileFeeder.java:[line 177]<br/>At LogFileFeeder.java:[line 213]<br/>At LogFileFeeder.java:[line 214]<br/>At LogFileFeeder.java:[line 224]<br/>At LogFileFeeder.java:[line 286]<br/>At LogFileFeeder.java:[line 302]<br/>At LogFileFeeder.java:[line 415]<br/>At LogFileFeeder.java:[line 455]<br/>At LogFileFeeder.java:[line 485]<br/>At LogFileFeeder.java:[line 501]<br/>At NetworkBackup.java:[line 296]<br/>At NetworkBackup.java:[line 348]<br/>At NetworkBackup.java:[line 352]<br/>At NetworkBackup.java:[line 403]<br/>At NetworkBackup.java:[line 405]<br/>At NetworkBackup.java:[line 446]<br/>At NetworkBackup.java:[line 451]<br/>At NetworkBackup.java:[line 454]<br/>At NetworkBackup.java:[line 456]<br/>At NetworkBackup.java:[line 458]<br/>At NetworkBackup.java:[line 488]<br/>At NetworkBackup.java:[line 507]<br/>At NetworkBackup.java:[line 538]<br/>At NetworkBackup.java:[line 539]<br/>At NetworkBackup.java:[line 551]<br/>At NetworkBackup.java:[line 559]<br/>At NetworkBackup.java:[line 560]<br/>At NetworkBackup.java:[line 583]<br/>At NetworkBackup.java:[line 584]<br/>At NetworkBackup.java:[line 593]<br/>At NetworkBackup.java:[line 648]<br/>At NetworkBackup.java:[line 649]<br/>At NetworkBackup.java:[line 655]<br/>At NetworkBackup.java:[line 668]<br/>At NetworkBackup.java:[line 698]<br/>At NetworkBackup.java:[line 765]<br/>At NetworkBackup.java:[line 766]<br/>At NetworkBackup.java:[line 780]<br/>At NetworkBackup.java:[line 781]<br/>At NetworkBackup.java:[line 794]<br/>At NetworkBackup.java:[line 813]<br/>At NetworkBackup.java:[line 887]<br/>At DurabilityQuorum.java:[line 76]<br/>At DurabilityQuorum.java:[line 162]<br/>At DurabilityQuorum.java:[line 182]<br/>At DurabilityQuorum.java:[line 184]<br/>At DurabilityQuorum.java:[line 188]<br/>At Feeder.java:[line 211]<br/>At Feeder.java:[line 221]<br/>At Feeder.java:[line 253]<br/>At Feeder.java:[line 320]<br/>At Feeder.java:[line 321]<br/>At Feeder.java:[line 331]<br/>At Feeder.java:[line 333]<br/>At Feeder.java:[line 351]<br/>At Feeder.java:[line 374]<br/>At Feeder.java:[line 421]<br/>At Feeder.java:[line 489]<br/>At Feeder.java:[line 512]<br/>At Feeder.java:[line 516]<br/>At Feeder.java:[line 517]<br/>At Feeder.java:[line 536]<br/>At Feeder.java:[line 542]<br/>At Feeder.java:[line 543]<br/>At Feeder.java:[line 545]<br/>At Feeder.java:[line 547]<br/>At Feeder.java:[line 1530]<br/>At Feeder.java:[line 1532]<br/>At Feeder.java:[line 1533]<br/>At Feeder.java:[line 629]<br/>At Feeder.java:[line 661]<br/>At Feeder.java:[line 671]<br/>At Feeder.java:[line 673]<br/>At Feeder.java:[line 676]<br/>At Feeder.java:[line 712]<br/>At Feeder.java:[line 722]<br/>At Feeder.java:[line 723]<br/>At Feeder.java:[line 744]<br/>At Feeder.java:[line 745]<br/>At Feeder.java:[line 746]<br/>At Feeder.java:[line 829]<br/>At Feeder.java:[line 831]<br/>At Feeder.java:[line 1069]<br/>At Feeder.java:[line 1073]<br/>At Feeder.java:[line 1076]<br/>At Feeder.java:[line 1080]<br/>At Feeder.java:[line 1092]<br/>At Feeder.java:[line 1106]<br/>At Feeder.java:[line 1107]<br/>At Feeder.java:[line 1110]<br/>At Feeder.java:[line 1115]<br/>At Feeder.java:[line 1174]<br/>At Feeder.java:[line 1185]<br/>At Feeder.java:[line 1186]<br/>At Feeder.java:[line 1187]<br/>At Feeder.java:[line 1197]<br/>At Feeder.java:[line 1199]<br/>At Feeder.java:[line 1200]<br/>At Feeder.java:[line 1202]<br/>At Feeder.java:[line 1434]<br/>At Feeder.java:[line 1437]<br/>At Feeder.java:[line 1440]<br/>At FeederManager.java:[line 389]<br/>At FeederManager.java:[line 450]<br/>At FeederManager.java:[line 514]<br/>At FeederManager.java:[line 684]<br/>At FeederManager.java:[line 693]<br/>At FeederManager.java:[line 694]<br/>At FeederManager.java:[line 699]<br/>At FeederManager.java:[line 700]<br/>At FeederManager.java:[line 706]<br/>At FeederManager.java:[line 707]<br/>At FeederManager.java:[line 735]<br/>At FeederManager.java:[line 737]<br/>At FeederManager.java:[line 1059]<br/>At FeederManager.java:[line 1061]<br/>At FeederManager.java:[line 1062]<br/>At FeederManager.java:[line 1068]<br/>At FeederManager.java:[line 1070]<br/>At GlobalCBVLSN.java:[line 305]<br/>At GlobalCBVLSN.java:[line 315]<br/>At GlobalCBVLSN.java:[line 332]<br/>At GlobalCBVLSN.java:[line 342]<br/>At GlobalCBVLSN.java:[line 345]<br/>At GlobalCBVLSN.java:[line 350]<br/>At GlobalCBVLSN.java:[line 379]<br/>At GlobalCBVLSN.java:[line 383]<br/>At LocalCBVLSNTracker.java:[line 168]<br/>At LocalCBVLSNUpdater.java:[line 107]<br/>At LocalCBVLSNUpdater.java:[line 125]<br/>At LocalCBVLSNUpdater.java:[line 159]<br/>At LocalCBVLSNUpdater.java:[line 170]<br/>At LocalCBVLSNUpdater.java:[line 180]<br/>At LocalCBVLSNUpdater.java:[line 184]<br/>At LocalCBVLSNUpdater.java:[line 225]<br/>At LocalCBVLSNUpdater.java:[line 242]<br/>At LocalCBVLSNUpdater.java:[line 245]<br/>At LocalCBVLSNUpdater.java:[line 247]<br/>At LocalCBVLSNUpdater.java:[line 249]<br/>At LocalCBVLSNUpdater.java:[line 250]<br/>At MasterTransfer.java:[line 94]<br/>At MasterTransfer.java:[line 97]<br/>At MasterTransfer.java:[line 180]<br/>At MasterTransfer.java:[line 236]<br/>At MasterTransfer.java:[line 281]<br/>At MasterTransfer.java:[line 326]<br/>At MasterTransfer.java:[line 327]<br/>At MasterTransfer.java:[line 328]<br/>At NameIdPair.java:[line 41]<br/>At NameIdPair.java:[line 60]<br/>At NameIdPair.java:[line 96]<br/>At NodeState.java:[line 46]<br/>At NodeState.java:[line 73]<br/>At NodeState.java:[line 81]<br/>At NodeState.java:[line 83]<br/>At RepNode.java:[line 315]<br/>At RepNode.java:[line 444]<br/>At RepNode.java:[line 446]<br/>At RepNode.java:[line 448]<br/>At RepNode.java:[line 459]<br/>At RepNode.java:[line 473]<br/>At RepNode.java:[line 595]<br/>At RepNode.java:[line 785]<br/>At RepNode.java:[line 883]<br/>At RepNode.java:[line 889]<br/>At RepNode.java:[line 906]<br/>At RepNode.java:[line 1236]<br/>At RepNode.java:[line 1239]<br/>At RepNode.java:[line 1287]<br/>At RepNode.java:[line 1317]<br/>At RepNode.java:[line 1318]<br/>At RepNode.java:[line 1432]<br/>At RepNode.java:[line 1454]<br/>At RepNode.java:[line 1483]<br/>At RepNode.java:[line 1519]<br/>At RepNode.java:[line 1531]<br/>At RepNode.java:[line 1596]<br/>At RepNode.java:[line 1601]<br/>At RepNode.java:[line 1603]<br/>At RepNode.java:[line 1629]<br/>At RepNode.java:[line 1654]<br/>At RepNode.java:[line 1655]<br/>At RepNode.java:[line 1658]<br/>At RepNode.java:[line 1689]<br/>At RepNode.java:[line 1697]<br/>At RepNode.java:[line 1708]<br/>At RepNode.java:[line 1731]<br/>At RepNode.java:[line 1734]<br/>At RepNode.java:[line 1759]<br/>At RepNode.java:[line 1789]<br/>At RepNode.java:[line 1790]<br/>At RepNode.java:[line 1791]<br/>At RepNode.java:[line 1795]<br/>At RepNode.java:[line 1797]<br/>At RepNode.java:[line 1836]<br/>At RepNode.java:[line 1837]<br/>At RepNode.java:[line 1861]<br/>At RepNode.java:[line 1882]<br/>At RepNode.java:[line 1887]<br/>At RepNode.java:[line 1892]<br/>At RepNode.java:[line 1902]<br/>At RepNode.java:[line 1904]<br/>At RepNode.java:[line 1910]<br/>At RepNode.java:[line 1912]<br/>At RepNode.java:[line 1914]<br/>At RepNode.java:[line 1916]<br/>At RepNode.java:[line 1917]<br/>At RepNode.java:[line 1924]<br/>At RepNode.java:[line 1932]<br/>At RepNode.java:[line 1960]<br/>At RepNode.java:[line 1991]<br/>At RepNode.java:[line 1995]<br/>At RepNode.java:[line 1997]<br/>At RepNode.java:[line 2027]<br/>At RepNode.java:[line 2029]<br/>At RepNode.java:[line 2030]<br/>At RepNode.java:[line 2043]<br/>At RepNode.java:[line 2044]<br/>At RepNode.java:[line 2046]<br/>At RepNode.java:[line 2087]<br/>At RepNode.java:[line 2117]<br/>At RepNode.java:[line 2158]<br/>At RepNode.java:[line 2159]<br/>At RepNode.java:[line 2163]<br/>At RepNode.java:[line 2200]<br/>At RepNode.java:[line 2216]<br/>At RepNode.java:[line 2235]<br/>At RepNode.java:[line 2237]<br/>At RepNode.java:[line 2240]<br/>At RepNode.java:[line 2242]<br/>At RepNode.java:[line 2256]<br/>At RepNode.java:[line 2258]<br/>At RepNode.java:[line 2266]<br/>At RepNode.java:[line 2271]<br/>At RepNode.java:[line 2291]<br/>At RepNode.java:[line 2307]<br/>At RepNode.java:[line 2309]<br/>At RepNode.java:[line 2330]<br/>At RepNode.java:[line 2387]<br/>At RepNode.java:[line 2390]<br/>At RepNode.java:[line 2783]<br/>At RepNode.java:[line 2840]<br/>At RepNode.java:[line 3074]<br/>At RepNode.java:[line 3001]<br/>At RepNode.java:[line 3044]<br/>At RepNode.java:[line 3045]<br/>At Replay.java:[line 475]<br/>At Replay.java:[line 492]<br/>At Replay.java:[line 512]<br/>At Replay.java:[line 515]<br/>At Replay.java:[line 616]<br/>At Replay.java:[line 618]<br/>At Replay.java:[line 619]<br/>At Replay.java:[line 622]<br/>At Replay.java:[line 653]<br/>At Replay.java:[line 674]<br/>At Replay.java:[line 713]<br/>At Replay.java:[line 714]<br/>At Replay.java:[line 719]<br/>At Replay.java:[line 720]<br/>At Replay.java:[line 1065]<br/>At Replay.java:[line 1120]<br/>At Replay.java:[line 1122]<br/>At Replay.java:[line 1174]<br/>At Replay.java:[line 1176]<br/>At Replay.java:[line 1225]<br/>At Replay.java:[line 1244]<br/>At Replay.java:[line 1246]<br/>At Replica.java:[line 423]<br/>At Replica.java:[line 427]<br/>At Replica.java:[line 465]<br/>At Replica.java:[line 467]<br/>At Replica.java:[line 496]<br/>At Replica.java:[line 498]<br/>At Replica.java:[line 500]<br/>At Replica.java:[line 509]<br/>At Replica.java:[line 511]<br/>At Replica.java:[line 515]<br/>At Replica.java:[line 523]<br/>At Replica.java:[line 526]<br/>At Replica.java:[line 528]<br/>At Replica.java:[line 612]<br/>At Replica.java:[line 697]<br/>At Replica.java:[line 699]<br/>At Replica.java:[line 701]<br/>At Replica.java:[line 723]<br/>At Replica.java:[line 724]<br/>At Replica.java:[line 727]<br/>At Replica.java:[line 760]<br/>At Replica.java:[line 762]<br/>At Replica.java:[line 768]<br/>At Replica.java:[line 769]<br/>At Replica.java:[line 772]<br/>At Replica.java:[line 972]<br/>At Replica.java:[line 975]<br/>At Replica.java:[line 1317]<br/>At Replica.java:[line 1689]<br/>At Replica.java:[line 1694]<br/>At Replica.java:[line 1208]<br/>At Replica.java:[line 1252]<br/>At Replica.java:[line 1254]<br/>At Replica.java:[line 1257]<br/>At Replica.java:[line 1259]<br/>At ReplicaOutputThread.java:[line 38]<br/>At ReplicaOutputThreadBase.java:[line 225]<br/>At ReplicaOutputThreadBase.java:[line 242]<br/>At ReplicaOutputThreadBase.java:[line 264]<br/>At ReplicaOutputThreadBase.java:[line 267]<br/>At ReplicaOutputThreadBase.java:[line 298]<br/>At ReplicaOutputThreadBase.java:[line 321]<br/>At RepJEMonitor.java:[line 107]<br/>At Monitor.java:[line 549]<br/>At Monitor.java:[line 553]<br/>At BaseProtocol.java:[line 349]<br/>At BaseProtocol.java:[line 610]<br/>At BaseProtocol.java:[line 1120]<br/>At BaseProtocol.java:[line 1067]<br/>At FeederReader.java:[line 137]<br/>At FeederReplicaHandshake.java:[line 250]<br/>At FeederReplicaHandshake.java:[line 252]<br/>At FeederReplicaHandshake.java:[line 253]<br/>At FeederReplicaHandshake.java:[line 254]<br/>At FeederReplicaHandshake.java:[line 255]<br/>At FeederReplicaHandshake.java:[line 261]<br/>At FeederReplicaHandshake.java:[line 262]<br/>At FeederReplicaHandshake.java:[line 263]<br/>At FeederReplicaHandshake.java:[line 264]<br/>At FeederReplicaHandshake.java:[line 275]<br/>At FeederReplicaHandshake.java:[line 287]<br/>At FeederReplicaHandshake.java:[line 288]<br/>At FeederReplicaHandshake.java:[line 291]<br/>At FeederReplicaHandshake.java:[line 302]<br/>At FeederReplicaHandshake.java:[line 316]<br/>At FeederReplicaHandshake.java:[line 423]<br/>At FeederReplicaHandshake.java:[line 429]<br/>At FeederReplicaHandshake.java:[line 439]<br/>At FeederReplicaHandshake.java:[line 441]<br/>At FeederReplicaHandshake.java:[line 442]<br/>At FeederReplicaHandshake.java:[line 600]<br/>At FeederReplicaHandshake.java:[line 626]<br/>At FeederReplicaSyncup.java:[line 93]<br/>At FeederReplicaSyncup.java:[line 95]<br/>At FeederReplicaSyncup.java:[line 97]<br/>At FeederReplicaSyncup.java:[line 120]<br/>At FeederReplicaSyncup.java:[line 138]<br/>At FeederReplicaSyncup.java:[line 140]<br/>At FeederReplicaSyncup.java:[line 141]<br/>At FeederReplicaSyncup.java:[line 145]<br/>At FeederReplicaSyncup.java:[line 151]<br/>At FeederReplicaSyncup.java:[line 163]<br/>At FeederReplicaSyncup.java:[line 165]<br/>At FeederReplicaSyncup.java:[line 175]<br/>At FeederReplicaSyncup.java:[line 280]<br/>At FeederReplicaSyncup.java:[line 329]<br/>At FeederReplicaSyncup.java:[line 359]<br/>At FeederSyncupReader.java:[line 79]<br/>At FeederTxns.java:[line 217]<br/>At InputWireRecord.java:[line 93]<br/>At MasterChangeListener.java:[line 52]<br/>At MasterChangeListener.java:[line 60]<br/>At MasterChangeListener.java:[line 63]<br/>At MasterChangeListener.java:[line 65]<br/>At MasterStatus.java:[line 143]<br/>At MasterStatus.java:[line 159]<br/>At MasterStatus.java:[line 174]<br/>At MatchpointSearchResults.java:[line 81]<br/>At MatchpointSearchResults.java:[line 262]<br/>At MatchpointSearchResults.java:[line 263]<br/>At MatchpointSearchResults.java:[line 264]<br/>At MatchpointSearchResults.java:[line 266]<br/>At OutputWireRecord.java:[line 212]<br/>At ReplicaFeederHandshake.java:[line 181]<br/>At ReplicaFeederHandshake.java:[line 204]<br/>At ReplicaFeederHandshake.java:[line 205]<br/>At ReplicaFeederHandshake.java:[line 206]<br/>At ReplicaFeederHandshake.java:[line 208]<br/>At ReplicaFeederHandshake.java:[line 210]<br/>At ReplicaFeederHandshake.java:[line 263]<br/>At ReplicaFeederHandshake.java:[line 264]<br/>At ReplicaFeederHandshake.java:[line 275]<br/>At ReplicaFeederHandshake.java:[line 324]<br/>At ReplicaFeederHandshake.java:[line 397]<br/>At ReplicaFeederSyncup.java:[line 76]<br/>At ReplicaFeederSyncup.java:[line 134]<br/>At ReplicaFeederSyncup.java:[line 135]<br/>At ReplicaFeederSyncup.java:[line 138]<br/>At ReplicaFeederSyncup.java:[line 150]<br/>At ReplicaFeederSyncup.java:[line 157]<br/>At ReplicaFeederSyncup.java:[line 159]<br/>At ReplicaFeederSyncup.java:[line 162]<br/>At ReplicaFeederSyncup.java:[line 166]<br/>At ReplicaFeederSyncup.java:[line 169]<br/>At ReplicaFeederSyncup.java:[line 230]<br/>At ReplicaFeederSyncup.java:[line 233]<br/>At ReplicaFeederSyncup.java:[line 276]<br/>At ReplicaFeederSyncup.java:[line 288]<br/>At ReplicaFeederSyncup.java:[line 311]<br/>At ReplicaFeederSyncup.java:[line 323]<br/>At ReplicaFeederSyncup.java:[line 357]<br/>At ReplicaFeederSyncup.java:[line 360]<br/>At ReplicaFeederSyncup.java:[line 393]<br/>At ReplicaFeederSyncup.java:[line 394]<br/>At ReplicaFeederSyncup.java:[line 406]<br/>At ReplicaFeederSyncup.java:[line 416]<br/>At ReplicaFeederSyncup.java:[line 423]<br/>At ReplicaFeederSyncup.java:[line 425]<br/>At ReplicaFeederSyncup.java:[line 459]<br/>At ReplicaFeederSyncup.java:[line 472]<br/>At ReplicaFeederSyncup.java:[line 474]<br/>At ReplicaFeederSyncup.java:[line 478]<br/>At ReplicaFeederSyncup.java:[line 486]<br/>At ReplicaFeederSyncup.java:[line 655]<br/>At ReplicaFeederSyncup.java:[line 683]<br/>At ReplicaFeederSyncup.java:[line 686]<br/>At ReplicaFeederSyncup.java:[line 712]<br/>At ReplicaFeederSyncup.java:[line 729]<br/>At ReplicaFeederSyncup.java:[line 730]<br/>At ReplicaSyncupReader.java:[line 102]<br/>At ReplicaSyncupReader.java:[line 162]<br/>At ReplicaSyncupReader.java:[line 214]<br/>At ReplicaSyncupReader.java:[line 292]<br/>At ReplicaSyncupReader.java:[line 312]<br/>At ReplicaSyncupReader.java:[line 350]<br/>At ReplicaSyncupReader.java:[line 361]<br/>At ReplicaSyncupReader.java:[line 390]<br/>At SubscriberFeederSyncup.java:[line 67]<br/>At SubscriberFeederSyncup.java:[line 68]<br/>At SubscriberFeederSyncup.java:[line 73]<br/>At SubscriberFeederSyncup.java:[line 74]<br/>At SubscriberFeederSyncup.java:[line 75]<br/>At SubscriberFeederSyncup.java:[line 77]<br/>At SubscriberFeederSyncup.java:[line 83]<br/>At SubscriberFeederSyncup.java:[line 86]<br/>At SubscriberFeederSyncup.java:[line 88]<br/>At SubscriberFeederSyncup.java:[line 121]<br/>At SubscriberFeederSyncup.java:[line 123]<br/>At SubscriberFeederSyncup.java:[line 126]<br/>At SubscriberFeederSyncup.java:[line 137]<br/>At SubscriberFeederSyncup.java:[line 140]<br/>At SubscriberFeederSyncup.java:[line 143]<br/>At SubscriberFeederSyncup.java:[line 146]<br/>At SubscriberFeederSyncup.java:[line 149]<br/>At SubscriberFeederSyncup.java:[line 150]<br/>At SubscriberFeederSyncup.java:[line 155]<br/>At SubscriberFeederSyncup.java:[line 156]<br/>At SubscriberFeederSyncup.java:[line 157]<br/>At SubscriberFeederSyncup.java:[line 162]<br/>At SubscriberFeederSyncup.java:[line 163]<br/>At SubscriberFeederSyncup.java:[line 164]<br/>At VLSNReader.java:[line 86]<br/>At Subscription.java:[line 153]<br/>At SubscriptionConfig.java:[line 284]<br/>At SubscriptionConfig.java:[line 297]<br/>At SubscriptionOutputThread.java:[line 57]<br/>At SubscriptionProcessMessageThread.java:[line 70]<br/>At SubscriptionStat.java:[line 52]<br/>At SubscriptionThread.java:[line 143]<br/>At SubscriptionThread.java:[line 146]<br/>At SubscriptionThread.java:[line 169]<br/>At SubscriptionThread.java:[line 172]<br/>At SubscriptionThread.java:[line 174]<br/>At SubscriptionThread.java:[line 180]<br/>At SubscriptionThread.java:[line 182]<br/>At SubscriptionThread.java:[line 183]<br/>At SubscriptionThread.java:[line 196]<br/>At SubscriptionThread.java:[line 198]<br/>At SubscriptionThread.java:[line 199]<br/>At SubscriptionThread.java:[line 203]<br/>At SubscriptionThread.java:[line 204]<br/>At SubscriptionThread.java:[line 205]<br/>At SubscriptionThread.java:[line 209]<br/>At SubscriptionThread.java:[line 211]<br/>At SubscriptionThread.java:[line 212]<br/>At SubscriptionThread.java:[line 216]<br/>At SubscriptionThread.java:[line 218]<br/>At SubscriptionThread.java:[line 219]<br/>At SubscriptionThread.java:[line 223]<br/>At SubscriptionThread.java:[line 224]<br/>At SubscriptionThread.java:[line 225]<br/>At SubscriptionThread.java:[line 229]<br/>At SubscriptionThread.java:[line 230]<br/>At SubscriptionThread.java:[line 231]<br/>At SubscriptionThread.java:[line 255]<br/>At SubscriptionThread.java:[line 262]<br/>At SubscriptionThread.java:[line 267]<br/>At SubscriptionThread.java:[line 269]<br/>At SubscriptionThread.java:[line 277]<br/>At SubscriptionThread.java:[line 283]<br/>At SubscriptionThread.java:[line 285]<br/>At SubscriptionThread.java:[line 299]<br/>At SubscriptionThread.java:[line 327]<br/>At SubscriptionThread.java:[line 328]<br/>At SubscriptionThread.java:[line 347]<br/>At SubscriptionThread.java:[line 348]<br/>At SubscriptionThread.java:[line 359]<br/>At SubscriptionThread.java:[line 360]<br/>At SubscriptionThread.java:[line 366]<br/>At SubscriptionThread.java:[line 367]<br/>At SubscriptionThread.java:[line 371]<br/>At SubscriptionThread.java:[line 382]<br/>At SubscriptionThread.java:[line 383]<br/>At SubscriptionThread.java:[line 385]<br/>At SubscriptionThread.java:[line 386]<br/>At SubscriptionThread.java:[line 404]<br/>At SubscriptionThread.java:[line 406]<br/>At SubscriptionThread.java:[line 407]<br/>At SubscriptionThread.java:[line 427]<br/>At SubscriptionThread.java:[line 429]<br/>At SubscriptionThread.java:[line 435]<br/>At SubscriptionThread.java:[line 437]<br/>At SubscriptionThread.java:[line 474]<br/>At SubscriptionThread.java:[line 477]<br/>At SubscriptionThread.java:[line 478]<br/>At SubscriptionThread.java:[line 479]<br/>At SubscriptionThread.java:[line 520]<br/>At SubscriptionThread.java:[line 521]<br/>At SubscriptionThread.java:[line 523]<br/>At SubscriptionThread.java:[line 544]<br/>At SubscriptionThread.java:[line 546]<br/>At SubscriptionThread.java:[line 547]<br/>At SubscriptionThread.java:[line 553]<br/>At SubscriptionThread.java:[line 554]<br/>At SubscriptionThread.java:[line 566]<br/>At SubscriptionThread.java:[line 568]<br/>At SubscriptionThread.java:[line 572]<br/>At SubscriptionThread.java:[line 574]<br/>At SubscriptionThread.java:[line 589]<br/>At SubscriptionThread.java:[line 591]<br/>At MasterTxn.java:[line 66]<br/>At MasterTxn.java:[line 171]<br/>At MasterTxn.java:[line 643]<br/>At MasterTxn.java:[line 644]<br/>At MasterTxn.java:[line 646]<br/>At MasterTxn.java:[line 647]<br/>At ReadonlyTxn.java:[line 133]<br/>At ReplayTxn.java:[line 66]<br/>At ReplayTxn.java:[line 394]<br/>At ReplayTxn.java:[line 514]<br/>At ReplayTxn.java:[line 516]<br/>At ReplayTxn.java:[line 518]<br/>At ReplayTxn.java:[line 646]<br/>At ReplayTxn.java:[line 647]<br/>At DbPing.java:[line 320]<br/>At BlockBag.java:[line 82]<br/>At BlockBag.java:[line 161]<br/>At BlockBag.java:[line 180]<br/>At DiffRecordAnalyzer.java:[line 61]<br/>At DiffRecordAnalyzer.java:[line 109]<br/>At DiffRecordAnalyzer.java:[line 110]<br/>At DiffRecordAnalyzer.java:[line 255]<br/>At DiffRecordAnalyzer.java:[line 331]<br/>At LDiff.java:[line 229]<br/>At LDiff.java:[line 241]<br/>At LDiff.java:[line 243]<br/>At LDiff.java:[line 245]<br/>At LDiff.java:[line 267]<br/>At LDiff.java:[line 273]<br/>At LDiff.java:[line 276]<br/>At LDiff.java:[line 279]<br/>At LDiff.java:[line 285]<br/>At LDiff.java:[line 391]<br/>At LDiff.java:[line 399]<br/>At LDiff.java:[line 418]<br/>At LDiff.java:[line 423]<br/>At LDiff.java:[line 426]<br/>At LDiff.java:[line 492]<br/>At LDiff.java:[line 528]<br/>At LDiff.java:[line 553]<br/>At LDiff.java:[line 628]<br/>At LDiff.java:[line 630]<br/>At LDiff.java:[line 631]<br/>At LDiff.java:[line 663]<br/>At LDiff.java:[line 670]<br/>At LDiff.java:[line 675]<br/>At LDiff.java:[line 676]<br/>At LDiff.java:[line 828]<br/>At LDiffService.java:[line 105]<br/>At LDiffService.java:[line 106]<br/>At LDiffService.java:[line 113]<br/>At LDiffService.java:[line 116]<br/>At LDiffService.java:[line 121]<br/>At LDiffService.java:[line 125]<br/>At LDiffService.java:[line 129]<br/>At LDiffService.java:[line 152]<br/>At LDiffService.java:[line 171]<br/>At LDiffService.java:[line 176]<br/>At LDiffService.java:[line 178]<br/>At LDiffService.java:[line 180]<br/>At LDiffService.java:[line 186]<br/>At LDiffService.java:[line 208]<br/>At LDiffUtil.java:[line 144]<br/>At Protocol.java:[line 164]<br/>At BinaryProtocol.java:[line 536]<br/>At BinaryProtocol.java:[line 546]<br/>At BinaryProtocol.java:[line 565]<br/>At BinaryProtocol.java:[line 567]<br/>At BinaryProtocol.java:[line 570]<br/>At BinaryProtocol.java:[line 572]<br/>At BinaryProtocol.java:[line 736]<br/>At BinaryProtocol.java:[line 388]<br/>At BinaryProtocol.java:[line 1141]<br/>At BinaryProtocol.java:[line 1143]<br/>At BinaryProtocol.java:[line 1000]<br/>At BinaryProtocol.java:[line 948]<br/>At DbDumpGroup.java:[line 86]<br/>At DbDumpGroup.java:[line 87]<br/>At DbDumpGroup.java:[line 92]<br/>At DbDumpGroup.java:[line 94]<br/>At DbNullNode.java:[line 128]<br/>At DbNullNode.java:[line 129]<br/>At DbNullNode.java:[line 130]<br/>At DbNullNode.java:[line 371]<br/>At DbStreamVerify.java:[line 316]<br/>At DbStreamVerify.java:[line 317]<br/>At DbStreamVerify.java:[line 397]<br/>At DbStreamVerify.java:[line 398]<br/>At DbStreamVerify.java:[line 357]<br/>At DbStreamVerify.java:[line 358]<br/>At DbStreamVerify.java:[line 200]<br/>At DbSync.java:[line 321]<br/>At HostPortPair.java:[line 90]<br/>At NamedChannel.java:[line 50]<br/>At NamedChannel.java:[line 54]<br/>At NamedChannelWithTimeout.java:[line 158]<br/>At NamedChannelWithTimeout.java:[line 159]<br/>At ServiceDispatcher.java:[line 177]<br/>At ServiceDispatcher.java:[line 245]<br/>At ServiceDispatcher.java:[line 247]<br/>At ServiceDispatcher.java:[line 248]<br/>At ServiceDispatcher.java:[line 258]<br/>At ServiceDispatcher.java:[line 261]<br/>At ServiceDispatcher.java:[line 268]<br/>At ServiceDispatcher.java:[line 270]<br/>At ServiceDispatcher.java:[line 271]<br/>At ServiceDispatcher.java:[line 305]<br/>At ServiceDispatcher.java:[line 309]<br/>At ServiceDispatcher.java:[line 311]<br/>At ServiceDispatcher.java:[line 312]<br/>At ServiceDispatcher.java:[line 313]<br/>At ServiceDispatcher.java:[line 315]<br/>At ServiceDispatcher.java:[line 317]<br/>At ServiceDispatcher.java:[line 318]<br/>At ServiceDispatcher.java:[line 328]<br/>At ServiceDispatcher.java:[line 330]<br/>At ServiceDispatcher.java:[line 332]<br/>At ServiceDispatcher.java:[line 334]<br/>At ServiceDispatcher.java:[line 335]<br/>At ServiceDispatcher.java:[line 359]<br/>At ServiceDispatcher.java:[line 405]<br/>At ServiceDispatcher.java:[line 466]<br/>At ServiceDispatcher.java:[line 469]<br/>At ServiceDispatcher.java:[line 473]<br/>At ServiceDispatcher.java:[line 476]<br/>At ServiceDispatcher.java:[line 547]<br/>At ServiceDispatcher.java:[line 591]<br/>At ServiceDispatcher.java:[line 645]<br/>At ServiceDispatcher.java:[line 647]<br/>At ServiceDispatcher.java:[line 689]<br/>At ServiceDispatcher.java:[line 691]<br/>At ServiceDispatcher.java:[line 707]<br/>At ServiceDispatcher.java:[line 709]<br/>At ServiceDispatcher.java:[line 723]<br/>At ServiceDispatcher.java:[line 725]<br/>At ServiceDispatcher.java:[line 726]<br/>At ServiceDispatcher.java:[line 752]<br/>At ServiceDispatcher.java:[line 754]<br/>At ServiceDispatcher.java:[line 768]<br/>At ServiceDispatcher.java:[line 770]<br/>At ServiceDispatcher.java:[line 785]<br/>At ServiceDispatcher.java:[line 790]<br/>At ServiceDispatcher.java:[line 832]<br/>At ServiceDispatcher.java:[line 833]<br/>At ServiceDispatcher.java:[line 850]<br/>At ServiceDispatcher.java:[line 851]<br/>At ServiceDispatcher.java:[line 871]<br/>At ServiceDispatcher.java:[line 874]<br/>At ServiceDispatcher.java:[line 877]<br/>At ServiceDispatcher.java:[line 879]<br/>At ServiceDispatcher.java:[line 881]<br/>At ServiceDispatcher.java:[line 895]<br/>At ServiceDispatcher.java:[line 898]<br/>At ServiceDispatcher.java:[line 1043]<br/>At ServiceDispatcher.java:[line 1052]<br/>At ServiceDispatcher.java:[line 1061]<br/>At ServiceDispatcher.java:[line 1063]<br/>At ServiceDispatcher.java:[line 985]<br/>At ServiceDispatcher.java:[line 988]<br/>At ServiceDispatcher.java:[line 132]<br/>At ServiceDispatcher.java:[line 134]<br/>At ServiceDispatcher.java:[line 1122]<br/>At ServiceDispatcher.java:[line 1135]<br/>At ServiceDispatcher.java:[line 1138]<br/>At ServiceHandshake.java:[line 425]<br/>At ServiceHandshake.java:[line 427]<br/>At ServiceHandshake.java:[line 428]<br/>At ServiceHandshake.java:[line 181]<br/>At SimpleTxnMap.java:[line 176]<br/>At SimpleTxnMap.java:[line 177]<br/>At SimpleTxnMap.java:[line 181]<br/>At SizeAwaitMap.java:[line 245]<br/>At DataChannelFactoryBuilder.java:[line 408]<br/>At VLSNBucket.java:[line 110]<br/>At VLSNBucket.java:[line 111]<br/>At VLSNBucket.java:[line 320]<br/>At VLSNBucket.java:[line 322]<br/>At VLSNBucket.java:[line 371]<br/>At VLSNBucket.java:[line 594]<br/>At VLSNBucket.java:[line 595]<br/>At VLSNBucket.java:[line 836]<br/>At VLSNIndex.java:[line 443]<br/>At VLSNIndex.java:[line 496]<br/>At VLSNIndex.java:[line 524]<br/>At VLSNIndex.java:[line 648]<br/>At VLSNIndex.java:[line 654]<br/>At VLSNIndex.java:[line 677]<br/>At VLSNIndex.java:[line 805]<br/>At VLSNIndex.java:[line 1048]<br/>At VLSNIndex.java:[line 1052]<br/>At VLSNIndex.java:[line 1055]<br/>At VLSNIndex.java:[line 1062]<br/>At VLSNIndex.java:[line 1063]<br/>At VLSNIndex.java:[line 1430]<br/>At VLSNIndex.java:[line 1801]<br/>At VLSNIndex.java:[line 1814]<br/>At VLSNIndex.java:[line 1815]<br/>At VLSNIndex.java:[line 1996]<br/>At VLSNIndex.java:[line 2102]<br/>At VLSNIndex.java:[line 2112]<br/>At VLSNIndex.java:[line 2130]<br/>At VLSNIndex.java:[line 2137]<br/>At VLSNRange.java:[line 39]<br/>At VLSNRange.java:[line 90]<br/>At VLSNRange.java:[line 116]<br/>At VLSNRange.java:[line 120]<br/>At VLSNRange.java:[line 124]<br/>At VLSNRange.java:[line 128]<br/>At VLSNRange.java:[line 142]<br/>At VLSNRange.java:[line 164]<br/>At VLSNRange.java:[line 227]<br/>At VLSNRange.java:[line 228]<br/>At VLSNRange.java:[line 242]<br/>At VLSNRange.java:[line 243]<br/>At VLSNRange.java:[line 248]<br/>At VLSNRange.java:[line 252]<br/>At VLSNRange.java:[line 267]<br/>At VLSNRange.java:[line 271]<br/>At VLSNRange.java:[line 283]<br/>At VLSNRange.java:[line 333]<br/>At VLSNRange.java:[line 334]<br/>At VLSNRange.java:[line 335]<br/>At VLSNRange.java:[line 351]<br/>At VLSNRange.java:[line 360]<br/>At VLSNRange.java:[line 380]<br/>At VLSNRange.java:[line 381]<br/>At VLSNRange.java:[line 382]<br/>At VLSNRange.java:[line 383]<br/>At VLSNRange.java:[line 395]<br/>At VLSNRecoveryTracker.java:[line 76]<br/>At VLSNTracker.java:[line 57]<br/>At VLSNTracker.java:[line 60]<br/>At VLSNTracker.java:[line 118]<br/>At VLSNTracker.java:[line 223]<br/>At VLSNTracker.java:[line 320]<br/>At VLSNTracker.java:[line 422]<br/>At VLSNTracker.java:[line 433]<br/>At VLSNTracker.java:[line 493]<br/>At VLSNTracker.java:[line 504]<br/>At VLSNTracker.java:[line 509]<br/>At VLSNTracker.java:[line 513]<br/>At VLSNTracker.java:[line 522]<br/>At VLSNTracker.java:[line 541]<br/>At VLSNTracker.java:[line 545]<br/>At VLSNTracker.java:[line 618]<br/>At VLSNTracker.java:[line 630]<br/>At VLSNTracker.java:[line 714]<br/>At VLSNTracker.java:[line 756]<br/>At VLSNTracker.java:[line 860]<br/>At EnvStatsLogger.java:[line 104]<br/>At StatCapture.java:[line 190]<br/>At StatCapture.java:[line 193]<br/>At StatCapture.java:[line 199]<br/>At StatCapture.java:[line 202]<br/>At Key.java:[line 78]<br/>At Key.java:[line 82]<br/>At Tree.java:[line 614]<br/>At Tree.java:[line 618]<br/>At Tree.java:[line 619]<br/>At Tree.java:[line 620]<br/>At Tree.java:[line 621]<br/>At Tree.java:[line 622]<br/>At Tree.java:[line 2773]<br/>At Tree.java:[line 2774]<br/>At Tree.java:[line 2775]<br/>At Tree.java:[line 2776]<br/>At Tree.java:[line 2777]<br/>At Tree.java:[line 2778]<br/>At Tree.java:[line 2779]<br/>At Tree.java:[line 2780]<br/>At Tree.java:[line 2781]<br/>At Locker.java:[line 725]<br/>At Txn.java:[line 912]<br/>At Txn.java:[line 914]<br/>At Txn.java:[line 928]<br/>At Txn.java:[line 2033]<br/>At Txn.java:[line 2394]<br/>At TxnChain.java:[line 156]<br/>At TxnChain.java:[line 318]<br/>At TxnPrepare.java:[line 46]<br/>At UndoReader.java:[line 82]<br/>At DbCacheSize.java:[line 1171]<br/>At DbCacheSize.java:[line 1182]<br/>At DbCacheSize.java:[line 1846]<br/>At DbCacheSize.java:[line 1904]<br/>At DbCacheSize.java:[line 1913]<br/>At DbCacheSize.java:[line 1980]<br/>At DbCacheSize.java:[line 1981]<br/>At DbCacheSize.java:[line 2071]<br/>At DbDump.java:[line 418]<br/>At DbDump.java:[line 426]<br/>At DbDump.java:[line 429]<br/>At DbDump.java:[line 438]<br/>At DbDump.java:[line 448]<br/>At DbLoad.java:[line 397]<br/>At DbLoad.java:[line 420]<br/>At DbLoad.java:[line 433]<br/>At DbRunAction.java:[line 312]<br/>At DbRunAction.java:[line 313]<br/>At DbStat.java:[line 125]<br/>At DbStat.java:[line 131]<br/>At DbStat.java:[line 134]<br/>At DbStat.java:[line 150]<br/>At DbVerify.java:[line 260]<br/>At DbVerify.java:[line 262]<br/>At DbVerify.java:[line 264]<br/>At DbVerify.java:[line 266]<br/>At DbVerify.java:[line 272]<br/>At DbVerify.java:[line 274]<br/>At DbVerify.java:[line 279]<br/>At DbVerify.java:[line 281]<br/>At DbVerify.java:[line 282]<br/>At DbVerify.java:[line 289]<br/>At DbVerify.java:[line 292]<br/>At DbVerify.java:[line 313]<br/>At DbVerify.java:[line 323]<br/>At DbVerify.java:[line 325]<br/>At DbVerify.java:[line 326]<br/>At DbVerify.java:[line 341]<br/>At DataVerifier.java:[line 231]<br/>At FormatUtil.java:[line 49]<br/>At FormatUtil.java:[line 53]<br/>At FormatUtil.java:[line 54]<br/>At LoggerUtils.java:[line 376]<br/>At LoggerUtils.java:[line 393]<br/>At LoggerUtils.java:[line 403]<br/>At LoggerUtils.java:[line 409]<br/>At LoggerUtils.java:[line 415]<br/>At LoggerUtils.java:[line 421]<br/>At LoggerUtils.java:[line 427]<br/>At LoggerUtils.java:[line 433]<br/>At LoggerUtils.java:[line 492]<br/>At LoggerUtils.java:[line 498]<br/>At LoggerUtils.java:[line 499]<br/>At LoggerUtils.java:[line 500]<br/>At LoggerUtils.java:[line 501]<br/>At LoggerUtils.java:[line 502]<br/>At LoggerUtils.java:[line 569]<br/>At LoggerUtils.java:[line 570]<br/>At LoggerUtils.java:[line 571]<br/>At LoggerUtils.java:[line 572]<br/>At LoggerUtils.java:[line 585]<br/>At StoppableThread.java:[line 178]<br/>At StoppableThread.java:[line 203]<br/>At StoppableThread.java:[line 204]<br/>At StoppableThread.java:[line 207]<br/>At StoppableThread.java:[line 215]<br/>At StoppableThread.java:[line 330]<br/>At StoppableThread.java:[line 331]<br/>At StoppableThread.java:[line 344]<br/>At StoppableThread.java:[line 348]<br/>At StoppableThread.java:[line 366]<br/>At StoppableThread.java:[line 376]<br/>At StoppableThread.java:[line 381]<br/>At StoppableThread.java:[line 390]<br/>At StoppableThread.java:[line 421]<br/>At StoppableThread.java:[line 439]<br/>At StoppableThread.java:[line 444]<br/>At StoppableThread.java:[line 453]<br/>At TestHookExecute.java:[line 39]<br/>At VLSN.java:[line 27]<br/>At VLSN.java:[line 28]<br/>At VLSN.java:[line 83]<br/>At VLSN.java:[line 87]<br/>At VLSN.java:[line 94]<br/>At VLSN.java:[line 101]<br/>At VLSN.java:[line 124]<br/>At VLSN.java:[line 129]<br/>At VLSN.java:[line 134]<br/>At VLSN.java:[line 169]<br/>At BasicCursor.java:[line 310]<br/>At BasicCursor.java:[line 195]<br/>At BasicIndex.java:[line 189]<br/>At BasicIndex.java:[line 195]<br/>At BasicIndex.java:[line 201]<br/>At BasicIndex.java:[line 208]<br/>At BasicIndex.java:[line 215]<br/>At BasicIndex.java:[line 227]<br/>At BasicIndex.java:[line 235]<br/>At BasicIndex.java:[line 247]<br/>At BasicIndex.java:[line 272]<br/>At BasicIndex.java:[line 281]<br/>At BasicIndex.java:[line 292]<br/>At EntityJoin.java:[line 260]<br/>At EntityJoin.java:[line 293]<br/>At KeysIndex.java:[line 79]<br/>At KeysIndex.java:[line 111]<br/>At PrimaryIndex.java:[line 225]<br/>At PrimaryIndex.java:[line 392]<br/>At PrimaryIndex.java:[line 395]<br/>At PrimaryIndex.java:[line 491]<br/>At PrimaryIndex.java:[line 568]<br/>At PrimaryIndex.java:[line 621]<br/>At PrimaryIndex.java:[line 631]<br/>At PrimaryIndex.java:[line 667]<br/>At PrimaryIndex.java:[line 699]<br/>At SecondaryIndex.java:[line 782]<br/>At SecondaryIndex.java:[line 973]<br/>At SecondaryIndex.java:[line 1008]<br/>At SubIndex.java:[line 176]<br/>At SubIndex.java:[line 192]<br/>At SubIndex.java:[line 194]<br/>At SubIndex.java:[line 261]<br/>At SubIndex.java:[line 263]<br/>At SubIndex.java:[line 276]<br/>At SubIndex.java:[line 309]<br/>At SubIndex.java:[line 315]<br/>At SubIndex.java:[line 321]<br/>At SubIndex.java:[line 328]<br/>At SubIndex.java:[line 337]<br/>At SubIndex.java:[line 349]<br/>At SubIndex.java:[line 359]<br/>At SubIndex.java:[line 371]<br/>At SubIndex.java:[line 396]<br/>At SubIndex.java:[line 405]<br/>At SubIndexCursor.java:[line 81]<br/>At SubIndexCursor.java:[line 77]<br/>At Store.java:[line 1635]<br/>At Store.java:[line 1641]<br/>At Store.java:[line 1664]<br/>At RangeCursor.java:[line 1011]<br/>At RangeCursor.java:[line 1012]<br/>At RangeCursor.java:[line 1021]<br/>At RangeCursor.java:[line 1022]<br/>At RangeCursor.java:[line 1095]<br/>At RangeCursor.java:[line 1096]<br/>At RangeCursor.java:[line 1107]<br/>At RangeCursor.java:[line 1108]<br/>At RangeCursor.java:[line 1123]<br/>At RangeCursor.java:[line 1124]<br/>At RangeCursor.java:[line 1135]<br/>At RangeCursor.java:[line 1136]<br/>At RangeCursor.java:[line 1151]<br/>At RangeCursor.java:[line 1152]<br/>At RangeCursor.java:[line 1163]<br/>At RangeCursor.java:[line 1164]<br/>At RangeCursor.java:[line 1179]<br/>At RangeCursor.java:[line 1180]<br/>At RangeCursor.java:[line 1191]<br/>At RangeCursor.java:[line 1192]<br/>At RangeCursor.java:[line 1207]<br/>At RangeCursor.java:[line 1208]<br/>At RangeCursor.java:[line 1219]<br/>At RangeCursor.java:[line 1220]<br/>At RangeCursor.java:[line 1236]<br/>At RangeCursor.java:[line 1237]<br/>At RangeCursor.java:[line 1248]<br/>At RangeCursor.java:[line 1249]<br/>At RangeCursor.java:[line 1264]<br/>At RangeCursor.java:[line 1265]<br/>At RangeCursor.java:[line 1276]<br/>At RangeCursor.java:[line 1277]<br/>At RangeCursor.java:[line 1292]<br/>At RangeCursor.java:[line 1293]<br/>At RangeCursor.java:[line 1304]<br/>At RangeCursor.java:[line 1305]<br/>At RangeCursor.java:[line 1324]<br/>At RangeCursor.java:[line 1325]<br/>At RangeCursor.java:[line 1336]<br/>At RangeCursor.java:[line 1337]<br/>At RangeCursor.java:[line 1355]<br/>At RangeCursor.java:[line 1356]<br/>At RangeCursor.java:[line 1367]<br/>At RangeCursor.java:[line 1368]<br/>At RangeCursor.java:[line 1387]<br/>At RangeCursor.java:[line 1388]<br/>At RangeCursor.java:[line 1399]<br/>At RangeCursor.java:[line 1400]<br/>At RangeCursor.java:[line 1420]<br/>At RangeCursor.java:[line 1421]<br/>At RangeCursor.java:[line 1432]<br/>At RangeCursor.java:[line 1433]<br/>At StringUtils.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N90712');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N90712" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.sleepycat.je.utilint.LoggerUtils<br/>In method com.sleepycat.je.utilint.LoggerUtils.logMsg(Logger, Formatter, Level, String)<br/>At LoggerUtils.java:[line 451]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/utilint/LoggerUtils.logMsg(Ljava/util/logging/Logger;Ljava/util/logging/Formatter;Ljava/util/logging/Level;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At ArbBinaryStateService.java:[line 121]<br/>At ArbBinaryStateService.java:[line 130]<br/>At ArbBinaryStateService.java:[line 136]<br/>At ArbiterImpl.java:[line 678]<br/>At ArbiterImpl.java:[line 791]<br/>At ArbiterImpl.java:[line 792]<br/>At ArbiterImpl.java:[line 801]<br/>At ArbiterImpl.java:[line 803]<br/>At ArbiterOutputThread.java:[line 44]<br/>At Acceptor.java:[line 86]<br/>At Acceptor.java:[line 102]<br/>At Acceptor.java:[line 124]<br/>At Acceptor.java:[line 145]<br/>At Acceptor.java:[line 146]<br/>At Acceptor.java:[line 179]<br/>At Acceptor.java:[line 180]<br/>At Acceptor.java:[line 189]<br/>At Acceptor.java:[line 212]<br/>At Acceptor.java:[line 213]<br/>At Acceptor.java:[line 218]<br/>At Acceptor.java:[line 220]<br/>At Elections.java:[line 796]<br/>At Elections.java:[line 799]<br/>At Elections.java:[line 800]<br/>At Elections.java:[line 960]<br/>At Elections.java:[line 961]<br/>At Elections.java:[line 967]<br/>At Elections.java:[line 975]<br/>At Elections.java:[line 977]<br/>At Elections.java:[line 979]<br/>At Elections.java:[line 988]<br/>At Elections.java:[line 989]<br/>At Learner.java:[line 144]<br/>At Learner.java:[line 160]<br/>At Learner.java:[line 161]<br/>At Learner.java:[line 181]<br/>At Learner.java:[line 209]<br/>At Learner.java:[line 213]<br/>At Learner.java:[line 216]<br/>At Learner.java:[line 236]<br/>At Learner.java:[line 237]<br/>At Learner.java:[line 103]<br/>At Learner.java:[line 356]<br/>At Learner.java:[line 420]<br/>At Learner.java:[line 423]<br/>At MasterValue.java:[line 61]<br/>At Proposer.java:[line 140]<br/>At Proposer.java:[line 260]<br/>At Proposer.java:[line 389]<br/>At Proposer.java:[line 401]<br/>At Proposer.java:[line 407]<br/>At Proposer.java:[line 215]<br/>At Proposer.java:[line 218]<br/>At Proposer.java:[line 221]<br/>At Proposer.java:[line 320]<br/>At Proposer.java:[line 324]<br/>At Proposer.java:[line 326]<br/>At Protocol.java:[line 425]<br/>At Protocol.java:[line 578]<br/>At Utils.java:[line 81]<br/>At Utils.java:[line 82]<br/>At Utils.java:[line 232]<br/>At Utils.java:[line 235]<br/>At Utils.java:[line 373]<br/>At Utils.java:[line 375]<br/>At BinaryNodeStateService.java:[line 121]<br/>At BinaryNodeStateService.java:[line 130]<br/>At BinaryNodeStateService.java:[line 136]<br/>At RepNodeImpl.java:[line 197]<br/>At TextProtocol.java:[line 932]<br/>At TextProtocol.java:[line 934]<br/>At TextProtocol.java:[line 951]<br/>At TextProtocol.java:[line 954]<br/>At TextProtocol.java:[line 958]<br/>At TextProtocol.java:[line 961]<br/>At TextProtocol.java:[line 1007]<br/>At TextProtocol.java:[line 1008]<br/>At TextProtocol.java:[line 1009]<br/>At TextProtocol.java:[line 1010]<br/>At TextProtocol.java:[line 1011]<br/>At TextProtocol.java:[line 1050]<br/>At TextProtocol.java:[line 1051]<br/>At TextProtocol.java:[line 1058]<br/>At TextProtocol.java:[line 1064]<br/>At TextProtocol.java:[line 1065]<br/>At TextProtocol.java:[line 1082]<br/>At TextProtocol.java:[line 1083]<br/>At TextProtocol.java:[line 1084]<br/>At TextProtocol.java:[line 1091]<br/>At TextProtocol.java:[line 1092]<br/>At TextProtocol.java:[line 1093]<br/>At TextProtocol.java:[line 1125]<br/>At TextProtocol.java:[line 698]<br/>At LogFileFeeder.java:[line 224]<br/>At LogFileFeeder.java:[line 286]<br/>At LogFileFeeder.java:[line 302]<br/>At LogFileFeeder.java:[line 455]<br/>At LogFileFeeder.java:[line 485]<br/>At NetworkBackup.java:[line 403]<br/>At NetworkBackup.java:[line 507]<br/>At NetworkBackup.java:[line 539]<br/>At NetworkBackup.java:[line 551]<br/>At NetworkBackup.java:[line 584]<br/>At NetworkBackup.java:[line 794]<br/>At NetworkBackup.java:[line 813]<br/>At Feeder.java:[line 1069]<br/>At Feeder.java:[line 1092]<br/>At FeederManager.java:[line 450]<br/>At NameIdPair.java:[line 96]<br/>At RepNode.java:[line 595]<br/>At RepNode.java:[line 1519]<br/>At ReplicaOutputThread.java:[line 38]<br/>At ReplicaOutputThreadBase.java:[line 225]<br/>At ReplicaOutputThreadBase.java:[line 242]<br/>At ReplicaOutputThreadBase.java:[line 298]<br/>At ReplicaOutputThreadBase.java:[line 321]<br/>At Monitor.java:[line 539]<br/>At Monitor.java:[line 643]<br/>At Monitor.java:[line 644]<br/>At Monitor.java:[line 655]<br/>At Monitor.java:[line 657]<br/>At Monitor.java:[line 750]<br/>At Monitor.java:[line 752]<br/>At MonitorService.java:[line 144]<br/>At FeederReplicaHandshake.java:[line 264]<br/>At FeederReplicaHandshake.java:[line 275]<br/>At FeederReplicaHandshake.java:[line 302]<br/>At FeederReplicaHandshake.java:[line 316]<br/>At FeederReplicaHandshake.java:[line 429]<br/>At FeederReplicaHandshake.java:[line 442]<br/>At FeederReplicaHandshake.java:[line 600]<br/>At FeederReplicaHandshake.java:[line 626]<br/>At FeederReplicaSyncup.java:[line 120]<br/>At FeederReplicaSyncup.java:[line 151]<br/>At FeederReplicaSyncup.java:[line 329]<br/>At MasterStatus.java:[line 159]<br/>At ReplicaFeederHandshake.java:[line 181]<br/>At ReplicaFeederHandshake.java:[line 275]<br/>At ReplicaFeederHandshake.java:[line 324]<br/>At ReplicaFeederHandshake.java:[line 397]<br/>At ReplicaFeederSyncup.java:[line 166]<br/>At ReplicaFeederSyncup.java:[line 655]<br/>At ReplicaFeederSyncup.java:[line 712]<br/>At SubscriberFeederSyncup.java:[line 83]<br/>At SubscriberFeederSyncup.java:[line 126]<br/>At SubscriptionOutputThread.java:[line 57]<br/>At DbPing.java:[line 320]<br/>At DiffRecordAnalyzer.java:[line 255]<br/>At LDiff.java:[line 399]<br/>At LDiff.java:[line 492]<br/>At LDiff.java:[line 528]<br/>At LDiffService.java:[line 106]<br/>At LDiffService.java:[line 113]<br/>At LDiffService.java:[line 116]<br/>At LDiffService.java:[line 125]<br/>At LDiffService.java:[line 129]<br/>At LDiffService.java:[line 152]<br/>At LDiffService.java:[line 171]<br/>At LDiffService.java:[line 176]<br/>At LDiffService.java:[line 178]<br/>At LDiffService.java:[line 180]<br/>At LDiffService.java:[line 186]<br/>At LDiffService.java:[line 208]<br/>At BinaryProtocol.java:[line 536]<br/>At BinaryProtocol.java:[line 546]<br/>At BinaryProtocol.java:[line 567]<br/>At BinaryProtocol.java:[line 570]<br/>At BinaryProtocol.java:[line 572]<br/>At ServiceDispatcher.java:[line 245]<br/>At ServiceDispatcher.java:[line 247]<br/>At ServiceDispatcher.java:[line 248]<br/>At ServiceDispatcher.java:[line 258]<br/>At ServiceDispatcher.java:[line 261]<br/>At ServiceDispatcher.java:[line 268]<br/>At ServiceDispatcher.java:[line 270]<br/>At ServiceDispatcher.java:[line 271]<br/>At ServiceDispatcher.java:[line 309]<br/>At ServiceDispatcher.java:[line 311]<br/>At ServiceDispatcher.java:[line 312]<br/>At ServiceDispatcher.java:[line 313]<br/>At ServiceDispatcher.java:[line 317]<br/>At ServiceDispatcher.java:[line 318]<br/>At ServiceDispatcher.java:[line 328]<br/>At ServiceDispatcher.java:[line 330]<br/>At ServiceDispatcher.java:[line 332]<br/>At ServiceDispatcher.java:[line 334]<br/>At ServiceDispatcher.java:[line 335]<br/>At ServiceDispatcher.java:[line 359]<br/>At ServiceDispatcher.java:[line 405]<br/>At ServiceDispatcher.java:[line 466]<br/>At ServiceDispatcher.java:[line 469]<br/>At ServiceDispatcher.java:[line 473]<br/>At ServiceDispatcher.java:[line 476]<br/>At ServiceDispatcher.java:[line 547]<br/>At ServiceDispatcher.java:[line 591]<br/>At ServiceDispatcher.java:[line 645]<br/>At ServiceDispatcher.java:[line 647]<br/>At ServiceDispatcher.java:[line 689]<br/>At ServiceDispatcher.java:[line 691]<br/>At ServiceDispatcher.java:[line 707]<br/>At ServiceDispatcher.java:[line 709]<br/>At ServiceDispatcher.java:[line 723]<br/>At ServiceDispatcher.java:[line 725]<br/>At ServiceDispatcher.java:[line 726]<br/>At ServiceDispatcher.java:[line 752]<br/>At ServiceDispatcher.java:[line 754]<br/>At ServiceDispatcher.java:[line 768]<br/>At ServiceDispatcher.java:[line 770]<br/>At ServiceDispatcher.java:[line 785]<br/>At ServiceDispatcher.java:[line 790]<br/>At ServiceDispatcher.java:[line 832]<br/>At ServiceDispatcher.java:[line 833]<br/>At ServiceDispatcher.java:[line 850]<br/>At ServiceDispatcher.java:[line 851]<br/>At ServiceDispatcher.java:[line 871]<br/>At ServiceDispatcher.java:[line 874]<br/>At ServiceDispatcher.java:[line 877]<br/>At ServiceDispatcher.java:[line 879]<br/>At ServiceDispatcher.java:[line 881]<br/>At ServiceDispatcher.java:[line 895]<br/>At ServiceDispatcher.java:[line 898]<br/>At ServiceDispatcher.java:[line 1043]<br/>At ServiceDispatcher.java:[line 1052]<br/>At ServiceDispatcher.java:[line 1061]<br/>At ServiceDispatcher.java:[line 1063]<br/>At ServiceDispatcher.java:[line 985]<br/>At ServiceDispatcher.java:[line 988]<br/>At ServiceDispatcher.java:[line 132]<br/>At ServiceDispatcher.java:[line 134]<br/>At ServiceDispatcher.java:[line 1122]<br/>At ServiceHandshake.java:[line 425]<br/>At ServiceHandshake.java:[line 427]<br/>At ServiceHandshake.java:[line 428]<br/>At ServiceHandshake.java:[line 181]<br/>At SizeAwaitMap.java:[line 245]<br/>At DataChannelFactoryBuilder.java:[line 408]<br/>At LoggerUtils.java:[line 395]<br/>At LoggerUtils.java:[line 498]<br/>At LoggerUtils.java:[line 499]<br/>At LoggerUtils.java:[line 500]<br/>At LoggerUtils.java:[line 501]<br/>At LoggerUtils.java:[line 502]<br/>At LoggerUtils.java:[line 585]<br/>At TestHookExecute.java:[line 39]<br/>At StringUtils.java:[line 135]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class com.sleepycat.bind.serial.StoredClassCatalog<br/>Value is hard coded in field com.sleepycat.bind.serial.StoredClassCatalog.LAST_CLASS_ID_KEY[B with suspicious name<br/>At StoredClassCatalog.java:[lines 63-496]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69942');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69942" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.LDiffUtil<br/>In method com.sleepycat.je.rep.util.ldiff.LDiffUtil.&lt;static initializer for LDiffUtil&gt;()<br/>At LDiffUtil.java:[line 41]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70000');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70000" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.Window<br/>In method new com.sleepycat.je.rep.util.ldiff.Window(Cursor, int)<br/>At Window.java:[line 58]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.sleepycat.bind.serial.SerialBinding.entryToObject(DatabaseEntry)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.sleepycat.bind.serial.SerialBinding<br/>In method com.sleepycat.bind.serial.SerialBinding.entryToObject(DatabaseEntry)<br/>At SerialBinding.java:[line 148]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65645');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.sleepycat.bind.serial.StoredClassCatalog.getClassFormat(byte[], DatabaseEntry)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65645" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.sleepycat.bind.serial.StoredClassCatalog<br/>In method com.sleepycat.bind.serial.StoredClassCatalog.getClassFormat(byte[], DatabaseEntry)<br/>At StoredClassCatalog.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65753');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.sleepycat.je.dbi.DatabaseImpl.bytesToObject(byte[], String, ClassLoader)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65753" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.sleepycat.je.dbi.DatabaseImpl<br/>In method com.sleepycat.je.dbi.DatabaseImpl.bytesToObject(byte[], String, ClassLoader)<br/>At DatabaseImpl.java:[line 2727]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69152');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in new com.sleepycat.je.rep.stream.BaseProtocol$StartStream(BaseProtocol, ByteBuffer)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69152" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.sleepycat.je.rep.stream.BaseProtocol$StartStream<br/>In method new com.sleepycat.je.rep.stream.BaseProtocol$StartStream(BaseProtocol, ByteBuffer)<br/>At BaseProtocol.java:[line 436]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N93344');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in com.sleepycat.persist.impl.PersistCatalog.readData(Transaction)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N93344" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class com.sleepycat.persist.impl.PersistCatalog<br/>In method com.sleepycat.persist.impl.PersistCatalog.readData(Transaction)<br/>At PersistCatalog.java:[line 1249]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66844');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66844" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.generateLogWriteException(RandomAccessFile, ByteBuffer, long, long)<br/>At FileManager.java:[line 3222]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71737');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71737" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.sleepycat.je.tree.BINDeltaBloomFilter$HashContext<br/>In method new com.sleepycat.je.tree.BINDeltaBloomFilter$HashContext()<br/>At BINDeltaBloomFilter.java:[line 47]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71795');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71795" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbCacheSize<br/>In method com.sleepycat.je.util.DbCacheSize.insertRecords(PrintStream, Environment, Database)<br/>At DbCacheSize.java:[line 1895]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65861');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65861" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileCacheWarmer<br/>In method com.sleepycat.je.log.FileCacheWarmer.doRun()<br/>At FileCacheWarmer.java:[line 111]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(J)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>At FileCacheWarmer.java:[line 110]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1003]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66025');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66025" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileCacheWarmer<br/>In method com.sleepycat.je.log.FileCacheWarmer.doRun()<br/>At FileCacheWarmer.java:[line 134]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(J)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>At FileCacheWarmer.java:[line 133]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1003]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66189');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66189" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.deleteFile(long)<br/>At FileManager.java:[line 1148]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileNames(J)[Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.JE_AND_DEL_SUFFIXES<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>At FileManager.java:[line 986]<br/>At FileManager.java:[line 989]<br/>At FileManager.java:[line 993]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At FileManager.java:[line 1130]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66378');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66378" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.gatherDataDirs()<br/>At FileManager.java:[line 956]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;<br/>At FileManager.java:[line 928]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66457');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66457" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.getFollowingFileNum(long, boolean)<br/>At FileManager.java:[line 598]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>At FileManager.java:[line 597]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66606');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66606" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.isFileValid(long)<br/>At FileManager.java:[line 536]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>At FileManager.java:[line 535]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66755');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66755" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager<br/>In method com.sleepycat.je.log.FileManager.renameFile(long, String, String)<br/>At FileManager.java:[line 1083]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.renameFile(JLjava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At Cleaner.java:[line 810]<br/>At Cleaner.java:[line 811]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66902');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (com/sleepycat/je/log/FileManager$DefaultRandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66902" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager$6<br/>In method com.sleepycat.je.log.FileManager$6.createFile(File, String, String)<br/>At FileManager.java:[line 3300]<br/>Sink method com/sleepycat/je/log/FileManager$DefaultRandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/sleepycat/je/log/FileManager$6.createFile(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)Ljava/io/RandomAccessFile; parameter 1<br/>At FileManager.java:[line 986]<br/>At FileManager.java:[line 989]<br/>At FileManager.java:[line 993]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At FileManager.java:[line 1346]<br/>At FileManager.java:[line 1361]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67061');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67061" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.FileManager$DefaultRandomAccessFile<br/>In method new com.sleepycat.je.log.FileManager$DefaultRandomAccessFile(String, String)<br/>At FileManager.java:[line 3272]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/sleepycat/je/log/FileManager$DefaultRandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileManager.java:[line 986]<br/>At FileManager.java:[line 989]<br/>At FileManager.java:[line 993]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At FileManager.java:[line 1346]<br/>At FileManager.java:[line 1361]<br/>At FileManager.java:[line 3300]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67230');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67230" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.LastFileReader<br/>In method com.sleepycat.je.log.LastFileReader.attemptToMoveBadFile(Exception)<br/>At LastFileReader.java:[line 202]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileNames(J)[Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.JE_AND_DEL_SUFFIXES<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>At FileManager.java:[line 986]<br/>At FileManager.java:[line 989]<br/>At FileManager.java:[line 993]<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At LastFileReader.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67419');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67419" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.log.RestoreMarker<br/>In method new com.sleepycat.je.log.RestoreMarker(FileManager, LogManager)<br/>At RestoreMarker.java:[line 70]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(J)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1003]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1032]<br/>At RestoreMarker.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67667');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67667" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.arbiter.Arbiter<br/>In method new com.sleepycat.je.rep.arbiter.Arbiter(ArbiterConfig)<br/>At Arbiter.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/arbiter/ArbiterConfig.arbiterHome<br/>Unknown source com/sleepycat/je/rep/arbiter/ArbiterConfig.getArbiterHome()Ljava/lang/String;<br/>At Arbiter.java:[line 89]<br/>At ArbiterConfig.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67761');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67761" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.arbiter.impl.ArbiterImpl<br/>In method com.sleepycat.je.rep.arbiter.impl.ArbiterImpl.initialize()<br/>At ArbiterImpl.java:[line 225]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At ArbiterImpl.java:[line 225]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67894');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67894" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder<br/>In method com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder.sendRequestedFiles(Protocol)<br/>At LogFileFeeder.java:[line 255]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/Protocol$FileReq.fileName<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/Protocol$FileReq.getFileName()Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1020]<br/>At FileManager.java:[line 1025]<br/>At FileManager.java:[line 1032]<br/>At LogFileFeeder.java:[line 247]<br/>At LogFileFeeder.java:[line 255]<br/>At Protocol.java:[line 248]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68303');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68303" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.NetworkBackup<br/>In method com.sleepycat.je.rep.impl.networkRestore.NetworkBackup.cleanup(String[])<br/>At NetworkBackup.java:[line 446]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Arrays.asList([Ljava/lang/Object;)Ljava/util/List;<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/util/HashSet.&lt;init&gt;(Ljava/util/Collection;)V<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/NetworkBackup.cleanup([Ljava/lang/String;)V parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1020]<br/>At FileManager.java:[line 1025]<br/>At FileManager.java:[line 1032]<br/>At NetworkBackup.java:[line 346]<br/>At NetworkBackup.java:[line 357]<br/>At NetworkBackup.java:[line 432]<br/>At NetworkBackup.java:[line 440]<br/>At NetworkBackup.java:[line 446]<br/>At NetworkBackup.java:[line 797]<br/>At NetworkBackup.java:[line 798]<br/>At Protocol.java:[line 217]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68572');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68572" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.NetworkBackup<br/>In method com.sleepycat.je.rep.impl.networkRestore.NetworkBackup.getFile(File)<br/>At NetworkBackup.java:[line 593]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1020]<br/>At FileManager.java:[line 1025]<br/>At FileManager.java:[line 1032]<br/>At NetworkBackup.java:[line 593]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68756');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68756" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.NetworkBackup<br/>In method com.sleepycat.je.rep.impl.networkRestore.NetworkBackup.getFileTransferLengths(String[])<br/>At NetworkBackup.java:[line 538]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getDataDir(J)Ljava/io/File;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(JLjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.getFileName(JLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvHome<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/NetworkBackup.getFileTransferLengths([Ljava/lang/String;)Ljava/util/List; parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At FileManager.java:[line 997]<br/>At FileManager.java:[line 1010]<br/>At FileManager.java:[line 1011]<br/>At FileManager.java:[line 1020]<br/>At FileManager.java:[line 1025]<br/>At FileManager.java:[line 1032]<br/>At NetworkBackup.java:[line 346]<br/>At NetworkBackup.java:[line 356]<br/>At NetworkBackup.java:[line 473]<br/>At NetworkBackup.java:[line 538]<br/>At NetworkBackup.java:[line 797]<br/>At NetworkBackup.java:[line 798]<br/>At Protocol.java:[line 217]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67583');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67583" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.InsufficientLogException<br/>In method com.sleepycat.je.rep.InsufficientLogException.initRepImpl()<br/>At InsufficientLogException.java:[line 275]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/InsufficientLogException.props<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>At InsufficientLogException.java:[line 275]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69206');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69206" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.subscription.Subscription<br/>In method com.sleepycat.je.rep.subscription.Subscription.createDummyRepEnv(SubscriptionConfig)<br/>At Subscription.java:[line 217]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/subscription/SubscriptionConfig.getSubscriberHome()Ljava/lang/String;<br/>Unknown source com/sleepycat/je/rep/subscription/SubscriptionConfig.subHome<br/>At Subscription.java:[line 217]<br/>At SubscriptionConfig.java:[line 280]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69300');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69300" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.DbEnableReplication<br/>In method com.sleepycat.je.rep.util.DbEnableReplication.parseArgs(String[])<br/>At DbEnableReplication.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/DbEnableReplication.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69374');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69374" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.DbGroupAdmin<br/>In method com.sleepycat.je.rep.util.DbGroupAdmin.parseArgs(String[])<br/>At DbGroupAdmin.java:[line 260]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/DbGroupAdmin.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At DbGroupAdmin.java:[line 227]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69458');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69458" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.DbPing<br/>In method com.sleepycat.je.rep.util.DbPing.parseArgs(String[])<br/>At DbPing.java:[line 187]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/DbPing.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69532');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69532" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.DbResetRepGroup<br/>In method com.sleepycat.je.rep.util.DbResetRepGroup.parseArgs(String[])<br/>At DbResetRepGroup.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/DbResetRepGroup.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69606');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69606" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.LDiff<br/>In method com.sleepycat.je.rep.util.ldiff.LDiff.parseArgs(String[])<br/>At LDiff.java:[line 151]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/ldiff/LDiff.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At LDiff.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69690');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69690" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.LDiff<br/>In method com.sleepycat.je.rep.util.ldiff.LDiff.parseArgs(String[])<br/>At LDiff.java:[line 153]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/ldiff/LDiff.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At LDiff.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69868');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69868" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.LDiffUtil<br/>In method com.sleepycat.je.rep.util.ldiff.LDiffUtil.openEnv(String)<br/>At LDiffUtil.java:[line 126]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/util/ldiff/LDiffUtil.openEnv(Ljava/lang/String;)Lcom/sleepycat/je/Environment; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70112');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70112" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbDumpGroup<br/>In method com.sleepycat.je.rep.utilint.DbDumpGroup.parseArgs(String[])<br/>At DbDumpGroup.java:[line 129]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbDumpGroup.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70186');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70186" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbFeederPrintLog<br/>In method com.sleepycat.je.rep.utilint.DbFeederPrintLog.main(String[])<br/>At DbFeederPrintLog.java:[line 196]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String;<br/>Tainted source com/sleepycat/je/rep/utilint/DbFeederPrintLog.main([Ljava/lang/String;)V parameter 0<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String; parameter 1<br/>At DbFeederPrintLog.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70329');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70329" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbNullNode<br/>In method com.sleepycat.je.rep.utilint.DbNullNode.parseArgs(String[])<br/>At DbNullNode.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbNullNode.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70457');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70457" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbRepRunAction<br/>In method com.sleepycat.je.rep.utilint.DbRepRunAction.parseArgs(String[])<br/>At DbRepRunAction.java:[line 76]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbRepRunAction.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70693');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70693" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbStreamVerify<br/>In method com.sleepycat.je.rep.utilint.DbStreamVerify.parseArgs(String[])<br/>At DbStreamVerify.java:[line 136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbStreamVerify.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70767');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70767" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbSync<br/>In method com.sleepycat.je.rep.utilint.DbSync.parseArgs(String[])<br/>At DbSync.java:[line 190]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbSync.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70841');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70841" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.DbSync<br/>In method com.sleepycat.je.rep.utilint.DbSync.sync()<br/>At DbSync.java:[line 263]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/DbSync.envHome<br/>At DbSync.java:[line 263]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71160');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71160" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.net.SSLChannelFactory<br/>In method com.sleepycat.je.rep.utilint.net.SSLChannelFactory.loadStore(String, char[], String, String)<br/>At SSLChannelFactory.java:[line 900]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/utilint/net/SSLChannelFactory.loadStore(Ljava/lang/String;[CLjava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore; parameter 3<br/>At ConfigParam.java:[line 100]<br/>At DbConfigManager.java:[line 537]<br/>At DbConfigManager.java:[line 539]<br/>At ReplicationSSLConfig.java:[line 555]<br/>At ReplicationSSLConfig.java:[line 799]<br/>At SSLChannelFactory.java:[line 425]<br/>At SSLChannelFactory.java:[line 450]<br/>At SSLChannelFactory.java:[line 538]<br/>At SSLChannelFactory.java:[line 557]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71319');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71319" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.statcap.EnvStatsLogger<br/>In method new com.sleepycat.je.statcap.EnvStatsLogger(EnvironmentImpl)<br/>At EnvStatsLogger.java:[line 63]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/config/ConfigParam.defaultValue<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.props<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getConfigParam(Ljava/util/Properties;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String; parameter 1<br/>Unknown source com/sleepycat/je/config/ConfigParam.getDefault()Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.get(Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getConfigParam(Ljava/util/Properties;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>At ConfigParam.java:[line 100]<br/>At DbConfigManager.java:[line 113]<br/>At DbConfigManager.java:[line 525]<br/>At DbConfigManager.java:[line 527]<br/>At DbConfigManager.java:[line 537]<br/>At DbConfigManager.java:[line 539]<br/>At DbConfigManager.java:[line 552]<br/>At DbConfigManager.java:[line 554]<br/>At EnvStatsLogger.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71528');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71528" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.statcap.StatCapture<br/>In method com.sleepycat.je.statcap.StatCapture.envConfigUpdate(DbConfigManager, EnvironmentMutableConfig)<br/>At StatCapture.java:[line 292]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/config/ConfigParam.defaultValue<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.props<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getConfigParam(Ljava/util/Properties;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String; parameter 1<br/>Unknown source com/sleepycat/je/config/ConfigParam.getDefault()Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.get(Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getVal(Ljava/util/Properties;Lcom/sleepycat/je/config/ConfigParam;)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/dbi/DbConfigManager.getConfigParam(Ljava/util/Properties;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>At ConfigParam.java:[line 100]<br/>At DbConfigManager.java:[line 113]<br/>At DbConfigManager.java:[line 525]<br/>At DbConfigManager.java:[line 527]<br/>At DbConfigManager.java:[line 537]<br/>At DbConfigManager.java:[line 539]<br/>At DbConfigManager.java:[line 552]<br/>At DbConfigManager.java:[line 554]<br/>At StatCapture.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71853');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71853" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbDump<br/>In method com.sleepycat.je.util.DbDump.parseArgs(String[])<br/>At DbDump.java:[line 337]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbDump.parseArgs([Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72006');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72006" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbFilterStats<br/>In method com.sleepycat.je.util.DbFilterStats.parseArgs(String[])<br/>At DbFilterStats.java:[line 233]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbFilterStats.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At DbFilterStats.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72090');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72090" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbFilterStats<br/>In method com.sleepycat.je.util.DbFilterStats.parseArgs(String[])<br/>At DbFilterStats.java:[line 244]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbFilterStats.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At DbFilterStats.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72174');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72174" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbLoad<br/>In method com.sleepycat.je.util.DbLoad.parseArgs(String[])<br/>At DbLoad.java:[line 232]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbLoad.parseArgs([Ljava/lang/String;)Lcom/sleepycat/je/util/DbLoad; parameter 0<br/>Method usage with tainted arguments detected<br/>At DbLoad.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72258');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72258" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbLoad<br/>In method com.sleepycat.je.util.DbLoad.parseArgs(String[])<br/>At DbLoad.java:[line 274]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbLoad.parseArgs([Ljava/lang/String;)Lcom/sleepycat/je/util/DbLoad; parameter 0<br/>Method usage with tainted arguments detected<br/>At DbLoad.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72342');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72342" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbPrintLog<br/>In method com.sleepycat.je.util.DbPrintLog.main(String[])<br/>At DbPrintLog.java:[line 211]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sleepycat/je/util/DbPrintLog.main([Ljava/lang/String;)V parameter 0<br/>Tainted source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String; parameter 1<br/>At DbPrintLog.java:[line 211]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72431');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72431" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbRunAction<br/>In method com.sleepycat.je.util.DbRunAction.main(String[])<br/>At DbRunAction.java:[line 168]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sleepycat/je/util/DbRunAction.main([Ljava/lang/String;)V parameter 0<br/>Tainted source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String; parameter 1<br/>At DbRunAction.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72520');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72520" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbScavenger<br/>In method com.sleepycat.je.util.DbScavenger.getOutputStream(Long)<br/>At DbScavenger.java:[line 429]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbScavenger.getOutputStream(Ljava/lang/Long;)Ljava/io/PrintStream; parameter 0<br/>Unknown source com/sleepycat/je/util/DbScavenger.dbIdToName<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>At DbScavenger.java:[line 398]<br/>At DbScavenger.java:[line 425]<br/>At DbScavenger.java:[line 427]<br/>At DbScavenger.java:[line 429]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72747');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72747" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbSpace<br/>In method com.sleepycat.je.util.DbSpace.parseArgs(String[])<br/>At DbSpace.java:[line 185]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbSpace.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72875');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72875" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbStat<br/>In method com.sleepycat.je.util.DbStat.parseArgs(String[])<br/>At DbStat.java:[line 90]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbStat.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72949');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72949" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbTruncateLog<br/>In method com.sleepycat.je.util.DbTruncateLog.parseArgs(String[])<br/>At DbTruncateLog.java:[line 95]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbTruncateLog.parseArgs([Ljava/lang/String;)V parameter 0<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String; parameter 1<br/>Method usage not detected<br/>At DbTruncateLog.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73097');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73097" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbVerify<br/>In method com.sleepycat.je.util.DbVerify.parseArgs(String[])<br/>At DbVerify.java:[line 174]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbVerify.parseArgs([Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At DbStat.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73181');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73181" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbVerifyLog<br/>In method com.sleepycat.je.util.DbVerifyLog.main(String[])<br/>At DbVerifyLog.java:[line 220]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sleepycat/je/util/DbVerifyLog.main([Ljava/lang/String;)V parameter 0<br/>Tainted source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String;<br/>Unknown source com/sleepycat/je/utilint/CmdUtil.getArg([Ljava/lang/String;I)Ljava/lang/String; parameter 1<br/>At DbVerifyLog.java:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73270');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73270" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbVerifyLog<br/>In method com.sleepycat.je.util.DbVerifyLog.verify(long, long)<br/>At DbVerifyLog.java:[line 163]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.listFileNames(JJ)[Ljava/lang/String;<br/>Unknown source java/io/File.toString()Ljava/lang/String;<br/>Unknown source java/io/File.list(Ljava/io/FilenameFilter;)[Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.listFileNamesInternalSingleDir(Lcom/sleepycat/je/log/JEFileFilter;)[Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.dbEnvDataDirs<br/>Unknown source com/sleepycat/je/log/FileManager.listFileNamesInternalMultiDirs(Lcom/sleepycat/je/log/JEFileFilter;)[Ljava/lang/String;<br/>Unknown source com/sleepycat/je/log/FileManager.listFileNamesInternal(Lcom/sleepycat/je/log/JEFileFilter;)[Ljava/lang/String;<br/>At FileManager.java:[line 721]<br/>At FileManager.java:[line 845]<br/>At FileManager.java:[line 847]<br/>At FileManager.java:[line 854]<br/>At FileManager.java:[line 865]<br/>At FileManager.java:[line 868]<br/>At FileManager.java:[line 870]<br/>At FileManager.java:[line 873]<br/>At FileManager.java:[line 892]<br/>At DbVerifyLog.java:[line 148]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73469');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73469" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.je.utilint.DbLsn<br/>In method com.sleepycat.je.utilint.DbLsn.getTrueDistance(long, long, FileManager)<br/>At DbLsn.java:[line 280]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/log/FileManager.getFullFileName(J)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N93398');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N93398" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.persist.model.ClassEnhancer<br/>In method com.sleepycat.persist.model.ClassEnhancer.main(String[])<br/>At ClassEnhancer.java:[line 111]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sleepycat/persist/model/ClassEnhancer.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N93467');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N93467" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.persist.model.ClassEnhancer<br/>In method com.sleepycat.persist.model.ClassEnhancer.enhanceFile(File)<br/>At ClassEnhancer.java:[line 260]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N93536');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N93536" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.persist.model.ClassEnhancerTask<br/>In method com.sleepycat.persist.model.ClassEnhancerTask.execute()<br/>At ClassEnhancerTask.java:[line 90]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/tools/ant/DirectoryScanner.getIncludedFiles()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N93605');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N93605" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.utilint.StatLogger<br/>In method new com.sleepycat.utilint.StatLogger(File, String, String, int, int)<br/>At StatLogger.java:[line 62]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/utilint/StatLogger.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;II)V parameter 3<br/>Unknown source com/sleepycat/utilint/StatLogger.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;II)V parameter 2<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At EnvStatsLogger.java:[line 67]<br/>At StatCapture.java:[line 305]<br/>At StatLogger.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N93714');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N93714" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.utilint.StatLogger<br/>In method com.sleepycat.utilint.StatLogger.rotateFiles()<br/>At StatLogger.java:[line 264]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/utilint/StatLogger.filename<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source com/sleepycat/utilint/StatLogger.fileext<br/>Unknown source com/sleepycat/utilint/StatLogger.formFn(I)Ljava/lang/String;<br/>At StatLogger.java:[line 236]<br/>At StatLogger.java:[line 239]<br/>At StatLogger.java:[line 264]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N93828');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N93828" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.utilint.StatLogger<br/>In method com.sleepycat.utilint.StatLogger.rotateFiles()<br/>At StatLogger.java:[line 269]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/utilint/StatLogger.filename<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source com/sleepycat/utilint/StatLogger.fileext<br/>Unknown source com/sleepycat/utilint/StatLogger.formFn(I)Ljava/lang/String;<br/>At StatLogger.java:[line 236]<br/>At StatLogger.java:[line 239]<br/>At StatLogger.java:[line 269]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N93942');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N93942" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.utilint.StatLogger<br/>In method com.sleepycat.utilint.StatLogger.rotateFiles()<br/>At StatLogger.java:[line 271]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/utilint/StatLogger.filename<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source com/sleepycat/utilint/StatLogger.fileext<br/>Unknown source com/sleepycat/utilint/StatLogger.formFn(I)Ljava/lang/String;<br/>At StatLogger.java:[line 236]<br/>At StatLogger.java:[line 239]<br/>At StatLogger.java:[line 271]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N94056');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N94056" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sleepycat.utilint.StatLogger<br/>In method com.sleepycat.utilint.StatLogger.setFileCount(int)<br/>At StatLogger.java:[line 102]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/utilint/StatLogger.filename<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source com/sleepycat/utilint/StatLogger.fileext<br/>Unknown source com/sleepycat/utilint/StatLogger.formFn(I)Ljava/lang/String;<br/>At StatLogger.java:[line 102]<br/>At StatLogger.java:[line 236]<br/>At StatLogger.java:[line 239]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71927');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71927" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.sleepycat.je.util.DbDump<br/>In method com.sleepycat.je.util.DbDump.parseArgs(String[])<br/>At DbDump.java:[line 374]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/util/DbDump.outputFileName<br/>At DbDump.java:[line 374]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68187');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68187" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder<br/>In method new com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder(FeederManager, DataChannel)<br/>At LogFileFeeder.java:[line 103]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68245');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68245" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder<br/>In method com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder.getSHA1Digest(File, long)<br/>At LogFileFeeder.java:[line 327]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69094');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69094" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.NetworkBackup<br/>In method new com.sleepycat.je.rep.impl.networkRestore.NetworkBackup(InetSocketAddress, int, File, NameIdPair, boolean, int, VLSN, RepImpl, FileManager, LogManager, DataChannelFactory, Properties)<br/>At NetworkBackup.java:[line 256]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68103');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68103" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder<br/>In method com.sleepycat.je.rep.impl.networkRestore.LogFileFeeder.sendRequestedFiles(Protocol)<br/>At LogFileFeeder.java:[line 291]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source java/security/MessageDigest.digest()[B<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/LogFileFeeder.sendFileContents(Ljava/io/File;J)[B<br/>At LogFileFeeder.java:[line 289]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69000');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69000" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.networkRestore.NetworkBackup<br/>In method com.sleepycat.je.rep.impl.networkRestore.NetworkBackup.getFileTransferLengths(String[])<br/>At NetworkBackup.java:[line 558]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/Protocol$FileInfoResp.digestSHA1<br/>Unknown source com/sleepycat/je/rep/impl/networkRestore/Protocol$FileInfoResp.getDigestSHA1()[B<br/>At NetworkBackup.java:[line 558]<br/>At Protocol.java:[line 320]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69774');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69774" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.sleepycat.je.rep.util.ldiff.LDiff<br/>In method com.sleepycat.je.rep.util.ldiff.LDiff.findMatch(Environment, BlockBag, Window)<br/>At LDiff.java:[line 671]<br/>Sink method java/util/Arrays.equals([B[B)Z<br/>Sink parameter 0<br/>Unknown source java/security/MessageDigest.digest()[B<br/>Unknown source com/sleepycat/je/rep/util/ldiff/Window.getMd5Hash()[B<br/>At LDiff.java:[line 669]<br/>At LDiff.java:[line 671]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71028');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to com.sleepycat.je.rep.utilint.FreePortLocator (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71028" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.FreePortLocator<br/>In method com.sleepycat.je.rep.utilint.FreePortLocator.next()<br/>At FreePortLocator.java:[line 95]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67840');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67840" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class com.sleepycat.je.rep.impl.RepParams$2<br/>In method com.sleepycat.je.rep.impl.RepParams$2.validateValue(String)<br/>At RepParams.java:[line 394]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70920');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70920" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.FreePortLocator<br/>In method com.sleepycat.je.rep.utilint.FreePortLocator.next()<br/>At FreePortLocator.java:[line 126]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70974');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70974" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class com.sleepycat.je.rep.utilint.FreePortLocator<br/>In method com.sleepycat.je.rep.utilint.FreePortLocator.next()<br/>At FreePortLocator.java:[line 165]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,92 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 721.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r56
+		Type: byte[]
+		Statement: r58 = virtualinvoke r57.<java.security.MessageDigest: byte[] digest(byte[])>(r56)
+		Method: <org.aspectj.apache.bcel.generic.ClassGen: long getSUID()>
+		SHA-256: a034a1f316467afc14c7e016557de6d28ea316fd84e542e7d01d998c719ab7a1
+		Secure: false
+	Object:
+		Variable: r57
+		Type: java.security.MessageDigest
+		Statement: r57 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2753)
+		Method: <org.aspectj.apache.bcel.generic.ClassGen: long getSUID()>
+		SHA-256: fb3c29148def29d40d217dc406ddb7a85bd8adcdc8467e5c59960cbeda0d92db
+		Secure: false
+	Object:
+		Variable: r58
+		Type: byte[]
+		Statement: r58 = virtualinvoke r57.<java.security.MessageDigest: byte[] digest(byte[])>(r56)
+		Method: <org.aspectj.apache.bcel.generic.ClassGen: long getSUID()>
+		SHA-256: e404c9bcfc120af2ace8a6de87ed0669a8bef76be4f6bc7950cf971c09a9e0df
+		Secure: false
+
+Findings in Java Class: org.aspectj.apache.bcel.generic.ClassGen
+
+	 in Method: long getSUID()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fb3c29148def29d40d217dc406ddb7a85bd8adcdc8467e5c59960cbeda0d92db)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r57 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2753)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 3
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 2 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 8.652 s
+

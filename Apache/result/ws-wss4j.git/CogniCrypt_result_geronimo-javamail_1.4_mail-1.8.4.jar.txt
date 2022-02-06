@@ -1,0 +1,228 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 633.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.23
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.53
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.73
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.87
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.93
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r41
+		Type: byte[]
+		Statement: virtualinvoke r2.<java.security.SecureRandom: void nextBytes(byte[])>(r41)
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: beba538405ede3ec974d7d0ee5b5c121803f926a9f2ff4a995b169b7c06ee234
+		Secure: true
+	Object:
+		Variable: $r90
+		Type: byte[]
+		Statement: $r90 = virtualinvoke $r89.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: 20a4e47781fd100e9bb11831a63b8e39fac7960800d38e7806d461e58377dc7a
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r26.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.apache.geronimo.javamail.store.pop3.connection.POP3Connection: boolean processAPOPAuthentication()>
+		SHA-256: 5f24b4804d396e5ea28f1ae09a72e0917923eeb1c674d0ccc118043582d301d3
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21)
+		Method: <org.apache.geronimo.javamail.authentication.CramMD5Authenticator: byte[] computeCramDigest(byte[],byte[])>
+		SHA-256: 70097455bf93accd30bb644e2220a0ba769d34dd2ff255e4874c1572c3d70cb5
+		Secure: false
+	Object:
+		Variable: r7
+		Type: byte[]
+		Statement: r7 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.CramMD5Authenticator: byte[] computeCramDigest(byte[],byte[])>
+		SHA-256: 76cb514b5748fc10825fffa0ee6d40120390232fd9079513fc416623f3ede1ed
+		Secure: false
+	Object:
+		Variable: $r69
+		Type: byte[]
+		Statement: $r69 = virtualinvoke $r68.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: 6d8d694b697d3a0d452f2f4f8cbb301ad909b98e1d03a769c6b57bf124f91d1f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.CramMD5Authenticator: byte[] computeCramDigest(byte[],byte[])>
+		SHA-256: 9710487a651b93c0c5fe35dad76d6867177c215b4dc6fa2d3473de0143b7a4c2
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r9.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: be4cb989dd7361b27b193538b2057bf5b37d900e439c62c19e7a31ac11b1d272
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: r3 = virtualinvoke r26.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.apache.geronimo.javamail.store.pop3.connection.POP3Connection: boolean processAPOPAuthentication()>
+		SHA-256: 84a0be8e81a67959a3a068c1abdbd9aad294e9e6de5fe4f3e00bd77c8dbff081
+		Secure: false
+	Object:
+		Variable: r10
+		Type: byte[]
+		Statement: r10 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.CramMD5Authenticator: byte[] computeCramDigest(byte[],byte[])>
+		SHA-256: 49d65a18d42466b0f4e06322d5612f06f2932b99cf193d8d26965699dc9ef368
+		Secure: false
+	Object:
+		Variable: $r57
+		Type: byte[]
+		Statement: $r57 = virtualinvoke $r55.<java.security.MessageDigest: byte[] digest(byte[])>($r56)
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: bc13b5066bb00f2bc65835340773a71df3125b9af5c275016035ec3e95c8760c
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.MessageDigest
+		Statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54)
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: 5fc078364178c1b8cd42c213523c8b6766a04541cfa81fa1d02800225151b245
+		Secure: false
+	Object:
+		Variable: $r97
+		Type: byte[]
+		Statement: $r97 = virtualinvoke $r96.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: f5d72fee0ed23051343bfc1e506ae4e199f10cd3c749c2cde47e036c5d9907fa
+		Secure: false
+	Object:
+		Variable: r26
+		Type: java.security.MessageDigest
+		Statement: r26 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1370)
+		Method: <org.apache.geronimo.javamail.store.pop3.connection.POP3Connection: boolean processAPOPAuthentication()>
+		SHA-256: 68b1769a3839cd8ffdfeec56f129c87eceed7744a875ff3f653d730e6d8816cd
+		Secure: false
+	Object:
+		Variable: $r56
+		Type: byte[]
+		Statement: $r57 = virtualinvoke $r55.<java.security.MessageDigest: byte[] digest(byte[])>($r56)
+		Method: <org.apache.geronimo.javamail.authentication.DigestMD5Authenticator: byte[] authenticateClient(byte[])>
+		SHA-256: 27c2d289d8df459747ce49b69276dee9cd30584c542fe273102b8abd5b2b3766
+		Secure: false
+
+Findings in Java Class: org.apache.geronimo.javamail.authentication.CramMD5Authenticator
+
+	 in Method: byte[] computeCramDigest(byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #70097455bf93accd30bb644e2220a0ba769d34dd2ff255e4874c1572c3d70cb5)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21)
+
+
+Findings in Java Class: org.apache.geronimo.javamail.authentication.DigestMD5Authenticator
+
+	 in Method: byte[] authenticateClient(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5fc078364178c1b8cd42c213523c8b6766a04541cfa81fa1d02800225151b245)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54)
+
+
+Findings in Java Class: org.apache.geronimo.javamail.store.pop3.connection.POP3Connection
+
+	 in Method: boolean processAPOPAuthentication()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #68b1769a3839cd8ffdfeec56f129c87eceed7744a875ff3f653d730e6d8816cd)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r26 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1370)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 15
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.044 s
+

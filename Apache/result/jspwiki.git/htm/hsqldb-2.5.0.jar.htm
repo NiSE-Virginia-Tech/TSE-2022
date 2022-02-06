@@ -1,0 +1,2519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/jspwiki.git/hsqldb-2.5.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>95468 lines of code analyzed,
+	in 621 classes, 
+	in 22 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">27</td>
+<td align="right">0.28</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">90</td>
+<td align="right">0.94</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>117</b>
+</td>
+<td align="right">
+<b>1.23</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">117</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>117</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66542');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66542" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.hsqldb.lib.BasicTextJdkLogFormatter<br/>In method org.hsqldb.lib.BasicTextJdkLogFormatter.format(LogRecord)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71622');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71622" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.hsqldb.server.Server<br/>In method org.hsqldb.server.Server.printStackTrace(Throwable)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68257');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68257" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.hsqldb.lib.FrameworkLogger<br/>In method org.hsqldb.lib.FrameworkLogger.privlog(Level, String, Throwable, int, Class)<br/>In &lt;Unknown&gt;<br/>Sink method java/util/logging/Logger.logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FrameworkLogger.privlog(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Class;)V parameter 3<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68418');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68418" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.hsqldb.lib.FrameworkLogger<br/>In method org.hsqldb.lib.FrameworkLogger.privlog(Level, String, Throwable, int, Class)<br/>In &lt;Unknown&gt;<br/>Sink method java/util/logging/Logger.logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source org/hsqldb/lib/FrameworkLogger.privlog(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Class;)V parameter 3<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68579');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.hsqldb.lib.InOutUtil.deserialize(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68579" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.hsqldb.lib.InOutUtil<br/>In method org.hsqldb.lib.InOutUtil.deserialize(byte[])<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71947');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.hsqldb.util.ConnectionDialogCommon.loadRecentConnectionSettings()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71947" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.hsqldb.util.ConnectionDialogCommon<br/>In method org.hsqldb.util.ConnectionDialogCommon.loadRecentConnectionSettings()<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66499');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66499" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.hsqldb.jdbc.pool.JDBCXID<br/>In method org.hsqldb.jdbc.pool.JDBCXID.getUniqueXid(int)<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68071');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68071" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method new org.hsqldb.lib.FileUtil()<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65626');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65626" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.hsqldb.Session<br/>In method new org.hsqldb.Session(Database, User, boolean, boolean, long, String, int)<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72302');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72302" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerCommon<br/>In method org.hsqldb.util.DatabaseManagerCommon.&lt;static initializer for DatabaseManagerCommon&gt;()<br/>In &lt;Unknown&gt;<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72345');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72345" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerCommon<br/>In method org.hsqldb.util.DatabaseManagerCommon.testStatement(Statement, String, int)<br/>In &lt;Unknown&gt;<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65723');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65723" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.auth.LdapAuthBeanTester<br/>In method org.hsqldb.auth.LdapAuthBeanTester.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/auth/LdapAuthBeanTester.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65777');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65777" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.auth.LdapAuthBeanTester<br/>In method org.hsqldb.auth.LdapAuthBeanTester.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Properties.load(Ljava/io/InputStream;)V<br/>Tainted source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66581');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66581" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.absolutePath(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.absolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66683');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66683" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.canonicalFile(File)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.canonicalFile(Ljava/io/File;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66753');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66753" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.canonicalFile(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.canonicalFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66819');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66819" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.canonicalFile(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66884');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66884" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.canonicalPath(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.canonicalPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67004');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67004" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.createParentDirs(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.createParentDirs(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67063');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67063" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.delete(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.delete(Ljava/lang/String;)Z parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67135');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67135" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.deleteOrRenameDatabaseFiles(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67195');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67195" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.deleteOrRenameDatabaseFiles(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.newDiscardFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.newDiscardFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67265');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67265" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.exists(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.exists(Ljava/lang/String;)Z parameter 0<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67367');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67367" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.isStreamElement(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.isStreamElement(Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67432');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67432" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.makeDirectories(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.makeDirectories(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67492');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67492" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.makeParentDirectories(File)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67546');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67546" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.makeParentDirectories(File)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67606');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67606" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.openInputStreamElement(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.openInputStreamElement(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67671');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67671" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.openOutputStreamElement(String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.openOutputStreamElement(Ljava/lang/String;Z)Ljava/io/OutputStream; parameter 1<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67736');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67736" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.renameWithOverwrite(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.renameWithOverwrite(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67801');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67801" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.renameWithOverwrite(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.renameWithOverwrite(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67866');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67866" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.renameWithOverwrite(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.renameWithOverwrite(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67931');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67931" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.renameWithOverwrite(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.newDiscardFileName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.renameWithOverwrite(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.newDiscardFileName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68006');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68006" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil<br/>In method org.hsqldb.lib.FileUtil.renameWithOverwrite(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil.renameWithOverwrite(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68114');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68114" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil$DatabaseFilenameFilter<br/>In method new org.hsqldb.lib.FileUtil$DatabaseFilenameFilter(String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/FileUtil$DatabaseFilenameFilter.&lt;init&gt;(Ljava/lang/String;Z)V parameter 1<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68192');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68192" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.FileUtil$DatabaseFilenameFilter<br/>In method org.hsqldb.lib.FileUtil$DatabaseFilenameFilter.getCompleteMainFileSetList()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil$DatabaseFilenameFilter.suffixes<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68704');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68704" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.SimpleLog<br/>In method org.hsqldb.lib.SimpleLog.setupWriter()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/SimpleLog.filePath<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68764');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68764" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68841');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68841" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68901');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68901" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68961');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68961" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69021');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69021" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69081');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69081" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69141');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69141" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69201');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69201" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Z)V parameter 1<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69261');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69261" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method new org.hsqldb.lib.tar.DbBackup(File, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/DbBackup.instanceName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69321');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69321" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackup<br/>In method org.hsqldb.lib.tar.DbBackup.writeAsFiles()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69375');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69375" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackupMain<br/>In method org.hsqldb.lib.tar.DbBackupMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/DbBackupMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69429');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69429" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackupMain<br/>In method org.hsqldb.lib.tar.DbBackupMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/DbBackupMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69483');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69483" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackupMain<br/>In method org.hsqldb.lib.tar.DbBackupMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/DbBackupMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69537');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69537" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackupMain<br/>In method org.hsqldb.lib.tar.DbBackupMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/DbBackupMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69591');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69591" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.DbBackupMain<br/>In method org.hsqldb.lib.tar.DbBackupMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/DbBackupMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69645');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69645" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarFileOutputStream<br/>In method new org.hsqldb.lib.tar.TarFileOutputStream(File, int, int)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69705');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69705" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarGenerator$TarEntrySupplicant<br/>In method org.hsqldb.lib.tar.TarGenerator$TarEntrySupplicant.makeXentry()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/TarGenerator$TarEntrySupplicant.path<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69765');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69765" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarGeneratorMain<br/>In method org.hsqldb.lib.tar.TarGeneratorMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/TarGeneratorMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69819');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69819" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarGeneratorMain<br/>In method org.hsqldb.lib.tar.TarGeneratorMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/TarGeneratorMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69873');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69873" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarReader<br/>In method org.hsqldb.lib.tar.TarReader.extractFile(TarReader$TarEntryHeader)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69927');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69927" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarReader$TarEntryHeader<br/>In method org.hsqldb.lib.tar.TarReader$TarEntryHeader.generateFile()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/lib/tar/TarReader$TarEntryHeader.path<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69987');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69987" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarReaderMain<br/>In method org.hsqldb.lib.tar.TarReaderMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/TarReaderMain.main([Ljava/lang/String;)V parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70047');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70047" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.lib.tar.TarReaderMain<br/>In method org.hsqldb.lib.tar.TarReaderMain.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/lib/tar/TarReaderMain.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70140');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70140" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.LockFile<br/>In method org.hsqldb.persist.LockFile.setPath(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.absolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.canonicalOrAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source org/hsqldb/lib/FileUtil.canonicalPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70231');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70231" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Log<br/>In method org.hsqldb.persist.Log.deleteOldDataFiles()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/Database.getCanonicalPath()Ljava/lang/String;<br/>Unknown source org/hsqldb/Database.canonicalPath<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70302');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70302" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Log<br/>In method org.hsqldb.persist.Log.deleteOldTempFiles()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Logger.tempDirectoryPath<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70362');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70362" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Log<br/>In method org.hsqldb.persist.Log.deleteTempFileDirectory()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Logger.tempDirectoryPath<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70422');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70422" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/Database.path<br/>Unknown source org/hsqldb/Database.getPath()Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70493');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70493" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Logger.getSecurePath(Ljava/lang/String;ZZ)Ljava/lang/String; parameter 2<br/>Unknown source org/hsqldb/persist/Logger.backupInternal(Ljava/lang/String;ZZZZ)V parameter 4<br/>Unknown source org/hsqldb/persist/Logger.getSecurePath(Ljava/lang/String;ZZ)Ljava/lang/String;<br/>Unknown source java/io/File.getParent()Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70574');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70574" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/text/SimpleDateFormat.format(Ljava/util/Date;)Ljava/lang/String;<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70639');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70639" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Logger.backupInternal(Ljava/lang/String;ZZZZ)V parameter 4<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70705');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70705" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/Database.path<br/>Unknown source org/hsqldb/Database.getPath()Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70776');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70776" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/DataFileCache.dataFileName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70836');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70836" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.backupInternal(String, boolean, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Log.getLogFileName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70890');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70890" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.getSecurePath(String, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/Database.path<br/>Unknown source org/hsqldb/Database.getPath()Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70961');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70961" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.Logger<br/>In method org.hsqldb.persist.Logger.getSecurePath(String, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71015');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71015" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFile<br/>In method new org.hsqldb.persist.RAFile(EventLogInterface, String, boolean, boolean, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/hsqldb/persist/RAFile.&lt;init&gt;(Lorg/hsqldb/persist/EventLogInterface;Ljava/lang/String;ZZZ)V parameter 3<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71081');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71081" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFile<br/>In method org.hsqldb.persist.RAFile.newScaledRAFile(Database, String, boolean, int)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/RAFile.newScaledRAFile(Lorg/hsqldb/Database;Ljava/lang/String;ZI)Lorg/hsqldb/persist/RandomAccessInterface; parameter 2<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71147');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71147" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFileHybrid<br/>In method new org.hsqldb.persist.RAFileHybrid(Database, String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/RAFileHybrid.&lt;init&gt;(Lorg/hsqldb/Database;Ljava/lang/String;Z)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71206');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71206" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFileNIO<br/>In method new org.hsqldb.persist.RAFileNIO(EventLogInterface, String, boolean, long, long)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/RAFileNIO.&lt;init&gt;(Lorg/hsqldb/persist/EventLogInterface;Ljava/lang/String;ZJJ)V parameter 5<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71266');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71266" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFileNIO<br/>In method new org.hsqldb.persist.RAFileNIO(EventLogInterface, String, boolean, long, long)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/hsqldb/persist/RAFileNIO.&lt;init&gt;(Lorg/hsqldb/persist/EventLogInterface;Ljava/lang/String;ZJJ)V parameter 5<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71326');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71326" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAFileSimple<br/>In method new org.hsqldb.persist.RAFileSimple(EventLogInterface, String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/hsqldb/persist/RAFileSimple.&lt;init&gt;(Lorg/hsqldb/persist/EventLogInterface;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71398');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71398" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.persist.RAShadowFile$InputStreamShadow<br/>In method org.hsqldb.persist.RAShadowFile$InputStreamShadow.initialise()<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/RAShadowFile.pathName<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71661');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71661" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.server.Server<br/>In method org.hsqldb.server.Server.setProperties(HsqlProperties)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/persist/HsqlProperties.stringProps<br/>Unknown source org/hsqldb/server/ServerProperties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71737');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71737" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.server.Server<br/>In method org.hsqldb.server.Server.setWebRoot(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/server/Server.setWebRoot(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71796');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71796" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.server.ServerAcl<br/>In method org.hsqldb.server.ServerAcl.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/server/ServerAcl.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71850');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71850" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.server.WebServerConnection<br/>In method org.hsqldb.server.WebServerConnection.processGet(String, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/server/WebServer.getDefaultWebPage()Ljava/lang/String;<br/>Unknown source org/hsqldb/server/ServerProperties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/server/WebServer.getWebRoot()Ljava/lang/String;<br/>Unknown source org/hsqldb/server/WebServerConnection.processGet(Ljava/lang/String;Z)V parameter 1<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/hsqldb/persist/HsqlProperties.stringProps<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65669');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65669" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.SessionData<br/>In method org.hsqldb.SessionData.getFile(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/persist/Logger.getSecurePath(Ljava/lang/String;ZZ)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71986');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71986" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManager<br/>In method org.hsqldb.util.DatabaseManager.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/util/DatabaseManager.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72040');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72040" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManager<br/>In method org.hsqldb.util.DatabaseManager.saveAsCsv(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManager.saveAsCsv(Ljava/lang/String;)V parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72165');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72165" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerCommon<br/>In method org.hsqldb.util.DatabaseManagerCommon.readFile(String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerCommon.readFile(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72429');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72429" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.actionPerformed(ActionEvent)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.defDirectory<br/>Tainted source org/hsqldb/util/DatabaseManagerSwing.main([Ljava/lang/String;)V parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72494');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72494" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.actionPerformed(ActionEvent)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.defDirectory<br/>Tainted source org/hsqldb/util/DatabaseManagerSwing.main([Ljava/lang/String;)V parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72559');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72559" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.actionPerformed(ActionEvent)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.defDirectory<br/>Tainted source org/hsqldb/util/DatabaseManagerSwing.main([Ljava/lang/String;)V parameter 0<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72624');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72624" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.main(String[])<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/hsqldb/util/DatabaseManagerSwing.main([Ljava/lang/String;)V parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.homedir<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.DEFAULT_RCFILE<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72829');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72829" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing$DBMPrefs<br/>In method new org.hsqldb.util.DatabaseManagerSwing$DBMPrefs(DatabaseManagerSwing, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.access$1700()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72236');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72236" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerCommon<br/>In method org.hsqldb.util.DatabaseManagerCommon.writeFile(String, String)<br/>In &lt;Unknown&gt;<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerCommon.writeFile(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68618');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(?s)\\Q${\\E([^}]+?)(?:\\Q:+\\E([^}]+))?\\Q}" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68618" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (?s)\\Q${\\E([^}]+?)(?:\\Q:+\\E([^}]+))?\\Q}<br/>In class org.hsqldb.lib.RefCapablePropertyResourceBundle<br/>In method new org.hsqldb.lib.RefCapablePropertyResourceBundle(String, PropertyResourceBundle, ClassLoader)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68661');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "(?s)\\Q%{\\E(\\d)(?:\\Q:+\\E([^}]+))?\\Q}" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68661" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value (?s)\\Q%{\\E(\\d)(?:\\Q:+\\E([^}]+))?\\Q}<br/>In class org.hsqldb.lib.RefCapablePropertyResourceBundle<br/>In method new org.hsqldb.lib.RefCapablePropertyResourceBundle(String, PropertyResourceBundle, ClassLoader)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCStatement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCDatabaseMetaData<br/>In method org.hsqldb.jdbc.JDBCDatabaseMetaData.execute(String)<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCStatement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/jdbc/JDBCDatabaseMetaData.execute(Ljava/lang/String;)Ljava/sql/ResultSet; parameter 0<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65925');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65925" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCPreparedStatement<br/>In method new org.hsqldb.jdbc.JDBCPreparedStatement(JDBCConnection, String, int, int, int, int, int[], String[])<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/jdbc/JDBCPreparedStatement.&lt;init&gt;(Lorg/hsqldb/jdbc/JDBCConnection;Ljava/lang/String;IIII[I[Ljava/lang/String;)V parameter 6<br/>Method usage not detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66115');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66115" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.fetchResult(String, int, int, int[], String[])<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.fetchResult(Ljava/lang/String;II[I[Ljava/lang/String;)V parameter 4<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66204');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66204" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.addBatch(String)<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.addBatch(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66263');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66263" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.executeLargeUpdate(String)<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;)I<br/>Sink parameter 0<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.executeLargeUpdate(Ljava/lang/String;)J parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66322');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;I)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66322" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.executeLargeUpdate(String, int)<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;I)I<br/>Sink parameter 1<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.executeLargeUpdate(Ljava/lang/String;I)J parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66381');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;[I)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66381" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.executeLargeUpdate(String, int[])<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;[I)I<br/>Sink parameter 1<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.executeLargeUpdate(Ljava/lang/String;[I)J parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66440');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;[Ljava/lang/String;)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66440" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCStatement<br/>In method org.hsqldb.jdbc.JDBCStatement.executeLargeUpdate(String, String[])<br/>In &lt;Unknown&gt;<br/>Sink method org/hsqldb/jdbc/JDBCStatement.executeUpdate(Ljava/lang/String;[Ljava/lang/String;)I<br/>Sink parameter 1<br/>Unknown source org/hsqldb/jdbc/JDBCStatement.executeLargeUpdate(Ljava/lang/String;[Ljava/lang/String;)J parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72100');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72100" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManager<br/>In method org.hsqldb.util.DatabaseManager.execute()<br/>In &lt;Unknown&gt;<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManager.ifHuge<br/>Tainted source java/awt/TextArea.getText()Ljava/lang/String;<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72694');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72694" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.executeSQL()<br/>In &lt;Unknown&gt;<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Tainted source javax/swing/JTextArea.getText()Ljava/lang/String;<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.sqlScriptBuffer<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72759');">
+<td>
+<span class="priority-1">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72759" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerSwing<br/>In method org.hsqldb.util.DatabaseManagerSwing.getRowCounts(ArrayList, ArrayList)<br/>In &lt;Unknown&gt;<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.getRowCounts(Ljava/util/ArrayList;Ljava/util/ArrayList;)[I parameter 1<br/>Unknown source org/hsqldb/util/DatabaseManagerSwing.getRowCounts(Ljava/util/ArrayList;Ljava/util/ArrayList;)[I parameter 0<br/>Method usage with tainted arguments detected<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.hsqldb.ClientConnectionHTTP<br/>In method org.hsqldb.ClientConnectionHTTP.openConnection(String, int, boolean)<br/>In &lt;Unknown&gt;<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/hsqldb/ClientConnectionHTTP.openConnection(Ljava/lang/String;IZ)V parameter 2<br/>Unknown source org/hsqldb/ClientConnectionHTTP.path<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/hsqldb/ClientConnectionHTTP.database<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71536');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.hsqldb.server.HsqlSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71536" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.hsqldb.server.HsqlSocketFactory<br/>In method org.hsqldb.server.HsqlSocketFactory.createSocket(String, int)<br/>In &lt;Unknown&gt;<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71579');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to org.hsqldb.server.HsqlSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71579" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class org.hsqldb.server.HsqlSocketFactory<br/>In method org.hsqldb.server.HsqlSocketFactory.createSocket(Socket, String, int)<br/>In &lt;Unknown&gt;<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71458');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71458" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class org.hsqldb.server.HsqlSocketFactory<br/>In method org.hsqldb.server.HsqlSocketFactory.createServerSocket(int)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71497');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71497" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class org.hsqldb.server.HsqlSocketFactory<br/>In method org.hsqldb.server.HsqlSocketFactory.createServerSocket(int, String)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66033');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66033" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCSQLXML<br/>In method org.hsqldb.jdbc.JDBCSQLXML.createStAXSource(Class)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65990');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65990" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCSQLXML<br/>In method org.hsqldb.jdbc.JDBCSQLXML.getTransformerFactory()<br/>In &lt;Unknown&gt;<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66072');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66072" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.hsqldb.jdbc.JDBCSQLXML<br/>In method org.hsqldb.jdbc.JDBCSQLXML.getTransformerFactory()<br/>In &lt;Unknown&gt;<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72388');">
+<td>
+<span class="priority-1">SQL</span>
+</td>
+<td>org.hsqldb.util.DatabaseManagerCommon.createTestData(Statement) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72388" style="display: none;">
+<a href="#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">Bug type SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE (click for details)</a>
+<br/>In class org.hsqldb.util.DatabaseManagerCommon<br/>In method org.hsqldb.util.DatabaseManagerCommon.createTestData(Statement)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70101');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70101" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.hsqldb.persist.Crypto<br/>In method new org.hsqldb.persist.Crypto(String, String, String, String)<br/>In &lt;Unknown&gt;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="https://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE: Nonconstant string passed to execute or addBatch method on an SQL statement</a>
+</h2>
+
+  <p>The method invokes the execute or addBatch method on an SQL statement with a String that seems
+to be dynamically generated. Consider using
+a prepared statement instead. It is more efficient and less vulnerable to
+SQL injection attacks.
+</p>
+
+    
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

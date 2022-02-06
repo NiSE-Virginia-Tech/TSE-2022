@@ -1,0 +1,305 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 481.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.18
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.31
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.68
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.74
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.79
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.84
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r9
+		Type: java.security.KeyPair
+		Statement: $r9 = virtualinvoke $r8.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <org.apache.derby.impl.drda.DecryptionManager: void <init>()>
+		SHA-256: 3dc1f9ee5fba004d7b146077da1217cfab4cbe24669c313eade19dbc9ce9d21
+		Secure: true
+	Object:
+		Variable: r0
+		Type: javax.net.ssl.SSLContext
+		Statement: r0 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2590)
+		Method: <org.apache.derby.impl.drda.NaiveTrustManager: javax.net.SocketFactory getSocketFactory()>
+		SHA-256: fc3117993846b0b5d67abf18ba6c27b6001e167b4923e694884578617a1f34b5
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.KeyStore
+		Statement: r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer2594)
+		Method: <org.apache.derby.impl.drda.NaiveTrustManager: javax.net.SocketFactory getSocketFactory()>
+		SHA-256: 7a3f7108aefce1e78941444325730a7d1b9c29edd30dcf00a9c89e678fe7859
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PublicKey
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] obtainPublicKey()>
+		SHA-256: f4d38287078e0fdb589106de9d5e90d815d80eee0dd1378468cbfecf9773083f
+		Secure: true
+	Object:
+		Variable: r80
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke r80.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,int)>($r4, $r3, varReplacer2491)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: void <init>()>
+		SHA-256: a0b4a4fa2814b89c5c9f09da3682a2db4d796cdf488c0995ad90e96ceefe7c7e
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.PrivateKey
+		Statement: $r13 = virtualinvoke $r11.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <org.apache.derby.impl.drda.DecryptionManager: void <init>()>
+		SHA-256: bd2cc482cbe592951500cce9d4868884fbb0d6b55409f27aeeccbd1ac4d4ea48
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r86 = virtualinvoke r85.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r1)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 850da71fb4ff38d391066124bd1e38b7515e3c22575676c42cb5b42a76d3e4ec
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke r9.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer2533)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] generateSeed()>
+		SHA-256: 73fc35beefa156f7441ac81898fc9b8381dd57a201e7adf679817bfa97211916
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r13 = virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.derby.impl.drda.NaiveTrustManager: javax.net.SocketFactory getSocketFactory()>
+		SHA-256: 44948f0e76a1e09327eb7313134cfcd05060ab63298c5dd4989e71596f9c1d7d
+		Secure: false
+	Object:
+		Variable: r99
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r99.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r4)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 5f0ff32c39b11016caaba4dacf615d591e6aa171c8d13a5cc2754a3fdf5e95d4
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r4 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer2583, varReplacer2584)
+		Method: <org.apache.derby.impl.drda.NaiveTrustManager: javax.net.SocketFactory getSocketFactory()>
+		SHA-256: 97b3837d72b9fc0e3f59d76fefb02894d531042ae5e8237355c4f7eeaad49635
+		Secure: false
+	Object:
+		Variable: r85
+		Type: javax.crypto.Cipher
+		Statement: r85 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer2515, varReplacer2516)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 4eaa717d39ac4f99c3af5be828ceaf30392a04ceb8ea825e0e14844b97fc8aa2
+		Secure: false
+	Object:
+		Variable: r98
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r98.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r83, varReplacer2526)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 41f14990264a4a19fb7f5a5e9c489bf803201d0f455c0636cadf529c9d0b402b
+		Secure: false
+	Object:
+		Variable: varReplacer2526
+		Type: java.lang.String
+		Statement: specialinvoke r98.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r83, varReplacer2526)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 308d64c12e3ee8937f63126306bf584fe0714e6033c6b2d90e42d6878da0b88f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] obtainPublicKey()>
+		SHA-256: 50b3baa6a8ddc863e0f0ef2d14925420c2a6a7d3bfba4c13ed293aaff4d0ff37
+		Secure: true
+	Object:
+		Variable: r86
+		Type: byte[]
+		Statement: r86 = virtualinvoke r85.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r1)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] decryptData(byte[],int,byte[],byte[])>
+		SHA-256: 3c56b6b0110c5f185a1c4f3e71782eb223aa911c5b4f100cb5fbeb029e8f18c2
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyPair
+		Statement: $r9 = virtualinvoke $r8.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <org.apache.derby.impl.drda.DecryptionManager: void <init>()>
+		SHA-256: 6e438c617b430cbda8a72708b98c8a651e9cbdb1670e8f24e73ff666fa957e8
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyPairGenerator
+		Statement: $r5 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer2505, varReplacer2506)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: void <init>()>
+		SHA-256: 7e60e25791ea103946924c41963054cf9ba1d0d763f9649b0a099ea8cd9c8783
+		Secure: true
+	Object:
+		Variable: r9
+		Type: java.security.SecureRandom
+		Statement: r9 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer2532)
+		Method: <org.apache.derby.impl.drda.DecryptionManager: byte[] generateSeed()>
+		SHA-256: fad01e960160db951e5cfb9414a519ab42effc0a06928c9b44513150bbc680ec
+		Secure: false
+
+Findings in Java Class: org.apache.derby.impl.drda.DecryptionManager
+
+	 in Method: byte[] decryptData(byte[],int,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r85.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2517, r84, r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r99.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #41f14990264a4a19fb7f5a5e9c489bf803201d0f455c0636cadf529c9d0b402b)
+			Second parameter (with value "DES") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke r98.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r83, varReplacer2526)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #4eaa717d39ac4f99c3af5be828ceaf30392a04ceb8ea825e0e14844b97fc8aa2)
+			First parameter (with value "DES/CBC/PKCS5Padding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r85 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer2515, varReplacer2516)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r98.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r83, varReplacer2526)
+
+
+	 in Method: byte[] generateSeed()
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #fad01e960160db951e5cfb9414a519ab42effc0a06928c9b44513150bbc680ec)
+			Unexpected call to method setSeed on object of type java.security.SecureRandom. Expect a call to one of the following methods next,generateSeed,nextBytes
+			at statement: virtualinvoke r9.<java.security.SecureRandom: void setSeed(byte[])>($r0)
+
+
+Findings in Java Class: org.apache.derby.impl.drda.NaiveTrustManager
+
+	 in Method: javax.net.SocketFactory getSocketFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r0.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r13, $r14, varReplacer2587)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r3, $r12)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r0.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2585, $r17, varReplacer2585)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #97b3837d72b9fc0e3f59d76fefb02894d531042ae5e8237355c4f7eeaad49635)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r3, $r12)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #7a3f7108aefce1e78941444325730a7d1b9c29edd30dcf00a9c89e678fe7859)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r20, $r11)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #fc3117993846b0b5d67abf18ba6c27b6001e167b4923e694884578617a1f34b5)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: r0 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2590)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 19
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 2
+	ConstraintError: 3
+	TypestateError: 1
+	RequiredPredicateError: 6
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.196 s
+

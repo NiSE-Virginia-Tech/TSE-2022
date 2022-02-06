@@ -1,0 +1,112 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 452.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r47
+		Type: java.security.MessageDigest
+		Statement: r47 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24)
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: 530077cc4732fd75a6353334b1d5d787513c3a36f82ff46f35e1358dffdb49e8
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke r47.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: 36ef9cbbb8092286ea2cc7cd280042afa5c3c050f3d56f91ade5ec57713572db
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r47.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: 315abb364546bf066dfc54712024901019f90a275c49045138e9f63e107e92fb
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator: void <init>()>
+		SHA-256: 95059cf4222e57e85834dbd0d3e457f82f076a0e500943c289c606c3707feaf0
+		Secure: true
+	Object:
+		Variable: r48
+		Type: byte[]
+		Statement: r48 = virtualinvoke r47.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: fbf75378852a4b8876b86ee57def8e798f139971d9e1559dbf77fce0da934852
+		Secure: false
+
+Findings in Java Class: org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest
+
+	 in Method: boolean check(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #530077cc4732fd75a6353334b1d5d787513c3a36f82ff46f35e1358dffdb49e8)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r47 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.788 s
+

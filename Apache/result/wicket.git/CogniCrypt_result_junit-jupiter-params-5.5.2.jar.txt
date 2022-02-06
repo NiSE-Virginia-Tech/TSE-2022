@@ -1,0 +1,24 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 587.0 ms 
+Exception in thread "main" java.lang.RuntimeException: This operation requires resolving level SIGNATURES but java.time.Year is at resolving level DANGLING
+If you are extending Soot, try to add the following call before calling soot.Main.main(..):
+Scene.v().addBasicClass(java.time.Year,SIGNATURES);
+Otherwise, try whole-program mode (-w).
+	at soot.SootClass.checkLevelIgnoreResolving(SootClass.java:198)
+	at soot.SootClass.checkLevel(SootClass.java:180)
+	at soot.SootClass.getMethodUnsafe(SootClass.java:399)
+	at soot.EntryPoints.clinitsOf(EntryPoints.java:187)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.getImplicitTargets(OnFlyCallGraphBuilder.java:868)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.processNewMethod(OnFlyCallGraphBuilder.java:765)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.processReachables(OnFlyCallGraphBuilder.java:273)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.build(CallGraphBuilder.java:111)
+	at soot.jimple.toolkits.callgraph.CHATransformer.internalTransform(CHATransformer.java:51)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.RadioScenePack.internalApply(RadioScenePack.java:68)
+	at soot.jimple.toolkits.callgraph.CallGraphPack.internalApply(CallGraphPack.java:58)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:198)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

@@ -1,0 +1,974 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/elasticsearch-2.1.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>194898 lines of code analyzed,
+	in 5796 classes, 
+	in 454 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">50</td>
+<td align="right">0.26</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>50</b>
+</td>
+<td align="right">
+<b>0.26</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">42</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>42</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66451');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66451" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.elasticsearch.common.cli.Terminal$ConsoleTerminal<br/>In method org.elasticsearch.common.cli.Terminal$ConsoleTerminal.printStackTrace(Throwable)<br/>At Terminal.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66505');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66505" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.elasticsearch.common.cli.Terminal$SystemTerminal<br/>In method org.elasticsearch.common.cli.Terminal$SystemTerminal.printStackTrace(Throwable)<br/>At Terminal.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66747');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66747" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.elasticsearch.common.inject.internal.Errors<br/>In method org.elasticsearch.common.inject.internal.Errors.format(String, Collection)<br/>At Errors.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.elasticsearch.ExceptionsHelper<br/>In method org.elasticsearch.ExceptionsHelper.stackTrace(Throwable)<br/>At ExceptionsHelper.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65749');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65749" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.action.admin.indices.validate.query.TransportValidateQueryAction<br/>In method org.elasticsearch.action.admin.indices.validate.query.TransportValidateQueryAction.shards(ClusterState, ValidateQueryRequest, String[])<br/>At TransportValidateQueryAction.java:[line 110]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66097');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66097" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.cluster.routing.IndexRoutingTable<br/>In method new org.elasticsearch.cluster.routing.IndexRoutingTable(String, ImmutableOpenIntMap)<br/>At IndexRoutingTable.java:[line 74]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66155');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66155" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.cluster.routing.IndexShardRoutingTable<br/>In method new org.elasticsearch.cluster.routing.IndexShardRoutingTable(ShardId, List)<br/>At IndexShardRoutingTable.java:[line 71]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66890');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66890" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.random()<br/>At UnboxedMathUtils.java:[line 434]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66948');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66948" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomDouble()<br/>At UnboxedMathUtils.java:[line 438]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67006');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67006" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomFloat()<br/>At UnboxedMathUtils.java:[line 442]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67064');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67064" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomInt()<br/>At UnboxedMathUtils.java:[line 446]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67122');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67122" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomInt(Integer)<br/>At UnboxedMathUtils.java:[line 450]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67180');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67180" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomLong()<br/>At UnboxedMathUtils.java:[line 454]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67238');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67238" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.common.math.UnboxedMathUtils<br/>In method org.elasticsearch.common.math.UnboxedMathUtils.randomLong(Long)<br/>At UnboxedMathUtils.java:[line 458]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67380');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67380" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.discovery.DiscoveryService<br/>In method org.elasticsearch.discovery.DiscoveryService.generateNodeId(Settings)<br/>At DiscoveryService.java:[line 137]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67983');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67983" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.index.translog.TranslogService<br/>In method org.elasticsearch.index.translog.TranslogService.computeNextInterval()<br/>At TranslogService.java:[line 118]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68041');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68041" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.node.internal.InternalSettingsPreparer<br/>In method org.elasticsearch.node.internal.InternalSettingsPreparer.randomNodeName(Path)<br/>At InternalSettingsPreparer.java:[line 205]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68099');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68099" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.plugins.PluginManager<br/>In method org.elasticsearch.plugins.PluginManager.downloadAndExtract(String, Terminal)<br/>At PluginManager.java:[line 119]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68294');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68294" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.models.EwmaModel<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.models.EwmaModel.neighboringModel()<br/>At EwmaModel.java:[line 62]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68352');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68352" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltLinearModel<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltLinearModel.neighboringModel()<br/>At HoltLinearModel.java:[line 69]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68410');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68410" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltLinearModel<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltLinearModel.neighboringModel()<br/>At HoltLinearModel.java:[line 70]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68468');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68468" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltWintersModel<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltWintersModel.neighboringModel()<br/>At HoltWintersModel.java:[line 185]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68526');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68526" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltWintersModel<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.models.HoltWintersModel.neighboringModel()<br/>At HoltWintersModel.java:[line 186]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68236');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68236" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.elasticsearch.search.aggregations.pipeline.movavg.SimulatedAnealingMinimizer<br/>In method org.elasticsearch.search.aggregations.pipeline.movavg.SimulatedAnealingMinimizer.minimize(MovAvgModel, EvictingQueue, double[])<br/>At SimulatedAnealingMinimizer.java:[line 70]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67296');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Files.createTempFile(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67296" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.elasticsearch.common.util.MultiDataPathUpgrader<br/>In method org.elasticsearch.common.util.MultiDataPathUpgrader.upgradeFiles(ShardId, ShardPath, Path, String, Path[])<br/>At MultiDataPathUpgrader.java:[line 280]<br/>Sink method java/nio/file/Files.createTempFile(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/nio/file/Path.toString()Ljava/lang/String;<br/>Unknown source java/nio/file/Path.getFileName()Ljava/nio/file/Path;<br/>At MultiDataPathUpgrader.java:[line 280]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68157');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Files.createTempFile(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68157" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.elasticsearch.plugins.PluginManager$PluginHandle<br/>In method org.elasticsearch.plugins.PluginManager$PluginHandle.newDistroFile(Environment)<br/>At PluginManager.java:[line 595]<br/>Sink method java/nio/file/Files.createTempFile(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;<br/>Sink parameter 2<br/>Unknown source org/elasticsearch/plugins/PluginManager$PluginHandle.name<br/>At PluginManager.java:[line 595]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65807');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^0*[0-9]+(\\.[0-9]+)*$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65807" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^0*[0-9]+(\\.[0-9]+)*$<br/>In class org.elasticsearch.bootstrap.JavaVersion<br/>In method org.elasticsearch.bootstrap.JavaVersion.isValid(String)<br/>At JavaVersion.java:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68584');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^\\[(.*:.*)\\](?::([\\d\\-]*))?$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68584" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^\\[(.*:.*)\\](?::([\\d\\-]*))?$<br/>In class org.elasticsearch.transport.netty.NettyTransport<br/>In method org.elasticsearch.transport.netty.NettyTransport.&lt;static initializer for NettyTransport&gt;()<br/>At NettyTransport.java:[line 659]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66357');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66357" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.elasticsearch.common.blobstore.url.URLBlobContainer<br/>In method org.elasticsearch.common.blobstore.url.URLBlobContainer.readBlob(String)<br/>At URLBlobContainer.java:[line 103]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/blobstore/url/URLBlobContainer.path<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source org/elasticsearch/common/blobstore/url/URLBlobContainer.readBlob(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected<br/>At URLBlobContainer.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66648');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66648" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.elasticsearch.common.http.client.HttpDownloadHelper$GetThread<br/>In method org.elasticsearch.common.http.client.HttpDownloadHelper$GetThread.openConnection(URL)<br/>At HttpDownloadHelper.java:[line 334]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/http/client/HttpDownloadHelper$GetThread.openConnection(Ljava/net/URL;)Ljava/net/URLConnection; parameter 0<br/>At HttpDownloadHelper.java:[line 291]<br/>At HttpDownloadHelper.java:[line 372]<br/>At HttpDownloadHelper.java:[line 376]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66801');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66801" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.elasticsearch.common.io.FileSystemUtils<br/>In method org.elasticsearch.common.io.FileSystemUtils.newBufferedReader(URL, Charset)<br/>At FileSystemUtils.java:[line 161]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/io/FileSystemUtils.newBufferedReader(Ljava/net/URL;Ljava/nio/charset/Charset;)Ljava/io/BufferedReader; parameter 1<br/>At Analysis.java:[line 237]<br/>At Analysis.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.action.admin.cluster.snapshots.status.SnapshotStatus<br/>In method org.elasticsearch.action.admin.cluster.snapshots.status.SnapshotStatus.getIndices()<br/>At SnapshotStatus.java:[line 114]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/action/admin/cluster/snapshots/status/SnapshotIndexShardStatus.getIndex()Ljava/lang/String;<br/>Unknown source org/elasticsearch/index/Index.name()Ljava/lang/String;<br/>Unknown source com/google/common/collect/Sets.newHashSet()Ljava/util/HashSet;<br/>Unknown source org/elasticsearch/index/shard/ShardId.getIndex()Ljava/lang/String;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/elasticsearch/index/Index.name<br/>At SnapshotStatus.java:[line 108]<br/>At SnapshotStatus.java:[line 111]<br/>At BroadcastShardResponse.java:[line 45]<br/>At Index.java:[line 44]<br/>At ShardId.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65865');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65865" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.cluster.ClusterModule<br/>In method org.elasticsearch.cluster.ClusterModule.configure()<br/>At ClusterModule.java:[line 310]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65929');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65929" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.cluster.metadata.MetaDataIndexUpgradeService<br/>In method new org.elasticsearch.cluster.metadata.MetaDataIndexUpgradeService(Settings, ScriptService)<br/>At MetaDataIndexUpgradeService.java:[line 69]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65993');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65993" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.cluster.node.DiscoveryNodeFilters<br/>In method org.elasticsearch.cluster.node.DiscoveryNodeFilters.match(DiscoveryNode)<br/>At DiscoveryNodeFilters.java:[line 160]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/cluster/node/DiscoveryNodeFilters.filters<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>At DiscoveryNodeFilters.java:[line 81]<br/>At DiscoveryNodeFilters.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66213');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66213" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.cluster.routing.RoutingNodes<br/>In method org.elasticsearch.cluster.routing.RoutingNodes.assertShardStats(RoutingNodes)<br/>At RoutingNodes.java:[line 744]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source java/util/Map.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source org/elasticsearch/cluster/routing/ShardRouting.index<br/>Unknown source org/elasticsearch/cluster/routing/ShardRouting.index()Ljava/lang/String;<br/>At RoutingNodes.java:[line 733]<br/>At RoutingNodes.java:[line 737]<br/>At RoutingNodes.java:[line 739]<br/>At RoutingNodes.java:[line 740]<br/>At ShardRouting.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66559');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66559" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.common.geo.builders.ShapeBuilder$GeoShapeType<br/>In method org.elasticsearch.common.geo.builders.ShapeBuilder$GeoShapeType.forName(String)<br/>At ShapeBuilder.java:[line 700]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/geo/builders/ShapeBuilder$GeoShapeType.forName(Ljava/lang/String;)Lorg/elasticsearch/common/geo/builders/ShapeBuilder$GeoShapeType; parameter 0<br/>At ShapeBuilder.java:[line 698]<br/>At ShapeBuilder.java:[line 741]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67438');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67438" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.gateway.PrimaryShardAllocator<br/>In method org.elasticsearch.gateway.PrimaryShardAllocator.isEnoughAllocationsFound(ShardRouting, IndexMetaData, PrimaryShardAllocator$NodesAndVersions)<br/>At PrimaryShardAllocator.java:[line 139]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/elasticsearch/gateway/PrimaryShardAllocator.initialShards<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/google/common/collect/ImmutableMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;)Ljava/lang/String;<br/>At Settings.java:[line 253]<br/>At PrimaryShardAllocator.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67547');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67547" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.gateway.PrimaryShardAllocator<br/>In method org.elasticsearch.gateway.PrimaryShardAllocator.isEnoughAllocationsFound(ShardRouting, IndexMetaData, PrimaryShardAllocator$NodesAndVersions)<br/>At PrimaryShardAllocator.java:[line 143]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/elasticsearch/gateway/PrimaryShardAllocator.initialShards<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/google/common/collect/ImmutableMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;)Ljava/lang/String;<br/>At Settings.java:[line 253]<br/>At PrimaryShardAllocator.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67656');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67656" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.gateway.PrimaryShardAllocator<br/>In method org.elasticsearch.gateway.PrimaryShardAllocator.isEnoughAllocationsFound(ShardRouting, IndexMetaData, PrimaryShardAllocator$NodesAndVersions)<br/>At PrimaryShardAllocator.java:[line 147]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/elasticsearch/gateway/PrimaryShardAllocator.initialShards<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/google/common/collect/ImmutableMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;)Ljava/lang/String;<br/>At Settings.java:[line 253]<br/>At PrimaryShardAllocator.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67765');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67765" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.gateway.PrimaryShardAllocator<br/>In method org.elasticsearch.gateway.PrimaryShardAllocator.isEnoughAllocationsFound(ShardRouting, IndexMetaData, PrimaryShardAllocator$NodesAndVersions)<br/>At PrimaryShardAllocator.java:[line 149]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/elasticsearch/gateway/PrimaryShardAllocator.initialShards<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/google/common/collect/ImmutableMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;)Ljava/lang/String;<br/>At Settings.java:[line 253]<br/>At PrimaryShardAllocator.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67874');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67874" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class org.elasticsearch.gateway.PrimaryShardAllocator<br/>In method org.elasticsearch.gateway.PrimaryShardAllocator.isEnoughAllocationsFound(ShardRouting, IndexMetaData, PrimaryShardAllocator$NodesAndVersions)<br/>At PrimaryShardAllocator.java:[line 151]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/elasticsearch/gateway/PrimaryShardAllocator.initialShards<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/google/common/collect/ImmutableMap.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/elasticsearch/common/settings/Settings.get(Ljava/lang/String;)Ljava/lang/String;<br/>At Settings.java:[line 253]<br/>At PrimaryShardAllocator.java:[line 138]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        </body>
+</html>

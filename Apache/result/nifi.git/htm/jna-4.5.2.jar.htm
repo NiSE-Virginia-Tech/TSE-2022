@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/jna-4.5.2.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>5840 lines of code analyzed,
+	in 112 classes, 
+	in 3 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.17</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">2.23</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+<td align="right">
+<b>2.40</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">14</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.ELFAnalyser<br/>In method com.sun.jna.ELFAnalyser.runDetection()<br/>At ELFAnalyser.java:[line 130]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source com/sun/jna/ELFAnalyser.filename<br/>At ELFAnalyser.java:[line 130]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.extractFromResourcePath(String, ClassLoader)<br/>At Native.java:[line 1059]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source com/sun/jna/Native.getTempDir()Ljava/io/File;<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>At Native.java:[line 1058]<br/>At Native.java:[line 1209]<br/>At Native.java:[line 1213]<br/>At Native.java:[line 1217]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65749');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65749" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.getWebStartLibraryPath(String)<br/>At Native.java:[line 1181]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/reflect/Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65818');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65818" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.loadNativeDispatchLibrary()<br/>At Native.java:[line 852]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/System.mapLibraryName(Ljava/lang/String;)Ljava/lang/String;<br/>At Native.java:[line 852]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65897');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65897" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.loadNativeDispatchLibrary()<br/>At Native.java:[line 888]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At Native.java:[line 884]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65976');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65976" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.markTemporaryFile(File)<br/>At Native.java:[line 1196]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At Native.java:[line 1196]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66055');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66055" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.Native<br/>In method com.sun.jna.Native.removeTemporaryFiles()<br/>At Native.java:[line 1246]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At Native.java:[line 1245]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66134');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66134" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.&lt;static initializer for NativeLibrary&gt;()<br/>At NativeLibrary.java:[line 920]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.getMultiArchPath()Ljava/lang/String;<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Tainted source com/sun/jna/NativeLibrary.getLinuxLdPaths()Ljava/util/ArrayList;<br/>Unknown source com/sun/jna/Platform.ARCH<br/>At NativeLibrary.java:[line 887]<br/>At NativeLibrary.java:[line 890]<br/>At NativeLibrary.java:[line 907]<br/>At NativeLibrary.java:[line 914]<br/>At NativeLibrary.java:[line 916]<br/>At NativeLibrary.java:[line 934]<br/>At NativeLibrary.java:[line 954]<br/>At NativeLibrary.java:[line 966]<br/>At NativeLibrary.java:[line 970]<br/>At NativeLibrary.java:[line 971]<br/>At NativeLibrary.java:[line 972]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66328');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66328" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.findLibraryPath(String, List)<br/>At NativeLibrary.java:[line 696]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.mapSharedLibraryName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.findLibraryPath(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String; parameter 1<br/>Unknown source java/lang/System.mapLibraryName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sun/jna/NativeLibrary.mapSharedLibraryName(Ljava/lang/String;)Ljava/lang/String;<br/>At Library.java:[line 179]<br/>At NativeLibrary.java:[line 148]<br/>At NativeLibrary.java:[line 180]<br/>At NativeLibrary.java:[line 202]<br/>At NativeLibrary.java:[line 208]<br/>At NativeLibrary.java:[line 270]<br/>At NativeLibrary.java:[line 369]<br/>At NativeLibrary.java:[line 389]<br/>At NativeLibrary.java:[line 407]<br/>At NativeLibrary.java:[line 409]<br/>At NativeLibrary.java:[line 419]<br/>At NativeLibrary.java:[line 427]<br/>At NativeLibrary.java:[line 448]<br/>At NativeLibrary.java:[line 458]<br/>At NativeLibrary.java:[line 692]<br/>At NativeLibrary.java:[line 704]<br/>At NativeLibrary.java:[line 735]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66582');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66582" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.findLibraryPath(String, List)<br/>At NativeLibrary.java:[line 704]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.mapSharedLibraryName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.findLibraryPath(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String; parameter 1<br/>Unknown source java/lang/System.mapLibraryName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/sun/jna/NativeLibrary.mapSharedLibraryName(Ljava/lang/String;)Ljava/lang/String;<br/>At Library.java:[line 179]<br/>At NativeLibrary.java:[line 148]<br/>At NativeLibrary.java:[line 180]<br/>At NativeLibrary.java:[line 202]<br/>At NativeLibrary.java:[line 208]<br/>At NativeLibrary.java:[line 270]<br/>At NativeLibrary.java:[line 369]<br/>At NativeLibrary.java:[line 389]<br/>At NativeLibrary.java:[line 407]<br/>At NativeLibrary.java:[line 409]<br/>At NativeLibrary.java:[line 419]<br/>At NativeLibrary.java:[line 427]<br/>At NativeLibrary.java:[line 448]<br/>At NativeLibrary.java:[line 458]<br/>At NativeLibrary.java:[line 692]<br/>At NativeLibrary.java:[line 704]<br/>At NativeLibrary.java:[line 735]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66836');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66836" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.getFile()<br/>At NativeLibrary.java:[line 617]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.libraryPath<br/>At NativeLibrary.java:[line 617]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66915');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66915" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.matchFramework(String)<br/>At NativeLibrary.java:[line 321]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66984');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66984" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.matchFramework(String)<br/>At NativeLibrary.java:[line 321]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>At NativeLibrary.java:[line 321]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67063');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67063" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.jna.NativeLibrary<br/>In method com.sun.jna.NativeLibrary.matchLibrary(String, List)<br/>At NativeLibrary.java:[line 797]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/jna/NativeLibrary.matchLibrary(Ljava/lang/String;Ljava/util/List;)Ljava/lang/String; parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Arrays.asList([Ljava/lang/Object;)Ljava/util/List;<br/>Unknown source java/io/File.getParent()Ljava/lang/String;<br/>At NativeLibrary.java:[line 157]<br/>At NativeLibrary.java:[line 162]<br/>At NativeLibrary.java:[line 168]<br/>At NativeLibrary.java:[line 171]<br/>At NativeLibrary.java:[line 179]<br/>At NativeLibrary.java:[line 197]<br/>At NativeLibrary.java:[line 234]<br/>At NativeLibrary.java:[line 664]<br/>At NativeLibrary.java:[line 668]<br/>At NativeLibrary.java:[line 671]<br/>At NativeLibrary.java:[line 673]<br/>At NativeLibrary.java:[line 783]<br/>At NativeLibrary.java:[line 796]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

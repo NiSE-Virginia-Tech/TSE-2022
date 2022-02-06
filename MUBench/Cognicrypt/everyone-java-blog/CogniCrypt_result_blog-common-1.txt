@@ -1,0 +1,250 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/everyone-java-blog/blog-common/target/blog-common-1.0.0-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 381.8 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 7 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.46
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.53
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.73
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.87
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.93
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r4
+		Type: javax.crypto.SecretKey
+		Statement: r4 = virtualinvoke r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: b71eca892fdb061b28a89515f876f5b0190f917f47926c91f0d4092e001f62be
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer211)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: df59dc5e974da070413a1e3db7435b5ec1bcb38114bd3c777c9e9310ac980895
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encodeByMd5(byte[])>
+		SHA-256: d2f308c597983f169d163fa2abdba068b411062a5ac383bd4ef024d2083d4318
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Cipher
+		Statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer212)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: 82f72aca378bf34ab598c88a40e6db1595d68575c0c4a601659447295d3916e5
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: ec081e16887b8f5a8e6022d154cabd120ede6b36c47366abd1598d6e3049d322
+		Secure: true
+	Object:
+		Variable: r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer214)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: 2729ecdb9ab21017b7337f41cfbd460ac8cab184e25d254ae28b5bfdefcd4d21
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.MessageDigest
+		Statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer217)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encodeByMd5(byte[])>
+		SHA-256: 21d9034d56fafbded7bfece5b755b783a8db11541942e737380c5c92f39a0cbc
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: fedf0e5ea8af9a64b22208892feb2c98db4d25ceb5635710785ac78160752045
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Cipher
+		Statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer216)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: da9418ac0d80b4eec91c60b9145a47ac3e389955095f68e90f347d3e1f322c50
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: a8f1543f461787883e9208a733b0a2a64540eb1f09a354c4034c2723539372b0
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.crypto.SecretKey
+		Statement: r4 = virtualinvoke r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: 54f3dab35cebe6a43a7d4114aca6abc976d3c6f77b3a7a193fdd2b08fb38e47a
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String decryptDes(java.lang.String,java.lang.String)>
+		SHA-256: f92c6969c78b5da151b0ff9503fe5546612378db662495970c11ea01a672f892
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encodeByMd5(byte[])>
+		SHA-256: d00ea3132ed703fc5ab6bf2c9f74f6083902a353cf0d1fa6815064e5c687084b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: 26527830098454733c924e79d186ca0a1beb62f37c3f9398b133ef2452e3cb4f
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+		Method: <com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils: java.lang.String encryptDes(java.lang.String,java.lang.String)>
+		SHA-256: 4628e7b90cbc22afaf551ebc0a7e9ab5c5c8f01c16a744cd564020fdd407d986
+		Secure: false
+
+Findings in Java Class: com.zuoxiaolong.blog.common.utils.EncodeDecodeUtils
+
+	 in Method: java.lang.String encryptDes(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r4 = virtualinvoke r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #df59dc5e974da070413a1e3db7435b5ec1bcb38114bd3c777c9e9310ac980895)
+			First parameter (with value "DES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer211)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer213, r4, r14)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #82f72aca378bf34ab598c88a40e6db1595d68575c0c4a601659447295d3916e5)
+			First parameter (with value "DES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer212)
+
+
+	 in Method: java.lang.String decryptDes(java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #2729ecdb9ab21017b7337f41cfbd460ac8cab184e25d254ae28b5bfdefcd4d21)
+			First parameter (with value "DES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer214)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r4 = virtualinvoke r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer215, r4, r14)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #da9418ac0d80b4eec91c60b9145a47ac3e389955095f68e90f347d3e1f322c50)
+			First parameter (with value "DES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer216)
+
+
+	 in Method: java.lang.String encodeByMd5(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #21d9034d56fafbded7bfece5b755b783a8db11541942e737380c5c92f39a0cbc)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer217)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 15
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	ConstraintError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.367 s

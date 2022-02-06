@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/spring-integration-core-4.3.19.RELEASE.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>23179 lines of code analyzed,
+	in 755 classes, 
+	in 51 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.09</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">30</td>
+<td align="right">1.29</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>32</b>
+</td>
+<td align="right">
+<b>1.38</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">32</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>32</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66777');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66777" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.springframework.integration.handler.LoggingHandler<br/>In method org.springframework.integration.handler.LoggingHandler.printStackTrace(Throwable, Writer)<br/>At LoggingHandler.java:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67454');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.springframework.integration.support.converter.WhiteListDeserializingConverter.deserialize(ByteArrayInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67454" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.integration.support.converter.WhiteListDeserializingConverter<br/>In method org.springframework.integration.support.converter.WhiteListDeserializingConverter.deserialize(ByteArrayInputStream)<br/>At WhiteListDeserializingConverter.java:[line 158]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65892');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65892" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.integration.codec.kryo.FileSerializer<br/>In method org.springframework.integration.codec.kryo.FileSerializer.read(Kryo, Input, Class)<br/>At FileSerializer.java:[line 45]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/esotericsoftware/kryo/io/Input.readString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67197');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67197" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.integration.metadata.PropertiesPersistingMetadataStore<br/>In method org.springframework.integration.metadata.PropertiesPersistingMetadataStore.afterPropertiesSet()<br/>At PropertiesPersistingMetadataStore.java:[line 95]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/metadata/PropertiesPersistingMetadataStore.baseDirectory<br/>At PropertiesPersistingMetadataStore.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67276');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67276" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.integration.metadata.PropertiesPersistingMetadataStore<br/>In method org.springframework.integration.metadata.PropertiesPersistingMetadataStore.afterPropertiesSet()<br/>At PropertiesPersistingMetadataStore.java:[line 97]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/metadata/PropertiesPersistingMetadataStore.fileName<br/>At PropertiesPersistingMetadataStore.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67508');">
+<td>
+<span class="priority-1">SECUJDES</span>
+</td>
+<td>Unsafe Jackson deserialization configuration used in new org.springframework.integration.support.json.MessageJacksonDeserializer(Class) com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As) MessageJacksonDeserializer.java:[line 53]</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67508" style="display: none;">
+<a href="#JACKSON_UNSAFE_DESERIALIZATION">Bug type JACKSON_UNSAFE_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.integration.support.json.MessageJacksonDeserializer<br/>In method new org.springframework.integration.support.json.MessageJacksonDeserializer(Class)<br/>Called method com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As)<br/>At MessageJacksonDeserializer.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.aggregator.ExpressionEvaluatingCorrelationStrategy<br/>In method new org.springframework.integration.aggregator.ExpressionEvaluatingCorrelationStrategy(String)<br/>At ExpressionEvaluatingCorrelationStrategy.java:[line 46]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/aggregator/ExpressionEvaluatingCorrelationStrategy.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65625');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65625" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.aggregator.ExpressionEvaluatingMessageListProcessor<br/>In method new org.springframework.integration.aggregator.ExpressionEvaluatingMessageListProcessor(String)<br/>At ExpressionEvaluatingMessageListProcessor.java:[line 50]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/aggregator/ExpressionEvaluatingMessageListProcessor.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ExpressionEvaluatingMessageGroupProcessor.java:[line 41]<br/>At ExpressionEvaluatingReleaseStrategy.java:[line 30]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65719');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65719" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.aop.MessagePublishingInterceptor<br/>In method org.springframework.integration.aop.MessagePublishingInterceptor.evaluateHeaders(Method, StandardEvaluationContext)<br/>At MessagePublishingInterceptor.java:[line 209]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source org/springframework/integration/aop/PublisherMetadataSource.getHeaderExpressions(Ljava/lang/reflect/Method;)Ljava/util/Map;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map$Entry.getValue()Ljava/lang/Object;<br/>At MessagePublishingInterceptor.java:[line 206]<br/>At MessagePublishingInterceptor.java:[line 207]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65823');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65823" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.aop.MessagePublishingInterceptor<br/>In method org.springframework.integration.aop.MessagePublishingInterceptor.publishMessage(Method, StandardEvaluationContext)<br/>At MessagePublishingInterceptor.java:[line 163]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/aop/PublisherMetadataSource.getPayloadExpression(Ljava/lang/reflect/Method;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65961');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65961" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.config.AbstractStandardMessageHandlerFactoryBean<br/>In method org.springframework.integration.config.AbstractStandardMessageHandlerFactoryBean.setExpressionString(String)<br/>At AbstractStandardMessageHandlerFactoryBean.java:[line 79]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/config/AbstractStandardMessageHandlerFactoryBean.setExpressionString(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66035');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66035" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.config.ExpressionFactoryBean<br/>In method org.springframework.integration.config.ExpressionFactoryBean.createInstance()<br/>At ExpressionFactoryBean.java:[line 61]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/config/ExpressionFactoryBean.expressionString<br/>At ExpressionFactoryBean.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66114');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66114" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.endpoint.ExpressionMessageProducerSupport<br/>In method org.springframework.integration.endpoint.ExpressionMessageProducerSupport.setPayloadExpressionString(String)<br/>At ExpressionMessageProducerSupport.java:[line 54]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/endpoint/ExpressionMessageProducerSupport.setPayloadExpressionString(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66188');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66188" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.expression.ReloadableResourceBundleExpressionSource<br/>In method org.springframework.integration.expression.ReloadableResourceBundleExpressionSource.getExpression(String, Locale)<br/>At ReloadableResourceBundleExpressionSource.java:[line 245]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/expression/ReloadableResourceBundleExpressionSource$PropertiesHolder.properties<br/>Unknown source org/springframework/integration/expression/ReloadableResourceBundleExpressionSource.getExpressionString(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/integration/expression/ReloadableResourceBundleExpressionSource$PropertiesHolder.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>At ReloadableResourceBundleExpressionSource.java:[line 243]<br/>At ReloadableResourceBundleExpressionSource.java:[line 253]<br/>At ReloadableResourceBundleExpressionSource.java:[line 263]<br/>At ReloadableResourceBundleExpressionSource.java:[line 577]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66312');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66312" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.filter.ExpressionEvaluatingSelector<br/>In method new org.springframework.integration.filter.ExpressionEvaluatingSelector(String)<br/>At ExpressionEvaluatingSelector.java:[line 42]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/filter/ExpressionEvaluatingSelector.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At RecipientListRouter.java:[line 112]<br/>At RecipientListRouter.java:[line 113]<br/>At RecipientListRouter.java:[line 116]<br/>At RecipientListRouter.java:[line 118]<br/>At RecipientListRouter.java:[line 152]<br/>At RecipientListRouter.java:[line 207]<br/>At RecipientListRouter.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66456');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66456" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.gateway.GatewayMethodInboundMessageMapper<br/>In method org.springframework.integration.gateway.GatewayMethodInboundMessageMapper.evaluatePayloadExpression(String, Object)<br/>At GatewayMethodInboundMessageMapper.java:[line 207]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/gateway/GatewayMethodInboundMessageMapper.evaluatePayloadExpression(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66530');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66530" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.gateway.GatewayMethodInboundMessageMapper<br/>In method org.springframework.integration.gateway.GatewayMethodInboundMessageMapper.parsePayloadExpression(Method)<br/>At GatewayMethodInboundMessageMapper.java:[line 266]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/annotation/AnnotationUtils.getValue(Ljava/lang/annotation/Annotation;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66599');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66599" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.gateway.GatewayMethodInboundMessageMapper<br/>In method org.springframework.integration.gateway.GatewayMethodInboundMessageMapper.setPayloadExpression(String)<br/>At GatewayMethodInboundMessageMapper.java:[line 152]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/gateway/GatewayMethodInboundMessageMapper.setPayloadExpression(Ljava/lang/String;)V parameter 0<br/>At GatewayMethodMetadata.java:[line 51]<br/>At GatewayProxyFactoryBean.java:[line 520]<br/>At GatewayProxyFactoryBean.java:[line 565]<br/>At GatewayProxyFactoryBean.java:[line 613]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66708');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66708" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.gateway.GatewayProxyFactoryBean<br/>In method org.springframework.integration.gateway.GatewayProxyFactoryBean.createGatewayForMethod(Method)<br/>At GatewayProxyFactoryBean.java:[line 556]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/annotation/GatewayHeader.expression()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66915');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66915" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.handler.advice.ExpressionEvaluatingRequestHandlerAdvice<br/>In method org.springframework.integration.handler.advice.ExpressionEvaluatingRequestHandlerAdvice.setOnFailureExpressionString(String)<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 121]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/handler/advice/ExpressionEvaluatingRequestHandlerAdvice.setOnFailureExpressionString(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 110]<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67009');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67009" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.handler.advice.ExpressionEvaluatingRequestHandlerAdvice<br/>In method org.springframework.integration.handler.advice.ExpressionEvaluatingRequestHandlerAdvice.setOnSuccessExpressionString(String)<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 90]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/handler/advice/ExpressionEvaluatingRequestHandlerAdvice.setOnSuccessExpressionString(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 79]<br/>At ExpressionEvaluatingRequestHandlerAdvice.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67103');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67103" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.handler.advice.SpelExpressionRetryStateGenerator<br/>In method new org.springframework.integration.handler.advice.SpelExpressionRetryStateGenerator(String, String)<br/>At SpelExpressionRetryStateGenerator.java:[line 54]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/handler/advice/SpelExpressionRetryStateGenerator.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected<br/>At SpelExpressionRetryStateGenerator.java:[line 49]<br/>At SpelExpressionRetryStateGenerator.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66831');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66831" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.handler.LoggingHandler<br/>In method org.springframework.integration.handler.LoggingHandler.setLogExpressionString(String)<br/>At LoggingHandler.java:[line 117]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/handler/LoggingHandler.setLogExpressionString(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At LoggingHandler.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67355');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67355" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.routingslip.ExpressionEvaluatingRoutingSlipRouteStrategy<br/>In method new org.springframework.integration.routingslip.ExpressionEvaluatingRoutingSlipRouteStrategy(String)<br/>At ExpressionEvaluatingRoutingSlipRouteStrategy.java:[line 76]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/routingslip/ExpressionEvaluatingRoutingSlipRouteStrategy.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At RoutingSlipHeaderValueMessageProcessor.java:[line 85]<br/>At RoutingSlipHeaderValueMessageProcessor.java:[line 87]<br/>At RoutingSlipHeaderValueMessageProcessor.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67572');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67572" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transaction.TransactionSynchronizationFactoryBean<br/>In method org.springframework.integration.transaction.TransactionSynchronizationFactoryBean.getObject()<br/>At TransactionSynchronizationFactoryBean.java:[line 171]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/transaction/TransactionSynchronizationFactoryBean.beforeCommitExpression<br/>At TransactionSynchronizationFactoryBean.java:[line 171]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67651');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67651" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transaction.TransactionSynchronizationFactoryBean<br/>In method org.springframework.integration.transaction.TransactionSynchronizationFactoryBean.getObject()<br/>At TransactionSynchronizationFactoryBean.java:[line 174]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/transaction/TransactionSynchronizationFactoryBean.afterCommitExpression<br/>At TransactionSynchronizationFactoryBean.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67730');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67730" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transaction.TransactionSynchronizationFactoryBean<br/>In method org.springframework.integration.transaction.TransactionSynchronizationFactoryBean.getObject()<br/>At TransactionSynchronizationFactoryBean.java:[line 177]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/transaction/TransactionSynchronizationFactoryBean.afterRollbackExpression<br/>At TransactionSynchronizationFactoryBean.java:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67809');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67809" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transformer.ContentEnricher<br/>In method org.springframework.integration.transformer.ContentEnricher.setNullResultPropertyExpressions(Map)<br/>At ContentEnricher.java:[line 105]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/springframework/integration/transformer/ContentEnricher.setNullResultPropertyExpressions(Ljava/util/Map;)V parameter 0<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Method usage not detected<br/>At ContentEnricher.java:[line 102]<br/>At ContentEnricher.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67918');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67918" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transformer.ContentEnricher<br/>In method org.springframework.integration.transformer.ContentEnricher.setPropertyExpressions(Map)<br/>At ContentEnricher.java:[line 128]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source java/util/Map.entrySet()Ljava/util/Set;<br/>Unknown source java/util/Map.values()Ljava/util/Collection;<br/>Unknown source java/util/Collection.toArray()[Ljava/lang/Object;<br/>Unknown source java/util/Map.keySet()Ljava/util/Set;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/springframework/integration/transformer/ContentEnricher.setPropertyExpressions(Ljava/util/Map;)V parameter 0<br/>Unknown source java/util/Map$Entry.getKey()Ljava/lang/Object;<br/>Method usage not detected<br/>At ContentEnricher.java:[line 121]<br/>At ContentEnricher.java:[line 122]<br/>At ContentEnricher.java:[line 123]<br/>At ContentEnricher.java:[line 125]<br/>At ContentEnricher.java:[line 126]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68072');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68072" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.transformer.support.ExpressionEvaluatingHeaderValueMessageProcessor<br/>In method new org.springframework.integration.transformer.support.ExpressionEvaluatingHeaderValueMessageProcessor(String, Class)<br/>At ExpressionEvaluatingHeaderValueMessageProcessor.java:[line 62]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/transformer/support/ExpressionEvaluatingHeaderValueMessageProcessor.&lt;init&gt;(Ljava/lang/String;Ljava/lang/Class;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68146');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68146" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.util.AbstractExpressionEvaluator<br/>In method org.springframework.integration.util.AbstractExpressionEvaluator.evaluateExpression(String, Object, Class)<br/>At AbstractExpressionEvaluator.java:[line 152]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/integration/util/AbstractExpressionEvaluator.evaluateExpression(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object; parameter 2<br/>Method usage not detected<br/>At AbstractExpressionEvaluator.java:[line 148]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68230');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68230" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.integration.util.MessagingMethodInvokerHelper$HandlerMethod<br/>In method org.springframework.integration.util.MessagingMethodInvokerHelper$HandlerMethod.generateExpression(Method)<br/>At MessagingMethodInvokerHelper.java:[line 823]<br/>Sink method org/springframework/expression/spel/standard/SpelExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/annotation/AnnotationUtils.getValue(Ljava/lang/annotation/Annotation;)Ljava/lang/Object;<br/>Unknown source org/springframework/core/annotation/AnnotationAttributes.getString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/integration/util/MessagingMethodInvokerHelper$HandlerMethod.determineHeaderExpression(Ljava/lang/annotation/Annotation;Lorg/springframework/core/MethodParameter;)Ljava/lang/String;<br/>Unknown source org/springframework/integration/annotation/Payloads.value()Ljava/lang/String;<br/>Unknown source org/springframework/core/MethodParameter.getParameterName()Ljava/lang/String;<br/>At MessagingMethodInvokerHelper.java:[line 710]<br/>At MessagingMethodInvokerHelper.java:[line 721]<br/>At MessagingMethodInvokerHelper.java:[line 724]<br/>At MessagingMethodInvokerHelper.java:[line 731]<br/>At MessagingMethodInvokerHelper.java:[line 734]<br/>At MessagingMethodInvokerHelper.java:[line 736]<br/>At MessagingMethodInvokerHelper.java:[line 745]<br/>At MessagingMethodInvokerHelper.java:[line 749]<br/>At MessagingMethodInvokerHelper.java:[line 754]<br/>At MessagingMethodInvokerHelper.java:[line 760]<br/>At MessagingMethodInvokerHelper.java:[line 765]<br/>At MessagingMethodInvokerHelper.java:[line 768]<br/>At MessagingMethodInvokerHelper.java:[line 783]<br/>At MessagingMethodInvokerHelper.java:[line 786]<br/>At MessagingMethodInvokerHelper.java:[line 790]<br/>At MessagingMethodInvokerHelper.java:[line 796]<br/>At MessagingMethodInvokerHelper.java:[line 800]<br/>At MessagingMethodInvokerHelper.java:[line 808]<br/>At MessagingMethodInvokerHelper.java:[line 819]<br/>At MessagingMethodInvokerHelper.java:[line 823]<br/>At MessagingMethodInvokerHelper.java:[line 837]<br/>At MessagingMethodInvokerHelper.java:[line 840]<br/>At MessagingMethodInvokerHelper.java:[line 846]<br/>At MessagingMethodInvokerHelper.java:[line 848]<br/>At MessagingMethodInvokerHelper.java:[line 849]<br/>At MessagingMethodInvokerHelper.java:[line 852]<br/>At MessagingMethodInvokerHelper.java:[line 855]<br/>At MessagingMethodInvokerHelper.java:[line 858]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="JACKSON_UNSAFE_DESERIALIZATION">JACKSON_UNSAFE_DESERIALIZATION: Unsafe Jackson deserialization configuration</a>
+</h2>
+            
+<p>When the Jackson databind library is used incorrectly the deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows the trigger of malicious operation.
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Explicitly define what types and subtypes you want to be available when using polymorphism through JsonTypeInfo.Id.NAME.
+Also, never call <code>ObjectMapper.enableDefaultTyping</code> (and then <code>readValue</code> a type that holds a Object or Serializable or Comparable or a known deserialization type).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public class Example {
+    static class ABean {
+        public int id;
+        public Object obj;
+    }
+
+    static class AnotherBean {
+        @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS) // or JsonTypeInfo.Id.MINIMAL_CLASS
+        public Object obj;
+    }
+
+    public void example(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.enableDefaultTyping();
+         mapper.readValue(json, ABean.class);
+    }
+
+    public void exampleTwo(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.readValue(json, AnotherBean.class);
+    }
+
+}
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://github.com/FasterXML/jackson-databind/issues/1599">Jackson Deserializer security vulnerability</a><br>
+<a href="https://github.com/mbechler/marshalsec">Java Unmarshaller Security - Turning your data into code execution</a><br>
+</p>
+
+        
+<h2>
+<a name="SPEL_INJECTION">SPEL_INJECTION: Potential code injection when using Spring Expression</a>
+</h2>
+            
+<p>
+    A Spring expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void parseExpressionInterface(Person personObj,String property) {
+
+        ExpressionParser parser = new SpelExpressionParser();
+
+        //Unsafe if the input is control by the user..
+        Expression exp = parser.parseExpression(property+" == 'Albert'");
+
+        StandardEvaluationContext testContext = new StandardEvaluationContext(personObj);
+        boolean result = exp.getValue(testContext, Boolean.class);
+[...]</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html">Spring Expression Language (SpEL) - Official Documentation</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+    <a href="https://gosecure.net/2018/05/15/beware-of-the-magic-spell-part-1-cve-2018-1273/">Spring Data-Commons: (CVE-2018-1273)</a><br/>
+    <a href="https://gosecure.net/2018/05/17/beware-of-the-magic-spell-part-2-cve-2018-1260/">Spring OAuth2: CVE-2018-1260</a>
+</p>
+
+
+        </body>
+</html>

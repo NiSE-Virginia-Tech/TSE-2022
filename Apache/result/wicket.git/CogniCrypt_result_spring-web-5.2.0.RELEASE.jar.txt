@@ -1,0 +1,44 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 834.5 ms 
+Exception in thread "main" java.lang.RuntimeException: Failed to apply jb to <org.springframework.http.client.Netty4ClientHttpRequest: org.springframework.util.concurrent.ListenableFuture executeInternal(org.springframework.http.HttpHeaders)>
+	at soot.asm.AsmMethodSource.getBody(AsmMethodSource.java:2090)
+	at soot.SootMethod.retrieveActiveBody(SootMethod.java:402)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.processNewMethod(OnFlyCallGraphBuilder.java:764)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.processReachables(OnFlyCallGraphBuilder.java:273)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.build(CallGraphBuilder.java:111)
+	at soot.jimple.toolkits.callgraph.CHATransformer.internalTransform(CHATransformer.java:51)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.RadioScenePack.internalApply(RadioScenePack.java:68)
+	at soot.jimple.toolkits.callgraph.CallGraphPack.internalApply(CallGraphPack.java:58)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:198)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+Caused by: java.lang.RuntimeException: This operation requires resolving level HIERARCHY but io.netty.channel.ChannelFutureListener is at resolving level DANGLING
+If you are extending Soot, try to add the following call before calling soot.Main.main(..):
+Scene.v().addBasicClass(io.netty.channel.ChannelFutureListener,HIERARCHY);
+Otherwise, try whole-program mode (-w).
+	at soot.SootClass.checkLevelIgnoreResolving(SootClass.java:198)
+	at soot.SootClass.checkLevel(SootClass.java:180)
+	at soot.FastHierarchy.canStoreClass(FastHierarchy.java:346)
+	at soot.FastHierarchy.canStoreType(FastHierarchy.java:267)
+	at soot.jimple.toolkits.typing.fast.BytecodeHierarchy.ancestor_(BytecodeHierarchy.java:224)
+	at soot.jimple.toolkits.typing.fast.BytecodeHierarchy.ancestor(BytecodeHierarchy.java:292)
+	at soot.jimple.toolkits.typing.fast.TypeResolver$CastInsertionUseVisitor.visit(TypeResolver.java:204)
+	at soot.jimple.toolkits.typing.fast.UseChecker.handleInvokeExpr(UseChecker.java:140)
+	at soot.jimple.toolkits.typing.fast.UseChecker.caseAssignStmt(UseChecker.java:351)
+	at soot.jimple.internal.JAssignStmt.apply(JAssignStmt.java:242)
+	at soot.jimple.toolkits.typing.fast.UseChecker.check(UseChecker.java:127)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.insertCasts(TypeResolver.java:411)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.minCasts(TypeResolver.java:435)
+	at soot.jimple.toolkits.typing.fast.TypeResolver.inferTypes(TypeResolver.java:152)
+	at soot.jimple.toolkits.typing.TypeAssigner.internalTransform(TypeAssigner.java:121)
+	at soot.BodyTransformer.transform(BodyTransformer.java:51)
+	at soot.Transform.apply(Transform.java:120)
+	at soot.JimpleBodyPack.applyPhaseOptions(JimpleBodyPack.java:73)
+	at soot.JimpleBodyPack.internalApply(JimpleBodyPack.java:105)
+	at soot.Pack.apply(Pack.java:125)
+	at soot.asm.AsmMethodSource.getBody(AsmMethodSource.java:2088)
+	... 13 more
+

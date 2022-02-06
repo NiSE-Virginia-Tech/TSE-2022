@@ -1,0 +1,82 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 728.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r17
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r17.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.xmlrpc.secure.sunssl.SunSSLTransportFactory: void <init>(java.util.Properties)>
+		SHA-256: 32a0f935f840e05914ddb19abfeffbcabf8a9e0ed662be0140cbe622a4e3b78a
+		Secure: true
+	Object:
+		Variable: r4
+		Type: java.security.KeyStore
+		Statement: r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r8)
+		Method: <org.apache.xmlrpc.secure.SecureWebServer: java.net.ServerSocket createServerSocket(int,int,java.net.InetAddress)>
+		SHA-256: 21b64d31a4d7d7b60bfcc68835e593513d7cd14b1172202ce044c96d08976e3c
+		Secure: false
+
+Findings in Java Class: org.apache.xmlrpc.secure.SecureWebServer
+
+	 in Method: java.net.ServerSocket createServerSocket(int,int,java.net.InetAddress)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #21b64d31a4d7d7b60bfcc68835e593513d7cd14b1172202ce044c96d08976e3c)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r4.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r9, $r12)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.221 s
+

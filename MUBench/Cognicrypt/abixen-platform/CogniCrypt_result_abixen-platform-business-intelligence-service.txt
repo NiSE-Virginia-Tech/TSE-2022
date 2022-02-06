@@ -1,0 +1,200 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/abixen-platform/abixen-platform-business-intelligence-service/target/abixen-platform-business-intelligence-service.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 444.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.55
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.73
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.82
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.91
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: varReplacer337
+		Type: java.lang.String
+		Statement: specialinvoke r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer337)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: javax.crypto.spec.SecretKeySpec generateKey(java.lang.String)>
+		SHA-256: b61f0cc5339c13b7838536b957a570d87240c13aea5df38a71619d90aa9a0652
+		Secure: false
+	Object:
+		Variable: r13
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r13.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String encryptPassword(java.lang.String)>
+		SHA-256: a0f086adeb8bf1ec3cc824f01900c5d262dc2b26880a3a169ceed9f0699b78d0
+		Secure: false
+	Object:
+		Variable: r11
+		Type: javax.crypto.Cipher
+		Statement: r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer342)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String encryptPassword(java.lang.String)>
+		SHA-256: 6ba124cbf57c3b489bf9331612720050776ccc7993f65fe2b37c59c349e8647f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r11.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r6)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String encryptPassword(java.lang.String)>
+		SHA-256: 866adb98038b26b8b060d45df3ae9a6c32cc36b7086c316b3bad44293ab516c7
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r11.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String decryptPassword(java.lang.String)>
+		SHA-256: 546e3ed3eccae2a8296593fbeb7d36afb0c977153d548562d33f5d58ee288c12
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r11.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r6)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String encryptPassword(java.lang.String)>
+		SHA-256: d426b86b8956ef7a4bd5ecfcbd5335927d48198d9583ba2c2266a23dbbaa1849
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer336)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: javax.crypto.spec.SecretKeySpec generateKey(java.lang.String)>
+		SHA-256: 8613aa89329743444ab5790f99e4346368012a9e355ae4c523d4b7b88aa0d53d
+		Secure: false
+	Object:
+		Variable: r13
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r13.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String decryptPassword(java.lang.String)>
+		SHA-256: 4f1b132e04d5dd278dff26608ed502b2306a11b0b05fa8e1bafb8ffb97e93675
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r11.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String decryptPassword(java.lang.String)>
+		SHA-256: 9754b5ae65e621f5f7b35e1b746852c0383a39686c53f8251c5276f1ac144c89
+		Secure: false
+	Object:
+		Variable: r11
+		Type: javax.crypto.Cipher
+		Statement: r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer347)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: java.lang.String decryptPassword(java.lang.String)>
+		SHA-256: 9c2fcf2656e9537b36461ee7878de7fb560322cd3addfcff383a9c94a4192074
+		Secure: false
+	Object:
+		Variable: r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer337)
+		Method: <BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: javax.crypto.spec.SecretKeySpec generateKey(java.lang.String)>
+		SHA-256: 87e52cd929cfcb0015ff8563cb803e04772031e3671af8e50f22ebf9cb23c9da
+		Secure: false
+
+Findings in Java Class: BOOT-INF.classes.com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder
+
+	 in Method: javax.crypto.spec.SecretKeySpec generateKey(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8613aa89329743444ab5790f99e4346368012a9e355ae4c523d4b7b88aa0d53d)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = staticinvoke <com.abixen.platform.service.businessintelligence.multivisualisation.domain.model.util.AES128Encoder: byte[] prepareKey(java.lang.String,java.security.MessageDigest)>(r0, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer337)
+
+
+	 in Method: java.lang.String encryptPassword(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r11.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer341, $r1, r13)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r13.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as prepared I V
+			at statement: virtualinvoke r11.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer341, $r1, r13)
+
+
+	 in Method: java.lang.String decryptPassword(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r13.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r11.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer345, $r1, r13)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 11
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 6
+	IncompleteOperationError: 1
+=====================================================================

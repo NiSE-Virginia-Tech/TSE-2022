@@ -1,0 +1,178 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/aws-sdk-java-v2/core/auth/target/aws-sdk-java-auth-2.0.0-preview-11-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 363.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14)
+		Method: <software.amazon.awssdk.auth.signer.internal.AwsChunkedEncodingInputStream: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,software.amazon.awssdk.auth.signer.AwsS3V4Signer)>
+		SHA-256: 653aad4ad61104b7a81bbe2b25e1c9300072950201007817c1700dd52d9e89c0
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <software.amazon.awssdk.auth.signer.internal.AbstractAwsSigner: byte[] sign(byte[],byte[],software.amazon.awssdk.auth.signer.internal.SigningAlgorithm)>
+		SHA-256: e6bfa423fdcb2773e549f36943fca9fc3c945663d62a2ceab0a23583fdaf9c17
+		Secure: false
+	Object:
+		Variable: r19
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <software.amazon.awssdk.auth.signer.internal.AbstractAwsSigner: byte[] sign(byte[],byte[],software.amazon.awssdk.auth.signer.internal.SigningAlgorithm)>
+		SHA-256: 75ffed0e66338bef25834502a46276d1d33b24a287e8ed9541cf01e1f43a5797
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.Mac
+		Statement: $r9 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(r20)
+		Method: <software.amazon.awssdk.auth.signer.internal.AwsChunkedEncodingInputStream: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,software.amazon.awssdk.auth.signer.AwsS3V4Signer)>
+		SHA-256: 9ee1a9189b144fc5b5f0b2f5cee277e6ef42608bbc7a44b66e70d5910047064e
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, r20)
+		Method: <software.amazon.awssdk.auth.signer.internal.AwsChunkedEncodingInputStream: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,software.amazon.awssdk.auth.signer.AwsS3V4Signer)>
+		SHA-256: 7bba06de4be39faf991c8dddf0b97af88cdf72db8de9f030c3fb6db30212d5e9
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer70)
+		Method: <software.amazon.awssdk.auth.signer.internal.AbstractAwsSigner: java.security.MessageDigest lambda$static$0()>
+		SHA-256: ad792dcbef81815a02451c309d939ae433bd66c23042752c3fe523c2a1c07b0b
+		Secure: false
+	Object:
+		Variable: r20
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, r20)
+		Method: <software.amazon.awssdk.auth.signer.internal.AwsChunkedEncodingInputStream: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,software.amazon.awssdk.auth.signer.AwsS3V4Signer)>
+		SHA-256: 7e1327eb8bcd58915727f652c3b6a0b7528088b8d0e43c0b10e7e6590d5885e4
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <software.amazon.awssdk.auth.signer.internal.SigningAlgorithm$MacThreadLocal: javax.crypto.Mac initialValue()>
+		SHA-256: daa1bddfd90f731fd623805945cff112d84e8d46c097d3b511fce927dea9cc94
+		Secure: false
+
+Findings in Java Class: software.amazon.awssdk.auth.signer.AwsS3V4Signer
+
+	 in Method: void processRequestPayload(software.amazon.awssdk.http.SdkHttpFullRequest$Builder,byte[],byte[],software.amazon.awssdk.auth.signer.internal.Aws4SignerRequestParams,software.amazon.awssdk.auth.signer.params.AwsS3V4SignerParams)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #653aad4ad61104b7a81bbe2b25e1c9300072950201007817c1700dd52d9e89c0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke r1.<software.amazon.awssdk.http.SdkHttpFullRequest$Builder: software.amazon.awssdk.http.SdkHttpFullRequest$Builder content(java.io.InputStream)>(r14)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #9ee1a9189b144fc5b5f0b2f5cee277e6ef42608bbc7a44b66e70d5910047064e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: interfaceinvoke r1.<software.amazon.awssdk.http.SdkHttpFullRequest$Builder: software.amazon.awssdk.http.SdkHttpFullRequest$Builder content(java.io.InputStream)>(r14)
+
+
+Findings in Java Class: software.amazon.awssdk.auth.signer.internal.AbstractAwsSigner
+
+	 in Method: java.security.MessageDigest lambda$static$0()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ad792dcbef81815a02451c309d939ae433bd66c23042752c3fe523c2a1c07b0b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+	 in Method: byte[] sign(byte[],byte[],software.amazon.awssdk.auth.signer.internal.SigningAlgorithm)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+
+
+Findings in Java Class: software.amazon.awssdk.auth.signer.internal.SigningAlgorithm$MacThreadLocal
+
+	 in Method: java.lang.Object initialValue()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #daa1bddfd90f731fd623805945cff112d84e8d46c097d3b511fce927dea9cc94)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: return $r1
+
+
+Findings in Java Class: software.amazon.awssdk.auth.signer.internal.AwsChunkedEncodingInputStream
+
+	 in Method: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,software.amazon.awssdk.auth.signer.AwsS3V4Signer)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, r20)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 4
+	RequiredPredicateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.403 s

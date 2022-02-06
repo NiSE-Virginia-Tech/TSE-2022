@@ -1,0 +1,903 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/spring-core-4.3.19.RELEASE.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>32037 lines of code analyzed,
+	in 795 classes, 
+	in 42 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.09</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">30</td>
+<td align="right">0.94</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+<td align="right">
+<b>1.03</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">33</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66322');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66322" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.springframework.core.ControlFlowFactory$Jdk14ControlFlow<br/>In method org.springframework.core.ControlFlowFactory$Jdk14ControlFlow.underToken(String)<br/>At ControlFlowFactory.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66376');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66376" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class org.springframework.core.SerializableTypeWrapper$MethodInvokeTypeProvider<br/>At SerializableTypeWrapper.java:[lines 383-415]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66412');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66412" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class org.springframework.core.SerializableTypeWrapper$MethodParameterTypeProvider<br/>At SerializableTypeWrapper.java:[lines 321-361]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66448');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66448" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class org.springframework.core.SerializableTypeWrapper$TypeProxyInvocationHandler<br/>At SerializableTypeWrapper.java:[lines 223-259]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67087');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.springframework.core.serializer.DefaultDeserializer.deserialize(InputStream)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67087" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.core.serializer.DefaultDeserializer<br/>In method org.springframework.core.serializer.DefaultDeserializer.deserialize(InputStream)<br/>At DefaultDeserializer.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67141');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.springframework.objenesis.instantiator.basic.ObjectInputStreamInstantiator.newInstance()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67141" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.objenesis.instantiator.basic.ObjectInputStreamInstantiator<br/>In method org.springframework.objenesis.instantiator.basic.ObjectInputStreamInstantiator.newInstance()<br/>At ObjectInputStreamInstantiator.java:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68649');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.springframework.util.SerializationUtils.deserialize(byte[])</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68649" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.util.SerializationUtils<br/>In method org.springframework.util.SerializationUtils.deserialize(byte[])<br/>At SerializationUtils.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67269');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67269" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.springframework.util.AlternativeJdkIdGenerator<br/>In method new org.springframework.util.AlternativeJdkIdGenerator()<br/>At AlternativeJdkIdGenerator.java:[line 43]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68703');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68703" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.springframework.util.SocketUtils<br/>In method org.springframework.util.SocketUtils.&lt;static initializer for SocketUtils&gt;()<br/>At SocketUtils.java:[line 56]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.core.DebuggingClassWriter$1<br/>In method org.springframework.cglib.core.DebuggingClassWriter$1.run()<br/>At DebuggingClassWriter.java:[line 82]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.debugLocation<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.className<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.access$100()Ljava/lang/String;<br/>At DebuggingClassWriter.java:[line 26]<br/>At DebuggingClassWriter.java:[line 80]<br/>At DebuggingClassWriter.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65660');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65660" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.core.DebuggingClassWriter$1<br/>In method org.springframework.cglib.core.DebuggingClassWriter$1.run()<br/>At DebuggingClassWriter.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.className<br/>At DebuggingClassWriter.java:[line 80]<br/>At DebuggingClassWriter.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65749');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65749" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.core.DebuggingClassWriter$1<br/>In method org.springframework.cglib.core.DebuggingClassWriter$1.run()<br/>At DebuggingClassWriter.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.debugLocation<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.access$100()Ljava/lang/String;<br/>At DebuggingClassWriter.java:[line 26]<br/>At DebuggingClassWriter.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65843');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65843" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.core.DebuggingClassWriter$1<br/>In method org.springframework.cglib.core.DebuggingClassWriter$1.run()<br/>At DebuggingClassWriter.java:[line 93]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.className<br/>At DebuggingClassWriter.java:[line 80]<br/>At DebuggingClassWriter.java:[line 84]<br/>At DebuggingClassWriter.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65942');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65942" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.core.DebuggingClassWriter$1<br/>In method org.springframework.cglib.core.DebuggingClassWriter$1.run()<br/>At DebuggingClassWriter.java:[line 93]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.debugLocation<br/>Unknown source org/springframework/cglib/core/DebuggingClassWriter.access$100()Ljava/lang/String;<br/>At DebuggingClassWriter.java:[line 26]<br/>At DebuggingClassWriter.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66036');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66036" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.transform.AbstractProcessTask<br/>In method org.springframework.cglib.transform.AbstractProcessTask.getFiles()<br/>At AbstractProcessTask.java:[line 42]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/tools/ant/DirectoryScanner.getIncludedFiles()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66105');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66105" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.transform.AbstractTransformTask<br/>In method org.springframework.cglib.transform.AbstractTransformTask.processJarFile(File)<br/>At AbstractTransformTask.java:[line 135]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At AbstractTransformTask.java:[line 136]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66184');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66184" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.transform.AbstractTransformTask<br/>In method org.springframework.cglib.transform.AbstractTransformTask.processJarFile(File)<br/>At AbstractTransformTask.java:[line 136]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66253');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66253" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.cglib.transform.AbstractTransformTask<br/>In method org.springframework.cglib.transform.AbstractTransformTask.processJarFile(File)<br/>At AbstractTransformTask.java:[line 197]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66691');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66691" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.core.io.FileSystemResource<br/>In method new org.springframework.core.io.FileSystemResource(String)<br/>At FileSystemResource.java:[line 76]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/FileSystemResource.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At FileSystemResource.java:[line 178]<br/>At FileSystemResource.java:[line 179]<br/>At FileSystemResourceLoader.java:[line 52]<br/>At FileSystemResourceLoader.java:[line 54]<br/>At FileSystemResourceLoader.java:[line 65]<br/>At StringUtils.java:[line 608]<br/>At StringUtils.java:[line 610]<br/>At StringUtils.java:[line 612]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66845');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66845" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.core.io.PathResource<br/>In method new org.springframework.core.io.PathResource(String)<br/>At PathResource.java:[line 72]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source org/springframework/core/io/PathResource.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67385');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67385" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.FileSystemUtils<br/>In method org.springframework.util.FileSystemUtils.doCopyRecursively(File, File)<br/>At FileSystemUtils.java:[line 82]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67454');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67454" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.ResourceUtils<br/>In method org.springframework.util.ResourceUtils.getFile(String)<br/>At ResourceUtils.java:[line 186]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/util/ResourceUtils.getFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At Log4jConfigurer.java:[line 102]<br/>At Log4jConfigurer.java:[line 103]<br/>At PropertyPlaceholderHelper.java:[line 126]<br/>At PropertyPlaceholderHelper.java:[line 132]<br/>At PropertyPlaceholderHelper.java:[line 163]<br/>At PropertyPlaceholderHelper.java:[line 184]<br/>At SystemPropertyUtils.java:[line 63]<br/>At SystemPropertyUtils.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67608');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67608" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.ResourceUtils<br/>In method org.springframework.util.ResourceUtils.getFile(URI, String)<br/>At ResourceUtils.java:[line 259]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/springframework/util/ResourceUtils.getFile(Ljava/net/URI;Ljava/lang/String;)Ljava/io/File; parameter 1<br/>At AbstractFileResolvingResource.java:[line 84]<br/>At UrlResource.java:[line 210]<br/>At ResourceUtils.java:[line 238]<br/>At ResourceUtils.java:[line 259]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67722');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67722" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.ResourceUtils<br/>In method org.springframework.util.ResourceUtils.getFile(URL, String)<br/>At ResourceUtils.java:[line 220]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/util/ResourceUtils.toURI(Ljava/lang/String;)Ljava/net/URI;<br/>Unknown source org/springframework/util/ResourceUtils.toURI(Ljava/net/URL;)Ljava/net/URI;<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/springframework/util/ResourceUtils.toURI(Ljava/net/URL;)Ljava/net/URI; parameter 0<br/>Unknown source java/net/URL.toString()Ljava/lang/String;<br/>Unknown source org/springframework/util/StringUtils.replace(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/util/ResourceUtils.getFile(Ljava/net/URL;Ljava/lang/String;)Ljava/io/File; parameter 1<br/>Unknown source java/net/URI.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/springframework/util/ResourceUtils.toURI(Ljava/lang/String;)Ljava/net/URI; parameter 0<br/>Unknown source org/springframework/util/StringUtils.replace(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/springframework/util/StringUtils.replace(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>At AbstractFileResolvingResource.java:[line 53]<br/>At AbstractFileResolvingResource.java:[line 64]<br/>At AbstractFileResolvingResource.java:[line 68]<br/>At Log4jConfigurer.java:[line 68]<br/>At Log4jConfigurer.java:[line 69]<br/>At Log4jConfigurer.java:[line 70]<br/>At PropertyPlaceholderHelper.java:[line 126]<br/>At PropertyPlaceholderHelper.java:[line 132]<br/>At PropertyPlaceholderHelper.java:[line 163]<br/>At PropertyPlaceholderHelper.java:[line 184]<br/>At ResourceUtils.java:[line 142]<br/>At ResourceUtils.java:[line 147]<br/>At ResourceUtils.java:[line 199]<br/>At ResourceUtils.java:[line 220]<br/>At ResourceUtils.java:[line 307]<br/>At ResourceUtils.java:[line 310]<br/>At ResourceUtils.java:[line 312]<br/>At ResourceUtils.java:[line 318]<br/>At ResourceUtils.java:[line 320]<br/>At ResourceUtils.java:[line 340]<br/>At ResourceUtils.java:[line 345]<br/>At ResourceUtils.java:[line 347]<br/>At ResourceUtils.java:[line 351]<br/>At ResourceUtils.java:[line 356]<br/>At ResourceUtils.java:[line 368]<br/>At ResourceUtils.java:[line 379]<br/>At StringUtils.java:[line 402]<br/>At StringUtils.java:[line 403]<br/>At StringUtils.java:[line 409]<br/>At StringUtils.java:[line 410]<br/>At SystemPropertyUtils.java:[line 63]<br/>At SystemPropertyUtils.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68161');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68161" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.ResourceUtils<br/>In method org.springframework.util.ResourceUtils.getFile(URL, String)<br/>At ResourceUtils.java:[line 224]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source org/springframework/util/ResourceUtils.getFile(Ljava/net/URL;Ljava/lang/String;)Ljava/io/File; parameter 1<br/>At AbstractFileResolvingResource.java:[line 53]<br/>At AbstractFileResolvingResource.java:[line 64]<br/>At AbstractFileResolvingResource.java:[line 68]<br/>At Log4jConfigurer.java:[line 68]<br/>At Log4jConfigurer.java:[line 69]<br/>At Log4jConfigurer.java:[line 70]<br/>At PropertyPlaceholderHelper.java:[line 126]<br/>At PropertyPlaceholderHelper.java:[line 132]<br/>At PropertyPlaceholderHelper.java:[line 163]<br/>At PropertyPlaceholderHelper.java:[line 184]<br/>At ResourceUtils.java:[line 142]<br/>At ResourceUtils.java:[line 147]<br/>At ResourceUtils.java:[line 199]<br/>At ResourceUtils.java:[line 224]<br/>At ResourceUtils.java:[line 307]<br/>At ResourceUtils.java:[line 310]<br/>At ResourceUtils.java:[line 312]<br/>At ResourceUtils.java:[line 318]<br/>At ResourceUtils.java:[line 320]<br/>At ResourceUtils.java:[line 340]<br/>At ResourceUtils.java:[line 345]<br/>At ResourceUtils.java:[line 347]<br/>At ResourceUtils.java:[line 351]<br/>At ResourceUtils.java:[line 356]<br/>At SystemPropertyUtils.java:[line 63]<br/>At SystemPropertyUtils.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68495');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68495" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.util.ResourceUtils<br/>In method org.springframework.util.ResourceUtils.getURL(String)<br/>At ResourceUtils.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/util/ResourceUtils.getURL(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage not detected<br/>At Log4jConfigurer.java:[line 68]<br/>At Log4jConfigurer.java:[line 69]<br/>At PropertyPlaceholderHelper.java:[line 126]<br/>At PropertyPlaceholderHelper.java:[line 132]<br/>At PropertyPlaceholderHelper.java:[line 163]<br/>At PropertyPlaceholderHelper.java:[line 184]<br/>At SystemPropertyUtils.java:[line 63]<br/>At SystemPropertyUtils.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67195');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67195" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.springframework.objenesis.instantiator.util.ClassDefinitionUtils<br/>In method org.springframework.objenesis.instantiator.util.ClassDefinitionUtils.writeClass(String, byte[])<br/>At ClassDefinitionUtils.java:[line 147]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/objenesis/instantiator/util/ClassDefinitionUtils.writeClass(Ljava/lang/String;[B)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67327');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "\\?|\\*|\\{((?:\\{[^/]+?\\}|[^/{}]|\\\\[{}])+?)\\}" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67327" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value \\?|\\*|\\{((?:\\{[^/]+?\\}|[^/{}]|\\\\[{}])+?)\\}<br/>In class org.springframework.util.AntPathMatcher$AntPathStringMatcher<br/>In method org.springframework.util.AntPathMatcher$AntPathStringMatcher.&lt;static initializer for AntPathStringMatcher&gt;()<br/>At AntPathMatcher.java:[line 620]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66484');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66484" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.core.io.AbstractFileResolvingResource<br/>In method org.springframework.core.io.AbstractFileResolvingResource.contentLength()<br/>At AbstractFileResolvingResource.java:[line 159]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/AbstractFileResolvingResource.getURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66553');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66553" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.core.io.AbstractFileResolvingResource<br/>In method org.springframework.core.io.AbstractFileResolvingResource.exists()<br/>At AbstractFileResolvingResource.java:[line 98]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/AbstractFileResolvingResource.getURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66622');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66622" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.core.io.AbstractFileResolvingResource<br/>In method org.springframework.core.io.AbstractFileResolvingResource.lastModified()<br/>At AbstractFileResolvingResource.java:[line 178]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/AbstractFileResolvingResource.getURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66998');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66998" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.core.io.support.PathMatchingResourcePatternResolver<br/>In method org.springframework.core.io.support.PathMatchingResourcePatternResolver.doFindPathMatchingJarResources(Resource, URL, String)<br/>At PathMatchingResourcePatternResolver.java:[line 591]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/support/PathMatchingResourcePatternResolver.doFindPathMatchingJarResources(Lorg/springframework/core/io/Resource;Ljava/net/URL;Ljava/lang/String;)Ljava/util/Set; parameter 1<br/>At PathMatchingResourcePatternResolver.java:[line 495]<br/>At PathMatchingResourcePatternResolver.java:[line 503]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66919');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66919" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.core.io.UrlResource<br/>In method org.springframework.core.io.UrlResource.getInputStream()<br/>At UrlResource.java:[line 166]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/core/io/UrlResource.url<br/>At UrlResource.java:[line 166]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="DESERIALIZATION_GADGET">DESERIALIZATION_GADGET: This class could be used as deserialization gadget</a>
+</h2>
+            
+<p>
+Deserialization gadget are class that could be used by an attacker to take advantage of a remote API using Native Serialization.
+This class is either adding custom behavior to deserialization with the <code>readObject</code> method (Serializable) or can be called
+ from a serialized object (InvocationHandler).
+</p>
+<p>
+This detector is intended to be used mostly by researcher. The real issue is using deserialization for remote operation.
+Removing gadget is a hardening practice to reduce the risk of being exploited.
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

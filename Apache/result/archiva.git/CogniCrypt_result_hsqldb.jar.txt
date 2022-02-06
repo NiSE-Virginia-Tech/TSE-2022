@@ -1,0 +1,333 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 867.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 14 analysis seeds within 3 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.06
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.13
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.19
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.31
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.59
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.65
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.72
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r30
+		Type: javax.crypto.Cipher
+		Statement: $r30 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(r2, r3)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 2e0435afa75f8cf2d99901a645121b8c53923299b1c50c4b5c5561141b9400a2
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = interfaceinvoke r2.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <org.hsqldb.persist.Crypto: byte[] getNewKey(java.lang.String,java.lang.String)>
+		SHA-256: 82751636aadc9648318b384b94dfb1cc7795be4eb38a4636bd07496700eda833
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r6.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>(r1, $r7)
+		Method: <org.hsqldb.persist.Crypto: java.io.InputStream getInputStream(java.io.InputStream)>
+		SHA-256: 7f5b893b0e1ed20a665ddfabd5e645376e0e028f68e44f152377b49a1b3e425e
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: javax.crypto.Cipher
+		Statement: $r28 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(r2, r3)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 30c2208adb5f8f1008835662454f34c1c9c59a156b77986aeb6060c6e10124d6
+		Secure: false
+	Object:
+		Variable: $r31
+		Type: javax.crypto.Cipher
+		Statement: $r31 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(r2, r3)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: b786d2217b257c2acca07b896e52f8e8852e9051c926a3d4d73bd25bfbd32e05
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: javax.crypto.Cipher
+		Statement: $r28 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 6f685920ca472beef097d3d4af82d0116630b598cd024880463ad6835383e723
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r6.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>(r1, $r7)
+		Method: <org.hsqldb.persist.Crypto: java.io.OutputStream getOutputStream(java.io.OutputStream)>
+		SHA-256: 2779e854323294805ecf0f3a0354bfbe6e92925f2877623acee820cbbb593245
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.hsqldb.lib.MD5: byte[] digest(byte[])>
+		SHA-256: c1cf2e5ab75f0c468036b4c9ddbeb0ea931fd0e6671972cad4c248c98be3e626
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r27, r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: d0c207c49bc8ac22090c3287975c2a1b90c867119191a471f6da671e442fcee1
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <org.hsqldb.lib.MD5: byte[] digest(byte[])>
+		SHA-256: ab077bbf1e35919e7238ae92f5fc656c512cc33d4ed97688349acc0d5d8e44c9
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r27, r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 88bb2ed0db32d0e0df0198adf4c033f8e35b67b713de33eb6a94875935ec0b33
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.KeyGenerator
+		Statement: $r9 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(r0)
+		Method: <org.hsqldb.persist.Crypto: byte[] getNewKey(java.lang.String,java.lang.String)>
+		SHA-256: ecc0bec1cfa5129086333182acff54c35e8c7328f4bf04c6393221d9801d2b92
+		Secure: true
+	Object:
+		Variable: $r31
+		Type: javax.crypto.Cipher
+		Statement: $r31 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: a7a2b6e9da055b8c47c1500ee57dc209751139cc990ab770047a8b60bf5ffc89
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.KeyGenerator
+		Statement: $r9 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(r0, r1)
+		Method: <org.hsqldb.persist.Crypto: byte[] getNewKey(java.lang.String,java.lang.String)>
+		SHA-256: bae8f2a7ff47bfcb9e86fd5f80f79412266420a0ec4daa4220981ef1dcf47875
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12579)
+		Method: <org.hsqldb.lib.MD5: byte[] digest(byte[])>
+		SHA-256: 242f180ea77a4f5fd40572a1c52088e37b2859cc691e60cbda80e360290d7fc7
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.SecretKey
+		Statement: r2 = virtualinvoke r10.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.hsqldb.persist.Crypto: byte[] getNewKey(java.lang.String,java.lang.String)>
+		SHA-256: 6ae4b7c23fdfc4ba6c079b0574ba47e9539a97ae7f00c0a2e0e6a1c4d9040dbf
+		Secure: true
+	Object:
+		Variable: $r29
+		Type: javax.crypto.Cipher
+		Statement: $r29 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(r2, r3)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 696df7c5d1949871c19072ccd3f4846cc1a03f0704d05d0dbbb11df8eaeec644
+		Secure: false
+	Object:
+		Variable: $r29
+		Type: javax.crypto.Cipher
+		Statement: $r29 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: b2049fa143faa09127c4dda63ae754adfdf3e397988cfb9fd2d4aaea35583470
+		Secure: false
+	Object:
+		Variable: $r30
+		Type: javax.crypto.Cipher
+		Statement: $r30 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(r2)
+		Method: <org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: ebfad5d8288f6798fa0c4325947cdfeeb8afa1acbce18889efd8056668017037
+		Secure: false
+
+Findings in Java Class: org.hsqldb.lib.MD5
+
+	 in Method: byte[] digest(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #242f180ea77a4f5fd40572a1c52088e37b2859cc691e60cbda80e360290d7fc7)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12579)
+
+
+	 in Method: java.lang.String digest(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #242f180ea77a4f5fd40572a1c52088e37b2859cc691e60cbda80e360290d7fc7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r2
+
+
+Findings in Java Class: org.hsqldb.persist.Logger
+
+	 in Method: void setVariables()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #6f685920ca472beef097d3d4af82d0116630b598cd024880463ad6835383e723)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #696df7c5d1949871c19072ccd3f4846cc1a03f0704d05d0dbbb11df8eaeec644)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #ebfad5d8288f6798fa0c4325947cdfeeb8afa1acbce18889efd8056668017037)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #2e0435afa75f8cf2d99901a645121b8c53923299b1c50c4b5c5561141b9400a2)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #b2049fa143faa09127c4dda63ae754adfdf3e397988cfb9fd2d4aaea35583470)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #30c2208adb5f8f1008835662454f34c1c9c59a156b77986aeb6060c6e10124d6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #a7a2b6e9da055b8c47c1500ee57dc209751139cc990ab770047a8b60bf5ffc89)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #b786d2217b257c2acca07b896e52f8e8852e9051c926a3d4d73bd25bfbd32e05)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r146.<org.hsqldb.persist.Crypto: void <init>(java.lang.String,java.lang.String,java.lang.String)>(r1, r147, r148)
+
+
+Findings in Java Class: org.hsqldb.persist.Crypto
+
+	 in Method: void <init>(java.lang.String,java.lang.String,java.lang.String)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer13410, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r27, r2)
+
+
+Findings in Java Class: org.hsqldb.scriptio.ScriptReaderDecode
+
+	 in Method: void <init>(org.hsqldb.Database,java.io.InputStream,org.hsqldb.persist.Crypto,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #7f5b893b0e1ed20a665ddfabd5e645376e0e028f68e44f152377b49a1b3e425e)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r7.<java.util.zip.GZIPInputStream: void <init>(java.io.InputStream)>(r11)
+
+
+Findings in Java Class: org.hsqldb.scriptio.ScriptWriterEncode
+
+	 in Method: void <init>(org.hsqldb.Database,java.io.OutputStream,org.hsqldb.lib.FileAccess$FileSync,boolean,org.hsqldb.persist.Crypto)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #2779e854323294805ecf0f3a0354bfbe6e92925f2877623acee820cbbb593245)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write
+			at statement: specialinvoke r15.<java.util.zip.GZIPOutputStream: void <init>(java.io.OutputStream)>($r9)
+
+
+Findings in Java Class: org.hsqldb.persist.Log
+
+	 in Method: void writeScript(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #2779e854323294805ecf0f3a0354bfbe6e92925f2877623acee820cbbb593245)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r4.<org.hsqldb.scriptio.ScriptWriterEncode: void <init>(org.hsqldb.Database,java.lang.String,boolean,org.hsqldb.persist.Crypto)>($r6, $r10, z0, r1)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 19
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 12
+	RequiredPredicateError: 1
+	ForbiddenMethodError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 12 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 20.41 s
+

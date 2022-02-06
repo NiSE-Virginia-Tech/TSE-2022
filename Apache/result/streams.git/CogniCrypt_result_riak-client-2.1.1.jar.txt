@@ -1,0 +1,158 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.352 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r33
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r33 = virtualinvoke r50.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: a798ef8218ee9568586fa4a41a4f692e4d6ae73e60b3c58f199a815a118a25e9
+		Secure: false
+	Object:
+		Variable: r51
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r51 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r28)
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: 9af0022fb188e288ecb9c1f868a24a6bae52fb66d6603cdee65aee556f7ec59c
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.net.ssl.SSLContext
+		Statement: r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1543)
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: 8e4acd192c4935807968f883cc3ce87ae3c3fe0006c395c29bfe94aacaec5456
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r7 = virtualinvoke r50.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: 8c62ae07c34a0dd3c676f4acecbdb7aa4977a99f1bca6c74101a5fbf847b717
+		Secure: false
+	Object:
+		Variable: r50
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r50 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r4)
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: 59622cf535802d90da862d1bbd4d6dda1ea3a2c5aa85589445c42650da7f123c
+		Secure: false
+	Object:
+		Variable: r54
+		Type: javax.net.ssl.SSLEngine
+		Statement: r54 = virtualinvoke r2.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: 1c31411645be669df0fc18f2a7f176bf856758346e22b628861d634a111d4fc8
+		Secure: false
+	Object:
+		Variable: $r32
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r32 = virtualinvoke r51.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <com.basho.riak.client.core.RiakNode: void setupTLSAndAuthenticate(io.netty.channel.Channel)>
+		SHA-256: fe3878545fcb7f404ae4f4c2c8bc7b4c558287ba93028e9eebbe769a59ab1470
+		Secure: false
+
+Findings in Java Class: com.basho.riak.client.core.RiakNode
+
+	 in Method: void setupTLSAndAuthenticate(io.netty.channel.Channel)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r32, $r33, varReplacer1530)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #8e4acd192c4935807968f883cc3ce87ae3c3fe0006c395c29bfe94aacaec5456)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1543)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1535, $r7, varReplacer1535)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #9af0022fb188e288ecb9c1f868a24a6bae52fb66d6603cdee65aee556f7ec59c)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r51.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r31, $r52)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #9af0022fb188e288ecb9c1f868a24a6bae52fb66d6603cdee65aee556f7ec59c)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r51.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r31, $r52)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r50.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r51.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r31, $r52)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	ConstraintError: 1
+	NeverTypeOfError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 3 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 9.867 s
+

@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/commons-vfs.git/commons-vfs2-2.6.1-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>13627 lines of code analyzed,
+	in 345 classes, 
+	in 33 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">6</td>
+<td align="right">0.44</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">15</td>
+<td align="right">1.10</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+<td align="right">
+<b>1.54</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">21</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66874');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66874" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.decrypt(String)<br/>At DefaultCryptor.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66928');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66928" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.encrypt(String)<br/>At DefaultCryptor.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66982');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66982" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.decrypt(String)<br/>At DefaultCryptor.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67036');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67036" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.encrypt(String)<br/>At DefaultCryptor.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67090');">
+<td>
+<span class="priority-1">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67090" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.decrypt(String)<br/>At DefaultCryptor.java:[line 79]<br/>Called method new javax.crypto.spec.SecretKeySpec(byte[], String)<br/>Hard coded parameter number (in reverse order) is 2<br/>Value loaded from field org.apache.commons.vfs2.util.DefaultCryptor.KEY_BYTES<br/>Value 16</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67184');">
+<td>
+<span class="priority-1">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67184" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class org.apache.commons.vfs2.util.DefaultCryptor<br/>In method org.apache.commons.vfs2.util.DefaultCryptor.encrypt(String)<br/>At DefaultCryptor.java:[line 57]<br/>Called method new javax.crypto.spec.SecretKeySpec(byte[], String)<br/>Hard coded parameter number (in reverse order) is 2<br/>Value loaded from field org.apache.commons.vfs2.util.DefaultCryptor.KEY_BYTES<br/>Value 16</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66107');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66107" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.GenericFileName<br/>Value is hard coded in field org.apache.commons.vfs2.provider.GenericFileName.PASSWORD_RESERVED[C with suspicious name<br/>At GenericFileName.java:[lines 27-143]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65760');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65760" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.DefaultFileReplicator<br/>In method org.apache.commons.vfs2.impl.DefaultFileReplicator.&lt;static initializer for DefaultFileReplicator&gt;()<br/>At DefaultFileReplicator.java:[line 42]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.DefaultFileReplicator<br/>In method org.apache.commons.vfs2.impl.DefaultFileReplicator.createFile(File, String)<br/>At DefaultFileReplicator.java:[line 126]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/UriParser.decode(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/UriParser.decode(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/commons/vfs2/impl/DefaultFileReplicator.createFile(Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At DefaultFileReplicator.java:[line 80]<br/>At DefaultFileReplicator.java:[line 85]<br/>At DefaultFileReplicator.java:[line 109]<br/>At DefaultFileReplicator.java:[line 126]<br/>At DefaultFileReplicator.java:[line 141]<br/>At DefaultFileReplicator.java:[line 142]<br/>At DefaultFileReplicator.java:[line 222]<br/>At UriParser.java:[line 130]<br/>At UriParser.java:[line 131]<br/>At UriParser.java:[line 132]<br/>At UriParser.java:[line 194]<br/>At UriParser.java:[line 195]<br/>At UriParser.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66147');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66147" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.http4.Http4FileProvider<br/>In method org.apache.commons.vfs2.provider.http4.Http4FileProvider.createSSLContext(Http4FileSystemConfigBuilder, FileSystemOptions)<br/>At Http4FileProvider.java:[line 213]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/FileSystemOptions.options<br/>Unknown source org/apache/commons/vfs2/provider/http4/Http4FileSystemConfigBuilder.getParam(Lorg/apache/commons/vfs2/FileSystemOptions;Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source org/apache/commons/vfs2/FileSystemOptions.getOption(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source org/apache/commons/vfs2/provider/http4/Http4FileSystemConfigBuilder.getKeyStoreFile(Lorg/apache/commons/vfs2/FileSystemOptions;)Ljava/lang/String;<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>At FileSystemConfigBuilder.java:[line 117]<br/>At FileSystemOptions.java:[line 133]<br/>At Http4FileProvider.java:[line 210]<br/>At Http4FileSystemConfigBuilder.java:[line 474]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66276');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66276" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.http5.Http5FileProvider<br/>In method org.apache.commons.vfs2.provider.http5.Http5FileProvider.createSSLContext(Http5FileSystemConfigBuilder, FileSystemOptions)<br/>At Http5FileProvider.java:[line 222]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/FileSystemOptions.options<br/>Unknown source org/apache/commons/vfs2/provider/http5/Http5FileSystemConfigBuilder.getKeyStoreFile(Lorg/apache/commons/vfs2/FileSystemOptions;)Ljava/lang/String;<br/>Unknown source org/apache/commons/vfs2/FileSystemOptions.getOption(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/apache/commons/vfs2/provider/http5/Http5FileSystemConfigBuilder.getParam(Lorg/apache/commons/vfs2/FileSystemOptions;Ljava/lang/String;)Ljava/lang/Object;<br/>At FileSystemConfigBuilder.java:[line 117]<br/>At FileSystemOptions.java:[line 133]<br/>At Http5FileProvider.java:[line 219]<br/>At Http5FileSystemConfigBuilder.java:[line 489]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66405');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66405" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.local.LocalFile<br/>In method org.apache.commons.vfs2.provider.local.LocalFile.doAttach()<br/>At LocalFile.java:[line 70]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/local/LocalFile.rootFile<br/>Unknown source org/apache/commons/vfs2/FileName.getPathDecoded()Ljava/lang/String;<br/>At LocalFile.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66489');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66489" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.local.LocalFile<br/>In method org.apache.commons.vfs2.provider.local.LocalFile.doGetOutputStream(boolean)<br/>At LocalFile.java:[line 129]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65818');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65818" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.StandardFileSystemManager<br/>In method org.apache.commons.vfs2.impl.StandardFileSystemManager.configure(URL)<br/>At StandardFileSystemManager.java:[line 165]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/impl/StandardFileSystemManager.configure(Ljava/net/URL;)V parameter 0<br/>At StandardFileSystemManager.java:[line 104]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66013');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66013" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.URLStreamHandlerProxy<br/>In method org.apache.commons.vfs2.impl.URLStreamHandlerProxy.openConnection(URL)<br/>At URLStreamHandlerProxy.java:[line 33]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/commons/vfs2/impl/URLStreamHandlerProxy.openConnection(Ljava/net/URL;)Ljava/net/URLConnection; parameter 0<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>Method usage not detected<br/>At URLStreamHandlerProxy.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66558');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66558" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.url.UrlFileObject<br/>In method org.apache.commons.vfs2.provider.url.UrlFileObject.doGetContentSize()<br/>At UrlFileObject.java:[line 104]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/url/UrlFileObject.url<br/>At UrlFileObject.java:[line 104]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66637');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66637" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.url.UrlFileObject<br/>In method org.apache.commons.vfs2.provider.url.UrlFileObject.doGetInputStream(int)<br/>At UrlFileObject.java:[line 140]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/url/UrlFileObject.url<br/>At UrlFileObject.java:[line 140]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66716');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66716" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.url.UrlFileObject<br/>In method org.apache.commons.vfs2.provider.url.UrlFileObject.doGetLastModifiedTime()<br/>At UrlFileObject.java:[line 118]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/url/UrlFileObject.url<br/>At UrlFileObject.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66795');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66795" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.commons.vfs2.provider.url.UrlFileObject<br/>In method org.apache.commons.vfs2.provider.url.UrlFileObject.doGetType()<br/>At UrlFileObject.java:[line 79]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/vfs2/provider/url/UrlFileObject.url<br/>At UrlFileObject.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65897');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65897" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.StandardFileSystemManager<br/>In method org.apache.commons.vfs2.impl.StandardFileSystemManager.configure(String, InputStream)<br/>At StandardFileSystemManager.java:[line 195]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65955');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65955" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.commons.vfs2.impl.StandardFileSystemManager<br/>In method org.apache.commons.vfs2.impl.StandardFileSystemManager.configure(URL)<br/>At StandardFileSystemManager.java:[line 166]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="ECB_MODE">ECB_MODE: ECB mode is insecure</a>
+</h2>
+            
+<p>An authentication cipher mode which provides better confidentiality of the encrypted data should be used instead of Electronic Code Book (ECB) mode,
+which does not provide good confidentiality. Specifically, ECB mode produces the same output for the same input each time. So,
+for example, if a user is sending a password, the encrypted value is the same each time. This allows an attacker to intercept
+and replay the data.</p>
+<p>
+To fix this, something like Galois/Counter Mode (GCM) should be used instead.
+</p>
+<p>
+<b>Code at risk:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/ECB/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+<a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+<a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29">Wikipedia: Block cipher modes of operation</a><br/>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-38a/final">NIST: Recommendation for Block Cipher Modes of Operation</a>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

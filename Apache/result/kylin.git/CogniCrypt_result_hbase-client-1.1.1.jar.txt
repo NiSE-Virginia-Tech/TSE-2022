@@ -1,0 +1,148 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 633.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, r2)
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: byte[] wrapKey(org.apache.hadoop.conf.Configuration,byte[],java.lang.String)>
+		SHA-256: 2bac8055783a37ba903034297be274cbf5f8e42cab3231702cda014688691e58
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, r2)
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: byte[] wrapKey(org.apache.hadoop.conf.Configuration,byte[],java.lang.String)>
+		SHA-256: 98c95a78c090d6bdc2d95112c8e461628d1c1b1f045bfd8d218dfa74849e93f8
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: void <clinit>()>
+		SHA-256: 231feaf9239477d82b2c05d332542686db08fa144170e855bb909b4626e8ce78
+		Secure: true
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r6 = interfaceinvoke r2.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: byte[] wrapKey(org.apache.hadoop.conf.Configuration,java.lang.String,java.security.Key)>
+		SHA-256: f3ade92b05e2601632fdba48298074cb8cd7111c6f813a285f45e3a12707716
+		Secure: true
+	Object:
+		Variable: r2
+		Type: java.security.Key
+		Statement: r6 = interfaceinvoke r2.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: byte[] wrapKey(org.apache.hadoop.conf.Configuration,java.lang.String,java.security.Key)>
+		SHA-256: 4234239e2963dd208ff172e439236d200c00bdf699eb5e17bc4bb95eeba8d698
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r6, $r11)
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: java.security.Key getUnwrapKey(org.apache.hadoop.conf.Configuration,java.lang.String,org.apache.hadoop.hbase.protobuf.generated.EncryptionProtos$WrappedKey,org.apache.hadoop.hbase.io.crypto.Cipher)>
+		SHA-256: 99dd4876634c8040540e0a3b9820b56721031bd0034b507c626cd72ad6f4f1b
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r6, $r11)
+		Method: <org.apache.hadoop.hbase.security.EncryptionUtil: java.security.Key getUnwrapKey(org.apache.hadoop.conf.Configuration,java.lang.String,org.apache.hadoop.hbase.protobuf.generated.EncryptionProtos$WrappedKey,org.apache.hadoop.hbase.io.crypto.Cipher)>
+		SHA-256: 1f7347b7e61c8e1aa26ec9614f780d5f68099b49cf8b44fc2a6e46e863562b13
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r7.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper: void <init>(java.lang.String,int,org.apache.zookeeper.Watcher,int,int,java.lang.String)>
+		SHA-256: 4ca1474016420a8b9e6159a08f90fcddb0204b15cd5a916017ea9e0eeea9c4b0
+		Secure: true
+
+Findings in Java Class: org.apache.hadoop.hbase.security.EncryptionUtil
+
+	 in Method: byte[] wrapKey(org.apache.hadoop.conf.Configuration,byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, r2)
+
+
+	 in Method: java.security.Key getUnwrapKey(org.apache.hadoop.conf.Configuration,java.lang.String,org.apache.hadoop.hbase.protobuf.generated.EncryptionProtos$WrappedKey,org.apache.hadoop.hbase.io.crypto.Cipher)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r6, $r11)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 17 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 21.03 s
+

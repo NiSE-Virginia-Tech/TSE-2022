@@ -1,0 +1,1301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/commons-dbcp-1.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>6103 lines of code analyzed,
+	in 62 classes, 
+	in 5 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.16</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">65</td>
+<td align="right">10.65</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>66</b>
+</td>
+<td align="right">
+<b>10.81</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">66</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>66</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.commons.dbcp.AbandonedTrace<br/>In method org.apache.commons.dbcp.AbandonedTrace.printStackTrace()<br/>At AbandonedTrace.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.commons.dbcp.BasicDataSource<br/>In method org.apache.commons.dbcp.BasicDataSource.createConnectionFactory()<br/>At BasicDataSource.java:[line 1428]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.commons.dbcp.BasicDataSource<br/>In method org.apache.commons.dbcp.BasicDataSource.createConnectionFactory()<br/>At BasicDataSource.java:[line 1451]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65713');">
+<td>
+<span class="priority-2">SECCONFCTRL</span>
+</td>
+<td>This use of java/sql/Connection.setCatalog(Ljava/lang/String;)V might be used to control configuration externally</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65713" style="display: none;">
+<a href="#EXTERNAL_CONFIG_CONTROL">Bug type EXTERNAL_CONFIG_CONTROL (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.setCatalog(String)<br/>At DelegatingConnection.java:[line 374]<br/>Sink method java/sql/Connection.setCatalog(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.setCatalog(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67267');">
+<td>
+<span class="priority-2">SECCONFCTRL</span>
+</td>
+<td>This use of java/sql/Connection.setCatalog(Ljava/lang/String;)V might be used to control configuration externally</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67267" style="display: none;">
+<a href="#EXTERNAL_CONFIG_CONTROL">Bug type EXTERNAL_CONFIG_CONTROL (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolableConnectionFactory<br/>In method org.apache.commons.dbcp.PoolableConnectionFactory.activateObject(Object)<br/>At PoolableConnectionFactory.java:[line 717]<br/>Sink method java/sql/Connection.setCatalog(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolableConnectionFactory._defaultCatalog<br/>At PoolableConnectionFactory.java:[line 717]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67865');">
+<td>
+<span class="priority-2">SECCONFCTRL</span>
+</td>
+<td>This use of java/sql/Connection.setCatalog(Ljava/lang/String;)V might be used to control configuration externally</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67865" style="display: none;">
+<a href="#EXTERNAL_CONFIG_CONTROL">Bug type EXTERNAL_CONFIG_CONTROL (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.setCatalog(String)<br/>At PoolingDataSource.java:[line 333]<br/>Sink method java/sql/Connection.setCatalog(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.setCatalog(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68679');">
+<td>
+<span class="priority-2">SECCONFCTRL</span>
+</td>
+<td>This use of java/sql/Connection.setCatalog(Ljava/lang/String;)V might be used to control configuration externally</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68679" style="display: none;">
+<a href="#EXTERNAL_CONFIG_CONTROL">Bug type EXTERNAL_CONFIG_CONTROL (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.setCatalog(String)<br/>At PoolingDriver.java:[line 392]<br/>Sink method java/sql/Connection.setCatalog(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.setCatalog(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70313');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.commons.dbcp.datasources.InstanceKeyObjectFactory.deserialize(byte[])</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70313" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.commons.dbcp.datasources.InstanceKeyObjectFactory<br/>In method org.apache.commons.dbcp.datasources.InstanceKeyObjectFactory.deserialize(byte[])<br/>At InstanceKeyObjectFactory.java:[line 236]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69493');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69493" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.makeObject(Object)<br/>At PooledConnectionImpl.java:[line 435]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl$PStmtKey._sql<br/>At PooledConnectionImpl.java:[line 435]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69572');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69572" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.makeObject(Object)<br/>At PooledConnectionImpl.java:[line 439]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl$PStmtKey._sql<br/>At PooledConnectionImpl.java:[line 439]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69651');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69651" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.makeObject(Object)<br/>At PooledConnectionImpl.java:[line 445]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl$PStmtKey._sql<br/>At PooledConnectionImpl.java:[line 445]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69730');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69730" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String)<br/>At PooledConnectionImpl.java:[line 243]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 0<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69814');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69814" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String, int)<br/>At PooledConnectionImpl.java:[line 303]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69898');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69898" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String, int, int)<br/>At PooledConnectionImpl.java:[line 276]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; parameter 2<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69982');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69982" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String, int, int, int)<br/>At PooledConnectionImpl.java:[line 320]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; parameter 3<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 133]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70066');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70066" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String, int[])<br/>At PooledConnectionImpl.java:[line 338]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70150');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70150" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl<br/>In method org.apache.commons.dbcp.cpdsadapter.PooledConnectionImpl.prepareStatement(String, String[])<br/>At PooledConnectionImpl.java:[line 354]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/cpdsadapter/PooledConnectionImpl.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected<br/>At ConnectionImpl.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70234');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70234" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.datasources.CPDSConnectionFactory<br/>In method org.apache.commons.dbcp.datasources.CPDSConnectionFactory.validateObject(Object)<br/>At CPDSConnectionFactory.java:[line 183]<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/datasources/CPDSConnectionFactory._validationQuery<br/>At CPDSConnectionFactory.java:[line 170]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70367');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70367" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.datasources.KeyedCPDSConnectionFactory<br/>In method org.apache.commons.dbcp.datasources.KeyedCPDSConnectionFactory.validateObject(Object, Object)<br/>At KeyedCPDSConnectionFactory.java:[line 180]<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/datasources/KeyedCPDSConnectionFactory._validationQuery<br/>At KeyedCPDSConnectionFactory.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65787');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65787" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.nativeSQL(String)<br/>At DelegatingConnection.java:[line 365]<br/>Sink method java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65861');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65861" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareCall(String)<br/>At DelegatingConnection.java:[line 308]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65935');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65935" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareCall(String, int, int)<br/>At DelegatingConnection.java:[line 321]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66009');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66009" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareCall(String, int, int, int)<br/>At DelegatingConnection.java:[line 496]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66083');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66083" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String)<br/>At DelegatingConnection.java:[line 281]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66157');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66157" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String, int)<br/>At DelegatingConnection.java:[line 508]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66231');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66231" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String, int, int)<br/>At DelegatingConnection.java:[line 295]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66305');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66305" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String, int, int, int)<br/>At DelegatingConnection.java:[line 482]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66379');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66379" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String, int[])<br/>At DelegatingConnection.java:[line 520]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66453');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66453" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingConnection<br/>In method org.apache.commons.dbcp.DelegatingConnection.prepareStatement(String, String[])<br/>At DelegatingConnection.java:[line 532]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingConnection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66527');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.addBatch(Ljava/lang/String;)V can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66527" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.addBatch(String)<br/>At DelegatingStatement.java:[line 291]<br/>Sink method java/sql/Statement.addBatch(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.addBatch(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66601');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66601" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.execute(String)<br/>At DelegatingStatement.java:[line 264]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.execute(Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66675');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;I)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66675" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.execute(String, int)<br/>At DelegatingStatement.java:[line 332]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;I)Z<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.execute(Ljava/lang/String;I)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66749');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;[I)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66749" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.execute(String, int[])<br/>At DelegatingStatement.java:[line 335]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;[I)Z<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.execute(Ljava/lang/String;[I)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66823');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;[Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66823" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.execute(String, String[])<br/>At DelegatingStatement.java:[line 338]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;[Ljava/lang/String;)Z<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.execute(Ljava/lang/String;[Ljava/lang/String;)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66897');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66897" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.executeQuery(String)<br/>At DelegatingStatement.java:[line 208]<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66971');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeUpdate(Ljava/lang/String;)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66971" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.executeUpdate(String)<br/>At DelegatingStatement.java:[line 228]<br/>Sink method java/sql/Statement.executeUpdate(Ljava/lang/String;)I<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.executeUpdate(Ljava/lang/String;)I parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67045');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeUpdate(Ljava/lang/String;I)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67045" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.executeUpdate(String, int)<br/>At DelegatingStatement.java:[line 323]<br/>Sink method java/sql/Statement.executeUpdate(Ljava/lang/String;I)I<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.executeUpdate(Ljava/lang/String;I)I parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67119');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeUpdate(Ljava/lang/String;[I)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67119" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.executeUpdate(String, int[])<br/>At DelegatingStatement.java:[line 326]<br/>Sink method java/sql/Statement.executeUpdate(Ljava/lang/String;[I)I<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.executeUpdate(Ljava/lang/String;[I)I parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67193');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeUpdate(Ljava/lang/String;[Ljava/lang/String;)I can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67193" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.DelegatingStatement<br/>In method org.apache.commons.dbcp.DelegatingStatement.executeUpdate(String, String[])<br/>At DelegatingStatement.java:[line 329]<br/>Sink method java/sql/Statement.executeUpdate(Ljava/lang/String;[Ljava/lang/String;)I<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/DelegatingStatement.executeUpdate(Ljava/lang/String;[Ljava/lang/String;)I parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67346');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.execute(Ljava/lang/String;)Z can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67346" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolableConnectionFactory<br/>In method org.apache.commons.dbcp.PoolableConnectionFactory.initializeConnection(Connection)<br/>At PoolableConnectionFactory.java:[line 612]<br/>Sink method java/sql/Statement.execute(Ljava/lang/String;)Z<br/>Sink parameter 0<br/>Unknown source java/util/Collection.iterator()Ljava/util/Iterator;<br/>Unknown source org/apache/commons/dbcp/PoolableConnectionFactory._connectionInitSqls<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At PoolableConnectionFactory.java:[line 596]<br/>At PoolableConnectionFactory.java:[line 604]<br/>At PoolableConnectionFactory.java:[line 606]<br/>At PoolableConnectionFactory.java:[line 611]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67470');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67470" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolableConnectionFactory<br/>In method org.apache.commons.dbcp.PoolableConnectionFactory.validateConnection(Connection)<br/>At PoolableConnectionFactory.java:[line 658]<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolableConnectionFactory._validationQuery<br/>At PoolableConnectionFactory.java:[line 646]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67549');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67549" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingConnection<br/>In method org.apache.commons.dbcp.PoolingConnection.makeObject(Object)<br/>At PoolingConnection.java:[line 285]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingConnection$PStmtKey._sql<br/>At PoolingConnection.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67628');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67628" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingConnection<br/>In method org.apache.commons.dbcp.PoolingConnection.makeObject(Object)<br/>At PoolingConnection.java:[line 287]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingConnection$PStmtKey._sql<br/>At PoolingConnection.java:[line 287]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67707');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67707" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingConnection<br/>In method org.apache.commons.dbcp.PoolingConnection.makeObject(Object)<br/>At PoolingConnection.java:[line 291]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingConnection$PStmtKey._sql<br/>At PoolingConnection.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67786');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67786" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingConnection<br/>In method org.apache.commons.dbcp.PoolingConnection.makeObject(Object)<br/>At PoolingConnection.java:[line 294]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingConnection$PStmtKey._sql<br/>At PoolingConnection.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67939');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67939" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.nativeSQL(String)<br/>At PoolingDataSource.java:[line 298]<br/>Sink method java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.nativeSQL(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68013');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68013" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(String)<br/>At PoolingDataSource.java:[line 303]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68087');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68087" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(String, int, int)<br/>At PoolingDataSource.java:[line 308]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68161');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68161" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(String, int, int, int)<br/>At PoolingDataSource.java:[line 395]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68235');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68235" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String)<br/>At PoolingDataSource.java:[line 313]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68309');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68309" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String, int)<br/>At PoolingDataSource.java:[line 400]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68383');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68383" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String, int, int)<br/>At PoolingDataSource.java:[line 318]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68457');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68457" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String, int, int, int)<br/>At PoolingDataSource.java:[line 405]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68531');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68531" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String, int[])<br/>At PoolingDataSource.java:[line 410]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68605');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68605" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(String, String[])<br/>At PoolingDataSource.java:[line 415]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDataSource$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68753');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68753" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.nativeSQL(String)<br/>At PoolingDriver.java:[line 357]<br/>Sink method java/sql/Connection.nativeSQL(Ljava/lang/String;)Ljava/lang/String;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.nativeSQL(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68827');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68827" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareCall(String)<br/>At PoolingDriver.java:[line 362]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68901');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68901" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareCall(String, int, int)<br/>At PoolingDriver.java:[line 367]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;II)Ljava/sql/CallableStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68975');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68975" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareCall(String, int, int, int)<br/>At PoolingDriver.java:[line 454]<br/>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareCall(Ljava/lang/String;III)Ljava/sql/CallableStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69049');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69049" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String)<br/>At PoolingDriver.java:[line 372]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69123');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69123" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String, int)<br/>At PoolingDriver.java:[line 459]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69197');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69197" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String, int, int)<br/>At PoolingDriver.java:[line 377]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement;<br/>Sink parameter 2<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;II)Ljava/sql/PreparedStatement; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69271');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69271" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String, int, int, int)<br/>At PoolingDriver.java:[line 464]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement;<br/>Sink parameter 3<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;III)Ljava/sql/PreparedStatement; parameter 3<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69345');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69345" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String, int[])<br/>At PoolingDriver.java:[line 469]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;[I)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69419');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69419" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper<br/>In method org.apache.commons.dbcp.PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(String, String[])<br/>At PoolingDriver.java:[line 474]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source org/apache/commons/dbcp/PoolingDriver$PoolGuardConnectionWrapper.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70446');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70446" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class org.apache.commons.jocl.JOCLContentHandler<br/>In method org.apache.commons.jocl.JOCLContentHandler.parse(InputSource, XMLReader)<br/>At JOCLContentHandler.java:[line 342]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="EXTERNAL_CONFIG_CONTROL">EXTERNAL_CONFIG_CONTROL: Potential external control of configuration</a>
+</h2>
+            
+<p>
+    Allowing external control of system settings can disrupt service or cause an application
+    to behave in unexpected, and potentially malicious ways.
+    An attacker could cause an error by providing a nonexistent catalog name
+    or connect to an unauthorized portion of the database.
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>conn.setCatalog(request.getParameter("catalog"));</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/15.html">CWE-15: External Control of System or Configuration Setting</a><br/>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="https://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLREADER">XXE_XMLREADER: XML parsing vulnerable to XXE (XMLReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setContentHandler(customHandler);
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

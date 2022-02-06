@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/snmp4j-agent-2.5.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>17565 lines of code analyzed,
+	in 450 classes, 
+	in 19 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">11</td>
+<td align="right">0.63</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">7</td>
+<td align="right">0.40</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+<td align="right">
+<b>1.02</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">18</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65915');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.readContext()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65915" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.readContext()<br/>At DefaultMOInput.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65969');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.readIndexedVariables()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65969" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.readIndexedVariables()<br/>At DefaultMOInput.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66023');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.readManagedObject()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66023" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.readManagedObject()<br/>At DefaultMOInput.java:[line 66]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66077');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.readSequence()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66077" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.readSequence()<br/>At DefaultMOInput.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66131');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.readVariable()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66131" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.readVariable()<br/>At DefaultMOInput.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66185');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.skipContext(Context)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66185" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.skipContext(Context)<br/>At DefaultMOInput.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66239');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.skipContext(Context)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66239" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.skipContext(Context)<br/>At DefaultMOInput.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66293');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.skipManagedObject(MOInfo)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66293" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.skipManagedObject(MOInfo)<br/>At DefaultMOInput.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66347');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.io.DefaultMOInput.skipManagedObject(MOInfo)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66347" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOInput<br/>In method org.snmp4j.agent.io.DefaultMOInput.skipManagedObject(MOInfo)<br/>At DefaultMOInput.java:[line 124]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66714');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.snmp4j.agent.test.SnapshotAgent.registerManagedObjects()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66714" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.snmp4j.agent.test.SnapshotAgent<br/>In method org.snmp4j.agent.test.SnapshotAgent.registerManagedObjects()<br/>At SnapshotAgent.java:[line 246]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65857');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65857" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.snmp4j.agent.example.Snmp4jDemoMib$Snmp4jDemoSparseTableType<br/>In method org.snmp4j.agent.example.Snmp4jDemoMib$Snmp4jDemoSparseTableType.setValue(Integer32)<br/>At Snmp4jDemoMib.java:[line 1325]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.BaseAgent<br/>In method org.snmp4j.agent.BaseAgent.getConfigFile()<br/>At BaseAgent.java:[line 555]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/snmp4j/agent/BaseAgent.configFileURI<br/>At BaseAgent.java:[line 555]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.example.SampleAgent<br/>In method new org.snmp4j.agent.example.SampleAgent(Map)<br/>At SampleAgent.java:[line 85]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/snmp4j/agent/example/SampleAgent.&lt;init&gt;(Ljava/util/Map;)V parameter 0<br/>Method usage not detected<br/>At SampleAgent.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65719');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65719" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.example.SampleAgent<br/>In method new org.snmp4j.agent.example.SampleAgent(Map)<br/>At SampleAgent.java:[line 98]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/snmp4j/util/ArgumentParser.getValue(Ljava/util/Map;Ljava/lang/String;I)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65788');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65788" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.example.SampleAgent<br/>In method new org.snmp4j.agent.example.SampleAgent(Map)<br/>At SampleAgent.java:[line 122]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/snmp4j/util/ArgumentParser.getValue(Ljava/util/Map;Ljava/lang/String;I)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66401');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66401" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOPersistenceProvider<br/>In method org.snmp4j.agent.io.DefaultMOPersistenceProvider.getFile(String)<br/>At DefaultMOPersistenceProvider.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/snmp4j/agent/io/DefaultMOPersistenceProvider.getFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Unknown source java/net/URI.create(Ljava/lang/String;)Ljava/net/URI;<br/>At BaseAgent.java:[line 279]<br/>At BaseAgent.java:[line 292]<br/>At DefaultMOPersistenceProvider.java:[line 77]<br/>At DefaultMOPersistenceProvider.java:[line 88]<br/>At DefaultMOPersistenceProvider.java:[line 109]<br/>At DefaultMOPersistenceProvider.java:[line 113]<br/>At DefaultMOPersistenceProvider.java:[line 141]<br/>At DefaultMOPersistenceProvider.java:[line 145]<br/>At DefaultMOPersistenceProvider.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66565');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66565" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.io.DefaultMOPersistenceProvider<br/>In method org.snmp4j.agent.io.DefaultMOPersistenceProvider.getFile(String)<br/>At DefaultMOPersistenceProvider.java:[line 92]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/snmp4j/agent/io/DefaultMOPersistenceProvider.getFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At BaseAgent.java:[line 279]<br/>At BaseAgent.java:[line 292]<br/>At DefaultMOPersistenceProvider.java:[line 77]<br/>At DefaultMOPersistenceProvider.java:[line 109]<br/>At DefaultMOPersistenceProvider.java:[line 113]<br/>At DefaultMOPersistenceProvider.java:[line 141]<br/>At DefaultMOPersistenceProvider.java:[line 145]<br/>At DefaultMOPersistenceProvider.java:[line 163]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66768');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66768" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.snmp4j.agent.test.SnapshotAgent<br/>In method org.snmp4j.agent.test.SnapshotAgent.main(String[])<br/>At SnapshotAgent.java:[line 346]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/snmp4j/agent/test/SnapshotAgent.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

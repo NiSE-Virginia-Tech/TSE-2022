@@ -1,0 +1,181 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 651.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r18
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r18 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r7)
+		Method: <org.apache.abdera.protocol.client.util.ClientAuthSSLProtocolSocketFactory: java.net.Socket createSocket(java.lang.String,int,java.net.InetAddress,int,org.apache.commons.httpclient.params.HttpConnectionParams)>
+		SHA-256: c8cea3848e9a8cd9092f39d00f94d9b73dd8735c14508e7b97f15d3c04ac8ac8
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.SSLContext
+		Statement: r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r6)
+		Method: <org.apache.abdera.protocol.client.util.ClientAuthSSLProtocolSocketFactory: java.net.Socket createSocket(java.lang.String,int,java.net.InetAddress,int,org.apache.commons.httpclient.params.HttpConnectionParams)>
+		SHA-256: 60e3396a65dfa66e48496ecc494a9534936010810e85985f449085845cd0f5dc
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r12 = virtualinvoke r18.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.abdera.protocol.client.util.ClientAuthSSLProtocolSocketFactory: java.net.Socket createSocket(java.lang.String,int,java.net.InetAddress,int,org.apache.commons.httpclient.params.HttpConnectionParams)>
+		SHA-256: 91e277bfd25db39f336132f1d1a988ca523d9ec2e1c9962314d85ba3654b82a6
+		Secure: false
+	Object:
+		Variable: r7
+		Type: java.security.KeyStore
+		Statement: r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r1)
+		Method: <org.apache.abdera.protocol.client.util.ClientAuthSSLProtocolSocketFactory: java.security.KeyStore initKeyStore(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: d1c9cff83bd9bfeddedf6c9f14052ed62c75dbb139dac221ff94652eb2fc7bbc
+		Secure: false
+	Object:
+		Variable: r14
+		Type: byte[]
+		Statement: r14 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.abdera.util.EntityTag: org.apache.abdera.util.EntityTag generate(java.lang.String[])>
+		SHA-256: 9285a3e95040acc81cd7f7da09bb9b57a493dfdb84e468fad29fb972c5b88ca
+		Secure: false
+	Object:
+		Variable: r12
+		Type: java.security.MessageDigest
+		Statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9872)
+		Method: <org.apache.abdera.util.EntityTag: org.apache.abdera.util.EntityTag generate(java.lang.String[])>
+		SHA-256: 36d140b8eb1a88b9a6dd2a760b51bbd135face4cc6779966fef2e87e78f8076e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer8858)
+		Method: <org.apache.abdera.protocol.client.util.SimpleSSLProtocolSocketFactory: void init(javax.net.ssl.TrustManager)>
+		SHA-256: 9c50c45923b61a513836a495e92d698f8a4f47e63cf73abd8037d48b5037553b
+		Secure: false
+
+Findings in Java Class: org.apache.abdera.protocol.client.util.ClientAuthSSLProtocolSocketFactory
+
+	 in Method: java.security.KeyStore initKeyStore(java.lang.String,java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #d1c9cff83bd9bfeddedf6c9f14052ed62c75dbb139dac221ff94652eb2fc7bbc)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r7.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r4, $r5)
+
+
+	 in Method: java.net.Socket createSocket(java.lang.String,int,java.net.InetAddress,int,org.apache.commons.httpclient.params.HttpConnectionParams)
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #c8cea3848e9a8cd9092f39d00f94d9b73dd8735c14508e7b97f15d3c04ac8ac8)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r18.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r10, $r11)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r12, r25, varReplacer8766)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r12, r25, varReplacer8766)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r18.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r10, $r11)
+
+
+Findings in Java Class: org.apache.abdera.protocol.client.util.SimpleSSLProtocolSocketFactory
+
+	 in Method: void init(javax.net.ssl.TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer8859, $r4, varReplacer8859)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer8859, $r4, varReplacer8859)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #9c50c45923b61a513836a495e92d698f8a4f47e63cf73abd8037d48b5037553b)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer8858)
+
+
+Findings in Java Class: org.apache.abdera.util.EntityTag
+
+	 in Method: org.apache.abdera.util.EntityTag generate(java.lang.String[])
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #36d140b8eb1a88b9a6dd2a760b51bbd135face4cc6779966fef2e87e78f8076e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r14 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #36d140b8eb1a88b9a6dd2a760b51bbd135face4cc6779966fef2e87e78f8076e)
+			First parameter (with value "md5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9872)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 2
+	ConstraintError: 2
+	RequiredPredicateError: 5
+	TypestateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 6.661 s
+

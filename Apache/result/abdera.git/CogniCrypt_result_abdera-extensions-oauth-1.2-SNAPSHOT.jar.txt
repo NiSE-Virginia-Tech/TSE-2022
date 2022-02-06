@@ -1,0 +1,151 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 435.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r4
+		Type: javax.crypto.KeyGenerator
+		Statement: r4 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(r45)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 575c8498caad89c1335dd4a4d44f4d1732b2de8e49d1e948091007ae7f0e866f
+		Secure: true
+	Object:
+		Variable: r47
+		Type: javax.crypto.Cipher
+		Statement: r47 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer53)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 53a3bd3e693898c8c36b6c34929663ba575342e1cfd36349b04b2ef6ed25b6ff
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke r8.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String generateNonce()>
+		SHA-256: e49edeaa4a1a418068c3a80d817910f0914c9652ea62da2287f94be0d0ba1b7a
+		Secure: true
+	Object:
+		Variable: r8
+		Type: java.security.SecureRandom
+		Statement: r8 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer48)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String generateNonce()>
+		SHA-256: 45b7c12312b40cef1754a470ea05192716d67666be383c3171935ec45aedc383
+		Secure: true
+	Object:
+		Variable: $r20
+		Type: byte[]
+		Statement: r6 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r20)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 5c11d55c4fbae3d22fe642bda977677c0b2ccf91ea4840f21892ba3fce3c7e0a
+		Secure: true
+	Object:
+		Variable: $r19
+		Type: javax.crypto.SecretKey
+		Statement: $r19 = virtualinvoke r4.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 371e4cb16540d722412de16bb393790b6a5bc47ce5541b97a4c3c34062acb4e8
+		Secure: true
+	Object:
+		Variable: $r28
+		Type: byte[]
+		Statement: r48 = virtualinvoke r47.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r28)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: cc3b460bfcf026838d11741c2e7610b05dd9db4bfe5b08dddad76840f640cc76
+		Secure: true
+	Object:
+		Variable: r48
+		Type: byte[]
+		Statement: r48 = virtualinvoke r47.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r28)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: ceac9c88d595b398db487a724e8f574e0981c83b82fa18bf3bf011b56dc1880e
+		Secure: true
+	Object:
+		Variable: r5
+		Type: javax.crypto.Mac
+		Statement: r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r18)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: ba7e3ef4b711d4e2cca3f19bc3919b6940148a6181a090205d494d64e0b77c89
+		Secure: true
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r6 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r20)
+		Method: <org.apache.abdera.ext.oauth.OAuthScheme: java.lang.String sign(java.lang.String,java.lang.String,java.security.cert.Certificate)>
+		SHA-256: 3fd828ce96fa98300d24a78d3099f09a4f64a8bac04a5af2498704d06ed3b173
+		Secure: true
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+No violation of any of the rules found.=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.282 s
+

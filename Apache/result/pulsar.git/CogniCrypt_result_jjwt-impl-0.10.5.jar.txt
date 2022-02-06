@@ -1,0 +1,294 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 476.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 10 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.09
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.23
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.31
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.35
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.37
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.42
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.55
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.65
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.85
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 19 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke r2.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <io.jsonwebtoken.impl.crypto.MacProvider: javax.crypto.SecretKey generateKey(io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)>
+		SHA-256: 9de2e71a2934a24dae94f51f11e9c4a3d0bec2eb8862f2f3336043c6e18d2e92
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <io.jsonwebtoken.impl.DefaultJwtBuilder: io.jsonwebtoken.JwtBuilder signWith(io.jsonwebtoken.SignatureAlgorithm,byte[])>
+		SHA-256: 72c366f5ebfaa267b0b9f8cf4680d913190d9ccbd7e8f0feaa798c7281398744
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+		Method: <io.jsonwebtoken.impl.DefaultJwtBuilder: io.jsonwebtoken.JwtBuilder signWith(io.jsonwebtoken.SignatureAlgorithm,byte[])>
+		SHA-256: 4b8b3d98f5d9dfdf3fb51aac33e3e27987d1e79e9487f6325daa8d3d0829acd
+		Secure: false
+	Object:
+		Variable: r162
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r162.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r123, $r42)
+		Method: <io.jsonwebtoken.impl.DefaultJwtParser: io.jsonwebtoken.Jwt parse(java.lang.String)>
+		SHA-256: 4f17d838ab808f2e15be9c05a2fefd29a5341a4fb52b3ab747153d1c4026acab
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r3.<java.security.Signature: byte[] sign()>()
+		Method: <io.jsonwebtoken.impl.crypto.RsaSigner: byte[] doSign(byte[])>
+		SHA-256: 869498408ca015d263bb584ec888d9c7f520de7894358cc59f3472fa588a30c5
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r3.<java.security.Signature: byte[] sign()>()
+		Method: <io.jsonwebtoken.impl.crypto.EllipticCurveSigner: byte[] doSign(byte[])>
+		SHA-256: 8bffb2c12a2366ea88a05a25d75ed671a10736aa45b776f74607385b97715023
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <io.jsonwebtoken.impl.crypto.SignatureProvider: java.security.Signature getSignatureInstance()>
+		SHA-256: 5245505faa1caa67a21a8f77bf7afcdbd914eeb8cbdcc06c6e02f21254765066
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <io.jsonwebtoken.impl.crypto.SignatureProvider: void <clinit>()>
+		SHA-256: bd77c10f408e393bf6a88a9f259346bb12383ce9f5ef6237ca9f00f578063397
+		Secure: true
+	Object:
+		Variable: r1
+		Type: javax.crypto.Mac
+		Statement: r1 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: javax.crypto.Mac doGetMacInstance()>
+		SHA-256: a518ad31fa6e1fec9e7e9be6570da2f4e8beb6a8a214b03ec23c2dd21a4b4aa1
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r3 = virtualinvoke r2.<javax.crypto.Mac: byte[] doFinal(byte[])>(r1)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: byte[] sign(byte[])>
+		SHA-256: e57c6735987e912139dbc359e82205beea9e5766b181f47b2812c62fbf98fbda
+		Secure: true
+	Object:
+		Variable: r2
+		Type: java.security.KeyPairGenerator
+		Statement: r2 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(r0)
+		Method: <io.jsonwebtoken.impl.crypto.RsaProvider: java.security.KeyPair generateKeyPair(java.lang.String,int,java.security.SecureRandom)>
+		SHA-256: 99b791308a93369df9dbc4868f6d871ca75e9f79f3b2ecaceec87e03ee3477ff
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r4)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: void <init>(io.jsonwebtoken.SignatureAlgorithm,byte[])>
+		SHA-256: b173018d6dd25984f16418fe52cbf35182383d127446448a92c8b82a52101d4b
+		Secure: false
+	Object:
+		Variable: r17
+		Type: java.security.KeyPairGenerator
+		Statement: r17 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(r0, r1)
+		Method: <io.jsonwebtoken.impl.crypto.EllipticCurveProvider: java.security.KeyPair generateKeyPair(java.lang.String,java.lang.String,io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)>
+		SHA-256: d959bdc9b4721e0fee6d9b6282747600180ee0add190cae47434822082a57056
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.KeyGenerator
+		Statement: r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>($r4)
+		Method: <io.jsonwebtoken.impl.crypto.MacProvider: javax.crypto.SecretKey generateKey(io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)>
+		SHA-256: 3d41876d17fbfeb54fefee4633bd1e210210ee387a29385c72e34bfead4ee3e3
+		Secure: true
+	Object:
+		Variable: $r42
+		Type: java.lang.String
+		Statement: specialinvoke r162.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r123, $r42)
+		Method: <io.jsonwebtoken.impl.DefaultJwtParser: io.jsonwebtoken.Jwt parse(java.lang.String)>
+		SHA-256: 3c203751258f67e7848b2a8d8e227b58ada4430ad8333ad2c356401fa0b5f0f7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyPair
+		Statement: $r4 = virtualinvoke r2.<java.security.KeyPairGenerator: java.security.KeyPair genKeyPair()>()
+		Method: <io.jsonwebtoken.impl.crypto.RsaProvider: java.security.KeyPair generateKeyPair(java.lang.String,int,java.security.SecureRandom)>
+		SHA-256: a80ae97e7df752036419e8b51019a329beaadbb79c9989e426784f6ec39b3cbc
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r4)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: void <init>(io.jsonwebtoken.SignatureAlgorithm,byte[])>
+		SHA-256: 91e7234a8fb17aced46527dbcccee7d2992bbd371c08290deda57b70b3ec7611
+		Secure: false
+	Object:
+		Variable: r17
+		Type: java.security.KeyPairGenerator
+		Statement: r17 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(r0)
+		Method: <io.jsonwebtoken.impl.crypto.EllipticCurveProvider: java.security.KeyPair generateKeyPair(java.lang.String,java.lang.String,io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)>
+		SHA-256: c21ae240777d4ab62846731215018d33b952251ff18f6a550771d9c6117dabde
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke r2.<javax.crypto.Mac: byte[] doFinal(byte[])>(r1)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: byte[] sign(byte[])>
+		SHA-256: 3814d9a014c170798ca5e61a34ab149be06b6a749a7048e2d099de5860eaf114
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.KeyPair
+		Statement: $r9 = virtualinvoke r17.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <io.jsonwebtoken.impl.crypto.EllipticCurveProvider: java.security.KeyPair generateKeyPair(java.lang.String,java.lang.String,io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)>
+		SHA-256: 669117648a860f69162ec634e18e94caf94e777df0178de978d8c1b6cbb2604f
+		Secure: false
+
+Findings in Java Class: io.jsonwebtoken.impl.DefaultJwtBuilder
+
+	 in Method: io.jsonwebtoken.JwtBuilder signWith(io.jsonwebtoken.SignatureAlgorithm,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r5)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.DefaultJwtParser
+
+	 in Method: io.jsonwebtoken.Jwt parse(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r162.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r123, $r42)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.crypto.MacSigner
+
+	 in Method: void <init>(io.jsonwebtoken.SignatureAlgorithm,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r2, $r4)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.crypto.EllipticCurveProvider
+
+	 in Method: java.security.KeyPair generateKeyPair(java.lang.String,java.lang.String,io.jsonwebtoken.SignatureAlgorithm,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as prepared E C
+			at statement: virtualinvoke r17.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)>(r5, r3)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.crypto.RsaSigner
+
+	 in Method: byte[] doSign(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generated Privkey
+			at statement: virtualinvoke r3.<java.security.Signature: void initSign(java.security.PrivateKey)>(r2)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 20
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 6 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 7.939 s
+

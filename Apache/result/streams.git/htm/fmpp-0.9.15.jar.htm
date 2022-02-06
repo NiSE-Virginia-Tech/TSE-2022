@@ -1,0 +1,974 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/streams.git/fmpp-0.9.15.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>11888 lines of code analyzed,
+	in 199 classes, 
+	in 9 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.25</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">42</td>
+<td align="right">3.53</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>45</b>
+</td>
+<td align="right">
+<b>3.79</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">45</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>45</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67157');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67157" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.progresslisteners.LoggerProgressListener<br/>In method fmpp.progresslisteners.LoggerProgressListener.notifyProgressEvent(Engine, int, File, int, Throwable, Object)<br/>At LoggerProgressListener.java:[line 256]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67211');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67211" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.progresslisteners.LoggerProgressListener<br/>In method fmpp.progresslisteners.LoggerProgressListener.printStackTrace(Throwable)<br/>At LoggerProgressListener.java:[line 332]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69862');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69862" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.tools.CommandLine<br/>In method fmpp.tools.CommandLine.run(String[])<br/>At CommandLine.java:[line 894]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69916');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69916" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.tools.CommandLine<br/>In method fmpp.tools.CommandLine.run(String[])<br/>At CommandLine.java:[line 929]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71496');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71496" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.util.RuntimeExceptionCC<br/>In method fmpp.util.RuntimeExceptionCC.printStackTrace(PrintStream)<br/>At RuntimeExceptionCC.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71550');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71550" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class fmpp.util.RuntimeExceptionCC<br/>In method fmpp.util.RuntimeExceptionCC.printStackTrace(PrintWriter)<br/>At RuntimeExceptionCC.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66452');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66452" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.dataloaders.FileDataLoader<br/>In method fmpp.dataloaders.FileDataLoader.load(Engine, List)<br/>At FileDataLoader.java:[line 57]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/dataloaders/FileDataLoader.load(Lfmpp/Engine;Ljava/util/List;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At FileDataLoader.java:[line 49]<br/>At FileDataLoader.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66546');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66546" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.dataloaders.FileDataLoader<br/>In method fmpp.dataloaders.FileDataLoader.load(Engine, List)<br/>At FileDataLoader.java:[line 59]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/dataloaders/FileDataLoader.load(Lfmpp/Engine;Ljava/util/List;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At FileDataLoader.java:[line 49]<br/>At FileDataLoader.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66640');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66640" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.dataloaders.HtmlUtilsDataLoader<br/>In method fmpp.dataloaders.HtmlUtilsDataLoader.getImageInfo(File)<br/>At HtmlUtilsDataLoader.java:[line 88]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/dataloaders/HtmlUtilsDataLoader.getImageInfo(Ljava/io/File;)Lfmpp/dataloaders/HtmlUtilsDataLoader$CachedImageInfo; parameter 0<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Method usage not detected<br/>At HtmlUtilsDataLoader.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66729');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66729" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.dataloaders.XmlDataLoader<br/>In method fmpp.dataloaders.XmlDataLoader.load(Engine, List, Document)<br/>At XmlDataLoader.java:[line 202]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/dataloaders/XmlDataLoader.load(Lfmpp/Engine;Ljava/util/List;Lorg/w3c/dom/Document;)Lfreemarker/template/TemplateNodeModel; parameter 1<br/>Method usage not detected<br/>At XmlDataLoader.java:[line 75]<br/>At XmlDataLoader.java:[line 98]<br/>At XmlDataLoader.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66833');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66833" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.dataloaders.XmlDataLoader<br/>In method fmpp.dataloaders.XmlDataLoader.load(Engine, List, Document)<br/>At XmlDataLoader.java:[line 204]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/dataloaders/XmlDataLoader.load(Lfmpp/Engine;Ljava/util/List;Lorg/w3c/dom/Document;)Lfreemarker/template/TemplateNodeModel; parameter 1<br/>Method usage not detected<br/>At XmlDataLoader.java:[line 75]<br/>At XmlDataLoader.java:[line 98]<br/>At XmlDataLoader.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.Engine<br/>In method fmpp.Engine.adjustOutputFileName(File)<br/>At Engine.java:[line 2627]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/Engine.applyRemoveExtensionSetting(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source fmpp/Engine.applyRemoveExtensionSetting(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source fmpp/Engine.applyReplaceExtensionsSetting(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source fmpp/Engine.applyRemovePostfixesSetting(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source fmpp/Engine.applyRemovePostfixesSetting(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source fmpp/Engine.replaceExtensions<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source fmpp/Engine.applyReplaceExtensionsSetting(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At Engine.java:[line 2616]<br/>At Engine.java:[line 2617]<br/>At Engine.java:[line 2618]<br/>At Engine.java:[line 2638]<br/>At Engine.java:[line 2665]<br/>At Engine.java:[line 2675]<br/>At Engine.java:[line 2679]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65735');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65735" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.Engine<br/>In method fmpp.Engine.process(File[])<br/>At Engine.java:[line 369]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/util/FileUtil.getRelativePath(Ljava/io/File;Ljava/io/File;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/io/File.getCanonicalFile()Ljava/io/File;<br/>Unknown source fmpp/util/FileUtil.getRelativePath(Ljava/io/File;Ljava/io/File;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.append(C)Ljava/lang/StringBuffer;<br/>At Engine.java:[line 369]<br/>At FileUtil.java:[line 45]<br/>At FileUtil.java:[line 55]<br/>At FileUtil.java:[line 87]<br/>At FileUtil.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65884');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65884" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.Engine<br/>In method fmpp.Engine.processDir(File, File)<br/>At Engine.java:[line 672]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66022');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66022" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.FmppTemplateLoader<br/>In method fmpp.FmppTemplateLoader.findTemplateSource(String)<br/>At FmppTemplateLoader.java:[line 53]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/FmppTemplateLoader.findTemplateSource(Ljava/lang/String;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At FmppTemplateLoader.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66106');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66106" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.FmppTemplateLoader<br/>In method fmpp.FmppTemplateLoader.findTemplateSource(String)<br/>At FmppTemplateLoader.java:[line 73]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/FmppTemplateLoader.findTemplateSource(Ljava/lang/String;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At FmppTemplateLoader.java:[line 51]<br/>At FmppTemplateLoader.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67053');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67053" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.localdatabuilders.BshLocalDataBuilder<br/>In method fmpp.localdatabuilders.BshLocalDataBuilder.build(Engine, TemplateEnvironment)<br/>At BshLocalDataBuilder.java:[line 158]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source fmpp/localdatabuilders/BshLocalDataBuilder.ending<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At BshLocalDataBuilder.java:[line 152]<br/>At BshLocalDataBuilder.java:[line 156]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67334');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67334" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.FileWithConfigurationBase<br/>In method new fmpp.setting.FileWithConfigurationBase(File, String, String)<br/>At FileWithConfigurationBase.java:[line 40]<br/>Sink method fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/FileWithConfigurationBase.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At Settings.java:[line 601]<br/>At Settings.java:[line 607]<br/>At Settings.java:[line 609]<br/>At Settings.java:[line 617]<br/>At Settings.java:[line 626]<br/>At Settings.java:[line 3480]<br/>At Settings.java:[line 3486]<br/>At Settings.java:[line 3491]<br/>At Settings.java:[line 3500]<br/>At Settings.java:[line 3511]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67503');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67503" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.FileWithSettingValue<br/>In method new fmpp.setting.FileWithSettingValue(File, String, String)<br/>At FileWithSettingValue.java:[line 34]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At Settings.java:[line 712]<br/>At Settings.java:[line 713]<br/>At Settings.java:[line 715]<br/>At Settings.java:[line 718]<br/>At Settings.java:[line 719]<br/>At Settings.java:[line 738]<br/>At Settings.java:[line 453]<br/>At Settings.java:[line 505]<br/>At Settings.java:[line 520]<br/>At Settings.java:[line 545]<br/>At Settings.java:[line 551]<br/>At Settings.java:[line 553]<br/>At Settings.java:[line 561]<br/>At Settings.java:[line 570]<br/>At Settings.java:[line 3480]<br/>At Settings.java:[line 3486]<br/>At Settings.java:[line 3491]<br/>At Settings.java:[line 3500]<br/>At Settings.java:[line 3511]<br/>At MiscUtil.java:[line 180]<br/>At MiscUtil.java:[line 182]<br/>At MiscUtil.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67792');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67792" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.FileWithSettingValue<br/>In method new fmpp.setting.FileWithSettingValue(String, String)<br/>At FileWithSettingValue.java:[line 43]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileWithConfigurationBase.java:[line 40]<br/>At Settings.java:[line 2743]<br/>At Settings.java:[line 2746]<br/>At Settings.java:[line 2749]<br/>At Settings.java:[line 712]<br/>At Settings.java:[line 713]<br/>At Settings.java:[line 715]<br/>At Settings.java:[line 718]<br/>At Settings.java:[line 719]<br/>At Settings.java:[line 738]<br/>At Settings.java:[line 453]<br/>At Settings.java:[line 501]<br/>At Settings.java:[line 520]<br/>At Settings.java:[line 545]<br/>At Settings.java:[line 551]<br/>At Settings.java:[line 553]<br/>At Settings.java:[line 561]<br/>At Settings.java:[line 566]<br/>At Settings.java:[line 601]<br/>At Settings.java:[line 607]<br/>At Settings.java:[line 609]<br/>At Settings.java:[line 617]<br/>At Settings.java:[line 626]<br/>At Settings.java:[line 3480]<br/>At Settings.java:[line 3486]<br/>At Settings.java:[line 3491]<br/>At Settings.java:[line 3500]<br/>At Settings.java:[line 3511]<br/>At MiscUtil.java:[line 180]<br/>At MiscUtil.java:[line 182]<br/>At MiscUtil.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68171');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68171" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.FileWithSettingValue<br/>In method new fmpp.setting.FileWithSettingValue(String, String, String)<br/>At FileWithSettingValue.java:[line 53]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68245');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68245" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.load_getMetaSetting(Map, String, boolean)<br/>At Settings.java:[line 2743]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings.load_getMetaSetting(Ljava/util/Map;Ljava/lang/String;Z)Ljava/io/File; parameter 2<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At Settings.java:[line 2148]<br/>At Settings.java:[line 2161]<br/>At Settings.java:[line 2644]<br/>At Settings.java:[line 2650]<br/>At Settings.java:[line 2667]<br/>At Settings.java:[line 2681]<br/>At Settings.java:[line 2721]<br/>At Settings.java:[line 2723]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68404');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68404" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.load_getMetaSetting(Map, String, boolean)<br/>At Settings.java:[line 2746]<br/>Sink method fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings.load_getMetaSetting(Ljava/util/Map;Ljava/lang/String;Z)Ljava/io/File; parameter 2<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At Settings.java:[line 2148]<br/>At Settings.java:[line 2161]<br/>At Settings.java:[line 2644]<br/>At Settings.java:[line 2650]<br/>At Settings.java:[line 2667]<br/>At Settings.java:[line 2681]<br/>At Settings.java:[line 2721]<br/>At Settings.java:[line 2723]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68563');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68563" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.load_getMetaSetting(Map, String, boolean)<br/>At Settings.java:[line 2749]<br/>Sink method fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings.load_getMetaSetting(Ljava/util/Map;Ljava/lang/String;Z)Ljava/io/File; parameter 2<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At Settings.java:[line 2148]<br/>At Settings.java:[line 2161]<br/>At Settings.java:[line 2644]<br/>At Settings.java:[line 2650]<br/>At Settings.java:[line 2667]<br/>At Settings.java:[line 2681]<br/>At Settings.java:[line 2721]<br/>At Settings.java:[line 2723]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68722');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68722" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.execute()<br/>At Settings.java:[line 1563]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68791');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68791" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.execute()<br/>At Settings.java:[line 1637]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68860');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68860" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings<br/>In method fmpp.setting.Settings.load_getMetaSetting(Map, String, boolean)<br/>At Settings.java:[line 2749]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68929');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68929" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings$7<br/>In method fmpp.setting.Settings$7.convert(Settings, Object)<br/>At Settings.java:[line 499]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings$7.convert(Lfmpp/setting/Settings;Ljava/lang/Object;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At Settings.java:[line 520]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69013');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69013" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings$7<br/>In method fmpp.setting.Settings$7.convert(Settings, Object)<br/>At Settings.java:[line 501]<br/>Sink method fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings$7.convert(Lfmpp/setting/Settings;Ljava/lang/Object;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At Settings.java:[line 520]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69097');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69097" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings$8<br/>In method fmpp.setting.Settings$8.convertList(Settings, List)<br/>At Settings.java:[line 564]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings$8.convertList(Lfmpp/setting/Settings;Ljava/util/List;)Ljava/util/List; parameter 0<br/>At Settings.java:[line 712]<br/>At Settings.java:[line 713]<br/>At Settings.java:[line 715]<br/>At Settings.java:[line 718]<br/>At Settings.java:[line 719]<br/>At Settings.java:[line 738]<br/>At Settings.java:[line 453]<br/>At Settings.java:[line 545]<br/>At Settings.java:[line 551]<br/>At Settings.java:[line 553]<br/>At Settings.java:[line 561]<br/>At Settings.java:[line 3480]<br/>At Settings.java:[line 3486]<br/>At Settings.java:[line 3491]<br/>At Settings.java:[line 3500]<br/>At Settings.java:[line 3511]<br/>At MiscUtil.java:[line 180]<br/>At MiscUtil.java:[line 182]<br/>At MiscUtil.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69356');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69356" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.setting.Settings$8<br/>In method fmpp.setting.Settings$8.convertList(Settings, List)<br/>At Settings.java:[line 566]<br/>Sink method fmpp/setting/FileWithSettingValue.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/setting/Settings$8.convertList(Lfmpp/setting/Settings;Ljava/util/List;)Ljava/util/List; parameter 0<br/>At Settings.java:[line 712]<br/>At Settings.java:[line 713]<br/>At Settings.java:[line 715]<br/>At Settings.java:[line 718]<br/>At Settings.java:[line 719]<br/>At Settings.java:[line 738]<br/>At Settings.java:[line 453]<br/>At Settings.java:[line 545]<br/>At Settings.java:[line 551]<br/>At Settings.java:[line 553]<br/>At Settings.java:[line 561]<br/>At Settings.java:[line 3480]<br/>At Settings.java:[line 3486]<br/>At Settings.java:[line 3491]<br/>At Settings.java:[line 3500]<br/>At Settings.java:[line 3511]<br/>At MiscUtil.java:[line 180]<br/>At MiscUtil.java:[line 182]<br/>At MiscUtil.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66200');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66200" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.TemplateEnvironment$RealFileExistsMethod<br/>In method fmpp.TemplateEnvironment$RealFileExistsMethod.exec(List)<br/>At TemplateEnvironment.java:[line 1041]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/TemplateEnvironment$RealFileExistsMethod.exec(Ljava/util/List;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At TemplateEnvironment.java:[line 1041]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66284');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66284" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.TemplateEnvironment$RealFileLastModifiedMethod<br/>In method fmpp.TemplateEnvironment$RealFileLastModifiedMethod.exec(List)<br/>At TemplateEnvironment.java:[line 1023]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/TemplateEnvironment$RealFileLastModifiedMethod.exec(Ljava/util/List;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At TemplateEnvironment.java:[line 1023]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66368');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66368" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.TemplateEnvironment$RealFileSizeMethod<br/>In method fmpp.TemplateEnvironment$RealFileSizeMethod.exec(List)<br/>At TemplateEnvironment.java:[line 1011]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/TemplateEnvironment$RealFileSizeMethod.exec(Ljava/util/List;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At TemplateEnvironment.java:[line 1011]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69615');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69615" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.tools.AntTask<br/>In method fmpp.tools.AntTask.execute()<br/>At AntTask.java:[line 412]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/tools/AntTask.configuration<br/>At AntTask.java:[line 412]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69694');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69694" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.tools.AntTask<br/>In method fmpp.tools.AntTask.execute()<br/>At AntTask.java:[line 506]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/util/MiscUtil.add([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;<br/>At AntTask.java:[line 499]<br/>At MiscUtil.java:[line 394]<br/>At MiscUtil.java:[line 395]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69793');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69793" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.tools.AntTask<br/>In method fmpp.tools.AntTask.execute()<br/>At AntTask.java:[line 515]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/tools/ant/DirectoryScanner.getIncludedDirectories()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69970');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69970" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.tools.CommandLine<br/>In method fmpp.tools.CommandLine.run(String[])<br/>At CommandLine.java:[line 753]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/util/ArgsParser.parse([Ljava/lang/String;)Ljava/util/Properties;<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source fmpp/util/ArgsParser.prsdOps<br/>At CommandLine.java:[line 628]<br/>At CommandLine.java:[line 742]<br/>At ArgsParser.java:[line 408]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70079');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70079" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.util.FileUtil<br/>In method fmpp.util.FileUtil.getRelativePath(File, File)<br/>At FileUtil.java:[line 68]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/util/FileUtil.getRelativePath(Ljava/io/File;Ljava/io/File;)Ljava/lang/String; parameter 1<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/lang/StringBuffer.append(C)Ljava/lang/StringBuffer;<br/>At Engine.java:[line 367]<br/>At Engine.java:[line 369]<br/>At Engine.java:[line 814]<br/>At Engine.java:[line 816]<br/>At Engine.java:[line 854]<br/>At Engine.java:[line 856]<br/>At Engine.java:[line 1020]<br/>At Engine.java:[line 1045]<br/>At Engine.java:[line 2621]<br/>At Engine.java:[line 2624]<br/>At Engine.java:[line 2687]<br/>At ProcessingException.java:[line 61]<br/>At TemplateEnvironment.java:[line 439]<br/>At TemplateEnvironment.java:[line 447]<br/>At TemplateEnvironment.java:[line 457]<br/>At TemplateEnvironment.java:[line 465]<br/>At TemplateEnvironment.java:[line 486]<br/>At TemplateEnvironment.java:[line 501]<br/>At TemplateEnvironment.java:[line 544]<br/>At TemplateEnvironment.java:[line 550]<br/>At TemplateEnvironment.java:[line 1379]<br/>At TemplateEnvironment.java:[line 1380]<br/>At TemplateEnvironment.java:[line 1355]<br/>At TemplateEnvironment.java:[line 1356]<br/>At AntProgressListener.java:[line 99]<br/>At AntProgressListener.java:[line 100]<br/>At AntProgressListener.java:[line 113]<br/>At AntProgressListener.java:[line 114]<br/>At AntProgressListener.java:[line 142]<br/>At AntProgressListener.java:[line 143]<br/>At AntProgressListener.java:[line 159]<br/>At AntProgressListener.java:[line 160]<br/>At ConsoleProgressListener.java:[line 94]<br/>At ConsoleProgressListener.java:[line 95]<br/>At ConsoleProgressListener.java:[line 111]<br/>At ConsoleProgressListener.java:[line 112]<br/>At ConsoleProgressListener.java:[line 128]<br/>At ConsoleProgressListener.java:[line 129]<br/>At ConsoleProgressListener.java:[line 142]<br/>At ConsoleProgressListener.java:[line 143]<br/>At LoggerProgressListener.java:[line 182]<br/>At LoggerProgressListener.java:[line 239]<br/>At CommandLine.java:[line 887]<br/>At FileUtil.java:[line 44]<br/>At FileUtil.java:[line 48]<br/>At FileUtil.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70628');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70628" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.util.FileUtil<br/>In method fmpp.util.FileUtil.getRelativePath(File, File)<br/>At FileUtil.java:[line 70]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source fmpp/util/FileUtil.getRelativePath(Ljava/io/File;Ljava/io/File;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.append(C)Ljava/lang/StringBuffer;<br/>At Engine.java:[line 369]<br/>At Engine.java:[line 374]<br/>At Engine.java:[line 514]<br/>At Engine.java:[line 676]<br/>At Engine.java:[line 712]<br/>At Engine.java:[line 719]<br/>At Engine.java:[line 725]<br/>At Engine.java:[line 768]<br/>At Engine.java:[line 779]<br/>At Engine.java:[line 816]<br/>At Engine.java:[line 826]<br/>At Engine.java:[line 856]<br/>At Engine.java:[line 988]<br/>At Engine.java:[line 2624]<br/>At Engine.java:[line 2687]<br/>At Engine.java:[line 2774]<br/>At Engine.java:[line 2789]<br/>At ProcessingException.java:[line 52]<br/>At TemplateEnvironment.java:[line 408]<br/>At TemplateEnvironment.java:[line 421]<br/>At TemplateEnvironment.java:[line 437]<br/>At TemplateEnvironment.java:[line 439]<br/>At TemplateEnvironment.java:[line 447]<br/>At TemplateEnvironment.java:[line 455]<br/>At TemplateEnvironment.java:[line 457]<br/>At TemplateEnvironment.java:[line 465]<br/>At TemplateEnvironment.java:[line 484]<br/>At TemplateEnvironment.java:[line 486]<br/>At TemplateEnvironment.java:[line 499]<br/>At TemplateEnvironment.java:[line 501]<br/>At TemplateEnvironment.java:[line 544]<br/>At TemplateEnvironment.java:[line 550]<br/>At TemplateEnvironment.java:[line 1379]<br/>At TemplateEnvironment.java:[line 1355]<br/>At AntProgressListener.java:[line 99]<br/>At AntProgressListener.java:[line 113]<br/>At AntProgressListener.java:[line 142]<br/>At AntProgressListener.java:[line 159]<br/>At ConsoleProgressListener.java:[line 94]<br/>At ConsoleProgressListener.java:[line 111]<br/>At ConsoleProgressListener.java:[line 128]<br/>At ConsoleProgressListener.java:[line 142]<br/>At LoggerProgressListener.java:[line 182]<br/>At LoggerProgressListener.java:[line 234]<br/>At LoggerProgressListener.java:[line 239]<br/>At CommandLine.java:[line 887]<br/>At FileUtil.java:[line 45]<br/>At FileUtil.java:[line 55]<br/>At FileUtil.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71207');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71207" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class fmpp.util.FileUtil<br/>In method fmpp.util.FileUtil.resolveRelativeUnixPath(File, File, String)<br/>At FileUtil.java:[line 203]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source fmpp/util/FileUtil.resolveRelativeUnixPath(Ljava/io/File;Ljava/io/File;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At FmppFileOutputWriter.java:[line 168]<br/>At FmppFileOutputWriter.java:[line 200]<br/>At FmppFileOutputWriter.java:[line 230]<br/>At FmppFileOutputWriter.java:[line 302]<br/>At FmppFileOutputWriter.java:[line 303]<br/>At TemplateEnvironment.java:[line 407]<br/>At TemplateEnvironment.java:[line 408]<br/>At TemplateEnvironment.java:[line 420]<br/>At TemplateEnvironment.java:[line 421]<br/>At TemplateEnvironment.java:[line 437]<br/>At TemplateEnvironment.java:[line 455]<br/>At TemplateEnvironment.java:[line 484]<br/>At TemplateEnvironment.java:[line 499]<br/>At TemplateEnvironment.java:[line 1281]<br/>At TemplateEnvironment.java:[line 1282]<br/>At TemplateEnvironment.java:[line 1218]<br/>At TemplateEnvironment.java:[line 1219]<br/>At HtmlUtilsDataLoader.java:[line 190]<br/>At HtmlUtilsDataLoader.java:[line 221]<br/>At FileUtil.java:[line 193]<br/>At FileUtil.java:[line 245]<br/>At FileUtil.java:[line 247]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65953');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65953" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class fmpp.FmppFileOutputWriter<br/>In method fmpp.FmppFileOutputWriter.createFileWriter()<br/>At FmppFileOutputWriter.java:[line 298]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67265');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67265" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class fmpp.progresslisteners.LoggerProgressListener<br/>In method new fmpp.progresslisteners.LoggerProgressListener(File, boolean)<br/>At LoggerProgressListener.java:[line 117]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66937');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66937" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class fmpp.dataloaders.XmlDataLoader<br/>In method fmpp.dataloaders.XmlDataLoader.loadXmlFile(Engine, File, boolean, boolean, boolean)<br/>At XmlDataLoader.java:[line 330]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66995');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66995" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class fmpp.dataloaders.XmlInfosetDataLoader<br/>In method fmpp.dataloaders.XmlInfosetDataLoader.load(InputStream)<br/>At XmlInfosetDataLoader.java:[line 49]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

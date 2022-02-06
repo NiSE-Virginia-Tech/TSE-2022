@@ -1,0 +1,23 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.145 s 
+Exception in thread "main" soot.ResolutionFailedException: Resolved <groovy.util.GroovyTestCase: boolean notYetImplemented(junit.framework.TestCase)> to <groovy.util.GroovyTestCase: boolean notYetImplemented(junit.framework.TestCase)> which has wrong static-ness
+	at soot.SootMethodRefImpl.checkStatic(SootMethodRefImpl.java:195)
+	at soot.SootMethodRefImpl.tryResolve(SootMethodRefImpl.java:212)
+	at soot.SootMethodRefImpl.resolve(SootMethodRefImpl.java:263)
+	at soot.SootMethodRefImpl.resolve(SootMethodRefImpl.java:183)
+	at soot.jimple.internal.AbstractInvokeExpr.getMethod(AbstractInvokeExpr.java:56)
+	at soot.jimple.toolkits.callgraph.VirtualCalls.resolveSpecial(VirtualCalls.java:78)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.addType(OnFlyCallGraphBuilder.java:574)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.processReceivers(CallGraphBuilder.java:211)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.process(CallGraphBuilder.java:131)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.build(CallGraphBuilder.java:117)
+	at soot.jimple.toolkits.callgraph.CHATransformer.internalTransform(CHATransformer.java:51)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.RadioScenePack.internalApply(RadioScenePack.java:68)
+	at soot.jimple.toolkits.callgraph.CallGraphPack.internalApply(CallGraphPack.java:58)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:198)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

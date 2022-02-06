@@ -1,0 +1,83 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/jeesuite-libs/jeesuite-mybatis/target/jeesuite-mybatis-1.2.1-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 419.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke r9.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.jeesuite.mybatis.kit.CacheKeyUtils: java.lang.String md5(java.lang.Object)>
+		SHA-256: 56c97a16da3cec4be60e4926f3b6fac5f588193744342413ccda9850951a1732
+		Secure: false
+	Object:
+		Variable: r9
+		Type: java.security.MessageDigest
+		Statement: r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer118)
+		Method: <com.jeesuite.mybatis.kit.CacheKeyUtils: java.lang.String md5(java.lang.Object)>
+		SHA-256: 197bf438a802d5b21cc6ea7e55e6e67dde1175508e55e807a6ae93430a2c975
+		Secure: false
+
+Findings in Java Class: com.jeesuite.mybatis.kit.CacheKeyUtils
+
+	 in Method: java.lang.String md5(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #197bf438a802d5b21cc6ea7e55e6e67dde1175508e55e807a6ae93430a2c975)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer118)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.448 s

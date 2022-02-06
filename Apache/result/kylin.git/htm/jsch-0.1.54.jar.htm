@@ -1,0 +1,1073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/kylin.git/jsch-0.1.54.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>12133 lines of code analyzed,
+	in 164 classes, 
+	in 4 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">0.41</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">2.80</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>39</b>
+</td>
+<td align="right">
+<b>3.21</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">39</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>39</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71605');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71605" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.ARCFOUR<br/>In method com.jcraft.jsch.jce.ARCFOUR.init(int, byte[], byte[])<br/>At ARCFOUR.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71659');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71659" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.ARCFOUR128<br/>In method com.jcraft.jsch.jce.ARCFOUR128.init(int, byte[], byte[])<br/>At ARCFOUR128.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71713');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71713" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.ARCFOUR256<br/>In method com.jcraft.jsch.jce.ARCFOUR256.init(int, byte[], byte[])<br/>At ARCFOUR256.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70581');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70581" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class com.jcraft.jsch.KeyPairPKCS8<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.aes128cbc[B with suspicious name<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.aes192cbc[B with suspicious name<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.pbeWithMD5AndDESCBC[B with suspicious name<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.aes256cbc[B with suspicious name<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.dsaEncryption[B with suspicious name<br/>Value is hard coded in field com.jcraft.jsch.KeyPairPKCS8.rsaEncryption[B with suspicious name<br/>At KeyPairPKCS8.java:[lines 36-361]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70201');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70201" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.jcraft.jsch.JSch<br/>In method com.jcraft.jsch.JSch.&lt;static initializer for JSch&gt;()<br/>At JSch.java:[line 118]<br/>Sink method java/util/Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71767');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71767" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.MD5<br/>In method com.jcraft.jsch.jce.MD5.init()<br/>At MD5.java:[line 40]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71999');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71999" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.jcraft.jsch.jcraft.HMACMD5<br/>In method new com.jcraft.jsch.jcraft.HMACMD5()<br/>At HMACMD5.java:[line 41]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 912]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65690');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65690" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 941]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65839');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65839" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 942]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66338');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66338" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 955]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66837');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66837" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 985]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67336');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67336" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 996]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67835');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67835" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.glob_local(String)<br/>At ChannelSftp.java:[line 2854]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>At ChannelSftp.java:[line 2854]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67949');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67949" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.isLocalAbsolutePath(String)<br/>At ChannelSftp.java:[line 2881]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.isLocalAbsolutePath(Ljava/lang/String;)Z parameter 0<br/>Method usage not detected<br/>At ChannelSftp.java:[line 323]<br/>At ChannelSftp.java:[line 365]<br/>At ChannelSftp.java:[line 368]<br/>At ChannelSftp.java:[line 372]<br/>At ChannelSftp.java:[line 391]<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 2951]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68113');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68113" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.lcd(String)<br/>At ChannelSftp.java:[line 324]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcd(Ljava/lang/String;)V parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ChannelSftp.java:[line 323]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68232');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68232" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.lcd(String)<br/>At ChannelSftp.java:[line 326]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcd(Ljava/lang/String;)V parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ChannelSftp.java:[line 323]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68351');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68351" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.put(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 455]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/ChannelSftp.put(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 365]<br/>At ChannelSftp.java:[line 368]<br/>At ChannelSftp.java:[line 372]<br/>At ChannelSftp.java:[line 391]<br/>At ChannelSftp.java:[line 411]<br/>At ChannelSftp.java:[line 427]<br/>At ChannelSftp.java:[line 2830]<br/>At ChannelSftp.java:[line 2840]<br/>At ChannelSftp.java:[line 2855]<br/>At ChannelSftp.java:[line 2859]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68635');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68635" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.put(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 466]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/ChannelSftp.put(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 365]<br/>At ChannelSftp.java:[line 368]<br/>At ChannelSftp.java:[line 372]<br/>At ChannelSftp.java:[line 391]<br/>At ChannelSftp.java:[line 411]<br/>At ChannelSftp.java:[line 427]<br/>At ChannelSftp.java:[line 2830]<br/>At ChannelSftp.java:[line 2840]<br/>At ChannelSftp.java:[line 2855]<br/>At ChannelSftp.java:[line 2859]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68919');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68919" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.put(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 474]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/ChannelSftp.put(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_local(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 365]<br/>At ChannelSftp.java:[line 368]<br/>At ChannelSftp.java:[line 372]<br/>At ChannelSftp.java:[line 391]<br/>At ChannelSftp.java:[line 411]<br/>At ChannelSftp.java:[line 427]<br/>At ChannelSftp.java:[line 2830]<br/>At ChannelSftp.java:[line 2840]<br/>At ChannelSftp.java:[line 2855]<br/>At ChannelSftp.java:[line 2859]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70265');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70265" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.KeyPair<br/>In method com.jcraft.jsch.KeyPair.load(JSch, String)<br/>At KeyPair.java:[line 529]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/KeyPair.load(Lcom/jcraft/jsch/JSch;Ljava/lang/String;)Lcom/jcraft/jsch/KeyPair; parameter 0<br/>Method usage not detected<br/>At KeyPair.java:[line 528]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70641');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70641" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.KnownHosts<br/>In method com.jcraft.jsch.KnownHosts.add(HostKey, UserInfo)<br/>At KnownHosts.java:[line 319]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/KnownHosts.getKnownHostsRepositoryID()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/KnownHosts.known_hosts<br/>At KnownHosts.java:[line 247]<br/>At KnownHosts.java:[line 316]<br/>At KnownHosts.java:[line 319]<br/>At Util.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70765');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70765" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.KnownHosts<br/>In method com.jcraft.jsch.KnownHosts.setKnownHosts(String)<br/>At KnownHosts.java:[line 54]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/KnownHosts.setKnownHosts(Ljava/lang/String;)V parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>At KnownHosts.java:[line 54]<br/>At Session.java:[line 2716]<br/>At Util.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71023');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71023" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.OpenSSHConfig<br/>In method com.jcraft.jsch.OpenSSHConfig.parseFile(String)<br/>At OpenSSHConfig.java:[line 96]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/OpenSSHConfig.parseFile(Ljava/lang/String;)Lcom/jcraft/jsch/OpenSSHConfig; parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At OpenSSHConfig.java:[line 96]<br/>At Util.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71181');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71181" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.Util<br/>In method com.jcraft.jsch.Util.fromFile(String)<br/>At Util.java:[line 507]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/Util.fromFile(Ljava/lang/String;)[B parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At KeyPair.java:[line 528]<br/>At KeyPair.java:[line 532]<br/>At KeyPair.java:[line 540]<br/>At KeyPair.java:[line 548]<br/>At KeyPair.java:[line 552]<br/>At Util.java:[line 490]<br/>At Util.java:[line 506]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71335');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71335" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.jcraft.jsch.Util<br/>In method com.jcraft.jsch.Util.fromFile(String)<br/>At Util.java:[line 508]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/Util.fromFile(Ljava/lang/String;)[B parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage not detected<br/>At KeyPair.java:[line 528]<br/>At KeyPair.java:[line 532]<br/>At KeyPair.java:[line 540]<br/>At KeyPair.java:[line 548]<br/>At KeyPair.java:[line 552]<br/>At Util.java:[line 490]<br/>At Util.java:[line 506]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69203');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69203" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 979]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69702');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69702" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.ChannelSftp<br/>In method com.jcraft.jsch.ChannelSftp.get(String, String, SftpProgressMonitor, int)<br/>At ChannelSftp.java:[line 982]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source com/jcraft/jsch/Util.byte2str([B)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BIILjava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 2<br/>Unknown source com/jcraft/jsch/ChannelSftp.get(Ljava/lang/String;Ljava/lang/String;Lcom/jcraft/jsch/SftpProgressMonitor;I)V parameter 3<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector;<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/ChannelSftp.remoteAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.glob_remote(Ljava/lang/String;)Ljava/util/Vector; parameter 0<br/>Unknown source com/jcraft/jsch/Util.unquote(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.lcwd<br/>Unknown source com/jcraft/jsch/ChannelSftp.getCwd()Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/Util.byte2str([BLjava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.delete(II)Ljava/lang/StringBuffer;<br/>Unknown source com/jcraft/jsch/ChannelSftp.localAbsolutePath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/ChannelSftp.cwd<br/>Unknown source java/lang/StringBuffer.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At ChannelSftp.java:[line 888]<br/>At ChannelSftp.java:[line 892]<br/>At ChannelSftp.java:[line 903]<br/>At ChannelSftp.java:[line 904]<br/>At ChannelSftp.java:[line 906]<br/>At ChannelSftp.java:[line 917]<br/>At ChannelSftp.java:[line 919]<br/>At ChannelSftp.java:[line 927]<br/>At ChannelSftp.java:[line 937]<br/>At ChannelSftp.java:[line 938]<br/>At ChannelSftp.java:[line 939]<br/>At ChannelSftp.java:[line 949]<br/>At ChannelSftp.java:[line 2453]<br/>At ChannelSftp.java:[line 2684]<br/>At ChannelSftp.java:[line 2688]<br/>At ChannelSftp.java:[line 2689]<br/>At ChannelSftp.java:[line 2691]<br/>At ChannelSftp.java:[line 2699]<br/>At ChannelSftp.java:[line 2700]<br/>At ChannelSftp.java:[line 2770]<br/>At ChannelSftp.java:[line 2777]<br/>At ChannelSftp.java:[line 2782]<br/>At ChannelSftp.java:[line 2785]<br/>At ChannelSftp.java:[line 2944]<br/>At ChannelSftp.java:[line 2946]<br/>At ChannelSftp.java:[line 2947]<br/>At ChannelSftp.java:[line 2952]<br/>At ChannelSftp.java:[line 2953]<br/>At Util.java:[line 286]<br/>At Util.java:[line 413]<br/>At Util.java:[line 417]<br/>At Util.java:[line 419]<br/>At Util.java:[line 424]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70349');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70349" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.KeyPair<br/>In method com.jcraft.jsch.KeyPair.writePrivateKey(String, byte[])<br/>At KeyPair.java:[line 261]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/KeyPair.writePrivateKey(Ljava/lang/String;[B)V parameter 1<br/>Method usage not detected<br/>At KeyPair.java:[line 251]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70433');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70433" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.KeyPair<br/>In method com.jcraft.jsch.KeyPair.writePublicKey(String, String)<br/>At KeyPair.java:[line 202]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/KeyPair.writePublicKey(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70507');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70507" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.KeyPair<br/>In method com.jcraft.jsch.KeyPair.writeSECSHPublicKey(String, String)<br/>At KeyPair.java:[line 240]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/KeyPair.writeSECSHPublicKey(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70874');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70874" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.jcraft.jsch.KnownHosts<br/>In method com.jcraft.jsch.KnownHosts.sync(String)<br/>At KnownHosts.java:[line 421]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/jcraft/jsch/Util.checkTilde(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/jcraft/jsch/KnownHosts.sync(Ljava/lang/String;)V parameter 0<br/>At KnownHosts.java:[line 247]<br/>At KnownHosts.java:[line 316]<br/>At KnownHosts.java:[line 323]<br/>At KnownHosts.java:[line 346]<br/>At KnownHosts.java:[line 417]<br/>At KnownHosts.java:[line 421]<br/>At Util.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71825');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71825" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.SHA1<br/>In method com.jcraft.jsch.jce.SHA1.init()<br/>At SHA1.java:[line 40]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71883');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71883" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.SignatureDSA<br/>In method com.jcraft.jsch.jce.SignatureDSA.init()<br/>At SignatureDSA.java:[line 42]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71941');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71941" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jcraft.jsch.jce.SignatureRSA<br/>In method com.jcraft.jsch.jce.SignatureRSA.init()<br/>At SignatureRSA.java:[line 42]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72057');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA-1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72057" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.jcraft.jsch.jcraft.HMACSHA1<br/>In method new com.jcraft.jsch.jcraft.HMACSHA1()<br/>At HMACSHA1.java:[line 41]<br/>Value SHA-1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71489');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to com.jcraft.jsch.Util (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71489" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class com.jcraft.jsch.Util<br/>In method com.jcraft.jsch.Util.createSocket(String, int, int)<br/>At Util.java:[line 343]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71547');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to com.jcraft.jsch.Util$1 (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71547" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class com.jcraft.jsch.Util$1<br/>In method com.jcraft.jsch.Util$1.run()<br/>At Util.java:[line 362]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71127');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71127" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class com.jcraft.jsch.PortWatcher<br/>In method new com.jcraft.jsch.PortWatcher(Session, String, int, String, int, ServerSocketFactory)<br/>At PortWatcher.java:[line 150]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        </body>
+</html>

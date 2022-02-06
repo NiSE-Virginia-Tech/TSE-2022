@@ -1,0 +1,358 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 521.4 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 10 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.08
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.15
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.28
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 20
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 21
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 22
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 22
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.41
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.48
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.52
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.61
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.65
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.74
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 19 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 20 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.87
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 21 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.91
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 22 of 23
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.96
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.commons.net.util.TrustManagerUtils: javax.net.ssl.X509TrustManager getDefaultTrustManager(java.security.KeyStore)>
+		SHA-256: 2b82a4ddd46fdc580444f896d372b0860d965c2851f0a0c3de5e271800f84c99
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: $r16 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>(r4)
+		Method: <org.apache.commons.net.pop3.ExtendedPOP3Client: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 7aae3583efe9ef501adea9c89e545e12ee199b1fa82848484a4c4577547223ec
+		Secure: true
+	Object:
+		Variable: r3
+		Type: java.security.KeyStore
+		Statement: r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r0)
+		Method: <org.apache.commons.net.util.KeyManagerUtils: java.security.KeyStore loadStore(java.lang.String,java.io.File,java.lang.String)>
+		SHA-256: 69a5fd04f06bf141b78af57573fff1e3e465e34840141770a3c70d34ac8d972b
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: r3 = virtualinvoke r6.<java.security.MessageDigest: byte[] digest(byte[])>($r10)
+		Method: <org.apache.commons.net.pop3.POP3Client: boolean login(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 83dd21c681fb42f9b642e1416307b49daa8403f209191b0a819395907a390236
+		Secure: false
+	Object:
+		Variable: $r23
+		Type: byte[]
+		Statement: $r23 = virtualinvoke r4.<javax.crypto.Mac: byte[] doFinal(byte[])>(r38)
+		Method: <org.apache.commons.net.imap.AuthenticatingIMAPClient: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: aed5108cd22fb5771b89b574ccdca39bfb02595010fc34af4b356a959a37911
+		Secure: true
+	Object:
+		Variable: varReplacer1535
+		Type: java.lang.String
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer1535)
+		Method: <org.apache.commons.net.pop3.ExtendedPOP3Client: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 18f947768923fbf817756f22b639fc823b33e38ec3ba3b8d4cbebccb9020c481
+		Secure: false
+	Object:
+		Variable: r38
+		Type: byte[]
+		Statement: $r23 = virtualinvoke r4.<javax.crypto.Mac: byte[] doFinal(byte[])>(r38)
+		Method: <org.apache.commons.net.imap.AuthenticatingIMAPClient: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: e01143efcba8a34f2f8c56f97e16e28f4a31ebc994878c45b28623e5bc869b9
+		Secure: true
+	Object:
+		Variable: $r24
+		Type: byte[]
+		Statement: $r24 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>(r4)
+		Method: <org.apache.commons.net.smtp.AuthenticatingSMTPClient: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 9162e49ec1d4e71a163f4d066fc7de903437d012610415c47ff4263a182531c1
+		Secure: true
+	Object:
+		Variable: $r22
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r22.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r23, varReplacer1699)
+		Method: <org.apache.commons.net.smtp.AuthenticatingSMTPClient: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 303780ad8d0ce3cd308e7da2ee19e947264df980d8ce00506cd3ec3896c1bde1
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r6.<java.security.MessageDigest: byte[] digest(byte[])>($r10)
+		Method: <org.apache.commons.net.pop3.POP3Client: boolean login(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 4d3d78a14759212b6c656ef9f83b53dce10fa49ee86a6e415c6be1950a238a04
+		Secure: false
+	Object:
+		Variable: r6
+		Type: java.security.MessageDigest
+		Statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1595)
+		Method: <org.apache.commons.net.pop3.POP3Client: boolean login(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: a745a046695de796440f41cd3d7ec263e5c1d3ef3a65d9941be014ca5f768e57
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.Key
+		Statement: $r8 = virtualinvoke r1.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r6, $r7)
+		Method: <org.apache.commons.net.util.KeyManagerUtils$ClientKeyStore: void <init>(java.security.KeyStore,java.lang.String,java.lang.String)>
+		SHA-256: 2d6efa6063097cba33b23c79faf9963f92f986bc95fde69776abe3c7c313bc7a
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer1535)
+		Method: <org.apache.commons.net.pop3.ExtendedPOP3Client: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 3f7dd28ec4b7ef14c9479f866970253b2efe8bae228196c3a36ec5a4dcfa111d
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(r1)
+		Method: <org.apache.commons.net.util.TrustManagerUtils: javax.net.ssl.X509TrustManager getDefaultTrustManager(java.security.KeyStore)>
+		SHA-256: f2e043fb4e90f83cc96295ecb4507138afa7220ff25ea70ff7dcb95bb414673e
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Mac
+		Statement: r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer880)
+		Method: <org.apache.commons.net.imap.AuthenticatingIMAPClient: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 17c19f39e7cd4d3a8466ea107b514d5b6a35f4df14bd2a3ccb3a34ae1b52c0f0
+		Secure: true
+	Object:
+		Variable: $r21
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r22, varReplacer884)
+		Method: <org.apache.commons.net.imap.AuthenticatingIMAPClient: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 7ee4ab71569b3260e899a5b851cb690ef71c997e7ad7ad080f3cd5466b00bb0d
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Mac
+		Statement: r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer1542)
+		Method: <org.apache.commons.net.pop3.ExtendedPOP3Client: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 4948b3f3763968fba7b7a2049eedfb0ad3889ff9e53cb0f0a3a3131eeae38f8
+		Secure: true
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLContext
+		Statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r0)
+		Method: <org.apache.commons.net.util.SSLContextUtils: javax.net.ssl.SSLContext createSSLContext(java.lang.String,javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])>
+		SHA-256: bac3d63fb582db5b29d70e8cb633e22dcbead9c0d257bb5998a6acb896390c4f
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r16 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>(r4)
+		Method: <org.apache.commons.net.pop3.ExtendedPOP3Client: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: acdff3c9a5c0108d915fb325de7c95be0692ee62ca21391959b20a85f9e9cc33
+		Secure: true
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: $r24 = virtualinvoke r5.<javax.crypto.Mac: byte[] doFinal(byte[])>(r4)
+		Method: <org.apache.commons.net.smtp.AuthenticatingSMTPClient: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: b3126fc19f9c0a220fbb2b3222a3b0ec494ba1b26859bed5730bd2d54abc0dbe
+		Secure: true
+	Object:
+		Variable: varReplacer884
+		Type: java.lang.String
+		Statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r22, varReplacer884)
+		Method: <org.apache.commons.net.imap.AuthenticatingIMAPClient: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: e4059828e6512c478ea2255d8d1c2c8fb08837a553bff57168256b7c3247aa38
+		Secure: false
+	Object:
+		Variable: varReplacer1699
+		Type: java.lang.String
+		Statement: specialinvoke $r22.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r23, varReplacer1699)
+		Method: <org.apache.commons.net.smtp.AuthenticatingSMTPClient: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: 9567ee7cfed809e222c077d6d6957b1585bc2ede64311cd4efb06afa8c7c2a3b
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Mac
+		Statement: r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer1695)
+		Method: <org.apache.commons.net.smtp.AuthenticatingSMTPClient: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)>
+		SHA-256: fadca22d7759b07c4d01ee94191ef6c1cdc54e47334e649dbcab81dc2a1336aa
+		Secure: true
+
+Findings in Java Class: org.apache.commons.net.imap.AuthenticatingIMAPClient
+
+	 in Method: boolean auth(org.apache.commons.net.imap.AuthenticatingIMAPClient$AUTH_METHOD,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #7ee4ab71569b3260e899a5b851cb690ef71c997e7ad7ad080f3cd5466b00bb0d)
+			Second parameter (with value "HmacMD5") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r22, varReplacer884)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r22, varReplacer884)
+
+
+Findings in Java Class: org.apache.commons.net.pop3.ExtendedPOP3Client
+
+	 in Method: boolean auth(org.apache.commons.net.pop3.ExtendedPOP3Client$AUTH_METHOD,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #3f7dd28ec4b7ef14c9479f866970253b2efe8bae228196c3a36ec5a4dcfa111d)
+			Second parameter (with value "HmacMD5") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer1535)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer1535)
+
+
+Findings in Java Class: org.apache.commons.net.pop3.POP3Client
+
+	 in Method: boolean login(java.lang.String,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a745a046695de796440f41cd3d7ec263e5c1d3ef3a65d9941be014ca5f768e57)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1595)
+
+
+Findings in Java Class: org.apache.commons.net.smtp.AuthenticatingSMTPClient
+
+	 in Method: boolean auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient$AUTH_METHOD,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #303780ad8d0ce3cd308e7da2ee19e947264df980d8ce00506cd3ec3896c1bde1)
+			Second parameter (with value "HmacMD5") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r22.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r23, varReplacer1699)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r22.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r23, varReplacer1699)
+
+
+Findings in Java Class: org.apache.commons.net.util.KeyManagerUtils
+
+	 in Method: java.security.KeyStore loadStore(java.lang.String,java.io.File,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #69a5fd04f06bf141b78af57573fff1e3e465e34840141770a3c70d34ac8d972b)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r8, $r6)
+
+
+Findings in Java Class: org.apache.commons.net.util.TrustManagerUtils
+
+	 in Method: javax.net.ssl.X509TrustManager getDefaultTrustManager(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r0)
+
+
+Findings in Java Class: org.apache.commons.net.util.SSLContextUtils
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext(java.lang.String,javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r1, r2, varReplacer2154)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r1, r2, varReplacer2154)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 23
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 4
+	NeverTypeOfError: 1
+	RequiredPredicateError: 6
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.463 s
+

@@ -1,0 +1,322 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 548.5 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.11
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.22
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.55
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.62
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.79
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.93
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r9 = virtualinvoke r4.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.TrustManager[] trustManagers(java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String)>
+		SHA-256: 282d33669d6e6ad24e72e60e9564cced15e8698cde13e722a7a1f2e70162916f
+		Secure: false
+	Object:
+		Variable: r12
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r12 = virtualinvoke r9.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.KeyManager[] keyManagers(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: c1d5ae6bd6491f8533a3d50d66989b7d45dcdd60864371b0a5f75b47a78ff7f8
+		Secure: false
+	Object:
+		Variable: r72
+		Type: javax.net.ssl.SSLContext
+		Statement: r72 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1192)
+		Method: <io.fabric8.kubernetes.client.utils.HttpClientUtils: okhttp3.OkHttpClient createHttpClient(io.fabric8.kubernetes.client.Config,java.util.function.Consumer)>
+		SHA-256: 8b806225baf53303927745473fc1cbe3686580bc342099619ec67435dba3da10
+		Secure: false
+	Object:
+		Variable: r7
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r7 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r10)
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.KeyManager[] keyManagers(java.io.InputStream,java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 8931ee7b6757694058161415d516e86c68102416efa3d4137c41b6e0c17405f4
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <io.fabric8.kubernetes.client.dsl.internal.RollingUpdater: java.lang.String md5sum(io.fabric8.kubernetes.api.model.HasMetadata)>
+		SHA-256: 851c6d378f968e0dd732f24ad6c61904f1606bbad0928f3ab2e7b7a3950ba671
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.net.ssl.SSLContext
+		Statement: r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1250)
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.SSLContext sslContext(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])>
+		SHA-256: 91c8e99bada809921472d6e56537ab7825aef039e585305312839cd5a31aca3e
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.KeyStore
+		Statement: r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer8)
+		Method: <io.fabric8.kubernetes.client.internal.CertUtils: java.security.KeyStore createTrustStore(java.io.InputStream,java.lang.String,char[])>
+		SHA-256: 29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.SSLContext sslContext(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])>
+		SHA-256: e0ccd8c5dd9270eb1458957953dcf826f211081a45393175c2aea075ec81f99d
+		Secure: true
+	Object:
+		Variable: r9
+		Type: java.security.KeyStore
+		Statement: r9 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer12)
+		Method: <io.fabric8.kubernetes.client.internal.CertUtils: java.security.KeyStore createKeyStore(java.io.InputStream,java.io.InputStream,java.lang.String,char[],java.lang.String,char[])>
+		SHA-256: 2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r12 = virtualinvoke r7.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.KeyManager[] keyManagers(java.io.InputStream,java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: ad83a744dddfc9c2376b900c28a43f7e17c17c30f709c1d66b0e0ea4cfc47719
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <io.fabric8.kubernetes.client.dsl.internal.RollingUpdater: java.lang.String md5sum(io.fabric8.kubernetes.api.model.HasMetadata)>
+		SHA-256: 944684da5a48ddf5934b07167e362d0571bc6d5bca166bdb386d7397e6ec7d53
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r5)
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.TrustManager[] trustManagers(java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String)>
+		SHA-256: 70188b6487e41ef236a1d6242f4f8d6b90c1605f924984b3ad4378a8b3c935f0
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1087)
+		Method: <io.fabric8.kubernetes.client.dsl.internal.RollingUpdater: java.lang.String md5sum(io.fabric8.kubernetes.api.model.HasMetadata)>
+		SHA-256: 4104cf8bb0644cdaaecaac694260487f7b04bbbdc3f6b38e617c8616ddda9e84
+		Secure: false
+	Object:
+		Variable: r9
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r9 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r10)
+		Method: <io.fabric8.kubernetes.client.internal.SSLUtils: javax.net.ssl.KeyManager[] keyManagers(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 7eb666f53f645c578cc3991573464d7d0dfe72fdadf4d4602352b5e38d6514cb
+		Secure: false
+
+Findings in Java Class: io.fabric8.kubernetes.client.internal.CertUtils
+
+	 in Method: boolean loadDefaultStoreFile(java.security.KeyStore,java.io.File,char[])
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, r2)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, r2)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, r2)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, r2)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, r2)
+
+
+	 in Method: void loadDefaultTrustStoreFile(java.security.KeyStore,char[])
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.security.KeyStore$LoadStoreParameter)>(varReplacer18)
+
+
+	 in Method: java.security.KeyStore createKeyStore(java.io.InputStream,java.io.InputStream,java.lang.String,char[],java.lang.String,char[])
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r15, r5)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r15, r5)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r15, r5)
+
+
+	 in Method: void loadDefaultKeyStoreFile(java.security.KeyStore,char[])
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke r0.<java.security.KeyStore: void load(java.security.KeyStore$LoadStoreParameter)>(varReplacer24)
+
+
+Findings in Java Class: io.fabric8.kubernetes.client.internal.SSLUtils
+
+	 in Method: javax.net.ssl.TrustManager[] trustManagers(java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r4.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r8)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #70188b6487e41ef236a1d6242f4f8d6b90c1605f924984b3ad4378a8b3c935f0)
+			Operation on object of type javax.net.ssl.TrustManagerFactory object not completed. Expected call to init
+			at statement: r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #29b269145a51206d5d0aa3c0c6949a1d91b9f2f2ac511bb19926cb69d7ac5798)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke r4.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r8)
+
+
+	 in Method: javax.net.ssl.KeyManager[] keyManagers(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke r9.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r8, $r11)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #7eb666f53f645c578cc3991573464d7d0dfe72fdadf4d4602352b5e38d6514cb)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r9.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r8, $r11)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r9.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r8, $r11)
+
+
+	 in Method: javax.net.ssl.KeyManager[] keyManagers(java.io.InputStream,java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r7.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r6, $r11)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #8931ee7b6757694058161415d516e86c68102416efa3d4137c41b6e0c17405f4)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r7.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r6, $r11)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #2cb82229aff65f357004690afcb90c859faa0c61f71c18e5cae732270912061e)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke r7.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r6, $r11)
+
+
+	 in Method: javax.net.ssl.SSLContext sslContext(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r0, r1, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r0, r1, $r3)
+
+
+Findings in Java Class: io.fabric8.kubernetes.client.dsl.internal.RollingUpdater
+
+	 in Method: java.lang.String md5sum(io.fabric8.kubernetes.api.model.HasMetadata)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4104cf8bb0644cdaaecaac694260487f7b04bbbdc3f6b38e617c8616ddda9e84)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1087)
+
+
+Findings in Java Class: io.fabric8.kubernetes.client.utils.HttpClientUtils
+
+	 in Method: okhttp3.OkHttpClient createHttpClient(io.fabric8.kubernetes.client.Config,java.util.function.Consumer)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r72.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r3, r2, varReplacer1187)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r72.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r3, r2, varReplacer1187)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 14
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 7
+	ConstraintError: 1
+	IncompleteOperationError: 4
+	TypestateError: 2
+	NeverTypeOfError: 10
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.778 s
+

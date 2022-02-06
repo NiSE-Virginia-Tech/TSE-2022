@@ -1,0 +1,125 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.584 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 16 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r9
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r9.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.calcite.runtime.TrustAllSslSocketFactory: javax.net.ssl.SSLSocketFactory createSSLSocketFactory()>
+		SHA-256: 6d47781b803fd48b9836919729de60faebf3eed6150abc3926159651c88f1d5
+		Secure: true
+	Object:
+		Variable: r10
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r10.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.calcite.runtime.TrustAllSslSocketFactory: void <init>()>
+		SHA-256: 575738c73f0aa37810131f3e3c5cd89fd3cbf4e7cfa0d04596387494c0fc6f13
+		Secure: true
+	Object:
+		Variable: r6
+		Type: javax.net.ssl.SSLContext
+		Statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer31124)
+		Method: <org.apache.calcite.runtime.TrustAllSslSocketFactory: javax.net.ssl.SSLSocketFactory createSSLSocketFactory()>
+		SHA-256: a0e8f1782a90e7ac8f49f9a4474f4b7c412c84f642fb05079e93ac566fefe5c2
+		Secure: false
+	Object:
+		Variable: r7
+		Type: javax.net.ssl.SSLContext
+		Statement: r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer31122)
+		Method: <org.apache.calcite.runtime.TrustAllSslSocketFactory: void <init>()>
+		SHA-256: 810ed22f762125945df301518f37df03be30b444b8fadf9612c4e7d16b64c259
+		Secure: false
+
+Findings in Java Class: org.apache.calcite.runtime.TrustAllSslSocketFactory
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #810ed22f762125945df301518f37df03be30b444b8fadf9612c4e7d16b64c259)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer31122)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer31121, r11, r10)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer31121, r11, r10)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory createSSLSocketFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer31125, r10, r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer31125, r10, r9)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a0e8f1782a90e7ac8f49f9a4474f4b7c412c84f642fb05079e93ac566fefe5c2)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer31124)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 4
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 4
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 16 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 29.45 s
+

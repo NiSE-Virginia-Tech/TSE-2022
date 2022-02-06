@@ -1,0 +1,123 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 440.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke r9.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.ignite.spi.deployment.uri.GridUriDeploymentFileProcessor: java.lang.String directoryMd5(java.io.File,org.apache.ignite.IgniteLogger)>
+		SHA-256: c834d133edd9724a4357eaf6f42c1e42bfc2fdcbfd61d80ff77301241ca3363d
+		Secure: false
+	Object:
+		Variable: r37
+		Type: javax.net.ssl.SSLContext
+		Statement: r37 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer175)
+		Method: <org.apache.ignite.spi.deployment.uri.scanners.http.UriDeploymentHttpScanner: org.apache.ignite.spi.deployment.uri.scanners.http.UriDeploymentHttpScanner$URIContext createUriContext(java.net.URI,org.apache.ignite.spi.deployment.uri.scanners.UriDeploymentScannerContext)>
+		SHA-256: 99f3d1ebcd2d66a3b5ea6c90e97cf557c729ebf37a17e7d145cf21b86c3f3c06
+		Secure: false
+	Object:
+		Variable: r9
+		Type: java.security.MessageDigest
+		Statement: r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26)
+		Method: <org.apache.ignite.spi.deployment.uri.GridUriDeploymentFileProcessor: java.lang.String directoryMd5(java.io.File,org.apache.ignite.IgniteLogger)>
+		SHA-256: f354d58496d823eac45c7e480a95334e1d30d7a861f47c100ca0733dc02f1d87
+		Secure: false
+
+Findings in Java Class: org.apache.ignite.spi.deployment.uri.GridUriDeploymentFileProcessor
+
+	 in Method: java.lang.String directoryMd5(java.io.File,org.apache.ignite.IgniteLogger)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f354d58496d823eac45c7e480a95334e1d30d7a861f47c100ca0733dc02f1d87)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to java.security.MessageDigest: int digest(byte[],int,int), update, java.security.MessageDigest: byte[] digest(), java.security.MessageDigest: byte[] digest(byte[])
+			at statement: $r2 = virtualinvoke r9.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f354d58496d823eac45c7e480a95334e1d30d7a861f47c100ca0733dc02f1d87)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f354d58496d823eac45c7e480a95334e1d30d7a861f47c100ca0733dc02f1d87)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = staticinvoke <org.apache.ignite.spi.deployment.uri.GridUriDeploymentFileProcessor: boolean addDirectoryDigest(java.io.File,java.security.MessageDigest,org.apache.ignite.IgniteLogger)>(r0, r9, r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f354d58496d823eac45c7e480a95334e1d30d7a861f47c100ca0733dc02f1d87)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r2 = virtualinvoke r9.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.apache.ignite.spi.deployment.uri.scanners.http.UriDeploymentHttpScanner
+
+	 in Method: org.apache.ignite.spi.deployment.uri.scanners.http.UriDeploymentHttpScanner$URIContext createUriContext(java.net.URI,org.apache.ignite.spi.deployment.uri.scanners.UriDeploymentScannerContext)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #99f3d1ebcd2d66a3b5ea6c90e97cf557c729ebf37a17e7d145cf21b86c3f3c06)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r37 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer175)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r37.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer177, $r7, varReplacer177)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r37.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer177, $r7, varReplacer177)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 3
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	TypestateError: 1
+	RequiredPredicateError: 2
+	IncompleteOperationError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.761 s
+

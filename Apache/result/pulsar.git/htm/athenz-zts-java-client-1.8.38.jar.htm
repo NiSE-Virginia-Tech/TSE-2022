@@ -1,0 +1,1911 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pulsar.git/athenz-zts-java-client-1.8.38.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>146819 lines of code analyzed,
+	in 3399 classes, 
+	in 166 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">16</td>
+<td align="right">0.11</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">55</td>
+<td align="right">0.37</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>71</b>
+</td>
+<td align="right">
+<b>0.48</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">71</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>71</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67911');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67911" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.RC4(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 582]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67965');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67965" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 635]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68019');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68019" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 725]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68367');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68367" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 553]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68421');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68421" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 556]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68711');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68711" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$Handle<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$Handle.initCipher()<br/>At NTLMEngineImpl.java:[line 831]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66830');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66830" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.aopalliance.aop.AspectException<br/>In method new athenz.shade.zts.org.aopalliance.aop.AspectException(String, Throwable)<br/>At AspectException.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67242');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67242" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.logging.impl.Jdk13LumberjackLogger<br/>In method athenz.shade.zts.org.apache.commons.logging.impl.Jdk13LumberjackLogger.getClassAndMethod()<br/>At Jdk13LumberjackLogger.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67296');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67296" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.logging.impl.LogFactoryImpl<br/>In method athenz.shade.zts.org.apache.commons.logging.impl.LogFactoryImpl.handleFlawedDiscovery(String, ClassLoader, Throwable)<br/>At LogFactoryImpl.java:[line 1281]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67350');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67350" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.logging.impl.SimpleLog<br/>In method athenz.shade.zts.org.apache.commons.logging.impl.SimpleLog.log(int, Object, Throwable)<br/>At SimpleLog.java:[line 321]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69103');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69103" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.hk2.api.MultiException<br/>In method athenz.shade.zts.org.glassfish.hk2.api.MultiException.printStackTrace(PrintStream)<br/>At MultiException.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69157');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69157" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.hk2.api.MultiException<br/>In method athenz.shade.zts.org.glassfish.hk2.api.MultiException.printStackTrace(PrintWriter)<br/>At MultiException.java:[line 172]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69211');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69211" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.hk2.osgiresourcelocator.ServiceLoaderImpl<br/>In method athenz.shade.zts.org.glassfish.hk2.osgiresourcelocator.ServiceLoaderImpl.debug(String, Throwable)<br/>At ServiceLoaderImpl.java:[line 365]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69334');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69334" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.hk2.utilities.reflection.Logger<br/>In method athenz.shade.zts.org.glassfish.hk2.utilities.reflection.Logger.printThrowable(Throwable)<br/>At Logger.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69678');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69678" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.inject.hk2.JerseyErrorService<br/>In method athenz.shade.zts.org.glassfish.jersey.inject.hk2.JerseyErrorService.printStackTrace(Throwable)<br/>At JerseyErrorService.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70280');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70280" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.util.ExceptionUtils<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.util.ExceptionUtils.exceptionStackTraceAsString(Throwable)<br/>At ExceptionUtils.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66278');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66278" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class athenz.shade.zts.javax.ws.rs.client.FactoryFinder<br/>In method athenz.shade.zts.javax.ws.rs.client.FactoryFinder.newInstance(String, ClassLoader)<br/>At FactoryFinder.java:[line 81]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/javax/ws/rs/client/FactoryFinder.newInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Object; parameter 1<br/>Method usage with tainted arguments detected<br/>At FactoryFinder.java:[line 81]<br/>At FactoryFinder.java:[line 84]<br/>At FactoryFinder.java:[line 129]<br/>At FactoryFinder.java:[line 139]<br/>At FactoryFinder.java:[line 152]<br/>At FactoryFinder.java:[line 153]<br/>At FactoryFinder.java:[line 154]<br/>At FactoryFinder.java:[line 157]<br/>At FactoryFinder.java:[line 171]<br/>At FactoryFinder.java:[line 173]<br/>At FactoryFinder.java:[line 185]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66462');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66462" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class athenz.shade.zts.javax.ws.rs.ext.FactoryFinder<br/>In method athenz.shade.zts.javax.ws.rs.ext.FactoryFinder.newInstance(String, ClassLoader)<br/>At FactoryFinder.java:[line 81]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/javax/ws/rs/ext/FactoryFinder.newInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Object; parameter 1<br/>Method usage with tainted arguments detected<br/>At FactoryFinder.java:[line 81]<br/>At FactoryFinder.java:[line 84]<br/>At FactoryFinder.java:[line 129]<br/>At FactoryFinder.java:[line 139]<br/>At FactoryFinder.java:[line 152]<br/>At FactoryFinder.java:[line 153]<br/>At FactoryFinder.java:[line 154]<br/>At FactoryFinder.java:[line 157]<br/>At FactoryFinder.java:[line 171]<br/>At FactoryFinder.java:[line 173]<br/>At FactoryFinder.java:[line 185]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66646');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66646" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class athenz.shade.zts.javax.ws.rs.sse.FactoryFinder<br/>In method athenz.shade.zts.javax.ws.rs.sse.FactoryFinder.newInstance(String, ClassLoader)<br/>At FactoryFinder.java:[line 81]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/javax/ws/rs/sse/FactoryFinder.newInstance(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Object; parameter 1<br/>Method usage with tainted arguments detected<br/>At FactoryFinder.java:[line 81]<br/>At FactoryFinder.java:[line 84]<br/>At FactoryFinder.java:[line 129]<br/>At FactoryFinder.java:[line 139]<br/>At FactoryFinder.java:[line 152]<br/>At FactoryFinder.java:[line 153]<br/>At FactoryFinder.java:[line 154]<br/>At FactoryFinder.java:[line 157]<br/>At FactoryFinder.java:[line 171]<br/>At FactoryFinder.java:[line 173]<br/>At FactoryFinder.java:[line 185]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69831');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69831" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry$BundleSpiProvidersLoader<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry$BundleSpiProvidersLoader.call()<br/>At OsgiRegistry.java:[line 217]<br/>Sink method java/util/logging/Logger.log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At OsgiRegistry.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66148');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66148" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.introspect.AnnotatedConstructor<br/>At AnnotatedConstructor.java:[lines 8-204]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66184');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66184" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.introspect.AnnotatedMethod<br/>At AnnotatedMethod.java:[lines 8-275]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68073');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68073" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 635]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68137');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68137" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 725]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68475');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68475" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 553]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68539');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68539" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 556]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68201');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68201" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 635]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68255');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68255" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 725]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68603');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68603" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 553]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68657');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68657" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 556]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67748');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67748" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.ssl.DefaultHostnameVerifier<br/>In method athenz.shade.zts.org.apache.http.conn.ssl.DefaultHostnameVerifier.extractCN(String)<br/>At DefaultHostnameVerifier.java:[line 259]<br/>Sink method javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/apache/http/conn/ssl/DefaultHostnameVerifier.extractCN(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At AbstractVerifier.java:[line 152]<br/>At AbstractVerifier.java:[line 233]<br/>At AbstractVerifier.java:[line 235]<br/>At DefaultHostnameVerifier.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68309');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68309" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method athenz.shade.zts.org.apache.http.impl.auth.NTLMEngineImpl.getMD5()<br/>At NTLMEngineImpl.java:[line 1846]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69620');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69620" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.client.authentication.DigestAuthenticator<br/>In method athenz.shade.zts.org.glassfish.jersey.client.authentication.DigestAuthenticator.md5(String[])<br/>At DigestAuthenticator.java:[line 334]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68765');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in athenz.shade.zts.org.apache.http.impl.client.BasicAuthCache.get(HttpHost)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68765" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.client.BasicAuthCache<br/>In method athenz.shade.zts.org.apache.http.impl.client.BasicAuthCache.get(HttpHost)<br/>At BasicAuthCache.java:[line 130]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70088');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization.populateMultimap(Multimap, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70088" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization.populateMultimap(Multimap, ObjectInputStream, int)<br/>At Serialization.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70142');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization.populateMultimap(Multimap, ObjectInputStream, int)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70142" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.guava.Serialization.populateMultimap(Multimap, ObjectInputStream, int)<br/>At Serialization.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66963');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66963" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.codec.digest.B64<br/>In method athenz.shade.zts.org.apache.commons.codec.digest.B64.getRandomSalt(int)<br/>At B64.java:[line 75]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67021');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67021" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.codec.digest.UnixCrypt<br/>In method athenz.shade.zts.org.apache.commons.codec.digest.UnixCrypt.crypt(byte[], String)<br/>At UnixCrypt.java:[line 200]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.core.TokenStreamFactory<br/>In method athenz.shade.zts.com.fasterxml.jackson.core.TokenStreamFactory._optimizedStreamFromURL(URL)<br/>At TokenStreamFactory.java:[line 179]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/core/TokenStreamFactory._optimizedStreamFromURL(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Method usage not detected<br/>At TokenStreamFactory.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65878');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65878" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.deser.std.FromStringDeserializer$Std<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.deser.std.FromStringDeserializer$Std._deserialize(String, DeserializationContext)<br/>At FromStringDeserializer.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer$Std._deserialize(Ljava/lang/String;Lathenz/shade/zts/com/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66010');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66010" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.ext.NioPathDeserializer<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.ext.NioPathDeserializer.deserialize(JsonParser, DeserializationContext)<br/>At NioPathDeserializer.java:[line 53]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/core/JsonParser.getText()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66079');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66079" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.ext.NioPathDeserializer<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.ext.NioPathDeserializer.deserialize(JsonParser, DeserializationContext)<br/>At NioPathDeserializer.java:[line 58]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/core/JsonParser.getText()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66884');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66884" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.codec.cli.Digest<br/>In method athenz.shade.zts.org.apache.commons.codec.cli.Digest.run(String, MessageDigest)<br/>At Digest.java:[line 118]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/apache/commons/codec/cli/Digest.inputs<br/>At Digest.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69388');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69388" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.SslConfigurator<br/>In method athenz.shade.zts.org.glassfish.jersey.SslConfigurator.createSSLContext()<br/>At SslConfigurator.java:[line 638]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/SslConfigurator.keyStoreFile<br/>At SslConfigurator.java:[line 638]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69467');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69467" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.SslConfigurator<br/>In method athenz.shade.zts.org.glassfish.jersey.SslConfigurator.createSSLContext()<br/>At SslConfigurator.java:[line 713]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/SslConfigurator.trustStoreFile<br/>At SslConfigurator.java:[line 713]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67079');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67079" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.logging.LogFactory<br/>In method athenz.shade.zts.org.apache.commons.logging.LogFactory.initDiagnostics()<br/>At LogFactory.java:[line 1476]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source athenz/shade/zts/org/apache/commons/logging/LogFactory.getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>At LogFactory.java:[line 1459]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66220');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "\\d\\d\\d\\d[-]\\d\\d[-]\\d\\d[T]\\d\\d[:]\\d\\d(?:[:]\\d\\d)?(\\.\\d+)?(Z|[+-]\\d\\d(?:[:]?\\d\\d)?)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66220" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value \\d\\d\\d\\d[-]\\d\\d[-]\\d\\d[T]\\d\\d[:]\\d\\d(?:[:]\\d\\d)?(\\.\\d+)?(Z|[+-]\\d\\d(?:[:]?\\d\\d)?)?<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.util.StdDateFormat<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.util.StdDateFormat.&lt;static initializer for StdDateFormat&gt;()<br/>At StdDateFormat.java:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65640');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65640" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.core.TokenStreamFactory<br/>In method athenz.shade.zts.com.fasterxml.jackson.core.TokenStreamFactory._optimizedStreamFromURL(URL)<br/>At TokenStreamFactory.java:[line 185]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/core/TokenStreamFactory._optimizedStreamFromURL(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65784');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65784" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.ObjectReader<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.ObjectReader._inputStream(URL)<br/>At ObjectReader.java:[line 2008]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/com/fasterxml/jackson/databind/ObjectReader._inputStream(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected<br/>At ObjectReader.java:[line 1331]<br/>At ObjectReader.java:[line 1610]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67163');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67163" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.commons.logging.LogFactory$5<br/>In method athenz.shade.zts.org.apache.commons.logging.LogFactory$5.run()<br/>At LogFactory.java:[line 1303]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/apache/commons/logging/LogFactory$5.val$url<br/>At LogFactory.java:[line 1303]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68935');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68935" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.ssl.SSLContextBuilder<br/>In method athenz.shade.zts.org.apache.http.ssl.SSLContextBuilder.loadKeyMaterial(URL, char[], char[], PrivateKeyStrategy)<br/>At SSLContextBuilder.java:[line 356]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/apache/http/ssl/SSLContextBuilder.loadKeyMaterial(Ljava/net/URL;[C[CLathenz/shade/zts/org/apache/http/ssl/PrivateKeyStrategy;)Lathenz/shade/zts/org/apache/http/ssl/SSLContextBuilder; parameter 3<br/>Method usage not detected<br/>At SSLContextBuilder.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69019');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69019" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.ssl.SSLContextBuilder<br/>In method athenz.shade.zts.org.apache.http.ssl.SSLContextBuilder.loadTrustMaterial(URL, char[], TrustStrategy)<br/>At SSLContextBuilder.java:[line 279]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/apache/http/ssl/SSLContextBuilder.loadTrustMaterial(Ljava/net/URL;[CLathenz/shade/zts/org/apache/http/ssl/TrustStrategy;)Lathenz/shade/zts/org/apache/http/ssl/SSLContextBuilder; parameter 2<br/>Method usage not detected<br/>At SSLContextBuilder.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69265');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69265" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.hk2.osgiresourcelocator.ServiceLoaderImpl<br/>In method athenz.shade.zts.org.glassfish.hk2.osgiresourcelocator.ServiceLoaderImpl.addProviders(Bundle)<br/>At ServiceLoaderImpl.java:[line 259]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/osgi/framework/Bundle.getEntry(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69546');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69546" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.client.HttpUrlConnectorProvider$DefaultConnectionFactory<br/>In method athenz.shade.zts.org.glassfish.jersey.client.HttpUrlConnectorProvider$DefaultConnectionFactory.getConnection(URL)<br/>At HttpUrlConnectorProvider.java:[line 276]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/client/HttpUrlConnectorProvider$DefaultConnectionFactory.getConnection(Ljava/net/URL;)Ljava/net/HttpURLConnection; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70196');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70196" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.l10n.Localizer<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.l10n.Localizer.localize(Localizable)<br/>At Localizer.java:[line 103]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/hk2/osgiresourcelocator/ResourceFinder.findEntry1(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source athenz/shade/zts/org/glassfish/hk2/osgiresourcelocator/ResourceFinder.findEntry(Ljava/lang/String;)Ljava/net/URL;<br/>At Localizer.java:[line 100]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69732');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69732" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry.getResourceBundle(String)<br/>At OsgiRegistry.java:[line 477]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/internal/OsgiRegistry.findEntries(Lorg/osgi/framework/Bundle;Ljava/lang/String;Ljava/lang/String;Z)Ljava/util/Enumeration;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source java/util/Enumeration.nextElement()Ljava/lang/Object;<br/>At OsgiRegistry.java:[line 473]<br/>At OsgiRegistry.java:[line 475]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69910');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69910" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry$BundleSpiProvidersLoader<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.OsgiRegistry$BundleSpiProvidersLoader.call()<br/>At OsgiRegistry.java:[line 205]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/internal/OsgiRegistry$BundleSpiProvidersLoader.spiRegistryUrl<br/>At OsgiRegistry.java:[line 205]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69989');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69989" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.ServiceFinder<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.ServiceFinder.parse(String, URL, Set)<br/>At ServiceFinder.java:[line 480]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source athenz/shade/zts/org/glassfish/jersey/internal/ServiceFinder.parse(Ljava/lang/String;Ljava/net/URL;Ljava/util/Set;)Ljava/util/Iterator; parameter 1<br/>At ServiceFinder.java:[line 132]<br/>At ServiceFinder.java:[line 549]<br/>At ServiceFinder.java:[line 686]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70334');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70334" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.internal.util.ReflectionHelper<br/>In method athenz.shade.zts.org.glassfish.jersey.internal.util.ReflectionHelper.getResourceAsStream(ClassLoader, Class, String)<br/>At ReflectionHelper.java:[line 1510]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/osgi/framework/Bundle.getEntry(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65714');">
+<td>
+<span class="priority-1">SECUJDES</span>
+</td>
+<td>Unsafe Jackson deserialization configuration used in athenz.shade.zts.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping) athenz.shade.zts.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As) ObjectMapper.java:[line 1765]</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65714" style="display: none;">
+<a href="#JACKSON_UNSAFE_DESERIALIZATION">Bug type JACKSON_UNSAFE_DESERIALIZATION (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.ObjectMapper<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping)<br/>Called method athenz.shade.zts.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As)<br/>At ObjectMapper.java:[line 1765]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67404');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67404" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory<br/>In method athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory.connectSocket(Socket, String, int, InetAddress, int, HttpParams)<br/>At MultihomePlainSocketFactory.java:[line 142]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67462');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67462" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory<br/>In method athenz.shade.zts.org.apache.http.conn.MultihomePlainSocketFactory.createSocket()<br/>At MultihomePlainSocketFactory.java:[line 89]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67520');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67520" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory<br/>In method athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory.createSocket()<br/>At PlainSocketFactory.java:[line 94]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67578');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67578" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory<br/>In method athenz.shade.zts.org.apache.http.conn.scheme.PlainSocketFactory.createSocket(HttpParams)<br/>At PlainSocketFactory.java:[line 89]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67636');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.conn.socket.PlainConnectionSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67636" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.socket.PlainConnectionSocketFactory<br/>In method athenz.shade.zts.org.apache.http.conn.socket.PlainConnectionSocketFactory.createSocket(HttpContext)<br/>At PlainConnectionSocketFactory.java:[line 59]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68819');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.impl.client.ProxyClient (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68819" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.client.ProxyClient<br/>In method athenz.shade.zts.org.apache.http.impl.client.ProxyClient.tunnel(HttpHost, HttpHost, Credentials)<br/>At ProxyClient.java:[line 202]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68877');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to athenz.shade.zts.org.apache.http.impl.pool.BasicConnFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68877" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.impl.pool.BasicConnFactory<br/>In method athenz.shade.zts.org.apache.http.impl.pool.BasicConnFactory.create(HttpHost)<br/>At BasicConnFactory.java:[line 150]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67694');">
+<td>
+<span class="priority-2">SECWHV</span>
+</td>
+<td>HostnameVerifier that accept any signed certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67694" style="display: none;">
+<a href="#WEAK_HOSTNAME_VERIFIER">Bug type WEAK_HOSTNAME_VERIFIER (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.ssl.AllowAllHostnameVerifier<br/>In method athenz.shade.zts.org.apache.http.conn.ssl.AllowAllHostnameVerifier.verify(String, String[], String[])<br/>At AllowAllHostnameVerifier.java:[line 54]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67857');">
+<td>
+<span class="priority-2">SECWHV</span>
+</td>
+<td>HostnameVerifier that accept any signed certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67857" style="display: none;">
+<a href="#WEAK_HOSTNAME_VERIFIER">Bug type WEAK_HOSTNAME_VERIFIER (click for details)</a>
+<br/>In class athenz.shade.zts.org.apache.http.conn.ssl.NoopHostnameVerifier<br/>In method athenz.shade.zts.org.apache.http.conn.ssl.NoopHostnameVerifier.verify(String, SSLSession)<br/>At NoopHostnameVerifier.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65952');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65952" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class athenz.shade.zts.com.fasterxml.jackson.databind.ext.DOMDeserializer<br/>In method athenz.shade.zts.com.fasterxml.jackson.databind.ext.DOMDeserializer.parse(String)<br/>At DOMDeserializer.java:[line 52]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70403');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70403" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class athenz.shade.zts.org.glassfish.jersey.message.internal.SourceProvider$DomSourceReader<br/>In method athenz.shade.zts.org.glassfish.jersey.message.internal.SourceProvider$DomSourceReader.readFrom(Class, Type, Annotation[], MediaType, MultivaluedMap, InputStream)<br/>At SourceProvider.java:[line 156]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="DESERIALIZATION_GADGET">DESERIALIZATION_GADGET: This class could be used as deserialization gadget</a>
+</h2>
+            
+<p>
+Deserialization gadget are class that could be used by an attacker to take advantage of a remote API using Native Serialization.
+This class is either adding custom behavior to deserialization with the <code>readObject</code> method (Serializable) or can be called
+ from a serialized object (InvocationHandler).
+</p>
+<p>
+This detector is intended to be used mostly by researcher. The real issue is using deserialization for remote operation.
+Removing gadget is a hardening practice to reduce the risk of being exploited.
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="DES_USAGE">DES_USAGE: DES is insecure</a>
+</h2>
+            
+<p>
+DES is considered strong ciphers for modern applications. Currently, NIST recommends the
+usage of AES block ciphers instead of DES.
+</p>
+<p>
+    <b>Example weak code:</b>
+<pre>Cipher c = Cipher.getInstance("DES/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Example solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.nist.gov/news-events/news/2005/06/nist-withdraws-outdated-data-encryption-standard">NIST Withdraws Outdated Data Encryption Standard</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326: Inadequate Encryption Strength</a>
+</p>
+
+        
+<h2>
+<a name="ECB_MODE">ECB_MODE: ECB mode is insecure</a>
+</h2>
+            
+<p>An authentication cipher mode which provides better confidentiality of the encrypted data should be used instead of Electronic Code Book (ECB) mode,
+which does not provide good confidentiality. Specifically, ECB mode produces the same output for the same input each time. So,
+for example, if a user is sending a password, the encrypted value is the same each time. This allows an attacker to intercept
+and replay the data.</p>
+<p>
+To fix this, something like Galois/Counter Mode (GCM) should be used instead.
+</p>
+<p>
+<b>Code at risk:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/ECB/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+<a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+<a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29">Wikipedia: Block cipher modes of operation</a><br/>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-38a/final">NIST: Recommendation for Block Cipher Modes of Operation</a>
+</p>
+
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="JACKSON_UNSAFE_DESERIALIZATION">JACKSON_UNSAFE_DESERIALIZATION: Unsafe Jackson deserialization configuration</a>
+</h2>
+            
+<p>When the Jackson databind library is used incorrectly the deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows the trigger of malicious operation.
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Explicitly define what types and subtypes you want to be available when using polymorphism through JsonTypeInfo.Id.NAME.
+Also, never call <code>ObjectMapper.enableDefaultTyping</code> (and then <code>readValue</code> a type that holds a Object or Serializable or Comparable or a known deserialization type).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public class Example {
+    static class ABean {
+        public int id;
+        public Object obj;
+    }
+
+    static class AnotherBean {
+        @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS) // or JsonTypeInfo.Id.MINIMAL_CLASS
+        public Object obj;
+    }
+
+    public void example(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.enableDefaultTyping();
+         mapper.readValue(json, ABean.class);
+    }
+
+    public void exampleTwo(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.readValue(json, AnotherBean.class);
+    }
+
+}
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://github.com/FasterXML/jackson-databind/issues/1599">Jackson Deserializer security vulnerability</a><br>
+<a href="https://github.com/mbechler/marshalsec">Java Unmarshaller Security - Turning your data into code execution</a><br>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_HOSTNAME_VERIFIER">WEAK_HOSTNAME_VERIFIER: HostnameVerifier that accept any signed certificates</a>
+</h2>
+            
+<p>A <code>HostnameVerifier</code> that accept any host are often use because of certificate reuse on many hosts.
+As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a truststore for example) should be built.
+Wildcard certificates should be created for reused on multiples subdomains.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>public class AllHosts implements HostnameVerifier {
+    public boolean verify(final String hostname, final SSLSession session) {
+        return true;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

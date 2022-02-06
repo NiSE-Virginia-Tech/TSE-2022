@@ -1,0 +1,1172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/bsf-all-3.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>7908 lines of code analyzed,
+	in 167 classes, 
+	in 27 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">13</td>
+<td align="right">1.64</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">2.28</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+<td align="right">
+<b>3.92</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">31</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66425');">
+<td>
+<span class="priority-1">SCRIPTE</span>
+</td>
+<td>This use of javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object; can be vulnerable to code injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66425" style="display: none;">
+<a href="#SCRIPT_ENGINE_INJECTION">Bug type SCRIPT_ENGINE_INJECTION (click for details)</a>
+<br/>In class com.sun.script.xpath.Main<br/>In method com.sun.script.xpath.Main.main(String[])<br/>At Main.java:[line 50]<br/>Sink method javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object;<br/>Sink parameter 0<br/>Tainted source com/sun/script/xpath/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67968');">
+<td>
+<span class="priority-2">SCRIPTE</span>
+</td>
+<td>This use of javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object; can be vulnerable to code injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67968" style="display: none;">
+<a href="#SCRIPT_ENGINE_INJECTION">Bug type SCRIPT_ENGINE_INJECTION (click for details)</a>
+<br/>In class org.apache.bsf.xml.JRubyReXMLHelper<br/>In method org.apache.bsf.xml.JRubyReXMLHelper.toScriptXML(OMElement)<br/>At JRubyReXMLHelper.java:[line 65]<br/>Sink method javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object;<br/>Sink parameter 0<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>Unknown source org/apache/bsf/xml/JRubyReXMLHelper.toScriptXML(Lorg/apache/axiom/om/OMElement;)Ljava/lang/Object; parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Method usage not detected<br/>At JRubyReXMLHelper.java:[line 62]<br/>At JRubyReXMLHelper.java:[line 63]<br/>At JRubyReXMLHelper.java:[line 64]<br/>At JRubyReXMLHelper.java:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">SECFREEM</span>
+</td>
+<td>Potential template injection with Freemarker template</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#TEMPLATE_INJECTION_FREEMARKER">Bug type TEMPLATE_INJECTION_FREEMARKER (click for details)</a>
+<br/>In class com.sun.script.freemarker.FreeMarkerScriptEngine<br/>In method com.sun.script.freemarker.FreeMarkerScriptEngine.eval(Reader, ScriptContext)<br/>At FreeMarkerScriptEngine.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.phobos.script.javascript.EmbeddedRhinoScriptEngine<br/>In method com.sun.phobos.script.javascript.EmbeddedRhinoScriptEngine.main(String[])<br/>At EmbeddedRhinoScriptEngine.java:[line 62]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/phobos/script/javascript/EmbeddedRhinoScriptEngine.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.phobos.script.javascript.RhinoScriptEngine<br/>In method com.sun.phobos.script.javascript.RhinoScriptEngine.main(String[])<br/>At RhinoScriptEngine.java:[line 502]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/phobos/script/javascript/RhinoScriptEngine.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65689');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65689" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.phobos.script.util.DeTagifier<br/>In method com.sun.phobos.script.util.DeTagifier.main(String[])<br/>At DeTagifier.java:[line 182]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/phobos/script/util/DeTagifier.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65758');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65758" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.freemarker.FreeMarkerScriptEngine<br/>In method com.sun.script.freemarker.FreeMarkerScriptEngine.initTemplateDir(Configuration, ScriptContext)<br/>At FreeMarkerScriptEngine.java:[line 192]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/script/ScriptContext.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At FreeMarkerScriptEngine.java:[line 187]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65896');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65896" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.java.MemoryClassLoader<br/>In method com.sun.script.java.MemoryClassLoader.toURLs(String)<br/>At MemoryClassLoader.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source com/sun/script/java/MemoryClassLoader.toURLs(Ljava/lang/String;)[Ljava/net/URL; parameter 0<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>At JavaScriptEngine.java:[line 112]<br/>At JavaScriptEngine.java:[line 122]<br/>At JavaScriptEngine.java:[line 260]<br/>At MemoryClassLoader.java:[line 49]<br/>At MemoryClassLoader.java:[line 54]<br/>At MemoryClassLoader.java:[line 86]<br/>At MemoryClassLoader.java:[line 88]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66045');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66045" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.java.MemoryJavaFileManager<br/>In method com.sun.script.java.MemoryJavaFileManager.toURI(String)<br/>At MemoryJavaFileManager.java:[line 125]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/script/java/MemoryJavaFileManager.toURI(Ljava/lang/String;)Ljava/net/URI; parameter 0<br/>Method usage not detected<br/>At MemoryJavaFileManager.java:[line 94]<br/>At MemoryJavaFileManager.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66139');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66139" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.jelly.ScriptJellyContext<br/>In method com.sun.script.jelly.ScriptJellyContext.setContextURLs()<br/>At ScriptJellyContext.java:[line 75]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/script/ScriptContext.getAttribute(Ljava/lang/String;I)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66208');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66208" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.jruby.JRubyScriptEngine<br/>In method com.sun.script.jruby.JRubyScriptEngine.getRubyReader(String)<br/>At JRubyScriptEngine.java:[line 298]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/sun/script/jruby/JRubyScriptEngine.getRubyReader(Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>At JRubyScriptEngine.java:[line 267]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66287');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66287" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.xpath.Main<br/>In method com.sun.script.xpath.Main.main(String[])<br/>At Main.java:[line 42]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/script/xpath/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66356');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66356" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.xpath.Main<br/>In method com.sun.script.xpath.Main.main(String[])<br/>At Main.java:[line 49]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/script/xpath/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66610');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66610" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.xslt.Main<br/>In method com.sun.script.xslt.Main.main(String[])<br/>At Main.java:[line 49]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/script/xslt/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66679');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66679" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.sun.script.xslt.Main<br/>In method com.sun.script.xslt.Main.main(String[])<br/>At Main.java:[line 53]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/script/xslt/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67326');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67326" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bsf.Main<br/>In method org.apache.bsf.Main.main(String[])<br/>At Main.java:[line 106]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;<br/>Tainted source org/apache/bsf/Main.main([Ljava/lang/String;)V parameter 0<br/>Tainted source java/util/Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>At Main.java:[line 69]<br/>At Main.java:[line 72]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67425');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67425" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bsf.utils.http.GenericHttpScriptContext<br/>In method org.apache.bsf.utils.http.GenericHttpScriptContext.getScriptSource()<br/>At GenericHttpScriptContext.java:[line 154]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bsf/utils/http/GenericHttpScriptContext.scriptDir<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At GenericHttpScriptContext.java:[line 140]<br/>At GenericHttpScriptContext.java:[line 141]<br/>At GenericHttpScriptContext.java:[line 149]<br/>At GenericHttpScriptContext.java:[line 151]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67549');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67549" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.bsf.utils.http.GenericHttpScriptContext<br/>In method org.apache.bsf.utils.http.GenericHttpScriptContext.initialize(Servlet, HttpServletRequest, HttpServletResponse)<br/>At GenericHttpScriptContext.java:[line 193]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/bsf/utils/http/GenericHttpScriptContext.scriptDir<br/>At GenericHttpScriptContext.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66748');">
+<td>
+<span class="priority-1">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66748" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.sun.script.xslt.Main<br/>In method com.sun.script.xslt.Main.main(String[])<br/>At Main.java:[line 51]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/sun/script/xslt/Main.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67628');">
+<td>
+<span class="priority-1">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67628" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.apache.bsf.utils.http.GenericHttpScriptContext<br/>In method org.apache.bsf.utils.http.GenericHttpScriptContext.forward(String)<br/>At GenericHttpScriptContext.java:[line 122]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Tainted source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/bsf/utils/http/GenericHttpScriptContext.forward(Ljava/lang/String;)V parameter 0<br/>At GenericHttpScriptContext.java:[line 113]<br/>At GenericHttpScriptContext.java:[line 116]<br/>At GenericHttpScriptContext.java:[line 119]<br/>At GenericHttpScriptContext.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67756');">
+<td>
+<span class="priority-1">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67756" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.apache.bsf.utils.http.GenericHttpScriptContext<br/>In method org.apache.bsf.utils.http.GenericHttpScriptContext.include(String)<br/>At GenericHttpScriptContext.java:[line 179]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Tainted source javax/servlet/ServletContext.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/bsf/utils/http/GenericHttpScriptContext.include(Ljava/lang/String;)V parameter 0<br/>At GenericHttpScriptContext.java:[line 170]<br/>At GenericHttpScriptContext.java:[line 173]<br/>At GenericHttpScriptContext.java:[line 176]<br/>At GenericHttpScriptContext.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67128');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67128" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine$1<br/>In method com.sun.script.xslt.XSLTScriptEngine$1.resolve(String, String)<br/>At XSLTScriptEngine.java:[line 200]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source com/sun/script/xslt/XSLTScriptEngine$1.resolve(Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/transform/Source; parameter 1<br/>Method usage not detected<br/>At XSLTScriptEngine.java:[line 199]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67217');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67217" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine$1<br/>In method com.sun.script.xslt.XSLTScriptEngine$1.resolve(String, String)<br/>At XSLTScriptEngine.java:[line 209]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/net/URL;Ljava/lang/String;)V<br/>Unknown source com/sun/script/xslt/XSLTScriptEngine$1.resolve(Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/transform/Source; parameter 1<br/>Unknown source com/sun/script/xslt/XSLTScriptEngine$1.resolve(Ljava/lang/String;Ljava/lang/String;)Ljavax/xml/transform/Source; parameter 0<br/>Method usage not detected<br/>At XSLTScriptEngine.java:[line 207]<br/>At XSLTScriptEngine.java:[line 208]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66817');">
+<td>
+<span class="priority-2">SECXSLT</span>
+</td>
+<td>A malicious XSLT could be provided to trigger remote code execution</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66817" style="display: none;">
+<a href="#MALICIOUS_XSLT">Bug type MALICIOUS_XSLT (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine<br/>In method com.sun.script.xslt.XSLTScriptEngine.evalTransform(Reader, ScriptContext)<br/>At XSLTScriptEngine.java:[line 169]<br/>Sink method javax/xml/transform/TransformerFactory.newTransformer(Ljavax/xml/transform/Source;)Ljavax/xml/transform/Transformer;<br/>Sink parameter 0<br/>Unknown source javax/xml/transform/stream/StreamSource.&lt;init&gt;(Ljava/io/Reader;)V<br/>At XSLTScriptEngine.java:[line 169]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67884');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67884" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.bsf.utils.http.HttpScriptServlet<br/>In method org.apache.bsf.utils.http.HttpScriptServlet.service(ServletRequest, ServletResponse)<br/>At HttpScriptServlet.java:[line 183]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/script/ScriptEngine.eval(Ljava/io/Reader;Ljavax/script/ScriptContext;)Ljava/lang/Object;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At HttpScriptServlet.java:[line 183]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66896');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66896" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine<br/>In method com.sun.script.xslt.XSLTScriptEngine.compileTransform(Reader, ScriptContext)<br/>At XSLTScriptEngine.java:[line 151]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66954');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66954" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine<br/>In method com.sun.script.xslt.XSLTScriptEngine.evalTransform(Reader, ScriptContext)<br/>At XSLTScriptEngine.java:[line 166]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67012');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67012" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine<br/>In method com.sun.script.xslt.XSLTScriptEngine.compileTransform(Reader, ScriptContext)<br/>At XSLTScriptEngine.java:[line 151]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67070');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67070" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class com.sun.script.xslt.XSLTScriptEngine<br/>In method com.sun.script.xslt.XSLTScriptEngine.evalTransform(Reader, ScriptContext)<br/>At XSLTScriptEngine.java:[line 166]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66494');">
+<td>
+<span class="priority-2">SECXXEXPA</span>
+</td>
+<td>The use of XPathExpression.evaluate(...) (XPath API) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66494" style="display: none;">
+<a href="#XXE_XPATH">Bug type XXE_XPATH (click for details)</a>
+<br/>In class com.sun.script.xpath.XPathScriptEngine<br/>In method com.sun.script.xpath.XPathScriptEngine.evalXPath(XPathExpression, ScriptContext)<br/>At XPathScriptEngine.java:[line 369]<br/>Value XPathExpression.evaluate(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66552');">
+<td>
+<span class="priority-2">SECXXEXPA</span>
+</td>
+<td>The use of XPathExpression.evaluate(...) (XPath API) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66552" style="display: none;">
+<a href="#XXE_XPATH">Bug type XXE_XPATH (click for details)</a>
+<br/>In class com.sun.script.xpath.XPathScriptEngine<br/>In method com.sun.script.xpath.XPathScriptEngine.evalXPath(XPathExpression, ScriptContext)<br/>At XPathScriptEngine.java:[line 373]<br/>Value XPathExpression.evaluate(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="SCRIPT_ENGINE_INJECTION">SCRIPT_ENGINE_INJECTION: Potential code injection when using Script Engine</a>
+</h2>
+            
+<p>
+    Dynamic code is being evaluate. A careful analysis of the code construction should be made. Malicious code execution
+    could lead to data leakage or operating system compromised.
+</p>
+<p>
+    If the evaluation of user code is intended, a proper sandboxing should be applied (see references).
+</p>
+
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void runCustomTrigger(String script) {
+    ScriptEngineManager factory = new ScriptEngineManager();
+    ScriptEngine engine = factory.getEngineByName("JavaScript");
+
+    engine.eval(script); //Bad things can happen here.
+}</pre>
+</p>
+
+<p><b>Solution:</b></p>
+<p>
+Safe evaluation of JavaScript code using "Cloudbees Rhino Sandbox" library.<br/>
+<pre>
+public void runCustomTrigger(String script) {
+    SandboxContextFactory contextFactory = new SandboxContextFactory();
+    Context context = contextFactory.makeContext();
+    contextFactory.enterContext(context);
+    try {
+        ScriptableObject prototype = context.initStandardObjects();
+        prototype.setParentScope(null);
+        Scriptable scope = context.newObject(prototype);
+        scope.setPrototype(prototype);
+
+        context.evaluateString(scope,script, null, -1, null);
+    } finally {
+        context.exit();
+    }
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://github.com/cloudbees/rhino-sandbox">Cloudbees Rhino Sandbox</a>: Utility to create sandbox with Rhino (block access to all classes)<br/>
+<a href="https://codeutopia.net/blog/2009/01/02/sandboxing-rhino-in-java/">CodeUtopia.net: Sandboxing Rhino in Java</a><br/>
+<a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+<a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+</p>
+
+        
+<h2>
+<a name="TEMPLATE_INJECTION_FREEMARKER">TEMPLATE_INJECTION_FREEMARKER: Potential template injection with Freemarker</a>
+</h2>
+            
+<p>
+Freemarker template engine is powerful. It is possible to add logic including condition statements, loops and external calls.
+It is not design to be sandbox to templating operations. A malicious user in control of a template can run malicious code
+on the server-side. Freemarker templates should be seen as scripts.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>Template template = cfg.getTemplate(inputTemplate);
+[...]
+template.process(data, swOut);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid letting end users manipulate templates with Freemarker. If you need to expose template editing to your users,
+prefer logic-less template engines such as Handlebars or Moustache (See references).
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://portswigger.net/research/server-side-template-injection">PortSwigger: Server-Side Template Injection</a><br/>
+<a href="https://jknack.github.io/handlebars.java/">Handlebars.java</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="MALICIOUS_XSLT">MALICIOUS_XSLT: A malicious XSLT could be provided</a>
+</h2>
+            
+<p>
+    "XSLT (Extensible Stylesheet Language Transformations) is a language for transforming XML documents into other XML documents".<sup>[1]</sup><br/>
+    It is possible to attach malicious behavior to those style sheets. Therefore, if an attacker can control the content or the source of the
+    style sheet, he might be able to trigger remote code execution.<sup>[2]</sup>
+</p>
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Source xslt = new StreamSource(new FileInputStream(inputUserFile)); //Dangerous source
+
+Transformer transformer = TransformerFactory.newInstance().newTransformer(xslt);
+
+Source text = new StreamSource(new FileInputStream("/data_2_process.xml"));
+transformer.transform(text, new StreamResult(...));
+</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+
+<p>The solution is to enable the secure processing mode which will block potential reference to Java classes such as <code>java.lang.Runtime</code>.</p>
+
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+Source xslt  = new StreamSource(new FileInputStream(inputUserFile));
+
+Transformer transformer = factory.newTransformer(xslt);
+</pre>
+
+<p>
+Alternatively, make sure the style sheet is loaded from a safe sources and make sure that vulnerabilities such as
+Path traversal <sup>[3][4]</sup> are not possible.
+</p>
+<p>
+<b>References</b><br/>
+[1] <a href="https://en.wikipedia.org/wiki/XSLT">Wikipedia: XSLT (Extensible Stylesheet Language Transformations)</a><br/>
+<a href="https://prezi.com/y_fuybfudgnd/offensive-xslt/">Offensive XSLT</a> by Nicolas Grégoire<br/>
+[2] <a href="https://www.agarri.fr/blog/archives/2012/07/02/from_xslt_code_execution_to_meterpreter_shells/index.html">From XSLT code execution to Meterpreter shells</a> by Nicolas Grégoire<br/>
+<a href="https://xhe.myxwiki.org/xwiki/bin/view/Main/">XSLT Hacking Encyclopedia</a> by Nicolas Grégoire<br/>
+<a href="https://www.acunetix.com/blog/articles/the-hidden-dangers-of-xsltprocessor-remote-xsl-injection/">Acunetix.com : The hidden dangers of XSLTProcessor - Remote XSL injection</a><br/>
+<a href="https://www.w3.org/TR/xslt">w3.org XSL Transformations (XSLT) Version 1.0</a> : w3c specification<br/>
+[3] <a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+[4] <a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XPATH">XXE_XPATH: XML parsing vulnerable to XXE (XPathExpression)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>DocumentBuilder builder = df.newDocumentBuilder();
+
+XPathFactory xPathFactory = XPathFactory.newInstance();
+XPath xpath = xPathFactory.newXPath();
+XPathExpression xPathExpr = xpath.compile("/somepath/text()");
+
+xPathExpr.evaluate(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+df.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder builder = df.newDocumentBuilder();
+
+[...]
+
+xPathExpr.evaluate( builder.parse(inputStream) );</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder builder = df.newDocumentBuilder();
+
+[...]
+
+xPathExpr.evaluate( builder.parse(inputStream) );</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet#XPathExpression">XML External Entity (XXE) Prevention Cheat Sheet</a>
+</p>
+
+        </body>
+</html>

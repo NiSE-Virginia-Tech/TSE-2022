@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/activemq-artemis.git/weld-se-2.4.0.Final.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>49754 lines of code analyzed,
+	in 1762 classes, 
+	in 130 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">32</td>
+<td align="right">0.64</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+<td align="right">
+<b>0.66</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">33</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>33</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67344');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67344" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.jboss.weld.exceptions.WeldExceptionListMessage<br/>In method org.jboss.weld.exceptions.WeldExceptionListMessage.generateMessage()<br/>At WeldExceptionListMessage.java:[line 62]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68011');">
+<td>
+<span class="priority-1">SECCORS</span>
+</td>
+<td>The program defines an overly permissive Cross-Origin Resource Sharing (CORS) policy</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68011" style="display: none;">
+<a href="#PERMISSIVE_CORS">Bug type PERMISSIVE_CORS (click for details)</a>
+<br/>In class org.jboss.weld.probe.Resource$Handler<br/>In method org.jboss.weld.probe.Resource$Handler.setCorsHeaders(HttpServletResponse)<br/>At Resource.java:[line 449]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68222');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of java/util/logging/Logger.warning(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68222" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.jboss.weld.util.ServiceLoader<br/>In method org.jboss.weld.util.ServiceLoader.loadClass(String)<br/>At ServiceLoader.java:[line 228]<br/>Sink method java/util/logging/Logger.warning(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/util/ServiceLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; parameter 0<br/>Method usage with tainted arguments detected<br/>At ServiceLoader.java:[line 178]<br/>At ServiceLoader.java:[line 180]<br/>At ServiceLoader.java:[line 182]<br/>At ServiceLoader.java:[line 204]<br/>At ServiceLoader.java:[line 206]<br/>At ServiceLoader.java:[line 210]<br/>At ServiceLoader.java:[line 228]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class javax.el.ELProcessor<br/>In method javax.el.ELProcessor.getValue(String, Class)<br/>At ELProcessor.java:[line 126]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/el/ELProcessor.getValue(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object; parameter 1<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ELProcessor.java:[line 115]<br/>At ELProcessor.java:[line 126]<br/>At ELProcessor.java:[line 331]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65665');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65665" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class javax.el.ELProcessor<br/>In method javax.el.ELProcessor.setValue(String, Object)<br/>At ELProcessor.java:[line 151]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/el/ELProcessor.setValue(Ljava/lang/String;Ljava/lang/Object;)V parameter 1<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ELProcessor.java:[line 151]<br/>At ELProcessor.java:[line 331]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65769');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65769" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class javax.el.ELProcessor<br/>In method javax.el.ELProcessor.setVariable(String, String)<br/>At ELProcessor.java:[line 167]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/el/ELProcessor.setVariable(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/el/ELProcessor.bracket(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ELProcessor.java:[line 167]<br/>At ELProcessor.java:[line 331]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66434');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of org/jboss/weld/util/el/ForwardingExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66434" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.jboss.weld.el.WeldExpressionFactory<br/>In method org.jboss.weld.el.WeldExpressionFactory.createMethodExpression(ELContext, String, Class, Class[])<br/>At WeldExpressionFactory.java:[line 53]<br/>Sink method org/jboss/weld/util/el/ForwardingExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/jboss/weld/el/WeldExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; parameter 2<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66508');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of org/jboss/weld/util/el/ForwardingExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66508" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.jboss.weld.el.WeldExpressionFactory<br/>In method org.jboss.weld.el.WeldExpressionFactory.createValueExpression(ELContext, String, Class)<br/>At WeldExpressionFactory.java:[line 48]<br/>Sink method org/jboss/weld/util/el/ForwardingExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/jboss/weld/el/WeldExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68465');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68465" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.jboss.weld.util.el.ForwardingExpressionFactory<br/>In method org.jboss.weld.util.el.ForwardingExpressionFactory.createMethodExpression(ELContext, String, Class, Class[])<br/>At ForwardingExpressionFactory.java:[line 43]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/jboss/weld/util/el/ForwardingExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; parameter 2<br/>Method usage not detected<br/>At WeldExpressionFactory.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68549');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68549" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.jboss.weld.util.el.ForwardingExpressionFactory<br/>In method org.jboss.weld.util.el.ForwardingExpressionFactory.createValueExpression(ELContext, String, Class)<br/>At ForwardingExpressionFactory.java:[line 53]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/jboss/weld/util/el/ForwardingExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; parameter 1<br/>Method usage not detected<br/>At WeldExpressionFactory.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65873');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65873" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.bean.proxy.ProxyFactory<br/>In method org.jboss.weld.bean.proxy.ProxyFactory.dumpToFile(String, byte[])<br/>At ProxyFactory.java:[line 515]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/bean/proxy/ProxyFactory.dumpToFile(Ljava/lang/String;[B)V parameter 1<br/>At ProxyFactory.java:[line 357]<br/>At ProxyFactory.java:[line 359]<br/>At ProxyFactory.java:[line 362]<br/>At ProxyFactory.java:[line 365]<br/>At ProxyFactory.java:[line 372]<br/>At ProxyFactory.java:[line 392]<br/>At ProxyFactory.java:[line 480]<br/>At ProxyFactory.java:[line 515]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66101');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66101" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.config.WeldConfiguration<br/>In method org.jboss.weld.config.WeldConfiguration.initProxyDumpFilePath()<br/>At WeldConfiguration.java:[line 273]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/config/ConfigurationKey.defaultValue<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.getStringProperty(Lorg/jboss/weld/config/ConfigurationKey;)Ljava/lang/String;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.getProperty(Lorg/jboss/weld/config/ConfigurationKey;Ljava/lang/Class;)Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/ConfigurationKey.getDefaultValue()Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.properties<br/>At ConfigurationKey.java:[line 299]<br/>At WeldConfiguration.java:[line 132]<br/>At WeldConfiguration.java:[line 271]<br/>At WeldConfiguration.java:[line 467]<br/>At WeldConfiguration.java:[line 468]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66582');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66582" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.ClassPathBeanArchiveScanner<br/>In method org.jboss.weld.environment.deployment.discovery.ClassPathBeanArchiveScanner.scan()<br/>At ClassPathBeanArchiveScanner.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/jboss/weld/util/collections/ImmutableSet$Builder.build()Ljava/util/Set;<br/>Unknown source org/jboss/weld/util/collections/ImmutableSet.of([Ljava/lang/Object;)Ljava/util/Set;<br/>At ClassPathBeanArchiveScanner.java:[line 78]<br/>At ClassPathBeanArchiveScanner.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66681');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66681" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.DefaultBeanArchiveScanner<br/>In method org.jboss.weld.environment.deployment.discovery.DefaultBeanArchiveScanner.getBeanArchiveReference(URL)<br/>At DefaultBeanArchiveScanner.java:[line 103]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>Unknown source org/jboss/weld/environment/deployment/discovery/DefaultBeanArchiveScanner.getBeanArchiveReference(Ljava/net/URL;)Ljava/lang/String; parameter 0<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At DefaultBeanArchiveScanner.java:[line 76]<br/>At DefaultBeanArchiveScanner.java:[line 79]<br/>At DefaultBeanArchiveScanner.java:[line 96]<br/>At DefaultBeanArchiveScanner.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66800');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66800" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.FileSystemBeanArchiveHandler<br/>In method org.jboss.weld.environment.deployment.discovery.FileSystemBeanArchiveHandler.handle(String)<br/>At FileSystemBeanArchiveHandler.java:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/environment/deployment/discovery/FileSystemBeanArchiveHandler.handle(Ljava/lang/String;)Lorg/jboss/weld/environment/deployment/discovery/BeanArchiveBuilder; parameter 0<br/>Method usage not detected<br/>At FileSystemBeanArchiveHandler.java:[line 56]<br/>At JandexFileSystemBeanArchiveHandler.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66894');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66894" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.FileSystemBeanArchiveHandler<br/>In method org.jboss.weld.environment.deployment.discovery.FileSystemBeanArchiveHandler.handle(String)<br/>At FileSystemBeanArchiveHandler.java:[line 59]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/environment/deployment/discovery/FileSystemBeanArchiveHandler.handle(Ljava/lang/String;)Lorg/jboss/weld/environment/deployment/discovery/BeanArchiveBuilder; parameter 0<br/>Method usage not detected<br/>At JandexFileSystemBeanArchiveHandler.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67057');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67057" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.jandex.JandexIndexBeanArchiveHandler<br/>In method org.jboss.weld.environment.deployment.discovery.jandex.JandexIndexBeanArchiveHandler.handle(String)<br/>At JandexIndexBeanArchiveHandler.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/environment/deployment/discovery/jandex/JandexIndexBeanArchiveHandler.handle(Ljava/lang/String;)Lorg/jboss/weld/environment/deployment/discovery/BeanArchiveBuilder; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67131');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67131" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.se.Weld<br/>In method org.jboss.weld.environment.se.Weld.handleJar(URI, boolean, String, Set)<br/>At Weld.java:[line 907]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/environment/se/Weld.handleJar(Ljava/net/URI;ZLjava/lang/String;Ljava/util/Set;)V parameter 3<br/>Unknown source java/net/URI.getSchemeSpecificPart()Ljava/lang/String;<br/>At Weld.java:[line 852]<br/>At Weld.java:[line 855]<br/>At Weld.java:[line 861]<br/>At Weld.java:[line 897]<br/>At Weld.java:[line 899]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67255');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67255" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.environment.se.Weld<br/>In method org.jboss.weld.environment.se.Weld.scanPackages()<br/>At Weld.java:[line 859]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At Weld.java:[line 852]<br/>At Weld.java:[line 855]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67456');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67456" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.jboss.weld.probe.ProbeExtension<br/>In method org.jboss.weld.probe.ProbeExtension.exportDataIfNeeded(BeanManagerImpl)<br/>At ProbeExtension.java:[line 325]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/config/ConfigurationKey.defaultValue<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.getStringProperty(Lorg/jboss/weld/config/ConfigurationKey;)Ljava/lang/String;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.getProperty(Lorg/jboss/weld/config/ConfigurationKey;Ljava/lang/Class;)Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/ConfigurationKey.getDefaultValue()Ljava/lang/Object;<br/>Unknown source org/jboss/weld/config/WeldConfiguration.properties<br/>At ConfigurationKey.java:[line 299]<br/>At WeldConfiguration.java:[line 132]<br/>At WeldConfiguration.java:[line 467]<br/>At WeldConfiguration.java:[line 468]<br/>At ProbeExtension.java:[line 323]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67398');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([\\p{L}_$][\\p{L}\\p{N}_$]*\\.)*[\\p{L}_$][\\p{L}\\p{N}_$]*" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67398" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([\\p{L}_$][\\p{L}\\p{N}_$]*\\.)*[\\p{L}_$][\\p{L}\\p{N}_$]*<br/>In class org.jboss.weld.metadata.FilterPredicate$CDI11Matcher<br/>In method org.jboss.weld.metadata.FilterPredicate$CDI11Matcher.&lt;static initializer for CDI11Matcher&gt;()<br/>At FilterPredicate.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66022');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66022" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.jboss.weld.bootstrap.spi.helpers.FileBasedBootstrapConfiguration<br/>In method org.jboss.weld.bootstrap.spi.helpers.FileBasedBootstrapConfiguration.loadProperties(URL)<br/>At FileBasedBootstrapConfiguration.java:[line 52]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/bootstrap/spi/helpers/FileBasedBootstrapConfiguration.loadProperties(Ljava/net/URL;)Ljava/util/Properties; parameter 0<br/>At FileBasedBootstrapConfiguration.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66245');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66245" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.jboss.weld.config.WeldConfiguration<br/>In method org.jboss.weld.config.WeldConfiguration.loadProperties(URL)<br/>At WeldConfiguration.java:[line 474]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/config/WeldConfiguration.loadProperties(Ljava/net/URL;)Ljava/util/Properties; parameter 0<br/>At WeldConfiguration.java:[line 237]<br/>At WeldConfiguration.java:[line 240]<br/>At WeldConfiguration.java:[line 241]<br/>At WeldConfiguration.java:[line 246]<br/>At WeldConfiguration.java:[line 247]<br/>At WeldConfiguration.java:[line 313]<br/>At WeldConfiguration.java:[line 364]<br/>At WeldConfiguration.java:[line 365]<br/>At WeldConfiguration.java:[line 366]<br/>At WeldConfiguration.java:[line 380]<br/>At WeldConfiguration.java:[line 381]<br/>At WeldConfiguration.java:[line 382]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66978');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66978" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.jboss.weld.environment.deployment.discovery.jandex.JandexFileSystemBeanArchiveHandler<br/>In method org.jboss.weld.environment.deployment.discovery.jandex.JandexFileSystemBeanArchiveHandler.addToIndex(URL)<br/>At JandexFileSystemBeanArchiveHandler.java:[line 62]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/environment/deployment/discovery/jandex/JandexFileSystemBeanArchiveHandler.addToIndex(Ljava/net/URL;)V parameter 0<br/>At JandexFileSystemBeanArchiveHandler.java:[line 55]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68366');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68366" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.jboss.weld.util.ServiceLoader<br/>In method org.jboss.weld.util.ServiceLoader.loadServiceFile(URL)<br/>At ServiceLoader.java:[line 174]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/util/ServiceLoader.loadServiceFile(Ljava/net/URL;)V parameter 0<br/>At ServiceLoader.java:[line 161]<br/>At ServiceLoader.java:[line 162]<br/>At ServiceLoader.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68633');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68633" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.jboss.weld.xml.BeansXmlParser<br/>In method org.jboss.weld.xml.BeansXmlParser.parse(URL)<br/>At BeansXmlParser.java:[line 100]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/xml/BeansXmlParser.parse(Ljava/net/URL;)Lorg/jboss/weld/bootstrap/spi/BeansXml; parameter 0<br/>Method usage not detected<br/>At WeldBootstrap.java:[line 131]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67600');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67600" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.ProbeFilter<br/>In method org.jboss.weld.probe.ProbeFilter.embedInfoSnippet(HttpServletRequest, HttpServletResponse, Invocation$Builder, FilterChain)<br/>At ProbeFilter.java:[line 195]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/probe/ProbeFilter$ResponseWrapper.output<br/>Unknown source java/io/CharArrayWriter.toString()Ljava/lang/String;<br/>Unknown source org/jboss/weld/probe/ProbeFilter$ResponseWrapper.getOutput()Ljava/lang/String;<br/>At ProbeFilter.java:[line 187]<br/>At ProbeFilter.java:[line 306]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67699');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67699" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.ProbeFilter<br/>In method org.jboss.weld.probe.ProbeFilter.embedInfoSnippet(HttpServletRequest, HttpServletResponse, Invocation$Builder, FilterChain)<br/>At ProbeFilter.java:[line 210]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/CharArrayWriter.toString()Ljava/lang/String;<br/>Unknown source java/io/CharArrayWriter.&lt;init&gt;()V<br/>At ProbeFilter.java:[line 197]<br/>At ProbeFilter.java:[line 210]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67793');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67793" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.ProbeFilter<br/>In method org.jboss.weld.probe.ProbeFilter.embedInfoSnippet(HttpServletRequest, HttpServletResponse, Invocation$Builder, FilterChain)<br/>At ProbeFilter.java:[line 213]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/probe/ProbeFilter$ResponseWrapper.output<br/>Unknown source java/io/CharArrayWriter.toString()Ljava/lang/String;<br/>Unknown source org/jboss/weld/probe/ProbeFilter$ResponseWrapper.getOutput()Ljava/lang/String;<br/>At ProbeFilter.java:[line 187]<br/>At ProbeFilter.java:[line 306]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67892');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter; could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67892" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.Resource$14<br/>In method org.jboss.weld.probe.Resource$14.handle(Resource$HttpMethod, JsonDataProvider, String[], HttpServletRequest, HttpServletResponse)<br/>At Resource.java:[line 223]<br/>Sink method java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;<br/>Sink parameter 0<br/>Unknown source java/io/StringWriter.&lt;init&gt;()V<br/>Unknown source org/jboss/weld/probe/IOUtils.getResourceAsString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/StringWriter.toString()Ljava/lang/String;<br/>At IOUtils.java:[line 41]<br/>At IOUtils.java:[line 55]<br/>At Resource.java:[line 217]<br/>At Resource.java:[line 222]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68074');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter; could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68074" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.Resource$Handler<br/>In method org.jboss.weld.probe.Resource$Handler.append(HttpServletResponse, String)<br/>At Resource.java:[line 395]<br/>Sink method java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/probe/Resource$Handler.append(Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68148');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter; could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68148" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.jboss.weld.probe.Resource$Handler<br/>In method org.jboss.weld.probe.Resource$Handler.appendFound(HttpServletResponse, String)<br/>At Resource.java:[line 400]<br/>Sink method java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;<br/>Sink parameter 0<br/>Unknown source org/jboss/weld/probe/Resource$Handler.appendFound(Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68717');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68717" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.jboss.weld.xml.BeansXmlParser<br/>In method org.jboss.weld.xml.BeansXmlParser.parse(URL)<br/>At BeansXmlParser.java:[line 119]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PERMISSIVE_CORS">PERMISSIVE_CORS: Overly permissive CORS policy</a>
+</h2>
+            
+<p>
+Prior to HTML5, Web browsers enforced the Same Origin Policy which ensures that in order for JavaScript to access the contents of a Web page, both the JavaScript and the Web page must originate from the same domain. Without the Same Origin Policy, a malicious website could serve up JavaScript that loads sensitive information from other websites using a client's credentials, cull through it, and communicate it back to the attacker. HTML5 makes it possible for JavaScript to access data across domains if a new HTTP header called Access-Control-Allow-Origin is defined. With this header, a Web server defines which other domains are allowed to access its domain using cross-origin requests. However, caution should be taken when defining the header because an overly permissive CORS policy will allow a malicious application to communicate with the victim application in an inappropriate way, leading to spoofing, data theft, relay and other attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>response.addHeader("Access-Control-Allow-Origin", "*");</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid using * as the value of the Access-Control-Allow-Origin header, which indicates that the application's data is accessible to JavaScript running on any domain.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.w3.org/TR/cors/">W3C Cross-Origin Resource Sharing</a><br/>
+<a href="https://enable-cors.org/">Enable Cross-Origin Resource Sharing</a><br/>
+</p>
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="EL_INJECTION">EL_INJECTION: Potential code injection when using Expression Language (EL)</a>
+</h2>
+            
+<p>
+    An expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>public void evaluateExpression(String expression) {
+    FacesContext context = FacesContext.getCurrentInstance();
+    ExpressionFactory expressionFactory = context.getApplication().getExpressionFactory();
+    ELContext elContext = context.getELContext();
+    ValueExpression vex = expressionFactory.createValueExpression(elContext, expression, String.class);
+    return (String) vex.getValue(elContext);
+}</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://blog.mindedsecurity.com/2015/11/reliable-os-shell-with-el-expression.html">Minded Security: Abusing EL for executing OS commands</a><br/>
+    <a href="https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html">The Java EE 6 Tutorial: Expression Language</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="http://danamodio.com/appsec/research/spring-remote-code-with-expression-language-injection/">Dan Amodio's blog: Remote Code with Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_SAXPARSER">XXE_SAXPARSER: XML parsing vulnerable to XXE (SAXParser)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

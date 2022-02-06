@@ -1,0 +1,318 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 641.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 13 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.08
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.21
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.61
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.68
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.74
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.79
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.84
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r3 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(varReplacer3757)
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509KeyManager createKeyManager(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: fd145ea0ed2ba7abaece63058bad7400bc267fe741691d49191f7714730d9054
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.KeyStore
+		Statement: r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5858)
+		Method: <org.apache.zookeeper.util.PemReader: java.security.KeyStore loadTrustStore(java.io.File)>
+		SHA-256: e4454d6fdd09a411b67a4424352337c70228520d444fafed5b694534582faf56
+		Secure: true
+	Object:
+		Variable: r6
+		Type: javax.crypto.Cipher
+		Statement: r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r17)
+		Method: <org.apache.zookeeper.util.PemReader: java.security.PrivateKey loadPrivateKey(java.lang.String,java.util.Optional)>
+		SHA-256: 5577859ef072cb64d6bf4d0b15c57688a28f61cbb9595831857190c613ac05dc
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.cert.PKIXBuilderParameters
+		Statement: specialinvoke $r11.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>(r2, $r12)
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509TrustManager createTrustManager(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean)>
+		SHA-256: 4f2aecbe10640274dc505ea714a388a400621d5951fa41005374799e7c3d2187
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer3764)
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509TrustManager createTrustManager(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean)>
+		SHA-256: 26906ff4c3125d9786bfaa4c6f010f6f1d0029196435ffad15de905909cc3bae
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r4 = virtualinvoke r3.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509KeyManager createKeyManager(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 47ffce06e6ad4c12d8512b6f72c16c19a8970fb704c429677f8090bbb858c11f
+		Secure: false
+	Object:
+		Variable: r24
+		Type: javax.net.ssl.SSLContext
+		Statement: r24 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1404)
+		Method: <org.apache.zookeeper.server.NettyServerCnxnFactory: void initSSL(io.netty.channel.ChannelPipeline)>
+		SHA-256: f82c5123b9c011c4b852bdbca35b7da507c9ccf5eb45acf51d5d61d943722b29
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.apache.zookeeper.server.auth.DigestAuthenticationProvider: java.lang.String generateDigest(java.lang.String)>
+		SHA-256: 439159b0f8606c5cfaa38b5ee2ae24b38549247c191a9456c70811a7f7e17948
+		Secure: false
+	Object:
+		Variable: r66
+		Type: javax.net.ssl.SSLContext
+		Statement: r66 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r65)
+		Method: <org.apache.zookeeper.common.X509Util: org.apache.zookeeper.common.SSLContextAndOptions createSSLContextAndOptions(org.apache.zookeeper.common.ZKConfig)>
+		SHA-256: aa2c2fa42ed604ebb008c9d703cf753d0275e803b7303bdee9a39724c3fbc949
+		Secure: false
+	Object:
+		Variable: r26
+		Type: javax.net.ssl.SSLEngine
+		Statement: r26 = virtualinvoke r24.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <org.apache.zookeeper.server.NettyServerCnxnFactory: void initSSL(io.netty.channel.ChannelPipeline)>
+		SHA-256: 50835494a2f290567dd1f780cfb1e94f2f0d3f88db29fc6f7a2852cc3e033b97
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4221)
+		Method: <org.apache.zookeeper.server.auth.DigestAuthenticationProvider: java.lang.String generateDigest(java.lang.String)>
+		SHA-256: d9904fe9b0e27b88c1381ad04cf9522b76324836e1fa67811dfdb15396dabfdb
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r5 = virtualinvoke r4.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509TrustManager createTrustManager(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean)>
+		SHA-256: 5b82aab939da004dea00e9253bb3e4d6a29f3e246c55522146f4c3bbf1742192
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.apache.zookeeper.server.auth.DigestAuthenticationProvider: java.lang.String generateDigest(java.lang.String)>
+		SHA-256: fe5432a77924b3454c03bd970ab1e1503028a3d5ce7e83ce22e3607e843e2dfc
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer695)
+		Method: <org.apache.zookeeper.common.PKCS12FileLoader: java.security.KeyStore keyStoreInstance()>
+		SHA-256: eaa8db6fb46405409431ce525c6cd0bf31fa9b3f9b6f72b3471554d58230c64f
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.SecretKeyFactory
+		Statement: r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r12)
+		Method: <org.apache.zookeeper.util.PemReader: java.security.PrivateKey loadPrivateKey(java.lang.String,java.util.Optional)>
+		SHA-256: 1eeda54420a3a576132bf676de31e349658dacc4aff54a2bee59aff4581c0dc0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer3835)
+		Method: <org.apache.zookeeper.common.JKSFileLoader: java.security.KeyStore keyStoreInstance()>
+		SHA-256: cb39b043716b95fe81b1dd4b099d9817d82e5f07548f3c67ba257536a594b95e
+		Secure: false
+	Object:
+		Variable: r5
+		Type: java.security.KeyStore
+		Statement: r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5863)
+		Method: <org.apache.zookeeper.util.PemReader: java.security.KeyStore loadKeyStore(java.io.File,java.io.File,java.util.Optional)>
+		SHA-256: a6a4e463abd84b2eaa17e41155dbe6549f69004c64778587c49a69efa91e63b8
+		Secure: true
+	Object:
+		Variable: $r22
+		Type: javax.net.ssl.CertPathTrustManagerParameters
+		Statement: specialinvoke $r22.<javax.net.ssl.CertPathTrustManagerParameters: void <init>(java.security.cert.CertPathParameters)>(r3)
+		Method: <org.apache.zookeeper.common.X509Util: javax.net.ssl.X509TrustManager createTrustManager(java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,boolean)>
+		SHA-256: 55d7fc67b2bcf96007766fd39bc680f08dc2599b86078af67e2d14ed7f07bdb8
+		Secure: true
+	Object:
+		Variable: r5
+		Type: javax.crypto.SecretKey
+		Statement: r5 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+		Method: <org.apache.zookeeper.util.PemReader: java.security.PrivateKey loadPrivateKey(java.lang.String,java.util.Optional)>
+		SHA-256: 651933658fca0d95665e40b94857c897e7fdeca83c66df5005cb50b2679b2d81
+		Secure: false
+
+Findings in Java Class: org.apache.zookeeper.util.PemReader
+
+	 in Method: java.security.PrivateKey loadPrivateKey(java.lang.String,java.util.Optional)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r13.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r16)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r5 = virtualinvoke r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #5577859ef072cb64d6bf4d0b15c57688a28f61cbb9595831857190c613ac05dc)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: r25 = virtualinvoke r24.<javax.crypto.EncryptedPrivateKeyInfo: java.security.spec.PKCS8EncodedKeySpec getKeySpec(javax.crypto.Cipher)>(r6)
+
+
+Findings in Java Class: org.apache.zookeeper.common.StandardTypeFileKeyStoreLoader
+
+	 in Method: java.security.KeyStore loadKeyStore()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #eaa8db6fb46405409431ce525c6cd0bf31fa9b3f9b6f72b3471554d58230c64f)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r16.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r1, $r10)
+
+
+Findings in Java Class: org.apache.zookeeper.server.NettyServerCnxnFactory
+
+	 in Method: void initSSL(io.netty.channel.ChannelPipeline)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #f82c5123b9c011c4b852bdbca35b7da507c9ccf5eb45acf51d5d61d943722b29)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init
+			at statement: r24 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1404)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r24.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r9, $r11, varReplacer1408)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r24.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r9, $r11, varReplacer1408)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #f82c5123b9c011c4b852bdbca35b7da507c9ccf5eb45acf51d5d61d943722b29)
+			First parameter (with value "TLSv1") should be any of {TLSv1.2}
+			at statement: r24 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1404)
+
+
+Findings in Java Class: org.apache.zookeeper.common.X509Util
+
+	 in Method: javax.net.ssl.X509KeyManager createKeyManager(java.lang.String,java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #fd145ea0ed2ba7abaece63058bad7400bc267fe741691d49191f7714730d9054)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r3.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r2, $r10)
+
+
+	 in Method: org.apache.zookeeper.common.SSLContextAndOptions createSSLContextAndOptions(org.apache.zookeeper.common.ZKConfig)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r66.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r78, r79, varReplacer3756)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r66.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r78, r79, varReplacer3756)
+
+
+Findings in Java Class: org.apache.zookeeper.server.auth.DigestAuthenticationProvider
+
+	 in Method: java.lang.String generateDigest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d9904fe9b0e27b88c1381ad04cf9522b76324836e1fa67811dfdb15396dabfdb)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4221)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 19
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 2
+	RequiredPredicateError: 5
+	NeverTypeOfError: 2
+	ConstraintError: 2
+	ForbiddenMethodError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 6.543 s
+

@@ -1,0 +1,120 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.004 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r5
+		Type: java.security.MessageDigest
+		Statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6218)
+		Method: <freemarker.debug.DebuggerClient: freemarker.debug.Debugger getDebugger(java.net.InetAddress,int,java.lang.String)>
+		SHA-256: 9913b5740e25d9e50086cf11a8513a0761a09b5ea5a577b1592accbc5a3ab684
+		Secure: false
+	Object:
+		Variable: r3
+		Type: java.security.MessageDigest
+		Statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6224)
+		Method: <freemarker.debug.impl.DebuggerServer$DebuggerAuthProtocol: void run()>
+		SHA-256: 28f3e628b3092e0e5f6b1e5331660a226318ba05def2d5bca72f85715f53f95c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <freemarker.debug.impl.DebuggerServer: void <clinit>()>
+		SHA-256: 99e9f61513670856546af8dc411292b93cd42252fef81d06ed6616d5e45e279a
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r16 = virtualinvoke r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <freemarker.debug.DebuggerClient: freemarker.debug.Debugger getDebugger(java.net.InetAddress,int,java.lang.String)>
+		SHA-256: 3c48ad5ab9feb9c08b178680e379e8e5887cd98a88a9b2598d432aea84462aa8
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r16 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <freemarker.debug.impl.DebuggerServer$DebuggerAuthProtocol: void run()>
+		SHA-256: 547889ec93a353efcfca8957a361f85e2f91909db8e35cc0c4c5d6a5c49cd8d1
+		Secure: false
+
+Findings in Java Class: freemarker.debug.DebuggerClient
+
+	 in Method: freemarker.debug.Debugger getDebugger(java.net.InetAddress,int,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9913b5740e25d9e50086cf11a8513a0761a09b5ea5a577b1592accbc5a3ab684)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6218)
+
+
+Findings in Java Class: freemarker.debug.impl.DebuggerServer$DebuggerAuthProtocol
+
+	 in Method: void run()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #28f3e628b3092e0e5f6b1e5331660a226318ba05def2d5bca72f85715f53f95c)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6224)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 11 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 16.47 s
+

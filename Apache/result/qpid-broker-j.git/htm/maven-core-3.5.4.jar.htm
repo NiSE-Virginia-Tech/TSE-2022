@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/qpid-broker-j.git/maven-core-3.5.4.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>15269 lines of code analyzed,
+	in 398 classes, 
+	in 56 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">39</td>
+<td align="right">2.55</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>39</b>
+</td>
+<td align="right">
+<b>2.55</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">39</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>39</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66481');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66481" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.maven.classrealm.DefaultClassRealmManager<br/>In method org.apache.maven.classrealm.DefaultClassRealmManager.newRealm(String)<br/>At DefaultClassRealmManager.java:[line 117]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65689');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65689" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.LegacyLocalRepositoryManager<br/>In method new org.apache.maven.artifact.repository.LegacyLocalRepositoryManager(ArtifactRepository)<br/>At LegacyLocalRepositoryManager.java:[line 96]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.getBasedir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65758');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65758" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.LegacyLocalRepositoryManager<br/>In method org.apache.maven.artifact.repository.LegacyLocalRepositoryManager.find(RepositorySystemSession, LocalArtifactRequest)<br/>At LegacyLocalRepositoryManager.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.pathOf(Lorg/apache/maven/artifact/Artifact;)Ljava/lang/String;<br/>Unknown source org/apache/maven/artifact/repository/LegacyLocalRepositoryManager.getPathForLocalArtifact(Lorg/eclipse/aether/artifact/Artifact;)Ljava/lang/String;<br/>At LegacyLocalRepositoryManager.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.LegacyLocalRepositoryManager<br/>In method org.apache.maven.artifact.repository.LegacyLocalRepositoryManager.find(RepositorySystemSession, LocalMetadataRequest)<br/>At LegacyLocalRepositoryManager.java:[line 173]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/LegacyLocalRepositoryManager.getPathForLocalMetadata(Lorg/eclipse/aether/metadata/Metadata;)Ljava/lang/String;<br/>Unknown source org/apache/maven/artifact/repository/LegacyLocalRepositoryManager.getPathForRemoteMetadata(Lorg/eclipse/aether/metadata/Metadata;Lorg/eclipse/aether/repository/RemoteRepository;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.pathOfLocalRepositoryMetadata(Lorg/apache/maven/artifact/metadata/ArtifactMetadata;Lorg/apache/maven/artifact/repository/ArtifactRepository;)Ljava/lang/String;<br/>At LegacyLocalRepositoryManager.java:[line 166]<br/>At LegacyLocalRepositoryManager.java:[line 170]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65941');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65941" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.LegacyLocalRepositoryManager<br/>In method org.apache.maven.artifact.repository.LegacyLocalRepositoryManager.overlay(ArtifactRepository, RepositorySystemSession, RepositorySystem)<br/>At LegacyLocalRepositoryManager.java:[line 75]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.getBasedir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66010');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66010" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.MavenArtifactRepository<br/>In method org.apache.maven.artifact.repository.MavenArtifactRepository.basedir(String)<br/>At MavenArtifactRepository.java:[line 290]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/MavenArtifactRepository.decode(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/maven/artifact/repository/MavenArtifactRepository.basedir(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/maven/artifact/repository/MavenArtifactRepository.decode(Ljava/lang/String;)Ljava/lang/String;<br/>At MavenArtifactRepository.java:[line 84]<br/>At MavenArtifactRepository.java:[line 211]<br/>At MavenArtifactRepository.java:[line 249]<br/>At MavenArtifactRepository.java:[line 250]<br/>At MavenArtifactRepository.java:[line 254]<br/>At MavenArtifactRepository.java:[line 259]<br/>At MavenArtifactRepository.java:[line 267]<br/>At MavenArtifactRepository.java:[line 273]<br/>At MavenArtifactRepository.java:[line 278]<br/>At MavenArtifactRepository.java:[line 286]<br/>At MavenArtifactRepository.java:[line 319]<br/>At MavenRepositorySystem.java:[line 223]<br/>At MavenRepositorySystem.java:[line 387]<br/>At MavenRepositorySystem.java:[line 430]<br/>At MavenRepositorySystem.java:[line 467]<br/>At MavenRepositorySystem.java:[line 592]<br/>At MavenRepositorySystem.java:[line 614]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66259');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66259" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.MavenArtifactRepository<br/>In method org.apache.maven.artifact.repository.MavenArtifactRepository.find(Artifact)<br/>At MavenArtifactRepository.java:[line 167]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/MavenArtifactRepository.pathOf(Lorg/apache/maven/artifact/Artifact;)Ljava/lang/String;<br/>Unknown source org/apache/maven/artifact/repository/layout/ArtifactRepositoryLayout.pathOf(Lorg/apache/maven/artifact/Artifact;)Ljava/lang/String;<br/>At MavenArtifactRepository.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66343');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66343" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata<br/>In method org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata.updateRepositoryMetadata(ArtifactRepository, ArtifactRepository)<br/>At AbstractRepositoryMetadata.java:[line 83]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.pathOfLocalRepositoryMetadata(Lorg/apache/maven/artifact/metadata/ArtifactMetadata;Lorg/apache/maven/artifact/repository/ArtifactRepository;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66412');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66412" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.bridge.MavenRepositorySystem<br/>In method org.apache.maven.bridge.MavenRepositorySystem.createDependencyArtifact(Dependency)<br/>At MavenRepositorySystem.java:[line 112]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/model/Dependency.getSystemPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66539');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66539" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.configuration.BasedirBeanConfigurationPathTranslator<br/>In method org.apache.maven.configuration.BasedirBeanConfigurationPathTranslator.translatePath(File)<br/>At BasedirBeanConfigurationPathTranslator.java:[line 64]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66608');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66608" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.configuration.BasedirBeanConfigurationPathTranslator<br/>In method org.apache.maven.configuration.BasedirBeanConfigurationPathTranslator.translatePath(File)<br/>At BasedirBeanConfigurationPathTranslator.java:[line 64]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.toURI()Ljava/net/URI;<br/>Unknown source java/net/URI.normalize()Ljava/net/URI;<br/>At BasedirBeanConfigurationPathTranslator.java:[line 64]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66692');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66692" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequest<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequest.copy(MavenExecutionRequest)<br/>At DefaultMavenExecutionRequest.java:[line 189]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/MavenExecutionRequest.getBaseDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66761');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66761" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequest<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequest.setLocalRepository(ArtifactRepository)<br/>At DefaultMavenExecutionRequest.java:[line 510]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.getBasedir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66830');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66830" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequest<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequest.setLocalRepositoryPath(String)<br/>At DefaultMavenExecutionRequest.java:[line 527]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/DefaultMavenExecutionRequest.setLocalRepositoryPath(Ljava/lang/String;)Lorg/apache/maven/execution/MavenExecutionRequest; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66904');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66904" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequest<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequest.setPomFile(String)<br/>At DefaultMavenExecutionRequest.java:[line 679]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/DefaultMavenExecutionRequest.setPomFile(Ljava/lang/String;)Lorg/apache/maven/execution/MavenExecutionRequest; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66978');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66978" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequestPopulator<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequestPopulator.createLocalRepository(MavenExecutionRequest)<br/>At DefaultMavenExecutionRequestPopulator.java:[line 198]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67047');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67047" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.DefaultMavenExecutionRequestPopulator<br/>In method org.apache.maven.execution.DefaultMavenExecutionRequestPopulator.localRepository(MavenExecutionRequest)<br/>At DefaultMavenExecutionRequestPopulator.java:[line 173]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.getBasedir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67116');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67116" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.execution.MavenSession<br/>In method new org.apache.maven.execution.MavenSession(PlexusContainer, Settings, ArtifactRepository, EventDispatcher, ReactorManager, List, String, Properties, Properties, Date)<br/>At MavenSession.java:[line 348]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/MavenSession.&lt;init&gt;(Lorg/codehaus/plexus/PlexusContainer;Lorg/apache/maven/settings/Settings;Lorg/apache/maven/artifact/repository/ArtifactRepository;Lorg/apache/maven/monitor/event/EventDispatcher;Lorg/apache/maven/execution/ReactorManager;Ljava/util/List;Ljava/lang/String;Ljava/util/Properties;Ljava/util/Properties;Ljava/util/Date;)V parameter 3<br/>Method usage not detected<br/>At MavenSession.java:[line 330]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67284');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67284" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.graph.DefaultGraphBuilder<br/>In method org.apache.maven.graph.DefaultGraphBuilder.isMatchingProject(MavenProject, String, File)<br/>At DefaultGraphBuilder.java:[line 361]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/graph/DefaultGraphBuilder.isMatchingProject(Lorg/apache/maven/project/MavenProject;Ljava/lang/String;Ljava/io/File;)Z parameter 1<br/>At DefaultGraphBuilder.java:[line 152]<br/>At DefaultGraphBuilder.java:[line 158]<br/>At DefaultGraphBuilder.java:[line 243]<br/>At DefaultGraphBuilder.java:[line 249]<br/>At DefaultGraphBuilder.java:[line 301]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67403');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67403" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.graph.DefaultGraphBuilder<br/>In method org.apache.maven.graph.DefaultGraphBuilder.isMatchingProject(MavenProject, String, File)<br/>At DefaultGraphBuilder.java:[line 361]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.toURI()Ljava/net/URI;<br/>Unknown source java/net/URI.normalize()Ljava/net/URI;<br/>At DefaultGraphBuilder.java:[line 361]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67487');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67487" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.graph.DefaultGraphBuilder<br/>In method org.apache.maven.graph.DefaultGraphBuilder.trimExcludedProjects(List, MavenExecutionRequest)<br/>At DefaultGraphBuilder.java:[line 238]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/MavenExecutionRequest.getBaseDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67556');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67556" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.graph.DefaultGraphBuilder<br/>In method org.apache.maven.graph.DefaultGraphBuilder.trimResumedProjects(List, MavenExecutionRequest)<br/>At DefaultGraphBuilder.java:[line 290]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/MavenExecutionRequest.getBaseDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67625');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67625" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.graph.DefaultGraphBuilder<br/>In method org.apache.maven.graph.DefaultGraphBuilder.trimSelectedProjects(List, ProjectDependencyGraph, MavenExecutionRequest)<br/>At DefaultGraphBuilder.java:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/execution/MavenExecutionRequest.getBaseDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67694');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67694" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.plugin.PluginParameterExpressionEvaluator<br/>In method org.apache.maven.plugin.PluginParameterExpressionEvaluator.alignToBaseDirectory(File)<br/>At PluginParameterExpressionEvaluator.java:[line 477]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67763');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67763" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.plugin.PluginParameterExpressionEvaluator<br/>In method org.apache.maven.plugin.PluginParameterExpressionEvaluator.alignToBaseDirectory(File)<br/>At PluginParameterExpressionEvaluator.java:[line 477]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.toURI()Ljava/net/URI;<br/>Unknown source java/net/URI.normalize()Ljava/net/URI;<br/>At PluginParameterExpressionEvaluator.java:[line 477]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68401');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68401" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.artifact.MavenMetadataSource<br/>In method org.apache.maven.project.artifact.MavenMetadataSource.createDependencyArtifact(ArtifactFactory, Dependency, String, ArtifactFilter)<br/>At MavenMetadataSource.java:[line 342]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/model/Dependency.getSystemPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68470');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68470" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.artifact.ProjectArtifactMetadata<br/>In method org.apache.maven.project.artifact.ProjectArtifactMetadata.storeInLocalRepository(ArtifactRepository, ArtifactRepository)<br/>At ProjectArtifactMetadata.java:[line 77]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/artifact/repository/ArtifactRepository.pathOfLocalRepositoryMetadata(Lorg/apache/maven/artifact/metadata/ArtifactMetadata;Lorg/apache/maven/artifact/repository/ArtifactRepository;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67847');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67847" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.DefaultProjectBuilder<br/>In method org.apache.maven.project.DefaultProjectBuilder.build(List, List, Map, File, Set, boolean, boolean, DefaultProjectBuilder$InternalConfig)<br/>At DefaultProjectBuilder.java:[line 456]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/model/Model.getModules()Ljava/util/List;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>At DefaultProjectBuilder.java:[line 447]<br/>At DefaultProjectBuilder.java:[line 454]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67941');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67941" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.DefaultProjectBuilder<br/>In method org.apache.maven.project.DefaultProjectBuilder.build(List, List, Map, File, Set, boolean, boolean, DefaultProjectBuilder$InternalConfig)<br/>At DefaultProjectBuilder.java:[line 490]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.toURI()Ljava/net/URI;<br/>Unknown source java/net/URI.normalize()Ljava/net/URI;<br/>At DefaultProjectBuilder.java:[line 490]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68025');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68025" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.DefaultProjectBuilder<br/>In method org.apache.maven.project.DefaultProjectBuilder.resolveDependencies(MavenProject, RepositorySystemSession)<br/>At DefaultProjectBuilder.java:[line 232]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/eclipse/aether/repository/LocalRepositoryManager.getPathForLocalArtifact(Lorg/eclipse/aether/artifact/Artifact;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68094');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68094" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.MavenProject<br/>In method org.apache.maven.project.MavenProject.addPath(List, String)<br/>At MavenProject.java:[line 302]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/project/MavenProject.addPath(Ljava/util/List;Ljava/lang/String;)V parameter 0<br/>At DefaultProjectBuilder.java:[line 704]<br/>At DefaultProjectBuilder.java:[line 705]<br/>At MavenProject.java:[line 299]<br/>At MavenProject.java:[line 322]<br/>At MavenProject.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68213');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68213" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.MavenProject<br/>In method org.apache.maven.project.MavenProject.addPath(List, String)<br/>At MavenProject.java:[line 309]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/project/MavenProject.addPath(Ljava/util/List;Ljava/lang/String;)V parameter 0<br/>At DefaultProjectBuilder.java:[line 704]<br/>At DefaultProjectBuilder.java:[line 705]<br/>At MavenProject.java:[line 299]<br/>At MavenProject.java:[line 322]<br/>At MavenProject.java:[line 327]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68332');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68332" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.project.MavenProject<br/>In method org.apache.maven.project.MavenProject.deepCopy(MavenProject)<br/>At MavenProject.java:[line 1226]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.ReactorReader<br/>In method org.apache.maven.ReactorReader.find(MavenProject, Artifact)<br/>At ReactorReader.java:[line 175]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/model/Build.getTestOutputDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.ReactorReader<br/>In method org.apache.maven.ReactorReader.find(MavenProject, Artifact)<br/>At ReactorReader.java:[line 183]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/model/Build.getOutputDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68539');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68539" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.toolchain.java.JavaToolchainFactory<br/>In method org.apache.maven.toolchain.java.JavaToolchainFactory.createToolchain(ToolchainModel)<br/>At JavaToolchainFactory.java:[line 101]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/plexus/util/FileUtils.normalize(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68608');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68608" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.toolchain.java.JavaToolchainImpl<br/>In method org.apache.maven.toolchain.java.JavaToolchainImpl.findTool(String)<br/>At JavaToolchainImpl.java:[line 66]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/codehaus/plexus/util/FileUtils.normalize(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68677');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68677" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.maven.toolchain.java.JavaToolchainImpl<br/>In method org.apache.maven.toolchain.java.JavaToolchainImpl.findTool(String, File)<br/>At JavaToolchainImpl.java:[line 79]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/maven/toolchain/java/JavaToolchainImpl.findTool(Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 1<br/>Method usage not detected<br/>At DefaultJavaToolChain.java:[line 33]<br/>At JavaToolchainImpl.java:[line 66]<br/>At JavaToolchainImpl.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67200');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67200" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.maven.extension.internal.CoreExtensionEntry<br/>In method org.apache.maven.extension.internal.CoreExtensionEntry.discoverFrom(ClassRealm)<br/>At CoreExtensionEntry.java:[line 95]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/codehaus/plexus/classworlds/realm/ClassRealm.getResources(Ljava/lang/String;)Ljava/util/Enumeration;<br/>Unknown source java/util/Enumeration.nextElement()Ljava/lang/Object;<br/>At CoreExtensionEntry.java:[line 95]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

@@ -1,0 +1,199 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 435.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r10
+		Type: java.security.KeyStore
+		Statement: r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r2)
+		Method: <org.apache.flume.api.ThriftRpcClient: javax.net.ssl.SSLContext createSSLContext(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 917fb2875d26a3639237579869fc1f9db1a495515fb416d82c461bb0a7e578bf
+		Secure: false
+	Object:
+		Variable: r40
+		Type: javax.net.ssl.SSLEngine
+		Statement: r40 = virtualinvoke r39.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)>
+		SHA-256: a344a2ea2b9a45e94c7bd2270c512c6f851c5ada566f6c857ee7aeb4bba18315
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLContext
+		Statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer279)
+		Method: <org.apache.flume.api.ThriftRpcClient: javax.net.ssl.SSLContext createSSLContext(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 2f14256a875d56ad346ef6368ecbc74789b8e0d0e6ebce6da15a5cc44fadecd6
+		Secure: false
+	Object:
+		Variable: r38
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r38 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer81)
+		Method: <org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)>
+		SHA-256: 16e3efa9534ac63457faa4b87cd587311b6da019378d3d162d0761305acdc838
+		Secure: false
+	Object:
+		Variable: r36
+		Type: java.security.KeyStore
+		Statement: r36 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r22)
+		Method: <org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)>
+		SHA-256: da3f5fe8e4c4180d6c544755ec5f4ecd00dff00d714cd63918af46c05f433d61
+		Secure: false
+	Object:
+		Variable: r39
+		Type: javax.net.ssl.SSLContext
+		Statement: r39 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer75)
+		Method: <org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)>
+		SHA-256: e75856ab34847c3a1c5d7633eb39b2d4472c54bca8bdb33b0612de85af664364
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r11 = virtualinvoke r9.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.flume.api.ThriftRpcClient: javax.net.ssl.SSLContext createSSLContext(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 4665894cb8d81b60a4372ee7125653647aec6e5c27c48be98ef45fc51b1c317e
+		Secure: false
+	Object:
+		Variable: r35
+		Type: java.lang.Object[]
+		Statement: r35 = virtualinvoke r38.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)>
+		SHA-256: 5e809523a3da3f76e04a161a43f204837e7ff569344aa0ac36eafeda6a2d57d9
+		Secure: false
+	Object:
+		Variable: r9
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r9 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r4)
+		Method: <org.apache.flume.api.ThriftRpcClient: javax.net.ssl.SSLContext createSSLContext(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: b6d88839657226452a3bc0b95d8fc8301345b36e5f997f6e56af14b83792079
+		Secure: false
+
+Findings in Java Class: org.apache.flume.api.NettyAvroRpcClient$SSLCompressionChannelFactory
+
+	 in Method: org.jboss.netty.channel.socket.SocketChannel newChannel(org.jboss.netty.channel.ChannelPipeline)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #da3f5fe8e4c4180d6c544755ec5f4ecd00dff00d714cd63918af46c05f433d61)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r36.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r37, $r24)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r38.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r36)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r39.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer85, r54, varReplacer85)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r39.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer85, r54, varReplacer85)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e75856ab34847c3a1c5d7633eb39b2d4472c54bca8bdb33b0612de85af664364)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r39 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer75)
+
+
+Findings in Java Class: org.apache.flume.api.ThriftRpcClient
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext(java.lang.String,java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #917fb2875d26a3639237579869fc1f9db1a495515fb416d82c461bb0a7e578bf)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r10.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r5, $r6)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2f14256a875d56ad346ef6368ecbc74789b8e0d0e6ebce6da15a5cc44fadecd6)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer279)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r9.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r10)
+
+		TypestateError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #b6d88839657226452a3bc0b95d8fc8301345b36e5f997f6e56af14b83792079)
+			Unexpected call to method init on object of type javax.net.ssl.TrustManagerFactory. Expect a call to one of the following methods getTrustManagers
+			at statement: virtualinvoke r9.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r10)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer276, $r11, varReplacer276)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer276, $r11, varReplacer276)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	TypestateError: 1
+	RequiredPredicateError: 6
+	NeverTypeOfError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.763 s
+

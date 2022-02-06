@@ -1,0 +1,150 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/instagram4j/target/instagram4j-1.8-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 445.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r11
+		Type: javax.crypto.Mac
+		Statement: r11 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer19)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String generateHash(java.lang.String,java.lang.String)>
+		SHA-256: 2e432733aab002c34abba154b76911eeb7cdd182ea8537925f466c44ba779d44
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: r3 = virtualinvoke r11.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String generateHash(java.lang.String,java.lang.String)>
+		SHA-256: f323a765cc79c26df485442e95a496f3d55d07ec6c400f6cf2e423236d767827
+		Secure: true
+	Object:
+		Variable: varReplacer16
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer16)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String generateHash(java.lang.String,java.lang.String)>
+		SHA-256: 8112e486bf65b32e5562a72c442c34c039c95f1d93d3d5ab4e359c7756ab80ec
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String digest(java.lang.String,java.lang.String)>
+		SHA-256: a56932f25779a4ed231f4929c17ff31a626da76603c4754712e971e218751dee
+		Secure: false
+	Object:
+		Variable: r12
+		Type: java.security.MessageDigest
+		Statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String digest(java.lang.String,java.lang.String)>
+		SHA-256: cb8cbe7c3585d0e0982a0c5cef9520ebc019d705677456dcb9868016a6e87767
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r11.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String generateHash(java.lang.String,java.lang.String)>
+		SHA-256: 60dbdfc7b65aa7da5dfc32146618bce2d2cf8aae42ebd30783b974261794198a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer16)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String generateHash(java.lang.String,java.lang.String)>
+		SHA-256: eaa628128e45502ec003d23f10827af8e92dac0fc2e183c059df0e6f55c7d5e5
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: r2 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.brunocvcunha.instagram4j.util.InstagramHashUtil: java.lang.String digest(java.lang.String,java.lang.String)>
+		SHA-256: 847893f2f42f8b005b393df2bdafac060f701659bec70a544029f2311aec5ed1
+		Secure: false
+
+Findings in Java Class: org.brunocvcunha.instagram4j.util.InstagramHashUtil
+
+	 in Method: java.lang.String digest(java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #cb8cbe7c3585d0e0982a0c5cef9520ebc019d705677456dcb9868016a6e87767)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+
+	 in Method: java.lang.String generateHash(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer16)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 1
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.763 s

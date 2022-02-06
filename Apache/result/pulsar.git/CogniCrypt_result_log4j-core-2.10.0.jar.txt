@@ -1,0 +1,202 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 901.5 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r1 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r4)
+		Method: <org.apache.logging.log4j.core.net.ssl.KeyStoreConfiguration: javax.net.ssl.KeyManagerFactory initKeyManagerFactory()>
+		SHA-256: 90f720b8e3e2f21c833f15936f3b43055b2d41c264bd78abc5b2f2dd900f137a
+		Secure: false
+	Object:
+		Variable: r10
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r10 = virtualinvoke r12.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.logging.log4j.core.net.ssl.SslConfiguration: javax.net.ssl.SSLContext createSslContext(boolean,boolean)>
+		SHA-256: 271024e0dfc2ce2ffc83f5e3eaf1d0326ba471ae2d243562522ef2a282ea8805
+		Secure: false
+	Object:
+		Variable: r15
+		Type: byte[]
+		Statement: virtualinvoke r0.<java.util.Random: void nextBytes(byte[])>(r15)
+		Method: <org.apache.logging.log4j.core.util.UuidUtil: void <clinit>()>
+		SHA-256: 308ae4b38d7ee6a6e0a00590fb17f378bde04c3ddf6260a6dfa887ed4ba16579
+		Secure: true
+	Object:
+		Variable: r25
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r25.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.logging.log4j.core.util.UuidUtil: void <clinit>()>
+		SHA-256: 3eb25761ae0b84998274d98c9273ea58a8b39255bf79eb2564ec816bd6a5f4c8
+		Secure: true
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.SSLContext
+		Statement: r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r2)
+		Method: <org.apache.logging.log4j.core.net.ssl.SslConfiguration: javax.net.ssl.SSLContext createSslContext(boolean,boolean)>
+		SHA-256: 75d477b10565eaf7e910ea4d7f02909eed2a5577bad187a0088ca6b40bc0d8d5
+		Secure: false
+	Object:
+		Variable: r11
+		Type: java.security.MessageDigest
+		Statement: r11 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2735)
+		Method: <org.apache.logging.log4j.core.util.NameUtil: java.lang.String md5(java.lang.String)>
+		SHA-256: 61bba48ce0783f1e217c018cdaa8ef03bb0cf9ae3f4ab4c280dabd4b7e65225f
+		Secure: false
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r2)
+		Method: <org.apache.logging.log4j.core.net.ssl.TrustStoreConfiguration: javax.net.ssl.TrustManagerFactory initTrustManagerFactory()>
+		SHA-256: a84722c76770815c430252d21847daaaf571c78a2002f7d0a4982a14dcd2f29
+		Secure: false
+	Object:
+		Variable: r11
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r11 = virtualinvoke r13.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.logging.log4j.core.net.ssl.SslConfiguration: javax.net.ssl.SSLContext createSslContext(boolean,boolean)>
+		SHA-256: 761e893645fff213a7d8b3a244970fdef32e16286dff21f3ea590ae50eee9e7c
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r1 = virtualinvoke r11.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.logging.log4j.core.util.NameUtil: java.lang.String md5(java.lang.String)>
+		SHA-256: 7a0649bbbf550be419d76ecdec81626706bd32984ffe27e78842dc60e544f038
+		Secure: false
+	Object:
+		Variable: r33
+		Type: java.security.KeyStore
+		Statement: r33 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r7)
+		Method: <org.apache.logging.log4j.core.net.ssl.AbstractKeyStoreConfiguration: java.security.KeyStore load()>
+		SHA-256: 8c023f56199a0476accb78618a414030dd70af1e551f2b458ad46614d54315be
+		Secure: true
+
+Findings in Java Class: org.apache.logging.log4j.core.net.ssl.SslConfiguration
+
+	 in Method: javax.net.ssl.SSLContext createDefaultSslContext()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+	 in Method: javax.net.ssl.SSLContext createSslContext(boolean,boolean)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r10, r11, varReplacer1145)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r10, r11, varReplacer1145)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #75d477b10565eaf7e910ea4d7f02909eed2a5577bad187a0088ca6b40bc0d8d5)
+			First parameter (with value "SSL") should be any of {TLSv1.2}
+			at statement: r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: org.apache.logging.log4j.core.util.NameUtil
+
+	 in Method: java.lang.String md5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #61bba48ce0783f1e217c018cdaa8ef03bb0cf9ae3f4ab4c280dabd4b7e65225f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r11 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2735)
+
+
+Findings in Java Class: org.apache.logging.log4j.core.net.ssl.KeyStoreConfiguration
+
+	 in Method: javax.net.ssl.KeyManagerFactory initKeyManagerFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r5, r2)
+
+
+Findings in Java Class: org.apache.logging.log4j.core.net.ssl.TrustStoreConfiguration
+
+	 in Method: javax.net.ssl.TrustManagerFactory initTrustManagerFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r3)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 4
+	ForbiddenMethodError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 5.622 s
+

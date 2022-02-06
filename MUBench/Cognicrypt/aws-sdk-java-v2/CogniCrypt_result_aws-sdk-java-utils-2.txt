@@ -1,0 +1,124 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/aws-sdk-java-v2/utils/target/aws-sdk-java-utils-2.0.0-preview-11-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 362.6 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <software.amazon.awssdk.utils.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 9c0f83367340309257a4739cceb2b169666255825a980bc07b1910da2d2425d0
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r15.<java.security.MessageDigest: byte[] digest()>()
+		Method: <software.amazon.awssdk.utils.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: 6d5eccc18d33b0bceb9a0a21fd9b9a49b1f2485110664566ffb864b12279575b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>(r0)
+		Method: <software.amazon.awssdk.utils.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 38379e9dc4b48cabe7efeb171b23324abb63e7718804635ee47f1ee5c4db42c3
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer174)
+		Method: <software.amazon.awssdk.utils.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: e5b2eafe528ef2327000f0e6fab0774f4a8f609781f5e3665c5bf4d5d1e54a26
+		Secure: false
+	Object:
+		Variable: r15
+		Type: java.security.MessageDigest
+		Statement: r15 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer170)
+		Method: <software.amazon.awssdk.utils.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: 71f2183796ed862ff7931ce5312fbc5060a1b3c0f2712b4062da0810c7828f78
+		Secure: false
+
+Findings in Java Class: software.amazon.awssdk.utils.Md5Utils
+
+	 in Method: byte[] computeMD5Hash(java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #71f2183796ed862ff7931ce5312fbc5060a1b3c0f2712b4062da0810c7828f78)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r15 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer170)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #71f2183796ed862ff7931ce5312fbc5060a1b3c0f2712b4062da0810c7828f78)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r3 = virtualinvoke r15.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: byte[] computeMD5Hash(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e5b2eafe528ef2327000f0e6fab0774f4a8f609781f5e3665c5bf4d5d1e54a26)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer174)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.194 s

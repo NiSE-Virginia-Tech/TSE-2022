@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/ha-bridge/target/original-ha-bridge-5.2.2.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>11266 lines of code analyzed,
+	in 178 classes, 
+	in 32 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.18</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">1.60</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+<td align="right">
+<b>1.78</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSecurity<br/>In method com.bwssystems.HABridge.BridgeSecurity.decrypt(String)<br/>At BridgeSecurity.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSecurity<br/>In method com.bwssystems.HABridge.BridgeSecurity.encrypt(String)<br/>At BridgeSecurity.java:[line 330]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66277');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66277" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.exec.CommandHome<br/>In method com.bwssystems.HABridge.plugins.exec.CommandHome.doExecRequest(String, String)<br/>At CommandHome.java:[line 64]<br/>Sink method java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source com/bwssystems/HABridge/plugins/exec/CommandHome.doExecRequest(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>At DeviceDescriptor.java:[line 88]<br/>At DeviceDescriptor.java:[line 96]<br/>At DeviceDescriptor.java:[line 104]<br/>At DeviceDescriptor.java:[line 112]<br/>At DeviceDescriptor.java:[line 120]<br/>At DeviceDescriptor.java:[line 160]<br/>At DeviceDescriptor.java:[line 168]<br/>At DeviceDescriptor.java:[line 258]<br/>At DeviceDescriptor.java:[line 266]<br/>At DeviceDescriptor.java:[line 274]<br/>At BrightnessDecode.java:[line 64]<br/>At BrightnessDecode.java:[line 71]<br/>At BrightnessDecode.java:[line 76]<br/>At BrightnessDecode.java:[line 83]<br/>At BrightnessDecode.java:[line 100]<br/>At BrightnessDecode.java:[line 114]<br/>At BrightnessDecode.java:[line 120]<br/>At BrightnessDecode.java:[line 127]<br/>At BrightnessDecode.java:[line 138]<br/>At ColorDecode.java:[line 168]<br/>At ColorDecode.java:[line 173]<br/>At ColorDecode.java:[line 178]<br/>At ColorDecode.java:[line 183]<br/>At ColorDecode.java:[line 188]<br/>At ColorDecode.java:[line 193]<br/>At ColorDecode.java:[line 198]<br/>At ColorDecode.java:[line 202]<br/>At ColorDecode.java:[line 206]<br/>At ColorDecode.java:[line 209]<br/>At DeviceDataDecode.java:[line 30]<br/>At DeviceDataDecode.java:[line 35]<br/>At DeviceDataDecode.java:[line 40]<br/>At DeviceDataDecode.java:[line 45]<br/>At DeviceDataDecode.java:[line 50]<br/>At DeviceDataDecode.java:[line 55]<br/>At DeviceDataDecode.java:[line 60]<br/>At DeviceDataDecode.java:[line 65]<br/>At DeviceDataDecode.java:[line 70]<br/>At DeviceDataDecode.java:[line 75]<br/>At DeviceDataDecode.java:[line 79]<br/>At TimeDecode.java:[line 36]<br/>At TimeDecode.java:[line 43]<br/>At CommandHome.java:[line 38]<br/>At CommandHome.java:[line 41]<br/>At CommandHome.java:[line 43]<br/>At CommandHome.java:[line 45]<br/>At CommandHome.java:[line 46]<br/>At CommandHome.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67530');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67530" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.fibaro.FibaroInfo<br/>In method com.bwssystems.HABridge.plugins.fibaro.FibaroInfo.getDevices()<br/>At FibaroInfo.java:[line 116]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/bwssystems/HABridge/plugins/fibaro/FibaroInfo.request(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At FibaroInfo.java:[line 69]<br/>At FibaroInfo.java:[line 71]<br/>At FibaroInfo.java:[line 74]<br/>At FibaroInfo.java:[line 115]<br/>At FibaroInfo.java:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67654');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67654" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.fibaro.FibaroInfo<br/>In method com.bwssystems.HABridge.plugins.fibaro.FibaroInfo.getRooms()<br/>At FibaroInfo.java:[line 97]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/bwssystems/HABridge/plugins/fibaro/FibaroInfo.request(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At FibaroInfo.java:[line 69]<br/>At FibaroInfo.java:[line 71]<br/>At FibaroInfo.java:[line 74]<br/>At FibaroInfo.java:[line 96]<br/>At FibaroInfo.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67778');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67778" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.fibaro.FibaroInfo<br/>In method com.bwssystems.HABridge.plugins.fibaro.FibaroInfo.getScenes()<br/>At FibaroInfo.java:[line 160]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source com/bwssystems/HABridge/plugins/fibaro/FibaroInfo.request(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At FibaroInfo.java:[line 69]<br/>At FibaroInfo.java:[line 71]<br/>At FibaroInfo.java:[line 74]<br/>At FibaroInfo.java:[line 159]<br/>At FibaroInfo.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-2">SECHCP</span>
+</td>
+<td>Hard coded password found</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#HARD_CODE_PASSWORD">Bug type HARD_CODE_PASSWORD (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSettings<br/>In method com.bwssystems.HABridge.BridgeSettings.buildSettings()<br/>At BridgeSettings.java:[line 166]<br/>Sink method com/bwssystems/HABridge/BridgeSettingsDescriptor.setNestpwd(Ljava/lang/String;)V<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65723');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65723" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSettings<br/>In method com.bwssystems.HABridge.BridgeSettings._loadConfig()<br/>At BridgeSettings.java:[line 237]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.getConfigfile()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.configfile<br/>At BridgeSettings.java:[line 237]<br/>At BridgeSettingsDescriptor.java:[line 315]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65817');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65817" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSettings<br/>In method com.bwssystems.HABridge.BridgeSettings.buildSettings()<br/>At BridgeSettings.java:[line 222]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.getConfigfile()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.configfile<br/>At BridgeSettings.java:[line 222]<br/>At BridgeSettingsDescriptor.java:[line 315]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65911');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65911" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSettings<br/>In method com.bwssystems.HABridge.BridgeSettings.save(BridgeSettingsDescriptor)<br/>At BridgeSettings.java:[line 256]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.getConfigfile()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.configfile<br/>At BridgeSettings.java:[line 256]<br/>At BridgeSettingsDescriptor.java:[line 315]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66005');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66005" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.BridgeSettings<br/>In method com.bwssystems.HABridge.BridgeSettings.updateConfigFile()<br/>At BridgeSettings.java:[line 278]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.getConfigfile()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/BridgeSettingsDescriptor.configfile<br/>At BridgeSettings.java:[line 278]<br/>At BridgeSettingsDescriptor.java:[line 315]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66099');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66099" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.dao.DeviceRepository<br/>In method new com.bwssystems.HABridge.dao.DeviceRepository(String)<br/>At DeviceRepository.java:[line 54]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/dao/DeviceRepository.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At BridgeSettingsDescriptor.java:[line 207]<br/>At DeviceResource.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66188');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66188" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.dao.GroupRepository<br/>In method new com.bwssystems.HABridge.dao.GroupRepository(String)<br/>At GroupRepository.java:[line 45]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source com/bwssystems/HABridge/dao/GroupRepository.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At BridgeSettingsDescriptor.java:[line 213]<br/>At DeviceResource.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66826');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66826" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.exec.CommandHome<br/>In method com.bwssystems.HABridge.plugins.exec.CommandHome.deviceHandler(CallItem, MultiCommandUtil, String, int, Integer, Integer, ColorData, DeviceDescriptor, String)<br/>At CommandHome.java:[line 49]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.description<br/>Unknown source java/util/regex/Matcher.replaceFirst(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/hue/BrightnessDecode.replaceIntensityValue(Ljava/lang/String;IZ)Ljava/lang/String; parameter 2<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getId()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getName()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getDeviceType()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getRequesterAddress()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.deviceType<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.mapType<br/>Unknown source com/bwssystems/HABridge/hue/TimeDecode.replaceTimeValue(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/google/gson/JsonElement.getAsString()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getUniqueid()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getTargetDevice()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getMapType()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.targetDevice<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.name<br/>Unknown source com/bwssystems/HABridge/hue/DeviceDataDecode.replaceDeviceData(Ljava/lang/String;Lcom/bwssystems/HABridge/dao/DeviceDescriptor;)Ljava/lang/String; parameter 1<br/>Unknown source com/bwssystems/HABridge/hue/BrightnessDecode.calculateReplaceIntensityValue(Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Integer;Z)Ljava/lang/String; parameter 4<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getMapId()Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/hue/ColorDecode.replaceColorData(Ljava/lang/String;Lcom/bwssystems/HABridge/hue/ColorData;IZ)Ljava/lang/String; parameter 3<br/>Unknown source com/bwssystems/HABridge/hue/BrightnessDecode.convertToHex(I)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/hue/BrightnessDecode.calculateReplaceIntensityValue(Ljava/lang/String;ILjava/lang/Integer;Ljava/lang/Integer;Z)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.comments<br/>Unknown source com/bwssystems/HABridge/hue/TimeDecode.replaceTimeValue(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.requesterAddress<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getComments()Ljava/lang/String;<br/>Unknown source java/text/SimpleDateFormat.format(Ljava/util/Date;)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/hue/DeviceDataDecode.replaceDeviceData(Ljava/lang/String;Lcom/bwssystems/HABridge/dao/DeviceDescriptor;)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/hue/ColorDecode.replaceColorData(Ljava/lang/String;Lcom/bwssystems/HABridge/hue/ColorData;IZ)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.id<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.mapId<br/>Unknown source com/bwssystems/HABridge/hue/BrightnessDecode.replaceIntensityValue(Ljava/lang/String;IZ)Ljava/lang/String;<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.uniqueid<br/>Unknown source com/bwssystems/HABridge/dao/DeviceDescriptor.getDescription()Ljava/lang/String;<br/>At DeviceDescriptor.java:[line 88]<br/>At DeviceDescriptor.java:[line 96]<br/>At DeviceDescriptor.java:[line 104]<br/>At DeviceDescriptor.java:[line 112]<br/>At DeviceDescriptor.java:[line 120]<br/>At DeviceDescriptor.java:[line 160]<br/>At DeviceDescriptor.java:[line 168]<br/>At DeviceDescriptor.java:[line 258]<br/>At DeviceDescriptor.java:[line 266]<br/>At DeviceDescriptor.java:[line 274]<br/>At BrightnessDecode.java:[line 64]<br/>At BrightnessDecode.java:[line 71]<br/>At BrightnessDecode.java:[line 76]<br/>At BrightnessDecode.java:[line 83]<br/>At BrightnessDecode.java:[line 100]<br/>At BrightnessDecode.java:[line 114]<br/>At BrightnessDecode.java:[line 120]<br/>At BrightnessDecode.java:[line 127]<br/>At BrightnessDecode.java:[line 138]<br/>At ColorDecode.java:[line 168]<br/>At ColorDecode.java:[line 173]<br/>At ColorDecode.java:[line 178]<br/>At ColorDecode.java:[line 183]<br/>At ColorDecode.java:[line 188]<br/>At ColorDecode.java:[line 193]<br/>At ColorDecode.java:[line 198]<br/>At ColorDecode.java:[line 202]<br/>At ColorDecode.java:[line 206]<br/>At ColorDecode.java:[line 209]<br/>At DeviceDataDecode.java:[line 30]<br/>At DeviceDataDecode.java:[line 35]<br/>At DeviceDataDecode.java:[line 40]<br/>At DeviceDataDecode.java:[line 45]<br/>At DeviceDataDecode.java:[line 50]<br/>At DeviceDataDecode.java:[line 55]<br/>At DeviceDataDecode.java:[line 60]<br/>At DeviceDataDecode.java:[line 65]<br/>At DeviceDataDecode.java:[line 70]<br/>At DeviceDataDecode.java:[line 75]<br/>At DeviceDataDecode.java:[line 79]<br/>At TimeDecode.java:[line 36]<br/>At TimeDecode.java:[line 43]<br/>At CommandHome.java:[line 38]<br/>At CommandHome.java:[line 41]<br/>At CommandHome.java:[line 43]<br/>At CommandHome.java:[line 45]<br/>At CommandHome.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68266');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68266" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.logservices.LoggingUtil<br/>In method com.bwssystems.logservices.LoggingUtil.getLogFile(String)<br/>At LoggingUtil.java:[line 185]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/FileAppender.getFile()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68335');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68335" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.bwssystems.logservices.LoggingUtil<br/>In method com.bwssystems.logservices.LoggingUtil.getLogFileInfos()<br/>At LoggingUtil.java:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/FileAppender.getFile()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68150');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68150" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.homewizard.HomeWizzardSmartPlugInfo<br/>In method new com.bwssystems.HABridge.plugins.homewizard.HomeWizzardSmartPlugInfo(NamedIP, String)<br/>At HomeWizzardSmartPlugInfo.java:[line 49]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67902');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67902" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.fibaro.FibaroInfo<br/>In method com.bwssystems.HABridge.plugins.fibaro.FibaroInfo.request(String)<br/>At FibaroInfo.java:[line 61]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source com/bwssystems/HABridge/NamedIP.ip<br/>Unknown source com/bwssystems/HABridge/NamedIP.port<br/>Unknown source com/bwssystems/HABridge/NamedIP.getIp()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source com/bwssystems/HABridge/plugins/fibaro/FibaroInfo.request(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source com/bwssystems/HABridge/NamedIP.getPort()Ljava/lang/String;<br/>At NamedIP.java:[line 22]<br/>At NamedIP.java:[line 34]<br/>At FibaroInfo.java:[line 60]<br/>At FibaroInfo.java:[line 96]<br/>At FibaroInfo.java:[line 115]<br/>At FibaroInfo.java:[line 159]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68056');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68056" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.homewizard.HomeWizzardSmartPlugInfo<br/>In method com.bwssystems.HABridge.plugins.homewizard.HomeWizzardSmartPlugInfo.sendAction(String, String)<br/>At HomeWizzardSmartPlugInfo.java:[line 142]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source com/bwssystems/HABridge/plugins/homewizard/HomeWizzardSmartPlugInfo.sendAction(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>At HomeWizzardSmartPlugInfo.java:[line 141]<br/>At HomeWizzardSmartPlugInfo.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68208');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to com.bwssystems.HABridge.plugins.tcp.TCPHome (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68208" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class com.bwssystems.HABridge.plugins.tcp.TCPHome<br/>In method com.bwssystems.HABridge.plugins.tcp.TCPHome.deviceHandler(CallItem, MultiCommandUtil, String, int, Integer, Integer, ColorData, DeviceDescriptor, String)<br/>At TCPHome.java:[line 77]<br/>Value remote host</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="HARD_CODE_PASSWORD">HARD_CODE_PASSWORD: Hard coded password</a>
+</h2>
+            
+<p>
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by <i>Hard Coded Key</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/259.html">CWE-259: Use of Hard-coded Password</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        </body>
+</html>

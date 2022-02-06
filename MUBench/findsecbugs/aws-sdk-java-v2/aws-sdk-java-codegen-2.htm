@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/aws-sdk-java-v2/codegen/target/aws-sdk-java-codegen-2.0.0-preview-11-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>10081 lines of code analyzed,
+	in 231 classes, 
+	in 25 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">1.98</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+<td align="right">
+<b>1.98</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">18</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65852');">
+<td>
+<span class="priority-2">SECFREEM</span>
+</td>
+<td>Potential template injection with Freemarker template</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65852" style="display: none;">
+<a href="#TEMPLATE_INJECTION_FREEMARKER">Bug type TEMPLATE_INJECTION_FREEMARKER (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.emitters.FreemarkerGeneratorTask<br/>In method software.amazon.awssdk.codegen.emitters.FreemarkerGeneratorTask.execute()<br/>At FreemarkerGeneratorTask.java:[line 66]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.CodeGenerator<br/>In method software.amazon.awssdk.codegen.CodeGenerator.getModelDirectory(String)<br/>At CodeGenerator.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/codegen/CodeGenerator.getModelDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At CodeGenerator.java:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.CodeGenerator<br/>In method software.amazon.awssdk.codegen.CodeGenerator.writeIntermediateModel(IntermediateModel)<br/>At CodeGenerator.java:[line 89]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/CodeGenerator.sourcesDirectory<br/>At CodeGenerator.java:[line 89]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65709');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65709" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.CodeGenerator<br/>In method software.amazon.awssdk.codegen.CodeGenerator.writeIntermediateModel(IntermediateModel)<br/>At CodeGenerator.java:[line 97]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/CodeGenerator.fileNamePrefix<br/>At CodeGenerator.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65906');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65906" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.emitters.tasks.SharedModelsTaskParamsValidator<br/>In method software.amazon.awssdk.codegen.emitters.tasks.SharedModelsTaskParamsValidator.accept(GeneratorTaskParams)<br/>At SharedModelsTaskParamsValidator.java:[line 37]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.joinPackageNames(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.packageToDirectory(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.packageToDirectory(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.getFullModelPackageName()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.getModelPackageName()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.joinPackageNames(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source software/amazon/awssdk/codegen/emitters/GeneratorPathProvider.sourceDirectory<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.modelPackageName<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.rootPackageName<br/>Unknown source software/amazon/awssdk/codegen/emitters/GeneratorPathProvider.getModelDirectory()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/Metadata.joinPackageNames(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>At GeneratorPathProvider.java:[line 46]<br/>At SharedModelsTaskParamsValidator.java:[line 37]<br/>At Utils.java:[line 171]<br/>At Metadata.java:[line 392]<br/>At Metadata.java:[line 396]<br/>At Metadata.java:[line 718]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66367');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66367" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.Utils<br/>In method software.amazon.awssdk.codegen.internal.Utils.createDirectory(String)<br/>At Utils.java:[line 194]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.createDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At CodeWriter.java:[line 61]<br/>At CodeWriter.java:[line 94]<br/>At CodeWriter.java:[line 105]<br/>At FreemarkerGeneratorTask.java:[line 44]<br/>At PoetGeneratorTask.java:[line 33]<br/>At AuthorizerGeneratorTasks.java:[line 60]<br/>At AuthorizerGeneratorTasks.java:[line 62]<br/>At BaseExceptionClassGeneratorTasks.java:[line 45]<br/>At BaseGeneratorTasks.java:[line 60]<br/>At BaseGeneratorTasks.java:[line 61]<br/>At BaseGeneratorTasks.java:[line 65]<br/>At BaseGeneratorTasks.java:[line 66]<br/>At MarshallerGeneratorTasks.java:[line 80]<br/>At MarshallerGeneratorTasks.java:[line 81]<br/>At MarshallerGeneratorTasks.java:[line 100]<br/>At ModelClassGeneratorTasks.java:[line 50]<br/>At ModelClassGeneratorTasks.java:[line 51]<br/>At ModelClassGeneratorTasks.java:[line 59]<br/>At ModelClassGeneratorTasks.java:[line 81]<br/>At PackageInfoGeneratorTasks.java:[line 36]<br/>At PackageInfoGeneratorTasks.java:[line 39]<br/>At PaginatorsGeneratorTasks.java:[line 65]<br/>At PaginatorsGeneratorTasks.java:[line 71]<br/>At SmokeTestsGeneratorTasks.java:[line 44]<br/>At SmokeTestsGeneratorTasks.java:[line 48]<br/>At SmokeTestsGeneratorTasks.java:[line 53]<br/>At UnmarshallerGeneratorTasks.java:[line 66]<br/>At UnmarshallerGeneratorTasks.java:[line 72]<br/>At UnmarshallerGeneratorTasks.java:[line 74]<br/>At Utils.java:[line 171]<br/>At Utils.java:[line 215]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66746');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66746" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.Utils<br/>In method software.amazon.awssdk.codegen.internal.Utils.createFile(String, String)<br/>At Utils.java:[line 217]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.createFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At CodeWriter.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65788');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65788" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.ExamplesCustomizer<br/>In method software.amazon.awssdk.codegen.ExamplesCustomizer.applyCustomizationsToShapeJson(String, Shape, JsonNode)<br/>At ExamplesCustomizer.java:[line 152]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66085');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66085" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.TypeUtils<br/>In method software.amazon.awssdk.codegen.internal.TypeUtils.getJavaDataType(Map, String, CustomizationConfig)<br/>At TypeUtils.java:[line 135]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.type<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.getType()Ljava/lang/String;<br/>At TypeUtils.java:[line 133]<br/>At Shape.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66179');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66179" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.TypeUtils<br/>In method software.amazon.awssdk.codegen.internal.TypeUtils.getJavaDataType(Map, String, CustomizationConfig)<br/>At TypeUtils.java:[line 137]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.type<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.getType()Ljava/lang/String;<br/>At TypeUtils.java:[line 133]<br/>At Shape.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66273');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66273" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.TypeUtils<br/>In method software.amazon.awssdk.codegen.internal.TypeUtils.getJavaDataType(Map, String, CustomizationConfig)<br/>At TypeUtils.java:[line 141]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.type<br/>Unknown source software/amazon/awssdk/codegen/model/service/Shape.getType()Ljava/lang/String;<br/>At TypeUtils.java:[line 133]<br/>At Shape.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66825');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66825" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.Utils<br/>In method software.amazon.awssdk.codegen.internal.Utils.findShapeModelByC2jNameIfExists(IntermediateModel, String)<br/>At Utils.java:[line 282]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.findShapeModelByC2jNameIfExists(Lsoftware/amazon/awssdk/codegen/model/intermediate/IntermediateModel;Ljava/lang/String;)Lsoftware/amazon/awssdk/codegen/model/intermediate/ShapeModel; parameter 0<br/>At IntermediateModelBuilder.java:[line 159]<br/>At IntermediateModelBuilder.java:[line 175]<br/>At IntermediateModelBuilder.java:[line 176]<br/>At ShapeSubstitutionsProcessor.java:[line 230]<br/>At ShapeSubstitutionsProcessor.java:[line 231]<br/>At ShapeSubstitutionsProcessor.java:[line 232]<br/>At ShapeSubstitutionsProcessor.java:[line 234]<br/>At ShapeSubstitutionsProcessor.java:[line 237]<br/>At ShapeSubstitutionsProcessor.java:[line 239]<br/>At ShapeSubstitutionsProcessor.java:[line 243]<br/>At ShapeSubstitutionsProcessor.java:[line 274]<br/>At ShapeSubstitutionsProcessor.java:[line 275]<br/>At ShapeSubstitutionsProcessor.java:[line 277]<br/>At ShapeSubstitutionsProcessor.java:[line 279]<br/>At ShapeSubstitutionsProcessor.java:[line 282]<br/>At ShapeSubstitutionsProcessor.java:[line 284]<br/>At ShapeSubstitutionsProcessor.java:[line 288]<br/>At Utils.java:[line 266]<br/>At IntermediateModel.java:[line 104]<br/>At MemberModel.java:[line 104]<br/>At Output.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67104');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67104" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.internal.Utils<br/>In method software.amazon.awssdk.codegen.internal.Utils.lambda$findShapesByC2jName$0(String, ShapeModel)<br/>At Utils.java:[line 290]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/internal/Utils.lambda$findShapesByC2jName$0(Ljava/lang/String;Lsoftware/amazon/awssdk/codegen/model/intermediate/ShapeModel;)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67178');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67178" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.poet.model.ServiceModelCopiers<br/>In method software.amazon.awssdk.codegen.poet.model.ServiceModelCopiers.copierClassFor(MemberModel)<br/>At ServiceModelCopiers.java:[line 78]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/MemberModel.getC2jShape()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/codegen/model/intermediate/MemberModel.c2jShape<br/>At MemberModel.java:[line 104]<br/>At ServiceModelCopiers.java:[line 77]<br/>At ServiceModelCopiers.java:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67282');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67282" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec<br/>In method software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec.marshallingTargetClass(String, String)<br/>At JsonModelMarshallerSpec.java:[line 186]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/poet/transform/JsonModelMarshallerSpec.marshallingTargetClass(Ljava/lang/String;Ljava/lang/String;)Lcom/squareup/javapoet/ClassName; parameter 1<br/>At MemberModel.java:[line 530]<br/>At VariableModel.java:[line 57]<br/>At JsonModelMarshallerSpec.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67381');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67381" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec<br/>In method software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec.marshallingTargetClass(String, String)<br/>At JsonModelMarshallerSpec.java:[line 188]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/poet/transform/JsonModelMarshallerSpec.marshallingTargetClass(Ljava/lang/String;Ljava/lang/String;)Lcom/squareup/javapoet/ClassName; parameter 1<br/>At MemberModel.java:[line 530]<br/>At VariableModel.java:[line 57]<br/>At JsonModelMarshallerSpec.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67480');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67480" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec<br/>In method software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec.marshallingTargetClass(String, String)<br/>At JsonModelMarshallerSpec.java:[line 190]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/poet/transform/JsonModelMarshallerSpec.marshallingTargetClass(Ljava/lang/String;Ljava/lang/String;)Lcom/squareup/javapoet/ClassName; parameter 1<br/>At MemberModel.java:[line 530]<br/>At VariableModel.java:[line 57]<br/>At JsonModelMarshallerSpec.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67579');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67579" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec<br/>In method software.amazon.awssdk.codegen.poet.transform.JsonModelMarshallerSpec.marshallingTargetClass(String, String)<br/>At JsonModelMarshallerSpec.java:[line 192]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/codegen/poet/transform/JsonModelMarshallerSpec.marshallingTargetClass(Ljava/lang/String;Ljava/lang/String;)Lcom/squareup/javapoet/ClassName; parameter 1<br/>At MemberModel.java:[line 530]<br/>At VariableModel.java:[line 57]<br/>At JsonModelMarshallerSpec.java:[line 101]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="TEMPLATE_INJECTION_FREEMARKER">TEMPLATE_INJECTION_FREEMARKER: Potential template injection with Freemarker</a>
+</h2>
+            
+<p>
+Freemarker template engine is powerful. It is possible to add logic including condition statements, loops and external calls.
+It is not design to be sandbox to templating operations. A malicious user in control of a template can run malicious code
+on the server-side. Freemarker templates should be seen as scripts.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>Template template = cfg.getTemplate(inputTemplate);
+[...]
+template.process(data, swOut);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid letting end users manipulate templates with Freemarker. If you need to expose template editing to your users,
+prefer logic-less template engines such as Handlebars or Moustache (See references).
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://portswigger.net/research/server-side-template-injection">PortSwigger: Server-Side Template Injection</a><br/>
+<a href="https://jknack.github.io/handlebars.java/">Handlebars.java</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        </body>
+</html>

@@ -1,0 +1,359 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 812.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r13)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean validateAndExecute()>
+		SHA-256: 8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01
+		Secure: false
+	Object:
+		Variable: $r27
+		Type: java.security.MessageDigest
+		Statement: specialinvoke $r26.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r60, $r27)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean generateChecksums()>
+		SHA-256: 31f8f8be88e0b68cb231e39553553febc8e20c7b961cf8517043b0e91c1950a2
+		Secure: true
+	Object:
+		Variable: $r49
+		Type: java.security.MessageDigest
+		Statement: $r49 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r48, $r47)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean validateAndExecute()>
+		SHA-256: 572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f
+		Secure: false
+	Object:
+		Variable: $r26
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r26.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r60, $r27)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean generateChecksums()>
+		SHA-256: 569da687e2f48cd697637c3fd374c438fff92de5bfb01ed42b9d01a7f33fd487
+		Secure: true
+	Object:
+		Variable: $r19
+		Type: java.security.MessageDigest
+		Statement: $r19 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r18)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: void initMessageDigest()>
+		SHA-256: a4d2d1b90600e9ecc94cbea502d1b22497f1cc1d0e374bbe3ede84043d0ef6ab
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r8.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r14, $r9)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: java.lang.String getValue(java.io.File)>
+		SHA-256: 49cf94022fe3a0f8c8be85636350ae449a5fc1ee83d1c4bfec007089ed004a08
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: byte[]
+		Statement: $r14 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean generateChecksums()>
+		SHA-256: 265193e04ceff8015e47ec5fa2207ac33ccef291cab87c531a44a201b6052324
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.MessageDigest
+		Statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r8, $r7)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: void initMessageDigest()>
+		SHA-256: ca61abdb1a3381ec4cf1d22ba8033f5ddf9f04df1f06b42f19ec53dcc19ea717
+		Secure: false
+	Object:
+		Variable: r60
+		Type: java.io.FileInputStream
+		Statement: specialinvoke $r26.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r60, $r27)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean generateChecksums()>
+		SHA-256: dd4b55ff5f5113c706ebc3360738b51b5d66be9fb87c3ad33306cf3b3e731d5
+		Secure: true
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.Checksum
+
+	 in Method: boolean generateChecksums()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #31f8f8be88e0b68cb231e39553553febc8e20c7b961cf8517043b0e91c1950a2)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r26.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r60, $r27)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r14 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r66 = virtualinvoke $r28.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r14 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r66 = virtualinvoke $r28.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: boolean validateAndExecute()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Unexpected call to method getInstance on object of type java.security.MessageDigest. Expect a call to one of the following methods digest,update
+			at statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r13)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r15 = r0.<org.apache.tools.ant.taskdefs.Checksum: java.security.MessageDigest messageDigest>
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r15 = r0.<org.apache.tools.ant.taskdefs.Checksum: java.security.MessageDigest messageDigest>
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Unexpected call to method getInstance on object of type java.security.MessageDigest. Expect a call to one of the following methods digest,update
+			at statement: $r49 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r48, $r47)
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.condition.Xor
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.UnknownElement
+
+	 in Method: void execute()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r8.<org.apache.tools.ant.Task: void execute()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r8.<org.apache.tools.ant.Task: void execute()>()
+
+
+Findings in Java Class: org.apache.tools.ant.Target
+
+	 in Method: void execute()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z2 = interfaceinvoke $r21.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke $r11.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z2 = interfaceinvoke $r21.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke $r11.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.condition.And
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.ConditionTask
+
+	 in Method: void execute()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke r1.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke r1.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.Exit$NestedCondition
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r4.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r4.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.optional.testing.Funtest$NestedCondition
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r4.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r4.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.condition.Or
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z1 = interfaceinvoke r2.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.WaitFor
+
+	 in Method: void execute()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke r1.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke r1.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r1 = (org.apache.tools.ant.taskdefs.condition.Condition) $r3
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r1 = (org.apache.tools.ant.taskdefs.condition.Condition) $r3
+
+
+Findings in Java Class: org.apache.tools.ant.util.WorkerAnt
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r9.<org.apache.tools.ant.Task: void execute()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r9.<org.apache.tools.ant.Task: void execute()>()
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.condition.Not
+
+	 in Method: boolean eval()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8e2a4c902ea8e4e260313c81b9c7f0621b36a2896051b74db6e3e2a6f2c08d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r3.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #572cee4177acc532de856f4c1966b1e790ca8c8da92642d45e39cad429c1e71f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r3.<org.apache.tools.ant.taskdefs.condition.Condition: boolean eval()>()
+
+
+Findings in Java Class: org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm
+
+	 in Method: java.lang.String getValue(java.io.File)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #a4d2d1b90600e9ecc94cbea502d1b22497f1cc1d0e374bbe3ede84043d0ef6ab)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r3 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ca61abdb1a3381ec4cf1d22ba8033f5ddf9f04df1f06b42f19ec53dcc19ea717)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r3 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector
+
+	 in Method: boolean isSelected(java.io.File,java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a4d2d1b90600e9ecc94cbea502d1b22497f1cc1d0e374bbe3ede84043d0ef6ab)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r6 = interfaceinvoke $r11.<org.apache.tools.ant.types.selectors.modifiedselector.Algorithm: java.lang.String getValue(java.io.File)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca61abdb1a3381ec4cf1d22ba8033f5ddf9f04df1f06b42f19ec53dcc19ea717)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r6 = interfaceinvoke $r11.<org.apache.tools.ant.types.selectors.modifiedselector.Algorithm: java.lang.String getValue(java.io.File)>(r4)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 31
+	TypestateError: 8
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 23 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 31.34 s
+

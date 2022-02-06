@@ -1,0 +1,107 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 549.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer256)
+		Method: <org.eclipse.aether.repository.AuthenticationDigest: java.security.MessageDigest newDigest()>
+		SHA-256: c0e7dd9972be1e2575cc96e64ed87598a5289a4501702adac0b3ecb9889ecdd
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer255)
+		Method: <org.eclipse.aether.repository.AuthenticationDigest: java.security.MessageDigest newDigest()>
+		SHA-256: 3c83c3f2f0919ff5594e3b68599ae69bb06e619973e025edadb7d4fcf5104e5c
+		Secure: false
+
+Findings in Java Class: org.eclipse.aether.repository.AuthenticationDigest
+
+	 in Method: java.security.MessageDigest newDigest()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3c83c3f2f0919ff5594e3b68599ae69bb06e619973e025edadb7d4fcf5104e5c)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer255)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c0e7dd9972be1e2575cc96e64ed87598a5289a4501702adac0b3ecb9889ecdd)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer256)
+
+
+	 in Method: java.lang.String forRepository(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c0e7dd9972be1e2575cc96e64ed87598a5289a4501702adac0b3ecb9889ecdd)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r4.<org.eclipse.aether.repository.AuthenticationDigest: void <init>(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository,org.eclipse.aether.repository.Proxy)>(r0, r1, varReplacer254)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3c83c3f2f0919ff5594e3b68599ae69bb06e619973e025edadb7d4fcf5104e5c)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r4.<org.eclipse.aether.repository.AuthenticationDigest: void <init>(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository,org.eclipse.aether.repository.Proxy)>(r0, r1, varReplacer254)
+
+
+	 in Method: java.lang.String forProxy(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c0e7dd9972be1e2575cc96e64ed87598a5289a4501702adac0b3ecb9889ecdd)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r5.<org.eclipse.aether.repository.AuthenticationDigest: void <init>(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository,org.eclipse.aether.repository.Proxy)>(r0, r1, r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3c83c3f2f0919ff5594e3b68599ae69bb06e619973e025edadb7d4fcf5104e5c)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r5.<org.eclipse.aether.repository.AuthenticationDigest: void <init>(org.eclipse.aether.RepositorySystemSession,org.eclipse.aether.repository.RemoteRepository,org.eclipse.aether.repository.Proxy)>(r0, r1, r2)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 4
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.942 s
+

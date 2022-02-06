@@ -1,0 +1,199 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/secure-tcp/target/secure-tcp-1.0-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 335.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r11
+		Type: byte[]
+		Statement: r12 = virtualinvoke r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r11)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: 9cf893823dbf9f1e0ddf5d4e76cfd18d73a73a16e282b27b8bf45ea445309430
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r8 = virtualinvoke r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: ba73a8bc3978e6b24d2f0669ab96012996800e00d95844a349d666322249e70b
+		Secure: false
+	Object:
+		Variable: r12
+		Type: byte[]
+		Statement: r12 = virtualinvoke r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r11)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: 1948558ac45c6282eff7696b55425da17a0132cfe54857c0de29e2b9c5a7d933
+		Secure: false
+	Object:
+		Variable: r7
+		Type: javax.crypto.Cipher
+		Statement: r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: 90ff939d92945679f9c783c5e38cd156eeda18003c7c7b51f1ee5189229115a1
+		Secure: false
+	Object:
+		Variable: r10
+		Type: javax.crypto.Cipher
+		Statement: r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: d23ef6467d0ae73bf7c466291b489a9acb971961640b14151fcc86d3b498e73c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <org.network.stcp.server.CertificateManager: void <init>()>
+		SHA-256: 48c7702027279cd1da3df1dcbc04b2ad538fb63ce69a78a477b7af4d90c05922
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.Key
+		Statement: r1 = virtualinvoke $r4.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer2, $r5)
+		Method: <org.network.stcp.server.CertificateManager: java.security.Key getPrivateKey()>
+		SHA-256: 147595668ee404607c3a244a8f6215b5d8143c434bf44d747757a175ccc46d22
+		Secure: false
+	Object:
+		Variable: r8
+		Type: byte[]
+		Statement: r8 = virtualinvoke r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: 76a192721ba0b3f76188f175124180d62e55e97e3017c13d8512e656728184f4
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r8, varReplacer6)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: 660e5ecea2c0aaee4b2d5ba010c972d8843a75845df5640f7e14e3c80d2169a5
+		Secure: false
+	Object:
+		Variable: varReplacer6
+		Type: java.lang.String
+		Statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r8, varReplacer6)
+		Method: <org.network.stcp.server.SecureConnectionHandler: void run()>
+		SHA-256: c8889e94bdb5eeaeda820776e0d6f8752b94fbcb31e029d03d446274fb66f61
+		Secure: false
+
+Findings in Java Class: org.network.stcp.server.CertificateManager
+
+	 in Method: void <init>()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #48c7702027279cd1da3df1dcbc04b2ad538fb63ce69a78a477b7af4d90c05922)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r4.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r6, $r8)
+
+
+Findings in Java Class: org.network.stcp.server.SecureConnectionHandler
+
+	 in Method: void run()
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d23ef6467d0ae73bf7c466291b489a9acb971961640b14151fcc86d3b498e73c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher.
+			at statement: r12 = virtualinvoke r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r11)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r7.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer5, r3)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #90ff939d92945679f9c783c5e38cd156eeda18003c7c7b51f1ee5189229115a1)
+			First parameter (with value "DSA") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r8, varReplacer6)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d23ef6467d0ae73bf7c466291b489a9acb971961640b14151fcc86d3b498e73c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: virtualinvoke r10.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer7, r9)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #660e5ecea2c0aaee4b2d5ba010c972d8843a75845df5640f7e14e3c80d2169a5)
+			Second parameter (with value "DSA") should be any of {AES, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r8, varReplacer6)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d23ef6467d0ae73bf7c466291b489a9acb971961640b14151fcc86d3b498e73c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to javax.crypto.Cipher: int doFinal(java.nio.ByteBuffer,java.nio.ByteBuffer), javax.crypto.Cipher: byte[] doFinal(byte[]), javax.crypto.Cipher: int doFinal(byte[],int,int,byte[]), javax.crypto.Cipher: byte[] doFinal(byte[],int,int), javax.crypto.Cipher: int doFinal(byte[],int,int,byte[],int), update, wrap
+			at statement: r12 = virtualinvoke r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r11)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 2
+	TypestateError: 1
+	IncompleteOperationError: 2
+	NeverTypeOfError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.162 s

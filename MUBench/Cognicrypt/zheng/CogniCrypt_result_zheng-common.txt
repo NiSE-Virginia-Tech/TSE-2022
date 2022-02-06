@@ -1,0 +1,282 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/zheng/zheng-common/target/zheng-common.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 445.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.18
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.23
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.31
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.41
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.61
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.72
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 18
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r28
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer323)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 14789e9f2a92cdd386fa36363947669ae9962ff57f2f4f522008f8b896981650
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.SecretKey
+		Statement: r2 = virtualinvoke r21.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 27747798dc810f7cb32c9af47bf3f941e7dccef3ad64578408eaa57bf16c2322
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Cipher
+		Statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer309)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: b68bd85a9be429ac8925b849a27a826179c8056479e3369cafb1a80d44e2850d
+		Secure: false
+	Object:
+		Variable: r28
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer313)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 778db8da582f1598fdd468dbb151f6b05eff9f8df551ba5c7064fa55d958175a
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.zheng.common.util.MD5Util: java.lang.String md5(java.lang.String)>
+		SHA-256: a9e7bfb3d4f51b1cc1c7cdbb947e0445966883d2da70c977963d4d5a0a73944
+		Secure: false
+	Object:
+		Variable: varReplacer323
+		Type: java.lang.String
+		Statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer323)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: df2b030415caa821a9755c22bcccf5272e813150169f0559003e5fb0d3ec2112
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer322)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 266af50c6463755312d0ac6060e659733afda4239c7a9568d70061a34d99359c
+		Secure: true
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer308)
+		Method: <com.zheng.common.util.MD5Util: java.lang.String md5(java.lang.String)>
+		SHA-256: 9d3ae3953aee1c6f1cd5b3f53a91b7203c847fd3d8f56093baba3bda401bc88f
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r7 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 6a4634fddff11d8ee6725a35188c73d66c8c1d197ca5bac8c6943c671933c6b7
+		Secure: false
+	Object:
+		Variable: r21
+		Type: javax.crypto.KeyGenerator
+		Statement: r21 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer311)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: c0b471fe05a3df70dd010091a6b8a7c639b01281dc97764ec4351df92332601
+		Secure: false
+	Object:
+		Variable: r21
+		Type: javax.crypto.KeyGenerator
+		Statement: r21 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer319)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 9a0e5bb547d693058ad834faeef581e0718ced7955ab6447e8890196bf67312f
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.Cipher
+		Statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer325)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 307932765036135972dda32d45d0049756d166a2406a7de5e2c4e7e3e8475fc3
+		Secure: false
+	Object:
+		Variable: r7
+		Type: byte[]
+		Statement: r7 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 8b101a67cd2ae69e9e1c1b57fbec829361b6b80a8944f2f1eefc51c7ac25a298
+		Secure: false
+	Object:
+		Variable: r7
+		Type: byte[]
+		Statement: r7 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 218ca53d073f3770f58bb5aa08b206b5f4a787dde631d4758a0fa02e4bbe2f97
+		Secure: false
+	Object:
+		Variable: varReplacer313
+		Type: java.lang.String
+		Statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer313)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 1ca5d09d86ca50bee7d6c83dbc47391d991520f93640175c882359f23e764a3f
+		Secure: false
+	Object:
+		Variable: r6
+		Type: byte[]
+		Statement: r7 = virtualinvoke r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r6)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 52938e4f64b9fe50d35c64d0853b339f19ca4655a1d2eb955e06f88a0fae13e0
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.SecretKey
+		Statement: r2 = virtualinvoke r21.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesDecode(java.lang.String)>
+		SHA-256: 220269bc08a3ae3e9e1de953e7f0284485a6907a8f911e122e6e1dd586bf2867
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer312)
+		Method: <com.zheng.common.util.AESUtil: java.lang.String aesEncode(java.lang.String)>
+		SHA-256: 786369b19744e832f7d9f727892f2cd544793fcf7621807856012a1d92399f7d
+		Secure: true
+
+Findings in Java Class: com.zheng.common.util.MD5Util
+
+	 in Method: java.lang.String md5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9d3ae3953aee1c6f1cd5b3f53a91b7203c847fd3d8f56093baba3bda401bc88f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer308)
+
+
+Findings in Java Class: com.zheng.common.util.AESUtil
+
+	 in Method: java.lang.String aesEncode(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #b68bd85a9be429ac8925b849a27a826179c8056479e3369cafb1a80d44e2850d)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer309)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer313)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r5.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer314, r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyGenerator
+			Second parameter was not properly generated as randomized
+			at statement: virtualinvoke r21.<javax.crypto.KeyGenerator: void init(int,java.security.SecureRandom)>(varReplacer315, r1)
+
+
+	 in Method: java.lang.String aesDecode(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke r28.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer323)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyGenerator
+			Second parameter was not properly generated as randomized
+			at statement: virtualinvoke r21.<javax.crypto.KeyGenerator: void init(int,java.security.SecureRandom)>(varReplacer324, r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r5.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer320, r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #307932765036135972dda32d45d0049756d166a2406a7de5e2c4e7e3e8475fc3)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer325)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 18
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 6
+	ConstraintError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.454 s

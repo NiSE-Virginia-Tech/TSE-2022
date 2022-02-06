@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/hadoop-common.git/hadoop-streaming.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>3127 lines of code analyzed,
+	in 46 classes, 
+	in 3 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.32</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">17</td>
+<td align="right">5.44</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+<td align="right">
+<b>5.76</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">18</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.JarBuilder<br/>In method org.apache.hadoop.streaming.JarBuilder.main(String[])<br/>At JarBuilder.java:[line 200]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66135');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66135" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PipeMapRed<br/>In method org.apache.hadoop.streaming.PipeMapRed.configure(JobConf)<br/>At PipeMapRed.java:[line 207]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.getPipeCommand(Lorg/apache/hadoop/mapred/JobConf;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>At PipeMapRed.java:[line 137]<br/>At PipeMapRed.java:[line 138]<br/>At PipeMapRed.java:[line 144]<br/>At PipeMapRed.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.JarBuilder<br/>In method org.apache.hadoop.streaming.JarBuilder.main(String[])<br/>At JarBuilder.java:[line 197]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source org/apache/hadoop/streaming/JarBuilder.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65674');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65674" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.JarBuilder<br/>In method org.apache.hadoop.streaming.JarBuilder.merge(List, List, String)<br/>At JarBuilder.java:[line 54]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/JarBuilder.merge(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>At JarBuilder.java:[line 51]<br/>At JarBuilder.java:[line 53]<br/>At StreamJob.java:[line 700]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65857');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65857" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PathFinder<br/>In method org.apache.hadoop.streaming.PathFinder.getAbsolutePath(String)<br/>At PathFinder.java:[line 74]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/PathFinder.pathenv<br/>Unknown source org/apache/hadoop/streaming/PathFinder.pathSep<br/>At PathFinder.java:[line 68]<br/>At PathFinder.java:[line 73]<br/>At PathFinder.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65961');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65961" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PathFinder<br/>In method org.apache.hadoop.streaming.PathFinder.getAbsolutePath(String)<br/>At PathFinder.java:[line 79]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/PathFinder.pathenv<br/>Unknown source org/apache/hadoop/streaming/PathFinder.pathSep<br/>Unknown source org/apache/hadoop/streaming/PathFinder.fileSep<br/>Unknown source org/apache/hadoop/streaming/PathFinder.getAbsolutePath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At PathFinder.java:[line 68]<br/>At PathFinder.java:[line 73]<br/>At PathFinder.java:[line 79]<br/>At PathFinder.java:[line 85]<br/>At PipeMapRed.java:[line 137]<br/>At PipeMapRed.java:[line 138]<br/>At PipeMapRed.java:[line 144]<br/>At PipeMapRed.java:[line 174]<br/>At PipeMapRed.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66259');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66259" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PipeMapRed<br/>In method org.apache.hadoop.streaming.PipeMapRed.configure(JobConf)<br/>At PipeMapRed.java:[line 177]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.getPipeCommand(Lorg/apache/hadoop/mapred/JobConf;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>At PipeMapRed.java:[line 137]<br/>At PipeMapRed.java:[line 138]<br/>At PipeMapRed.java:[line 144]<br/>At PipeMapRed.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66378');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66378" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PipeMapRed<br/>In method org.apache.hadoop.streaming.PipeMapRed.configure(JobConf)<br/>At PipeMapRed.java:[line 180]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.getPipeCommand(Lorg/apache/hadoop/mapred/JobConf;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>At PipeMapRed.java:[line 137]<br/>At PipeMapRed.java:[line 138]<br/>At PipeMapRed.java:[line 144]<br/>At PipeMapRed.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66497');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66497" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.PipeMapRed<br/>In method org.apache.hadoop.streaming.PipeMapRed.configure(JobConf)<br/>At PipeMapRed.java:[line 190]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.getPipeCommand(Lorg/apache/hadoop/mapred/JobConf;)Ljava/lang/String;<br/>Unknown source org/apache/hadoop/streaming/PipeMapRed.splitArgs(Ljava/lang/String;)[Ljava/lang/String; parameter 0<br/>At PipeMapRed.java:[line 137]<br/>At PipeMapRed.java:[line 138]<br/>At PipeMapRed.java:[line 144]<br/>At PipeMapRed.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66616');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66616" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.packageJobJar()<br/>At StreamJob.java:[line 677]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/conf/Configuration.get(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66685');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66685" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.packageJobJar()<br/>At StreamJob.java:[line 687]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/mapred/JobConf.get(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66754');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66754" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.packageJobJar()<br/>At StreamJob.java:[line 689]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At StreamJob.java:[line 687]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66833');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66833" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.postProcessArgs()<br/>At StreamJob.java:[line 199]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/StreamJob.packageFiles_<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>At StreamJob.java:[line 198]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66917');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66917" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.submitAndMonitorJob()<br/>At StreamJob.java:[line 1006]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/StreamJob.jar_<br/>At StreamJob.java:[line 1006]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66996');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66996" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.unqualifyIfLocalPath(String)<br/>At StreamJob.java:[line 225]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/StreamJob.unqualifyIfLocalPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At StreamJob.java:[line 207]<br/>At StreamJob.java:[line 208]<br/>At StreamJob.java:[line 209]<br/>At StreamJob.java:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67105');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67105" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.unqualifyIfLocalPath(String)<br/>At StreamJob.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/StreamJob.unqualifyIfLocalPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At StreamJob.java:[line 207]<br/>At StreamJob.java:[line 208]<br/>At StreamJob.java:[line 209]<br/>At StreamJob.java:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67214');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67214" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.StreamJob<br/>In method org.apache.hadoop.streaming.StreamJob.validate(List)<br/>At StreamJob.java:[line 382]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source org/apache/hadoop/streaming/StreamJob.validate(Ljava/util/List;)V parameter 0<br/>At StreamJob.java:[line 301]<br/>At StreamJob.java:[line 381]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65778');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65778" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.hadoop.streaming.JarBuilder<br/>In method org.apache.hadoop.streaming.JarBuilder.merge(List, List, String)<br/>At JarBuilder.java:[line 47]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/hadoop/streaming/JarBuilder.merge(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V parameter 0<br/>At StreamJob.java:[line 700]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

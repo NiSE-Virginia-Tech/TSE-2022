@@ -1,0 +1,257 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 3.622 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 6 seconds!
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.io.OutputStream: void write(byte[],int,int)> for class org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.io.OutputStream: void write(byte[],int,int)> for class org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.io.OutputStream: void write(byte[],int,int)> for class org.inferred.freebuilder.shaded.com.google.common.hash.AbstractCompositeHashFunction$1
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.util.concurrent.Executor: void execute(java.lang.Runnable)> for class org.inferred.freebuilder.shaded.com.google.common.cache.LocalCache$Segment$1
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.util.concurrent.Executor: void execute(java.lang.Runnable)> for class org.inferred.freebuilder.shaded.com.google.common.util.concurrent.Futures$ChainingFuture
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r24
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r24.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r25, r4)
+		Method: <org.inferred.freebuilder.shaded.org.openjdk.tools.javac.main.Main: void showClass(java.lang.String)>
+		SHA-256: be980e98c426815b27378fb37b8917de20d15ee158c15915df184913ca7188e7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>
+		SHA-256: e2b19da5e502e4bf914f6a97bb59d4f39298a527ed7b7db065ddef1774effafd
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21269)
+		Method: <org.inferred.freebuilder.shaded.org.openjdk.tools.javac.main.Main: void showClass(java.lang.String)>
+		SHA-256: ee113dfa7a4259effb9b89c58fc3691d7607522e2c51d822a2e01b8d55f4ac4c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>
+		SHA-256: 4515efc7c91be2e2f6eeb43c3dd97e6dd22dd147ffdf660d45c67d2697eb6973
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: 8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1
+		Secure: false
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: void update(byte[],int,int)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Third parameter (with value -1)Variable pre_lenmust be  greater than pre_off
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>(r1, i0, i1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>(r1, i0, i1)
+
+
+	 in Method: void update(byte[])
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[])>(r1)
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction
+
+	 in Method: java.security.MessageDigest getMessageDigest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.AbstractStreamingHashFunction
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashUnencodedChars(java.lang.CharSequence)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashInt(int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = interfaceinvoke $r2.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashLong(long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = interfaceinvoke $r2.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashObject(java.lang.Object,org.inferred.freebuilder.shaded.com.google.common.hash.Funnel)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r4.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashBytes(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashString(java.lang.CharSequence,java.nio.charset.Charset)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r4.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.Hasher newHasher(int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: return $r1
+
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hashBytes(byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.HashingOutputStream
+
+	 in Method: void <init>(org.inferred.freebuilder.shaded.com.google.common.hash.HashFunction,java.io.OutputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r7 = (org.inferred.freebuilder.shaded.com.google.common.hash.Hasher) $r6
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.MessageDigestHashFunction$SerializedForm
+
+	 in Method: java.lang.Object readResolve()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r1
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.io.ByteSource
+
+	 in Method: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash(org.inferred.freebuilder.shaded.com.google.common.hash.HashFunction)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke r2.<org.inferred.freebuilder.shaded.com.google.common.hash.Hasher: org.inferred.freebuilder.shaded.com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.com.google.common.hash.HashingInputStream
+
+	 in Method: void <init>(org.inferred.freebuilder.shaded.com.google.common.hash.HashFunction,java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r7 = (org.inferred.freebuilder.shaded.com.google.common.hash.Hasher) $r6
+
+
+Findings in Java Class: org.inferred.freebuilder.shaded.org.openjdk.tools.javac.main.Main
+
+	 in Method: void showClass(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #be980e98c426815b27378fb37b8917de20d15ee158c15915df184913ca7188e7)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r44.<java.security.DigestInputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #be980e98c426815b27378fb37b8917de20d15ee158c15915df184913ca7188e7)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r44.<java.security.DigestInputStream: void close()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ee113dfa7a4259effb9b89c58fc3691d7607522e2c51d822a2e01b8d55f4ac4c)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21269)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #be980e98c426815b27378fb37b8917de20d15ee158c15915df184913ca7188e7)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to java.security.DigestInputStream: int read(), java.io.InputStream: int read(byte[],int,int), java.security.DigestInputStream: int read(byte[],int,int), java.io.FilterInputStream: int read(byte[],int,int), java.io.InputStream: int read(), java.io.FilterInputStream: int read()
+			at statement: i0 = virtualinvoke r44.<java.security.DigestInputStream: int read(byte[])>(r46)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ee113dfa7a4259effb9b89c58fc3691d7607522e2c51d822a2e01b8d55f4ac4c)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: r5 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 15
+	ConstraintError: 4
+	TypestateError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 22 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 41.14 s
+

@@ -1,0 +1,115 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 706.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLContext
+		Statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r1)
+		Method: <com.rabbitmq.client.ConnectionFactory: void useSslProtocol(java.lang.String,javax.net.ssl.TrustManager)>
+		SHA-256: 3391ac02c87cec53c6dd1e0940db90e7ffe15f18aaa2ab8c78bf94dab9e4db41
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.net.ssl.SSLParameters
+		Statement: specialinvoke $r0.<javax.net.ssl.SSLParameters: void <init>()>()
+		Method: <com.rabbitmq.client.SocketConfigurators: javax.net.ssl.SSLParameters enableHostnameVerification(javax.net.ssl.SSLParameters)>
+		SHA-256: e7a23514833208e3e498eb0399118e0609d5d5c1c4caac82569d19614d137009
+		Secure: false
+
+Findings in Java Class: com.rabbitmq.client.ConnectionFactory
+
+	 in Method: void useSslProtocol()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>.
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+	 in Method: void useSslProtocol(java.lang.String,javax.net.ssl.TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2006, $r4, varReplacer2006)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2006, $r4, varReplacer2006)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #3391ac02c87cec53c6dd1e0940db90e7ffe15f18aaa2ab8c78bf94dab9e4db41)
+			First parameter (with value "TLSv1") should be any of {TLSv1.2}
+			at statement: r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r1)
+
+
+Findings in Java Class: com.rabbitmq.client.SslEngineConfigurators
+
+	 in Method: void lambda$static$1(javax.net.ssl.SSLEngine)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLParameters (on Object #e7a23514833208e3e498eb0399118e0609d5d5c1c4caac82569d19614d137009)
+			Operation on object of type javax.net.ssl.SSLParameters object not completed. Expected call to setProtocols, setCipherSuites
+			at statement: virtualinvoke r0.<javax.net.ssl.SSLEngine: void setSSLParameters(javax.net.ssl.SSLParameters)>(r1)
+
+
+Findings in Java Class: com.rabbitmq.client.SocketConfigurators
+
+	 in Method: void lambda$static$1(java.net.Socket)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLParameters (on Object #e7a23514833208e3e498eb0399118e0609d5d5c1c4caac82569d19614d137009)
+			Operation on object of type javax.net.ssl.SSLParameters object not completed. Expected call to setProtocols, setCipherSuites
+			at statement: virtualinvoke r1.<javax.net.ssl.SSLSocket: void setSSLParameters(javax.net.ssl.SSLParameters)>(r2)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	RequiredPredicateError: 2
+	ForbiddenMethodError: 1
+	IncompleteOperationError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.151 s
+

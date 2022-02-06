@@ -1,0 +1,92 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 406.5 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r40
+		Type: java.security.MessageDigest
+		Statement: r40 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer116)
+		Method: <org.apache.netbeans.nbm.repository.PopulateRepositoryMojo: org.apache.maven.model.Dependency findExternal(org.apache.lucene.search.IndexSearcher,java.io.File)>
+		SHA-256: aa9c3f9944c72fe5736b840e8c48b8e3d54f9a7d43a4fbb7f4ea4e4a9d1af112
+		Secure: false
+	Object:
+		Variable: r64
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke r64.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r63, r40)
+		Method: <org.apache.netbeans.nbm.repository.PopulateRepositoryMojo: org.apache.maven.model.Dependency findExternal(org.apache.lucene.search.IndexSearcher,java.io.File)>
+		SHA-256: 1c36bcadf3a2413202eaf8352d2ed8f1b00c2b1e877d319173ec7690a149f7a5
+		Secure: false
+
+Findings in Java Class: org.apache.netbeans.nbm.repository.PopulateRepositoryMojo
+
+	 in Method: org.apache.maven.model.Dependency findExternal(org.apache.lucene.search.IndexSearcher,java.io.File)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #1c36bcadf3a2413202eaf8352d2ed8f1b00c2b1e877d319173ec7690a149f7a5)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: virtualinvoke r41.<java.io.OutputStream: void close()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #aa9c3f9944c72fe5736b840e8c48b8e3d54f9a7d43a4fbb7f4ea4e4a9d1af112)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r40 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer116)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #aa9c3f9944c72fe5736b840e8c48b8e3d54f9a7d43a4fbb7f4ea4e4a9d1af112)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r14 = virtualinvoke r40.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	TypestateError: 1
+	ConstraintError: 1
+	IncompleteOperationError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.440 s
+

@@ -1,0 +1,167 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 902.5 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.kitesdk.shaded.com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: 8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.kitesdk.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+
+Findings in Java Class: org.kitesdk.shaded.com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.Hasher putChar(char)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r4.<java.security.MessageDigest: void update(byte[],int,int)>($r5, varReplacer4708, varReplacer4709)
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.Hasher putBytes(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>(r1, i0, i1)
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.Hasher putBytes(byte[])
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[])>(r1)
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.Hasher putLong(long)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r4.<java.security.MessageDigest: void update(byte[],int,int)>($r5, varReplacer4702, varReplacer4703)
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.kitesdk.shaded.com.google.common.hash.BloomFilterStrategies$1
+
+	 in Method: boolean mightContain(java.lang.Object,org.kitesdk.shaded.com.google.common.hash.Funnel,int,org.kitesdk.shaded.com.google.common.hash.BloomFilterStrategies$BitArray)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r7 = interfaceinvoke $r6.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: void put(java.lang.Object,org.kitesdk.shaded.com.google.common.hash.Funnel,int,org.kitesdk.shaded.com.google.common.hash.BloomFilterStrategies$BitArray)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r7 = interfaceinvoke $r6.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: org.kitesdk.shaded.com.google.common.hash.AbstractStreamingHashFunction
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hashBytes(byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hashString(java.lang.CharSequence,java.nio.charset.Charset)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r4.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hashLong(long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = interfaceinvoke $r2.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hashString(java.lang.CharSequence)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.Hasher newHasher(int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: return $r1
+
+
+	 in Method: org.kitesdk.shaded.com.google.common.hash.HashCode hashBytes(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = interfaceinvoke $r3.<org.kitesdk.shaded.com.google.common.hash.Hasher: org.kitesdk.shaded.com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: org.kitesdk.shaded.com.google.common.hash.MessageDigestHashFunction
+
+	 in Method: void <init>(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8a2b1b369fb084db34b2d3f7cf631b0662e57b3014565a24a949a09142bef2d1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $i0 = virtualinvoke $r2.<java.security.MessageDigest: int getDigestLength()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 9
+	TypestateError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 7 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 13.86 s
+

@@ -1,0 +1,177 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 726.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.73
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.82
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.91
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r141
+		Type: java.security.KeyStore
+		Statement: r141 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r143)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 9ced3fa8337f21f57e2d9ced9288ac80a5e598820c07f90c07e21e8c57927e73
+		Secure: true
+	Object:
+		Variable: $r163
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r163 = virtualinvoke r114.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 6c329e164fb9e0571af9f8a14890f6d36e32a1ec3ab71c01812905f89db2abb5
+		Secure: true
+	Object:
+		Variable: r114
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r114 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(r154, $r7)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 28d03c9862e4cd948727314bf72aad0b76460f8e6459e50ffae2ea482f4cee8
+		Secure: true
+	Object:
+		Variable: r116
+		Type: java.security.KeyStore
+		Statement: r116 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r117, $r39)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: ab606c6f34f38675ab9f8bf479386b554bbde1dc440c047bbcd477cf8395b878
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r5 = virtualinvoke r115.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 79602eb898c1361d4d16aaf0686b9d60acad48e6e343abf5cd0b82dbec84c7e0
+		Secure: true
+	Object:
+		Variable: r115
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r115 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(r130)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 460ce91afd9b769c3206ddf40df87719053083d6cd63024f07cfb49bcc8064d7
+		Secure: true
+	Object:
+		Variable: r114
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r114 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(r154)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 8ca4bb251fc2636d7d04eed646420cda5056f19623f04bb664160b39b664e4cd
+		Secure: true
+	Object:
+		Variable: r116
+		Type: java.security.KeyStore
+		Statement: r116 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r118)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: e6f7caba1d5e49436c83d171feade1a2621c2167c98a39298e96695cf1f05803
+		Secure: true
+	Object:
+		Variable: r159
+		Type: javax.net.ssl.SSLContext
+		Statement: r159 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r158)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: a2ab8ab86be8dfc88073b7974fea9f256a298a5354d4110da7f310d2f2ee7715
+		Secure: false
+	Object:
+		Variable: r115
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r115 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String,java.lang.String)>(r130, $r26)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 4f11d85e2da06977069010c73601bfefcc9480e864da55ac2bf3ae599f5a305
+		Secure: true
+	Object:
+		Variable: r141
+		Type: java.security.KeyStore
+		Statement: r141 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r142, $r20)
+		Method: <org.glassfish.jersey.SslConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 329e1632a8bbcc4786b5cf73db3b026607412686dbd2f85350d93f39c0919832
+		Secure: true
+
+Findings in Java Class: org.glassfish.jersey.SslConfigurator
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a2ab8ab86be8dfc88073b7974fea9f256a298a5354d4110da7f310d2f2ee7715)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r159 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r158)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r159.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r162, $r163, varReplacer47)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 11
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 3 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 8.306 s
+

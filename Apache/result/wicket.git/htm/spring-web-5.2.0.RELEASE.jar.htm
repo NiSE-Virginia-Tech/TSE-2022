@@ -1,0 +1,1254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/wicket.git/spring-web-5.2.0.RELEASE.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>29072 lines of code analyzed,
+	in 922 classes, 
+	in 55 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">30</td>
+<td align="right">1.03</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+<td align="right">
+<b>1.07</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">31</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66378');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66378" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.context.request.async.WebAsyncManager<br/>In method org.springframework.web.context.request.async.WebAsyncManager.lambda$startCallableProcessing$1(CallableInterceptorChain, Callable)<br/>At WebAsyncManager.java:[line 301]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/springframework/web/context/request/async/WebAsyncManager.formatRequestUri()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At WebAsyncManager.java:[line 301]<br/>At WebAsyncManager.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66472');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66472" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.context.request.async.WebAsyncManager<br/>In method org.springframework.web.context.request.async.WebAsyncManager.lambda$startCallableProcessing$2(CallableInterceptorChain, Callable, Throwable)<br/>At WebAsyncManager.java:[line 311]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/springframework/web/context/request/async/WebAsyncManager.formatRequestUri()Ljava/lang/String;<br/>Unknown source org/springframework/web/context/request/async/WebAsyncManager.lambda$startCallableProcessing$2(Lorg/springframework/web/context/request/async/CallableInterceptorChain;Ljava/util/concurrent/Callable;Ljava/lang/Throwable;)V parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At WebAsyncManager.java:[line 311]<br/>At WebAsyncManager.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66571');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66571" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.context.request.async.WebAsyncManager<br/>In method org.springframework.web.context.request.async.WebAsyncManager.logExecutorWarning()<br/>At WebAsyncManager.java:[line 354]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/springframework/web/context/request/async/WebAsyncManager.formatRequestUri()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At WebAsyncManager.java:[line 359]<br/>At WebAsyncManager.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66665');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66665" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.context.request.async.WebAsyncManager<br/>In method org.springframework.web.context.request.async.WebAsyncManager.setConcurrentResultAndDispatch(Object)<br/>At WebAsyncManager.java:[line 382]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/springframework/web/context/request/async/WebAsyncManager.formatRequestUri()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At WebAsyncManager.java:[line 369]<br/>At WebAsyncManager.java:[line 382]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66759');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66759" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.context.request.async.WebAsyncManager<br/>In method org.springframework.web.context.request.async.WebAsyncManager.setConcurrentResultAndDispatch(Object)<br/>At WebAsyncManager.java:[line 389]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source org/springframework/web/context/request/async/WebAsyncManager.formatRequestUri()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At WebAsyncManager.java:[line 369]<br/>At WebAsyncManager.java:[line 389]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67587');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67587" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.util.UrlPathHelper<br/>In method org.springframework.web.util.UrlPathHelper.decodeInternal(HttpServletRequest, String)<br/>At UrlPathHelper.java:[line 493]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/util/UrlPathHelper.decodeInternal(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/springframework/web/util/UrlPathHelper.defaultEncoding<br/>Unknown source java/nio/charset/UnsupportedCharsetException.getMessage()Ljava/lang/String;<br/>Unknown source org/springframework/web/util/UrlPathHelper.getDefaultEncoding()Ljava/lang/String;<br/>Unknown source org/springframework/web/util/UrlPathHelper.determineEncoding(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At UrlPathHelper.java:[line 153]<br/>At UrlPathHelper.java:[line 216]<br/>At UrlPathHelper.java:[line 246]<br/>At UrlPathHelper.java:[line 265]<br/>At UrlPathHelper.java:[line 266]<br/>At UrlPathHelper.java:[line 310]<br/>At UrlPathHelper.java:[line 327]<br/>At UrlPathHelper.java:[line 347]<br/>At UrlPathHelper.java:[line 349]<br/>At UrlPathHelper.java:[line 369]<br/>At UrlPathHelper.java:[line 404]<br/>At UrlPathHelper.java:[line 407]<br/>At UrlPathHelper.java:[line 423]<br/>At UrlPathHelper.java:[line 460]<br/>At UrlPathHelper.java:[line 461]<br/>At UrlPathHelper.java:[line 462]<br/>At UrlPathHelper.java:[line 480]<br/>At UrlPathHelper.java:[line 487]<br/>At UrlPathHelper.java:[line 489]<br/>At UrlPathHelper.java:[line 493]<br/>At UrlPathHelper.java:[line 494]<br/>At UrlPathHelper.java:[line 496]<br/>At UrlPathHelper.java:[line 513]<br/>At UrlPathHelper.java:[line 527]<br/>At UrlPathHelper.java:[line 534]<br/>At UrlPathHelper.java:[line 535]<br/>At UrlPathHelper.java:[line 545]<br/>At UrlPathHelper.java:[line 546]<br/>At UrlPathHelper.java:[line 566]<br/>At UrlPathHelper.java:[line 589]<br/>At UrlPathHelper.java:[line 590]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67105');">
+<td>
+<span class="priority-2">SECFUN</span>
+</td>
+<td>The filename read can be tampered with by the client</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67105" style="display: none;">
+<a href="#FILE_UPLOAD_FILENAME">Bug type FILE_UPLOAD_FILENAME (click for details)</a>
+<br/>In class org.springframework.web.multipart.commons.CommonsMultipartFile<br/>In method org.springframework.web.multipart.commons.CommonsMultipartFile.getOriginalFilename()<br/>At CommonsMultipartFile.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67306');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67306" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class org.springframework.web.util.CookieGenerator<br/>In method org.springframework.web.util.CookieGenerator.createCookie(String)<br/>At CookieGenerator.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67359');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67359" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class org.springframework.web.util.CookieGenerator<br/>In method org.springframework.web.util.CookieGenerator.createCookie(String)<br/>At CookieGenerator.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66240');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.springframework.remoting.httpinvoker.AbstractHttpInvokerRequestExecutor.doReadRemoteInvocationResult(ObjectInputStream)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66240" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.springframework.remoting.httpinvoker.AbstractHttpInvokerRequestExecutor<br/>In method org.springframework.remoting.httpinvoker.AbstractHttpInvokerRequestExecutor.doReadRemoteInvocationResult(ObjectInputStream)<br/>At AbstractHttpInvokerRequestExecutor.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66991');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66991" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.web.context.support.ServletContextResource<br/>In method org.springframework.web.context.support.ServletContextResource.getFile()<br/>At ServletContextResource.java:[line 195]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/util/WebUtils.getRealPath(Ljavax/servlet/ServletContext;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/springframework/web/context/support/ServletContextResource.path<br/>Unknown source javax/servlet/ServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/web/util/WebUtils.getRealPath(Ljavax/servlet/ServletContext;Ljava/lang/String;)Ljava/lang/String;<br/>At ServletContextResource.java:[line 194]<br/>At WebUtils.java:[line 340]<br/>At WebUtils.java:[line 342]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66182');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([^&amp;=]+)(=?)([^&amp;]+)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66182" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([^&amp;=]+)(=?)([^&amp;]+)?<br/>In class org.springframework.http.server.reactive.AbstractServerHttpRequest<br/>In method org.springframework.http.server.reactive.AbstractServerHttpRequest.&lt;static initializer for AbstractServerHttpRequest&gt;()<br/>At AbstractServerHttpRequest.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67991');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "\\?|\\*|\\{((?:\\{[^/]+?\\}|[^/{}]|\\\\[{}])+?)\\}" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67991" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value \\?|\\*|\\{((?:\\{[^/]+?\\}|[^/{}]|\\\\[{}])+?)\\}<br/>In class org.springframework.web.util.pattern.RegexPathElement<br/>In method org.springframework.web.util.pattern.RegexPathElement.&lt;static initializer for RegexPathElement&gt;()<br/>At RegexPathElement.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67413');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([^&amp;=]+)(=?)([^&amp;]+)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67413" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([^&amp;=]+)(=?)([^&amp;]+)?<br/>In class org.springframework.web.util.UriComponentsBuilder<br/>In method org.springframework.web.util.UriComponentsBuilder.&lt;static initializer for UriComponentsBuilder&gt;()<br/>At UriComponentsBuilder.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67471');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^(([^:/?#]+):)?(//(([^@\\[/?#]*)@)?(\\[[\\p{XDigit}\\:\\.]*[%\\p{Alnum}]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67471" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^(([^:/?#]+):)?(//(([^@\\[/?#]*)@)?(\\[[\\p{XDigit}\\:\\.]*[%\\p{Alnum}]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?([^#]*))?(#(.*))?<br/>In class org.springframework.web.util.UriComponentsBuilder<br/>In method org.springframework.web.util.UriComponentsBuilder.&lt;static initializer for UriComponentsBuilder&gt;()<br/>At UriComponentsBuilder.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67529');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[\\p{XDigit}\\:\\.]*[%\\p{Alnum}]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?(.*))?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67529" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^(?i)(http|https):(//(([^@\\[/?#]*)@)?(\\[[\\p{XDigit}\\:\\.]*[%\\p{Alnum}]*\\]|[^\\[/?#:]*)(:(\\d*(?:\\{[^/]+?\\})?))?)?([^?#]*)(\\?(.*))?<br/>In class org.springframework.web.util.UriComponentsBuilder<br/>In method org.springframework.web.util.UriComponentsBuilder.&lt;static initializer for UriComponentsBuilder&gt;()<br/>At UriComponentsBuilder.java:[line 96]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.http.client.SimpleClientHttpRequestFactory<br/>In method org.springframework.http.client.SimpleClientHttpRequestFactory.openConnection(URL, Proxy)<br/>At SimpleClientHttpRequestFactory.java:[line 187]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/http/client/SimpleClientHttpRequestFactory.openConnection(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/HttpURLConnection; parameter 1<br/>Method usage not detected<br/>At SimpleClientHttpRequestFactory.java:[line 145]<br/>At SimpleClientHttpRequestFactory.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65645');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65645" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.http.client.SimpleClientHttpRequestFactory<br/>In method org.springframework.http.client.SimpleClientHttpRequestFactory.openConnection(URL, Proxy)<br/>At SimpleClientHttpRequestFactory.java:[line 187]<br/>Sink method java/net/URL.openConnection(Ljava/net/Proxy;)Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/http/client/SimpleClientHttpRequestFactory.openConnection(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/HttpURLConnection; parameter 0<br/>At SimpleClientHttpRequestFactory.java:[line 145]<br/>At SimpleClientHttpRequestFactory.java:[line 164]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66294');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66294" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.springframework.remoting.httpinvoker.SimpleHttpInvokerRequestExecutor<br/>In method org.springframework.remoting.httpinvoker.SimpleHttpInvokerRequestExecutor.openConnection(HttpInvokerClientConfiguration)<br/>At SimpleHttpInvokerRequestExecutor.java:[line 106]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/springframework/remoting/httpinvoker/HttpInvokerClientConfiguration.getServiceUrl()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>At SimpleHttpInvokerRequestExecutor.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66853');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66853" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.context.support.HttpRequestHandlerServlet<br/>In method org.springframework.web.context.support.HttpRequestHandlerServlet.service(HttpServletRequest, HttpServletResponse)<br/>At HttpRequestHandlerServlet.java:[line 80]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/HttpRequestMethodNotSupportedException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66922');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66922" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.context.support.LiveBeansViewServlet<br/>In method org.springframework.web.context.support.LiveBeansViewServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At LiveBeansViewServlet.java:[line 65]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/context/support/LiveBeansView.getSnapshotAsJson()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67158');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67158" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.util.ContentCachingResponseWrapper<br/>In method org.springframework.web.util.ContentCachingResponseWrapper.sendError(int, String)<br/>At ContentCachingResponseWrapper.java:[line 85]<br/>Sink method javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/util/ContentCachingResponseWrapper.sendError(ILjava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67232');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponseWrapper.setStatus(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67232" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.util.ContentCachingResponseWrapper<br/>In method org.springframework.web.util.ContentCachingResponseWrapper.sendError(int, String)<br/>At ContentCachingResponseWrapper.java:[line 89]<br/>Sink method javax/servlet/http/HttpServletResponseWrapper.setStatus(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/util/ContentCachingResponseWrapper.sendError(ILjava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65734');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65734" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.springframework.http.codec.xml.Jaxb2XmlDecoder<br/>In method org.springframework.http.codec.xml.Jaxb2XmlDecoder.decode(DataBuffer, ResolvableType, MimeType, Map)<br/>At Jaxb2XmlDecoder.java:[line 166]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65788');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65788" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.springframework.http.codec.xml.XmlEventDecoder<br/>In method org.springframework.http.codec.xml.XmlEventDecoder.lambda$decode$2(DataBuffer)<br/>At XmlEventDecoder.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65958');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65958" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.Jaxb2CollectionHttpMessageConverter<br/>In method org.springframework.http.converter.xml.Jaxb2CollectionHttpMessageConverter.read(Type, Class, HttpInputMessage)<br/>At Jaxb2CollectionHttpMessageConverter.java:[line 152]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66070');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66070" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.SourceHttpMessageConverter<br/>In method org.springframework.http.converter.xml.SourceHttpMessageConverter.readStAXSource(InputStream, HttpInputMessage)<br/>At SourceHttpMessageConverter.java:[line 226]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.AbstractXmlHttpMessageConverter<br/>In method new org.springframework.http.converter.xml.AbstractXmlHttpMessageConverter()<br/>At AbstractXmlHttpMessageConverter.java:[line 52]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66012');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66012" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.SourceHttpMessageConverter<br/>In method new org.springframework.http.converter.xml.SourceHttpMessageConverter()<br/>At SourceHttpMessageConverter.java:[line 87]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65900');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65900" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.AbstractXmlHttpMessageConverter<br/>In method new org.springframework.http.converter.xml.AbstractXmlHttpMessageConverter()<br/>At AbstractXmlHttpMessageConverter.java:[line 52]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66124');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66124" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.http.converter.xml.SourceHttpMessageConverter<br/>In method new org.springframework.http.converter.xml.SourceHttpMessageConverter()<br/>At SourceHttpMessageConverter.java:[line 87]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="FILE_UPLOAD_FILENAME">FILE_UPLOAD_FILENAME: Tainted filename read</a>
+</h2>
+            
+<p>The filename provided by the FileUpload API can be tampered with by the client to reference unauthorized files.</p>
+<p>For example:</p>
+<ul>
+<li><code>"../../../config/overide_file"</code></li>
+<li><code>"shell.jsp\u0000expected.gif"</code></li>
+</ul>
+<p>Therefore, such values should not be passed directly to the filesystem API. If acceptable, the application should generate its
+own file names and use those. Otherwise, the provided filename should be properly validated to ensure it's properly structured,
+contains no unauthorized path characters (e.g., / \), and refers to an authorized file.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://blogs.securiteam.com/index.php/archives/1268">Securiteam: File upload security recommendations</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="HTTPONLY_COOKIE">HTTPONLY_COOKIE: Cookie without the HttpOnly flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>HttpOnly</code> flag set.
+The <code>HttpOnly</code> flag is a directive to the browser to make sure that the cookie can not be red by
+malicious script. When a user is the target of a "Cross-Site Scripting", the attacker would benefit greatly from getting
+the session id for example.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+cookie.setSecure(true);
+cookie.setHttpOnly(true); //HttpOnly flag
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://blog.codinghorror.com/protecting-your-cookies-httponly/">Coding Horror blog: Protecting Your Cookies: HttpOnly</a><br/>
+<a href="https://www.owasp.org/index.php/HttpOnly">OWASP: HttpOnly</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-http-only-flag">Rapid7: Missing HttpOnly Flag From Cookie</a>
+</p>
+
+        
+<h2>
+<a name="INSECURE_COOKIE">INSECURE_COOKIE: Cookie without the secure flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>Secure</code> flag set.
+The <code>Secure</code> flag is a directive to the browser to make sure that the cookie is not sent for insecure
+communication (<code>http://</code>).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+cookie.setSecure(true); // Secure flag
+cookie.setHttpOnly(true);
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/614.html">CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315: Cleartext Storage of Sensitive Information in a Cookie</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/311.html">CWE-311: Missing Encryption of Sensitive Data</a><br/>
+<a href="https://www.owasp.org/index.php/SecureFlag">OWASP: Secure Flag</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-secure-flag">Rapid7: Missing Secure Flag From SSL Cookie</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        </body>
+</html>

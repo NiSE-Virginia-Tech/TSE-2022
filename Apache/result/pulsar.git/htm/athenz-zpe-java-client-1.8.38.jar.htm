@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pulsar.git/athenz-zpe-java-client-1.8.38.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>1175 lines of code analyzed,
+	in 36 classes, 
+	in 5 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">18</td>
+<td align="right">15.32</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+<td align="right">
+<b>15.32</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">18</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>18</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.actionByRole(String, String, String, List, Map, StringBuilder)<br/>At AuthZpeClient.java:[line 1025]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 3<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 5<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 367]<br/>At AuthZpeClient.java:[line 374]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 880]<br/>At AuthZpeClient.java:[line 910]<br/>At AuthZpeClient.java:[line 1013]<br/>At AuthZpeClient.java:[line 1017]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65885');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65885" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.actionByWildCardRole(String, String, String, List, Map, StringBuilder)<br/>At AuthZpeClient.java:[line 1072]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 5<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 3<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 2<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 367]<br/>At AuthZpeClient.java:[line 374]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 895]<br/>At AuthZpeClient.java:[line 925]<br/>At AuthZpeClient.java:[line 1050]<br/>At AuthZpeClient.java:[line 1062]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66219');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66219" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.actionByWildCardRole(String, String, String, List, Map, StringBuilder)<br/>At AuthZpeClient.java:[line 1083]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 5<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 3<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.actionByWildCardRole(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/lang/StringBuilder;)Z parameter 1<br/>Unknown source com/yahoo/rdl/Struct.getString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/Map.keySet()Ljava/util/Set;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 367]<br/>At AuthZpeClient.java:[line 374]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 895]<br/>At AuthZpeClient.java:[line 925]<br/>At AuthZpeClient.java:[line 1050]<br/>At AuthZpeClient.java:[line 1060]<br/>At AuthZpeClient.java:[line 1062]<br/>At AuthZpeClient.java:[line 1068]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66588');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66588" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowAccess(String, X509Certificate, String, String, String, StringBuilder)<br/>At AuthZpeClient.java:[line 458]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowAccess(Ljava/lang/String;Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66702');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66702" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 834]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66926');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66926" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 844]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67150');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67150" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 850]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67374');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67374" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 857]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67598');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67598" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 868]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67822');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67822" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 936]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68046');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68046" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.allowActionZPE(String, String, String, List, StringBuilder)<br/>At AuthZpeClient.java:[line 939]<br/>Sink method org/slf4j/Logger.error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 4<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 2<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.allowActionZPE(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/StringBuilder;)Lcom/yahoo/athenz/zpe/AuthZpeClient$AccessCheckStatus; parameter 3<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68270');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68270" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.matchAssertions(List, String, String, String, StringBuilder, String)<br/>At AuthZpeClient.java:[line 969]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.matchAssertions(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Z parameter 0<br/>Unknown source com/yahoo/rdl/Struct.getString(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 880]<br/>At AuthZpeClient.java:[line 895]<br/>At AuthZpeClient.java:[line 910]<br/>At AuthZpeClient.java:[line 925]<br/>At AuthZpeClient.java:[line 1013]<br/>At AuthZpeClient.java:[line 1037]<br/>At AuthZpeClient.java:[line 1050]<br/>At AuthZpeClient.java:[line 1097]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68609');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68609" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.matchAssertions(List, String, String, String, StringBuilder, String)<br/>At AuthZpeClient.java:[line 978]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.matchAssertions(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Z parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.matchAssertions(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Z parameter 3<br/>Unknown source com/yahoo/rdl/Struct.getString(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 880]<br/>At AuthZpeClient.java:[line 895]<br/>At AuthZpeClient.java:[line 910]<br/>At AuthZpeClient.java:[line 925]<br/>At AuthZpeClient.java:[line 1013]<br/>At AuthZpeClient.java:[line 1037]<br/>At AuthZpeClient.java:[line 1050]<br/>At AuthZpeClient.java:[line 1097]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68953');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68953" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.matchAssertions(List, String, String, String, StringBuilder, String)<br/>At AuthZpeClient.java:[line 988]<br/>Sink method org/slf4j/Logger.debug(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.matchAssertions(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Z parameter 0<br/>Unknown source com/yahoo/athenz/zpe/AuthZpeClient.matchAssertions(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;Ljava/lang/String;)Z parameter 2<br/>Unknown source com/yahoo/rdl/Struct.getString(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AuthZpeClient.java:[line 311]<br/>At AuthZpeClient.java:[line 361]<br/>At AuthZpeClient.java:[line 375]<br/>At AuthZpeClient.java:[line 399]<br/>At AuthZpeClient.java:[line 425]<br/>At AuthZpeClient.java:[line 465]<br/>At AuthZpeClient.java:[line 467]<br/>At AuthZpeClient.java:[line 505]<br/>At AuthZpeClient.java:[line 555]<br/>At AuthZpeClient.java:[line 594]<br/>At AuthZpeClient.java:[line 634]<br/>At AuthZpeClient.java:[line 667]<br/>At AuthZpeClient.java:[line 761]<br/>At AuthZpeClient.java:[line 830]<br/>At AuthZpeClient.java:[line 854]<br/>At AuthZpeClient.java:[line 861]<br/>At AuthZpeClient.java:[line 862]<br/>At AuthZpeClient.java:[line 880]<br/>At AuthZpeClient.java:[line 895]<br/>At AuthZpeClient.java:[line 910]<br/>At AuthZpeClient.java:[line 925]<br/>At AuthZpeClient.java:[line 1013]<br/>At AuthZpeClient.java:[line 1037]<br/>At AuthZpeClient.java:[line 1050]<br/>At AuthZpeClient.java:[line 1097]<br/>At AuthZpeClient.java:[line 1174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69297');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69297" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.AuthZpeClient<br/>In method com.yahoo.athenz.zpe.AuthZpeClient.issuerMatch(String)<br/>At AuthZpeClient.java:[line 1144]<br/>Sink method javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/security/auth/x500/X500Principal.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69366');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69366" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.ZpeMetric<br/>In method com.yahoo.athenz.zpe.ZpeMetric.writeToFile()<br/>At ZpeMetric.java:[line 121]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/util/Iterator.next()Ljava/lang/Object;<br/>Unknown source java/util/concurrent/ConcurrentHashMap.keySet()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;<br/>Unknown source java/util/concurrent/ConcurrentHashMap$KeySetView.iterator()Ljava/util/Iterator;<br/>At ZpeMetric.java:[line 116]<br/>At ZpeMetric.java:[line 119]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69465');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69465" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.ZpeUpdMonitor<br/>In method com.yahoo.athenz.zpe.ZpeUpdMonitor.loadFileStatus()<br/>At ZpeUpdMonitor.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/yahoo/athenz/zpe/ZpeUpdMonitor.dirName<br/>At ZpeUpdMonitor.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69544');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69544" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.yahoo.athenz.zpe.ZpeUpdPolLoader<br/>In method com.yahoo.athenz.zpe.ZpeUpdPolLoader.loadFile(File)<br/>At ZpeUpdPolLoader.java:[line 339]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source com/yahoo/athenz/zpe/ZpeUpdPolLoader.polDirName<br/>At ZpeUpdPolLoader.java:[line 339]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

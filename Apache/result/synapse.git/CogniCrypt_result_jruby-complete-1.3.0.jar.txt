@@ -1,0 +1,195 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 5.014 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 8 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.22
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.56
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.78
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r1)
+		Method: <org.jruby.RubyDigest: java.security.MessageDigest createMessageDigest(org.jruby.Ruby,java.lang.String)>
+		SHA-256: 88074d81dd039f480339ff9c6633145803831103344b997090589dbfb87de056
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r18.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.jruby.RubyDigest$Base: org.jruby.runtime.builtin.IRubyObject s_digest(org.jruby.runtime.builtin.IRubyObject,org.jruby.runtime.builtin.IRubyObject)>
+		SHA-256: 917b9ad41c02ba9f6d4d6dc57bd33611462fea8f069cae36ef680b9933d6dfe0
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <jruby.objectweb.asm.commons.SerialVersionUIDAdder: byte[] computeSHAdigest(byte[])>
+		SHA-256: d07457ab9a1509d84a8dcce04f824895e3a79378fa4eca276a400a3637f76cf7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11397)
+		Method: <jruby.objectweb.asm.commons.SerialVersionUIDAdder: byte[] computeSHAdigest(byte[])>
+		SHA-256: 892271a62bbd49f80055f6cf884a386e72715b9b72748b7593d468cce5965b59
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r20.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.jruby.RubyDigest$Base: org.jruby.runtime.builtin.IRubyObject s_hexdigest(org.jruby.runtime.builtin.IRubyObject,org.jruby.runtime.builtin.IRubyObject)>
+		SHA-256: 58b63a796e9245afcbfbede6aa1136bb373466b44bcbfe257aeb1ddba60de270
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r18.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.jruby.RubyDigest$Base: org.jruby.runtime.builtin.IRubyObject s_digest(org.jruby.runtime.builtin.IRubyObject,org.jruby.runtime.builtin.IRubyObject)>
+		SHA-256: ef76572f780a7ab2e4773b67710fcea6066adbdedc2fd9a4bb5e25d5bdd70be3
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>(r1, $r5)
+		Method: <org.jruby.RubyDigest: java.security.MessageDigest createMessageDigest(org.jruby.Ruby,java.lang.String)>
+		SHA-256: 81e4f49fff3864fc6bb38976e34b25d99aa7fc55aee869b4acd95cd09618e6d4
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <jruby.objectweb.asm.commons.SerialVersionUIDAdder: byte[] computeSHAdigest(byte[])>
+		SHA-256: f656c3d414da592bc71caead9ee3e5fff94223aa6cba1aea8fab47f8dc316012
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r20.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.jruby.RubyDigest$Base: org.jruby.runtime.builtin.IRubyObject s_hexdigest(org.jruby.runtime.builtin.IRubyObject,org.jruby.runtime.builtin.IRubyObject)>
+		SHA-256: 73b1e7440d88af036b14fab088f5c86a649b317292e33e5c0c40eb5885f19f08
+		Secure: true
+
+Findings in Java Class: jruby.objectweb.asm.commons.SerialVersionUIDAdder
+
+	 in Method: byte[] computeSHAdigest(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #892271a62bbd49f80055f6cf884a386e72715b9b72748b7593d468cce5965b59)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11397)
+
+
+Findings in Java Class: org.jruby.yaml.JRubyConstructor
+
+	 in Method: java.lang.Object constructRuby(org.jvyamlb.Constructor,org.jruby.RubyClass,org.jvyamlb.nodes.Node)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #88074d81dd039f480339ff9c6633145803831103344b997090589dbfb87de056)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r10 = interfaceinvoke $r9.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #81e4f49fff3864fc6bb38976e34b25d99aa7fc55aee869b4acd95cd09618e6d4)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r10 = interfaceinvoke $r9.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r1)
+
+
+	 in Method: java.lang.Object constructRubyString(org.jvyamlb.Constructor,java.lang.String,org.jvyamlb.nodes.Node)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #88074d81dd039f480339ff9c6633145803831103344b997090589dbfb87de056)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r6 = interfaceinvoke $r5.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r14)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #81e4f49fff3864fc6bb38976e34b25d99aa7fc55aee869b4acd95cd09618e6d4)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r6 = interfaceinvoke $r5.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r14)
+
+
+	 in Method: java.lang.Object constructRubyInt(org.jvyamlb.Constructor,java.lang.String,org.jvyamlb.nodes.Node)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #88074d81dd039f480339ff9c6633145803831103344b997090589dbfb87de056)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r6 = interfaceinvoke $r5.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r14)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #81e4f49fff3864fc6bb38976e34b25d99aa7fc55aee869b4acd95cd09618e6d4)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r6 = interfaceinvoke $r5.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r14)
+
+
+	 in Method: java.lang.Object constructRubyException(org.jvyamlb.Constructor,java.lang.String,org.jvyamlb.nodes.Node)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #88074d81dd039f480339ff9c6633145803831103344b997090589dbfb87de056)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r11 = interfaceinvoke $r10.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r49)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #81e4f49fff3864fc6bb38976e34b25d99aa7fc55aee869b4acd95cd09618e6d4)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r11 = interfaceinvoke $r10.<org.jruby.runtime.ObjectAllocator: org.jruby.runtime.builtin.IRubyObject allocate(org.jruby.Ruby,org.jruby.RubyClass)>(r3, r49)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 9
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 8
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 19 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 39.82 s
+

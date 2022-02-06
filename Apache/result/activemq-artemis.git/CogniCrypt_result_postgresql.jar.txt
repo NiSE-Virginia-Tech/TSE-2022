@@ -1,0 +1,119 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 553.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: java.security.MessageDigest
+		Statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3706)
+		Method: <org.postgresql.util.MD5Digest: byte[] encode(byte[],byte[],byte[])>
+		SHA-256: 9c3515db2a4694ab7c097dbbce6d11d618ce4e5f5751050c9cc4c4633a3ad437
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.net.ssl.SSLContext
+		Statement: r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3667)
+		Method: <org.postgresql.ssl.NonValidatingFactory: void <init>(java.lang.String)>
+		SHA-256: baff9dcdacb961f8416254576d653d38c89d24c73e751256c4a07d98b6d1fe5b
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: r4 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.postgresql.util.MD5Digest: byte[] encode(byte[],byte[],byte[])>
+		SHA-256: b548e2f8737a4f861a82f76c885dfdf1caf6d7ff5edfe2bdcc2ae2a30171b9e7
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r5 = virtualinvoke r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.postgresql.util.MD5Digest: byte[] encode(byte[],byte[],byte[])>
+		SHA-256: dd0393eb81dc5095c4ac9c80779eb0675562b6644e0502bb1abe0293a7c99a3e
+		Secure: false
+
+Findings in Java Class: org.postgresql.ssl.NonValidatingFactory
+
+	 in Method: void <init>(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3668, r7, varReplacer3668)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3668, r7, varReplacer3668)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #baff9dcdacb961f8416254576d653d38c89d24c73e751256c4a07d98b6d1fe5b)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3667)
+
+
+Findings in Java Class: org.postgresql.util.MD5Digest
+
+	 in Method: byte[] encode(byte[],byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9c3515db2a4694ab7c097dbbce6d11d618ce4e5f5751050c9cc4c4633a3ad437)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3706)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 4
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.091 s
+

@@ -1,0 +1,1498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/archiva.git/oak-segment-tar-1.14.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>81446 lines of code analyzed,
+	in 1939 classes, 
+	in 68 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">59</td>
+<td align="right">0.72</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>61</b>
+</td>
+<td align="right">
+<b>0.75</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">61</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>61</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67292');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67292" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class io.netty.util.internal.ThrowableUtil<br/>In method io.netty.util.internal.ThrowableUtil.stackTraceToString(Throwable)<br/>At ThrowableUtil.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68033');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68033" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.FileStoreGCMonitor<br/>In method org.apache.jackrabbit.oak.segment.file.FileStoreGCMonitor.error(String, Exception)<br/>At FileStoreGCMonitor.java:[line 67]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68974');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68974" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Backup<br/>In method org.apache.jackrabbit.oak.segment.tool.Backup.run()<br/>At Backup.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69028');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69028" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Check<br/>In method org.apache.jackrabbit.oak.segment.tool.Check.run()<br/>At Check.java:[line 336]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69082');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69082" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Compact<br/>In method org.apache.jackrabbit.oak.segment.tool.Compact.run()<br/>At Compact.java:[line 293]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69136');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69136" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugSegments<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugSegments.run()<br/>At DebugSegments.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69248');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69248" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugStore<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugStore.analyseSegment(Segment, RecordUsageAnalyser)<br/>At DebugStore.java:[line 189]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69302');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69302" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugStore<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugStore.run()<br/>At DebugStore.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69356');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69356" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugTars<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugTars.run()<br/>At DebugTars.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69499');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69499" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Diff<br/>In method org.apache.jackrabbit.oak.segment.tool.Diff.run()<br/>At Diff.java:[line 199]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69553');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69553" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.History<br/>In method org.apache.jackrabbit.oak.segment.tool.History.run()<br/>At History.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69607');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69607" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.RecoverJournal<br/>In method org.apache.jackrabbit.oak.segment.tool.RecoverJournal.run()<br/>At RecoverJournal.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69661');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69661" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Restore<br/>In method org.apache.jackrabbit.oak.segment.tool.Restore.run()<br/>At Restore.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69715');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69715" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.Revisions<br/>In method org.apache.jackrabbit.oak.segment.tool.Revisions.run()<br/>At Revisions.java:[line 105]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69769');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69769" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.SearchNodes<br/>In method org.apache.jackrabbit.oak.segment.tool.SearchNodes.run()<br/>At SearchNodes.java:[line 162]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65663');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65663" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class io.netty.handler.codec.serialization.ObjectDecoder<br/>In method io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)<br/>At ObjectDecoder.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65717');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65717" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class io.netty.handler.codec.serialization.ObjectDecoderInputStream<br/>In method io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()<br/>At ObjectDecoderInputStream.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67014');">
+<td>
+<span class="priority-2">SECOPFP</span>
+</td>
+<td>Overly permissive file permission can lead to privilege escalation or information leakage.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67014" style="display: none;">
+<a href="#OVERLY_PERMISSIVE_FILE_PERMISSION">Bug type OVERLY_PERMISSIVE_FILE_PERMISSION (click for details)</a>
+<br/>In class io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector<br/>In method io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector.canExecuteExecutable(File)<br/>At NativeLibraryLoader.java:[line 433]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67176');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67176" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class io.netty.util.internal.PlatformDependent$2<br/>In method io.netty.util.internal.PlatformDependent$2.current()<br/>At PlatformDependent.java:[line 116]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67234');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67234" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class io.netty.util.internal.ThreadLocalRandom<br/>In method new io.netty.util.internal.ThreadLocalRandom()<br/>At ThreadLocalRandom.java:[line 255]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68763');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68763" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.scheduler.LockBasedScheduler<br/>In method new org.apache.jackrabbit.oak.segment.scheduler.LockBasedScheduler(LockBasedScheduler$LockBasedSchedulerBuilder)<br/>At LockBasedScheduler.java:[line 158]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69823');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69823" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.iotrace.RandomAccessTrace<br/>In method new org.apache.jackrabbit.oak.segment.tool.iotrace.RandomAccessTrace(List, long, int, Consumer)<br/>At RandomAccessTrace.java:[line 65]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66331');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66331" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 164]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>Unknown source io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66430');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66430" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>Unknown source io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66529');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66529" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 239]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 239]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66613');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66613" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 270]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 270]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66697');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66697" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.util.internal.NativeLibraryLoader<br/>In method io.netty.util.internal.NativeLibraryLoader.&lt;static initializer for NativeLibraryLoader&gt;()<br/>At NativeLibraryLoader.java:[line 55]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At NativeLibraryLoader.java:[line 53]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66826');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66826" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.util.internal.NativeLibraryLoader<br/>In method io.netty.util.internal.NativeLibraryLoader.load(String, ClassLoader)<br/>At NativeLibraryLoader.java:[line 235]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source io/netty/util/internal/NativeLibraryLoader.WORKDIR<br/>At NativeLibraryLoader.java:[line 235]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66905');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66905" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.util.internal.NativeLibraryLoader<br/>In method io.netty.util.internal.NativeLibraryLoader.toDirectory(String)<br/>At NativeLibraryLoader.java:[line 140]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source io/netty/util/internal/NativeLibraryLoader.toDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At NativeLibraryLoader.java:[line 78]<br/>At NativeLibraryLoader.java:[line 84]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67067');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67067" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class io.netty.util.internal.PlatformDependent<br/>In method io.netty.util.internal.PlatformDependent.toDirectory(String)<br/>At PlatformDependent.java:[line 1083]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source io/netty/util/internal/PlatformDependent.toDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At PlatformDependent.java:[line 1021]<br/>At PlatformDependent.java:[line 1027]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68087');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68087" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.copyFile(String, String)<br/>At SegmentTarManager.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.copyFile(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68161');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68161" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.copyFile(String, String)<br/>At SegmentTarManager.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.copyFile(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68235');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68235" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.create(String)<br/>At SegmentTarManager.java:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.create(Ljava/lang/String;)Lorg/apache/jackrabbit/oak/segment/spi/persistence/SegmentArchiveWriter; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68309');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68309" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.delete(String)<br/>At SegmentTarManager.java:[line 141]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.delete(Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68383');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68383" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.exists(String)<br/>At SegmentTarManager.java:[line 166]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.exists(Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68457');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68457" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.open(String)<br/>At SegmentTarManager.java:[line 86]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.open(Ljava/lang/String;)Lorg/apache/jackrabbit/oak/segment/spi/persistence/SegmentArchiveReader; parameter 0<br/>Method usage not detected<br/>At SegmentTarManager.java:[line 130]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68541');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68541" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.recoverEntries(String, LinkedHashMap)<br/>At SegmentTarManager.java:[line 171]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.recoverEntries(Ljava/lang/String;Ljava/util/LinkedHashMap;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68615');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68615" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.renameTo(String, String)<br/>At SegmentTarManager.java:[line 151]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.renameTo(Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68689');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68689" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager<br/>In method org.apache.jackrabbit.oak.segment.file.tar.SegmentTarManager.renameTo(String, String)<br/>At SegmentTarManager.java:[line 151]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/file/tar/SegmentTarManager.renameTo(Ljava/lang/String;Ljava/lang/String;)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67346');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67346" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2.getBackupDirectory()<br/>At SegmentNodeStoreFactory.java:[line 574]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.val$role<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreFactory.java:[line 388]<br/>At SegmentNodeStoreFactory.java:[line 574]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67445');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67445" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2.getBackupDirectory()<br/>At SegmentNodeStoreFactory.java:[line 576]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$Configuration.repository_backup_dir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67514');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67514" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2.getSegmentDirectory()<br/>At SegmentNodeStoreFactory.java:[line 478]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.val$role<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreFactory.java:[line 388]<br/>At SegmentNodeStoreFactory.java:[line 478]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67613');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67613" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreFactory$2.getSplitPersistenceDirectory()<br/>At SegmentNodeStoreFactory.java:[line 483]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.val$role<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreFactory$2.appendRole(Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreFactory.java:[line 388]<br/>At SegmentNodeStoreFactory.java:[line 483]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67712');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67712" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1.getBackupDirectory()<br/>At SegmentNodeStoreService.java:[line 524]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreService$1.getRepositoryHome()Ljava/lang/String;<br/>Unknown source org/apache/jackrabbit/oak/osgi/OsgiUtil.lookupConfigurationThenFramework(Lorg/osgi/service/component/ComponentContext;Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreService.java:[line 524]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67796');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67796" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1.getBackupDirectory()<br/>At SegmentNodeStoreService.java:[line 526]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreService$Configuration.repository_backup_dir()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67865');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67865" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1.getSegmentDirectory()<br/>At SegmentNodeStoreService.java:[line 408]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreService$1.getRepositoryHome()Ljava/lang/String;<br/>Unknown source org/apache/jackrabbit/oak/osgi/OsgiUtil.lookupConfigurationThenFramework(Lorg/osgi/service/component/ComponentContext;Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreService.java:[line 408]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67949');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67949" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1<br/>In method org.apache.jackrabbit.oak.segment.SegmentNodeStoreService$1.getSplitPersistenceDirectory()<br/>At SegmentNodeStoreService.java:[line 413]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source org/apache/jackrabbit/oak/segment/SegmentNodeStoreService$1.getRepositoryHome()Ljava/lang/String;<br/>Unknown source org/apache/jackrabbit/oak/osgi/OsgiUtil.lookupConfigurationThenFramework(Lorg/osgi/service/component/ComponentContext;Ljava/lang/String;)Ljava/lang/String;<br/>At SegmentNodeStoreService.java:[line 413]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68821');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68821" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.standby.codec.ResponseDecoder<br/>In method org.apache.jackrabbit.oak.segment.standby.codec.ResponseDecoder.decodeGetBlobResponse(int, ByteBuf, List)<br/>At ResponseDecoder.java:[line 138]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>At ResponseDecoder.java:[line 137]<br/>At ResponseDecoder.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68905');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68905" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.standby.store.StandbyStoreService<br/>In method org.apache.jackrabbit.oak.segment.standby.store.StandbyStoreService.bootstrapSlave(ComponentContext, StandbyStoreService$Configuration, FileStore)<br/>At StandbyStoreService.java:[line 184]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/google/common/base/StandardSystemProperty.value()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69410');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69410" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugTars<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugTars.debugTarFile(ReadOnlyFileStore, String)<br/>At DebugTars.java:[line 146]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/jackrabbit/oak/segment/tool/DebugTars.debugTarFile(Lorg/apache/jackrabbit/oak/segment/file/ReadOnlyFileStore;Ljava/lang/String;)V parameter 0<br/>At DebugTars.java:[line 140]<br/>At DebugTars.java:[line 141]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65771');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65771" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$<br/>In class io.netty.handler.ssl.CipherSuiteConverter<br/>In method io.netty.handler.ssl.CipherSuiteConverter.&lt;static initializer for CipherSuiteConverter&gt;()<br/>At CipherSuiteConverter.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69190');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "([0-9a-f-]+)|(([0-9a-f-]+:[0-9a-f]+)(-([0-9a-f-]+:[0-9a-f]+))?)?(/.*)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69190" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ([0-9a-f-]+)|(([0-9a-f-]+:[0-9a-f]+)(-([0-9a-f-]+:[0-9a-f]+))?)?(/.*)?<br/>In class org.apache.jackrabbit.oak.segment.tool.DebugSegments<br/>In method org.apache.jackrabbit.oak.segment.tool.DebugSegments.&lt;static initializer for DebugSegments&gt;()<br/>At DebugSegments.java:[line 47]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66165');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66165" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1<br/>In method io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1.initialValue()<br/>At FingerprintTrustManagerFactory.java:[line 84]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65829');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65829" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class io.netty.handler.ssl.CipherSuiteConverter<br/>In method io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 358]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65918');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65918" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class io.netty.handler.ssl.CipherSuiteConverter<br/>In method io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 360]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66007');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66007" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class io.netty.handler.ssl.CipherSuiteConverter<br/>In method io.netty.handler.ssl.CipherSuiteConverter.toJavaUncached(String)<br/>At CipherSuiteConverter.java:[line 336]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source java/util/regex/Matcher.group(I)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66076');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66076" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class io.netty.handler.ssl.CipherSuiteConverter<br/>In method io.netty.handler.ssl.CipherSuiteConverter.toOpenSslHandshakeAlgo(String)<br/>At CipherSuiteConverter.java:[line 212]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source io/netty/handler/ssl/CipherSuiteConverter.toOpenSslHandshakeAlgo(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At CipherSuiteConverter.java:[line 194]<br/>At CipherSuiteConverter.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to io.netty.channel.socket.oio.OioSocketChannel (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class io.netty.channel.socket.oio.OioSocketChannel<br/>In method new io.netty.channel.socket.oio.OioSocketChannel()<br/>At OioSocketChannel.java:[line 52]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class io.netty.channel.socket.oio.OioServerSocketChannel<br/>In method io.netty.channel.socket.oio.OioServerSocketChannel.newServerSocket()<br/>At OioServerSocketChannel.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66223');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66223" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2<br/>In method io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2.getAcceptedIssuers()<br/>At FingerprintTrustManagerFactory.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66277');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66277" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class io.netty.handler.ssl.util.InsecureTrustManagerFactory$1<br/>In method io.netty.handler.ssl.util.InsecureTrustManagerFactory$1.getAcceptedIssuers()<br/>At InsecureTrustManagerFactory.java:[line 57]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="OVERLY_PERMISSIVE_FILE_PERMISSION">OVERLY_PERMISSIVE_FILE_PERMISSION: Overly permissive file permission</a>
+</h2>
+            
+<p>
+It is generally a bad practices to set overly permissive file permission such as read+write+exec for all users.
+If the file affected is a configuration, a binary, a script or sensitive data, it can lead to privilege escalation or information leakage.
+</p>
+<p>
+It is possible that another service, running on the same host as your application, gets compromised.
+Services typically run under a different user. A compromised service account could be use to read your configuration, add execution instruction to scripts or alter the data file.
+To limite the damage from other services or local users, you should limited to permission of your application files.
+</p>
+
+<p>
+<b>Vulnerable Code 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw-rw-"));
+</pre>
+</p>
+
+<p>
+<b>Solution 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw----"));
+</pre>
+</p>
+
+
+<p>
+<b>Vulnerable Code 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+
+perms.add(PosixFilePermission.OTHERS_READ);
+perms.add(PosixFilePermission.OTHERS_WRITE);
+perms.add(PosixFilePermission.OTHERS_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>Solution 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/732.html">CWE-732: Incorrect Permission Assignment for Critical Resource</a><br/>
+<a href="https://payatu.com/guide-linux-privilege-escalation/">A guide to Linux Privilege Escalation</a><br/>
+<a href="https://en.wikipedia.org/wiki/File_system_permissions">File system permissions</a><br/>
+</p>
+
+            
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_TRUST_MANAGER">WEAK_TRUST_MANAGER: TrustManager that accept any certificates</a>
+</h2>
+            
+<p>Empty TrustManager implementations are often used to connect easily to a host that is not signed by a root
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a>. As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a TrustStore for example) should be built.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>class TrustAllManager implements X509TrustManager {
+
+    @Override
+    public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any client connecting (no certificate validation)
+    }
+
+    @Override
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any remote server (no certificate validation)
+    }
+
+    @Override
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        </body>
+</html>

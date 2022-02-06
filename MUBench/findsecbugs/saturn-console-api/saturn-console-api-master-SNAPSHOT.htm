@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/saturn-console-api/saturn-console-api/target/saturn-console-api-master-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>15435 lines of code analyzed,
+	in 307 classes, 
+	in 29 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">5</td>
+<td align="right">0.32</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">17</td>
+<td align="right">1.10</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>22</b>
+</td>
+<td align="right">
+<b>1.43</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">21</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.aop.aspect.AuditLogAspect<br/>In method com.vip.saturn.job.console.aop.aspect.AuditLogAspect.logAudit(Boolean, AuditType, String)<br/>At AuditLogAspect.java:[line 91]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/http/HttpSession.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>Unknown source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.buildLogContent(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Unknown source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getUserName()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getWebRequestContent(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/String; parameter 1<br/>Unknown source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getRESTRequstContent(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/String; parameter 1<br/>Tainted source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getIpAddress()Ljava/lang/String;<br/>Unknown source java/lang/ThreadLocal.get()Ljava/lang/Object;<br/>Tainted source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getWebRequestContent(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/String;<br/>Tainted source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getRESTRequstContent(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/String;<br/>Tainted source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.buildLogContent(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source com/vip/saturn/job/console/aop/aspect/AuditLogAspect.getUri()Ljava/lang/String;<br/>Unknown source com/vip/saturn/job/console/utils/AuditInfoContext.currentAuditInfo()Ljava/util/Map;<br/>At AuditLogAspect.java:[line 85]<br/>At AuditLogAspect.java:[line 89]<br/>At AuditLogAspect.java:[line 95]<br/>At AuditLogAspect.java:[line 96]<br/>At AuditLogAspect.java:[line 101]<br/>At AuditLogAspect.java:[line 102]<br/>At AuditLogAspect.java:[line 103]<br/>At AuditLogAspect.java:[line 107]<br/>At AuditLogAspect.java:[line 109]<br/>At AuditLogAspect.java:[line 111]<br/>At AuditLogAspect.java:[line 114]<br/>At AuditLogAspect.java:[line 123]<br/>At AuditLogAspect.java:[line 132]<br/>At AuditLogAspect.java:[line 133]<br/>At AuditLogAspect.java:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66017');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66017" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.ExecutorOverviewController<br/>In method com.vip.saturn.job.console.controller.gui.ExecutorOverviewController.batchExtractOrRecoverTraffic(HttpServletRequest, String, List, String)<br/>At ExecutorOverviewController.java:[line 114]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>Tainted source com/vip/saturn/job/console/controller/gui/ExecutorOverviewController.batchExtractOrRecoverTraffic(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)Lcom/vip/saturn/job/console/controller/SuccessResponseEntity; parameter 1<br/>At ExecutorOverviewController.java:[line 109]<br/>At ExecutorOverviewController.java:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66111');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66111" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.ExecutorOverviewController<br/>In method com.vip.saturn.job.console.controller.gui.ExecutorOverviewController.batchRemoveExecutors(HttpServletRequest, String, List)<br/>At ExecutorOverviewController.java:[line 175]<br/>Sink method org/slf4j/Logger.warn(Ljava/lang/String;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Tainted source com/vip/saturn/job/console/controller/gui/ExecutorOverviewController.batchRemoveExecutors(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;Ljava/util/List;)Lcom/vip/saturn/job/console/controller/SuccessResponseEntity; parameter 0<br/>Tainted source java/util/Iterator.next()Ljava/lang/Object;<br/>At ExecutorOverviewController.java:[line 169]<br/>At ExecutorOverviewController.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66259');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66259" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.rest.AlarmRestApiController<br/>In method com.vip.saturn.job.console.controller.rest.AlarmRestApiController.raise(String, Map, HttpServletRequest)<br/>At AlarmRestApiController.java:[line 62]<br/>Sink method org/slf4j/Logger.info(Ljava/lang/String;[Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/controller/rest/AlarmRestApiController.constructAlarmInfo(Ljava/util/Map;)Lcom/vip/saturn/job/integrate/entity/AlarmInfo;<br/>Unknown source com/vip/saturn/job/console/controller/AbstractController.checkAndGetParametersValueAsString(Ljava/util/Map;Ljava/lang/String;Z)Ljava/lang/String; parameter 2<br/>Tainted source com/vip/saturn/job/console/controller/rest/AlarmRestApiController.raise(Ljava/lang/String;Ljava/util/Map;Ljavax/servlet/http/HttpServletRequest;)Lorg/springframework/http/ResponseEntity; parameter 1<br/>Unknown source com/vip/saturn/job/integrate/entity/AlarmInfo.&lt;init&gt;()V<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Tainted source com/vip/saturn/job/console/controller/rest/AlarmRestApiController.checkAndGetParametersValueAsString(Ljava/util/Map;Ljava/lang/String;Z)Ljava/lang/String;<br/>At AbstractController.java:[line 74]<br/>At AbstractController.java:[line 75]<br/>At AlarmRestApiController.java:[line 56]<br/>At AlarmRestApiController.java:[line 57]<br/>At AlarmRestApiController.java:[line 60]<br/>At AlarmRestApiController.java:[line 97]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66652');">
+<td>
+<span class="priority-2">SECHPP</span>
+</td>
+<td>Concatenating user-controlled input into a URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66652" style="display: none;">
+<a href="#HTTP_PARAMETER_POLLUTION">Bug type HTTP_PARAMETER_POLLUTION (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient<br/>In method com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient.count(String, String, String)<br/>At MarathonRestClient.java:[line 165]<br/>Sink method org/apache/http/client/methods/HttpGet.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/service/impl/marathon/MarathonRestClient.count(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I parameter 0<br/>Method usage not detected<br/>At MarathonRestClient.java:[line 162]<br/>At MarathonServiceImpl.java:[line 735]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66745');">
+<td>
+<span class="priority-2">SECHPP</span>
+</td>
+<td>Concatenating user-controlled input into a URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66745" style="display: none;">
+<a href="#HTTP_PARAMETER_POLLUTION">Bug type HTTP_PARAMETER_POLLUTION (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient<br/>In method com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient.getContainerStatus(String, String, String)<br/>At MarathonRestClient.java:[line 241]<br/>Sink method org/apache/http/client/methods/HttpGet.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/service/impl/marathon/MarathonRestClient.getContainerStatus(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/vip/saturn/job/console/domain/container/ContainerStatus; parameter 0<br/>At MarathonRestClient.java:[line 238]<br/>At MarathonServiceImpl.java:[line 141]<br/>At MarathonServiceImpl.java:[line 214]<br/>At MarathonServiceImpl.java:[line 218]<br/>At MarathonServiceImpl.java:[line 223]<br/>At MarathonServiceImpl.java:[line 374]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66873');">
+<td>
+<span class="priority-2">SECHPP</span>
+</td>
+<td>Concatenating user-controlled input into a URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66873" style="display: none;">
+<a href="#HTTP_PARAMETER_POLLUTION">Bug type HTTP_PARAMETER_POLLUTION (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient<br/>In method com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient.getRegistryRepositoriesTagsList(String)<br/>At MarathonRestClient.java:[line 342]<br/>Sink method org/apache/http/client/methods/HttpGet.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/service/impl/marathon/MarathonRestClient.getRegistryRepositoriesTagsList(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At MarathonRestClient.java:[line 339]<br/>At MarathonServiceImpl.java:[line 594]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66966');">
+<td>
+<span class="priority-2">SECHPP</span>
+</td>
+<td>Concatenating user-controlled input into a URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66966" style="display: none;">
+<a href="#HTTP_PARAMETER_POLLUTION">Bug type HTTP_PARAMETER_POLLUTION (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient<br/>In method com.vip.saturn.job.console.service.impl.marathon.MarathonRestClient.info(String, String, String)<br/>At MarathonRestClient.java:[line 280]<br/>Sink method org/apache/http/client/methods/HttpGet.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/service/impl/marathon/MarathonRestClient.info(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At MarathonRestClient.java:[line 277]<br/>At MarathonServiceImpl.java:[line 584]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67059');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67059" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.vip.saturn.job.console.utils.MD5Utils<br/>In method com.vip.saturn.job.console.utils.MD5Utils.getMD5Code(byte[])<br/>At MD5Utils.java:[line 27]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66536');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66536" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.JobServiceImpl<br/>In method new com.vip.saturn.job.console.service.impl.JobServiceImpl()<br/>At JobServiceImpl.java:[line 98]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66594');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66594" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.console.service.impl.ZkTreeServiceImpl<br/>In method new com.vip.saturn.job.console.service.impl.ZkTreeServiceImpl()<br/>At ZkTreeServiceImpl.java:[line 28]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67399');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67399" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.vip.saturn.job.console.utils.SaturnConsoleUtils<br/>In method com.vip.saturn.job.console.utils.SaturnConsoleUtils.&lt;static initializer for SaturnConsoleUtils&gt;()<br/>At SaturnConsoleUtils.java:[line 29]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65909');">
+<td>
+<span class="priority-1">SECSPRCSRFURM</span>
+</td>
+<td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65909" style="display: none;">
+<a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.AuthenticationController<br/>In method com.vip.saturn.job.console.controller.gui.AuthenticationController.logout(HttpServletRequest)<br/>At AuthenticationController.java:[lines 47-50]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65963');">
+<td>
+<span class="priority-1">SECSPRCSRFURM</span>
+</td>
+<td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65963" style="display: none;">
+<a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.AuthorizationController<br/>In method com.vip.saturn.job.console.controller.gui.AuthorizationController.refreshCache(HttpSession)<br/>At AuthorizationController.java:[lines 46-48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66205');">
+<td>
+<span class="priority-1">SECSPRCSRFURM</span>
+</td>
+<td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66205" style="display: none;">
+<a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.RegistryCenterController<br/>In method com.vip.saturn.job.console.controller.gui.RegistryCenterController.notifyRefreshRegCenter()<br/>At RegistryCenterController.java:[lines 94-96]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66413');">
+<td>
+<span class="priority-1">SECSPRCSRFURM</span>
+</td>
+<td>Unrestricted Spring's RequestMapping makes the method vulnerable to CSRF attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66413" style="display: none;">
+<a href="#SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">Bug type SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.rest.DashboardRefreshRestApiController<br/>In method com.vip.saturn.job.console.controller.rest.DashboardRefreshRestApiController.dashboardRefresh(String, HttpServletRequest)<br/>At DashboardRefreshRestApiController.java:[lines 38-47]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67117');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67117" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.utils.PasswordUtils<br/>In method com.vip.saturn.job.console.utils.PasswordUtils.genPassword(String, byte[], String)<br/>At PasswordUtils.java:[line 40]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/utils/PasswordUtils.isHashMethodSupported(Ljava/lang/String;)Z parameter 0<br/>Unknown source com/vip/saturn/job/console/utils/PasswordUtils.genPassword(Ljava/lang/String;[BLjava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At PasswordUtils.java:[line 32]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67206');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67206" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.utils.PasswordUtils<br/>In method com.vip.saturn.job.console.utils.PasswordUtils.isHashMethodSupported(String)<br/>At PasswordUtils.java:[line 88]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/utils/PasswordUtils.isHashMethodSupported(Ljava/lang/String;)Z parameter 0<br/>At AuthenticationServiceImpl.java:[line 33]<br/>At PasswordUtils.java:[line 32]<br/>At PasswordUtils.java:[line 36]<br/>At PasswordUtils.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67315');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67315" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.vip.saturn.job.console.utils.PasswordUtils<br/>In method com.vip.saturn.job.console.utils.PasswordUtils.validate(String, String, String)<br/>At PasswordUtils.java:[line 62]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/vip/saturn/job/console/utils/PasswordUtils.isHashMethodSupported(Ljava/lang/String;)Z parameter 0<br/>Unknown source com/vip/saturn/job/console/utils/PasswordUtils.validate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At AuthenticationServiceImpl.java:[line 33]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65835');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65835" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.vip.saturn.job.console.controller.gui.AbstractGUIController<br/>In method com.vip.saturn.job.console.controller.gui.AbstractGUIController.printErrorToJsAlert(String, HttpServletResponse)<br/>At AbstractGUIController.java:[line 112]<br/>Sink method javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>At AbstractGUIController.java:[line 112]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66467');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66467" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class com.vip.saturn.job.console.filter.AuthenticationFilter<br/>In method com.vip.saturn.job.console.filter.AuthenticationFilter.doFilter(ServletRequest, ServletResponse, FilterChain)<br/>At AuthenticationFilter.java:[line 39]<br/>Sink method java/io/PrintWriter.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/alibaba/fastjson/JSON.toJSONString(Ljava/lang/Object;)Ljava/lang/String;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="HTTP_PARAMETER_POLLUTION">HTTP_PARAMETER_POLLUTION: HTTP Parameter Pollution</a>
+</h2>
+            
+<p>
+Concatenating unvalidated user input into a URL can allow an attacker to override the value of a request parameter. Attacker may be able to override existing parameter values, inject a new parameter or exploit variables out of a direct reach. HTTP Parameter Pollution (HPP) attacks consist of injecting encoded query string delimiters into other existing parameters. If a web application does not properly sanitize the user input, a malicious user may compromise the logic of the application to perform either client-side or server-side attacks.<br/>
+In the following example the programmer has not considered the possibility that an attacker could provide a parameter <code>lang</code> such as <code>en&user_id=1</code>, which would enable him to change the <code>user_id</code> at will.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>String lang = request.getParameter("lang");
+GetMethod get = new GetMethod("http://www.host.com");
+get.setQueryString("lang=" + lang + "&user_id=" + user_id);
+get.execute();</pre>
+<p>
+    <b>Solution:</b><br/>
+Sanitize user input before using it in HTTP parameters.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://capec.mitre.org/data/definitions/460.html">CAPEC-460: HTTP Parameter Pollution (HPP)</a>
+</p>
+            
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING">SPRING_CSRF_UNRESTRICTED_REQUEST_MAPPING: Spring CSRF unrestricted RequestMapping</a>
+</h2>
+            
+<p>Methods annotated with <code>RequestMapping</code> are by default mapped to all the HTTP request methods.
+However, Spring Security's CSRF protection is not enabled by default
+for the HTTP request methods <code>GET</code>, <code>HEAD</code>, <code>TRACE</code>, and <code>OPTIONS</code>
+(as this could cause the tokens to be leaked).
+Therefore, state-changing methods annotated with <code>RequestMapping</code> and not narrowing the mapping
+to the HTTP request methods <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, or <code>PATCH</code>
+are vulnerable to CSRF attacks.</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@Controller
+public class UnsafeController {
+
+    @RequestMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Spring Framework 4.3 and later):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use @GetMapping.
+     */
+    @GetMapping("/path")
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either @PostMapping, @PutMapping, @DeleteMapping, or @PatchMapping.
+     */
+    @PostMapping("/path")
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+    <b>Solution (Before Spring Framework 4.3):</b><br/>
+<pre>@Controller
+public class SafeController {
+
+    /**
+     * For methods without side-effects use either
+     * RequestMethod.GET, RequestMethod.HEAD, RequestMethod.TRACE, or RequestMethod.OPTIONS.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.GET)
+    public String readData() {
+        // No state-changing operations performed within this method.
+        return "";
+    }
+
+    /**
+     * For state-changing methods use either
+     * RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, or RequestMethod.PATCH.
+     */
+    @RequestMapping(value = "/path", method = RequestMethod.POST)
+    public void writeData() {
+        // State-changing operations performed within this method.
+    }
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-use-proper-verbs">Spring Security Official Documentation: Use proper HTTP verbs (CSRF protection)</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29">OWASP: Cross-Site Request Forgery</a><br/>
+<a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet">OWASP: CSRF Prevention Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352: Cross-Site Request Forgery (CSRF)</a>
+</p>
+
+        
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

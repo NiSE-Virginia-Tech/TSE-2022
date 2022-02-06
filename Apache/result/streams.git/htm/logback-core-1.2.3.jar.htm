@@ -1,0 +1,1086 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/streams.git/logback-core-1.2.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>11897 lines of code analyzed,
+	in 373 classes, 
+	in 36 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">38</td>
+<td align="right">3.19</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>38</b>
+</td>
+<td align="right">
+<b>3.19</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">38</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>38</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69347');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69347" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class ch.qos.logback.core.status.ViewStatusMessagesServletBase<br/>In method ch.qos.logback.core.status.ViewStatusMessagesServletBase.printThrowable(StringBuilder, Throwable)<br/>At ViewStatusMessagesServletBase.java:[line 179]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.FileAppender<br/>In method ch.qos.logback.core.FileAppender.openFile(String)<br/>At FileAppender.java:[line 198]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/FileAppender.openFile(Ljava/lang/String;)V parameter 0<br/>At FileAppender.java:[line 100]<br/>At FileAppender.java:[line 127]<br/>At RollingFileAppender.java:[line 203]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66005');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66005" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.action.IncludeAction<br/>In method ch.qos.logback.core.joran.action.IncludeAction.filePathAsURL(String)<br/>At IncludeAction.java:[line 150]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/joran/action/IncludeAction.filePathAsURL(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>At IncludeAction.java:[line 167]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66213');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66213" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.action.PropertyAction<br/>In method ch.qos.logback.core.joran.action.PropertyAction.begin(InterpretationContext, String, Attributes)<br/>At PropertyAction.java:[line 69]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/subst/NodeToStringTransformer.substituteVariable(Ljava/lang/String;Lch/qos/logback/core/spi/PropertyContainer;Lch/qos/logback/core/spi/PropertyContainer;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/joran/spi/InterpretationContext.subst(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/util/OptionHelper.substVars(Ljava/lang/String;Lch/qos/logback/core/spi/PropertyContainer;Lch/qos/logback/core/spi/PropertyContainer;)Ljava/lang/String;<br/>At PropertyAction.java:[line 67]<br/>At InterpretationContext.java:[line 157]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65857');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65857" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.GenericConfigurator<br/>In method ch.qos.logback.core.joran.GenericConfigurator.doConfigure(String)<br/>At GenericConfigurator.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/joran/GenericConfigurator.doConfigure(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66424');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66424" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.spi.ConfigurationWatchList<br/>In method ch.qos.logback.core.joran.spi.ConfigurationWatchList.convertToFile(URL)<br/>At ConfigurationWatchList.java:[line 95]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/joran/spi/ConfigurationWatchList.convertToFile(Ljava/net/URL;)Ljava/io/File; parameter 0<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>Unknown source java/net/URLDecoder.decode(Ljava/lang/String;)Ljava/lang/String;<br/>At GenericConfigurator.java:[line 46]<br/>At GenericConfigurator.java:[line 78]<br/>At GenericConfigurator.java:[line 79]<br/>At GenericConfigurator.java:[line 100]<br/>At IncludeAction.java:[line 117]<br/>At IncludeAction.java:[line 152]<br/>At IncludeAction.java:[line 167]<br/>At IncludeAction.java:[line 172]<br/>At IncludeAction.java:[line 185]<br/>At IncludeAction.java:[line 189]<br/>At ConfigurationWatchList.java:[line 55]<br/>At ConfigurationWatchList.java:[line 59]<br/>At ConfigurationWatchList.java:[line 67]<br/>At ConfigurationWatchList.java:[line 95]<br/>At ConfigurationWatchListUtil.java:[line 50]<br/>At ConfigurationWatchListUtil.java:[line 67]<br/>At ConfigurationWatchListUtil.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66792');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66792" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.property.FileExistsPropertyDefiner<br/>In method ch.qos.logback.core.property.FileExistsPropertyDefiner.getPropertyValue()<br/>At FileExistsPropertyDefiner.java:[line 59]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/property/FileExistsPropertyDefiner.path<br/>At FileExistsPropertyDefiner.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66871');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66871" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.FixedWindowRollingPolicy<br/>In method ch.qos.logback.core.rolling.FixedWindowRollingPolicy.rollover()<br/>At FixedWindowRollingPolicy.java:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/pattern/Converter.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convertInt(I)Ljava/lang/String;<br/>At FixedWindowRollingPolicy.java:[line 128]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66990');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66990" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.FixedWindowRollingPolicy<br/>In method ch.qos.logback.core.rolling.FixedWindowRollingPolicy.rollover()<br/>At FixedWindowRollingPolicy.java:[line 137]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/pattern/Converter.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convertInt(I)Ljava/lang/String;<br/>At FixedWindowRollingPolicy.java:[line 136]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67500');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67500" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.gzCompress(String, String)<br/>At Compressor.java:[line 167]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.gzCompress(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At Compressor.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67629');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67629" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.gzCompress(String, String)<br/>At Compressor.java:[line 179]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.gzCompress(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At Compressor.java:[line 58]<br/>At Compressor.java:[line 176]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67768');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67768" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.gzCompress(String, String)<br/>At Compressor.java:[line 192]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.gzCompress(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At Compressor.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67897');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67897" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.zipCompress(String, String, String)<br/>At Compressor.java:[line 69]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.zipCompress(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 2<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At Compressor.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68026');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68026" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.zipCompress(String, String, String)<br/>At Compressor.java:[line 86]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.zipCompress(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At Compressor.java:[line 61]<br/>At Compressor.java:[line 83]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68165');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68165" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.zipCompress(String, String, String)<br/>At Compressor.java:[line 100]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.zipCompress(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 2<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At Compressor.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68572');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68572" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.RenameUtil<br/>In method ch.qos.logback.core.rolling.helper.RenameUtil.rename(String, String)<br/>At RenameUtil.java:[line 48]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/RenameUtil.rename(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 136]<br/>At FixedWindowRollingPolicy.java:[line 140]<br/>At FixedWindowRollingPolicy.java:[line 149]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At TimeBasedRollingPolicy.java:[line 170]<br/>At TimeBasedRollingPolicy.java:[line 189]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68751');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68751" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.RenameUtil<br/>In method ch.qos.logback.core.rolling.helper.RenameUtil.rename(String, String)<br/>At RenameUtil.java:[line 51]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/RenameUtil.rename(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At FixedWindowRollingPolicy.java:[line 140]<br/>At FixedWindowRollingPolicy.java:[line 149]<br/>At TimeBasedRollingPolicy.java:[line 170]<br/>At TimeBasedRollingPolicy.java:[line 176]<br/>At TimeBasedRollingPolicy.java:[line 188]<br/>At TimeBasedRollingPolicy.java:[line 189]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68910');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68910" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.RenameUtil<br/>In method ch.qos.logback.core.rolling.helper.RenameUtil.renameByCopx(String, String)<br/>At RenameUtil.java:[line 115]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/RenameUtil.renameByCopx(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 136]<br/>At FixedWindowRollingPolicy.java:[line 140]<br/>At FixedWindowRollingPolicy.java:[line 149]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At TimeBasedRollingPolicy.java:[line 170]<br/>At TimeBasedRollingPolicy.java:[line 176]<br/>At TimeBasedRollingPolicy.java:[line 188]<br/>At TimeBasedRollingPolicy.java:[line 189]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]<br/>At RenameUtil.java:[line 62]<br/>At RenameUtil.java:[line 63]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69129');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69129" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.SizeAndTimeBasedArchiveRemover<br/>In method ch.qos.logback.core.rolling.helper.SizeAndTimeBasedArchiveRemover.getFilesInPeriod(Date)<br/>At SizeAndTimeBasedArchiveRemover.java:[line 26]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/pattern/Converter.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convertMultipleArguments([Ljava/lang/Object;)Ljava/lang/String;<br/>At FileNamePattern.java:[line 153]<br/>At FileNamePattern.java:[line 157]<br/>At FileNamePattern.java:[line 161]<br/>At SizeAndTimeBasedArchiveRemover.java:[line 26]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69243');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69243" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.TimeBasedArchiveRemover<br/>In method ch.qos.logback.core.rolling.helper.TimeBasedArchiveRemover.getFilesInPeriod(Date)<br/>At TimeBasedArchiveRemover.java:[line 70]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/pattern/Converter.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At TimeBasedArchiveRemover.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67109');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67109" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.RollingFileAppender<br/>In method ch.qos.logback.core.rolling.RollingFileAppender.attemptOpenFile()<br/>At RollingFileAppender.java:[line 200]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/RollingPolicy.getActiveFileName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67178');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67178" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.RollingFileAppender<br/>In method ch.qos.logback.core.rolling.RollingFileAppender.start()<br/>At RollingFileAppender.java:[line 98]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/RollingFileAppender.getFile()Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/RollingPolicy.getActiveFileName()Ljava/lang/String;<br/>At RollingFileAppender.java:[line 98]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67262');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67262" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP<br/>In method ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP.computeCurrentPeriodsHighestCounterValue(String)<br/>At SizeAndTimeBasedFNATP.java:[line 115]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/pattern/Converter.convert(Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/SizeAndTimeBasedFNATP.getCurrentPeriodsFileNameWithoutCompressionSuffix()Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/rolling/helper/FileNamePattern.convertMultipleArguments([Ljava/lang/Object;)Ljava/lang/String;<br/>At SizeAndTimeBasedFNATP.java:[line 115]<br/>At SizeAndTimeBasedFNATP.java:[line 176]<br/>At FileNamePattern.java:[line 153]<br/>At FileNamePattern.java:[line 157]<br/>At FileNamePattern.java:[line 161]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67391');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67391" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.TimeBasedFileNamingAndTriggeringPolicyBase<br/>In method ch.qos.logback.core.rolling.TimeBasedFileNamingAndTriggeringPolicyBase.start()<br/>At TimeBasedFileNamingAndTriggeringPolicyBase.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/FileAppender.fileName<br/>Unknown source ch/qos/logback/core/rolling/TimeBasedRollingPolicy.getParentsRawFileProperty()Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/FileAppender.rawFileProperty()Ljava/lang/String;<br/>At FileAppender.java:[line 89]<br/>At RollingPolicyBase.java:[line 93]<br/>At TimeBasedFileNamingAndTriggeringPolicyBase.java:[line 72]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69809');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69809" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class ch.qos.logback.core.util.FileUtil<br/>In method ch.qos.logback.core.util.FileUtil.copy(String, String)<br/>At FileUtil.java:[line 101]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/util/FileUtil.copy(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FileAppender.java:[line 89]<br/>At FixedWindowRollingPolicy.java:[line 136]<br/>At FixedWindowRollingPolicy.java:[line 140]<br/>At FixedWindowRollingPolicy.java:[line 149]<br/>At FixedWindowRollingPolicy.java:[line 165]<br/>At RollingPolicyBase.java:[line 93]<br/>At TimeBasedRollingPolicy.java:[line 170]<br/>At TimeBasedRollingPolicy.java:[line 176]<br/>At TimeBasedRollingPolicy.java:[line 188]<br/>At TimeBasedRollingPolicy.java:[line 189]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]<br/>At RenameUtil.java:[line 62]<br/>At RenameUtil.java:[line 63]<br/>At RenameUtil.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68294');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68294" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.gzCompress(String, String)<br/>At Compressor.java:[line 193]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.gzCompress(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At Compressor.java:[line 58]<br/>At Compressor.java:[line 176]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68433');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68433" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class ch.qos.logback.core.rolling.helper.Compressor<br/>In method ch.qos.logback.core.rolling.helper.Compressor.zipCompress(String, String, String)<br/>At Compressor.java:[line 101]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/rolling/helper/Compressor.zipCompress(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At FixedWindowRollingPolicy.java:[line 152]<br/>At FixedWindowRollingPolicy.java:[line 155]<br/>At Compressor.java:[line 61]<br/>At Compressor.java:[line 83]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70038');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70038" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class ch.qos.logback.core.util.FileUtil<br/>In method ch.qos.logback.core.util.FileUtil.copy(String, String)<br/>At FileUtil.java:[line 102]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/util/FileUtil.copy(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>At FixedWindowRollingPolicy.java:[line 140]<br/>At FixedWindowRollingPolicy.java:[line 149]<br/>At TimeBasedRollingPolicy.java:[line 170]<br/>At TimeBasedRollingPolicy.java:[line 176]<br/>At TimeBasedRollingPolicy.java:[line 188]<br/>At TimeBasedRollingPolicy.java:[line 189]<br/>At FileNamePattern.java:[line 168]<br/>At FileNamePattern.java:[line 171]<br/>At FileNamePattern.java:[line 175]<br/>At RenameUtil.java:[line 63]<br/>At RenameUtil.java:[line 113]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65650');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65650" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class ch.qos.logback.core.db.DBAppenderBase<br/>In method ch.qos.logback.core.db.DBAppenderBase.append(Object)<br/>At DBAppenderBase.java:[line 97]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;[Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 1<br/>Unknown source ch/qos/logback/core/db/DBAppenderBase.getInsertSQL()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65719');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65719" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class ch.qos.logback.core.db.DBAppenderBase<br/>In method ch.qos.logback.core.db.DBAppenderBase.append(Object)<br/>At DBAppenderBase.java:[line 99]<br/>Sink method java/sql/Connection.prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/db/DBAppenderBase.getInsertSQL()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65788');">
+<td>
+<span class="priority-2">SECSQLIJDBC</span>
+</td>
+<td>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65788" style="display: none;">
+<a href="#SQL_INJECTION_JDBC">Bug type SQL_INJECTION_JDBC (click for details)</a>
+<br/>In class ch.qos.logback.core.db.DBAppenderBase<br/>In method ch.qos.logback.core.db.DBAppenderBase.selectEventId(PreparedStatement, Connection)<br/>At DBAppenderBase.java:[line 147]<br/>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/db/dialect/SQLDialect.getSelectInsertId()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66084');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66084" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.action.IncludeAction<br/>In method ch.qos.logback.core.joran.action.IncludeAction.openURL(URL)<br/>At IncludeAction.java:[line 127]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/joran/action/IncludeAction.openURL(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>At IncludeAction.java:[line 117]<br/>At IncludeAction.java:[line 152]<br/>At IncludeAction.java:[line 167]<br/>At IncludeAction.java:[line 172]<br/>At IncludeAction.java:[line 185]<br/>At IncludeAction.java:[line 190]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65931');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65931" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.GenericConfigurator<br/>In method ch.qos.logback.core.joran.GenericConfigurator.doConfigure(URL)<br/>At GenericConfigurator.java:[line 47]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/joran/GenericConfigurator.doConfigure(Ljava/net/URL;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66673');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66673" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class ch.qos.logback.core.net.ssl.KeyStoreFactoryBean<br/>In method ch.qos.logback.core.net.ssl.KeyStoreFactoryBean.createKeyStore()<br/>At KeyStoreFactoryBean.java:[line 63]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/net/ssl/KeyStoreFactoryBean.location<br/>Unknown source ch/qos/logback/core/net/ssl/KeyStoreFactoryBean.getLocation()Ljava/lang/String;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source ch/qos/logback/core/util/LocationUtil.urlForResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Unknown source ch/qos/logback/core/util/LocationUtil.urlForResource(Ljava/lang/String;)Ljava/net/URL;<br/>At KeyStoreFactoryBean.java:[line 62]<br/>At KeyStoreFactoryBean.java:[line 100]<br/>At LocationUtil.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69401');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter; could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69401" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class ch.qos.logback.core.status.ViewStatusMessagesServletBase<br/>In method ch.qos.logback.core.status.ViewStatusMessagesServletBase.service(HttpServletRequest, HttpServletResponse)<br/>At ViewStatusMessagesServletBase.java:[line 59]<br/>Sink method java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/status/ViewStatusMessagesServletBase.getPageTitle(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69470');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter; could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69470" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class ch.qos.logback.core.status.ViewStatusMessagesServletBase<br/>In method ch.qos.logback.core.status.ViewStatusMessagesServletBase.service(HttpServletRequest, HttpServletResponse)<br/>At ViewStatusMessagesServletBase.java:[line 77]<br/>Sink method java/io/PrintWriter.append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;<br/>Sink parameter 0<br/>Unknown source ch/qos/logback/core/status/ViewStatusMessagesServletBase.printThrowable(Ljava/lang/StringBuilder;Ljava/lang/Throwable;)V parameter 1<br/>Unknown source ch/qos/logback/core/util/CachingDateFormatter.format(J)Ljava/lang/String;<br/>Unknown source java/io/StringWriter.getBuffer()Ljava/lang/StringBuffer;<br/>Unknown source ch/qos/logback/core/helpers/Transform.escapeTags(Ljava/lang/StringBuffer;)Ljava/lang/String; parameter 0<br/>Unknown source ch/qos/logback/core/status/ViewStatusMessagesServletBase.printList(Ljava/lang/StringBuilder;Lch/qos/logback/core/status/StatusManager;)V parameter 1<br/>Unknown source ch/qos/logback/core/helpers/Transform.escapeTags(Ljava/lang/StringBuffer;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source ch/qos/logback/core/status/ViewStatusMessagesServletBase.printStatus(Ljava/lang/StringBuilder;Lch/qos/logback/core/status/Status;)V parameter 1<br/>Unknown source ch/qos/logback/core/status/Status.getMessage()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.replace(IILjava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source ch/qos/logback/core/util/CachingDateFormatter.cachedStr<br/>At Transform.java:[line 65]<br/>At Transform.java:[line 68]<br/>At Transform.java:[line 71]<br/>At Transform.java:[line 74]<br/>At Transform.java:[line 77]<br/>At Transform.java:[line 83]<br/>At Transform.java:[line 88]<br/>At ViewStatusMessagesServletBase.java:[line 109]<br/>At ViewStatusMessagesServletBase.java:[line 116]<br/>At ViewStatusMessagesServletBase.java:[line 162]<br/>At ViewStatusMessagesServletBase.java:[line 163]<br/>At ViewStatusMessagesServletBase.java:[line 164]<br/>At ViewStatusMessagesServletBase.java:[line 165]<br/>At ViewStatusMessagesServletBase.java:[line 166]<br/>At ViewStatusMessagesServletBase.java:[line 167]<br/>At ViewStatusMessagesServletBase.java:[line 168]<br/>At ViewStatusMessagesServletBase.java:[line 175]<br/>At ViewStatusMessagesServletBase.java:[line 176]<br/>At ViewStatusMessagesServletBase.java:[line 180]<br/>At ViewStatusMessagesServletBase.java:[line 181]<br/>At ViewStatusMessagesServletBase.java:[line 182]<br/>At CachingDateFormatter.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66312');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66312" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.event.SaxEventRecorder<br/>In method ch.qos.logback.core.joran.event.SaxEventRecorder.recordEvents(InputSource)<br/>At SaxEventRecorder.java:[line 59]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66370');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66370" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class ch.qos.logback.core.joran.event.stax.StaxEventRecorder<br/>In method ch.qos.logback.core.joran.event.stax.StaxEventRecorder.recordEvents(InputStream)<br/>At StaxEventRecorder.java:[line 43]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SQL_INJECTION_JDBC">SQL_INJECTION_JDBC: Potential JDBC Injection</a>
+</h2>
+            
+<p>
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+</p>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+    <pre>Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);</pre>
+</p>
+<br/>
+
+<b>References (JDBC)</b><br/>
+<a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html">Oracle Documentation: The Java Tutorials &gt; Prepared Statements</a><br/>
+<b>References (SQL injection)</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19: SQL Injection</a><br/>
+<a href="https://capec.mitre.org/data/definitions/66.html">CAPEC-66: SQL Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet">OWASP: SQL Injection Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">OWASP: Query Parameterization Cheat Sheet</a><br/>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_SAXPARSER">XXE_SAXPARSER: XML parsing vulnerable to XXE (SAXParser)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        </body>
+</html>

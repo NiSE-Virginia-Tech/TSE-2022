@@ -1,0 +1,307 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/bt/bt-dht/bt-dht/target/bt-dht-1.8-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 446.6 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 11 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.09
+
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <java.lang.AutoCloseable: void close()> for class java.security.SecureRandom
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.18
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.27
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.81
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r16
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r16.<java.security.SecureRandom: void <init>()>()
+		Method: <net.i2p.crypto.eddsa.KeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: f507793ad57d7e35bcdea7286718efbc4197446915bd1cf8554d3cb0dee775e9
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <lbms.plugins.mldht.kad.utils.ThreadLocalUtils: java.util.Random lambda$static$0()>
+		SHA-256: 31b104091c7ba7f3847f8031dbc090c049abd4fab19e8298c37315dcd114bfa3
+		Secure: true
+	Object:
+		Variable: r44
+		Type: byte[]
+		Statement: r44 = virtualinvoke $r20.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer776)
+		Method: <the8472.mldht.cli.commands.Put: void loadKey()>
+		SHA-256: cb6eccbc8e1c9cf6c4b60719c61f5268113d356dc88a1c75c7988b685ab25f83
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r20.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec: void <init>(byte[],net.i2p.crypto.eddsa.spec.EdDSAParameterSpec)>
+		SHA-256: 8a600368325571a9be9246aee2a6c4a281dea89c2cd212c1ef4c5e6c0f22632a
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer683)
+		Method: <lbms.plugins.mldht.kad.utils.ThreadLocalUtils: java.security.MessageDigest lambda$static$1()>
+		SHA-256: 87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer876)
+		Method: <lbms.plugins.mldht.kad.BloomFilterBEP33: void <init>()>
+		SHA-256: 593710726d4dc2d0c2881c91c700ae8465a0b0e65de09b57a53c6fc6fa23b669
+		Secure: false
+	Object:
+		Variable: r9
+		Type: java.security.MessageDigest
+		Statement: r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAParameterSpec: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)>
+		SHA-256: 4e3f645b0800c1b89d7e0a4c04460b2de64d94c1b98e8b5e4ccde7c0357f3035
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: java.security.SecureRandom
+		Statement: $r20 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstanceStrong()>()
+		Method: <the8472.mldht.cli.commands.Put: void loadKey()>
+		SHA-256: 85d4932cf228f49b1478407f49b1f5fbd847bfceeb8caa9c0380e249d196eb53
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r13.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r14, $r15)
+		Method: <net.i2p.crypto.eddsa.KeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: 2b5323fd35151f49c6acafa0b5badee7f5ae08a896d40053adc6902f3bf177a3
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer685)
+		Method: <lbms.plugins.mldht.kad.utils.ThreadLocalUtils: java.util.Random lambda$static$0()>
+		SHA-256: 2f6633a4d42f3f5170bd6749d2a02fc132c75b03f29eb2320d204aae3e2aa1cb
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <lbms.plugins.mldht.kad.BloomFilterBEP33: void insert(java.net.InetAddress)>
+		SHA-256: 8321e8de749bca0ba6ce040795b448cccde4fd12ec9d347ca2450853c7688c8e
+		Secure: false
+	Object:
+		Variable: r20
+		Type: java.security.MessageDigest
+		Statement: r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r5)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec: void <init>(byte[],net.i2p.crypto.eddsa.spec.EdDSAParameterSpec)>
+		SHA-256: 743ad3f57aeff190a37e50e2ba5ab8f5fde45e5330f7e921aca1ee12552c10f3
+		Secure: true
+	Object:
+		Variable: $r20
+		Type: java.security.MessageDigest
+		Statement: $r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r19)
+		Method: <net.i2p.crypto.eddsa.EdDSAEngine: void engineInitSign(java.security.PrivateKey)>
+		SHA-256: df37f42a03c97ca78c4f72bb8a849fdd1e4ca8a5371a443fff1c6a998f3de978
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r8 = virtualinvoke r20.<java.security.MessageDigest: byte[] digest(byte[])>(r1)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec: void <init>(byte[],net.i2p.crypto.eddsa.spec.EdDSAParameterSpec)>
+		SHA-256: 89a5d6e87d2f1339c9d26558df1b760619d1dfc03c8bb09567e33af0a1969160
+		Secure: true
+	Object:
+		Variable: $r20
+		Type: java.security.MessageDigest
+		Statement: $r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r19)
+		Method: <net.i2p.crypto.eddsa.EdDSAEngine: void engineInitVerify(java.security.PublicKey)>
+		SHA-256: 377fa19cbd479d9eb7b4f23366bde9c112f67f0dbf4425a94af5b699b8f47daf
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <lbms.plugins.mldht.kad.BloomFilterBEP33: void insert(java.net.InetAddress)>
+		SHA-256: 143486452d6cdadbb3023e8d55f1c4ab926d94b3b59573661246eba11918626d
+		Secure: false
+
+Findings in Java Class: lbms.plugins.mldht.kad.utils.ThreadLocalUtils
+
+	 in Method: java.security.MessageDigest lambda$static$1()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer683)
+
+
+Findings in Java Class: the8472.utils.Functional
+
+	 in Method: java.lang.Object autoclose(java.util.function.Supplier,java.util.function.Function)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r2 = interfaceinvoke r1.<java.util.function.Function: java.lang.Object apply(java.lang.Object)>(r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke r3.<java.lang.AutoCloseable: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke r3.<java.lang.AutoCloseable: void close()>()
+
+
+Findings in Java Class: the8472.utils.ConfigReader
+
+	 in Method: void <init>(java.nio.file.Path,java.util.function.Supplier,java.util.function.Supplier)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<the8472.utils.ConfigReader: void buildSchema(java.io.InputStream)>($r6)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #87543418e66f559ddcafe6daf7cdf47af938427c3744b449b1c3f41f91c1a68b)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: staticinvoke <java.nio.file.Files: long copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption[])>($r12, $r11, $r10)
+
+
+Findings in Java Class: lbms.plugins.mldht.kad.BloomFilterBEP33
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #593710726d4dc2d0c2881c91c700ae8465a0b0e65de09b57a53c6fc6fa23b669)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer876)
+
+
+Findings in Java Class: lbms.plugins.mldht.kad.ScrapeResponseHandler
+
+	 in Method: void process()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #593710726d4dc2d0c2881c91c700ae8465a0b0e65de09b57a53c6fc6fa23b669)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke r2.<java.util.List: boolean add(java.lang.Object)>(r25)
+
+
+Findings in Java Class: lbms.plugins.mldht.kad.DHT
+
+	 in Method: void getPeers(lbms.plugins.mldht.kad.messages.GetPeersRequest)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #593710726d4dc2d0c2881c91c700ae8465a0b0e65de09b57a53c6fc6fa23b669)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r33 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #593710726d4dc2d0c2881c91c700ae8465a0b0e65de09b57a53c6fc6fa23b669)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r33 = virtualinvoke $r28.<lbms.plugins.mldht.kad.Database: lbms.plugins.mldht.kad.BloomFilterBEP33 createScrapeFilter(lbms.plugins.mldht.kad.Key,boolean)>($r29, varReplacer348)
+
+
+Findings in Java Class: net.i2p.crypto.eddsa.EdDSAEngine
+
+	 in Method: void engineInitSign(java.security.PrivateKey)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #df37f42a03c97ca78c4f72bb8a849fdd1e4ca8a5371a443fff1c6a998f3de978)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: specialinvoke r0.<net.i2p.crypto.eddsa.EdDSAEngine: void digestInitSign(net.i2p.crypto.eddsa.EdDSAPrivateKey)>(r2)
+
+
+	 in Method: void engineInitVerify(java.security.PublicKey)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #377fa19cbd479d9eb7b4f23366bde9c112f67f0dbf4425a94af5b699b8f47daf)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r19)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #377fa19cbd479d9eb7b4f23366bde9c112f67f0dbf4425a94af5b699b8f47daf)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r0.<net.i2p.crypto.eddsa.EdDSAEngine: void reset()>()
+
+
+Findings in Java Class: net.i2p.crypto.eddsa.spec.EdDSAParameterSpec
+
+	 in Method: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4e3f645b0800c1b89d7e0a4c04460b2de64d94c1b98e8b5e4ccde7c0357f3035)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $i2 = virtualinvoke r9.<java.security.MessageDigest: int getDigestLength()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 16
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 12
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.948 s

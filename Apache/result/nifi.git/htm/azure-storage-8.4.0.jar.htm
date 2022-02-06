@@ -1,0 +1,1373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/nifi.git/azure-storage-8.4.0.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>23120 lines of code analyzed,
+	in 428 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">24</td>
+<td align="right">1.04</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">30</td>
+<td align="right">1.30</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>54</b>
+</td>
+<td align="right">
+<b>2.34</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">54</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>54</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65957');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65957" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.createAndSetEncryptionContext(Map, boolean)<br/>At BlobEncryptionPolicy.java:[line 283]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66011');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66011" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.createAndSetEncryptionContext(Map, boolean)<br/>At BlobEncryptionPolicy.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66065');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66065" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.decryptBlob(OutputStream, Map, Boolean, byte[], boolean)<br/>At BlobEncryptionPolicy.java:[line 190]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66119');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66119" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.decryptBlob(OutputStream, Map, Boolean, byte[], boolean)<br/>At BlobEncryptionPolicy.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68248');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68248" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueEncryptionPolicy<br/>In method com.microsoft.azure.storage.queue.QueueEncryptionPolicy.decryptMessage(String, Boolean)<br/>At QueueEncryptionPolicy.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68302');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68302" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueEncryptionPolicy<br/>In method com.microsoft.azure.storage.queue.QueueEncryptionPolicy.encryptMessage(byte[])<br/>At QueueEncryptionPolicy.java:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68580');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68580" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.decryptEntity(HashMap, HashSet, String, String, Key, EncryptionData, Boolean)<br/>At TableEncryptionPolicy.java:[line 326]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68634');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68634" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.decryptMetadataAndReturnCEK(String, String, EntityProperty, EntityProperty, EncryptionData)<br/>At TableEncryptionPolicy.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68688');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68688" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.encryptEntity(Map, String, String, TableRequestOptions$EncryptionResolver)<br/>At TableEncryptionPolicy.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66173');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66173" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.createAndSetEncryptionContext(Map, boolean)<br/>At BlobEncryptionPolicy.java:[line 286]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66227');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66227" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobEncryptionPolicy<br/>In method com.microsoft.azure.storage.blob.BlobEncryptionPolicy.decryptBlob(OutputStream, Map, Boolean, byte[], boolean)<br/>At BlobEncryptionPolicy.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68356');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68356" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueEncryptionPolicy<br/>In method com.microsoft.azure.storage.queue.QueueEncryptionPolicy.decryptMessage(String, Boolean)<br/>At QueueEncryptionPolicy.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68410');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68410" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueEncryptionPolicy<br/>In method com.microsoft.azure.storage.queue.QueueEncryptionPolicy.encryptMessage(byte[])<br/>At QueueEncryptionPolicy.java:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68742');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68742" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.decryptEntity(HashMap, HashSet, String, String, Key, EncryptionData, Boolean)<br/>At TableEncryptionPolicy.java:[line 326]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68796');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68796" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.decryptMetadataAndReturnCEK(String, String, EntityProperty, EntityProperty, EncryptionData)<br/>At TableEncryptionPolicy.java:[line 285]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68850');">
+<td>
+<span class="priority-1">PADORA</span>
+</td>
+<td>The cipher is susceptible to padding oracle attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68850" style="display: none;">
+<a href="#PADDING_ORACLE">Bug type PADDING_ORACLE (click for details)</a>
+<br/>In class com.microsoft.azure.storage.table.TableEncryptionPolicy<br/>In method com.microsoft.azure.storage.table.TableEncryptionPolicy.encryptEntity(Map, String, String, TableRequestOptions$EncryptionResolver)<br/>At TableEncryptionPolicy.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66281');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66281" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobInputStream<br/>In method new com.microsoft.azure.storage.blob.BlobInputStream(long, Long, CloudBlob, AccessCondition, BlobRequestOptions, OperationContext)<br/>At BlobInputStream.java:[line 236]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66397');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66397" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobOutputStreamInternal<br/>In method new com.microsoft.azure.storage.blob.BlobOutputStreamInternal(CloudBlob, AccessCondition, BlobRequestOptions, OperationContext)<br/>At BlobOutputStreamInternal.java:[line 180]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66943');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66943" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudPageBlob<br/>In method com.microsoft.azure.storage.blob.CloudPageBlob.uploadPages(InputStream, long, long, AccessCondition, BlobRequestOptions, OperationContext)<br/>At CloudPageBlob.java:[line 1711]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67302');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67302" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.core.Utility<br/>In method com.microsoft.azure.storage.core.Utility.analyzeStream(InputStream, long, long, boolean, boolean)<br/>At Utility.java:[line 202]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67360');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67360" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.core.Utility<br/>In method com.microsoft.azure.storage.core.Utility.writeToOutputStream(InputStream, OutputStream, long, boolean, boolean, OperationContext, RequestOptions, Boolean, StorageRequest, StreamMd5AndLength)<br/>At Utility.java:[line 1337]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67784');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67784" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.CloudFile<br/>In method com.microsoft.azure.storage.file.CloudFile.uploadRange(InputStream, long, long, AccessCondition, FileRequestOptions, OperationContext)<br/>At CloudFile.java:[line 2211]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67842');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67842" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.FileInputStream<br/>In method new com.microsoft.azure.storage.file.FileInputStream(CloudFile, AccessCondition, FileRequestOptions, OperationContext)<br/>At FileInputStream.java:[line 174]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67958');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67958" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.FileOutputStream<br/>In method new com.microsoft.azure.storage.file.FileOutputStream(CloudFile, long, AccessCondition, FileRequestOptions, OperationContext)<br/>At FileOutputStream.java:[line 153]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.microsoft.azure.storage.RetryExponentialRetry<br/>In method new com.microsoft.azure.storage.RetryExponentialRetry(int, int)<br/>At RetryExponentialRetry.java:[line 32]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65667" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class com.microsoft.azure.storage.RetryExponentialRetry<br/>In method new com.microsoft.azure.storage.RetryExponentialRetry(int, int, int, int)<br/>At RetryExponentialRetry.java:[line 32]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66513');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66513" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudAppendBlob<br/>In method com.microsoft.azure.storage.blob.CloudAppendBlob.appendFromFile(String, AccessCondition, BlobRequestOptions, OperationContext)<br/>At CloudAppendBlob.java:[line 840]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/blob/CloudAppendBlob.appendFromFile(Ljava/lang/String;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/blob/BlobRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 3<br/>Method usage not detected<br/>At CloudAppendBlob.java:[line 808]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66597');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66597" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudBlob<br/>In method com.microsoft.azure.storage.blob.CloudBlob.deleteEmptyFileOnException(OutputStream, String)<br/>At CloudBlob.java:[line 2017]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/blob/CloudBlob.deleteEmptyFileOnException(Ljava/io/OutputStream;Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At CloudBlob.java:[line 1966]<br/>At CloudBlob.java:[line 1998]<br/>At CloudBlob.java:[line 2002]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66701');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66701" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudBlob<br/>In method com.microsoft.azure.storage.blob.CloudBlob.uploadFromFile(String, AccessCondition, BlobRequestOptions, OperationContext)<br/>At CloudBlob.java:[line 1947]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/blob/CloudBlob.uploadFromFile(Ljava/lang/String;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/blob/BlobRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 3<br/>Method usage not detected<br/>At CloudBlob.java:[line 1922]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66869');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66869" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudPageBlob<br/>In method com.microsoft.azure.storage.blob.CloudPageBlob.uploadFromFile(String, PremiumPageBlobTier, AccessCondition, BlobRequestOptions, OperationContext)<br/>At CloudPageBlob.java:[line 1493]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/blob/CloudPageBlob.uploadFromFile(Ljava/lang/String;Lcom/microsoft/azure/storage/blob/PremiumPageBlobTier;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/blob/BlobRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 4<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67418');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67418" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.CloudFile<br/>In method com.microsoft.azure.storage.file.CloudFile.deleteEmptyFileOnException(OutputStream, String)<br/>At CloudFile.java:[line 1165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/file/CloudFile.deleteEmptyFileOnException(Ljava/io/OutputStream;Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At CloudFile.java:[line 1115]<br/>At CloudFile.java:[line 1146]<br/>At CloudFile.java:[line 1150]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67522');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67522" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.CloudFile<br/>In method com.microsoft.azure.storage.file.CloudFile.uploadFromFile(String, AccessCondition, FileRequestOptions, OperationContext)<br/>At CloudFile.java:[line 2082]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/file/CloudFile.uploadFromFile(Ljava/lang/String;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/file/FileRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 3<br/>Method usage not detected<br/>At CloudFile.java:[line 2056]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66785');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66785" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.CloudBlob<br/>In method com.microsoft.azure.storage.blob.CloudBlob.downloadToFile(String, AccessCondition, BlobRequestOptions, OperationContext)<br/>At CloudBlob.java:[line 1992]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/blob/CloudBlob.downloadToFile(Ljava/lang/String;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/blob/BlobRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 3<br/>Method usage not detected<br/>At CloudBlob.java:[line 1966]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67606');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67606" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.CloudFile<br/>In method com.microsoft.azure.storage.file.CloudFile.downloadToFile(String, AccessCondition, FileRequestOptions, OperationContext)<br/>At CloudFile.java:[line 1140]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/file/CloudFile.downloadToFile(Ljava/lang/String;Lcom/microsoft/azure/storage/AccessCondition;Lcom/microsoft/azure/storage/file/FileRequestOptions;Lcom/microsoft/azure/storage/OperationContext;)V parameter 3<br/>Method usage not detected<br/>At CloudFile.java:[line 1115]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^[a-z0-9]+(-[a-z0-9]+)*$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^[a-z0-9]+(-[a-z0-9]+)*$<br/>In class com.microsoft.azure.storage.NameValidator<br/>In method com.microsoft.azure.storage.NameValidator.&lt;static initializer for NameValidator&gt;()<br/>At NameValidator.java:[line 33]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67175');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67175" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class com.microsoft.azure.storage.core.BaseRequest<br/>In method com.microsoft.azure.storage.core.BaseRequest.copyRequestForBatch(HttpURLConnection)<br/>At BaseRequest.java:[line 623]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/HttpURLConnection.getURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67690');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67690" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.CloudFile<br/>In method com.microsoft.azure.storage.file.CloudFile.getParentNameFromURI(StorageUri, CloudFileShare)<br/>At CloudFile.java:[line 3161]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source com/microsoft/azure/storage/file/CloudFileShare.getName()Ljava/lang/String;<br/>Unknown source com/microsoft/azure/storage/file/CloudFileShare.name<br/>At CloudFile.java:[line 3133]<br/>At CloudFileShare.java:[line 1743]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66339');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66339" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlobListHandler<br/>In method com.microsoft.azure.storage.blob.BlobListHandler.getBlobList(InputStream, CloudBlobContainer)<br/>At BlobListHandler.java:[line 75]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66455');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66455" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.BlockListHandler<br/>In method com.microsoft.azure.storage.blob.BlockListHandler.getBlockList(InputStream)<br/>At BlockListHandler.java:[line 58]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67001');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67001" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.ContainerListHandler<br/>In method com.microsoft.azure.storage.blob.ContainerListHandler.getContainerList(InputStream, CloudBlobClient)<br/>At ContainerListHandler.java:[line 69]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67059');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67059" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.PageRangeDiffHandler<br/>In method com.microsoft.azure.storage.blob.PageRangeDiffHandler.getPageRangesDiff(InputStream)<br/>At PageRangeDiffHandler.java:[line 59]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67117');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67117" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.blob.PageRangeHandler<br/>In method com.microsoft.azure.storage.blob.PageRangeHandler.getPageRanges(InputStream)<br/>At PageRangeHandler.java:[line 58]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67244');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67244" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.core.StorageErrorHandler<br/>In method com.microsoft.azure.storage.core.StorageErrorHandler.getExtendedErrorInformation(InputStream)<br/>At StorageErrorHandler.java:[line 53]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67900');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67900" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.FileListHandler<br/>In method com.microsoft.azure.storage.file.FileListHandler.getFileAndDirectoryList(InputStream, CloudFileDirectory)<br/>At FileListHandler.java:[line 70]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68016');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68016" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.FileRangeHandler<br/>In method com.microsoft.azure.storage.file.FileRangeHandler.getFileRanges(InputStream)<br/>At FileRangeHandler.java:[line 58]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68074');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68074" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.HandleListHandler<br/>In method com.microsoft.azure.storage.file.HandleListHandler.getHandleList(InputStream)<br/>At HandleListHandler.java:[line 61]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68132');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68132" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.ShareListHandler<br/>In method com.microsoft.azure.storage.file.ShareListHandler.getShareList(InputStream, CloudFileClient)<br/>At ShareListHandler.java:[line 70]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68190');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68190" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.file.ShareStatsHandler<br/>In method com.microsoft.azure.storage.file.ShareStatsHandler.readShareStatsFromStream(InputStream)<br/>At ShareStatsHandler.java:[line 62]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68464');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68464" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueListHandler<br/>In method com.microsoft.azure.storage.queue.QueueListHandler.getQueues(InputStream, CloudQueueClient)<br/>At QueueListHandler.java:[line 73]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68522');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68522" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.queue.QueueMessageHandler<br/>In method com.microsoft.azure.storage.queue.QueueMessageHandler.readMessages(InputStream, boolean)<br/>At QueueMessageHandler.java:[line 71]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65725');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65725" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.ServicePropertiesHandler<br/>In method com.microsoft.azure.storage.ServicePropertiesHandler.readServicePropertiesFromStream(InputStream)<br/>At ServicePropertiesHandler.java:[line 67]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65783');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65783" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.ServiceStatsHandler<br/>In method com.microsoft.azure.storage.ServiceStatsHandler.readServiceStatsFromStream(InputStream)<br/>At ServiceStatsHandler.java:[line 73]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65841');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65841" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.SharedAccessPolicyHandler<br/>In method com.microsoft.azure.storage.SharedAccessPolicyHandler.getAccessIdentifiers(InputStream, Class)<br/>At SharedAccessPolicyHandler.java:[line 67]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65899');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65899" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class com.microsoft.azure.storage.UserDelegationKeyHandler<br/>In method com.microsoft.azure.storage.UserDelegationKeyHandler.readUserDelegationKeyFromStream(InputStream)<br/>At UserDelegationKeyHandler.java:[line 41]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="PADDING_ORACLE">PADDING_ORACLE: Cipher is susceptible to Padding Oracle</a>
+</h2>
+            
+<p>
+    This specific mode of CBC with PKCS5Padding is susceptible to padding oracle attacks. An adversary could potentially decrypt the
+    message if the system exposed the difference between plaintext with invalid padding or valid padding. The distinction between
+    valid and invalid padding is usually revealed through distinct error messages being returned for each condition.
+</p>
+<p>
+    <b>Code at risk:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="http://www.infobytesec.com/down/paddingoracle_openjam.pdf">Padding Oracles for the masses (by Matias Soler)</a><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://capec.mitre.org/data/definitions/463.html">CAPEC: Padding Oracle Crypto Attack</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/696.html">CWE-696: Incorrect Behavior Order</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="XXE_SAXPARSER">XXE_SAXPARSER: XML parsing vulnerable to XXE (SAXParser)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

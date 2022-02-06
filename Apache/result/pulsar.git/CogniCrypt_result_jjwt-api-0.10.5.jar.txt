@@ -1,0 +1,136 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 513.0 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r20
+		Type: java.lang.String
+		Statement: specialinvoke $r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r0, $r20)
+		Method: <io.jsonwebtoken.security.Keys: javax.crypto.SecretKey hmacShaKeyFor(byte[])>
+		SHA-256: 6646ddb07047ea269118f6d15cf3707019df6f43a840d3c654cb20b368e16683
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.lang.String
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+		Method: <io.jsonwebtoken.SigningKeyResolverAdapter: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,io.jsonwebtoken.Claims)>
+		SHA-256: 9ea952d83cdf62c7a6b7c3873af4e8f70342ca36d848208a0fb94c20c13faadc
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.lang.String
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+		Method: <io.jsonwebtoken.SigningKeyResolverAdapter: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,java.lang.String)>
+		SHA-256: 9ea952d83cdf62c7a6b7c3873af4e8f70342ca36d848208a0fb94c20c13faadc
+		Secure: false
+	Object:
+		Variable: $r19
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r0, $r20)
+		Method: <io.jsonwebtoken.security.Keys: javax.crypto.SecretKey hmacShaKeyFor(byte[])>
+		SHA-256: c9d521133138acf0dbea3a8ffa8c3896fe949d8a770d80fd84e9e3369fe0359c
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+		Method: <io.jsonwebtoken.SigningKeyResolverAdapter: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,io.jsonwebtoken.Claims)>
+		SHA-256: c54e8ef8959468175ad249841a72008db60624cf0462800fe880efde03e0f0e4
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+		Method: <io.jsonwebtoken.SigningKeyResolverAdapter: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,java.lang.String)>
+		SHA-256: c54e8ef8959468175ad249841a72008db60624cf0462800fe880efde03e0f0e4
+		Secure: false
+
+Findings in Java Class: io.jsonwebtoken.security.Keys
+
+	 in Method: javax.crypto.SecretKey hmacShaKeyFor(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r19.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r0, $r20)
+
+
+Findings in Java Class: io.jsonwebtoken.SigningKeyResolverAdapter
+
+	 in Method: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,io.jsonwebtoken.Claims)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+
+
+	 in Method: java.security.Key resolveSigningKey(io.jsonwebtoken.JwsHeader,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r4, $r13)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 6
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 3
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.529 s
+

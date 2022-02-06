@@ -1,0 +1,616 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/hadoop-common.git/jdiff-1.0.9.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>6393 lines of code analyzed,
+	in 36 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">21</td>
+<td align="right">3.28</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+<td align="right">
+<b>3.28</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">21</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>21</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jdiff.Comments<br/>In method jdiff.Comments.readFile(String)<br/>At Comments.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/Comments.readFile(Ljava/lang/String;)Ljdiff/Comments; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67553');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67553" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jdiff.HTMLReportGenerator<br/>In method jdiff.HTMLReportGenerator.generate(APIComparator, Comments)<br/>At HTMLReportGenerator.java:[line 50]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLReportGenerator.outputDir<br/>Unknown source jdiff/HTMLReportGenerator.reportFileName<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At Comments.java:[line 385]<br/>At Comments.java:[line 386]<br/>At HTMLFiles.java:[line 271]<br/>At HTMLFiles.java:[line 272]<br/>At HTMLReportGenerator.java:[line 41]<br/>At HTMLReportGenerator.java:[line 42]<br/>At HTMLReportGenerator.java:[line 43]<br/>At HTMLReportGenerator.java:[line 44]<br/>At HTMLReportGenerator.java:[line 232]<br/>At HTMLReportGenerator.java:[line 233]<br/>At HTMLReportGenerator.java:[line 234]<br/>At HTMLReportGenerator.java:[line 405]<br/>At HTMLReportGenerator.java:[line 406]<br/>At HTMLReportGenerator.java:[line 407]<br/>At HTMLReportGenerator.java:[line 823]<br/>At HTMLReportGenerator.java:[line 898]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68319');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68319" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jdiff.RootDocToXML<br/>In method jdiff.RootDocToXML.addPkgDocumentation(RootDoc, PackageDoc, int)<br/>At RootDocToXML.java:[line 834]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/sun/javadoc/RootDoc.options()[[Ljava/lang/String;<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source com/sun/javadoc/Doc.name()Ljava/lang/String;<br/>At RootDocToXML.java:[line 818]<br/>At RootDocToXML.java:[line 824]<br/>At RootDocToXML.java:[line 828]<br/>At RootDocToXML.java:[line 830]<br/>At RootDocToXML.java:[line 833]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68458');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68458" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jdiff.RootDocToXML<br/>In method jdiff.RootDocToXML.addPkgDocumentation(RootDoc, PackageDoc, int)<br/>At RootDocToXML.java:[line 838]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source com/sun/javadoc/RootDoc.options()[[Ljava/lang/String;<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source com/sun/javadoc/Doc.name()Ljava/lang/String;<br/>At RootDocToXML.java:[line 818]<br/>At RootDocToXML.java:[line 824]<br/>At RootDocToXML.java:[line 828]<br/>At RootDocToXML.java:[line 830]<br/>At RootDocToXML.java:[line 833]<br/>At RootDocToXML.java:[line 836]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65625');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65625" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.Comments<br/>In method jdiff.Comments.writeFile(String, Comments)<br/>At Comments.java:[line 299]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/Comments.writeFile(Ljava/lang/String;Ljdiff/Comments;)Z parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.Comments<br/>In method jdiff.Comments.writeXSD(String)<br/>At Comments.java:[line 125]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/Comments.writeXSD(Ljava/lang/String;)V parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At Comments.java:[line 48]<br/>At Comments.java:[line 116]<br/>At Comments.java:[line 118]<br/>At Comments.java:[line 121]<br/>At Comments.java:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65891');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65891" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.Diff<br/>In method jdiff.Diff.emitDocDiffIndex(String, DiffOutput[])<br/>At Diff.java:[line 443]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/Diff.emitDocDiffIndex(Ljava/lang/String;[Ljdiff/DiffOutput;)V parameter 1<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source jdiff/HTMLReportGenerator.reportFileExt<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At Comments.java:[line 249]<br/>At Comments.java:[line 274]<br/>At Diff.java:[line 279]<br/>At Diff.java:[line 283]<br/>At Diff.java:[line 286]<br/>At Diff.java:[line 287]<br/>At Diff.java:[line 292]<br/>At Diff.java:[line 296]<br/>At Diff.java:[line 303]<br/>At Diff.java:[line 323]<br/>At Diff.java:[line 336]<br/>At Diff.java:[line 337]<br/>At Diff.java:[line 338]<br/>At Diff.java:[line 371]<br/>At Diff.java:[line 380]<br/>At Diff.java:[line 384]<br/>At Diff.java:[line 424]<br/>At Diff.java:[line 428]<br/>At Diff.java:[line 437]<br/>At Diff.java:[line 471]<br/>At HTMLFiles.java:[line 143]<br/>At HTMLFiles.java:[line 206]<br/>At HTMLStatistics.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66215');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66215" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.Diff<br/>In method jdiff.Diff.emitDocDiffs(String)<br/>At Diff.java:[line 308]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/DiffOutput.pkgName_<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/Diff.currPkgName<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source jdiff/Diff.emitDocDiffs(Ljava/lang/String;)V parameter 0<br/>Unknown source jdiff/HTMLReportGenerator.newDocPrefix<br/>Unknown source jdiff/HTMLReportGenerator.reportFileExt<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At Comments.java:[line 249]<br/>At Comments.java:[line 274]<br/>At Diff.java:[line 279]<br/>At Diff.java:[line 283]<br/>At Diff.java:[line 286]<br/>At Diff.java:[line 287]<br/>At Diff.java:[line 292]<br/>At Diff.java:[line 296]<br/>At Diff.java:[line 303]<br/>At Diff.java:[line 323]<br/>At Diff.java:[line 336]<br/>At Diff.java:[line 337]<br/>At Diff.java:[line 338]<br/>At Diff.java:[line 371]<br/>At Diff.java:[line 380]<br/>At Diff.java:[line 384]<br/>At Diff.java:[line 424]<br/>At Diff.java:[line 471]<br/>At HTMLFiles.java:[line 143]<br/>At HTMLFiles.java:[line 206]<br/>At HTMLStatistics.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66539');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66539" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLFiles<br/>In method jdiff.HTMLFiles.emitHelp(String, APIDiff)<br/>At HTMLFiles.java:[line 128]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLFiles.emitHelp(Ljava/lang/String;Ljdiff/APIDiff;)V parameter 1<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source jdiff/HTMLReportGenerator.reportFileExt<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At HTMLFiles.java:[line 126]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66643');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66643" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLFiles<br/>In method jdiff.HTMLFiles.emitStylesheet()<br/>At HTMLFiles.java:[line 274]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/HTMLReportGenerator.outputDir<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At HTMLFiles.java:[line 271]<br/>At HTMLFiles.java:[line 272]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66757');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66757" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLFiles<br/>In method jdiff.HTMLFiles.emitTopLeftFile(String)<br/>At HTMLFiles.java:[line 82]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/HTMLFiles.emitTopLeftFile(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66831');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66831" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLFiles<br/>In method jdiff.HTMLFiles.emitTopLevelFile(String, APIDiff)<br/>At HTMLFiles.java:[line 29]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/HTMLFiles.emitTopLevelFile(Ljava/lang/String;Ljdiff/APIDiff;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66905');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66905" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLIndexes<br/>In method jdiff.HTMLIndexes.emitBottomLeftFile(String, APIDiff, int, String)<br/>At HTMLIndexes.java:[line 88]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLIndexes.emitBottomLeftFile(Ljava/lang/String;Ljdiff/APIDiff;ILjava/lang/String;)V parameter 3<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Method usage not detected<br/>At HTMLIndexes.java:[line 36]<br/>At HTMLIndexes.java:[line 37]<br/>At HTMLIndexes.java:[line 38]<br/>At HTMLIndexes.java:[line 39]<br/>At HTMLIndexes.java:[line 40]<br/>At HTMLIndexes.java:[line 43]<br/>At HTMLIndexes.java:[line 46]<br/>At HTMLIndexes.java:[line 47]<br/>At HTMLIndexes.java:[line 48]<br/>At HTMLIndexes.java:[line 49]<br/>At HTMLIndexes.java:[line 50]<br/>At HTMLIndexes.java:[line 51]<br/>At HTMLIndexes.java:[line 75]<br/>At HTMLIndexes.java:[line 78]<br/>At HTMLIndexes.java:[line 81]<br/>At HTMLIndexes.java:[line 84]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67149');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67149" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLIndexes<br/>In method jdiff.HTMLIndexes.emitMissingSinces(Iterator)<br/>At HTMLIndexes.java:[line 370]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLReportGenerator.outputDir<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At Comments.java:[line 385]<br/>At Comments.java:[line 386]<br/>At HTMLFiles.java:[line 271]<br/>At HTMLFiles.java:[line 272]<br/>At HTMLIndexes.java:[line 36]<br/>At HTMLIndexes.java:[line 37]<br/>At HTMLIndexes.java:[line 38]<br/>At HTMLIndexes.java:[line 39]<br/>At HTMLIndexes.java:[line 40]<br/>At HTMLIndexes.java:[line 43]<br/>At HTMLIndexes.java:[line 46]<br/>At HTMLIndexes.java:[line 47]<br/>At HTMLIndexes.java:[line 48]<br/>At HTMLIndexes.java:[line 49]<br/>At HTMLIndexes.java:[line 50]<br/>At HTMLIndexes.java:[line 51]<br/>At HTMLIndexes.java:[line 99]<br/>At HTMLIndexes.java:[line 101]<br/>At HTMLIndexes.java:[line 103]<br/>At HTMLIndexes.java:[line 105]<br/>At HTMLIndexes.java:[line 368]<br/>At HTMLIndexes.java:[line 481]<br/>At HTMLIndexes.java:[line 582]<br/>At HTMLIndexes.java:[line 681]<br/>At HTMLIndexes.java:[line 797]<br/>At HTMLReportGenerator.java:[line 42]<br/>At HTMLReportGenerator.java:[line 43]<br/>At HTMLReportGenerator.java:[line 233]<br/>At HTMLReportGenerator.java:[line 234]<br/>At HTMLReportGenerator.java:[line 406]<br/>At HTMLReportGenerator.java:[line 407]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67812');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67812" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLReportGenerator<br/>In method jdiff.HTMLReportGenerator.reportChangedClass(String, ClassDiff[], int)<br/>At HTMLReportGenerator.java:[line 408]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLReportGenerator.outputDir<br/>Unknown source jdiff/HTMLReportGenerator.reportChangedClass(Ljava/lang/String;[Ljdiff/ClassDiff;I)V parameter 2<br/>Unknown source jdiff/ClassDiff.name_<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>At Comments.java:[line 385]<br/>At Comments.java:[line 386]<br/>At HTMLFiles.java:[line 271]<br/>At HTMLFiles.java:[line 272]<br/>At HTMLReportGenerator.java:[line 224]<br/>At HTMLReportGenerator.java:[line 272]<br/>At HTMLReportGenerator.java:[line 382]<br/>At HTMLReportGenerator.java:[line 384]<br/>At HTMLReportGenerator.java:[line 399]<br/>At HTMLReportGenerator.java:[line 405]<br/>At HTMLReportGenerator.java:[line 406]<br/>At HTMLReportGenerator.java:[line 407]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68031');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68031" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLReportGenerator<br/>In method jdiff.HTMLReportGenerator.reportChangedPackage(PackageDiff[], int)<br/>At HTMLReportGenerator.java:[line 235]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/HTMLReportGenerator.outputDir<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source jdiff/PackageDiff.name_<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>At Comments.java:[line 385]<br/>At Comments.java:[line 386]<br/>At HTMLFiles.java:[line 271]<br/>At HTMLFiles.java:[line 272]<br/>At HTMLReportGenerator.java:[line 212]<br/>At HTMLReportGenerator.java:[line 214]<br/>At HTMLReportGenerator.java:[line 224]<br/>At HTMLReportGenerator.java:[line 232]<br/>At HTMLReportGenerator.java:[line 233]<br/>At HTMLReportGenerator.java:[line 234]<br/>At HTMLReportGenerator.java:[line 406]<br/>At HTMLReportGenerator.java:[line 407]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68245');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68245" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.HTMLStatistics<br/>In method jdiff.HTMLStatistics.emitStatistics(String, APIDiff)<br/>At HTMLStatistics.java:[line 28]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jdiff/HTMLStatistics.emitStatistics(Ljava/lang/String;Ljdiff/APIDiff;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68607');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68607" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.RootDocToXML<br/>In method jdiff.RootDocToXML.writeXML(RootDoc)<br/>At RootDocToXML.java:[line 38]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/RootDocToXML.outputDirectory<br/>Unknown source jdiff/RootDocToXML.outputFileName<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At Options.java:[line 171]<br/>At Options.java:[line 172]<br/>At RootDocToXML.java:[line 29]<br/>At RootDocToXML.java:[line 30]<br/>At RootDocToXML.java:[line 31]<br/>At RootDocToXML.java:[line 33]<br/>At RootDocToXML.java:[line 34]<br/>At RootDocToXML.java:[line 66]<br/>At RootDocToXML.java:[line 67]<br/>At RootDocToXML.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68806');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68806" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class jdiff.RootDocToXML<br/>In method jdiff.RootDocToXML.writeXSD()<br/>At RootDocToXML.java:[line 87]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source jdiff/RootDocToXML.outputDirectory<br/>Unknown source jdiff/RootDocToXML.outputFileName<br/>Unknown source jdiff/JDiff.DIR_SEP<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source jdiff/Options.validOptions([[Ljava/lang/String;Lcom/sun/javadoc/DocErrorReporter;)Z parameter 1<br/>Method usage not detected<br/>At Options.java:[line 171]<br/>At Options.java:[line 172]<br/>At RootDocToXML.java:[line 66]<br/>At RootDocToXML.java:[line 67]<br/>At RootDocToXML.java:[line 73]<br/>At RootDocToXML.java:[line 75]<br/>At RootDocToXML.java:[line 78]<br/>At RootDocToXML.java:[line 81]<br/>At RootDocToXML.java:[line 83]<br/>At RootDocToXML.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65833');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65833" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class jdiff.Comments<br/>In method jdiff.Comments.readFile(String)<br/>At Comments.java:[line 83]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69005');">
+<td>
+<span class="priority-2">SECXXEREAD</span>
+</td>
+<td>The use of XMLReader.parse(...) (XMLReader) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69005" style="display: none;">
+<a href="#XXE_XMLREADER">Bug type XXE_XMLREADER (click for details)</a>
+<br/>In class jdiff.XMLToAPI<br/>In method jdiff.XMLToAPI.readFile(String, boolean, String)<br/>At XMLToAPI.java:[line 70]<br/>Value XMLReader.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLREADER">XXE_XMLREADER: XML parsing vulnerable to XXE (XMLReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setContentHandler(customHandler);
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+XMLReader reader = XMLReaderFactory.createXMLReader();
+reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+reader.setContentHandler(customHandler);
+
+reader.parse(new InputSource(inputStream));</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        </body>
+</html>

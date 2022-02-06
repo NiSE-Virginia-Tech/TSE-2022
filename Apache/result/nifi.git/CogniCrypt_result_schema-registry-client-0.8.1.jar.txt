@@ -1,0 +1,92 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 555.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient: com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient$SchemaDigestEntry buildSchemaTextEntry(com.hortonworks.registries.schemaregistry.SchemaVersion,java.lang.String)>
+		SHA-256: 37db5ff5daaf4e09a5c4837554f468448746145f48b42c1dda5a32612dface23
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer125)
+		Method: <com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient: com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient$SchemaDigestEntry buildSchemaTextEntry(com.hortonworks.registries.schemaregistry.SchemaVersion,java.lang.String)>
+		SHA-256: b950527d3625b87c1d28a715abbaa4f43e182ed7038af0208d0a6450db7d5fbc
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient: com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient$SchemaDigestEntry buildSchemaTextEntry(com.hortonworks.registries.schemaregistry.SchemaVersion,java.lang.String)>
+		SHA-256: f7cba6913b0f2c1e322e01182ffbcaafcbad0c8d8bce6ae8e06f9aaa0d55650e
+		Secure: false
+
+Findings in Java Class: com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient
+
+	 in Method: com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient$SchemaDigestEntry buildSchemaTextEntry(com.hortonworks.registries.schemaregistry.SchemaVersion,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b950527d3625b87c1d28a715abbaa4f43e182ed7038af0208d0a6450db7d5fbc)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer125)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 3
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.903 s
+

@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/kylin.git/spring-security-ldap-4.2.3.RELEASE.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>2472 lines of code analyzed,
+	in 64 classes, 
+	in 7 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">8</td>
+<td align="right">3.24</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>8</b>
+</td>
+<td align="right">
+<b>3.24</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">8</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>8</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECLDAPEP</span>
+</td>
+<td>LDAP Entry Poisoning</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#LDAP_ENTRY_POISONING">Bug type LDAP_ENTRY_POISONING (click for details)</a>
+<br/>In class org.springframework.security.ldap.SpringSecurityLdapTemplate<br/>In method org.springframework.security.ldap.SpringSecurityLdapTemplate.buildControls(SearchControls)<br/>At SpringSecurityLdapTemplate.java:[line 381]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of org/springframework/security/ldap/SpringSecurityLdapTemplate.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;Lorg/springframework/ldap/core/ContextMapper;)Ljava/util/List; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.springframework.security.ldap.SpringSecurityLdapTemplate<br/>In method org.springframework.security.ldap.SpringSecurityLdapTemplate.searchForMultipleAttributeValues(String, String, Object[], String[])<br/>At SpringSecurityLdapTemplate.java:[line 241]<br/>Sink method org/springframework/security/ldap/SpringSecurityLdapTemplate.search(Ljava/lang/String;Ljava/lang/String;Ljavax/naming/directory/SearchControls;Lorg/springframework/ldap/core/ContextMapper;)Ljava/util/List;<br/>Sink parameter 2<br/>Unknown source org/springframework/security/ldap/SpringSecurityLdapTemplate.searchForMultipleAttributeValues(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/util/Set; parameter 2<br/>Unknown source java/text/MessageFormat.format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;<br/>Unknown source org/springframework/security/ldap/LdapEncoder.filterEncode(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/security/ldap/LdapEncoder.FILTER_ESCAPE_TABLE<br/>At LdapEncoder.java:[line 114]<br/>At LdapEncoder.java:[line 122]<br/>At SpringSecurityLdapTemplate.java:[line 166]<br/>At SpringSecurityLdapTemplate.java:[line 200]<br/>At SpringSecurityLdapTemplate.java:[line 203]<br/>At DefaultLdapAuthoritiesPopulator.java:[line 241]<br/>At DefaultLdapAuthoritiesPopulator.java:[line 242]<br/>At DefaultLdapAuthoritiesPopulator.java:[line 355]<br/>At NestedLdapAuthoritiesPopulator.java:[line 201]<br/>At NestedLdapAuthoritiesPopulator.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65789');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljavax/naming/Name;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65789" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.springframework.security.ldap.SpringSecurityLdapTemplate<br/>In method org.springframework.security.ldap.SpringSecurityLdapTemplate.searchForSingleEntryInternal(DirContext, SearchControls, String, String, Object[])<br/>At SpringSecurityLdapTemplate.java:[line 333]<br/>Sink method javax/naming/directory/DirContext.search(Ljavax/naming/Name;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 2<br/>Unknown source org/springframework/security/ldap/SpringSecurityLdapTemplate.searchForSingleEntryInternal(Ljavax/naming/directory/DirContext;Ljavax/naming/directory/SearchControls;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lorg/springframework/ldap/core/DirContextOperations; parameter 1<br/>At ActiveDirectoryLdapAuthenticationProvider.java:[line 313]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65868');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65868" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.springframework.security.ldap.SpringSecurityLdapTemplate$1LdapCompareCallback<br/>In method org.springframework.security.ldap.SpringSecurityLdapTemplate$1LdapCompareCallback.executeWithContext(DirContext)<br/>At SpringSecurityLdapTemplate.java:[line 110]<br/>Sink method javax/naming/directory/DirContext.search(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 2<br/>Unknown source org/springframework/security/ldap/SpringSecurityLdapTemplate$1LdapCompareCallback.val$comparisonFilter<br/>At SpringSecurityLdapTemplate.java:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66189');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/directory/DirContext.search(Ljavax/naming/Name;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration; can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66189" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class org.springframework.security.ldap.userdetails.LdapUserDetailsManager$4<br/>In method org.springframework.security.ldap.userdetails.LdapUserDetailsManager$4.executeSearch(DirContext)<br/>At LdapUserDetailsManager.java:[line 232]<br/>Sink method javax/naming/directory/DirContext.search(Ljavax/naming/Name;Ljava/lang/String;[Ljava/lang/Object;Ljavax/naming/directory/SearchControls;)Ljavax/naming/NamingEnumeration;<br/>Sink parameter 2<br/>Unknown source org/springframework/security/ldap/userdetails/LdapUserDetailsManager.groupSearchFilter<br/>At LdapUserDetailsManager.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65947');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65947" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.security.ldap.server.ApacheDSContainer<br/>In method org.springframework.security.ldap.server.ApacheDSContainer.afterPropertiesSet()<br/>At ApacheDSContainer.java:[line 132]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/security/ldap/server/ApacheDSContainer.createTempDirectory(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At ApacheDSContainer.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66031');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66031" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.security.ldap.server.ApacheDSContainer<br/>In method org.springframework.security.ldap.server.ApacheDSContainer.deleteDir(File)<br/>At ApacheDSContainer.java:[line 354]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66100');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66100" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.springframework.security.ldap.server.ApacheDSContainer<br/>In method org.springframework.security.ldap.server.ApacheDSContainer.importLdifs()<br/>At ApacheDSContainer.java:[line 322]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source java/net/URI.toString()Ljava/lang/String;<br/>Unknown source org/springframework/core/io/Resource.getURI()Ljava/net/URI;<br/>At ApacheDSContainer.java:[line 319]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="LDAP_ENTRY_POISONING">LDAP_ENTRY_POISONING: LDAP Entry Poisoning</a>
+</h2>
+            
+<p>
+JNDI API support the binding of serialize object in LDAP directories. If certain attributes are presented, the deserialization
+of object will be made in the application querx the directory (See Black Hat USA 2016 white paper for details).
+Object deserialization should be consider a risky operation that can lead to remote code execution.
+</p>
+<p>
+The exploitation of the vulnerability will be possible if the attacker has an entry point in an LDAP base query, by adding
+attributes to an existing LDAP entry or by configuring the application to use a malicious LDAP server.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+DirContext ctx = new InitialDirContext();
+//[...]
+
+ctx.search(query, filter,
+        new SearchControls(scope, countLimit, timeLimit, attributes,
+            true, //Enable object deserialization if bound in directory
+            deref));
+</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>
+DirContext ctx = new InitialDirContext();
+//[...]
+
+ctx.search(query, filter,
+        new SearchControls(scope, countLimit, timeLimit, attributes,
+            false, //Disable
+            deref));
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.blackhat.com/docs/us-16/materials/us-16-Munoz-A-Journey-From-JNDI-LDAP-Manipulation-To-RCE-wp.pdf">Black Hat USA 2016: A Journey From JNDI/LDAP Manipulation to Remote Code Execution Dream Land</a>
+(<a href="https://www.blackhat.com/docs/us-16/materials/us-16-Munoz-A-Journey-From-JNDI-LDAP-Manipulation-To-RCE.pdf">slides</a> &amp; <a href="https://www.youtube.com/watch?v=Y8a5nB-vy78">video</a>) by Alvaro Mu&#xF1;oz and Oleksandr Mirosh<br/>
+<a href="https://community.hpe.com/t5/Security-Research/Introducing-JNDI-Injection-and-LDAP-Entry-Poisoning/ba-p/6885118">HP Enterprise: Introducing JNDI Injection and LDAP Entry Poisoning</a> by Alvaro Mu&#xF1;oz<br/>
+<a href="http://blog.trendmicro.com/trendlabs-security-intelligence/new-headaches-how-the-pawn-storm-zero-day-evaded-javas-click-to-play-protection/">TrendMicro: How The Pawn Storm Zero-Day Evaded Java's Click-to-Play Protection</a> by Jack Tang
+</p>
+            
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

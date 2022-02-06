@@ -1,0 +1,210 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.037 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 7 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.79
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.93
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r12
+		Type: java.security.MessageDigest
+		Statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer273)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: 97cf34e0c3d2f41b66969e858c9fd4d0243e1dcaf15be98bf2527507ce5c47db
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: r3 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: fe69b153be50697ead5124ef81c8594df785899d212dec3f46eb87c7686016a9
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r5 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)>
+		SHA-256: 132aaff8f70694fe7ef4bcd883fae50a2534db7b94d8f1b5936fb773d7a39c89
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.SecureRandom
+		Statement: r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer274)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: 5dc720fb46ea2a26d7b5064ef3e2aea8e7862e19ebea2c326b491913a354aaf7
+		Secure: true
+	Object:
+		Variable: r7
+		Type: byte[]
+		Statement: virtualinvoke r6.<java.security.SecureRandom: void nextBytes(byte[])>(r7)
+		Method: <org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)>
+		SHA-256: c7282bfc7f22d38fd558e576bf03f54351295b25f9d8a64733c8315ad7f5514d
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: r5 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>($r11)
+		Method: <org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)>
+		SHA-256: b222c6e2eebb6c26ad9f5779c6b9ed910cad3b763929565e08335ce27e9ed127
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1042)
+		Method: <org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)>
+		SHA-256: 27c770d18e735165c84590010aaf37e957db16a55e066305b7a9403b7bd5a76
+		Secure: false
+	Object:
+		Variable: r6
+		Type: java.security.SecureRandom
+		Statement: r6 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer1043)
+		Method: <org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)>
+		SHA-256: c7d4cc6604da80448e8228a5b828bfa50b6da8cc8250d329264bfc3116d2fd19
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: 5b0adb0b2d863178b6250206ba573806c0fc493b7379ac0a25cd2b08f65e99f
+		Secure: false
+	Object:
+		Variable: r4
+		Type: byte[]
+		Statement: virtualinvoke r3.<java.security.SecureRandom: void nextBytes(byte[])>(r4)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0002Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0002 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: 908819282e1cd467aeea990fb0e4ecbc6b010fc88a0079e7f7fcb96da95c3df0
+		Secure: true
+	Object:
+		Variable: r3
+		Type: java.security.SecureRandom
+		Statement: r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer291)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0002Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0002 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: 94b46ab87600d1e6135fd7e1555adc12fb30533d1c5a99620c8f80a29a19434a
+		Secure: true
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: virtualinvoke r4.<java.security.SecureRandom: void nextBytes(byte[])>(r5)
+		Method: <org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)>
+		SHA-256: c750a48524350d227529e4fc704743d28a9a932dffe7102d5cc85dd79f7af168
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer247)
+		Method: <org.opensaml.common.impl.SecureRandomIdentifierGenerator: void <init>()>
+		SHA-256: 77e541869c0aae00304af2c36151bdfd9e1ddb7590372cbd7b264d62f0ea827f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(r1)
+		Method: <org.opensaml.common.impl.SecureRandomIdentifierGenerator: void <init>(java.lang.String)>
+		SHA-256: 67f34f3797db29b5ddcb862ab776ab3e39a48b3fb2d08a5a4d53553d0b3b91f5
+		Secure: true
+
+Findings in Java Class: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001Builder
+
+	 in Method: org.opensaml.saml1.binding.artifact.SAML1ArtifactType0001 buildArtifact(org.opensaml.common.binding.SAMLMessageContext,org.opensaml.saml1.core.Assertion)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #97cf34e0c3d2f41b66969e858c9fd4d0243e1dcaf15be98bf2527507ce5c47db)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer273)
+
+
+Findings in Java Class: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004Builder
+
+	 in Method: org.opensaml.saml2.binding.artifact.SAML2ArtifactType0004 buildArtifact(org.opensaml.common.binding.SAMLMessageContext)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #27c770d18e735165c84590010aaf37e957db16a55e066305b7a9403b7bd5a76)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1042)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 14
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.492 s
+

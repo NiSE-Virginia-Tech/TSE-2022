@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/bookkeeper.git/jline-2.11.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>5843 lines of code analyzed,
+	in 90 classes, 
+	in 9 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">3</td>
+<td align="right">0.51</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">10</td>
+<td align="right">1.71</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+<td align="right">
+<b>2.22</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">13</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>13</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66195');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66195" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class jline.internal.Log<br/>In method jline.internal.Log.log(Log$Level, Object[])<br/>At Log.java:[line 82]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66249');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66249" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class jline.internal.TerminalLineSettings<br/>In method jline.internal.TerminalLineSettings.exec(String[])<br/>At TerminalLineSettings.java:[line 183]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source jline/internal/TerminalLineSettings.exec([Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At NoInterruptUnixTerminal.java:[line 28]<br/>At NoInterruptUnixTerminal.java:[line 33]<br/>At UnixTerminal.java:[line 54]<br/>At UnixTerminal.java:[line 92]<br/>At UnixTerminal.java:[line 95]<br/>At UnixTerminal.java:[line 107]<br/>At UnixTerminal.java:[line 120]<br/>At TerminalLineSettings.java:[line 52]<br/>At TerminalLineSettings.java:[line 68]<br/>At TerminalLineSettings.java:[line 72]<br/>At TerminalLineSettings.java:[line 76]<br/>At TerminalLineSettings.java:[line 92]<br/>At TerminalLineSettings.java:[line 168]<br/>At TerminalLineSettings.java:[line 173]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66612');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66612" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class org.fusesource.hawtjni.runtime.Library<br/>In method org.fusesource.hawtjni.runtime.Library.chmod(String, File)<br/>At Library.java:[line 308]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>Unknown source org/fusesource/hawtjni/runtime/Library.chmod(Ljava/lang/String;Ljava/io/File;)V parameter 0<br/>Unknown source org/fusesource/hawtjni/runtime/Library.chmod(Ljava/lang/String;Ljava/io/File;)V parameter 1<br/>At Library.java:[line 212]<br/>At Library.java:[line 213]<br/>At Library.java:[line 214]<br/>At Library.java:[line 218]<br/>At Library.java:[line 228]<br/>At Library.java:[line 242]<br/>At Library.java:[line 244]<br/>At Library.java:[line 258]<br/>At Library.java:[line 269]<br/>At Library.java:[line 278]<br/>At Library.java:[line 308]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65764');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65764" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jline.console.completer.FileNameCompleter<br/>In method jline.console.completer.FileNameCompleter.complete(String, int, List)<br/>At FileNameCompleter.java:[line 78]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jline/console/completer/FileNameCompleter.complete(Ljava/lang/String;ILjava/util/List;)I parameter 2<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Method usage not detected<br/>At FileNameCompleter.java:[line 59]<br/>At FileNameCompleter.java:[line 68]<br/>At FileNameCompleter.java:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jline.console.ConsoleKeys<br/>In method jline.console.ConsoleKeys.loadKeys(String, URL)<br/>At ConsoleKeys.java:[line 86]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source jline/console/ConsoleKeys.loadKeys(Ljava/lang/String;Ljava/net/URL;)V parameter 0<br/>At ConsoleKeys.java:[line 35]<br/>At ConsoleKeys.java:[line 86]<br/>At ConsoleReader.java:[line 233]<br/>At ConsoleReader.java:[line 2715]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65878');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65878" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jline.console.internal.ConsoleRunner<br/>In method jline.console.internal.ConsoleRunner.main(String[])<br/>At ConsoleRunner.java:[line 52]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Arrays.asList([Ljava/lang/Object;)Ljava/util/List;<br/>Tainted source jline/console/internal/ConsoleRunner.main([Ljava/lang/String;)V parameter 0<br/>At ConsoleRunner.java:[line 40]<br/>At ConsoleRunner.java:[line 48]<br/>At ConsoleRunner.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65982');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65982" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jline.console.internal.ConsoleRunner<br/>In method jline.console.internal.ConsoleRunner.main(String[])<br/>At ConsoleRunner.java:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/Arrays.asList([Ljava/lang/Object;)Ljava/util/List;<br/>Tainted source jline/console/internal/ConsoleRunner.main([Ljava/lang/String;)V parameter 0<br/>At ConsoleRunner.java:[line 40]<br/>At ConsoleRunner.java:[line 48]<br/>At ConsoleRunner.java:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66458');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66458" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class jline.internal.Urls<br/>In method jline.internal.Urls.create(String)<br/>At Urls.java:[line 32]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source jline/internal/Urls.create(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage with tainted arguments detected<br/>At ConsoleReader.java:[line 237]<br/>At ConsoleReader.java:[line 245]<br/>At Configuration.java:[line 62]<br/>At Configuration.java:[line 111]<br/>At Configuration.java:[line 113]<br/>At Configuration.java:[line 122]<br/>At Configuration.java:[line 126]<br/>At Configuration.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66801');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66801" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.fusesource.hawtjni.runtime.Library<br/>In method org.fusesource.hawtjni.runtime.Library.extract(ArrayList, URL, String, String, File)<br/>At Library.java:[line 269]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source org/fusesource/hawtjni/runtime/Library.extract(Ljava/util/ArrayList;Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 0<br/>At Library.java:[line 218]<br/>At Library.java:[line 228]<br/>At Library.java:[line 242]<br/>At Library.java:[line 244]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66910');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66910" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.fusesource.hawtjni.runtime.Library<br/>In method org.fusesource.hawtjni.runtime.Library.file(String[])<br/>At Library.java:[line 242]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/fusesource/hawtjni/runtime/Library.file([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At Library.java:[line 153]<br/>At Library.java:[line 155]<br/>At Library.java:[line 157]<br/>At Library.java:[line 172]<br/>At Library.java:[line 174]<br/>At Library.java:[line 177]<br/>At Library.java:[line 218]<br/>At Library.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67059');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67059" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.fusesource.hawtjni.runtime.Library<br/>In method org.fusesource.hawtjni.runtime.Library.file(String[])<br/>At Library.java:[line 244]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/fusesource/hawtjni/runtime/Library.file([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At Library.java:[line 153]<br/>At Library.java:[line 155]<br/>At Library.java:[line 157]<br/>At Library.java:[line 172]<br/>At Library.java:[line 174]<br/>At Library.java:[line 177]<br/>At Library.java:[line 218]<br/>At Library.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65665');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65665" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class jline.console.ConsoleKeys<br/>In method jline.console.ConsoleKeys.loadKeys(String, URL)<br/>At ConsoleKeys.java:[line 71]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source jline/console/ConsoleKeys.loadKeys(Ljava/lang/String;Ljava/net/URL;)V parameter 0<br/>At ConsoleKeys.java:[line 35]<br/>At ConsoleReader.java:[line 233]<br/>At ConsoleReader.java:[line 2715]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66086');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66086" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class jline.internal.Configuration<br/>In method jline.internal.Configuration.loadProperties(URL, Properties)<br/>At Configuration.java:[line 60]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source jline/internal/Configuration.loadProperties(Ljava/net/URL;Ljava/util/Properties;)V parameter 1<br/>At Configuration.java:[line 46]<br/>At Configuration.java:[line 49]<br/>At Configuration.java:[line 85]<br/>At Urls.java:[line 29]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            </body>
+</html>

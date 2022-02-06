@@ -1,0 +1,89 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/tls-attacker/Utils/target/Utils-2.5.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 343.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 2
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: java.security.KeyStore
+		Statement: r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer4)
+		Method: <de.rub.nds.tlsattacker.util.KeystoreHandler: java.security.KeyStore loadKeyStore(java.lang.String,java.lang.String)>
+		SHA-256: 84ad1ad21d6387974f24f2687499faa7b41249041c1530eefeaf563283ccbb3a
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.KeyStore
+		Statement: r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5)
+		Method: <de.rub.nds.tlsattacker.util.KeystoreHandler: java.security.KeyStore loadKeyStore(java.io.InputStream,java.lang.String)>
+		SHA-256: 3439d3b746365765ed9e80181c3d5dd2ad483d9e0d25910020736f7748ea5c01
+		Secure: false
+
+Findings in Java Class: de.rub.nds.tlsattacker.util.KeystoreHandler
+
+	 in Method: java.security.KeyStore loadKeyStore(java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #84ad1ad21d6387974f24f2687499faa7b41249041c1530eefeaf563283ccbb3a)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r4)
+
+
+	 in Method: java.security.KeyStore loadKeyStore(java.io.InputStream,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #3439d3b746365765ed9e80181c3d5dd2ad483d9e0d25910020736f7748ea5c01)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r0, $r3)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 2
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 986.7 ms

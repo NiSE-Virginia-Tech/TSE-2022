@@ -1,0 +1,301 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.093 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 11 analysis seeds within 2 seconds!
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <org.apache.kafka.common.network.Authenticator: void reauthenticate(org.apache.kafka.common.network.ReauthenticationContext)> for class org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <org.apache.kafka.common.network.Authenticator: void reauthenticate(org.apache.kafka.common.network.ReauthenticationContext)> for class org.apache.kafka.common.network.PlaintextChannelBuilder$PlaintextAuthenticator
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <org.apache.kafka.common.network.Authenticator: void reauthenticate(org.apache.kafka.common.network.ReauthenticationContext)> for class org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator
+[main] ERROR boomerang.callgraph.ObservableDynamicICFG - Did not find method <org.apache.kafka.common.network.Authenticator: void reauthenticate(org.apache.kafka.common.network.ReauthenticationContext)> for class org.apache.kafka.common.network.SslChannelBuilder$SslAuthenticator
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.09
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.23
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.36
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 14
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.81
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.94
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: void <init>(org.apache.kafka.common.security.scram.internals.ScramMechanism)>
+		SHA-256: f675604eef62440b07ac462f9b7d8da83f0e4e6ab63fe1741090af71f698c5ce
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r4)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: void <init>(org.apache.kafka.common.security.scram.internals.ScramMechanism)>
+		SHA-256: e743926a3587075dd67e6b7c14e0fd73dc72a99bac37d8e0f19a7ec2ae31fd6f
+		Secure: false
+	Object:
+		Variable: r26
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r26 = virtualinvoke r29.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: be1e6eb3c393e8345a3a15688e3de18366739e70c79778a4c6f41bd21d76080f
+		Secure: false
+	Object:
+		Variable: r37
+		Type: java.security.KeyStore
+		Statement: r37 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r10)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory$SecurityStore: java.security.KeyStore load()>
+		SHA-256: c51a64dc676552d170079a202ccde8ff7044cf88d53e8d10ce9a67d34e29e951
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r8)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: byte[] hi(byte[],byte[],int)>
+		SHA-256: 622f04124e415f669b9c08bc4758c73e57f1f257dbaa0564e4acdad5e6d56d90
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r8)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: byte[] hi(byte[],byte[],int)>
+		SHA-256: 538c9cefc2dfbc84364b26a41b51b032cf34fc4d0a180ff71d44de54ce04673e
+		Secure: false
+	Object:
+		Variable: r36
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r36 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(r35)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: ea3866ae4042354d77181c23428c1b593d3b86b63c4fa4cf423041bdaf743817
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: $r14 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(r5)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: void configure(java.util.Map)>
+		SHA-256: f45c8f2c568c3b069e6cfc79443f26d7e6d3a312b4973a9008edb7a8b9da1042
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r5 = virtualinvoke r36.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: 13fb0ef9269f9c184661e05625b325761048af13701936c94924620e71fe379d
+		Secure: false
+	Object:
+		Variable: r29
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r29 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(r28)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: eeef997849ce8fbcb97fadcf4ccd8eaf0c396a0aa7b004116b729a8c3440b783
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: void <init>(org.apache.kafka.common.security.scram.internals.ScramMechanism)>
+		SHA-256: 7ea18bfd6cfd8f795820b8818946414ca523e0c740e13975322ee3d3521519ca
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r6)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: byte[] hmac(byte[],byte[])>
+		SHA-256: 32005a755694dbf6b6a2ebb85ee7b6c7fc18b2b9635ab648537a2715c09327fe
+		Secure: false
+	Object:
+		Variable: r25
+		Type: javax.net.ssl.SSLContext
+		Statement: r25 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r4)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: 1f5aa0a7904adb519900211c6620d8b55c49ebca4ee13fb537c6b6a518e684b9
+		Secure: false
+	Object:
+		Variable: r25
+		Type: javax.net.ssl.SSLContext
+		Statement: r25 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>($r24, $r23)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)>
+		SHA-256: 3142437ae57bc7f5885144201db68f990b812132cc8514a154ccea4caf6cd23e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r6)
+		Method: <org.apache.kafka.common.security.scram.internals.ScramFormatter: byte[] hmac(byte[],byte[])>
+		SHA-256: ee909578910386f215dd906531014eccb865c90a0fc2bc87086ee1126130fefd
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.net.ssl.SSLEngine
+		Statement: r3 = virtualinvoke r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>(r2, i0)
+		Method: <org.apache.kafka.common.security.ssl.SslFactory: javax.net.ssl.SSLEngine createSslEngine(javax.net.ssl.SSLContext,java.lang.String,int)>
+		SHA-256: f4c2326e971f901a0b319a06400de0126abe5319770d123200dce9547fb04c85
+		Secure: false
+
+Findings in Java Class: org.apache.kafka.common.security.ssl.SslFactory
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext(org.apache.kafka.common.security.ssl.SslFactory$SecurityStore,org.apache.kafka.common.security.ssl.SslFactory$SecurityStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r29.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r30, $r22)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #eeef997849ce8fbcb97fadcf4ccd8eaf0c396a0aa7b004116b729a8c3440b783)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r29.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r30, $r22)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r36.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r38)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r25.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r26, $r5, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r25.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r26, $r5, $r6)
+
+
+	 in Method: javax.net.ssl.SSLEngine createSslEngine(javax.net.ssl.SSLContext,java.lang.String,int)
+		TypestateError violating CrySL rule for javax.net.ssl.SSLContext (on Object #1f5aa0a7904adb519900211c6620d8b55c49ebca4ee13fb537c6b6a518e684b9)
+			Unexpected call to method createSSLEngine on object of type javax.net.ssl.SSLContext.
+			at statement: r3 = virtualinvoke r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>(r2, i0)
+
+		TypestateError violating CrySL rule for javax.net.ssl.SSLContext (on Object #3142437ae57bc7f5885144201db68f990b812132cc8514a154ccea4caf6cd23e)
+			Unexpected call to method createSSLEngine on object of type javax.net.ssl.SSLContext.
+			at statement: r3 = virtualinvoke r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>(r2, i0)
+
+
+Findings in Java Class: org.apache.kafka.common.security.ssl.SslFactory$SecurityStore
+
+	 in Method: java.security.KeyStore load()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #c51a64dc676552d170079a202ccde8ff7044cf88d53e8d10ce9a67d34e29e951)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r37.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r35, r1)
+
+
+Findings in Java Class: org.apache.kafka.common.security.scram.internals.ScramSaslServer$ScramSaslServerFactory
+
+	 in Method: javax.security.sasl.SaslServer createSaslServer(java.lang.String,java.lang.String,java.lang.String,java.util.Map,javax.security.auth.callback.CallbackHandler)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e743926a3587075dd67e6b7c14e0fd73dc72a99bac37d8e0f19a7ec2ae31fd6f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: return $r7
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7ea18bfd6cfd8f795820b8818946414ca523e0c740e13975322ee3d3521519ca)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r7
+
+
+Findings in Java Class: org.apache.kafka.common.security.scram.internals.ScramSaslClient$ScramSaslClientFactory
+
+	 in Method: javax.security.sasl.SaslClient createSaslClient(java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.util.Map,javax.security.auth.callback.CallbackHandler)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e743926a3587075dd67e6b7c14e0fd73dc72a99bac37d8e0f19a7ec2ae31fd6f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: return $r8
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7ea18bfd6cfd8f795820b8818946414ca523e0c740e13975322ee3d3521519ca)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r8
+
+
+Findings in Java Class: org.apache.kafka.common.security.scram.internals.ScramFormatter
+
+	 in Method: byte[] hi(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r8)
+
+
+	 in Method: byte[] hmac(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r1, $r6)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 16
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 2
+	RequiredPredicateError: 6
+	IncompleteOperationError: 4
+	TypestateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 45 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 52.26 s
+

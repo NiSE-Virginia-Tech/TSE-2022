@@ -1,0 +1,27 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 1.018 s 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 2 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.11
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+Exception in thread "main" java.lang.NullPointerException
+	at crypto.constraints.ConstraintSolver.<init>(ConstraintSolver.java:96)
+	at crypto.analysis.AnalysisSeedWithSpecification.checkInternalConstraints(AnalysisSeedWithSpecification.java:144)
+	at crypto.analysis.AnalysisSeedWithSpecification.execute(AnalysisSeedWithSpecification.java:123)
+	at crypto.analysis.CryptoScanner.scan(CryptoScanner.java:83)
+	at crypto.HeadlessCryptoScanner$3.internalTransform(HeadlessCryptoScanner.java:275)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.ScenePack.internalApply(ScenePack.java:35)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:199)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

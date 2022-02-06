@@ -1,0 +1,140 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 609.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 3
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r17 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>($r16)
+		Method: <org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices: java.lang.String makeTokenSignature(long,java.lang.String,java.lang.String)>
+		SHA-256: 53a9f09b473029b1cf5c38105af36077bc4efde688374dd46a770058939b266c
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.MessageDigest
+		Statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer726)
+		Method: <org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices: java.lang.String makeTokenSignature(long,java.lang.String,java.lang.String)>
+		SHA-256: 67d37402910916a689617b2ae6fb6cf5794a0236c01a81ff91f8eca855a1ea7b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices: void <init>(java.lang.String,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.web.authentication.rememberme.PersistentTokenRepository)>
+		SHA-256: 184b8722b4d108ed59371cec17f987dffff8a0f6df9ff976c664e65a744c33c7
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.springframework.security.web.authentication.www.DigestAuthUtils: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: 69a856196ed4774c74e9d91ad1b8165d59147c51525550413967a95f0edac6a5
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.MessageDigest
+		Statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer908)
+		Method: <org.springframework.security.web.authentication.www.DigestAuthUtils: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: ccfcf910fa8ad45a8083d091142dae0567a62e67e173a31b160a29103ba5c34c
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: byte[]
+		Statement: $r17 = virtualinvoke r4.<java.security.MessageDigest: byte[] digest(byte[])>($r16)
+		Method: <org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices: java.lang.String makeTokenSignature(long,java.lang.String,java.lang.String)>
+		SHA-256: 4d70671f777d7f129aa97d9b05fb531fc66087e93ef5a7f3c05c61de0d49f8b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke r1.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.springframework.security.web.authentication.www.DigestAuthUtils: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: e0af55e93547d0d3779674552062f339c5ba50fc56a95b718b404b7ae624f0d4
+		Secure: false
+
+Findings in Java Class: org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices
+
+	 in Method: java.lang.String makeTokenSignature(long,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #67d37402910916a689617b2ae6fb6cf5794a0236c01a81ff91f8eca855a1ea7b)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer726)
+
+
+Findings in Java Class: org.springframework.security.web.authentication.www.DigestAuthUtils
+
+	 in Method: java.lang.String md5Hex(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ccfcf910fa8ad45a8083d091142dae0567a62e67e173a31b160a29103ba5c34c)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer908)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.275 s
+

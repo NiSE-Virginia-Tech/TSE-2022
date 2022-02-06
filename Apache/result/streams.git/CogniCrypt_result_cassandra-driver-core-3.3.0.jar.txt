@@ -1,0 +1,23 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 624.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 3 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+Exception in thread "main" java.lang.ClassCastException: soot.jimple.internal.JReturnVoidStmt cannot be cast to soot.jimple.internal.JAssignStmt
+	at crypto.analysis.errors.AbstractError.<init>(AbstractError.java:28)
+	at crypto.analysis.errors.ErrorWithObjectAllocation.<init>(ErrorWithObjectAllocation.java:15)
+	at crypto.analysis.errors.IncompleteOperationError.<init>(IncompleteOperationError.java:27)
+	at crypto.analysis.AnalysisSeedWithSpecification.computeTypestateErrorsForEndOfObjectLifeTime(AnalysisSeedWithSpecification.java:214)
+	at crypto.analysis.AnalysisSeedWithSpecification.execute(AnalysisSeedWithSpecification.java:136)
+	at crypto.analysis.CryptoScanner.scan(CryptoScanner.java:83)
+	at crypto.HeadlessCryptoScanner$3.internalTransform(HeadlessCryptoScanner.java:275)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.ScenePack.internalApply(ScenePack.java:35)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:199)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

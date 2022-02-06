@@ -1,0 +1,875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/qpid-broker-j.git/velocity-1.4.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>13091 lines of code analyzed,
+	in 224 classes, 
+	in 30 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">2</td>
+<td align="right">0.15</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">2.60</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>36</b>
+</td>
+<td align="right">
+<b>2.75</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">36</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>36</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67625');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67625" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.velocity.servlet.VelocityServlet<br/>In method org.apache.velocity.servlet.VelocityServlet.error(HttpServletRequest, HttpServletResponse, Exception)<br/>At VelocityServlet.java:[line 683]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68962');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68962" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.velocity.util.StringUtils<br/>In method org.apache.velocity.util.StringUtils.stackTrace(Throwable)<br/>At StringUtils.java:[line 475]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.anakia.AnakiaTask<br/>In method org.apache.velocity.anakia.AnakiaTask.ensureDirectoryFor(File)<br/>At AnakiaTask.java:[line 460]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getParent()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65620');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.anakia.AnakiaTask<br/>In method org.apache.velocity.anakia.AnakiaTask.execute()<br/>At AnakiaTask.java:[line 245]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/anakia/AnakiaTask.projectAttribute<br/>At AnakiaTask.java:[line 245]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.anakia.AnakiaTask<br/>In method org.apache.velocity.anakia.AnakiaTask.process(File, String, File, Document)<br/>At AnakiaTask.java:[line 311]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/anakia/AnakiaTask.process(Ljava/io/File;Ljava/lang/String;Ljava/io/File;Lorg/jdom/Document;)V parameter 2<br/>At AnakiaTask.java:[line 294]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65778');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65778" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.anakia.AnakiaTask<br/>In method org.apache.velocity.anakia.AnakiaTask.process(File, String, File, Document)<br/>At AnakiaTask.java:[line 313]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/anakia/AnakiaTask.process(Ljava/io/File;Ljava/lang/String;Ljava/io/File;Lorg/jdom/Document;)V parameter 2<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/velocity/anakia/AnakiaTask.extension<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At AnakiaTask.java:[line 294]<br/>At AnakiaTask.java:[line 313]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66044');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66044" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.convert.WebMacro<br/>In method org.apache.velocity.convert.WebMacro.convert(String)<br/>At WebMacro.java:[line 111]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.convert(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66118');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66118" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.convert.WebMacro<br/>In method org.apache.velocity.convert.WebMacro.writeTemplate(String, String, String)<br/>At WebMacro.java:[line 172]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.extractPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.writeTemplate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2<br/>Unknown source org/apache/velocity/convert/WebMacro.writeTemplate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/velocity/convert/WebMacro.extractPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At WebMacro.java:[line 123]<br/>At WebMacro.java:[line 133]<br/>At WebMacro.java:[line 138]<br/>At WebMacro.java:[line 154]<br/>At WebMacro.java:[line 170]<br/>At WebMacro.java:[line 205]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66466');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66466" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.configuration.Configuration<br/>In method org.apache.velocity.runtime.configuration.Configuration.load(InputStream)<br/>At Configuration.java:[line 475]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/io/LineNumberReader.readLine()Ljava/lang/String;<br/>Tainted source org/apache/velocity/runtime/configuration/Configuration$PropertiesReader.readProperty()Ljava/lang/String;<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At Configuration.java:[line 446]<br/>At Configuration.java:[line 452]<br/>At Configuration.java:[line 260]<br/>At Configuration.java:[line 265]<br/>At Configuration.java:[line 266]<br/>At Configuration.java:[line 270]<br/>At Configuration.java:[line 281]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66620');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66620" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.configuration.Configuration<br/>In method org.apache.velocity.runtime.configuration.Configuration.load(InputStream)<br/>At Configuration.java:[line 490]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Tainted source java/io/LineNumberReader.readLine()Ljava/lang/String;<br/>Tainted source org/apache/velocity/runtime/configuration/Configuration$PropertiesReader.readProperty()Ljava/lang/String;<br/>Unknown source org/apache/velocity/runtime/configuration/Configuration.basePath<br/>Tainted source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At Configuration.java:[line 446]<br/>At Configuration.java:[line 452]<br/>At Configuration.java:[line 487]<br/>At Configuration.java:[line 490]<br/>At Configuration.java:[line 260]<br/>At Configuration.java:[line 265]<br/>At Configuration.java:[line 266]<br/>At Configuration.java:[line 270]<br/>At Configuration.java:[line 281]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66799');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66799" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.configuration.Configuration<br/>In method new org.apache.velocity.runtime.configuration.Configuration(String, String)<br/>At Configuration.java:[line 377]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/configuration/Configuration.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66873');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66873" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.configuration.Configuration<br/>In method new org.apache.velocity.runtime.configuration.Configuration(String, String)<br/>At Configuration.java:[line 380]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/configuration/Configuration.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66947');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66947" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.log.AvalonLogSystem<br/>In method org.apache.velocity.runtime.log.AvalonLogSystem.init(String)<br/>At AvalonLogSystem.java:[line 110]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/log/AvalonLogSystem.init(Ljava/lang/String;)V parameter 0<br/>At AvalonLogSystem.java:[line 80]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67026');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67026" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.FileResourceLoader<br/>In method org.apache.velocity.runtime.resource.loader.FileResourceLoader.findTemplate(String, String)<br/>At FileResourceLoader.java:[line 163]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/resource/loader/FileResourceLoader.findTemplate(Ljava/lang/String;Ljava/lang/String;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected<br/>At FileResourceLoader.java:[line 102]<br/>At FileResourceLoader.java:[line 119]<br/>At FileResourceLoader.java:[line 126]<br/>At StringUtils.java:[line 501]<br/>At StringUtils.java:[line 506]<br/>At StringUtils.java:[line 515]<br/>At StringUtils.java:[line 525]<br/>At StringUtils.java:[line 535]<br/>At StringUtils.java:[line 548]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67190');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67190" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.FileResourceLoader<br/>In method org.apache.velocity.runtime.resource.loader.FileResourceLoader.findTemplate(String, String)<br/>At FileResourceLoader.java:[line 167]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67259');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67259" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.FileResourceLoader<br/>In method org.apache.velocity.runtime.resource.loader.FileResourceLoader.getLastModified(Resource)<br/>At FileResourceLoader.java:[line 246]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/resource/Resource.getName()Ljava/lang/String;<br/>Unknown source org/apache/velocity/runtime/resource/Resource.name<br/>At Resource.java:[line 172]<br/>At FileResourceLoader.java:[line 246]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67353');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67353" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.FileResourceLoader<br/>In method org.apache.velocity.runtime.resource.loader.FileResourceLoader.isSourceModified(Resource)<br/>At FileResourceLoader.java:[line 208]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/resource/Resource.getName()Ljava/lang/String;<br/>Unknown source org/apache/velocity/runtime/resource/Resource.name<br/>At Resource.java:[line 172]<br/>At FileResourceLoader.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67447');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67447" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.FileResourceLoader<br/>In method org.apache.velocity.runtime.resource.loader.FileResourceLoader.isSourceModified(Resource)<br/>At FileResourceLoader.java:[line 214]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/runtime/resource/Resource.getName()Ljava/lang/String;<br/>Unknown source org/apache/velocity/runtime/resource/Resource.name<br/>At Resource.java:[line 172]<br/>At FileResourceLoader.java:[line 201]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67679');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67679" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.servlet.VelocityServlet<br/>In method org.apache.velocity.servlet.VelocityServlet.loadConfiguration(ServletConfig)<br/>At VelocityServlet.java:[line 304]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/servlet/ServletConfig.getInitParameter(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/servlet/ServletContext.getInitParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At VelocityServlet.java:[line 297]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68086');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68086" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.test.view.TemplateNodeView<br/>In method new org.apache.velocity.test.view.TemplateNodeView(String)<br/>At TemplateNodeView.java:[line 62]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/test/view/TemplateNodeView.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68492');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68492" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.ant.TexenTask<br/>In method org.apache.velocity.texen.ant.TexenTask.execute()<br/>At TexenTask.java:[line 434]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/ant/TexenTask.outputDirectory<br/>At TexenTask.java:[line 434]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68160');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68160" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.Generator<br/>In method new org.apache.velocity.texen.Generator(String)<br/>At Generator.java:[line 150]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/Generator.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68571');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68571" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.util.FileUtil<br/>In method org.apache.velocity.texen.util.FileUtil.file(String)<br/>At FileUtil.java:[line 59]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/util/FileUtil.file(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68645');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68645" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.util.FileUtil<br/>In method org.apache.velocity.texen.util.FileUtil.file(String, String)<br/>At FileUtil.java:[line 72]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/util/FileUtil.file(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68719');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68719" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.util.FileUtil<br/>In method org.apache.velocity.texen.util.FileUtil.mkdir(String)<br/>At FileUtil.java:[line 40]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/util/FileUtil.mkdir(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68793');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68793" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.texen.util.PropertiesUtil<br/>In method org.apache.velocity.texen.util.PropertiesUtil.loadFromTemplatePath(String)<br/>At PropertiesUtil.java:[line 118]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source org/apache/velocity/texen/util/PropertiesUtil.loadFromTemplatePath(Ljava/lang/String;)Ljava/util/Properties; parameter 0<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>Unknown source org/apache/velocity/texen/Generator.props<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source org/apache/velocity/texen/Generator.getTemplatePath()Ljava/lang/String;<br/>Method usage not detected<br/>At Generator.java:[line 229]<br/>At PropertiesUtil.java:[line 51]<br/>At PropertiesUtil.java:[line 78]<br/>At PropertiesUtil.java:[line 92]<br/>At PropertiesUtil.java:[line 95]<br/>At PropertiesUtil.java:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69016');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69016" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.velocity.util.StringUtils<br/>In method org.apache.velocity.util.StringUtils.fileContentsToString(String)<br/>At StringUtils.java:[line 359]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/util/StringUtils.fileContentsToString(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At WebMacro.java:[line 123]<br/>At WebMacro.java:[line 133]<br/>At WebMacro.java:[line 138]<br/>At WebMacro.java:[line 154]<br/>At WebMacro.java:[line 169]<br/>At WebMacro.java:[line 182]<br/>At WebMacro.java:[line 238]<br/>At BaseTestCase.java:[line 58]<br/>At BaseTestCase.java:[line 60]<br/>At BaseTestCase.java:[line 61]<br/>At BaseTestCase.java:[line 117]<br/>At BaseTestCase.java:[line 120]<br/>At TemplateTestCase.java:[line 189]<br/>At TexenTask.java:[line 506]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66272');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66272" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.velocity.convert.WebMacro<br/>In method org.apache.velocity.convert.WebMacro.writeTemplate(String, String, String)<br/>At WebMacro.java:[line 186]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.extractPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.writeTemplate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 2<br/>Unknown source org/apache/velocity/convert/WebMacro.convertName(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source org/apache/velocity/convert/WebMacro.writeTemplate(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/velocity/convert/WebMacro.extractPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/velocity/convert/WebMacro.convertName(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>At WebMacro.java:[line 123]<br/>At WebMacro.java:[line 133]<br/>At WebMacro.java:[line 138]<br/>At WebMacro.java:[line 154]<br/>At WebMacro.java:[line 165]<br/>At WebMacro.java:[line 170]<br/>At WebMacro.java:[line 179]<br/>At WebMacro.java:[line 205]<br/>At WebMacro.java:[line 216]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67942');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67942" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.velocity.test.TemplateTestCase<br/>In method org.apache.velocity.test.TemplateTestCase.runTest()<br/>At TemplateTestCase.java:[line 176]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/test/BaseTestCase.getFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source org/apache/velocity/test/BaseTestCase.getFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/velocity/test/BaseTestCase.getFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/apache/velocity/test/TemplateTestCase.baseFileName<br/>Unknown source org/apache/velocity/test/BaseTestCase.getFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(C)Ljava/lang/StringBuffer;<br/>At BaseTestCase.java:[line 58]<br/>At BaseTestCase.java:[line 60]<br/>At BaseTestCase.java:[line 61]<br/>At TemplateTestCase.java:[line 176]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68234');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68234" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.velocity.texen.Generator<br/>In method org.apache.velocity.texen.Generator.getWriter(String, String)<br/>At Generator.java:[line 279]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/Generator.getWriter(Ljava/lang/String;Ljava/lang/String;)Ljava/io/Writer; parameter 1<br/>At Generator.java:[line 251]<br/>At Generator.java:[line 315]<br/>At Generator.java:[line 336]<br/>At Generator.java:[line 383]<br/>At TexenTask.java:[line 440]<br/>At TexenTask.java:[line 442]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68363');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68363" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class org.apache.velocity.texen.Generator<br/>In method org.apache.velocity.texen.Generator.getWriter(String, String)<br/>At Generator.java:[line 282]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/velocity/texen/Generator.getWriter(Ljava/lang/String;Ljava/lang/String;)Ljava/io/Writer; parameter 1<br/>At Generator.java:[line 251]<br/>At Generator.java:[line 315]<br/>At Generator.java:[line 336]<br/>At Generator.java:[line 383]<br/>At TexenTask.java:[line 440]<br/>At TexenTask.java:[line 442]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67541');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67541" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.velocity.runtime.resource.loader.JarHolder<br/>In method org.apache.velocity.runtime.resource.loader.JarHolder.init()<br/>At JarHolder.java:[line 61]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/velocity/runtime/resource/loader/JarHolder.urlpath<br/>At JarHolder.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65882');">
+<td>
+<span class="priority-2">SECVELO</span>
+</td>
+<td>Potential template injection with Velocity template</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65882" style="display: none;">
+<a href="#TEMPLATE_INJECTION_VELOCITY">Bug type TEMPLATE_INJECTION_VELOCITY (click for details)</a>
+<br/>In class org.apache.velocity.app.Velocity<br/>In method org.apache.velocity.app.Velocity.evaluate(Context, Writer, String, InputStream)<br/>At Velocity.java:[line 254]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65936');">
+<td>
+<span class="priority-2">SECVELO</span>
+</td>
+<td>Potential template injection with Velocity template</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65936" style="display: none;">
+<a href="#TEMPLATE_INJECTION_VELOCITY">Bug type TEMPLATE_INJECTION_VELOCITY (click for details)</a>
+<br/>In class org.apache.velocity.app.Velocity<br/>In method org.apache.velocity.app.Velocity.evaluate(Context, Writer, String, String)<br/>At Velocity.java:[line 210]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65990');">
+<td>
+<span class="priority-2">SECVELO</span>
+</td>
+<td>Potential template injection with Velocity template</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65990" style="display: none;">
+<a href="#TEMPLATE_INJECTION_VELOCITY">Bug type TEMPLATE_INJECTION_VELOCITY (click for details)</a>
+<br/>In class org.apache.velocity.app.Velocity<br/>In method org.apache.velocity.app.Velocity.invokeVelocimacro(String, String, String[], Context, Writer)<br/>At Velocity.java:[line 388]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67768');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67768" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.velocity.servlet.VelocityServlet<br/>In method org.apache.velocity.servlet.VelocityServlet.error(HttpServletRequest, HttpServletResponse, Exception)<br/>At VelocityServlet.java:[line 689]<br/>Sink method javax/servlet/ServletOutputStream.print(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/StringWriter.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/StringWriter.&lt;init&gt;()V<br/>Unknown source java/lang/Throwable.getMessage()Ljava/lang/String;<br/>At VelocityServlet.java:[line 678]<br/>At VelocityServlet.java:[line 679]<br/>At VelocityServlet.java:[line 682]<br/>At VelocityServlet.java:[line 683]<br/>At VelocityServlet.java:[line 685]<br/>At VelocityServlet.java:[line 686]<br/>At VelocityServlet.java:[line 687]<br/>At VelocityServlet.java:[line 688]<br/>At VelocityServlet.java:[line 689]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="TEMPLATE_INJECTION_VELOCITY">TEMPLATE_INJECTION_VELOCITY: Potential template injection with Velocity</a>
+</h2>
+            
+<p>
+Velocity template engine is powerful. It is possible to add logic including condition statements, loops and external calls.
+It is not design to be sandbox to templating operations. A malicious user in control of a template can run malicious code
+on the server-side. Velocity templates should be seen as scripts.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>[...]
+
+Velocity.evaluate(context, swOut, "test", userInput);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid letting end users manipulate templates with Velocity. If you need to expose template editing to your users,
+prefer logic-less template engines such as Handlebars or Moustache (See references).
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://blog.portswigger.net/2015/08/server-side-template-injection.html">PortSwigger: Server-Side Template Injection </a><br/>
+<a href="https://jknack.github.io/handlebars.java/">Handlebars.java</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

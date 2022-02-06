@@ -1,0 +1,211 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 710.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.43
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r17
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r17 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r10)
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.TrustManager[] createTrustManager()>
+		SHA-256: a3d4e0b76e87b83730704ab3ced9eea5e0d5f6c3900447a954a68cf15b884837
+		Secure: false
+	Object:
+		Variable: r1
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r1 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r7)
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.KeyManager[] createKeyManager()>
+		SHA-256: bde043942a6c57c86e6b5cea149c296fb9c283d5a0fb60dc3decec75ee921d44
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>($r4, $r3)
+		Method: <org.apache.activemq.broker.SslContext: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: b96f7143228bca9cf341292e8452c8a46773c97bd702557f6e173c0d8998873a
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.net.ssl.SSLContext
+		Statement: $r11 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r10)
+		Method: <org.apache.activemq.broker.SslContext: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: c0063bb3791ba8483a441b0b17794f25095c54f4da28d39ea0ad0e9f66d69ba1
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.KeyStore
+		Statement: r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r8)
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.KeyManager[] createKeyManager()>
+		SHA-256: 382d9f8ebd6a4831d517566fe8e29c8f500e6f8166f3ea6f18ef8e6f6d77d2a8
+		Secure: false
+	Object:
+		Variable: r23
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r23 = virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.KeyManager[] createKeyManager()>
+		SHA-256: 4c70aa02996321df122a87da32e368f6c0416b127a3552e82e8ffe8359153f6f
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.KeyStore
+		Statement: r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r5)
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.TrustManager[] createTrustManager()>
+		SHA-256: b663f809e6e761c1ca84cabb24121ed97e3e91014bcc899b0a39952cf524a9ef
+		Secure: false
+	Object:
+		Variable: r15
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r15 = virtualinvoke r17.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.activemq.ActiveMQSslConnectionFactory: javax.net.ssl.TrustManager[] createTrustManager()>
+		SHA-256: 519d4e318a4008114087a8d37d96a36e7ab6ee8ffa3e2e5f38c0175caa05381e
+		Secure: false
+
+Findings in Java Class: org.apache.activemq.transport.nio.NIOSSLTransport
+
+	 in Method: void initializeStreams()
+		ForbiddenMethodError violating CrySL rule for javax.net.ssl.SSLContext
+			Detected call to forbidden method javax.net.ssl.SSLContext getDefault() of class javax.net.ssl.SSLContext. Instead, call method <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>, <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>.
+			at statement: $r33 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getDefault()>()
+
+
+Findings in Java Class: org.apache.activemq.ActiveMQSslConnectionFactory
+
+	 in Method: javax.net.ssl.TrustManager[] createTrustManager()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #b663f809e6e761c1ca84cabb24121ed97e3e91014bcc899b0a39952cf524a9ef)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #b663f809e6e761c1ca84cabb24121ed97e3e91014bcc899b0a39952cf524a9ef)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke r17.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r1)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #b663f809e6e761c1ca84cabb24121ed97e3e91014bcc899b0a39952cf524a9ef)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r1.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r2, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r17.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(r1)
+
+
+	 in Method: javax.net.ssl.KeyManager[] createKeyManager()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #382d9f8ebd6a4831d517566fe8e29c8f500e6f8166f3ea6f18ef8e6f6d77d2a8)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r8)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #bde043942a6c57c86e6b5cea149c296fb9c283d5a0fb60dc3decec75ee921d44)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r2, $r25)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #382d9f8ebd6a4831d517566fe8e29c8f500e6f8166f3ea6f18ef8e6f6d77d2a8)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r2, $r25)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #bde043942a6c57c86e6b5cea149c296fb9c283d5a0fb60dc3decec75ee921d44)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r2, $r25)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #bde043942a6c57c86e6b5cea149c296fb9c283d5a0fb60dc3decec75ee921d44)
+			Operation on object of type javax.net.ssl.KeyManagerFactory object not completed. Expected call to init
+			at statement: r23 = virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #bde043942a6c57c86e6b5cea149c296fb9c283d5a0fb60dc3decec75ee921d44)
+			Operation on object of type javax.net.ssl.KeyManagerFactory object not completed. Expected call to init
+			at statement: r1 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generated Key Store
+			at statement: virtualinvoke r1.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r2, $r25)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #382d9f8ebd6a4831d517566fe8e29c8f500e6f8166f3ea6f18ef8e6f6d77d2a8)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r4, $r13)
+
+
+Findings in Java Class: org.apache.activemq.broker.SslContext
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke $r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r7, $r8, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke $r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r7, $r8, $r9)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 6
+	ForbiddenMethodError: 1
+	RequiredPredicateError: 4
+	NeverTypeOfError: 4
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 5.796 s
+

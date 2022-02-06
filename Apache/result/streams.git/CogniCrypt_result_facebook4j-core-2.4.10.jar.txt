@@ -1,0 +1,112 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 749.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r10, varReplacer143)
+		Method: <facebook4j.auth.OAuthAuthorization: java.lang.String generateAppSecretProof()>
+		SHA-256: b992411b1995b1ee10d9e239bba5d6a4398d50c6ac7eecb27829e204f9acb27
+		Secure: false
+	Object:
+		Variable: r20
+		Type: byte[]
+		Statement: r20 = virtualinvoke r21.<javax.crypto.Mac: byte[] doFinal(byte[])>($r11)
+		Method: <facebook4j.auth.OAuthAuthorization: java.lang.String generateAppSecretProof()>
+		SHA-256: 17e74f435ffa9e79f01bbc722f1dada4ae3a6c953a12e376e2abfdb10bf1dfdb
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: r20 = virtualinvoke r21.<javax.crypto.Mac: byte[] doFinal(byte[])>($r11)
+		Method: <facebook4j.auth.OAuthAuthorization: java.lang.String generateAppSecretProof()>
+		SHA-256: 333977f4217ac7c89b5a939106f3fb2cf6cb4dd0c6bcbce89cb0a78b1e6c97fe
+		Secure: true
+	Object:
+		Variable: varReplacer143
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r10, varReplacer143)
+		Method: <facebook4j.auth.OAuthAuthorization: java.lang.String generateAppSecretProof()>
+		SHA-256: 188aa9086f4729263ff9b4f85ad5ed58f0d075ba1e2b9628cbdb0ff4875e0025
+		Secure: false
+	Object:
+		Variable: r21
+		Type: javax.crypto.Mac
+		Statement: r21 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer146)
+		Method: <facebook4j.auth.OAuthAuthorization: java.lang.String generateAppSecretProof()>
+		SHA-256: ad0b2a9ee39bfabaaf369cdf7fad9a0f50ffe1b01239400347d172d0df157775
+		Secure: true
+
+Findings in Java Class: facebook4j.auth.OAuthAuthorization
+
+	 in Method: java.lang.String generateAppSecretProof()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r10, varReplacer143)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.310 s
+

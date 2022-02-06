@@ -1,0 +1,209 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 518.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 9 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.1
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.55
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.64
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.73
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.69
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.77
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.85
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.92
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r110
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r110 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(r108)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: dce6112e4e20a1dff647158b1dd747a7c0b075d59878601a6416f382201c01e2
+		Secure: true
+	Object:
+		Variable: r73
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r73 = virtualinvoke r87.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: 3929143cb29c1ae8616d86f6db660f5b78359aa17162a9e81ec87efd79d6ab15
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.eclipse.paho.client.mqttv3.internal.websocket.WebSocketHandshake: byte[] sha1(java.lang.String)>
+		SHA-256: 1bf7b1d466a097567a53baaf7e8e3bc7f1cb2990d99456c62e8ef3ba3caecb2a
+		Secure: false
+	Object:
+		Variable: r100
+		Type: javax.net.ssl.TrustManager[]
+		Statement: r100 = virtualinvoke r110.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: b697053df197ecb250dabd06588b6d09c63340887f37f3757bed4e462217d50
+		Secure: true
+	Object:
+		Variable: r70
+		Type: javax.net.ssl.SSLContext
+		Statement: r70 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r68)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: 24d8a4ab20cf08bf9cce79935eec015d492be138dc647029a499bdbc2bc6ab5c
+		Secure: false
+	Object:
+		Variable: r109
+		Type: java.security.KeyStore
+		Statement: r109 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r105)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: 49c17a091dd894720d2be702a46b7c64e8b9dbeabcf44050deef5fda075de0a8
+		Secure: true
+	Object:
+		Variable: r86
+		Type: java.security.KeyStore
+		Statement: r86 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(r80)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: f29b56397343cf273cd01052e9e62ac42fcf883c6659c4e76988cee432d215c2
+		Secure: true
+	Object:
+		Variable: r110
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r110 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(r108, r3)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: a35cba7b744a7367267993478d36482ad4c5558cc574544b317943f561ebdba2
+		Secure: true
+	Object:
+		Variable: r70
+		Type: javax.net.ssl.SSLContext
+		Statement: r70 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>(r68, r2)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: d485dfb5bcc1c2eba9475a44303268346832e92dc152f41a4a65b6b6ebc7a02f
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer925)
+		Method: <org.eclipse.paho.client.mqttv3.internal.websocket.WebSocketHandshake: byte[] sha1(java.lang.String)>
+		SHA-256: 7872e860025749bb7672e446ffcbad31d27d2e94c56553431cd18173cf52dc6c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: r3 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.eclipse.paho.client.mqttv3.internal.websocket.WebSocketHandshake: byte[] sha1(java.lang.String)>
+		SHA-256: 8ff0d07063fc9c6fe714005b08ed9b4deba34ae77b5fff4c8e4aec525d43cc4b
+		Secure: false
+	Object:
+		Variable: r87
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r87 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String,java.lang.String)>(r83, r84)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: c0b5f015fdac187f9b01662829b4cfcdb2ac784ece652f2b8143ff2b00e4fcaa
+		Secure: true
+	Object:
+		Variable: r87
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r87 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(r83)
+		Method: <org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory: javax.net.ssl.SSLContext getSSLContext(java.lang.String)>
+		SHA-256: 7540a399938aa9b2d2559938d1de6f7d9512c32e71f766f899a1bd48b9f5a1d7
+		Secure: true
+
+Findings in Java Class: org.eclipse.paho.client.mqttv3.internal.security.SSLSocketFactoryFactory
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r70.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r73, r100, varReplacer271)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d485dfb5bcc1c2eba9475a44303268346832e92dc152f41a4a65b6b6ebc7a02f)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r70 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>(r68, r2)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #24d8a4ab20cf08bf9cce79935eec015d492be138dc647029a499bdbc2bc6ab5c)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r70 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(r68)
+
+
+Findings in Java Class: org.eclipse.paho.client.mqttv3.internal.websocket.WebSocketHandshake
+
+	 in Method: byte[] sha1(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7872e860025749bb7672e446ffcbad31d27d2e94c56553431cd18173cf52dc6c)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer925)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 13
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 3
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.830 s
+

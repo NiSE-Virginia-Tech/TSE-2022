@@ -1,0 +1,1495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/kylin.git/spring-webmvc-4.3.10.RELEASE.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>19958 lines of code analyzed,
+	in 498 classes, 
+	in 30 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">0.45</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">47</td>
+<td align="right">2.35</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>56</b>
+</td>
+<td align="right">
+<b>2.81</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">56</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>56</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72649');">
+<td>
+<span class="priority-2">SCRIPTE</span>
+</td>
+<td>This use of javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object; can be vulnerable to code injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72649" style="display: none;">
+<a href="#SCRIPT_ENGINE_INJECTION">Bug type SCRIPT_ENGINE_INJECTION (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.script.ScriptTemplateView<br/>In method org.springframework.web.servlet.view.script.ScriptTemplateView.renderMergedOutputModel(Map, HttpServletRequest, HttpServletResponse)<br/>At ScriptTemplateView.java:[line 350]<br/>Sink method javax/script/ScriptEngine.eval(Ljava/lang/String;)Ljava/lang/Object;<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/script/ScriptTemplateView.renderObject<br/>At ScriptTemplateView.java:[line 350]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>In method org.springframework.web.servlet.DispatcherServlet.doDispatch(HttpServletRequest, HttpServletResponse)<br/>At DispatcherServlet.java:[line 955]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Tainted source org/springframework/web/servlet/DispatcherServlet.getRequestUri(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>At DispatcherServlet.java:[line 955]<br/>At DispatcherServlet.java:[line 1379]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65650');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65650" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>In method org.springframework.web.servlet.DispatcherServlet.doService(HttpServletRequest, HttpServletResponse)<br/>At DispatcherServlet.java:[line 869]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletConfig.getServletName()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Tainted source org/springframework/web/servlet/DispatcherServlet.getRequestUri(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/DispatcherServlet.getServletName()Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>At DispatcherServlet.java:[line 869]<br/>At DispatcherServlet.java:[line 870]<br/>At DispatcherServlet.java:[line 1379]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65769');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65769" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>In method org.springframework.web.servlet.DispatcherServlet.noHandlerFound(HttpServletRequest, HttpServletResponse)<br/>At DispatcherServlet.java:[line 1176]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source javax/servlet/ServletConfig.getServletName()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>Tainted source org/springframework/web/servlet/DispatcherServlet.getRequestUri(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/DispatcherServlet.getServletName()Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getAttribute(Ljava/lang/String;)Ljava/lang/Object;<br/>At DispatcherServlet.java:[line 1176]<br/>At DispatcherServlet.java:[line 1177]<br/>At DispatcherServlet.java:[line 1379]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66513');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66513" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.i18n.CookieLocaleResolver<br/>In method org.springframework.web.servlet.i18n.CookieLocaleResolver.parseLocaleCookieIfNecessary(HttpServletRequest)<br/>At CookieLocaleResolver.java:[line 203]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/Cookie.getValue()Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/i18n/CookieLocaleResolver.getCookieName()Ljava/lang/String;<br/>Unknown source java/lang/IllegalArgumentException.getMessage()Ljava/lang/String;<br/>At CookieLocaleResolver.java:[line 185]<br/>At CookieLocaleResolver.java:[line 203]<br/>At CookieLocaleResolver.java:[line 204]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66622');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66622" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.i18n.CookieLocaleResolver<br/>In method org.springframework.web.servlet.i18n.CookieLocaleResolver.parseLocaleCookieIfNecessary(HttpServletRequest)<br/>At CookieLocaleResolver.java:[line 213]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source java/util/Locale.forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;<br/>Tainted source javax/servlet/http/Cookie.getValue()Ljava/lang/String;<br/>Unknown source java/util/TimeZone.getID()Ljava/lang/String;<br/>Unknown source org/springframework/util/StringUtils.parseLocaleString(Ljava/lang/String;)Ljava/util/Locale;<br/>Unknown source org/springframework/web/servlet/i18n/CookieLocaleResolver.parseLocaleValue(Ljava/lang/String;)Ljava/util/Locale;<br/>At CookieLocaleResolver.java:[line 194]<br/>At CookieLocaleResolver.java:[line 213]<br/>At CookieLocaleResolver.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66741');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66741" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.i18n.LocaleChangeInterceptor<br/>In method org.springframework.web.servlet.i18n.LocaleChangeInterceptor.preHandle(HttpServletRequest, HttpServletResponse, Object)<br/>At LocaleChangeInterceptor.java:[line 152]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source java/lang/IllegalArgumentException.getMessage()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At LocaleChangeInterceptor.java:[line 139]<br/>At LocaleChangeInterceptor.java:[line 152]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67575');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67575" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice<br/>In method org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice.beforeBodyWriteInternal(MappingJacksonValue, MediaType, MethodParameter, ServerHttpRequest, ServerHttpResponse)<br/>At AbstractJsonpResponseBodyAdvice.java:[line 79]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At AbstractJsonpResponseBodyAdvice.java:[line 75]<br/>At AbstractJsonpResponseBodyAdvice.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67732');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67732" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler<br/>In method org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.handleAsyncRequestTimeoutException(AsyncRequestTimeoutException, HttpHeaders, HttpStatus, WebRequest)<br/>At ResponseEntityExceptionHandler.java:[line 483]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At ResponseEntityExceptionHandler.java:[line 483]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67899');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67899" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver<br/>In method org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver.getHandlerMethodName(HttpServletRequest)<br/>At ParameterMethodNameResolver.java:[line 185]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.paramName<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At ParameterMethodNameResolver.java:[line 182]<br/>At ParameterMethodNameResolver.java:[line 185]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67993');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67993" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver<br/>In method org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver.getHandlerMethodName(HttpServletRequest)<br/>At ParameterMethodNameResolver.java:[line 196]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.paramName<br/>Tainted source java/util/Properties.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.methodParamNames<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.logicalMappings<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At ParameterMethodNameResolver.java:[line 168]<br/>At ParameterMethodNameResolver.java:[line 172]<br/>At ParameterMethodNameResolver.java:[line 182]<br/>At ParameterMethodNameResolver.java:[line 185]<br/>At ParameterMethodNameResolver.java:[line 194]<br/>At ParameterMethodNameResolver.java:[line 196]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68142');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68142" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver<br/>In method org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver.getHandlerMethodName(HttpServletRequest)<br/>At ParameterMethodNameResolver.java:[line 202]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.paramName<br/>Tainted source java/util/Properties.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.methodParamNames<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/ParameterMethodNameResolver.logicalMappings<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At ParameterMethodNameResolver.java:[line 168]<br/>At ParameterMethodNameResolver.java:[line 172]<br/>At ParameterMethodNameResolver.java:[line 182]<br/>At ParameterMethodNameResolver.java:[line 185]<br/>At ParameterMethodNameResolver.java:[line 194]<br/>At ParameterMethodNameResolver.java:[line 202]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68291');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.error(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68291" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleAsyncRequestTimeoutException(AsyncRequestTimeoutException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 505]<br/>Sink method org/apache/commons/logging/Log.error(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At DefaultHandlerExceptionResolver.java:[line 505]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66054');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66054" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.ResourceServlet<br/>In method org.springframework.web.servlet.ResourceServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At ResourceServlet.java:[line 208]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Tainted source org/springframework/web/servlet/ResourceServlet.determineResourceUrl(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At ResourceServlet.java:[line 200]<br/>At ResourceServlet.java:[line 208]<br/>At ResourceServlet.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66158');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.warn(Ljava/lang/Object;Ljava/lang/Throwable;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66158" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.ResourceServlet<br/>In method org.springframework.web.servlet.ResourceServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At ResourceServlet.java:[line 217]<br/>Sink method org/apache/commons/logging/Log.warn(Ljava/lang/Object;Ljava/lang/Throwable;)V<br/>Sink parameter 1<br/>Tainted source org/springframework/web/servlet/ResourceServlet.determineResourceUrl(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At ResourceServlet.java:[line 200]<br/>At ResourceServlet.java:[line 217]<br/>At ResourceServlet.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72550');">
+<td>
+<span class="priority-2">SECCRLFLOG</span>
+</td>
+<td>This use of org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V might be used to include CRLF characters into log messages</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72550" style="display: none;">
+<a href="#CRLF_INJECTION_LOGS">Bug type CRLF_INJECTION_LOGS (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.json.MappingJackson2JsonView<br/>In method org.springframework.web.servlet.view.json.MappingJackson2JsonView.getJsonpParameterValue(HttpServletRequest)<br/>At MappingJackson2JsonView.java:[line 185]<br/>Sink method org/apache/commons/logging/Log.debug(Ljava/lang/Object;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getParameter(Ljava/lang/String;)Ljava/lang/String;<br/>At MappingJackson2JsonView.java:[line 179]<br/>At MappingJackson2JsonView.java:[line 180]<br/>At MappingJackson2JsonView.java:[line 185]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72496');">
+<td>
+<span class="priority-2">SECFREEM</span>
+</td>
+<td>Potential template injection with Freemarker template</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72496" style="display: none;">
+<a href="#TEMPLATE_INJECTION_FREEMARKER">Bug type TEMPLATE_INJECTION_FREEMARKER (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.freemarker.FreeMarkerView<br/>In method org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(Template, SimpleHash, HttpServletResponse)<br/>At FreeMarkerView.java:[line 367]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69370');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69370" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 615]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69809');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69809" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 619]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70248');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70248" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 629]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65888');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65888" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>In method org.springframework.web.servlet.DispatcherServlet.applyDefaultViewName(HttpServletRequest, ModelAndView)<br/>At DispatcherServlet.java:[line 1014]<br/>Sink method org/springframework/web/servlet/ModelAndView.setViewName(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/DispatcherServlet.getDefaultViewName(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/RequestToViewNameTranslator.getViewName(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>At DispatcherServlet.java:[line 1014]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65971');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65971" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.DispatcherServlet<br/>In method org.springframework.web.servlet.DispatcherServlet.processHandlerException(HttpServletRequest, HttpServletResponse, Object, Exception)<br/>At DispatcherServlet.java:[line 1234]<br/>Sink method org/springframework/web/servlet/ModelAndView.setViewName(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/DispatcherServlet.getDefaultViewName(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/RequestToViewNameTranslator.getViewName(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>At DispatcherServlet.java:[line 1234]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66355');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66355" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.handler.SimpleMappingExceptionResolver<br/>In method org.springframework.web.servlet.handler.SimpleMappingExceptionResolver.getModelAndView(String, Exception)<br/>At SimpleMappingExceptionResolver.java:[line 339]<br/>Sink method org/springframework/web/servlet/ModelAndView.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/handler/SimpleMappingExceptionResolver.getModelAndView(Ljava/lang/String;Ljava/lang/Exception;)Lorg/springframework/web/servlet/ModelAndView; parameter 1<br/>At SimpleMappingExceptionResolver.java:[line 180]<br/>At SimpleMappingExceptionResolver.java:[line 188]<br/>At SimpleMappingExceptionResolver.java:[line 215]<br/>At SimpleMappingExceptionResolver.java:[line 223]<br/>At SimpleMappingExceptionResolver.java:[line 239]<br/>At SimpleMappingExceptionResolver.java:[line 240]<br/>At SimpleMappingExceptionResolver.java:[line 246]<br/>At SimpleMappingExceptionResolver.java:[line 250]<br/>At SimpleMappingExceptionResolver.java:[line 326]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66835');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66835" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.AbstractUrlViewController<br/>In method org.springframework.web.servlet.mvc.AbstractUrlViewController.handleRequestInternal(HttpServletRequest, HttpServletResponse)<br/>At AbstractUrlViewController.java:[line 108]<br/>Sink method org/springframework/web/servlet/ModelAndView.&lt;init&gt;(Ljava/lang/String;Ljava/util/Map;)V<br/>Sink parameter 1<br/>Unknown source org/springframework/web/servlet/mvc/AbstractUrlViewController.getViewNameForRequest(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>Unknown source org/springframework/web/util/UrlPathHelper.getLookupPathForRequest(Ljavax/servlet/http/HttpServletRequest;)Ljava/lang/String;<br/>At AbstractUrlViewController.java:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67187');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67187" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter$ServletHandlerMethodInvoker<br/>In method org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter$ServletHandlerMethodInvoker.getModelAndView(Method, Class, Object, ExtendedModelMap, ServletWebRequest)<br/>At AnnotationMethodHandlerAdapter.java:[line 970]<br/>Sink method org/springframework/web/servlet/ModelAndView.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter$ServletHandlerMethodInvoker.getModelAndView(Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Object;Lorg/springframework/ui/ExtendedModelMap;Lorg/springframework/web/context/request/ServletWebRequest;)Lorg/springframework/web/servlet/ModelAndView; parameter 2<br/>At AnnotationMethodHandlerAdapter.java:[line 442]<br/>At AnnotationMethodHandlerAdapter.java:[line 935]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67344');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67344" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver.getModelAndView(Method, Object, ServletWebRequest)<br/>At AnnotationMethodHandlerExceptionResolver.java:[line 413]<br/>Sink method org/springframework/web/servlet/ModelAndView.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerExceptionResolver.getModelAndView(Ljava/lang/reflect/Method;Ljava/lang/Object;Lorg/springframework/web/context/request/ServletWebRequest;)Lorg/springframework/web/servlet/ModelAndView; parameter 1<br/>At AnnotationMethodHandlerExceptionResolver.java:[line 148]<br/>At AnnotationMethodHandlerExceptionResolver.java:[line 149]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67664');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67664" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(HttpServletRequest, HttpServletResponse, HandlerMethod, Exception)<br/>At ExceptionHandlerExceptionResolver.java:[line 404]<br/>Sink method org/springframework/web/servlet/ModelAndView.setViewName(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/method/support/ModelAndViewContainer.getViewName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67811');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67811" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.multiaction.MultiActionController<br/>In method org.springframework.web.servlet.mvc.multiaction.MultiActionController.massageReturnValueIfNecessary(Object)<br/>At MultiActionController.java:[line 500]<br/>Sink method org/springframework/web/servlet/ModelAndView.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/multiaction/MultiActionController.massageReturnValueIfNecessary(Ljava/lang/Object;)Lorg/springframework/web/servlet/ModelAndView; parameter 0<br/>At MultiActionController.java:[line 474]<br/>At MultiActionController.java:[line 640]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66918');">
+<td>
+<span class="priority-2">SECSF</span>
+</td>
+<td>ModelAndView populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66918" style="display: none;">
+<a href="#SPRING_FILE_DISCLOSURE">Bug type SPRING_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.ParameterizableViewController<br/>In method org.springframework.web.servlet.mvc.ParameterizableViewController.handleRequestInternal(HttpServletRequest, HttpServletResponse)<br/>At ParameterizableViewController.java:[line 159]<br/>Sink method org/springframework/web/servlet/ModelAndView.setViewName(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/mvc/ParameterizableViewController.getViewName()Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/mvc/ParameterizableViewController.view<br/>At ParameterizableViewController.java:[line 66]<br/>At ParameterizableViewController.java:[line 140]<br/>At ParameterizableViewController.java:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67021');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67021" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.ServletForwardingController<br/>In method org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(HttpServletRequest, HttpServletResponse)<br/>At ServletForwardingController.java:[line 126]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletContext.getNamedDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/springframework/web/servlet/mvc/ServletForwardingController.servletName<br/>At ServletForwardingController.java:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67104');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67104" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.ServletForwardingController<br/>In method org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(HttpServletRequest, HttpServletResponse)<br/>At ServletForwardingController.java:[line 133]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletContext.getNamedDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/springframework/web/servlet/mvc/ServletForwardingController.servletName<br/>At ServletForwardingController.java:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68715');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68715" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler<br/>In method org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler.handleRequest(HttpServletRequest, HttpServletResponse)<br/>At DefaultServletHttpRequestHandler.java:[line 122]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletContext.getNamedDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/springframework/web/servlet/resource/DefaultServletHttpRequestHandler.defaultServletName<br/>At DefaultServletHttpRequestHandler.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66262');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66262" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.ResourceServlet<br/>In method org.springframework.web.servlet.ResourceServlet.doInclude(HttpServletRequest, HttpServletResponse, String)<br/>At ResourceServlet.java:[line 288]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source org/springframework/util/StringUtils.cleanPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At ResourceServlet.java:[line 285]<br/>At ResourceServlet.java:[line 287]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69084');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69084" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.InternalResourceView<br/>In method org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(Map, HttpServletRequest, HttpServletResponse)<br/>At InternalResourceView.java:[line 160]<br/>Sink method javax/servlet/RequestDispatcher.include(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.prepareForRendering(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getRequestDispatcher(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getUrl()Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getRequestDispatcher(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljavax/servlet/RequestDispatcher; parameter 0<br/>Unknown source org/springframework/web/servlet/view/AbstractUrlBasedView.url<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At AbstractUrlBasedView.java:[line 62]<br/>At InternalResourceView.java:[line 145]<br/>At InternalResourceView.java:[line 148]<br/>At InternalResourceView.java:[line 201]<br/>At InternalResourceView.java:[line 223]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69227');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69227" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.InternalResourceView<br/>In method org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(Map, HttpServletRequest, HttpServletResponse)<br/>At InternalResourceView.java:[line 168]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.prepareForRendering(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getRequestDispatcher(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getUrl()Ljava/lang/String;<br/>Unknown source org/springframework/web/servlet/view/InternalResourceView.getRequestDispatcher(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/String;)Ljavax/servlet/RequestDispatcher; parameter 0<br/>Unknown source org/springframework/web/servlet/view/AbstractUrlBasedView.url<br/>Unknown source javax/servlet/http/HttpServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>At AbstractUrlBasedView.java:[line 62]<br/>At InternalResourceView.java:[line 145]<br/>At InternalResourceView.java:[line 148]<br/>At InternalResourceView.java:[line 201]<br/>At InternalResourceView.java:[line 223]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70687');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70687" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 615]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71126');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71126" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 619]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71565');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71565" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 623]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72004');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72004" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 629]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/view/RedirectView.sendRedirect(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Z)V parameter 1<br/>Unknown source javax/servlet/http/HttpServletResponse.encodeRedirectURL(Ljava/lang/String;)Ljava/lang/String;<br/>Method usage with tainted arguments detected<br/>At AbstractUrlBasedView.java:[line 62]<br/>At RedirectView.java:[line 305]<br/>At RedirectView.java:[line 306]<br/>At RedirectView.java:[line 320]<br/>At RedirectView.java:[line 337]<br/>At RedirectView.java:[line 347]<br/>At RedirectView.java:[line 349]<br/>At RedirectView.java:[line 358]<br/>At RedirectView.java:[line 376]<br/>At RedirectView.java:[line 384]<br/>At RedirectView.java:[line 385]<br/>At RedirectView.java:[line 388]<br/>At RedirectView.java:[line 406]<br/>At RedirectView.java:[line 412]<br/>At RedirectView.java:[line 413]<br/>At RedirectView.java:[line 417]<br/>At RedirectView.java:[line 420]<br/>At RedirectView.java:[line 424]<br/>At RedirectView.java:[line 446]<br/>At RedirectView.java:[line 447]<br/>At RedirectView.java:[line 452]<br/>At RedirectView.java:[line 453]<br/>At RedirectView.java:[line 456]<br/>At RedirectView.java:[line 459]<br/>At RedirectView.java:[line 462]<br/>At RedirectView.java:[line 465]<br/>At RedirectView.java:[line 473]<br/>At RedirectView.java:[line 474]<br/>At RedirectView.java:[line 475]<br/>At RedirectView.java:[line 481]<br/>At RedirectView.java:[line 497]<br/>At RedirectView.java:[line 498]<br/>At RedirectView.java:[line 499]<br/>At RedirectView.java:[line 523]<br/>At RedirectView.java:[line 528]<br/>At RedirectView.java:[line 573]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68798');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68798" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.springframework.web.servlet.support.RequestContext<br/>In method org.springframework.web.servlet.support.RequestContext.getContextUrl(String)<br/>At RequestContext.java:[line 560]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68851');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68851" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.springframework.web.servlet.support.RequestContext<br/>In method org.springframework.web.servlet.support.RequestContext.getContextUrl(String, Map)<br/>At RequestContext.java:[line 578]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69031');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69031" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.springframework.web.servlet.tags.form.FormTag<br/>In method org.springframework.web.servlet.tags.form.FormTag.resolveAction()<br/>At FormTag.java:[line 475]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68978');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68978" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.springframework.web.servlet.tags.UrlTag<br/>In method org.springframework.web.servlet.tags.UrlTag.createUrl()<br/>At UrlTag.java:[line 229]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72443');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72443" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.RedirectView<br/>In method org.springframework.web.servlet.view.RedirectView.sendRedirect(HttpServletRequest, HttpServletResponse, String, boolean)<br/>At RedirectView.java:[line 610]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67275');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67275" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter$ServletHandlerMethodInvoker<br/>In method org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter$ServletHandlerMethodInvoker.getModelAndView(Method, Class, Object, ExtendedModelMap, ServletWebRequest)<br/>At AnnotationMethodHandlerAdapter.java:[line 923]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/annotation/ResponseStatus.reason()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67432');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67432" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver.getModelAndView(Method, Object, ServletWebRequest)<br/>At AnnotationMethodHandlerExceptionResolver.java:[line 392]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/annotation/ResponseStatus.reason()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67501');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67501" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver<br/>In method org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver.resolveResponseStatus(ResponseStatus, HttpServletRequest, HttpServletResponse, Object, Exception)<br/>At ResponseStatusExceptionResolver.java:[line 109]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/annotation/ResponseStatus.reason()Ljava/lang/String;<br/>Unknown source org/springframework/context/MessageSource.getMessage(Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68370');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68370" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 220]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/HttpRequestMethodNotSupportedException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68439');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68439" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleMissingPathVariable(MissingPathVariableException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 284]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/MissingPathVariableException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68508');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68508" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleMissingServletRequestParameter(MissingServletRequestParameterException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 303]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/MissingServletRequestParameterException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68577');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68577" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleMissingServletRequestPartException(MissingServletRequestPartException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 443]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/multipart/support/MissingServletRequestPartException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68646');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68646" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver<br/>In method org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleServletRequestBindingException(ServletRequestBindingException, HttpServletRequest, HttpServletResponse, Object)<br/>At DefaultHandlerExceptionResolver.java:[line 321]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/springframework/web/bind/ServletRequestBindingException.getMessage()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72728');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72728" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.script.ScriptTemplateView<br/>In method org.springframework.web.servlet.view.script.ScriptTemplateView.renderMergedOutputModel(Map, HttpServletRequest, HttpServletResponse)<br/>At ScriptTemplateView.java:[line 357]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/script/Invocable.invokeMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source javax/script/Invocable.invokeFunction(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;<br/>At ScriptTemplateView.java:[line 357]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72812');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72812" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.xslt.XsltView<br/>In method org.springframework.web.servlet.view.xslt.XsltView.newTransformerFactory(Class)<br/>At XsltView.java:[line 207]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72870');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72870" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.springframework.web.servlet.view.xslt.XsltView<br/>In method org.springframework.web.servlet.view.xslt.XsltView.newTransformerFactory(Class)<br/>At XsltView.java:[line 207]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68904');">
+<td>
+<span class="priority-2">SPELI</span>
+</td>
+<td>This use of org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression; could be vulnerable to code injection (Spring Expression)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68904" style="display: none;">
+<a href="#SPEL_INJECTION">Bug type SPEL_INJECTION (click for details)</a>
+<br/>In class org.springframework.web.servlet.tags.EvalTag<br/>In method org.springframework.web.servlet.tags.EvalTag.setExpression(String)<br/>At EvalTag.java:[line 74]<br/>Sink method org/springframework/expression/ExpressionParser.parseExpression(Ljava/lang/String;)Lorg/springframework/expression/Expression;<br/>Sink parameter 0<br/>Unknown source org/springframework/web/servlet/tags/EvalTag.setExpression(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="SCRIPT_ENGINE_INJECTION">SCRIPT_ENGINE_INJECTION: Potential code injection when using Script Engine</a>
+</h2>
+            
+<p>
+    Dynamic code is being evaluate. A careful analysis of the code construction should be made. Malicious code execution
+    could lead to data leakage or operating system compromised.
+</p>
+<p>
+    If the evaluation of user code is intended, a proper sandboxing should be applied (see references).
+</p>
+
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void runCustomTrigger(String script) {
+    ScriptEngineManager factory = new ScriptEngineManager();
+    ScriptEngine engine = factory.getEngineByName("JavaScript");
+
+    engine.eval(script); //Bad things can happen here.
+}</pre>
+</p>
+
+<p><b>Solution:</b></p>
+<p>
+Safe evaluation of JavaScript code using "Cloudbees Rhino Sandbox" library.<br/>
+<pre>
+public void runCustomTrigger(String script) {
+    SandboxContextFactory contextFactory = new SandboxContextFactory();
+    Context context = contextFactory.makeContext();
+    contextFactory.enterContext(context);
+    try {
+        ScriptableObject prototype = context.initStandardObjects();
+        prototype.setParentScope(null);
+        Scriptable scope = context.newObject(prototype);
+        scope.setPrototype(prototype);
+
+        context.evaluateString(scope,script, null, -1, null);
+    } finally {
+        context.exit();
+    }
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://github.com/cloudbees/rhino-sandbox">Cloudbees Rhino Sandbox</a>: Utility to create sandbox with Rhino (block access to all classes)<br/>
+<a href="https://codeutopia.net/blog/2009/01/02/sandboxing-rhino-in-java/">CodeUtopia.net: Sandboxing Rhino in Java</a><br/>
+<a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+<a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+</p>
+
+        
+<h2>
+<a name="CRLF_INJECTION_LOGS">CRLF_INJECTION_LOGS: Potential CRLF Injection for logs</a>
+</h2>
+            
+<p>
+    When data from an untrusted source is put into a logger and not neutralized correctly,
+    an attacker could forge log entries or include malicious content.
+    Inserted false entries could be used to skew statistics, distract the administrator
+    or even to implicate another party in the commission of a malicious act.
+    If the log file is processed automatically, the attacker can render the file unusable
+    by corrupting the format of the file or injecting unexpected characters.
+    An attacker may also inject code or other commands into the log file and take advantage
+    of a vulnerability in the log processing utility (e.g. command injection or XSS).
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String val = request.getParameter("user");
+String metadata = request.getParameter("metadata");
+[...]
+if(authenticated) {
+    log.info("User " + val + " (" + metadata + ") was authenticated successfully");
+}
+else {
+    log.info("User " + val + " (" + metadata + ") was not authenticated");
+}
+</pre>
+
+A malicious user could send the metadata parameter with the value: <code>"Firefox) was authenticated successfully\r\n[INFO] User bbb (Internet Explorer"</code>.
+</p>
+
+<b>Solution:</b><br/>
+<p>
+You can manually sanitize each parameter.
+<pre>
+log.info("User " + val.replaceAll("[\r\n]","") + " (" + userAgent.replaceAll("[\r\n]","") + ") was not authenticated");
+</pre>
+</p>
+
+<p>
+You can also configure your logger service to replace new line for all message events. Here is sample configuration for LogBack <a href="https://logback.qos.ch/manual/layouts.html#replace">using the <code>replace</code> function</a>.
+<pre>
+&lt;pattern&gt;%-5level - %replace(%msg){'[\r\n]', ''}%n&lt;/pattern&gt;
+</pre>
+</p>
+
+<p>
+Finally, you can use a logger implementation that replace new line by spaces.
+The project <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a> has an implementation for Logback and Log4j.
+</p>
+
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/117.html">CWE-117: Improper Output Neutralization for Logs</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://logback.qos.ch/manual/layouts.html#replace">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+    <a href="https://github.com/javabeanz/owasp-security-logging">OWASP Security Logging</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="TEMPLATE_INJECTION_FREEMARKER">TEMPLATE_INJECTION_FREEMARKER: Potential template injection with Freemarker</a>
+</h2>
+            
+<p>
+Freemarker template engine is powerful. It is possible to add logic including condition statements, loops and external calls.
+It is not design to be sandbox to templating operations. A malicious user in control of a template can run malicious code
+on the server-side. Freemarker templates should be seen as scripts.
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>Template template = cfg.getTemplate(inputTemplate);
+[...]
+template.process(data, swOut);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<br/>
+Avoid letting end users manipulate templates with Freemarker. If you need to expose template editing to your users,
+prefer logic-less template engines such as Handlebars or Moustache (See references).
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://portswigger.net/research/server-side-template-injection">PortSwigger: Server-Side Template Injection</a><br/>
+<a href="https://jknack.github.io/handlebars.java/">Handlebars.java</a><br/>
+</p>
+            
+        
+<h2>
+<a name="HTTP_RESPONSE_SPLITTING">HTTP_RESPONSE_SPLITTING: Potential HTTP Response Splitting</a>
+</h2>
+            
+<p>
+    When an HTTP request contains unexpected <code>CR</code> and <code>LF</code> characters, the server may respond with an output stream
+    that is interpreted as two different HTTP responses (instead of one).
+    An attacker can control the second response and mount attacks such as cross-site scripting and cache poisoning attacks.
+    According to OWASP, the issue has been fixed in virtually all modern Java EE application servers, but it is still better to validate the input.
+    If you are concerned about this risk, you should test on the platform of concern to see
+    if the underlx platform allows for <code>CR</code> or <code>LF</code> characters to be injected into headers.
+    This weakness is reported with low priority because it requires the web container to be vulnerable.
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String author = request.getParameter(AUTHOR_PARAMETER);
+// ...
+Cookie cookie = new Cookie("author", author);
+response.addCookie(cookie);</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://www.owasp.org/index.php/HTTP_Response_Splitting">OWASP: HTTP Response Splitting</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="SPRING_FILE_DISCLOSURE">SPRING_FILE_DISCLOSURE: Spring File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?returnURL=WEB-INF/applicationContext.xml"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String returnURL = request.getParameter("returnURL");
+return new ModelAndView(returnURL);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="URL_REWRITING">URL_REWRITING: URL rewriting method</a>
+</h2>
+            
+<p>
+The implementation of this method includes the logic to determine whether the session ID needs to be encoded in the URL.<br/>
+URL rewriting has significant security risks. Since session ID appears in the URL, it may be easily seen by third parties. Session ID in the URL can be disclosed in many ways, for example:<br/>
+<ul>
+    <li>Log files,</li>
+    <li>The browser history,</li>
+    <li>By copy-and-pasting it into an e-mail or posting,</li>
+    <li>The HTTP Referrer.</li>
+</ul>
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>out.println("Click &lt;a href=" +
+                res.encodeURL(HttpUtils.getRequestURL(req).toString()) +
+                "&gt;here&lt;/a&gt;");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid using those methods. If you are looking to encode a URL String or form parameters do not confuse the URL rewriting methods with the URLEncoder class.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A3-Broken_Authentication_and_Session_Management">OWASP Top 10 2010-A3-Broken Authentication and Session Management</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="SPEL_INJECTION">SPEL_INJECTION: Potential code injection when using Spring Expression</a>
+</h2>
+            
+<p>
+    A Spring expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void parseExpressionInterface(Person personObj,String property) {
+
+        ExpressionParser parser = new SpelExpressionParser();
+
+        //Unsafe if the input is control by the user..
+        Expression exp = parser.parseExpression(property+" == 'Albert'");
+
+        StandardEvaluationContext testContext = new StandardEvaluationContext(personObj);
+        boolean result = exp.getValue(testContext, Boolean.class);
+[...]</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/expressions.html">Spring Expression Language (SpEL) - Official Documentation</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+    <a href="https://gosecure.net/2018/05/15/beware-of-the-magic-spell-part-1-cve-2018-1273/">Spring Data-Commons: (CVE-2018-1273)</a><br/>
+    <a href="https://gosecure.net/2018/05/17/beware-of-the-magic-spell-part-2-cve-2018-1260/">Spring OAuth2: CVE-2018-1260</a>
+</p>
+
+
+        </body>
+</html>

@@ -1,0 +1,320 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/nettygameserver/game-common/target/game-common-1.2.5-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 470.4 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 10 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.08
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 13
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.15
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 15
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.31
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 16
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.41
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.47
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 17
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.53
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.53
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 12 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 13 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.68
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 14 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.74
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 15 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.79
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 16 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.84
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 17 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.89
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 18 of 19
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.95
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: javax.crypto.Cipher
+		Statement: r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer86)
+		Method: <com.snowcattle.game.common.util.AES: byte[] decrypt(byte[],java.lang.String)>
+		SHA-256: 578ffea80344bd1229e5ca7e5f3861b96b396db497c80ff46500142c9d5f3acc
+		Secure: false
+	Object:
+		Variable: r10
+		Type: java.security.MessageDigest
+		Statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer506)
+		Method: <com.snowcattle.game.common.util.MD5Util: java.lang.String encodeByMD5(java.lang.String)>
+		SHA-256: f58168c9bedb208e45d202fac7bc65ac430082ae26ad17a83a6512f1b0adfff0
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r0)
+		Method: <com.snowcattle.game.common.util.AES: byte[] encrypt(byte[],java.lang.String)>
+		SHA-256: 5b22c030983244a3031e4a46ded44801a04440e5018ffc2db84a9a3bca985e31
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r0)
+		Method: <com.snowcattle.game.common.util.AES: byte[] decrypt(byte[],java.lang.String)>
+		SHA-256: 617acfa8c7c764bf3b30fbf2fbd32a132b74903cd299869dfccf948736bc25bb
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r0)
+		Method: <com.snowcattle.game.common.util.AES: byte[] decrypt(byte[],java.lang.String)>
+		SHA-256: b96faeaff45657879d785db7f0a34be3fa4fc9c6ec54f6c1e1b904b4d038ac56
+		Secure: false
+	Object:
+		Variable: r7
+		Type: java.security.SecureRandom
+		Statement: r7 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer265)
+		Method: <com.snowcattle.game.common.util.RandomStringGenerator: java.lang.String generateRandomString(int)>
+		SHA-256: 622629b99b1a83a9e3c4fe7dd30878b7e654c4477cd1a1e0b64a726d72f8b402
+		Secure: true
+	Object:
+		Variable: r11
+		Type: byte[]
+		Statement: r11 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>(r2)
+		Method: <com.snowcattle.game.common.util.MD5Util: java.lang.String encodeByMD5(java.lang.String)>
+		SHA-256: d6652cf08ac565a65160f14f57c545cdc9c1fe523e4850e6e84d16f6a8235c13
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r11 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>(r2)
+		Method: <com.snowcattle.game.common.util.MD5Util: java.lang.String encodeByMD5(java.lang.String)>
+		SHA-256: 852840ac96e1eb0bf36ea069c5b90d1bec402f2af6d246e4753199a6c52f7034
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.Cipher
+		Statement: r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer83)
+		Method: <com.snowcattle.game.common.util.AES: byte[] encrypt(byte[],java.lang.String)>
+		SHA-256: 2168b89bb6c601a3959011ad5343b323f283002763b9fbf90986ae3ded45669a
+		Secure: false
+	Object:
+		Variable: varReplacer85
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer85)
+		Method: <com.snowcattle.game.common.util.AES: byte[] decrypt(byte[],java.lang.String)>
+		SHA-256: aff89913f62398b5034a2d202811605b3e103556ff183f61141837700380e4e2
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer367)
+		Method: <com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>
+		SHA-256: e26a916f44842e765c46ad4f781ea5cbc305263e51ddbc987a534af8eaa46c14
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.SecretKey
+		Statement: r3 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r23)
+		Method: <com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>
+		SHA-256: 657089c51e3bf8c1b40840f1c862fd116ec4de452c60f9edfd5f36493355ec76
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: $r6 = virtualinvoke r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r0)
+		Method: <com.snowcattle.game.common.util.AES: byte[] encrypt(byte[],java.lang.String)>
+		SHA-256: 9995375a2c828bb5988b4ad559bdc548163822b17c767d24cb2f6aaafb4bdd62
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r15, $i1)
+		Method: <com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>
+		SHA-256: bc86792ff4a7fbf992f78f51a2a43a914bac3756c8f350c821157a9c6a64a7ab
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.Cipher
+		Statement: $r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r10)
+		Method: <com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>
+		SHA-256: 4f0ec995b0661e1e9f1dc0006e72a651764c2660e8a1bf2d5e1d4028b5279fe0
+		Secure: false
+	Object:
+		Variable: varReplacer84
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer84)
+		Method: <com.snowcattle.game.common.util.AES: byte[] encrypt(byte[],java.lang.String)>
+		SHA-256: 672885b559f2479c6811f535606a74483eed60c8392e6f5a05ecce0c9a238d4f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer84)
+		Method: <com.snowcattle.game.common.util.AES: byte[] encrypt(byte[],java.lang.String)>
+		SHA-256: 75ec2f6db1ae8256dd6d73d5b68fb566fe1fc5c2986c997a26ebb986393dcf97
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer85)
+		Method: <com.snowcattle.game.common.util.AES: byte[] decrypt(byte[],java.lang.String)>
+		SHA-256: df77904f1a89781efee888ef3f7a7ad040969a98fa1773e4dacae8ca563a3543
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.Cipher
+		Statement: $r13 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r12)
+		Method: <com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>
+		SHA-256: 877c6f55b5f23c89ac075788ac578606514836ef0cc56181a4203b828fa65b95
+		Secure: false
+
+Findings in Java Class: com.snowcattle.game.common.util.DesEncrypter
+
+	 in Method: void <init>(java.lang.String,byte[])
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[],byte[],int) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int)>($r7, $r8, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r15, $i1)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #bc86792ff4a7fbf992f78f51a2a43a914bac3756c8f350c821157a9c6a64a7ab)
+			Second parameter (with value 17)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r14.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r15, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as specced Key
+			at statement: r3 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r23)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #e26a916f44842e765c46ad4f781ea5cbc305263e51ddbc987a534af8eaa46c14)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer367)
+
+
+	 in Method: void <init>(java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #877c6f55b5f23c89ac075788ac578606514836ef0cc56181a4203b828fa65b95)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke r0.<com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>(r1, varReplacer365)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #4f0ec995b0661e1e9f1dc0006e72a651764c2660e8a1bf2d5e1d4028b5279fe0)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke r0.<com.snowcattle.game.common.util.DesEncrypter: void <init>(java.lang.String,byte[])>(r1, varReplacer365)
+
+
+Findings in Java Class: com.snowcattle.game.common.util.AES
+
+	 in Method: byte[] encrypt(byte[],java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #2168b89bb6c601a3959011ad5343b323f283002763b9fbf90986ae3ded45669a)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer83)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer84)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer82, r3)
+
+
+	 in Method: byte[] decrypt(byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer85)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #578ffea80344bd1229e5ca7e5f3861b96b396db497c80ff46500142c9d5f3acc)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer86)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generated Key
+			at statement: virtualinvoke r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer87, r3)
+
+
+Findings in Java Class: com.snowcattle.game.common.util.MD5Util
+
+	 in Method: java.lang.String encodeByMD5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f58168c9bedb208e45d202fac7bc65ac430082ae26ad17a83a6512f1b0adfff0)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer506)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 19
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 6
+	IncompleteOperationError: 2
+	ForbiddenMethodError: 1
+	ConstraintError: 5
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.804 s

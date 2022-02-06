@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/pulsar.git/kafka_2.9.2-0.8.1.1.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>43579 lines of code analyzed,
+	in 2398 classes, 
+	in 22 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">44</td>
+<td align="right">1.01</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>45</b>
+</td>
+<td align="right">
+<b>1.03</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">45</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>45</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69047');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69047" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class kafka.utils.Utils$<br/>In method kafka.utils.Utils$.stackTrace(Throwable)<br/>At Utils.scala:[line 406]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65667');">
+<td>
+<span class="priority-2">SECHCK</span>
+</td>
+<td>Hard coded cryptographic key found</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65667" style="display: none;">
+<a href="#HARD_CODE_KEY">Bug type HARD_CODE_KEY (click for details)</a>
+<br/>In class kafka.consumer.DefaultMessageFormatter<br/>Value is hard coded in field kafka.consumer.DefaultMessageFormatter.keySeparator[B with suspicious name<br/>At ConsoleConsumer.scala:[lines 276-296]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class kafka.admin.AdminUtils$<br/>In method new kafka.admin.AdminUtils$()<br/>At AdminUtils.scala:[line 38]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65609');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65609" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class kafka.consumer.ConsoleConsumer$<br/>In method kafka.consumer.ConsoleConsumer$.main(String[])<br/>At ConsoleConsumer.scala:[line 60]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67615');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67615" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class kafka.producer.DefaultPartitioner<br/>In method new kafka.producer.DefaultPartitioner(VerifiableProperties)<br/>At DefaultPartitioner.scala:[line 24]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67673');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67673" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class kafka.producer.SyncProducer$<br/>In method new kafka.producer.SyncProducer$()<br/>At SyncProducer.scala:[line 27]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68989');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68989" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class kafka.utils.Throttler$<br/>In method kafka.utils.Throttler$.main(String[])<br/>At Throttler.scala:[line 80]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67731');">
+<td>
+<span class="priority-2">SECPRS</span>
+</td>
+<td>This Scala random generator (scala.util.Random.nextInt()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67731" style="display: none;">
+<a href="#PREDICTABLE_RANDOM_SCALA">Bug type PREDICTABLE_RANDOM_SCALA (click for details)</a>
+<br/>In class kafka.producer.async.DefaultEventHandler<br/>In method kafka.producer.async.DefaultEventHandler.kafka$producer$async$DefaultEventHandler$$getPartition(String, Object, Seq)<br/>At DefaultEventHandler.scala:[line 221]<br/>Value scala.util.Random.nextInt()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65707');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65707" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Cleaner<br/>In method kafka.log.Cleaner.cleanSegments(Log, Seq, OffsetMap, long)<br/>At LogCleaner.scala:[line 326]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.CleanedFileSuffix()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source kafka/log/Log$.CleanedFileSuffix<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At LogCleaner.scala:[line 326]<br/>At Log.scala:[line 694]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65816');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65816" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Cleaner<br/>In method kafka.log.Cleaner.cleanSegments(Log, Seq, OffsetMap, long)<br/>At LogCleaner.scala:[line 328]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.CleanedFileSuffix()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source kafka/log/Log$.CleanedFileSuffix<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At LogCleaner.scala:[line 328]<br/>At Log.scala:[line 694]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65925');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65925" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log<br/>In method kafka.log.Log.hasCleanShutdownFile()<br/>At Log.scala:[line 198]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.CleanShutdownFile<br/>Unknown source kafka/log/Log$.CleanShutdownFile()Ljava/lang/String;<br/>At Log.scala:[line 198]<br/>At Log.scala:[line 702]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66019');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66019" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log$<br/>In method kafka.log.Log$.indexFilename(File, long)<br/>At Log.scala:[line 732]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/log/Log$.IndexFileSuffix<br/>Unknown source kafka/log/Log$.IndexFileSuffix()Ljava/lang/String;<br/>Unknown source java/text/NumberFormat.format(J)Ljava/lang/String;<br/>Unknown source kafka/log/Log$.filenamePrefixFromOffset(J)Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 688]<br/>At Log.scala:[line 732]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66133');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66133" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log$<br/>In method kafka.log.Log$.logFilename(File, long)<br/>At Log.scala:[line 724]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.LogFileSuffix<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/log/Log$.LogFileSuffix()Ljava/lang/String;<br/>Unknown source java/text/NumberFormat.format(J)Ljava/lang/String;<br/>Unknown source kafka/log/Log$.filenamePrefixFromOffset(J)Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 685]<br/>At Log.scala:[line 724]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66247');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66247" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log$$anonfun$loadSegments$2<br/>In method kafka.log.Log$$anonfun$loadSegments$2.apply(File)<br/>At Log.scala:[line 103]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 103]<br/>At Utils.scala:[line 486]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66361');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66361" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log$$anonfun$loadSegments$2<br/>In method kafka.log.Log$$anonfun$loadSegments$2.apply(File)<br/>At Log.scala:[line 108]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/log/Log$.IndexFileSuffix<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source kafka/log/Log$.IndexFileSuffix()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 688]<br/>At Log.scala:[line 108]<br/>At Utils.scala:[line 486]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66495');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66495" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.Log$$anonfun$loadSegments$4<br/>In method kafka.log.Log$$anonfun$loadSegments$4.apply(File)<br/>At Log.scala:[line 125]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.LogFileSuffix()Ljava/lang/String;<br/>Unknown source kafka/log/Log$.LogFileSuffix<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>At Log.scala:[line 685]<br/>At Log.scala:[line 125]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66594');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66594" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager<br/>In method kafka.log.LogManager.createLog(TopicAndPartition, LogConfig)<br/>At LogManager.scala:[line 263]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/common/TopicAndPartition.topic()Ljava/lang/String;<br/>Unknown source kafka/common/TopicAndPartition.topic<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At TopicAndPartition.scala:[line 25]<br/>At LogManager.scala:[line 263]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66698');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66698" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager<br/>In method kafka.log.LogManager.nextLogDir()<br/>At LogManager.scala:[line 316]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Tuple2._1()Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66767');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66767" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager$$anonfun$2<br/>In method kafka.log.LogManager$$anonfun$2.apply(File)<br/>At LogManager.scala:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/LogManager.RecoveryPointCheckpointFile()Ljava/lang/String;<br/>Unknown source kafka/log/LogManager.RecoveryPointCheckpointFile<br/>At LogManager.scala:[line 48]<br/>At LogManager.scala:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66861');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66861" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager$$anonfun$loadLogs$1<br/>In method kafka.log.LogManager$$anonfun$loadLogs$1.apply(File)<br/>At LogManager.scala:[line 110]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.CleanShutdownFile<br/>Unknown source kafka/log/Log$.CleanShutdownFile()Ljava/lang/String;<br/>At Log.scala:[line 702]<br/>At LogManager.scala:[line 110]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66955');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66955" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager$$anonfun$lockLogDirs$1<br/>In method kafka.log.LogManager$$anonfun$lockLogDirs$1.apply(File)<br/>At LogManager.scala:[line 93]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/LogManager.LockFile<br/>Unknown source kafka/log/LogManager.LockFile()Ljava/lang/String;<br/>At LogManager.scala:[line 49]<br/>At LogManager.scala:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67049');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67049" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogManager$$anonfun$shutdown$5$$anonfun$apply$1<br/>In method kafka.log.LogManager$$anonfun$shutdown$5$$anonfun$apply$1.apply$mcV$sp()<br/>At LogManager.scala:[line 177]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.CleanShutdownFile<br/>Unknown source kafka/log/Log$.CleanShutdownFile()Ljava/lang/String;<br/>At Log.scala:[line 702]<br/>At LogManager.scala:[line 177]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67143');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67143" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogSegment<br/>In method kafka.log.LogSegment.changeFileSuffixes(String, String)<br/>At LogSegment.scala:[line 247]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source kafka/log/LogSegment.changeFileSuffixes(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 636]<br/>At Log.scala:[line 655]<br/>At Log.scala:[line 667]<br/>At Log.scala:[line 691]<br/>At Log.scala:[line 697]<br/>At LogSegment.scala:[line 247]<br/>At Utils.scala:[line 486]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67312');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67312" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.log.LogSegment<br/>In method kafka.log.LogSegment.changeFileSuffixes(String, String)<br/>At LogSegment.scala:[line 250]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/utils/Utils$.replaceSuffix(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 2<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Unknown source kafka/log/LogSegment.changeFileSuffixes(Ljava/lang/String;Ljava/lang/String;)V parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 636]<br/>At Log.scala:[line 655]<br/>At Log.scala:[line 667]<br/>At Log.scala:[line 691]<br/>At Log.scala:[line 697]<br/>At LogSegment.scala:[line 250]<br/>At Utils.scala:[line 486]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67481');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67481" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.metrics.KafkaCSVMetricsReporter<br/>In method kafka.metrics.KafkaCSVMetricsReporter.init(VerifiableProperties)<br/>At KafkaCSVMetricsReporter.scala:[line 50]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/VerifiableProperties.props<br/>Unknown source kafka/utils/VerifiableProperties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/utils/VerifiableProperties.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source kafka/utils/VerifiableProperties.getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source kafka/utils/VerifiableProperties.props()Ljava/util/Properties;<br/>Unknown source java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>At KafkaCSVMetricsReporter.scala:[line 50]<br/>At VerifiableProperties.scala:[line 24]<br/>At VerifiableProperties.scala:[line 34]<br/>At VerifiableProperties.scala:[line 166]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67789');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67789" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.server.KafkaServer$$anonfun$createLogManager$1<br/>In method kafka.server.KafkaServer$$anonfun$createLogManager$1.apply(String)<br/>At KafkaServer.scala:[line 275]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/server/KafkaServer$$anonfun$createLogManager$1.apply(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At KafkaServer.scala:[line 275]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67873');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67873" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.server.OffsetCheckpoint<br/>In method new kafka.server.OffsetCheckpoint(File)<br/>At OffsetCheckpoint.scala:[line 29]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/runtime/StringAdd.$plus(Ljava/lang/String;)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67942');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67942" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.server.OffsetCheckpoint<br/>In method kafka.server.OffsetCheckpoint.write(Map)<br/>At OffsetCheckpoint.scala:[line 35]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At OffsetCheckpoint.scala:[line 35]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68031');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68031" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.server.ReplicaManager$$anonfun$1<br/>In method kafka.server.ReplicaManager$$anonfun$1.apply(String)<br/>At ReplicaManager.scala:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/server/ReplicaManager$$anonfun$1.apply(Ljava/lang/String;)Lscala/Tuple2; parameter 0<br/>Method usage not detected<br/>At ReplicaManager.scala:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68115');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68115" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.server.ReplicaManager$$anonfun$1<br/>In method kafka.server.ReplicaManager$$anonfun$1.apply(String)<br/>At ReplicaManager.scala:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/server/ReplicaManager$.HighWatermarkFilename<br/>Unknown source kafka/server/ReplicaManager$.HighWatermarkFilename()Ljava/lang/String;<br/>At ReplicaManager.scala:[line 38]<br/>At ReplicaManager.scala:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68209');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68209" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.DumpLogSegments$<br/>In method kafka.tools.DumpLogSegments$.kafka$tools$DumpLogSegments$$dumpIndex(File, boolean, HashMap, int)<br/>At DumpLogSegments.scala:[line 96]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/log/Log$.LogFileSuffix<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source kafka/log/Log$.LogFileSuffix()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>At Log.scala:[line 685]<br/>At DumpLogSegments.scala:[line 95]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68318');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68318" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.DumpLogSegments$$anonfun$main$1<br/>In method kafka.tools.DumpLogSegments$$anonfun$main$1.apply(String)<br/>At DumpLogSegments.scala:[line 62]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/tools/DumpLogSegments$$anonfun$main$1.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At DumpLogSegments.scala:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68471');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68471" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.ImportZkOffsets$<br/>In method kafka.tools.ImportZkOffsets$.getPartitionOffsetsFromFile(String)<br/>At ImportZkOffsets.scala:[line 81]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/tools/ImportZkOffsets$.getPartitionOffsetsFromFile(Ljava/lang/String;)Lscala/collection/immutable/Map; parameter 0<br/>At ImportZkOffsets.scala:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68550');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68550" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.KafkaMigrationTool<br/>In method kafka.tools.KafkaMigrationTool.main(String[])<br/>At KafkaMigrationTool.java:[line 173]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68619');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68619" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.KafkaMigrationTool<br/>In method kafka.tools.KafkaMigrationTool.main(String[])<br/>At KafkaMigrationTool.java:[line 174]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68688');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68688" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.KafkaMigrationTool<br/>In method kafka.tools.KafkaMigrationTool.main(String[])<br/>At KafkaMigrationTool.java:[line 194]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68757');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68757" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.KafkaMigrationTool<br/>In method kafka.tools.KafkaMigrationTool.main(String[])<br/>At KafkaMigrationTool.java:[line 220]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68826');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68826" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.StateChangeLogMerger$<br/>In method kafka.tools.StateChangeLogMerger$.main(String[])<br/>At StateChangeLogMerger.scala:[line 108]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;<br/>At StateChangeLogMerger.scala:[line 106]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69101');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69101" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.utils.Utils$<br/>In method kafka.utils.Utils$.loadProps(String)<br/>At Utils.scala:[line 144]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.loadProps(Ljava/lang/String;)Ljava/util/Properties; parameter 0<br/>Method usage with tainted arguments detected<br/>In Kafka.scala<br/>At Kafka.scala:[line 34]<br/>At MirrorMaker.scala:[line 107]<br/>At MirrorMaker.scala:[line 120]<br/>In UpdateOffsetsInZK.scala<br/>At UpdateOffsetsInZK.scala:[line 37]<br/>In Utils.scala</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69239');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69239" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.utils.Utils$<br/>In method kafka.utils.Utils$.createFile(String)<br/>At Utils.scala:[line 496]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.createFile(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>In Utils.scala</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69321');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69321" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.utils.Utils$<br/>In method kafka.utils.Utils$.readFileAsString(String, Charset)<br/>At Utils.scala:[line 463]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.readFileAsString(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String; parameter 1<br/>At PreferredReplicaLeaderElectionCommand.scala:[line 57]<br/>At ReassignPartitionsCommand.scala:[line 66]<br/>At ReassignPartitionsCommand.scala:[line 90]<br/>At ReassignPartitionsCommand.scala:[line 114]<br/>In Utils.scala</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69438');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69438" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.utils.Utils$<br/>In method kafka.utils.Utils$.rm(String)<br/>At Utils.scala:[line 214]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$.rm(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>In Utils.scala</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69520');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69520" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.utils.Utils$$anonfun$rm$1<br/>In method kafka.utils.Utils$$anonfun$rm$1.apply(String)<br/>At Utils.scala:[line 220]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source kafka/utils/Utils$$anonfun$rm$1.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At Utils.scala:[line 220]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68402');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68402" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class kafka.tools.ExportZkOffsets$<br/>In method kafka.tools.ExportZkOffsets$.main(String[])<br/>At ExportZkOffsets.scala:[line 79]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source joptsimple/OptionSet.valueOf(Ljoptsimple/OptionSpec;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68905');">
+<td>
+<span class="priority-2">SSECPTI</span>
+</td>
+<td>This Scala API (scala/io/Source$.fromFile(Ljava/lang/String;Lscala/io/Codec;)Lscala/io/BufferedSource;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68905" style="display: none;">
+<a href="#SCALA_PATH_TRAVERSAL_IN">Bug type SCALA_PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class kafka.tools.StateChangeLogMerger$$anonfun$1<br/>In method kafka.tools.StateChangeLogMerger$$anonfun$1.apply(String)<br/>At StateChangeLogMerger.scala:[line 128]<br/>Sink method scala/io/Source$.fromFile(Ljava/lang/String;Lscala/io/Codec;)Lscala/io/BufferedSource;<br/>Sink parameter 1<br/>Unknown source kafka/tools/StateChangeLogMerger$$anonfun$1.apply(Ljava/lang/String;)Lscala/collection/Iterator; parameter 0<br/>Method usage not detected<br/>At StateChangeLogMerger.scala:[line 128]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="HARD_CODE_KEY">HARD_CODE_KEY: Hard coded key</a>
+</h2>
+            
+<p>
+Cryptographic keys should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded passwords are reported separately by the <i>Hard coded password</i> pattern)
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>byte[] key = {1, 2, 3, 4, 5, 6, 7, 8};
+SecretKeySpec spec = new SecretKeySpec(key, "AES");
+Cipher aes = Cipher.getInstance("AES");
+aes.init(Cipher.ENCRYPT_MODE, spec);
+return aesCipher.doFinal(secretData);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/321.html">CWE-321: Use of Hard-coded Cryptographic Key</a><br/>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM_SCALA">PREDICTABLE_RANDOM_SCALA: Predictable pseudorandom number generator (Scala)</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <b>java.security.SecureRandom</b>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>import scala.util.Random
+
+def generateSecretToken() {
+    val result = Seq.fill(16)(Random.nextInt)
+    return result.map("%02x" format _).mkString
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>import java.security.SecureRandom
+
+def generateSecretToken() {
+    val rand = new SecureRandom()
+    val value = Array.ofDim[Byte](16)
+    rand.nextBytes(value)
+    return value.map("%02x" format _).mkString
+}</pre>
+</p>
+<!--<p>
+<b>Solution:</b>
+<pre>import java.security.SecureRandom
+import scala.util.Random._
+
+def generateSecretToken() {
+    val secRandom = javaRandomToRandom(new SecureRandom())
+    val result = Seq.fill(16)(secRandom.nextInt)
+    return result.map("%02x" format _).mkString
+}</pre>
+</p>-->
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (http://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SCALA_PATH_TRAVERSAL_IN">SCALA_PATH_TRAVERSAL_IN: Potential Path Traversal using Scala API (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>def getWordList(value:String) = Action {
+  if (!Files.exists(Paths.get("public/lists/" + value))) {
+    NotFound("File not found")
+  } else {
+    val result = Source.fromFile("public/lists/" + value).getLines().mkString // Weak point
+    Ok(result)
+  }
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+def getWordList(value:String) = Action {
+  val filename = "public/lists/" + FilenameUtils.getName(value)
+
+  if (!Files.exists(Paths.get(filename))) {
+    NotFound("File not found")
+  } else {
+    val result = Source.fromFile(filename).getLines().mkString // Fix
+    Ok(result)
+  }
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

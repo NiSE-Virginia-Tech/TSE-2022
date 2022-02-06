@@ -1,0 +1,182 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 647.4 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.14
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 11
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.45
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.58
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 10 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.83
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 11 of 12
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.92
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r14
+		Type: java.security.MessageDigest
+		Statement: r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMAttribute,java.lang.String)>
+		SHA-256: 7a81b575787daf4623df8dcb953a00ebf1a521abbca4b8c4171ee0052f3b479a
+		Secure: true
+	Object:
+		Variable: r23
+		Type: byte[]
+		Statement: r23 = virtualinvoke r21.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.UUIDGenerator: java.lang.String getInitialUUID()>
+		SHA-256: 84baa38213353ed7016c1dc66dc538e312495b1708cf492b80488c58882a3834
+		Secure: false
+	Object:
+		Variable: r22
+		Type: byte[]
+		Statement: r22 = virtualinvoke r21.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMDocument,java.lang.String)>
+		SHA-256: 5892be60e4f5431b9c7771d3d649cbd0aa2747bd42d3f29a64c82894267afd95
+		Secure: true
+	Object:
+		Variable: r12
+		Type: java.security.MessageDigest
+		Statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMProcessingInstruction,java.lang.String)>
+		SHA-256: 88021ae9a2bc39d792cd4f0050e519740ac201018ca61dd1d72aa1ee23e631bf
+		Secure: true
+	Object:
+		Variable: r21
+		Type: java.security.MessageDigest
+		Statement: r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1322)
+		Method: <org.apache.axiom.om.util.UUIDGenerator: java.lang.String getInitialUUID()>
+		SHA-256: f6dba9110c5786cfc35779172ddfc2796e8daf0edb559be5a6c542536e763670
+		Secure: false
+	Object:
+		Variable: r10
+		Type: java.security.MessageDigest
+		Statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMText,java.lang.String)>
+		SHA-256: d3070bf9baee143d64ba7e8f4dbb1cf9cb8ff925cbace434b78cf54ad60a4167
+		Secure: true
+	Object:
+		Variable: r13
+		Type: byte[]
+		Statement: r13 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMProcessingInstruction,java.lang.String)>
+		SHA-256: 7e7f429fa8c09d9a1f2aa1095985902b43b4e3a67a797054d5172e599f483732
+		Secure: true
+	Object:
+		Variable: r21
+		Type: java.security.MessageDigest
+		Statement: r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMDocument,java.lang.String)>
+		SHA-256: 2791f5ffdb3f69b483dc9cf9f537bd43c0c5e0d5933c91f9eada84562e9301b7
+		Secure: true
+	Object:
+		Variable: r21
+		Type: java.security.MessageDigest
+		Statement: r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMElement,java.lang.String)>
+		SHA-256: 2791f5ffdb3f69b483dc9cf9f537bd43c0c5e0d5933c91f9eada84562e9301b7
+		Secure: true
+	Object:
+		Variable: r11
+		Type: byte[]
+		Statement: r11 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMText,java.lang.String)>
+		SHA-256: c7ccd2694033c506508aed7758eef0502d96affae5d34d17aa8dfdbfb1211599
+		Secure: true
+	Object:
+		Variable: r25
+		Type: byte[]
+		Statement: r25 = virtualinvoke r21.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMElement,java.lang.String)>
+		SHA-256: c6a1f5974a928805d5b7014688e1a775927e8e32ff7c7f7d863b4620c7685bee
+		Secure: true
+	Object:
+		Variable: r13
+		Type: byte[]
+		Statement: r13 = virtualinvoke r14.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.axiom.om.util.DigestGenerator: byte[] getDigest(org.apache.axiom.om.OMAttribute,java.lang.String)>
+		SHA-256: fa62dcc854091e0c2960102e1ac94599ced47e13cc71e1909e589734128ced3c
+		Secure: true
+
+Findings in Java Class: org.apache.axiom.om.util.UUIDGenerator
+
+	 in Method: java.lang.String getInitialUUID()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f6dba9110c5786cfc35779172ddfc2796e8daf0edb559be5a6c542536e763670)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1322)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 12
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.747 s
+

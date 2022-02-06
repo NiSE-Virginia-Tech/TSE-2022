@@ -1,0 +1,2741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/MUBench/aws-sdk-java-v2/bundle/target/aws-sdk-java-bundle-2.0.0-preview-11-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>2052054 lines of code analyzed,
+	in 66062 classes, 
+	in 582 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">0.01</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">91</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>111</b>
+</td>
+<td align="right">
+<b>0.05</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">110</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>110</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72194');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72194" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.RC4(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 576]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72248');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72248" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 629]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72302');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72302" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 719]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72650');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72650" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 547]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72704');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72704" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 550]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72994');">
+<td>
+<span class="priority-1">CIPINT</span>
+</td>
+<td>The cipher does not provide data integrity</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72994" style="display: none;">
+<a href="#CIPHER_INTEGRITY">Bug type CIPHER_INTEGRITY (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$Handle<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$Handle.initCipher()<br/>At NTLMEngineImpl.java:[line 826]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70693');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70693" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.ThrowableUtil<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.ThrowableUtil.stackTraceToString(Throwable)<br/>At ThrowableUtil.java:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71525');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71525" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.Jdk13LumberjackLogger<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.Jdk13LumberjackLogger.getClassAndMethod()<br/>At Jdk13LumberjackLogger.java:[line 101]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71579');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71579" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.LogFactoryImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.LogFactoryImpl.handleFlawedDiscovery(String, ClassLoader, Throwable)<br/>At LogFactoryImpl.java:[line 1281]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71633');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71633" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.SimpleLog<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.logging.impl.SimpleLog.log(int, Object, Throwable)<br/>At SimpleLog.java:[line 321]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68162');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68162" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.introspect.AnnotatedConstructor<br/>At AnnotatedConstructor.java:[lines 8-203]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68198');">
+<td>
+<span class="priority-2">SECDESGAD</span>
+</td>
+<td>This class could make application using serialization vulnerable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68198" style="display: none;">
+<a href="#DESERIALIZATION_GADGET">Bug type DESERIALIZATION_GADGET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.introspect.AnnotatedMethod<br/>At AnnotatedMethod.java:[lines 8-274]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72356');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72356" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 629]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72420');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72420" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 719]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72758');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72758" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 547]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72822');">
+<td>
+<span class="priority-2">SECDU</span>
+</td>
+<td>DES should be replaced with AES</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72822" style="display: none;">
+<a href="#DES_USAGE">Bug type DES_USAGE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 550]<br/>Sink method javax/crypto/Cipher.getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;<br/>Sink parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72484');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72484" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmHash(String)<br/>At NTLMEngineImpl.java:[line 629]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72538');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72538" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.lmResponse(byte[], byte[])<br/>At NTLMEngineImpl.java:[line 719]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72886');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72886" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 547]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72940');">
+<td>
+<span class="priority-1">SECECB</span>
+</td>
+<td>The cipher uses ECB mode, which provides poor confidentiality for encrypted data</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72940" style="display: none;">
+<a href="#ECB_MODE">Bug type ECB_MODE (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl$CipherGen.getLanManagerSessionKey()<br/>At NTLMEngineImpl.java:[line 550]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72031');">
+<td>
+<span class="priority-2">SECLDAPI</span>
+</td>
+<td>This use of javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V can be vulnerable to LDAP injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72031" style="display: none;">
+<a href="#LDAP_INJECTION">Bug type LDAP_INJECTION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.DefaultHostnameVerifier<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.DefaultHostnameVerifier.extractCN(String)<br/>At DefaultHostnameVerifier.java:[line 259]<br/>Sink method javax/naming/ldap/LdapName.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/org/apache/http/conn/ssl/DefaultHostnameVerifier.extractCN(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At AbstractVerifier.java:[line 152]<br/>At AbstractVerifier.java:[line 234]<br/>At AbstractVerifier.java:[line 236]<br/>At DefaultHostnameVerifier.java:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67224');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67224" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.calculateMessageAttributesMd5(Map)<br/>At MessageMD5ChecksumInterceptor.java:[line 235]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68919');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68919" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketUtil$1<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketUtil$1.initialValue()<br/>At WebSocketUtil.java:[line 38]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72592');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72592" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.auth.NTLMEngineImpl.getMD5()<br/>At NTLMEngineImpl.java:[line 1842]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73386');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73386" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class software.amazon.awssdk.utils.Md5Utils<br/>In method software.amazon.awssdk.utils.Md5Utils.computeMD5Hash(InputStream)<br/>At Md5Utils.java:[line 47]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73444');">
+<td>
+<span class="priority-1">SECMD5</span>
+</td>
+<td>This API MD5 (MDX) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73444" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_MD5">Bug type WEAK_MESSAGE_DIGEST_MD5 (click for details)</a>
+<br/>In class software.amazon.awssdk.utils.Md5Utils<br/>In method software.amazon.awssdk.utils.Md5Utils.computeMD5Hash(byte[])<br/>At Md5Utils.java:[line 80]<br/>Value MD5</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69093');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69093" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoder<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoder.decode(ChannelHandlerContext, ByteBuf)<br/>At ObjectDecoder.java:[line 76]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69147');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69147" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoderInputStream<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.serialization.ObjectDecoderInputStream.readObject()<br/>At ObjectDecoderInputStream.java:[line 117]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73048');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in software.amazon.awssdk.thirdparty.org.apache.http.impl.client.BasicAuthCache.get(HttpHost)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73048" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.client.BasicAuthCache<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.client.BasicAuthCache.get(HttpHost)<br/>At BasicAuthCache.java:[line 131]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70415');">
+<td>
+<span class="priority-2">SECOPFP</span>
+</td>
+<td>Overly permissive file permission can lead to privilege escalation or information leakage.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70415" style="display: none;">
+<a href="#OVERLY_PERMISSIVE_FILE_PERMISSION">Bug type OVERLY_PERMISSIVE_FILE_PERMISSION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader$NoexecVolumeDetector.canExecuteExecutable(File)<br/>At NativeLibraryLoader.java:[line 399]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65733');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65733" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.core.internal.http.pipeline.stages.ApplyTransactionIdStage<br/>In method new software.amazon.awssdk.core.internal.http.pipeline.stages.ApplyTransactionIdStage()<br/>At ApplyTransactionIdStage.java:[line 38]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65934');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65934" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.core.retry.backoff.EqualJitterBackoffStrategy<br/>In method new software.amazon.awssdk.core.retry.backoff.EqualJitterBackoffStrategy(EqualJitterBackoffStrategy$BuilderImpl)<br/>At EqualJitterBackoffStrategy.java:[line 48]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65992');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65992" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.core.retry.backoff.FullJitterBackoffStrategy<br/>In method new software.amazon.awssdk.core.retry.backoff.FullJitterBackoffStrategy(FullJitterBackoffStrategy$BuilderImpl)<br/>At FullJitterBackoffStrategy.java:[line 45]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68803');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68803" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder.encode(ChannelHandlerContext, WebSocketFrame, List)<br/>At WebSocket08FrameEncoder.java:[line 181]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68861');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.lang.Math.random()) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68861" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketClientHandshaker00<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketClientHandshaker00.insertRandomCharacters(String)<br/>At WebSocketClientHandshaker00.java:[line 209]<br/>Value java.lang.Math.random()</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70577');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.concurrent.ThreadLocalRandom) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70577" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.PlatformDependent$2<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.PlatformDependent$2.current()<br/>At PlatformDependent.java:[line 120]<br/>Value java.util.concurrent.ThreadLocalRandom</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70635');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70635" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.ThreadLocalRandom<br/>In method new software.amazon.awssdk.thirdparty.io.netty.util.internal.ThreadLocalRandom()<br/>At ThreadLocalRandom.java:[line 255]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71246');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71246" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.codec.digest.B64<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.codec.digest.B64.getRandomSalt(int)<br/>At B64.java:[line 75]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71304');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71304" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.codec.digest.UnixCrypt<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.codec.digest.UnixCrypt.crypt(byte[], String)<br/>At UnixCrypt.java:[line 200]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66294');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66294" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.profiles.ProfileFileLocation<br/>In method software.amazon.awssdk.profiles.ProfileFileLocation.configurationFileLocation()<br/>At ProfileFileLocation.java:[line 48]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/utils/JavaSystemSetting.getStringValueOrThrow()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/profiles/ProfileFileLocation.userHomeDirectory()Ljava/lang/String;<br/>At ProfileFileLocation.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66378');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66378" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.profiles.ProfileFileLocation<br/>In method software.amazon.awssdk.profiles.ProfileFileLocation.credentialsFileLocation()<br/>At ProfileFileLocation.java:[line 59]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/utils/JavaSystemSetting.getStringValueOrThrow()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/profiles/ProfileFileLocation.userHomeDirectory()Ljava/lang/String;<br/>At ProfileFileLocation.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66462');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66462" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.profiles.ProfileFileLocation<br/>In method software.amazon.awssdk.profiles.ProfileFileLocation.resolveProfileFilePath(String)<br/>At ProfileFileLocation.java:[line 106]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/profiles/ProfileFileLocation.resolveProfileFilePath(Ljava/lang/String;)Ljava/util/Optional; parameter 0<br/>Unknown source software/amazon/awssdk/utils/JavaSystemSetting.getStringValueOrThrow()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/profiles/ProfileFileLocation.userHomeDirectory()Ljava/lang/String;<br/>At ProfileFileLocation.java:[line 46]<br/>At ProfileFileLocation.java:[line 57]<br/>At ProfileFileLocation.java:[line 102]<br/>At ProfileFileLocation.java:[line 103]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67282');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67282" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.core.JsonFactory<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.core.JsonFactory._optimizedStreamFromURL(URL)<br/>At JsonFactory.java:[line 1576]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonFactory._optimizedStreamFromURL(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>At RegionMetadataLoader.java:[line 86]<br/>At RegionMetadataLoader.java:[line 94]<br/>At RegionMetadataLoader.java:[line 103]<br/>At JsonFactory.java:[line 793]<br/>At JsonFactory.java:[line 1020]<br/>At JsonFactory.java:[line 1576]<br/>At ObjectMapper.java:[line 2621]<br/>At ObjectMapper.java:[line 2959]<br/>At ObjectMapper.java:[line 2978]<br/>At ObjectMapper.java:[line 2985]<br/>At ObjectReader.java:[line 1278]<br/>At ObjectReader.java:[line 1506]<br/>At CBORFactory.java:[line 26]<br/>At CBORFactory.java:[line 282]<br/>In JSON.java<br/>In JSONAsObjectCodec.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67961');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67961" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.deser.std.FromStringDeserializer$Std<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.deser.std.FromStringDeserializer$Std._deserialize(String, DeserializationContext)<br/>At FromStringDeserializer.java:[line 236]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/databind/deser/std/FromStringDeserializer$Std._deserialize(Ljava/lang/String;Lsoftware/amazon/awssdk/thirdparty/com/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68093');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68093" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ext.NioPathDeserializer<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ext.NioPathDeserializer.deserialize(JsonParser, DeserializationContext)<br/>At NioPathDeserializer.java:[line 32]<br/>Sink method java/nio/file/Paths.get(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonParser.getText()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68292');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68292" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.jr.ob.impl.SimpleValueReader<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.jr.ob.impl.SimpleValueReader.read(JSONReader, JsonParser)<br/>In SimpleValueReader.java<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonParser.getValueAsString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonParser.getValueAsString()Ljava/lang/String;<br/>In SimpleValueReader.java</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68365');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68365" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.channel.epoll.EpollServerDomainSocketChannel<br/>In method software.amazon.awssdk.thirdparty.io.netty.channel.epoll.EpollServerDomainSocketChannel.doClose()<br/>At EpollServerDomainSocketChannel.java:[line 80]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/channel/unix/DomainSocketAddress.path()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/channel/unix/DomainSocketAddress.socketPath<br/>At EpollServerDomainSocketChannel.java:[line 80]<br/>At DomainSocketAddress.java:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68571');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68571" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData.tempFile()<br/>At AbstractDiskHttpData.java:[line 90]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.getPostfix()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.getDiskFilename()Ljava/lang/String;<br/>At AbstractDiskHttpData.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData.tempFile()<br/>At AbstractDiskHttpData.java:[line 92]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At AbstractDiskHttpData.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68734');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68734" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.multipart.AbstractDiskHttpData.tempFile()<br/>At AbstractDiskHttpData.java:[line 93]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.getBaseDirectory()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69761');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69761" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 164]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69860');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69860" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method new software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate(String, SecureRandom, int, Date, Date)<br/>At SelfSignedCertificate.java:[line 165]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/BouncyCastleSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.generate(Ljava/lang/String;Ljava/security/KeyPair;Ljava/security/SecureRandom;Ljava/util/Date;Ljava/util/Date;)[Ljava/lang/String;<br/>At SelfSignedCertificate.java:[line 149]<br/>At SelfSignedCertificate.java:[line 154]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69959');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69959" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 241]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70043');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70043" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.SelfSignedCertificate.newSelfSignedCertificate(String, PrivateKey, X509Certificate)<br/>At SelfSignedCertificate.java:[line 272]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;<br/>Sink parameter 1<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/util/SelfSignedCertificate.newSelfSignedCertificate(Ljava/lang/String;Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)[Ljava/lang/String; parameter 2<br/>Method usage not detected<br/>At SelfSignedCertificate.java:[line 272]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70127');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70127" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader.&lt;static initializer for NativeLibraryLoader&gt;()<br/>At NativeLibraryLoader.java:[line 54]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/SystemPropertyUtil.get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At NativeLibraryLoader.java:[line 52]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70256');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70256" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.NativeLibraryLoader.load(String, ClassLoader)<br/>At NativeLibraryLoader.java:[line 171]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/PlatformDependent.tmpdir()Ljava/io/File;<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/PlatformDependent.TMPDIR<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/NativeLibraryLoader.WORKDIR<br/>Unknown source java/io/File.getAbsoluteFile()Ljava/io/File;<br/>Unknown source java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>At NativeLibraryLoader.java:[line 54]<br/>At NativeLibraryLoader.java:[line 64]<br/>At NativeLibraryLoader.java:[line 66]<br/>At NativeLibraryLoader.java:[line 67]<br/>At NativeLibraryLoader.java:[line 128]<br/>At NativeLibraryLoader.java:[line 171]<br/>At PlatformDependent.java:[line 290]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70468');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70468" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.util.internal.PlatformDependent<br/>In method software.amazon.awssdk.thirdparty.io.netty.util.internal.PlatformDependent.toDirectory(String)<br/>At PlatformDependent.java:[line 1128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/util/internal/PlatformDependent.toDirectory(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At PlatformDependent.java:[line 1066]<br/>At PlatformDependent.java:[line 1072]<br/>At SystemPropertyUtil.java:[line 46]<br/>At SystemPropertyUtil.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70747');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70747" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.BaseApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.BaseApp.loadCatalog(String)<br/>At BaseApp.java:[line 213]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/ion/apps/BaseApp.loadCatalog(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At PrintApp.java:[line 63]<br/>At SymtabApp.java:[line 73]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70841');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70841" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.BaseApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.BaseApp.processFile(String)<br/>At BaseApp.java:[line 140]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/ion/apps/BaseApp.processFile(Ljava/lang/String;)Z parameter 0<br/>At BaseApp.java:[line 103]<br/>At BaseApp.java:[line 107]<br/>At BaseApp.java:[line 133]<br/>At SymtabApp.java:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70950');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70950" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.PrintApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.PrintApp.process(File, IonReader)<br/>At PrintApp.java:[line 109]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71019');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71019" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.PrintApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.PrintApp.process(IonReader)<br/>At PrintApp.java:[line 132]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/ion/apps/PrintApp.myOutputFile<br/>At PrintApp.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71098');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71098" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.PrintApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.PrintApp.processOptions(String[])<br/>At PrintApp.java:[line 68]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/ion/apps/PrintApp.processOptions([Ljava/lang/String;)I parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71172');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71172" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.ion.apps.PrintApp<br/>In method software.amazon.awssdk.thirdparty.ion.apps.PrintApp.processOptions(String[])<br/>At PrintApp.java:[line 79]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/ion/apps/PrintApp.processOptions([Ljava/lang/String;)I parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71362');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71362" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.logging.LogFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.logging.LogFactory.initDiagnostics()<br/>At LogFactory.java:[line 1476]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;Z)V<br/>Sink parameter 1<br/>Unknown source java/security/AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;<br/>Unknown source software/amazon/awssdk/thirdparty/org/apache/commons/logging/LogFactory.getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>At LogFactory.java:[line 1459]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68234');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "\\d\\d\\d\\d[-]\\d\\d[-]\\d\\d[T]\\d\\d[:]\\d\\d(?:[:]\\d\\d)?(\\.\\d+)?(Z|[+-]\\d\\d(?:[:]?\\d\\d)?)?" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68234" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value \\d\\d\\d\\d[-]\\d\\d[-]\\d\\d[T]\\d\\d[:]\\d\\d(?:[:]\\d\\d)?(\\.\\d+)?(Z|[+-]\\d\\d(?:[:]?\\d\\d)?)?<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.util.StdDateFormat<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.util.StdDateFormat.&lt;static initializer for StdDateFormat&gt;()<br/>At StdDateFormat.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69035');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^([^=]+)(=[\\"]?([^\\"]+)[\\"]?)?$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69035" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^([^=]+)(=[\\"]?([^\\"]+)[\\"]?)?$<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.extensions.WebSocketExtensionUtil<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.extensions.WebSocketExtensionUtil.&lt;static initializer for WebSocketExtensionUtil&gt;()<br/>At WebSocketExtensionUtil.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69201');">
+<td>
+<span class="priority-2">SECRD</span>
+</td>
+<td>The regular expression "^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$" is vulnerable to a denial of service attack (ReDOS)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69201" style="display: none;">
+<a href="#REDOS">Bug type REDOS (click for details)</a>
+<br/>Value ^(?:((?:(?:EXP-)?(?:(?:DHE|EDH|ECDH|ECDHE|SRP|RSA)-(?:DSS|RSA|ECDSA|PSK)|(?:ADH|AECDH|KRB5|PSK|SRP)))|EXP)-)?(.*)-(.*)$<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter.&lt;static initializer for CipherSuiteConverter&gt;()<br/>At CipherSuiteConverter.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68977');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68977" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketUtil$2<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.codec.http.websocketx.WebSocketUtil$2.initialValue()<br/>At WebSocketUtil.java:[line 51]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69595');">
+<td>
+<span class="priority-2">SECSHA1</span>
+</td>
+<td>This API SHA1 (SHA-1) is not a recommended cryptographic hash function</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69595" style="display: none;">
+<a href="#WEAK_MESSAGE_DIGEST_SHA1">Bug type WEAK_MESSAGE_DIGEST_SHA1 (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$1.initialValue()<br/>At FingerprintTrustManagerFactory.java:[line 84]<br/>Value SHA1</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65659');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65659" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.core.interceptor.ClasspathInterceptorChainFactory<br/>In method software.amazon.awssdk.core.interceptor.ClasspathInterceptorChainFactory.createExecutionInterceptorFromResource(URL)<br/>At ClasspathInterceptorChainFactory.java:[line 88]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/core/interceptor/ClasspathInterceptorChainFactory.createExecutionInterceptorFromResource(Ljava/net/URL;)Ljava/util/stream/Stream; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65791');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65791" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.core.internal.protocol.json.IonFactory<br/>In method software.amazon.awssdk.core.internal.protocol.json.IonFactory.createParser(URL)<br/>At IonFactory.java:[line 87]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/core/internal/protocol/json/IonFactory.createParser(Ljava/net/URL;)Lsoftware/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonParser; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65865');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65865" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.core.internal.util.UserAgentUtils<br/>In method software.amazon.awssdk.core.internal.util.UserAgentUtils.kotlinVersion()<br/>At UserAgentUtils.java:[line 152]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source java/security/CodeSource.getLocation()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66050');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66050" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.core.util.xml.XpathUtils<br/>In method software.amazon.awssdk.core.util.xml.XpathUtils.documentFrom(URL)<br/>At XpathUtils.java:[line 195]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/core/util/xml/XpathUtils.documentFrom(Ljava/net/URL;)Lorg/w3c/dom/Document; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66581');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66581" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.regions.internal.util.ConnectionUtils<br/>In method software.amazon.awssdk.regions.internal.util.ConnectionUtils.connectToEndpoint(URI, Map)<br/>At ConnectionUtils.java:[line 36]<br/>Sink method java/net/URL.openConnection(Ljava/net/Proxy;)Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/Proxy.NO_PROXY<br/>At ConnectionUtils.java:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67512');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67512" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.core.JsonFactory<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.core.JsonFactory._optimizedStreamFromURL(URL)<br/>At JsonFactory.java:[line 1582]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/core/JsonFactory._optimizedStreamFromURL(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>At RegionMetadataLoader.java:[line 86]<br/>At RegionMetadataLoader.java:[line 94]<br/>At RegionMetadataLoader.java:[line 103]<br/>At JsonFactory.java:[line 793]<br/>At JsonFactory.java:[line 1020]<br/>At ObjectMapper.java:[line 2621]<br/>At ObjectMapper.java:[line 2959]<br/>At ObjectMapper.java:[line 2978]<br/>At ObjectMapper.java:[line 2985]<br/>At ObjectReader.java:[line 1278]<br/>At ObjectReader.java:[line 1506]<br/>At CBORFactory.java:[line 26]<br/>At CBORFactory.java:[line 282]<br/>In JSON.java<br/>In JSONAsObjectCodec.java</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67867');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67867" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectReader<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectReader._inputStream(URL)<br/>At ObjectReader.java:[line 1853]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/com/fasterxml/jackson/databind/ObjectReader._inputStream(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>Method usage not detected<br/>At ObjectReader.java:[line 1276]<br/>At ObjectReader.java:[line 1503]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71446');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71446" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.commons.logging.LogFactory$5<br/>In method software.amazon.awssdk.thirdparty.org.apache.commons.logging.LogFactory$5.run()<br/>At LogFactory.java:[line 1303]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/org/apache/commons/logging/LogFactory$5.val$url<br/>At LogFactory.java:[line 1303]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73218');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73218" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.ssl.SSLContextBuilder<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.ssl.SSLContextBuilder.loadKeyMaterial(URL, char[], char[], PrivateKeyStrategy)<br/>At SSLContextBuilder.java:[line 356]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/org/apache/http/ssl/SSLContextBuilder.loadKeyMaterial(Ljava/net/URL;[C[CLsoftware/amazon/awssdk/thirdparty/org/apache/http/ssl/PrivateKeyStrategy;)Lsoftware/amazon/awssdk/thirdparty/org/apache/http/ssl/SSLContextBuilder; parameter 3<br/>Method usage not detected<br/>At SSLContextBuilder.java:[line 369]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73302');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73302" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.ssl.SSLContextBuilder<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.ssl.SSLContextBuilder.loadTrustMaterial(URL, char[], TrustStrategy)<br/>At SSLContextBuilder.java:[line 279]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/org/apache/http/ssl/SSLContextBuilder.loadTrustMaterial(Ljava/net/URL;[CLsoftware/amazon/awssdk/thirdparty/org/apache/http/ssl/TrustStrategy;)Lsoftware/amazon/awssdk/thirdparty/org/apache/http/ssl/SSLContextBuilder; parameter 2<br/>Method usage not detected<br/>At SSLContextBuilder.java:[line 291]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66660');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66660" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.receiveMessageResultMd5Check(ReceiveMessageResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 136]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/Message.md5OfBody<br/>Unknown source software/amazon/awssdk/services/sqs/model/Message.md5OfBody()Ljava/lang/String;<br/>At MessageMD5ChecksumInterceptor.java:[line 134]<br/>At Message.java:[line 94]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66754');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66754" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.receiveMessageResultMd5Check(ReceiveMessageResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 147]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/Message.md5OfMessageAttributes<br/>Unknown source software/amazon/awssdk/services/sqs/model/Message.md5OfMessageAttributes()Ljava/lang/String;<br/>At MessageMD5ChecksumInterceptor.java:[line 145]<br/>At Message.java:[line 161]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66848');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66848" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.sendMessageBatchOperationMd5Check(SendMessageBatchRequest, SendMessageBatchResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 176]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageBatchResultEntry.md5OfMessageBody()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageBatchResultEntry.md5OfMessageBody<br/>At MessageMD5ChecksumInterceptor.java:[line 174]<br/>At SendMessageBatchResultEntry.java:[line 83]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66942');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66942" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.sendMessageBatchOperationMd5Check(SendMessageBatchRequest, SendMessageBatchResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 188]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageBatchResultEntry.md5OfMessageAttributes()Ljava/lang/String;<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageBatchResultEntry.md5OfMessageAttributes<br/>At MessageMD5ChecksumInterceptor.java:[line 186]<br/>At SendMessageBatchResultEntry.java:[line 98]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67036');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67036" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.sendMessageOperationMd5Check(SendMessageRequest, SendMessageResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 106]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageResponse.md5OfMessageBody<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageResponse.md5OfMessageBody()Ljava/lang/String;<br/>At MessageMD5ChecksumInterceptor.java:[line 104]<br/>At SendMessageResponse.java:[line 59]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67130');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67130" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor<br/>In method software.amazon.awssdk.services.sqs.MessageMD5ChecksumInterceptor.sendMessageOperationMd5Check(SendMessageRequest, SendMessageResponse)<br/>At MessageMD5ChecksumInterceptor.java:[line 117]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageResponse.md5OfMessageAttributes<br/>Unknown source software/amazon/awssdk/services/sqs/model/SendMessageResponse.md5OfMessageAttributes()Ljava/lang/String;<br/>At MessageMD5ChecksumInterceptor.java:[line 116]<br/>At SendMessageResponse.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69259');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69259" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 358]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69348');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69348" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter.toJavaHandshakeAlgo(String, boolean)<br/>At CipherSuiteConverter.java:[line 360]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/CipherSuiteConverter.toJavaHandshakeAlgo(Ljava/lang/String;Z)Ljava/lang/String; parameter 1<br/>At CipherSuiteConverter.java:[line 334]<br/>At CipherSuiteConverter.java:[line 343]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69437');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69437" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter.toJavaUncached(String)<br/>At CipherSuiteConverter.java:[line 336]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source java/util/regex/Matcher.group(I)Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69506');">
+<td>
+<span class="priority-2">SECUHE</span>
+</td>
+<td>Unsafe comparison of hash that are susceptible to timing attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69506" style="display: none;">
+<a href="#UNSAFE_HASH_EQUALS">Bug type UNSAFE_HASH_EQUALS (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.CipherSuiteConverter.toOpenSslHandshakeAlgo(String)<br/>At CipherSuiteConverter.java:[line 212]<br/>Sink method java/lang/String.equals(Ljava/lang/Object;)Z<br/>Sink parameter 0<br/>Unknown source software/amazon/awssdk/thirdparty/io/netty/handler/ssl/CipherSuiteConverter.toOpenSslHandshakeAlgo(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At CipherSuiteConverter.java:[line 194]<br/>At CipherSuiteConverter.java:[line 209]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67727');">
+<td>
+<span class="priority-1">SECUJDES</span>
+</td>
+<td>Unsafe Jackson deserialization configuration used in software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping() software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping) ObjectMapper.java:[line 1491]</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67727" style="display: none;">
+<a href="#JACKSON_UNSAFE_DESERIALIZATION">Bug type JACKSON_UNSAFE_DESERIALIZATION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping()<br/>Called method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping)<br/>At ObjectMapper.java:[line 1491]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67797');">
+<td>
+<span class="priority-1">SECUJDES</span>
+</td>
+<td>Unsafe Jackson deserialization configuration used in software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping) software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As) ObjectMapper.java:[line 1507]</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67797" style="display: none;">
+<a href="#JACKSON_UNSAFE_DESERIALIZATION">Bug type JACKSON_UNSAFE_DESERIALIZATION (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping)<br/>Called method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ObjectMapper.enableDefaultTyping(ObjectMapper$DefaultTyping, JsonTypeInfo$As)<br/>At ObjectMapper.java:[line 1507]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66236');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.http.apache.internal.net.DelegateSocket (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66236" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.http.apache.internal.net.DelegateSocket<br/>In method new software.amazon.awssdk.http.apache.internal.net.DelegateSocket(Socket)<br/>At DelegateSocket.java:[line 37]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68513');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.io.netty.channel.socket.oio.OioSocketChannel (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68513" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.channel.socket.oio.OioSocketChannel<br/>In method new software.amazon.awssdk.thirdparty.io.netty.channel.socket.oio.OioSocketChannel()<br/>At OioSocketChannel.java:[line 54]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71687');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71687" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory.connectSocket(Socket, String, int, InetAddress, int, HttpParams)<br/>At MultihomePlainSocketFactory.java:[line 142]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71745');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71745" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.MultihomePlainSocketFactory.createSocket()<br/>At MultihomePlainSocketFactory.java:[line 89]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71803');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71803" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory.createSocket()<br/>At PlainSocketFactory.java:[line 94]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71861');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71861" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.scheme.PlainSocketFactory.createSocket(HttpParams)<br/>At PlainSocketFactory.java:[line 89]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71919');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.conn.socket.PlainConnectionSocketFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71919" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.socket.PlainConnectionSocketFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.socket.PlainConnectionSocketFactory.createSocket(HttpContext)<br/>At PlainConnectionSocketFactory.java:[line 59]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73102');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.impl.client.ProxyClient (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73102" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.client.ProxyClient<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.client.ProxyClient.tunnel(HttpHost, HttpHost, Credentials)<br/>At ProxyClient.java:[line 202]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73160');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to software.amazon.awssdk.thirdparty.org.apache.http.impl.pool.BasicConnFactory (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73160" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.impl.pool.BasicConnFactory<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.impl.pool.BasicConnFactory.create(HttpHost)<br/>At BasicConnFactory.java:[line 150]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68459');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68459" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.channel.socket.oio.OioServerSocketChannel<br/>In method software.amazon.awssdk.thirdparty.io.netty.channel.socket.oio.OioServerSocketChannel.newServerSocket()<br/>At OioServerSocketChannel.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71977');">
+<td>
+<span class="priority-2">SECWHV</span>
+</td>
+<td>HostnameVerifier that accept any signed certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71977" style="display: none;">
+<a href="#WEAK_HOSTNAME_VERIFIER">Bug type WEAK_HOSTNAME_VERIFIER (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.AllowAllHostnameVerifier<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.AllowAllHostnameVerifier.verify(String, String[], String[])<br/>At AllowAllHostnameVerifier.java:[line 54]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72140');">
+<td>
+<span class="priority-2">SECWHV</span>
+</td>
+<td>HostnameVerifier that accept any signed certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72140" style="display: none;">
+<a href="#WEAK_HOSTNAME_VERIFIER">Bug type WEAK_HOSTNAME_VERIFIER (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.NoopHostnameVerifier<br/>In method software.amazon.awssdk.thirdparty.org.apache.http.conn.ssl.NoopHostnameVerifier.verify(String, SSLSession)<br/>At NoopHostnameVerifier.java:[line 49]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66182');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66182" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class software.amazon.awssdk.http.apache.ApacheHttpClient$ApacheConnectionManagerFactory$1<br/>In method software.amazon.awssdk.http.apache.ApacheHttpClient$ApacheConnectionManagerFactory$1.getAcceptedIssuers()<br/>At ApacheHttpClient.java:[line 477]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69653');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69653" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.FingerprintTrustManagerFactory$2.getAcceptedIssuers()<br/>At FingerprintTrustManagerFactory.java:[line 129]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69707');">
+<td>
+<span class="priority-2">SECWTM</span>
+</td>
+<td>TrustManager that accept any certificates makes communication vulnerable to a MITM attack</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69707" style="display: none;">
+<a href="#WEAK_TRUST_MANAGER">Bug type WEAK_TRUST_MANAGER (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.InsecureTrustManagerFactory$1<br/>In method software.amazon.awssdk.thirdparty.io.netty.handler.ssl.util.InsecureTrustManagerFactory$1.getAcceptedIssuers()<br/>At InsecureTrustManagerFactory.java:[line 61]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66124');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66124" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class software.amazon.awssdk.core.util.xml.XpathUtils<br/>In method software.amazon.awssdk.core.util.xml.XpathUtils.documentFrom(InputStream)<br/>At XpathUtils.java:[line 183]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68035');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68035" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ext.DOMDeserializer<br/>In method software.amazon.awssdk.thirdparty.com.fasterxml.jackson.databind.ext.DOMDeserializer.parse(String)<br/>At DOMDeserializer.java:[line 52]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class software.amazon.awssdk.awscore.http.response.StaxResponseHandler<br/>In method software.amazon.awssdk.awscore.http.response.StaxResponseHandler.handle(HttpResponse, ExecutionAttributes)<br/>At StaxResponseHandler.java:[line 93]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65605');">
+<td>
+<span class="priority-2">SECXXESTR</span>
+</td>
+<td>The XML parsing is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65605" style="display: none;">
+<a href="#XXE_XMLSTREAMREADER">Bug type XXE_XMLSTREAMREADER (click for details)</a>
+<br/>In class software.amazon.awssdk.awscore.http.response.StaxResponseHandler<br/>In method software.amazon.awssdk.awscore.http.response.StaxResponseHandler.unmarshallStreaming(Unmarshaller, HttpResponse)<br/>At StaxResponseHandler.java:[line 182]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="CIPHER_INTEGRITY">CIPHER_INTEGRITY: Cipher with no integrity</a>
+</h2>
+            
+<p>
+    The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the
+    data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection.
+</p>
+<p>
+    The solution is to use a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. Combining a HMAC function to the
+    existing cipher is prone to error <sup><a href="https://moxie.org/blog/the-cryptographic-doom-principle/">[1]</a></sup>. Specifically,
+    it is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic
+    functions on the data.
+</p>
+<p>The following modes are vulnerable because they don't provide a HMAC:<br/>
+    - CBC<br/>
+    - OFB<br/>
+    - CTR<br/>
+    - ECB<br/><br/>
+    The following snippets code are some examples of vulnerable code.<br/><br/>
+    <b>Code at risk:</b><br/>
+    <i>AES in CBC mode</i><br/>
+
+    <pre>Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+    <br/>
+    <i>Triple DES with ECB mode</i><br/>
+
+<pre>Cipher c = Cipher.getInstance("DESede/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+In the example solution above, the GCM mode introduces an HMAC into the resulting encrypted data, providing integrity of the result.
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+    <a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+    <a href="https://moxie.org/blog/the-cryptographic-doom-principle/">Moxie Marlinspike's blog: The Cryptographic Doom Principle</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/353.html">CWE-353: Missing Support for Integrity Check</a>
+</p>
+
+        
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="DESERIALIZATION_GADGET">DESERIALIZATION_GADGET: This class could be used as deserialization gadget</a>
+</h2>
+            
+<p>
+Deserialization gadget are class that could be used by an attacker to take advantage of a remote API using Native Serialization.
+This class is either adding custom behavior to deserialization with the <code>readObject</code> method (Serializable) or can be called
+ from a serialized object (InvocationHandler).
+</p>
+<p>
+This detector is intended to be used mostly by researcher. The real issue is using deserialization for remote operation.
+Removing gadget is a hardening practice to reduce the risk of being exploited.
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="DES_USAGE">DES_USAGE: DES is insecure</a>
+</h2>
+            
+<p>
+DES is considered strong ciphers for modern applications. Currently, NIST recommends the
+usage of AES block ciphers instead of DES.
+</p>
+<p>
+    <b>Example weak code:</b>
+<pre>Cipher c = Cipher.getInstance("DES/ECB/PKCS5Padding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Example solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.nist.gov/news-events/news/2005/06/nist-withdraws-outdated-data-encryption-standard">NIST Withdraws Outdated Data Encryption Standard</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326: Inadequate Encryption Strength</a>
+</p>
+
+        
+<h2>
+<a name="ECB_MODE">ECB_MODE: ECB mode is insecure</a>
+</h2>
+            
+<p>An authentication cipher mode which provides better confidentiality of the encrypted data should be used instead of Electronic Code Book (ECB) mode,
+which does not provide good confidentiality. Specifically, ECB mode produces the same output for the same input each time. So,
+for example, if a user is sending a password, the encrypted value is the same each time. This allows an attacker to intercept
+and replay the data.</p>
+<p>
+To fix this, something like Galois/Counter Mode (GCM) should be used instead.
+</p>
+<p>
+<b>Code at risk:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/ECB/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<p>
+    <b>Solution:</b>
+    <pre>Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
+c.init(Cipher.ENCRYPT_MODE, k, iv);
+byte[] cipherText = c.doFinal(plainText);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Authenticated_encryption">Wikipedia: Authenticated encryption</a><br/>
+<a href="https://csrc.nist.gov/projects/block-cipher-techniques/bcm/modes-develoment#01">NIST: Authenticated Encryption Modes</a><br/>
+<a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29">Wikipedia: Block cipher modes of operation</a><br/>
+<a href="https://csrc.nist.gov/publications/detail/sp/800-38a/final">NIST: Recommendation for Block Cipher Modes of Operation</a>
+</p>
+
+        
+<h2>
+<a name="LDAP_INJECTION">LDAP_INJECTION: Potential LDAP Injection</a>
+</h2>
+            
+<p>
+Just like SQL, all inputs passed to an LDAP query need to be passed in safely. Unfortunately, LDAP doesn't have prepared statement interfaces like SQL.
+Therefore, the primary defense against LDAP injection is strong input validation of any untrusted data before including it in an LDAP query.
+</p>
+<p>
+    <b>Code at risk:</b><br/>
+    <pre>NamingEnumeration&lt;SearchResult&gt; answers = context.search("dc=People,dc=example,dc=com",
+        "(uid=" + username + ")", ctrls);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246947/LDAP%20Injection">WASC-29: LDAP Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/90.html">CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')</a><br/>
+<a href="https://www.veracode.com/security/ldap-injection">LDAP Injection Guide: Learn How to Detect LDAP Injections and Improve LDAP Security</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_MD5">WEAK_MESSAGE_DIGEST_MD5: MD2, MD4 and MD5 are weak hash functions</a>
+</h2>
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="OVERLY_PERMISSIVE_FILE_PERMISSION">OVERLY_PERMISSIVE_FILE_PERMISSION: Overly permissive file permission</a>
+</h2>
+            
+<p>
+It is generally a bad practices to set overly permissive file permission such as read+write+exec for all users.
+If the file affected is a configuration, a binary, a script or sensitive data, it can lead to privilege escalation or information leakage.
+</p>
+<p>
+It is possible that another service, running on the same host as your application, gets compromised.
+Services typically run under a different user. A compromised service account could be use to read your configuration, add execution instruction to scripts or alter the data file.
+To limite the damage from other services or local users, you should limited to permission of your application files.
+</p>
+
+<p>
+<b>Vulnerable Code 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw-rw-"));
+</pre>
+</p>
+
+<p>
+<b>Solution 1 (symbolic notation):</b><br/>
+<pre>
+Files.setPosixFilePermissions(configPath, PosixFilePermissions.fromString("rw-rw----"));
+</pre>
+</p>
+
+
+<p>
+<b>Vulnerable Code 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+
+perms.add(PosixFilePermission.OTHERS_READ);
+perms.add(PosixFilePermission.OTHERS_WRITE);
+perms.add(PosixFilePermission.OTHERS_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>Solution 2 (Object-oriented implementation):</b><br/>
+<pre>
+Set&lt;PosixFilePermission&gt; perms = new HashSet&lt;&gt;();
+perms.add(PosixFilePermission.OWNER_READ);
+perms.add(PosixFilePermission.OWNER_WRITE);
+perms.add(PosixFilePermission.OWNER_EXECUTE);
+
+perms.add(PosixFilePermission.GROUP_READ);
+perms.add(PosixFilePermission.GROUP_WRITE);
+perms.add(PosixFilePermission.GROUP_EXECUTE);
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/732.html">CWE-732: Incorrect Permission Assignment for Critical Resource</a><br/>
+<a href="https://payatu.com/guide-linux-privilege-escalation/">A guide to Linux Privilege Escalation</a><br/>
+<a href="https://en.wikipedia.org/wiki/File_system_permissions">File system permissions</a><br/>
+</p>
+
+            
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REDOS">REDOS: Regex DOS (ReDOS)</a>
+</h2>
+            
+<p>
+    Regular expressions (Regex) are frequently subject to Denial of Service (DOS) attacks (called ReDOS). This is due to the fact that regex engines
+    may take a large amount of time when analyzing certain strings, depending on how the regex is defined.
+<p>
+    For example, for the regex: <code>^(a+)+$</code>, the input "<code>aaaaaaaaaaaaaaaaX</code>" will cause the regex engine to analyze 65536
+different paths.<sup>[1] Example taken from OWASP references</sup></p>
+<p>
+Therefore, it is possible that a single request may cause a large amount of computation on the server side.
+The problem with this regex, and others like it, is that there are two different ways the same input character can be accepted by the
+Regex due to the <code>+</code> (or a <code>*</code>) inside the parenthesis, and the <code>+</code> (or a <code>*</code>) outside the parenthesis. The way this is written, either <code>+</code> could
+consume the character 'a'. To fix this, the regex should be rewritten to eliminate the ambiguity. For example, this could simply be
+rewritten as: <code>^a+$</code>, which is presumably what the author meant anyway (any number of a's). Assuming that's what the original
+regex meant, this new regex can be evaluated quickly, and is not subject to ReDOS.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://sebastiankuebeck.wordpress.com/2011/03/01/detecting-and-preventing-redos-vulnerabilities/">Sebastian Kubeck's Weblog: Detecting and Preventing ReDoS Vulnerabilities</a><br/>
+<sup>[1]</sup> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">OWASP: Regular expression Denial of Service</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/400.html">CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_MESSAGE_DIGEST_SHA1">WEAK_MESSAGE_DIGEST_SHA1: SHA-1 is a weak hash function</a>
+</h2>
+            
+<p>The algorithms SHA-1 is not a recommended algorithm for hash password, for signature verification and other
+uses. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "<b>SHA-1 for digital signature generation:</b><br/>
+    SHA-1 may only be used for digital signature generation where specifically allowed by NIST protocol-specific guidance.
+    For all other applications, <u>SHA-1 shall not be used for digital signature generation</u>.<br/>
+    <b>SHA-1 for digital signature verification:</b><br/>
+    For digital signature verification, <u>SHA-1 is allowed for legacy-use</u>.<br/>
+    [...]<br/>
+    <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+    sha1Digest.update(password.getBytes());
+    byte[] hashValue = sha1Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getSha1Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://community.qualys.com/blogs/securitylabs/2014/09/09/sha1-deprecation-what-you-need-to-know">Qualys blog: SHA1 Deprecation: What You Need to Know</a><br/>
+<a href="https://googleonlinesecurity.blogspot.ca/2014/09/gradually-sunsetting-sha-1.html">Google Online Security Blog: Gradually sunsetting SHA-1</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNSAFE_HASH_EQUALS">UNSAFE_HASH_EQUALS: Unsafe hash equals</a>
+</h2>
+            
+<p>
+An attacker might be able to detect the value of the secret hash due to the exposure of comparison timing. When the
+functions <code>Arrays.equals()</code> or <code>String.equals()</code> are called, they will exit earlier if fewer
+bytes are matched.
+</p>
+<p>
+<p><b>Vulnerable Code:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(userInput.equals(actualHash)) {
+    ...
+}</pre>
+</p>
+<p><b>Solution:</b><br/>
+
+<pre>
+String actualHash = ...
+
+if(MessageDigest.isEqual(userInput.getBytes(),actualHash.getBytes())) {
+    ...
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/203.html">CWE-203: Information Exposure Through DiscrepancyKey</a><br/>
+</p>
+
+        
+<h2>
+<a name="JACKSON_UNSAFE_DESERIALIZATION">JACKSON_UNSAFE_DESERIALIZATION: Unsafe Jackson deserialization configuration</a>
+</h2>
+            
+<p>When the Jackson databind library is used incorrectly the deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows the trigger of malicious operation.
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Explicitly define what types and subtypes you want to be available when using polymorphism through JsonTypeInfo.Id.NAME.
+Also, never call <code>ObjectMapper.enableDefaultTyping</code> (and then <code>readValue</code> a type that holds a Object or Serializable or Comparable or a known deserialization type).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public class Example {
+    static class ABean {
+        public int id;
+        public Object obj;
+    }
+
+    static class AnotherBean {
+        @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS) // or JsonTypeInfo.Id.MINIMAL_CLASS
+        public Object obj;
+    }
+
+    public void example(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.enableDefaultTyping();
+         mapper.readValue(json, ABean.class);
+    }
+
+    public void exampleTwo(String json) throws JsonMappingException {
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.readValue(json, AnotherBean.class);
+    }
+
+}
+</pre>
+</p>
+
+<p>
+<b>References</b><br/>
+<a href="https://github.com/FasterXML/jackson-databind/issues/1599">Jackson Deserializer security vulnerability</a><br>
+<a href="https://github.com/mbechler/marshalsec">Java Unmarshaller Security - Turning your data into code execution</a><br>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_HOSTNAME_VERIFIER">WEAK_HOSTNAME_VERIFIER: HostnameVerifier that accept any signed certificates</a>
+</h2>
+            
+<p>A <code>HostnameVerifier</code> that accept any host are often use because of certificate reuse on many hosts.
+As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a truststore for example) should be built.
+Wildcard certificates should be created for reused on multiples subdomains.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>public class AllHosts implements HostnameVerifier {
+    public boolean verify(final String hostname, final SSLSession session) {
+        return true;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="WEAK_TRUST_MANAGER">WEAK_TRUST_MANAGER: TrustManager that accept any certificates</a>
+</h2>
+            
+<p>Empty TrustManager implementations are often used to connect easily to a host that is not signed by a root
+<a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a>. As a consequence, this is vulnerable to
+<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-middle attacks</a>
+since the client will trust any certificate.
+</p>
+<p>
+A TrustManager allowing specific certificates (based on a TrustStore for example) should be built.
+Detailed information for a proper implementation is available at:
+<a href="https://stackoverflow.com/a/6378872/89769">[1]</a>
+<a href="https://stackoverflow.com/a/5493452/89769">[2]</a>
+</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>class TrustAllManager implements X509TrustManager {
+
+    @Override
+    public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any client connecting (no certificate validation)
+    }
+
+    @Override
+    public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        //Trust any remote server (no certificate validation)
+    }
+
+    @Override
+    public X509Certificate[] getAcceptedIssuers() {
+        return null;
+    }
+}</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (TrustMangager based on a keystore):</b><br/>
+<pre>KeyStore ks = //Load keystore containing the certificates trusted
+
+SSLContext sc = SSLContext.getInstance("TLS");
+
+TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
+tmf.init(ks);
+
+sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(),null);
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/295.html">CWE-295: Improper Certificate Validation</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_XMLSTREAMREADER">XXE_XMLSTREAMREADER: XML parsing vulnerable to XXE (XMLStreamReader)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one property or both.
+</p>
+
+<p><b>Solution disabling External Entities:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+<pre>public void parseXML(InputStream input) throws XMLStreamException {
+
+    XMLInputFactory factory = XMLInputFactory.newFactory();
+    factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+    XMLStreamReader reader = factory.createXMLStreamReader(input);
+    [...]
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://openjdk.java.net/jeps/185">JEP 185: Restrict Fetching of External XML Resources</a>
+</p>
+
+        </body>
+</html>

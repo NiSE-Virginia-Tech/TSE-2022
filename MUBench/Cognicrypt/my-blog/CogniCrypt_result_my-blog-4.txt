@@ -1,0 +1,113 @@
+
+Current Proejct: /home/x/CryptoAPIDetect/dataset/MUBench/my-blog/target/my-blog-4.0.0-SNAPSHOT.jar
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 444.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 1 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <BOOT-INF.classes.com.site.blog.my.core.util.MD5Util: java.lang.String MD5Encode(java.lang.String,java.lang.String)>
+		SHA-256: 6f2535e75e5e28cab9d4355224201036f10c8806c79e6da83ede03c5d79f0ab2
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <BOOT-INF.classes.com.site.blog.my.core.util.MD5Util: java.lang.String MD5Encode(java.lang.String,java.lang.String)>
+		SHA-256: e84d8bb62e1fa8a06c1d3645f188b7862670eccf45546ffd0bf775e5bd1a71d6
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r7 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <BOOT-INF.classes.com.site.blog.my.core.util.MD5Util: java.lang.String MD5Encode(java.lang.String,java.lang.String)>
+		SHA-256: 5d3a4c4fb342c90437a32ecedb9380a54f35d89c0813b2591227349ffb00597a
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke r10.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <BOOT-INF.classes.com.site.blog.my.core.util.MD5Util: java.lang.String MD5Encode(java.lang.String,java.lang.String)>
+		SHA-256: 1b68f9ffa0b87243dd55f6c4fc4ebd76a863c76cb8a5379099c629145f188115
+		Secure: false
+	Object:
+		Variable: r10
+		Type: java.security.MessageDigest
+		Statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer464)
+		Method: <BOOT-INF.classes.com.site.blog.my.core.util.MD5Util: java.lang.String MD5Encode(java.lang.String,java.lang.String)>
+		SHA-256: 3429cd5f9d17852f5a4172d70959dfac5df1e69e3b7f609a18ec1b5c48137e9a
+		Secure: false
+
+Findings in Java Class: BOOT-INF.classes.com.site.blog.my.core.util.MD5Util
+
+	 in Method: java.lang.String MD5Encode(java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3429cd5f9d17852f5a4172d70959dfac5df1e69e3b7f609a18ec1b5c48137e9a)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer464)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.633 s

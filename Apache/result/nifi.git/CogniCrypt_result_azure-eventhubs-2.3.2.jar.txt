@@ -1,0 +1,112 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 438.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 2 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: varReplacer732
+		Type: java.lang.String
+		Statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r10, varReplacer732)
+		Method: <com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)>
+		SHA-256: ba3ed596f41627839723e5b51dd09855ef3d34a01233c61e5b3bb67cd792354c
+		Secure: false
+	Object:
+		Variable: $r22
+		Type: byte[]
+		Statement: r12 = virtualinvoke r9.<javax.crypto.Mac: byte[] doFinal(byte[])>($r22)
+		Method: <com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)>
+		SHA-256: 5071b06188dedc9efbbc708b70bf1beaee69165d49174f06cd7f18537258de77
+		Secure: true
+	Object:
+		Variable: r12
+		Type: byte[]
+		Statement: r12 = virtualinvoke r9.<javax.crypto.Mac: byte[] doFinal(byte[])>($r22)
+		Method: <com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)>
+		SHA-256: 6bea9025744d7b8ea8d7e93165e9f271def10564bd6239ab3b288aab7b785f67
+		Secure: true
+	Object:
+		Variable: r9
+		Type: javax.crypto.Mac
+		Statement: r9 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer738)
+		Method: <com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)>
+		SHA-256: fcaf40eef02748ee1f0091d08daa03b77adff65ea5b791791536306989596d25
+		Secure: true
+	Object:
+		Variable: $r21
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r10, varReplacer732)
+		Method: <com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)>
+		SHA-256: 14f2cdabb02ca4596d440009c0564357bd061ae06d338de62cc5f1c61d4e1290
+		Secure: false
+
+Findings in Java Class: com.microsoft.azure.eventhubs.impl.SharedAccessSignatureTokenProvider
+
+	 in Method: java.lang.String generateSharedAccessSignature(java.lang.String,java.lang.String,java.lang.String,java.time.Duration)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r21.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r10, varReplacer732)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 5
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.043 s
+

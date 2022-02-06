@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/ignite.git/ignite-visor-console-2.9.0-SNAPSHOT.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>10708 lines of code analyzed,
+	in 539 classes, 
+	in 19 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">14</td>
+<td align="right">1.31</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+<td align="right">
+<b>1.31</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">14</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>14</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65873');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65873" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.alert.VisorAlertCommand$$anonfun$org$apache$ignite$visor$commands$alert$VisorAlertCommand$$executeAlertScript$1<br/>In method org.apache.ignite.visor.commands.alert.VisorAlertCommand$$anonfun$org$apache$ignite$visor$commands$alert$VisorAlertCommand$$executeAlertScript$1.apply(String)<br/>At VisorAlertCommand.scala:[line 659]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/visor/commands/alert/VisorAlertCommand$$anonfun$org$apache$ignite$visor$commands$alert$VisorAlertCommand$$executeAlertScript$1.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At VisorAlertCommand.scala:[line 658]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66026');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66026" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.deploy.VisorCopier<br/>In method org.apache.ignite.visor.commands.deploy.VisorCopier.org$apache$ignite$visor$commands$deploy$VisorCopier$$copy(ChannelSftp, String, String)<br/>At VisorDeployCommand.scala:[line 227]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/visor/commands/deploy/VisorCopier.org$apache$ignite$visor$commands$deploy$VisorCopier$$copy(Lcom/jcraft/jsch/ChannelSftp;Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>At VisorDeployCommand.scala:[line 70]<br/>At VisorDeployCommand.scala:[line 114]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66115');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66115" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.start.VisorStartCommand$$anonfun$start$1<br/>In method org.apache.ignite.visor.commands.start.VisorStartCommand$$anonfun$start$1.apply$mcV$sp()<br/>At VisorStartCommand.scala:[line 208]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Option$.apply(Ljava/lang/Object;)Lscala/Option;<br/>Unknown source org/apache/ignite/visor/visor$.argValue(Ljava/lang/String;Lscala/collection/Seq;)Lscala/Option;<br/>Unknown source scala/Option.get()Ljava/lang/Object;<br/>At VisorStartCommand.scala:[line 157]<br/>At VisorStartCommand.scala:[line 208]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66214');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66214" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.start.VisorStartCommand$$anonfun$start$1<br/>In method org.apache.ignite.visor.commands.start.VisorStartCommand$$anonfun$start$1.apply$mcV$sp()<br/>At VisorStartCommand.scala:[line 242]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Option$.apply(Ljava/lang/Object;)Lscala/Option;<br/>Unknown source org/apache/ignite/visor/visor$.argValue(Ljava/lang/String;Lscala/collection/Seq;)Lscala/Option;<br/>Unknown source scala/Option.get()Ljava/lang/Object;<br/>At VisorStartCommand.scala:[line 162]<br/>At VisorStartCommand.scala:[line 242]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.VisorFileNameCompleter<br/>In method org.apache.ignite.visor.commands.VisorFileNameCompleter.resolvePath(String)<br/>At VisorConsole.scala:[line 460]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/visor/commands/VisorFileNameCompleter.resolvePath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At VisorConsole.scala:[line 403]<br/>At VisorConsole.scala:[line 424]<br/>At VisorConsole.scala:[line 428]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.VisorFileNameCompleter<br/>In method org.apache.ignite.visor.commands.VisorFileNameCompleter.resolvePath(String)<br/>At VisorConsole.scala:[line 464]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/visor/commands/VisorFileNameCompleter.resolvePath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At VisorConsole.scala:[line 403]<br/>At VisorConsole.scala:[line 424]<br/>At VisorConsole.scala:[line 428]<br/>At VisorConsole.scala:[line 464]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65769');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65769" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.VisorFileNameCompleter<br/>In method org.apache.ignite.visor.commands.VisorFileNameCompleter.resolvePath(String)<br/>At VisorConsole.scala:[line 470]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/ignite/visor/commands/VisorFileNameCompleter.resolvePath(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At VisorConsole.scala:[line 403]<br/>At VisorConsole.scala:[line 424]<br/>At VisorConsole.scala:[line 428]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66313');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66313" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1<br/>In method org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1.apply$mcV$sp()<br/>At VisorVvmCommand.scala:[line 120]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/runtime/ObjectRef.elem<br/>At VisorVvmCommand.scala:[line 120]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66392');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66392" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1<br/>In method org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1.apply$mcV$sp()<br/>At VisorVvmCommand.scala:[line 147]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/runtime/ObjectRef.elem<br/>At VisorVvmCommand.scala:[line 147]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66471');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66471" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2<br/>In method org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2.apply(String)<br/>At VisorVvmCommand.scala:[line 130]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1.ext$1<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1.fs$1<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At VisorVvmCommand.scala:[line 126]<br/>At VisorVvmCommand.scala:[line 127]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66585');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66585" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2<br/>In method org.apache.ignite.visor.commands.vvm.VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2.apply(String)<br/>At VisorVvmCommand.scala:[line 135]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1.ext$1<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1.fs$1<br/>Unknown source org/apache/ignite/visor/commands/vvm/VisorVvmCommand$$anonfun$vvm$1$$anonfun$apply$mcV$sp$1$$anonfun$apply$mcV$sp$2.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At VisorVvmCommand.scala:[line 126]<br/>At VisorVvmCommand.scala:[line 127]<br/>At VisorVvmCommand.scala:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66709');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66709" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.visor$<br/>In method org.apache.ignite.visor.visor$.startLog(Option, Option, Option, boolean)<br/>At visor.scala:[line 2433]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Option.getOrElse(Lscala/Function0;)Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66778');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66778" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.ignite.visor.visor$<br/>In method org.apache.ignite.visor.visor$.startLog(Option, Option, Option, boolean)<br/>At visor.scala:[line 2441]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65957');">
+<td>
+<span class="priority-2">SECSCI</span>
+</td>
+<td>The command execution could be vulnerable to injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65957" style="display: none;">
+<a href="#SCALA_COMMAND_INJECTION">Bug type SCALA_COMMAND_INJECTION (click for details)</a>
+<br/>In class org.apache.ignite.visor.commands.alert.VisorAlertCommand$$anonfun$org$apache$ignite$visor$commands$alert$VisorAlertCommand$$executeAlertScript$1<br/>In method org.apache.ignite.visor.commands.alert.VisorAlertCommand$$anonfun$org$apache$ignite$visor$commands$alert$VisorAlertCommand$$executeAlertScript$1.apply(String)<br/>At VisorAlertCommand.scala:[line 666]<br/>Sink method scala/sys/process/Process$.apply(Lscala/collection/Seq;Lscala/Option;Lscala/collection/Seq;)Lscala/sys/process/ProcessBuilder;<br/>Sink parameter 2<br/>Unknown source scala/collection/TraversableLike.$plus$plus(Lscala/collection/GenTraversableOnce;Lscala/collection/generic/CanBuildFrom;)Ljava/lang/Object;</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SCALA_COMMAND_INJECTION">SCALA_COMMAND_INJECTION: Potential Command Injection (Scala)</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>def executeCommand(value:String) = Action {
+    val result = value.!
+    Ok("Result:\n"+result)
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        </body>
+</html>

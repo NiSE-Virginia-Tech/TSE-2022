@@ -1,0 +1,127 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 582.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r18
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r18.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r3, $r19)
+		Method: <com.amazonaws.services.kinesis.producer.HashedFileCopier: java.io.File copyFileFrom(java.io.InputStream,java.io.File,java.lang.String)>
+		SHA-256: e45d866d32d31529767ae3d781e9606c62364accbb3cbea061ea75f340c94bcf
+		Secure: false
+	Object:
+		Variable: $r19
+		Type: java.security.MessageDigest
+		Statement: $r19 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1195)
+		Method: <com.amazonaws.services.kinesis.producer.HashedFileCopier: java.io.File copyFileFrom(java.io.InputStream,java.io.File,java.lang.String)>
+		SHA-256: cf2d3a66556886d51592b40df47496fd4a47a51fba5dbfdf6b3268c2feb8c318
+		Secure: false
+	Object:
+		Variable: $r44
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r44.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r45, $r46)
+		Method: <com.amazonaws.services.kinesis.producer.HashedFileCopier: java.io.File copyFileFrom(java.io.InputStream,java.io.File,java.lang.String)>
+		SHA-256: 6ea17711cead2c694df0771da1f2172b1a55a62f8886730d3f294441b113657c
+		Secure: false
+	Object:
+		Variable: $r46
+		Type: java.security.MessageDigest
+		Statement: $r46 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1187)
+		Method: <com.amazonaws.services.kinesis.producer.HashedFileCopier: java.io.File copyFileFrom(java.io.InputStream,java.io.File,java.lang.String)>
+		SHA-256: 33ad6159f6c0ad11926c637fa1ca6d3a847679a7218926d136cc2ff062e53044
+		Secure: false
+
+Findings in Java Class: com.amazonaws.services.kinesis.producer.HashedFileCopier
+
+	 in Method: java.io.File copyFileFrom(java.io.InputStream,java.io.File,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #33ad6159f6c0ad11926c637fa1ca6d3a847679a7218926d136cc2ff062e53044)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r44.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r45, $r46)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #cf2d3a66556886d51592b40df47496fd4a47a51fba5dbfdf6b3268c2feb8c318)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r19 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1195)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #cf2d3a66556886d51592b40df47496fd4a47a51fba5dbfdf6b3268c2feb8c318)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r18.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r3, $r19)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #6ea17711cead2c694df0771da1f2172b1a55a62f8886730d3f294441b113657c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r47 = virtualinvoke r77.<java.security.DigestInputStream: java.security.MessageDigest getMessageDigest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #e45d866d32d31529767ae3d781e9606c62364accbb3cbea061ea75f340c94bcf)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: $r20 = virtualinvoke r4.<java.security.DigestOutputStream: java.security.MessageDigest getMessageDigest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #6ea17711cead2c694df0771da1f2172b1a55a62f8886730d3f294441b113657c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r77.<java.security.DigestInputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #6ea17711cead2c694df0771da1f2172b1a55a62f8886730d3f294441b113657c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r77.<java.security.DigestInputStream: void close()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 4
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 6
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 3.784 s
+

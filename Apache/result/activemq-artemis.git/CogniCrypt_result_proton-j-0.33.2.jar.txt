@@ -1,0 +1,156 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 642.3 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.63
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.88
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r15
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r15 = virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)>
+		SHA-256: 9f34108f0880653b8735c37816df861e8bdcde5dc341eba15720b3d5d30e098
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.SSLEngine
+		Statement: r4 = virtualinvoke r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLEngine createSslEngine(javax.net.ssl.SSLContext,org.apache.qpid.proton.engine.SslPeerDetails)>
+		SHA-256: 46f0b6e751a0886ae0d6d42701b0b308136dad466e54048202e5f0681637f32d
+		Secure: false
+	Object:
+		Variable: r33
+		Type: javax.net.ssl.SSLContext
+		Statement: r33 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2436)
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)>
+		SHA-256: 4f43aa54420b8d290a5b41142c2107666b505ad4bd531e1c81bffe6db2c618cb
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: r5 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r14)
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)>
+		SHA-256: 58b5d3f4df675e18074dc0f03ebc7caba86d71c81fa34072f718a55f70d649a7
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.SSLEngine
+		Statement: r4 = virtualinvoke r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>($r3, $i0)
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLEngine createSslEngine(javax.net.ssl.SSLContext,org.apache.qpid.proton.engine.SslPeerDetails)>
+		SHA-256: 16e269d44165799b3aaddfed06bff9f5359950db4ce5470242f7d33171c6d904
+		Secure: false
+	Object:
+		Variable: r36
+		Type: java.security.KeyStore
+		Statement: r36 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: java.security.KeyStore createKeyStoreFrom(org.apache.qpid.proton.engine.SslDomain,char[])>
+		SHA-256: 2f1777c4c33ec571d1a9835b51c461a26fab43856b37865e601dd87e74e41789
+		Secure: true
+	Object:
+		Variable: r34
+		Type: java.lang.Object[]
+		Statement: r34 = virtualinvoke r5.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)>
+		SHA-256: 15302be24e21b74ca5462d78a7fdab050dbaabf1a6f3604380c9e3b3bffced79
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: r4 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r11)
+		Method: <org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)>
+		SHA-256: fb83496004d9ae49fe6e8445b86101715d0f9d2006a77891333b12e229dbd103
+		Secure: false
+
+Findings in Java Class: org.apache.qpid.proton.engine.impl.ssl.SslEngineFacadeFactory
+
+	 in Method: javax.net.ssl.SSLContext getOrCreateSslContext(org.apache.qpid.proton.engine.SslDomain)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r33.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r15, r46, varReplacer2435)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #fb83496004d9ae49fe6e8445b86101715d0f9d2006a77891333b12e229dbd103)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r3, r2)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r33.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r15, r46, varReplacer2435)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #4f43aa54420b8d290a5b41142c2107666b505ad4bd531e1c81bffe6db2c618cb)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r33 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2436)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 8
+
+	CogniCrypt found the following violations. For details see description above.
+	NeverTypeOfError: 1
+	RequiredPredicateError: 2
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 19 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 22.34 s
+

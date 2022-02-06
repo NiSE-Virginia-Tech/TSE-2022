@@ -1,0 +1,166 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 871.7 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 6 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.33
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.57
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r9, varReplacer2075)
+		Method: <org.apache.tika.parser.hwp.HwpTextExtractorV5: java.security.Key readKey(java.io.InputStream)>
+		SHA-256: 273cdf360c4ec9f6e0cffff86424639601c67018e7b64459fff9ecf1441d02af
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r3.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>(r1, r4)
+		Method: <org.apache.tika.parser.hwp.HwpTextExtractorV5: java.io.InputStream createDecryptStream(java.io.InputStream,java.security.Key)>
+		SHA-256: ea489dc4254989f6a55c61249c3651216c1bfcb63f847bdc633b50ea32d8a836
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.apache.tika.parser.crypto.TSDParser$OIDNameMapper: java.security.MessageDigest getDigestInstance(java.lang.String,java.lang.String)>
+		SHA-256: 78ea05d11904624fc5922b152f20ce3c4c4d64f057007e431ca6fcb314e6c40c
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.Cipher
+		Statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2076)
+		Method: <org.apache.tika.parser.hwp.HwpTextExtractorV5: java.io.InputStream createDecryptStream(java.io.InputStream,java.security.Key)>
+		SHA-256: c7bb104a173383e7f97b0ac8ccdb54d9cecfbad1e12125e154933f675819f30c
+		Secure: false
+	Object:
+		Variable: varReplacer2075
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r9, varReplacer2075)
+		Method: <org.apache.tika.parser.hwp.HwpTextExtractorV5: java.security.Key readKey(java.io.InputStream)>
+		SHA-256: e85e1d17d11a6122859774ce43382f449a54643e2fd2e2e61705d32aa2424c2e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>(r0, r1)
+		Method: <org.apache.tika.parser.crypto.TSDParser$OIDNameMapper: java.security.MessageDigest getDigestInstance(java.lang.String,java.lang.String)>
+		SHA-256: cb89caa95b0a2add1a6e23af79a9c78235b2b50bba577ac9356d1d27cc13cc2e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r0)
+		Method: <org.apache.tika.parser.crypto.TSDParser$OIDNameMapper: java.security.MessageDigest getDigestInstance(java.lang.String,java.lang.String)>
+		SHA-256: ea7baa0bc5032e003b66f8f5f6c96b6e7d42e9a6f5d475b988d89aa2a452ca0f
+		Secure: false
+
+Findings in Java Class: org.apache.tika.parser.crypto.TSDParser$OIDNameMapper
+
+	 in Method: java.security.MessageDigest getDigestInstance(java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #cb89caa95b0a2add1a6e23af79a9c78235b2b50bba577ac9356d1d27cc13cc2e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r4
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ea7baa0bc5032e003b66f8f5f6c96b6e7d42e9a6f5d475b988d89aa2a452ca0f)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r3
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #78ea05d11904624fc5922b152f20ce3c4c4d64f057007e431ca6fcb314e6c40c)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return $r6
+
+
+Findings in Java Class: org.apache.tika.parser.hwp.HwpTextExtractorV5
+
+	 in Method: java.io.InputStream createDecryptStream(java.io.InputStream,java.security.Key)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #c7bb104a173383e7f97b0ac8ccdb54d9cecfbad1e12125e154933f675819f30c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r3.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>(r1, r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #c7bb104a173383e7f97b0ac8ccdb54d9cecfbad1e12125e154933f675819f30c)
+			First parameter (with value "AES/ECB/NoPadding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2076)
+
+
+	 in Method: void parseViewText(org.apache.tika.parser.hwp.HwpTextExtractorV5$FileHeader,org.apache.poi.poifs.filesystem.DirectoryNode,org.apache.tika.sax.XHTMLContentHandler)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #ea489dc4254989f6a55c61249c3651216c1bfcb63f847bdc633b50ea32d8a836)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: staticinvoke <org.apache.poi.util.IOUtils: void closeQuietly(java.io.Closeable)>(r50)
+
+
+	 in Method: java.security.Key readKey(java.io.InputStream)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r9, varReplacer2075)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	IncompleteOperationError: 5
+	ConstraintError: 1
+	RequiredPredicateError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 6.656 s
+

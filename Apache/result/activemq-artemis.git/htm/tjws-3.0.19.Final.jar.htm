@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/activemq-artemis.git/tjws-3.0.19.Final.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>4155 lines of code analyzed,
+	in 39 classes, 
+	in 2 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">12</td>
+<td align="right">2.89</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">19</td>
+<td align="right">4.57</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+<td align="right">
+<b>7.46</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">31</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>31</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67500');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67500" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.log(String, Throwable)<br/>At Serve.java:[line 1095]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-1">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 140]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getQueryString()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRemoteUser()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getPathTranslated()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getRemoteHost()Ljava/lang/String;<br/>Tainted source Acme/Serve/CgiServlet.makeEnv(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getServletPath()Ljava/lang/String;<br/>Unknown source javax/servlet/ServletContext.getServerInfo()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getContentType()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getHeaderNames()Ljava/util/Enumeration;<br/>Unknown source Acme/Serve/CgiServlet.makeList(Ljava/util/Vector;)[Ljava/lang/String; parameter 0<br/>Unknown source Acme/Serve/CgiServlet.makeEnv(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source Acme/Serve/CgiServlet.makeEnv(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; parameter 1<br/>Tainted source Acme/Serve/CgiServlet.makeList(Ljava/util/Vector;)[Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getServerName()Ljava/lang/String;<br/>Tainted source javax/servlet/http/HttpServletRequest.getPathInfo()Ljava/lang/String;<br/>Tainted source java/util/Enumeration.nextElement()Ljava/lang/Object;<br/>At CgiServlet.java:[line 92]<br/>At CgiServlet.java:[line 106]<br/>At CgiServlet.java:[line 107]<br/>At CgiServlet.java:[line 108]<br/>At CgiServlet.java:[line 109]<br/>At CgiServlet.java:[line 110]<br/>At CgiServlet.java:[line 111]<br/>At CgiServlet.java:[line 113]<br/>At CgiServlet.java:[line 115]<br/>At CgiServlet.java:[line 116]<br/>At CgiServlet.java:[line 118]<br/>At CgiServlet.java:[line 120]<br/>At CgiServlet.java:[line 122]<br/>At CgiServlet.java:[line 123]<br/>At CgiServlet.java:[line 125]<br/>At CgiServlet.java:[line 127]<br/>At CgiServlet.java:[line 128]<br/>At CgiServlet.java:[line 131]<br/>At CgiServlet.java:[line 132]<br/>At CgiServlet.java:[line 135]<br/>At CgiServlet.java:[line 137]<br/>At CgiServlet.java:[line 267]<br/>At CgiServlet.java:[line 274]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68138');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68138" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class Acme.Serve.Serve$ServeConnection<br/>In method Acme.Serve.Serve$ServeConnection.writeHeaders()<br/>At Serve.java:[line 4063]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68191');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68191" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class Acme.Serve.Serve$ServeConnection<br/>In method Acme.Serve.Serve$ServeConnection.writeHeaders()<br/>At Serve.java:[line 4085]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65930');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65930" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 243]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66029');">
+<td>
+<span class="priority-2">SECHRS</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V might be used to include CRLF characters into HTTP headers</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66029" style="display: none;">
+<a href="#HTTP_RESPONSE_SPLITTING">Bug type HTTP_RESPONSE_SPLITTING (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 248]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68244');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68244" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class Acme.Serve.Serve$ServeConnection<br/>In method Acme.Serve.Serve$ServeConnection.writeHeaders()<br/>At Serve.java:[line 4063]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68298');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68298" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class Acme.Serve.Serve$ServeConnection<br/>In method Acme.Serve.Serve$ServeConnection.writeHeaders()<br/>At Serve.java:[line 4085]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68084');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in Acme.Serve.Serve$AcmeSession.restore(BufferedReader, int, ServletContext, HttpSessionContext)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68084" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class Acme.Serve.Serve$AcmeSession<br/>In method Acme.Serve.Serve$AcmeSession.restore(BufferedReader, int, ServletContext, HttpSessionContext)<br/>At Serve.java:[line 5496]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66128');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66128" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.dispatchPathname(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 84]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/CgiServlet.dispatchPathname(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At CgiServlet.java:[line 79]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66658');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66658" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.dispatchPathname(HttpServletRequest, HttpServletResponse, boolean, String)<br/>At FileServlet.java:[line 184]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getPathTranslated()Ljava/lang/String;<br/>At FileServlet.java:[line 182]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66737');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66737" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.showIdexFile(HttpServletRequest, HttpServletResponse, boolean, String, String)<br/>At FileServlet.java:[line 207]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source Acme/Serve/FileServlet.showIdexFile(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;ZLjava/lang/String;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At FileServlet.java:[line 182]<br/>At FileServlet.java:[line 185]<br/>At FileServlet.java:[line 194]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66841');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66841" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.showIdexFile(HttpServletRequest, HttpServletResponse, boolean, String, String)<br/>At FileServlet.java:[line 215]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/FileServlet.showIdexFile(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;ZLjava/lang/String;Ljava/lang/String;)V parameter 0<br/>Method usage with tainted arguments detected<br/>At FileServlet.java:[line 182]<br/>At FileServlet.java:[line 185]<br/>At FileServlet.java:[line 194]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66945');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66945" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.serveDirectory(HttpServletRequest, HttpServletResponse, boolean, String, File)<br/>At FileServlet.java:[line 425]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;<br/>At FileServlet.java:[line 421]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67554');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67554" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.getPersistentFile()<br/>At Serve.java:[line 628]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source Acme/Serve/Serve.hostName<br/>Unknown source Acme/Serve/Serve.arguments<br/>At Serve.java:[line 627]<br/>At Serve.java:[line 628]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67653');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67653" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.getRealPath(String)<br/>At Serve.java:[line 1169]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/Serve.getRealPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At Serve.java:[line 1148]<br/>At Serve.java:[line 1162]<br/>At Serve.java:[line 1274]<br/>At Serve.java:[line 1335]<br/>At Serve.java:[line 1365]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67777');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67777" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.getResource(String)<br/>At Serve.java:[line 1335]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/Serve.getResource(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Unknown source Acme/Serve/Serve.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source Acme/Serve/Serve.getRealPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Method usage not detected<br/>At Serve.java:[line 1335]<br/>At Serve.java:[line 1365]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67886');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67886" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.getResourcePaths(String)<br/>At Serve.java:[line 1278]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/Serve.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source Acme/Serve/Serve.getRealPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source Acme/Serve/Serve.getResourcePaths(Ljava/lang/String;)Ljava/util/Set; parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>Method usage not detected<br/>At Serve.java:[line 1274]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67381');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67381" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.SSLAcceptor<br/>In method Acme.Serve.SSLAcceptor.init(Map, Map)<br/>At SSLAcceptor.java:[line 160]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/SSLAcceptor.getKeystoreFile()Ljava/lang/String;<br/>Unknown source Acme/Serve/SSLAcceptor.init(Ljava/util/Map;Ljava/util/Map;)V parameter 1<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source Acme/Serve/SSLAcceptor.keystoreFile<br/>Method usage not detected<br/>At SSLAcceptor.java:[line 121]<br/>At SSLAcceptor.java:[line 157]<br/>At SSLAcceptor.java:[line 159]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68514');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68514" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class Acme.Serve.ThrottledOutputStream<br/>In method Acme.Serve.ThrottledOutputStream.parseThrottleFile(String)<br/>At ThrottledOutputStream.java:[line 80]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67985');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67985" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class Acme.Serve.Serve<br/>In method Acme.Serve.Serve.getResourceAsStream(String)<br/>At Serve.java:[line 1365]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source Acme/Serve/Serve.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At Serve.java:[line 1337]<br/>At Serve.java:[line 1365]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66212');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66212" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 243]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66311');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66311" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 248]<br/>Sink method javax/servlet/http/HttpServletResponse.setHeader(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 206]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67024');">
+<td>
+<span class="priority-1">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67024" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.redirectDirectory(HttpServletRequest, HttpServletResponse, String, File)<br/>At FileServlet.java:[line 498]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source Acme/Serve/FileServlet.redirectDirectory(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Ljava/lang/String;Ljava/io/File;)Z parameter 1<br/>Method usage with tainted arguments detected<br/>At FileServlet.java:[line 173]<br/>At FileServlet.java:[line 175]<br/>At FileServlet.java:[line 193]<br/>At FileServlet.java:[line 494]<br/>At FileServlet.java:[line 496]<br/>At Utils.java:[line 684]<br/>At Utils.java:[line 695]<br/>At Utils.java:[line 709]<br/>At Utils.java:[line 718]<br/>At Utils.java:[line 721]<br/>At Utils.java:[line 725]<br/>At Utils.java:[line 728]<br/>At Utils.java:[line 730]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68352');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68352" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class Acme.Serve.SimpleAcceptor<br/>In method Acme.Serve.SimpleAcceptor.init(Map, Map)<br/>At SimpleAcceptor.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68406');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68406" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class Acme.Serve.SimpleAcceptor<br/>In method Acme.Serve.SimpleAcceptor.init(Map, Map)<br/>At SimpleAcceptor.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68460');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68460" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class Acme.Serve.SimpleAcceptor<br/>In method Acme.Serve.SimpleAcceptor.init(Map, Map)<br/>At SimpleAcceptor.java:[line 71]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66410');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setStatus(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66410" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 189]<br/>Sink method javax/servlet/http/HttpServletResponse.setStatus(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Tainted source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 178]<br/>At CgiServlet.java:[line 189]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66529');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.setStatus(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66529" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class Acme.Serve.CgiServlet<br/>In method Acme.Serve.CgiServlet.serveFile(HttpServletRequest, HttpServletResponse, String)<br/>At CgiServlet.java:[line 218]<br/>Sink method javax/servlet/http/HttpServletResponse.setStatus(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source java/util/StringTokenizer.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Tainted source java/io/BufferedReader.readLine()Ljava/lang/String;<br/>Tainted source java/util/StringTokenizer.nextToken()Ljava/lang/String;<br/>At CgiServlet.java:[line 166]<br/>At CgiServlet.java:[line 169]<br/>At CgiServlet.java:[line 206]<br/>At CgiServlet.java:[line 209]<br/>At CgiServlet.java:[line 218]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67228');">
+<td>
+<span class="priority-1">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67228" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.serveDirectory(HttpServletRequest, HttpServletResponse, boolean, String, File)<br/>At FileServlet.java:[line 408]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getRequestURI()Ljava/lang/String;<br/>At FileServlet.java:[line 408]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67307');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67307" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class Acme.Serve.FileServlet<br/>In method Acme.Serve.FileServlet.serveFile(HttpServletRequest, HttpServletResponse, boolean, String, File)<br/>At FileServlet.java:[line 244]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>At FileServlet.java:[line 244]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="HTTPONLY_COOKIE">HTTPONLY_COOKIE: Cookie without the HttpOnly flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>HttpOnly</code> flag set.
+The <code>HttpOnly</code> flag is a directive to the browser to make sure that the cookie can not be red by
+malicious script. When a user is the target of a "Cross-Site Scripting", the attacker would benefit greatly from getting
+the session id for example.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+cookie.setSecure(true);
+cookie.setHttpOnly(true); //HttpOnly flag
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://blog.codinghorror.com/protecting-your-cookies-httponly/">Coding Horror blog: Protecting Your Cookies: HttpOnly</a><br/>
+<a href="https://www.owasp.org/index.php/HttpOnly">OWASP: HttpOnly</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-http-only-flag">Rapid7: Missing HttpOnly Flag From Cookie</a>
+</p>
+
+        
+<h2>
+<a name="HTTP_RESPONSE_SPLITTING">HTTP_RESPONSE_SPLITTING: Potential HTTP Response Splitting</a>
+</h2>
+            
+<p>
+    When an HTTP request contains unexpected <code>CR</code> and <code>LF</code> characters, the server may respond with an output stream
+    that is interpreted as two different HTTP responses (instead of one).
+    An attacker can control the second response and mount attacks such as cross-site scripting and cache poisoning attacks.
+    According to OWASP, the issue has been fixed in virtually all modern Java EE application servers, but it is still better to validate the input.
+    If you are concerned about this risk, you should test on the platform of concern to see
+    if the underlx platform allows for <code>CR</code> or <code>LF</code> characters to be injected into headers.
+    This weakness is reported with low priority because it requires the web container to be vulnerable.
+</p>
+<br/>
+<p>
+<b>Code at risk:</b><br/>
+<pre>String author = request.getParameter(AUTHOR_PARAMETER);
+// ...
+Cookie cookie = new Cookie("author", author);
+response.addCookie(cookie);</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://www.owasp.org/index.php/HTTP_Response_Splitting">OWASP: HTTP Response Splitting</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/113.html">CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')</a>
+    <a href="https://cwe.mitre.org/data/definitions/93.html">CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</a><br/>
+</p>
+
+
+        
+<h2>
+<a name="INSECURE_COOKIE">INSECURE_COOKIE: Cookie without the secure flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>Secure</code> flag set.
+The <code>Secure</code> flag is a directive to the browser to make sure that the cookie is not sent for insecure
+communication (<code>http://</code>).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+cookie.setSecure(true); // Secure flag
+cookie.setHttpOnly(true);
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/614.html">CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315: Cleartext Storage of Sensitive Information in a Cookie</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/311.html">CWE-311: Missing Encryption of Sensitive Data</a><br/>
+<a href="https://www.owasp.org/index.php/SecureFlag">OWASP: Secure Flag</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-secure-flag">Rapid7: Missing Secure Flag From SSL Cookie</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        </body>
+</html>

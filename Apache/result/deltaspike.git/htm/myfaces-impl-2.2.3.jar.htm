@@ -1,0 +1,2707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/deltaspike.git/myfaces-impl-2.2.3.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>70101 lines of code analyzed,
+	in 1299 classes, 
+	in 89 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">9</td>
+<td align="right">0.13</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">111</td>
+<td align="right">1.58</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>120</b>
+</td>
+<td align="right">
+<b>1.71</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">120</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>120</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70256');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70256" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class org.apache.myfaces.renderkit.ErrorPageWriter<br/>In method org.apache.myfaces.renderkit.ErrorPageWriter._writeException(Writer, Throwable)<br/>At ErrorPageWriter.java:[line 710]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.application.ApplicationImpl<br/>In method org.apache.myfaces.application.ApplicationImpl.createMethodBinding(String, Class[])<br/>At ApplicationImpl.java:[line 2001]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/application/ApplicationImpl.createMethodBinding(Ljava/lang/String;[Ljava/lang/Class;)Ljavax/faces/el/MethodBinding; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65625');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65625" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.application.ApplicationImpl<br/>In method org.apache.myfaces.application.ApplicationImpl.createValueBinding(String)<br/>At ApplicationImpl.java:[line 2071]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/application/ApplicationImpl.createValueBinding(Ljava/lang/String;)Ljavax/faces/el/ValueBinding; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.application.ApplicationImpl<br/>In method org.apache.myfaces.application.ApplicationImpl.evaluateExpressionGet(FacesContext, String, Class)<br/>At ApplicationImpl.java:[line 553]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/application/ApplicationImpl.evaluateExpressionGet(Ljavax/faces/context/FacesContext;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65773');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65773" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.application.NavigationHandlerImpl<br/>In method org.apache.myfaces.application.NavigationHandlerImpl.invokeMethodCallNode(FacesContext, MethodCallNode)<br/>At NavigationHandlerImpl.java:[line 872]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source javax/el/MethodExpression.getExpressionString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67228');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67228" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1393]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/config/element/FacesFlowDefinition.getInitializer()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67297');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67297" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1398]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/config/element/FacesFlowDefinition.getFinalizer()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67366');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67366" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1413]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/FacesFlowParameter.getValue()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67435');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67435" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1426]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/config/element/FacesFlowMethodCall.getMethod()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67504');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67504" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1432]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/FacesFlowMethodCall.getDefaultOutcome()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67573');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67573" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1438]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/FacesFlowMethodParameter.getValue()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67642');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67642" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1448]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/FacesFlowParameter.getValue()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67711');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67711" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1472]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/NavigationCase.getFromOutcome()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67780');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67780" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1485]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/NavigationCase.getIf()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67849');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67849" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.configureFlowHandler()<br/>At FacesConfigurator.java:[line 1514]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/NavigationCase.getFromOutcome()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68748');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68748" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.impl.digester.elements.ManagedBeanImpl<br/>In method org.apache.myfaces.config.impl.digester.elements.ManagedBeanImpl.getManagedBeanScopeValueExpression(FacesContext)<br/>At ManagedBeanImpl.java:[line 180]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/impl/digester/elements/ManagedBeanImpl.scope<br/>At ManagedBeanImpl.java:[line 180]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68170');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68170" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.ManagedBeanBuilder<br/>In method org.apache.myfaces.config.ManagedBeanBuilder.initializeList(FacesContext, ListEntries, List)<br/>At ManagedBeanBuilder.java:[line 704]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/ListEntry.getValue()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68239');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68239" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.ManagedBeanBuilder<br/>In method org.apache.myfaces.config.ManagedBeanBuilder.initializeMap(FacesContext, MapEntries, Map)<br/>At ManagedBeanBuilder.java:[line 659]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/MapEntry.getKey()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68308');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68308" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.config.ManagedBeanBuilder<br/>In method org.apache.myfaces.config.ManagedBeanBuilder.initializeMap(FacesContext, MapEntries, Map)<br/>At ManagedBeanBuilder.java:[line 672]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/config/element/MapEntry.getValue()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69456');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69456" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.el.VariableResolverImpl<br/>In method org.apache.myfaces.el.VariableResolverImpl.resolveVariable(FacesContext, String)<br/>At VariableResolverImpl.java:[line 69]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/el/VariableResolverImpl.resolveVariable(Ljavax/faces/context/FacesContext;Ljava/lang/String;)Ljava/lang/Object; parameter 0<br/>Method usage not detected<br/>At VariableResolverImpl.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69698');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69698" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.flow.builder.FlowBuilderImpl<br/>In method org.apache.myfaces.flow.builder.FlowBuilderImpl.createMethodExpression(String)<br/>At FlowBuilderImpl.java:[line 165]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/flow/builder/FlowBuilderImpl.createMethodExpression(Ljava/lang/String;)Ljavax/el/MethodExpression; parameter 0<br/>Method usage not detected<br/>At FlowBuilderImpl.java:[line 108]<br/>At FlowBuilderImpl.java:[line 122]<br/>At MethodCallBuilderImpl.java:[line 58]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69802');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69802" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.flow.builder.FlowBuilderImpl<br/>In method org.apache.myfaces.flow.builder.FlowBuilderImpl.createMethodExpression(String, Class[])<br/>At FlowBuilderImpl.java:[line 172]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/flow/builder/FlowBuilderImpl.createMethodExpression(Ljava/lang/String;[Ljava/lang/Class;)Ljavax/el/MethodExpression; parameter 1<br/>Method usage not detected<br/>At MethodCallBuilderImpl.java:[line 66]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69886');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69886" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.flow.builder.FlowBuilderImpl<br/>In method org.apache.myfaces.flow.builder.FlowBuilderImpl.createValueExpression(String)<br/>At FlowBuilderImpl.java:[line 179]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/flow/builder/FlowBuilderImpl.createValueExpression(Ljava/lang/String;)Ljavax/el/ValueExpression; parameter 0<br/>Method usage not detected<br/>At FlowBuilderImpl.java:[line 136]<br/>At FlowCallBuilderImpl.java:[line 56]<br/>At FlowCallBuilderImpl.java:[line 64]<br/>At FlowCallBuilderImpl.java:[line 79]<br/>At MethodCallBuilderImpl.java:[line 84]<br/>At ReturnBuilderImpl.java:[line 55]<br/>At SwitchBuilderImpl.java:[line 65]<br/>At SwitchCaseBuilderImpl.java:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69540');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69540" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.flow.NavigationCaseImpl<br/>In method org.apache.myfaces.flow.NavigationCaseImpl._getConditionExpression(FacesContext)<br/>At NavigationCaseImpl.java:[line 295]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/flow/NavigationCaseImpl._condition<br/>At NavigationCaseImpl.java:[line 295]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69619');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69619" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.flow.NavigationCaseImpl<br/>In method org.apache.myfaces.flow.NavigationCaseImpl._getToViewIdExpression(FacesContext)<br/>At NavigationCaseImpl.java:[line 321]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/flow/NavigationCaseImpl._toViewId<br/>At NavigationCaseImpl.java:[line 321]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71005');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71005" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.shared.resource.ValueExpressionFilterInputStream<br/>In method org.apache.myfaces.shared.resource.ValueExpressionFilterInputStream.read()<br/>At ValueExpressionFilterInputStream.java:[line 123]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/shared/resource/ValueExpressionFilterInputStream.convertToExpression(Ljava/util/List;)Ljava/lang/String;<br/>At ValueExpressionFilterInputStream.java:[line 123]<br/>At ValueExpressionFilterInputStream.java:[line 194]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71094');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71094" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.shared.taglib.core.SelectItemTagBase<br/>In method org.apache.myfaces.shared.taglib.core.SelectItemTagBase.setItemValue(String)<br/>At SelectItemTagBase.java:[line 79]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/shared/taglib/core/SelectItemTagBase.setItemValue(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71446');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71446" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.TagUtils<br/>In method org.apache.myfaces.shared.util.TagUtils.getValueExpression(String, Class)<br/>At TagUtils.java:[line 57]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/shared/util/TagUtils.getValueExpression(Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73516');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73516" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.el.ELText<br/>In method org.apache.myfaces.view.facelets.el.ELText.parse(ExpressionFactory, ELContext, String)<br/>At ELText.java:[line 520]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>At ELText.java:[line 520]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73590');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73590" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.el.ELText<br/>In method org.apache.myfaces.view.facelets.el.ELText.parseAsArray(ExpressionFactory, ELContext, String)<br/>At ELText.java:[line 605]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>At ELText.java:[line 605]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73664');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73664" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.el.ELText$ELCacheableTextVariable<br/>In method org.apache.myfaces.view.facelets.el.ELText$ELCacheableTextVariable.apply(ExpressionFactory, ELContext)<br/>At ELText.java:[line 280]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/el/ValueExpression.getExpressionString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73733');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73733" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.el.ELText$ELTextVariable<br/>In method org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.apply(ExpressionFactory, ELContext)<br/>At ELText.java:[line 194]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/el/ValueExpression.getExpressionString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71946');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71946" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1355]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1191]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72025');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72025" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1360]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1191]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72104');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72104" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1488]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1253]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72183');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72183" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1492]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionListenerMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1253]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72262');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72262" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1331]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1184]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72341');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72341" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyActionMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1440]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyActionMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1241]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72420');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72420" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValidatorMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1385]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValidatorMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1198]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72499');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72499" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValidatorMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1535]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValidatorMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1265]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72578');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72578" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1409]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1205]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72657');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72657" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionEL(FacesContext, ELContext, UIComponent, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1414]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionEL(Ljavax/faces/context/FacesContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1205]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72736');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72736" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1580]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1277]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72815');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72815" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionTarget(FacesContext, FaceletCompositionContext, ELContext, UIComponent, UIComponent, String, String, String, ValueExpression, boolean)<br/>At FaceletViewDeclarationLanguage.java:[line 1585]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/FaceletViewDeclarationLanguage.applyValueChangeListenerMethodExpressionTarget(Ljavax/faces/context/FacesContext;Lorg/apache/myfaces/view/facelets/FaceletCompositionContext;Ljavax/el/ELContext;Ljavax/faces/component/UIComponent;Ljavax/faces/component/UIComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljavax/el/ValueExpression;Z)V parameter 2<br/>At FaceletViewDeclarationLanguage.java:[line 1277]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72894');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72894" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage<br/>In method org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.retargetMethodExpressions(FacesContext, UIComponent)<br/>At FaceletViewDeclarationLanguage.java:[line 1300]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source javax/el/ValueExpression.getExpressionString()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74217');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74217" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.tag.jstl.core.LegacySetHandler<br/>In method org.apache.myfaces.view.facelets.tag.jstl.core.LegacySetHandler.apply(FaceletContext, UIComponent)<br/>At LegacySetHandler.java:[line 132]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/faces/view/facelets/TagAttribute.getValue(Ljavax/faces/view/facelets/FaceletContext;)Ljava/lang/String;<br/>At LegacySetHandler.java:[line 124]<br/>At LegacySetHandler.java:[line 128]<br/>At LegacySetHandler.java:[line 130]<br/>At LegacySetHandler.java:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74326');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74326" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.tag.jstl.core.SetHandler<br/>In method org.apache.myfaces.view.facelets.tag.jstl.core.SetHandler.apply(FaceletContext, UIComponent)<br/>At SetHandler.java:[line 134]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source javax/faces/view/facelets/TagAttribute.getValue(Ljavax/faces/view/facelets/FaceletContext;)Ljava/lang/String;<br/>At SetHandler.java:[line 126]<br/>At SetHandler.java:[line 130]<br/>At SetHandler.java:[line 132]<br/>At SetHandler.java:[line 134]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74059');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74059" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.tag.TagAttributeImpl<br/>In method org.apache.myfaces.view.facelets.tag.TagAttributeImpl.getMethodExpression(FaceletContext, Class, Class[])<br/>At TagAttributeImpl.java:[line 272]<br/>Sink method javax/el/ExpressionFactory.createMethodExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/Class;)Ljavax/el/MethodExpression;<br/>Sink parameter 2<br/>Unknown source org/apache/myfaces/view/facelets/tag/TagAttributeImpl.value<br/>At TagAttributeImpl.java:[line 272]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74138');">
+<td>
+<span class="priority-2">SECEL</span>
+</td>
+<td>This use of javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression; could be vulnerable to code injection (Expression Language)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74138" style="display: none;">
+<a href="#EL_INJECTION">Bug type EL_INJECTION (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.tag.TagAttributeImpl<br/>In method org.apache.myfaces.view.facelets.tag.TagAttributeImpl.getValueExpression(FaceletContext, Class)<br/>At TagAttributeImpl.java:[line 486]<br/>Sink method javax/el/ExpressionFactory.createValueExpression(Ljavax/el/ELContext;Ljava/lang/String;Ljava/lang/Class;)Ljavax/el/ValueExpression;<br/>Sink parameter 1<br/>Unknown source org/apache/myfaces/view/facelets/tag/TagAttributeImpl.value<br/>At TagAttributeImpl.java:[line 486]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68901');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68901" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.addResponseCookie(String, String, Map)<br/>At ServletExternalContextImpl.java:[line 709]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70040');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70040" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.lifecycle.ClientConfig<br/>In method org.apache.myfaces.lifecycle.ClientConfig.setJavaScriptEnabled(boolean)<br/>At ClientConfig.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70606');">
+<td>
+<span class="priority-2">SECHOC</span>
+</td>
+<td>Cookie without the HttpOnly flag could be read by a malicious script in the browser</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70606" style="display: none;">
+<a href="#HTTPONLY_COOKIE">Bug type HTTPONLY_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.shared.context.flash.FlashImpl<br/>In method org.apache.myfaces.shared.context.flash.FlashImpl._createFlashCookie(String, String, ExternalContext)<br/>At FlashImpl.java:[line 1063]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68954');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68954" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.addResponseCookie(String, String, Map)<br/>At ServletExternalContextImpl.java:[line 709]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70093');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70093" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.lifecycle.ClientConfig<br/>In method org.apache.myfaces.lifecycle.ClientConfig.setJavaScriptEnabled(boolean)<br/>At ClientConfig.java:[line 108]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70659');">
+<td>
+<span class="priority-2">SECIC</span>
+</td>
+<td>Cookie without the secure flag could be sent in clear text if a HTTP URL is visited</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70659" style="display: none;">
+<a href="#INSECURE_COOKIE">Bug type INSECURE_COOKIE (click for details)</a>
+<br/>In class org.apache.myfaces.shared.context.flash.FlashImpl<br/>In method org.apache.myfaces.shared.context.flash.FlashImpl._createFlashCookie(String, String, ExternalContext)<br/>At FlashImpl.java:[line 1063]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66215');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl.deserializeView(Object)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66215" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl<br/>In method org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl.deserializeView(Object)<br/>At ServerSideStateCacheImpl.java:[line 604]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66269');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl$1.run()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66269" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl$1<br/>In method org.apache.myfaces.application.viewstate.ServerSideStateCacheImpl$1.run()<br/>At ServerSideStateCacheImpl.java:[line 597]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71168');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.myfaces.shared.util.StateUtils.getAsObject(byte[], ExternalContext)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71168" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.StateUtils<br/>In method org.apache.myfaces.shared.util.StateUtils.getAsObject(byte[], ExternalContext)<br/>At StateUtils.java:[line 585]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71392');">
+<td>
+<span class="priority-1">SECOBDES</span>
+</td>
+<td>Object deserialization is used in org.apache.myfaces.shared.util.StateUtils$1.run()</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71392" style="display: none;">
+<a href="#OBJECT_DESERIALIZATION">Bug type OBJECT_DESERIALIZATION (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.StateUtils$1<br/>In method org.apache.myfaces.shared.util.StateUtils$1.run()<br/>At StateUtils.java:[line 571]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66099');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66099" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.application.viewstate.RandomCsrfSessionTokenFactory<br/>In method new org.apache.myfaces.application.viewstate.RandomCsrfSessionTokenFactory(FacesContext)<br/>At RandomCsrfSessionTokenFactory.java:[line 45]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66157');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66157" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.application.viewstate.RandomKeyFactory<br/>In method new org.apache.myfaces.application.viewstate.RandomKeyFactory(FacesContext)<br/>At RandomKeyFactory.java:[line 44]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66323');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66323" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.cdi.view.ViewScopeBeanHolder<br/>In method org.apache.myfaces.cdi.view.ViewScopeBeanHolder.&lt;static initializer for ViewScopeBeanHolder&gt;()<br/>At ViewScopeBeanHolder.java:[line 54]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71222');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71222" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.StateUtils<br/>In method org.apache.myfaces.shared.util.StateUtils.findMacSecret(String, String)<br/>At StateUtils.java:[line 1054]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71280');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71280" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.StateUtils<br/>In method org.apache.myfaces.shared.util.StateUtils.findSecret(String, String)<br/>At StateUtils.java:[line 899]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71888');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71888" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class org.apache.myfaces.util.ThreadsafeXorShiftRandom<br/>In method org.apache.myfaces.util.ThreadsafeXorShiftRandom.&lt;static initializer for ThreadsafeXorShiftRandom&gt;()<br/>At ThreadsafeXorShiftRandom.java:[line 39]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68575');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68575" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.config.annotation._PackageInfo<br/>In method org.apache.myfaces.config.annotation._PackageInfo.getClasses(List, String)<br/>At _PackageInfo.java:[line 174]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/net/URLConnection.getURL()Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At _PackageInfo.java:[line 174]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67918');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67918" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.getResourceLastModified(URL)<br/>At FacesConfigurator.java:[line 305]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/FacesConfigurator.getResourceLastModified(Ljava/net/URL;)J parameter 0<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>At FacesConfigurator.java:[line 288]<br/>At FacesConfigurator.java:[line 303]<br/>At FacesConfigurator.java:[line 305]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70310');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70310" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.resource.TempDirFileCacheContractResourceLoader<br/>In method org.apache.myfaces.resource.TempDirFileCacheContractResourceLoader.deleteDir(File)<br/>At TempDirFileCacheContractResourceLoader.java:[line 109]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70379');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70379" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.resource.TempDirFileCacheContractResourceLoader<br/>In method org.apache.myfaces.resource.TempDirFileCacheContractResourceLoader.getTemporalFile(ResourceMeta)<br/>At TempDirFileCacheContractResourceLoader.java:[line 214]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/shared/resource/ResourceMeta.getResourceIdentifier()Ljava/lang/String;<br/>At TempDirFileCacheContractResourceLoader.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70458');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70458" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.resource.TempDirFileCacheResourceLoader<br/>In method org.apache.myfaces.resource.TempDirFileCacheResourceLoader.deleteDir(File)<br/>At TempDirFileCacheResourceLoader.java:[line 149]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.list()[Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70527');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70527" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.resource.TempDirFileCacheResourceLoader<br/>In method org.apache.myfaces.resource.TempDirFileCacheResourceLoader.getTemporalFile(ResourceMeta)<br/>At TempDirFileCacheResourceLoader.java:[line 254]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/shared/resource/ResourceMeta.getResourceIdentifier()Ljava/lang/String;<br/>At TempDirFileCacheResourceLoader.java:[line 254]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70713');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70713" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.shared.resource.ResourceLoaderUtils<br/>In method org.apache.myfaces.shared.resource.ResourceLoaderUtils.getResourceLastModified(URL)<br/>At ResourceLoaderUtils.java:[line 85]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/shared/resource/ResourceLoaderUtils.getResourceLastModified(Ljava/net/URL;)J parameter 0<br/>Unknown source java/net/URL.toExternalForm()Ljava/lang/String;<br/>At ResourceImpl.java:[line 170]<br/>At ResourceImpl.java:[line 228]<br/>At ResourceImpl.java:[line 262]<br/>At ResourceLoaderUtils.java:[line 83]<br/>At ResourceLoaderUtils.java:[line 85]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71520');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71520" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.servlet.SourceCodeServlet<br/>In method org.apache.myfaces.shared.util.servlet.SourceCodeServlet.doGet(HttpServletRequest, HttpServletResponse)<br/>At SourceCodeServlet.java:[line 58]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source javax/servlet/http/HttpServletRequest.getServletPath()Ljava/lang/String;<br/>Tainted source javax/servlet/ServletContext.getRealPath(Ljava/lang/String;)Ljava/lang/String;<br/>At SourceCodeServlet.java:[line 37]<br/>At SourceCodeServlet.java:[line 42]<br/>At SourceCodeServlet.java:[line 43]<br/>At SourceCodeServlet.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69008');">
+<td>
+<span class="priority-2">SECSFDR</span>
+</td>
+<td>RequestDispatcher populated with user controlled parameters</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69008" style="display: none;">
+<a href="#REQUESTDISPATCHER_FILE_DISCLOSURE">Bug type REQUESTDISPATCHER_FILE_DISCLOSURE (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.dispatch(String)<br/>At ServletExternalContextImpl.java:[line 403]<br/>Sink method javax/servlet/RequestDispatcher.forward(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V<br/>Sink parameter 2<br/>Unknown source javax/servlet/ServletRequest.getRequestDispatcher(Ljava/lang/String;)Ljavax/servlet/RequestDispatcher;<br/>Unknown source org/apache/myfaces/context/servlet/ServletExternalContextImpl.dispatch(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ServletExternalContextImpl.java:[line 391]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68377');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68377" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.annotation.DefaultAnnotationProvider<br/>In method org.apache.myfaces.config.annotation.DefaultAnnotationProvider.getJarFile(URL)<br/>At DefaultAnnotationProvider.java:[line 674]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/annotation/DefaultAnnotationProvider.getJarFile(Ljava/net/URL;)Ljava/util/jar/JarFile; parameter 0<br/>At DefaultAnnotationProvider.java:[line 190]<br/>At DefaultAnnotationProvider.java:[line 283]<br/>At DefaultAnnotationProvider.java:[line 287]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68476');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68476" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.annotation.DefaultAnnotationProvider<br/>In method org.apache.myfaces.config.annotation.DefaultAnnotationProvider.packageClasses(ExternalContext, String)<br/>At DefaultAnnotationProvider.java:[line 413]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source javax/faces/context/ExternalContext.getResource(Ljava/lang/String;)Ljava/net/URL;<br/>Unknown source java/net/URL.toString()Ljava/lang/String;<br/>At DefaultAnnotationProvider.java:[line 411]<br/>At DefaultAnnotationProvider.java:[line 412]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66381');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66381" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.getFacesConfigVersion(URL)<br/>At ConfigFilesXmlValidationUtils.java:[line 269]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/ConfigFilesXmlValidationUtils.getFacesConfigVersion(Ljava/net/URL;)Ljava/lang/String; parameter 0<br/>At DefaultFacesConfigurationProvider.java:[line 314]<br/>At DefaultFacesConfigurationProvider.java:[line 318]<br/>At DefaultFacesConfigurationProvider.java:[line 360]<br/>At DefaultFacesConfigurationProvider.java:[line 398]<br/>At DefaultFacesConfigurationProvider.java:[line 465]<br/>At DefaultFacesConfigurationProvider.java:[line 612]<br/>At DefaultFacesConfigurationProvider.java:[line 638]<br/>At DefaultFacesConfigurationProvider.java:[line 664]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66530');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66530" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.isTaglibDocument20OrLater(URL)<br/>At ConfigFilesXmlValidationUtils.java:[line 443]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/ConfigFilesXmlValidationUtils.isTaglibDocument20OrLater(Ljava/net/URL;)Z parameter 0<br/>At ConfigFilesXmlValidationUtils.java:[line 412]<br/>At DefaultFacesConfigurationProvider.java:[line 789]<br/>At DefaultFacesConfigurationProvider.java:[line 815]<br/>At DefaultFacesConfigurationProvider.java:[line 819]<br/>At TagLibraryConfigUnmarshallerImpl.java:[line 70]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66649');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66649" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.validateFaceletTagLibFile(URL, ExternalContext, String)<br/>At ConfigFilesXmlValidationUtils.java:[line 385]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/ConfigFilesXmlValidationUtils.validateFaceletTagLibFile(Ljava/net/URL;Ljavax/faces/context/ExternalContext;Ljava/lang/String;)V parameter 2<br/>At DefaultFacesConfigurationProvider.java:[line 789]<br/>At DefaultFacesConfigurationProvider.java:[line 815]<br/>At DefaultFacesConfigurationProvider.java:[line 819]<br/>At TagLibraryConfigUnmarshallerImpl.java:[line 74]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66758');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66758" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.validateFacesConfigFile(URL, ExternalContext, String)<br/>At ConfigFilesXmlValidationUtils.java:[line 219]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/ConfigFilesXmlValidationUtils.validateFacesConfigFile(Ljava/net/URL;Ljavax/faces/context/ExternalContext;Ljava/lang/String;)V parameter 2<br/>At DefaultFacesConfigurationProvider.java:[line 314]<br/>At DefaultFacesConfigurationProvider.java:[line 318]<br/>At DefaultFacesConfigurationProvider.java:[line 360]<br/>At DefaultFacesConfigurationProvider.java:[line 398]<br/>At DefaultFacesConfigurationProvider.java:[line 468]<br/>At DefaultFacesConfigurationProvider.java:[line 612]<br/>At DefaultFacesConfigurationProvider.java:[line 638]<br/>At DefaultFacesConfigurationProvider.java:[line 664]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67023');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67023" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.DefaultFacesConfigurationProvider<br/>In method org.apache.myfaces.config.DefaultFacesConfigurationProvider.openStreamWithoutCache(URL)<br/>At DefaultFacesConfigurationProvider.java:[line 427]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/DefaultFacesConfigurationProvider.openStreamWithoutCache(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>At DefaultFacesConfigurationProvider.java:[line 314]<br/>At DefaultFacesConfigurationProvider.java:[line 323]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68022');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68022" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.getResourceLastModified(URL)<br/>At FacesConfigurator.java:[line 311]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/FacesConfigurator.getResourceLastModified(Ljava/net/URL;)J parameter 0<br/>At FacesConfigurator.java:[line 288]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68101');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68101" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.FacesConfigurator<br/>In method org.apache.myfaces.config.FacesConfigurator.getResourceLastModified(URLConnection)<br/>At FacesConfigurator.java:[line 332]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/JarURLConnection.getJarFileURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68659');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68659" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.impl.FacesConfigEntityResolver<br/>In method org.apache.myfaces.config.impl.FacesConfigEntityResolver.resolveEntity(String, String)<br/>At FacesConfigEntityResolver.java:[line 82]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/URL.&lt;init&gt;(Ljava/lang/String;)V<br/>Unknown source org/apache/myfaces/config/impl/FacesConfigEntityResolver.resolveEntity(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource; parameter 0<br/>Method usage not detected<br/>At FacesConfigEntityResolver.java:[line 81]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68827');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68827" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.config.util.JarUtils<br/>In method org.apache.myfaces.config.util.JarUtils.getJarFile(URL)<br/>At JarUtils.java:[line 36]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/config/util/JarUtils.getJarFile(Ljava/net/URL;)Ljava/util/jar/JarFile; parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71761');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71761" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.shared_impl.webapp.webxml.WebXmlParser<br/>In method org.apache.myfaces.shared_impl.webapp.webxml.WebXmlParser.getWebXmlLastModified(ExternalContext)<br/>At WebXmlParser.java:[line 128]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source javax/faces/context/ExternalContext.getResource(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70837');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70837" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.shared.resource.ResourceLoaderUtils<br/>In method org.apache.myfaces.shared.resource.ResourceLoaderUtils.getResourceLastModified(URL)<br/>At ResourceLoaderUtils.java:[line 91]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/shared/resource/ResourceLoaderUtils.getResourceLastModified(Ljava/net/URL;)J parameter 0<br/>At ResourceImpl.java:[line 170]<br/>At ResourceImpl.java:[line 228]<br/>At ResourceImpl.java:[line 262]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70936');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70936" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.shared.resource.ResourceLoaderUtils<br/>In method org.apache.myfaces.shared.resource.ResourceLoaderUtils.getResourceLastModified(URLConnection)<br/>At ResourceLoaderUtils.java:[line 112]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source java/net/JarURLConnection.getJarFileURL()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71634');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71634" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.shared.webapp.webxml.WebXmlParser<br/>In method org.apache.myfaces.shared.webapp.webxml.WebXmlParser.getWebXmlLastModified(ExternalContext)<br/>At WebXmlParser.java:[line 124]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source javax/faces/context/ExternalContext.getResource(Ljava/lang/String;)Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72963');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72963" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompile(URL, String)<br/>At SAXCompiler.java:[line 743]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/compiler/SAXCompiler.doCompile(Ljava/net/URL;Ljava/lang/String;)Ljavax/faces/view/facelets/FaceletHandler; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73037');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73037" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompileCompositeComponentMetadata(URL, String)<br/>At SAXCompiler.java:[line 848]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/compiler/SAXCompiler.doCompileCompositeComponentMetadata(Ljava/net/URL;Ljava/lang/String;)Ljavax/faces/view/facelets/FaceletHandler; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73111');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73111" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompileViewMetadata(URL, String)<br/>At SAXCompiler.java:[line 780]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/compiler/SAXCompiler.doCompileViewMetadata(Ljava/net/URL;Ljava/lang/String;)Ljavax/faces/view/facelets/FaceletHandler; parameter 1<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73359');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73359" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.TagLibraryConfigUnmarshallerImpl<br/>In method org.apache.myfaces.view.facelets.compiler.TagLibraryConfigUnmarshallerImpl.create(ExternalContext, URL)<br/>At TagLibraryConfigUnmarshallerImpl.java:[line 81]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/compiler/TagLibraryConfigUnmarshallerImpl.create(Ljavax/faces/context/ExternalContext;Ljava/net/URL;)Lorg/apache/myfaces/config/element/facelets/FaceletTagLibrary; parameter 0<br/>At DefaultFacesConfigurationProvider.java:[line 789]<br/>At DefaultFacesConfigurationProvider.java:[line 815]<br/>At DefaultFacesConfigurationProvider.java:[line 819]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73802');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73802" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.impl.CacheELFaceletCacheImpl<br/>In method org.apache.myfaces.view.facelets.impl.CacheELFaceletCacheImpl.needsToBeRefreshed(DefaultFacelet)<br/>At CacheELFaceletCacheImpl.java:[line 246]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/impl/DefaultFacelet.getSource()Ljava/net/URL;<br/>Unknown source org/apache/myfaces/view/facelets/impl/DefaultFacelet._src<br/>At CacheELFaceletCacheImpl.java:[line 246]<br/>At DefaultFacelet.java:[line 489]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73896');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73896" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.impl.DefaultFaceletFactory<br/>In method org.apache.myfaces.view.facelets.impl.DefaultFaceletFactory.needsToBeRefreshed(DefaultFacelet)<br/>At DefaultFaceletFactory.java:[line 346]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/impl/DefaultFacelet.getSource()Ljava/net/URL;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73965');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73965" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.impl.FaceletCacheImpl<br/>In method org.apache.myfaces.view.facelets.impl.FaceletCacheImpl.needsToBeRefreshed(DefaultFacelet)<br/>At FaceletCacheImpl.java:[line 159]<br/>Sink method java/net/URL.openConnection()Ljava/net/URLConnection;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/impl/DefaultFacelet.getSource()Ljava/net/URL;<br/>Unknown source org/apache/myfaces/view/facelets/impl/DefaultFacelet._src<br/>At DefaultFacelet.java:[line 489]<br/>At FaceletCacheImpl.java:[line 159]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74544');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74544" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.util.Classpath<br/>In method org.apache.myfaces.view.facelets.util.Classpath._getInputStream(URL)<br/>At Classpath.java:[line 277]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/facelets/util/Classpath._getInputStream(Ljava/net/URL;)Ljava/io/InputStream; parameter 0<br/>At Classpath.java:[line 117]<br/>At Classpath.java:[line 180]<br/>At Classpath.java:[line 207]<br/>At Classpath.java:[line 226]<br/>At Classpath.java:[line 233]<br/>At Classpath.java:[line 239]<br/>At Classpath.java:[line 241]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69096');">
+<td>
+<span class="priority-2">SECUR</span>
+</td>
+<td>The following redirection could be used by an attacker to redirect users to a phishing website.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69096" style="display: none;">
+<a href="#UNVALIDATED_REDIRECT">Bug type UNVALIDATED_REDIRECT (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.redirect(String)<br/>At ServletExternalContextImpl.java:[line 499]<br/>Sink method javax/servlet/http/HttpServletResponse.sendRedirect(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/context/servlet/ServletExternalContextImpl.redirect(Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69170');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69170" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.encodeActionURL(String)<br/>At ServletExternalContextImpl.java:[line 349]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69223');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69223" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.encodePartialActionURL(String)<br/>At ServletExternalContextImpl.java:[line 379]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69276');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69276" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.encodeRedirectURL(String, Map)<br/>At ServletExternalContextImpl.java:[line 385]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69329');">
+<td>
+<span class="priority-1">SECURLR</span>
+</td>
+<td>Method rewriting session ID into the URL</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69329" style="display: none;">
+<a href="#URL_REWRITING">Bug type URL_REWRITING (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.encodeResourceURL(String)<br/>At ServletExternalContextImpl.java:[line 365]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65951');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65951" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.application.jsp.ServletViewResponseWrapper<br/>In method org.apache.myfaces.application.jsp.ServletViewResponseWrapper.sendError(int, String)<br/>At ServletViewResponseWrapper.java:[line 62]<br/>Sink method javax/servlet/http/HttpServletResponseWrapper.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/application/jsp/ServletViewResponseWrapper.sendError(ILjava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66025');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponseWrapper.setStatus(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66025" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.application.jsp.ServletViewResponseWrapper<br/>In method org.apache.myfaces.application.jsp.ServletViewResponseWrapper.setStatus(int, String)<br/>At ServletViewResponseWrapper.java:[line 76]<br/>Sink method javax/servlet/http/HttpServletResponseWrapper.setStatus(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/application/jsp/ServletViewResponseWrapper.setStatus(ILjava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65842');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65842" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.application.ViewHandlerImpl<br/>In method org.apache.myfaces.application.ViewHandlerImpl.sendSourceNotFound(FacesContext, String)<br/>At ViewHandlerImpl.java:[line 535]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/application/ViewHandlerImpl.sendSourceNotFound(Ljavax/faces/context/FacesContext;Ljava/lang/String;)V parameter 0<br/>At ViewHandlerImpl.java:[line 109]<br/>At ViewHandlerImpl.java:[line 126]<br/>At ViewHandlerImpl.java:[line 259]<br/>At ViewHandlerImpl.java:[line 332]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69382');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69382" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.context.servlet.ServletExternalContextImpl<br/>In method org.apache.myfaces.context.servlet.ServletExternalContextImpl.responseSendError(int, String)<br/>At ServletExternalContextImpl.java:[line 541]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/context/servlet/ServletExternalContextImpl.responseSendError(ILjava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70147');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70147" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.lifecycle.RestoreViewExecutor<br/>In method org.apache.myfaces.lifecycle.RestoreViewExecutor.sendSourceNotFound(FacesContext, String)<br/>At RestoreViewExecutor.java:[line 578]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/lifecycle/RestoreViewExecutor.sendSourceNotFound(Ljavax/faces/context/FacesContext;Ljava/lang/String;)V parameter 0<br/>At RestoreViewExecutor.java:[line 152]<br/>At RestoreViewExecutor.java:[line 157]<br/>At RestoreViewExecutor.java:[line 227]<br/>At RestoreViewExecutor.java:[line 232]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N74435');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of java/io/PrintWriter.write(Ljava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N74435" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.tag.ui.UIDebug<br/>In method org.apache.myfaces.view.facelets.tag.ui.UIDebug.debugRequest(FacesContext)<br/>At UIDebug.java:[line 197]<br/>Sink method java/io/PrintWriter.write(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source javax/faces/context/ExternalContext.getSessionMap()Ljava/util/Map;<br/>Unknown source java/util/Map.get(Ljava/lang/Object;)Ljava/lang/Object;<br/>Unknown source org/apache/myfaces/view/facelets/tag/ui/UIDebug.fetchDebugOutput(Ljavax/faces/context/FacesContext;Ljava/lang/String;)Ljava/lang/String;<br/>At UIDebug.java:[line 173]<br/>At UIDebug.java:[line 176]<br/>At UIDebug.java:[line 193]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N74683');">
+<td>
+<span class="priority-2">SECXSS2</span>
+</td>
+<td>This use of javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V could be vulnerable to XSS in the Servlet</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N74683" style="display: none;">
+<a href="#XSS_SERVLET">Bug type XSS_SERVLET (click for details)</a>
+<br/>In class org.apache.myfaces.view.jsp.JspViewDeclarationLanguage<br/>In method org.apache.myfaces.view.jsp.JspViewDeclarationLanguage.sendSourceNotFound(FacesContext, String)<br/>At JspViewDeclarationLanguage.java:[line 228]<br/>Sink method javax/servlet/http/HttpServletResponse.sendError(ILjava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/myfaces/view/jsp/JspViewDeclarationLanguage.sendSourceNotFound(Ljavax/faces/context/FacesContext;Ljava/lang/String;)V parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71830');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71830" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.myfaces.shared_impl.webapp.webxml.WebXmlParser<br/>In method org.apache.myfaces.shared_impl.webapp.webxml.WebXmlParser.parse()<br/>At WebXmlParser.java:[line 101]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71703');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71703" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class org.apache.myfaces.shared.webapp.webxml.WebXmlParser<br/>In method org.apache.myfaces.shared.webapp.webxml.WebXmlParser.parse()<br/>At WebXmlParser.java:[line 97]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66907');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66907" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.getFacesConfigVersion(URL)<br/>At ConfigFilesXmlValidationUtils.java:[line 275]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66965');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66965" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.config.ConfigFilesXmlValidationUtils<br/>In method org.apache.myfaces.config.ConfigFilesXmlValidationUtils.isTaglibDocument20OrLater(URL)<br/>At ConfigFilesXmlValidationUtils.java:[line 449]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73185');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73185" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompile(URL, String)<br/>At SAXCompiler.java:[line 748]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73243');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73243" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompileCompositeComponentMetadata(URL, String)<br/>At SAXCompiler.java:[line 853]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73301');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73301" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.SAXCompiler<br/>In method org.apache.myfaces.view.facelets.compiler.SAXCompiler.doCompileViewMetadata(URL, String)<br/>At SAXCompiler.java:[line 815]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73458');">
+<td>
+<span class="priority-2">SECXXESAX</span>
+</td>
+<td>The use of SAXParser.parse(...) (SAXParser) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73458" style="display: none;">
+<a href="#XXE_SAXPARSER">Bug type XXE_SAXPARSER (click for details)</a>
+<br/>In class org.apache.myfaces.view.facelets.compiler.TagLibraryConfigUnmarshallerImpl<br/>In method org.apache.myfaces.view.facelets.compiler.TagLibraryConfigUnmarshallerImpl.create(ExternalContext, URL)<br/>At TagLibraryConfigUnmarshallerImpl.java:[line 84]<br/>Value SAXParser.parse(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67112');">
+<td>
+<span class="priority-2">SECXXETFDTD</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) (TransformerFactory) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67112" style="display: none;">
+<a href="#XXE_DTD_TRANSFORM_FACTORY">Bug type XXE_DTD_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.myfaces.config.DefaultFacesConfigurationProvider<br/>In method org.apache.myfaces.config.DefaultFacesConfigurationProvider.getApplicationConfigurationResourceDocumentPopulatorFacesConfig(ExternalContext)<br/>At DefaultFacesConfigurationProvider.java:[line 521]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67170');">
+<td>
+<span class="priority-2">SECXXETFXSLT</span>
+</td>
+<td>The use of TransformerFactory.newInstance(...) is vulnerable to XSLT External Entity attacks</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67170" style="display: none;">
+<a href="#XXE_XSLT_TRANSFORM_FACTORY">Bug type XXE_XSLT_TRANSFORM_FACTORY (click for details)</a>
+<br/>In class org.apache.myfaces.config.DefaultFacesConfigurationProvider<br/>In method org.apache.myfaces.config.DefaultFacesConfigurationProvider.getApplicationConfigurationResourceDocumentPopulatorFacesConfig(ExternalContext)<br/>At DefaultFacesConfigurationProvider.java:[line 521]<br/>Value TransformerFactory.newInstance(...)</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71338');">
+<td>
+<span class="priority-2">STAIV</span>
+</td>
+<td>The initialization vector (IV) is not properly generated</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71338" style="display: none;">
+<a href="#STATIC_IV">Bug type STATIC_IV (click for details)</a>
+<br/>In class org.apache.myfaces.shared.util.StateUtils<br/>In method org.apache.myfaces.shared.util.StateUtils.encrypt(byte[], ExternalContext)<br/>At StateUtils.java:[line 331]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="EL_INJECTION">EL_INJECTION: Potential code injection when using Expression Language (EL)</a>
+</h2>
+            
+<p>
+    An expression is built with a dynamic value. The source of the value(s) should be verified to avoid
+    that unfiltered values fall into this risky code evaluation.
+</p>
+<p><b>Code at risk:</b></p>
+<p>
+<pre>public void evaluateExpression(String expression) {
+    FacesContext context = FacesContext.getCurrentInstance();
+    ExpressionFactory expressionFactory = context.getApplication().getExpressionFactory();
+    ELContext elContext = context.getELContext();
+    ValueExpression vex = expressionFactory.createValueExpression(elContext, expression, String.class);
+    return (String) vex.getValue(elContext);
+}</pre>
+</p>
+<br/>
+<p>
+    <b>References</b><br/>
+    <a href="https://blog.mindedsecurity.com/2015/11/reliable-os-shell-with-el-expression.html">Minded Security: Abusing EL for executing OS commands</a><br/>
+    <a href="https://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html">The Java EE 6 Tutorial: Expression Language</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+    <a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+    <a href="https://www.mindedsecurity.com/fileshare/ExpressionLanguageInjection.pdf">Minded Security: Expression Language Injection</a><br/>
+    <a href="http://danamodio.com/appsec/research/spring-remote-code-with-expression-language-injection/">Dan Amodio's blog: Remote Code with Expression Language Injection</a><br/>
+    <a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+</p>
+
+        
+<h2>
+<a name="HTTPONLY_COOKIE">HTTPONLY_COOKIE: Cookie without the HttpOnly flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>HttpOnly</code> flag set.
+The <code>HttpOnly</code> flag is a directive to the browser to make sure that the cookie can not be red by
+malicious script. When a user is the target of a "Cross-Site Scripting", the attacker would benefit greatly from getting
+the session id for example.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("email",userName);
+cookie.setSecure(true);
+cookie.setHttpOnly(true); //HttpOnly flag
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://blog.codinghorror.com/protecting-your-cookies-httponly/">Coding Horror blog: Protecting Your Cookies: HttpOnly</a><br/>
+<a href="https://www.owasp.org/index.php/HttpOnly">OWASP: HttpOnly</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-http-only-flag">Rapid7: Missing HttpOnly Flag From Cookie</a>
+</p>
+
+        
+<h2>
+<a name="INSECURE_COOKIE">INSECURE_COOKIE: Cookie without the secure flag</a>
+</h2>
+            
+<p>
+A new cookie is created without the <code>Secure</code> flag set.
+The <code>Secure</code> flag is a directive to the browser to make sure that the cookie is not sent for insecure
+communication (<code>http://</code>).
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+response.addCookie(cookie);
+</pre>
+</p>
+
+<p>
+<b>Solution (Specific configuration):</b><br/>
+<pre>
+Cookie cookie = new Cookie("userName",userName);
+cookie.setSecure(true); // Secure flag
+cookie.setHttpOnly(true);
+</pre>
+</p>
+
+<p>
+<b>Solution (Servlet 3.0 configuration):</b><br/>
+<pre>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+[...]
+&lt;session-config&gt;
+ &lt;cookie-config&gt;
+  &lt;http-only&gt;true&lt;/http-only&gt;
+  &lt;secure&gt;true&lt;/secure&gt;
+ &lt;/cookie-config&gt;
+&lt;/session-config&gt;
+&lt;/web-app&gt;
+</pre>
+</p>
+<br/>
+<p>
+<b>Reference</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/614.html">CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/315.html">CWE-315: Cleartext Storage of Sensitive Information in a Cookie</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/311.html">CWE-311: Missing Encryption of Sensitive Data</a><br/>
+<a href="https://www.owasp.org/index.php/SecureFlag">OWASP: Secure Flag</a><br/>
+<a href="https://www.rapid7.com/db/vulnerabilities/http-cookie-secure-flag">Rapid7: Missing Secure Flag From SSL Cookie</a>
+</p>
+
+        
+<h2>
+<a name="OBJECT_DESERIALIZATION">OBJECT_DESERIALIZATION: Object deserialization is used in {1}</a>
+</h2>
+            
+<p>
+    Object deserialization of untrusted data can lead to remote code execution, if there is a class in classpath that allows
+    the trigger of malicious operation.
+</p>
+<p>
+    Libraries developers tend to fix class that provided potential malicious trigger. There are still classes that are
+    known to trigger Denial of Service<sup>[1]</sup>.
+</p>
+<p>
+    Deserialization is a sensible operation that has a great history of vulnerabilities. The web application might
+    become vulnerable as soon as a new vulnerability is found in the Java Virtual Machine<sup>[2] [3]</sup>.
+</p>
+
+<p>
+<b>Code at risk:</b><br/>
+<pre>
+public UserData deserializeObject(InputStream receivedFile) throws IOException, ClassNotFoundException {
+
+    try (ObjectInputStream in = new ObjectInputStream(receivedFile)) {
+        return (UserData) in.readObject();
+    }
+}
+</pre>
+</p>
+
+<p>
+<b>Solutions:</b><br/>
+<p>
+Avoid deserializing object provided by remote users.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502: Deserialization of Untrusted Data</a><br/>
+<a href="https://www.owasp.org/index.php/Deserialization_of_untrusted_data">Deserialization of untrusted data</a><br/>
+<a href="https://www.oracle.com/technetwork/java/seccodeguide-139067.html#8">Serialization and Deserialization </a><br/>
+<a href="https://github.com/frohoff/ysoserial">A tool for generating payloads that exploit unsafe Java object deserialization</a><br/>
+[1] <a href="https://gist.github.com/coekie/a27cc406fc9f3dc7a70d">Example of Denial of Service using the class <code>java.util.HashSet</code></a><br/>
+[2] <a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-2590">OpenJDK: Deserialization issue in ObjectInputStream.readSerialData() (CVE-2015-2590)</a><br/>
+[3] <a href="https://www.rapid7.com/db/modules/exploit/multi/browser/java_calendar_deserialize">Rapid7: Sun Java Calendar Deserialization Privilege Escalation (CVE-2008-5353)</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="REQUESTDISPATCHER_FILE_DISCLOSURE">REQUESTDISPATCHER_FILE_DISCLOSURE: RequestDispatcher File Disclosure</a>
+</h2>
+            
+<p>
+Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.<br/>
+An attacker may be able to forge a request parameter to match sensitive file locations. For example, requesting <code>"http://example.com/?jspFile=../applicationContext.xml%3F"</code> would display the application's <code>applicationContext.xml</code> file. The attacker would be able to locate and download the <code>applicationContext.xml</code> referenced in the other configuration files, and even class files or jar files, obtaining sensitive information and launching other types of attacks.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>...
+String jspFile = request.getParameter("jspFile");
+request.getRequestDispatcher("/WEB-INF/jsps/" + jspFile + ".jsp").include(request, response);
+...</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid constructing server-side redirects using user controlled input.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/552.html">CWE-552: Files or Directories Accessible to External Parties</a><br/>
+</p>
+            
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNVALIDATED_REDIRECT">UNVALIDATED_REDIRECT: Unvalidated Redirect</a>
+</h2>
+            
+<p>
+    Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied
+    parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks.
+</p>
+<p>
+    <b>Scenario</b><br/>
+    1. A user is tricked into visiting the malicious URL: <code>http://website.com/login?redirect=http://evil.vvebsite.com/fake/login</code><br/>
+    2. The user is redirected to a fake login page that looks like a site they trust. (<code>http://evil.vvebsite.com/fake/login</code>)<br/>
+    3. The user enters his credentials.<br/>
+    4. The evil site steals the user's credentials and redirects him to the original website.<br/>
+    <br/>
+    This attack is plausible because most users don't double check the URL after the redirection. Also, redirection to
+    an authentication page is very common.
+</p>
+<p>
+    <b>Vulnerable Code:</b></br/>
+    <pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    [...]
+    resp.sendRedirect(req.getParameter("redirectUrl"));
+    [...]
+}</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept redirection destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target (legal) destination</li>
+        <li>Accept only relative paths</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38: URL Redirector Abuse</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">OWASP: Top 10 2013-A10: Unvalidated Redirects and Forwards</a><br/>
+<a href="https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet">OWASP: Unvalidated Redirects and Forwards Cheat Sheet</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</a>
+</p>
+            
+        
+<h2>
+<a name="URL_REWRITING">URL_REWRITING: URL rewriting method</a>
+</h2>
+            
+<p>
+The implementation of this method includes the logic to determine whether the session ID needs to be encoded in the URL.<br/>
+URL rewriting has significant security risks. Since session ID appears in the URL, it may be easily seen by third parties. Session ID in the URL can be disclosed in many ways, for example:<br/>
+<ul>
+    <li>Log files,</li>
+    <li>The browser history,</li>
+    <li>By copy-and-pasting it into an e-mail or posting,</li>
+    <li>The HTTP Referrer.</li>
+</ul>
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>out.println("Click &lt;a href=" +
+                res.encodeURL(HttpUtils.getRequestURL(req).toString()) +
+                "&gt;here&lt;/a&gt;");</pre>
+</p>
+<p>
+    <b>Solution:</b><br/>
+Avoid using those methods. If you are looking to encode a URL String or form parameters do not confuse the URL rewriting methods with the URLEncoder class.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A3-Broken_Authentication_and_Session_Management">OWASP Top 10 2010-A3-Broken Authentication and Session Management</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XSS_SERVLET">XSS_SERVLET: Potential XSS in Servlet</a>
+</h2>
+            
+<p>
+A potential XSS was found. It could be used to execute unwanted JavaScript in a client's browser. (See references)
+</p>
+<p>
+    <b>Vulnerable Code:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(input1);
+}</pre>
+</p>
+<p>
+    <b>Solution:</b>
+<pre>protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    String input1 = req.getParameter("input1");
+    [...]
+    resp.getWriter().write(Encode.forHtml(input1));
+}</pre>
+</p>
+<p>
+The best defense against XSS is context sensitive output encoding like the example above. There are typically 4 contexts to consider:
+HTML, JavaScript, CSS (styles), and URLs. Please follow the XSS protection rules defined in the OWASP XSS Prevention Cheat Sheet,
+which explains these defenses in significant detail.
+</p>
+<p>Note that this XSS in Servlet rule looks for similar issues, but looks for them in a different way than the existing
+'XSS: Servlet reflected cross site scripting vulnerability' and 'XSS: Servlet reflected cross site scripting vulnerability in error page' rules in FindBugs.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8: Cross Site Scripting</a><br/>
+<a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">OWASP: XSS Prevention Cheat Sheet</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_%28XSS%29">OWASP: Top 10 2013-A3: Cross-Site Scripting (XSS)</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</a><br/>
+<a href="https://code.google.com/p/owasp-java-encoder/">OWASP Java Encoder</a><br/>
+</p>
+            
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_SAXPARSER">XXE_SAXPARSER: XML parsing vulnerable to XXE (SAXParser)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+SAXParserFactory spf = SAXParserFactory.newInstance();
+spf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+SAXParser parser = spf.newSAXParser();
+
+parser.parse(inputStream, customHandler);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="https://xerces.apache.org/xerces-j/features.html">Xerces complete features list</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DTD_TRANSFORM_FACTORY">XXE_DTD_TRANSFORM_FACTORY: XML parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="XXE_XSLT_TRANSFORM_FACTORY">XXE_XSLT_TRANSFORM_FACTORY: XSLT parsing vulnerable to XXE (TransformerFactory)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XSLT External Entity (XXE) attacks can occur when an XSLT parser supports external entities while processing XSLT received
+from an untrusted source.</p>
+<p><b>Risk: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+   &lt;xsl:template match=&quot;/&quot;&gt;
+       &lt;xsl:value-of select=&quot;document(&apos;/etc/passwd&apos;)&quot;&gt;
+   &lt;/xsl:value-of&gt;&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+Transformer transformer = TransformerFactory.newInstance().newTransformer();
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "all");
+factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "all");
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+This setting will protect you against remote file access but not denial of service.
+<pre>
+TransformerFactory factory = TransformerFactory.newInstance();
+factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+Transformer transformer = factory.newTransformer();
+transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+transformer.transform(input, result);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+</p>
+
+        
+<h2>
+<a name="STATIC_IV">STATIC_IV: Static IV</a>
+</h2>
+            
+<p>
+    Initialization vector must be regenerated for each message to be encrypted.
+</p>
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+private static byte[] IV = new byte[16] {(byte)0,(byte)1,(byte)2,[...]};
+
+public void encrypt(String message) throws Exception {
+
+    IvParameterSpec ivSpec = new IvParameterSpec(IV);
+[...]
+</pre>
+<p><b>Solution:</b></p>
+<p>
+<pre>
+public void encrypt(String message) throws Exception {
+
+    byte[] iv = new byte[16];
+    new SecureRandom().nextBytes(iv);
+
+    IvParameterSpec ivSpec = new IvParameterSpec(iv);
+[...]
+</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://en.wikipedia.org/wiki/Initialization_vector">Wikipedia: Initialization vector</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/329.html">CWE-329: Not Using a Random IV with CBC Mode</a><br/>
+<a href="https://defuse.ca/cbcmodeiv.htm">Encryption - CBC Mode IV: Secret or Not?</a>
+</p>
+            
+        </body>
+</html>

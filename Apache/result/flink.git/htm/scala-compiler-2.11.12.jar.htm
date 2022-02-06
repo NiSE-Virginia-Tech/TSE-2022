@@ -1,0 +1,1877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/flink.git/scala-compiler-2.11.12.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>169997 lines of code analyzed,
+	in 9095 classes, 
+	in 69 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">4</td>
+<td align="right">0.02</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">91</td>
+<td align="right">0.54</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>95</b>
+</td>
+<td align="right">
+<b>0.56</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">92</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>92</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66668');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66668" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class scala.tools.asm.util.CheckClassAdapter<br/>In method scala.tools.asm.util.CheckClassAdapter.verify(ClassReader, ClassLoader, boolean, PrintWriter)<br/>At CheckClassAdapter.java:[line 238]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68460');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68460" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.Log<br/>In method scala.tools.jline_embedded.internal.Log.log(Log$Level, Object[])<br/>At Log.java:[line 90]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73680');">
+<td>
+<span class="priority-2">ERRMSG</span>
+</td>
+<td>Possible information exposure through an error message</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73680" style="display: none;">
+<a href="#INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">Bug type INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE (click for details)</a>
+<br/>In class scala.tools.nsc.util.package$$anonfun$stackTraceString$1<br/>In method scala.tools.nsc.util.package$$anonfun$stackTraceString$1.apply(PrintWriter)<br/>At package.scala:[line 75]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72112');">
+<td>
+<span class="priority-2">SCRIPTE</span>
+</td>
+<td>This use of scala/tools/nsc/interpreter/IMain.eval(Ljava/lang/String;)Ljava/lang/Object; can be vulnerable to code injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72112" style="display: none;">
+<a href="#SCRIPT_ENGINE_INJECTION">Bug type SCRIPT_ENGINE_INJECTION (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.IMain<br/>In method scala.tools.nsc.interpreter.IMain.compile(String)<br/>At IMain.scala:[line 1075]<br/>Sink method scala/tools/nsc/interpreter/IMain.eval(Ljava/lang/String;)Ljava/lang/Object;<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/tools/nsc/interpreter/IMain.compile(Ljava/lang/String;)Ljavax/script/CompiledScript; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At IMain.scala:[line 1075]<br/>At IMain.scala:[line 1078]<br/>At package.scala:[line 50]<br/>At package.scala:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67463');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67463" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.fusesource_embedded.hawtjni.runtime.Library<br/>In method scala.tools.fusesource_embedded.hawtjni.runtime.Library.chmod(String, File)<br/>At Library.java:[line 308]<br/>Sink method java/lang/Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;<br/>Sink parameter 0<br/>Unknown source scala/tools/fusesource_embedded/hawtjni/runtime/Library.chmod(Ljava/lang/String;Ljava/io/File;)V parameter 0<br/>Unknown source scala/tools/fusesource_embedded/hawtjni/runtime/Library.chmod(Ljava/lang/String;Ljava/io/File;)V parameter 1<br/>Unknown source java/io/File.getCanonicalPath()Ljava/lang/String;<br/>At Library.java:[line 212]<br/>At Library.java:[line 213]<br/>At Library.java:[line 214]<br/>At Library.java:[line 218]<br/>At Library.java:[line 228]<br/>At Library.java:[line 242]<br/>At Library.java:[line 244]<br/>At Library.java:[line 258]<br/>At Library.java:[line 269]<br/>At Library.java:[line 278]<br/>At Library.java:[line 308]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68381');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68381" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.InfoCmp<br/>In method scala.tools.jline_embedded.internal.InfoCmp.getInfoCmp(String)<br/>At InfoCmp.java:[line 33]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/InfoCmp.getInfoCmp(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At UnixTerminal.java:[line 235]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68514');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68514" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.TerminalLineSettings<br/>In method scala.tools.jline_embedded.internal.TerminalLineSettings.exec(String[])<br/>At TerminalLineSettings.java:[line 293]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/TerminalLineSettings.exec([Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>At TerminalLineSettings.java:[line 280]<br/>At TerminalLineSettings.java:[line 281]<br/>At TerminalLineSettings.java:[line 282]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68613');">
+<td>
+<span class="priority-2">SECCI</span>
+</td>
+<td>This usage of java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V can be vulnerable to Command Injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68613" style="display: none;">
+<a href="#COMMAND_INJECTION">Bug type COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.TerminalLineSettings<br/>In method scala.tools.jline_embedded.internal.TerminalLineSettings.exec(String[])<br/>At TerminalLineSettings.java:[line 308]<br/>Sink method java/lang/ProcessBuilder.&lt;init&gt;([Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/TerminalLineSettings.exec([Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/TerminalLineSettings.ttyDevice<br/>Unknown source scala/tools/jline_embedded/internal/TerminalLineSettings.shCommand<br/>At TerminalLineSettings.java:[line 280]<br/>At TerminalLineSettings.java:[line 281]<br/>At TerminalLineSettings.java:[line 282]<br/>At TerminalLineSettings.java:[line 293]<br/>At TerminalLineSettings.java:[line 304]<br/>At TerminalLineSettings.java:[line 306]<br/>At TerminalLineSettings.java:[line 307]<br/>At TerminalLineSettings.java:[line 308]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71525');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71525" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.tests.Tester<br/>In method new scala.tools.nsc.interactive.tests.Tester(int, SourceFile[], Settings)<br/>At Tester.scala:[line 46]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65655');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65655" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Pack200Task<br/>In method scala.tools.ant.Pack200Task.execute()<br/>At Pack200Task.scala:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65724');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65724" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Pack200Task<br/>In method scala.tools.ant.Pack200Task.execute()<br/>At Pack200Task.scala:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At Pack200Task.scala:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65813');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65813" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Pack200Task<br/>In method scala.tools.ant.Pack200Task.execute()<br/>At Pack200Task.scala:[line 145]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/Pack200Task.packFileSuffix<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/tools/ant/Pack200Task.packFileSuffix()Ljava/lang/String;<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At Pack200Task.scala:[line 48]<br/>At Pack200Task.scala:[line 145]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65922');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65922" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Pack200Task$$anonfun$getFileList$2<br/>In method scala.tools.ant.Pack200Task$$anonfun$getFileList$2.apply(String)<br/>At Pack200Task.scala:[line 106]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/Pack200Task$$anonfun$getFileList$2.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At Pack200Task.scala:[line 104]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66347');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66347" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.sabbus.Make$$anonfun$execute$1<br/>In method scala.tools.ant.sabbus.Make$$anonfun$execute$1.apply(String)<br/>At Make.scala:[line 26]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/sabbus/Make$$anonfun$execute$1.apply(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage not detected<br/>At Make.scala:[line 26]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66431');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66431" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.sabbus.ScalacFork$$anonfun$4<br/>In method scala.tools.ant.sabbus.ScalacFork$$anonfun$4.apply(String)<br/>At ScalacFork.scala:[line 116]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/sabbus/ScalacFork$$anonfun$4.apply(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At ScalacFork.scala:[line 116]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66515');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66515" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.sabbus.Use$$anonfun$1<br/>In method scala.tools.ant.sabbus.Use$$anonfun$1.apply(String)<br/>At Use.scala:[line 56]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/sabbus/Use$$anonfun$1.apply(Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Method usage not detected<br/>At Use.scala:[line 56]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66006');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66006" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Same$$anonfun$execute$2$$anonfun$apply$3<br/>In method scala.tools.ant.Same$$anonfun$execute$2$$anonfun$apply$3.apply(String)<br/>At Same.scala:[line 128]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/Same$$anonfun$execute$2$$anonfun$apply$3.originName$1<br/>At Same.scala:[line 128]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66085');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66085" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.Same$$anonfun$execute$2$$anonfun$apply$3<br/>In method scala.tools.ant.Same$$anonfun$execute$2$$anonfun$apply$3.apply(String)<br/>At Same.scala:[line 129]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/ant/Same$$anonfun$execute$2$$anonfun$apply$3.apply(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At Same.scala:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66169');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66169" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.ant.ScalaTool<br/>In method scala.tools.ant.ScalaTool.execute()<br/>At ScalaTool.scala:[line 272]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getAbsolutePath()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At ScalaTool.scala:[line 272]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66599');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66599" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.asm.util.ASMifier<br/>In method scala.tools.asm.util.ASMifier.main(String[])<br/>At ASMifier.java:[line 153]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source scala/tools/asm/util/ASMifier.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66722');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66722" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.asm.util.CheckClassAdapter<br/>In method scala.tools.asm.util.CheckClassAdapter.main(String[])<br/>At CheckClassAdapter.java:[line 185]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source scala/tools/asm/util/CheckClassAdapter.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66791');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66791" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.asm.util.Textifier<br/>In method scala.tools.asm.util.Textifier.main(String[])<br/>At Textifier.java:[line 209]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Tainted source scala/tools/asm/util/Textifier.main([Ljava/lang/String;)V parameter 0</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66860');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66860" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.FromString$<br/>In method scala.tools.cmd.FromString$.scala$tools$cmd$FromString$$toDir(String)<br/>At FromString.scala:[line 27]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/cmd/FromString$.scala$tools$cmd$FromString$$toDir(Ljava/lang/String;)Lscala/reflect/io/Directory; parameter 0<br/>Method usage not detected<br/>At FromString.scala:[line 31]<br/>At FromString.scala:[line 32]<br/>At FromString.scala:[line 37]<br/>At FromString.scala:[line 38]<br/>At FromString.scala:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66984');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66984" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.FromString$$anon$1<br/>In method scala.tools.cmd.FromString$$anon$1.apply(String)<br/>At FromString.scala:[line 34]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/cmd/FromString$$anon$1.apply(Ljava/lang/String;)Lscala/reflect/io/Directory; parameter 0<br/>Method usage not detected<br/>At FromString.scala:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67068');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67068" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.FromString$$anon$2<br/>In method scala.tools.cmd.FromString$$anon$2.apply(String)<br/>At FromString.scala:[line 41]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/cmd/FromString$$anon$2.apply(Ljava/lang/String;)Lscala/reflect/io/Directory; parameter 0<br/>Method usage not detected<br/>At FromString.scala:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67152');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67152" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.FromString$$anon$2<br/>In method scala.tools.cmd.FromString$$anon$2.apply(String)<br/>At FromString.scala:[line 42]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/cmd/FromString$$anon$2.apply(Ljava/lang/String;)Lscala/reflect/io/Directory; parameter 0<br/>Method usage not detected<br/>At FromString.scala:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67325');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67325" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.Property$$anonfun$loadProperties$1<br/>In method scala.tools.cmd.Property$$anonfun$loadProperties$1.apply(Properties)<br/>At Property.scala:[line 58]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/reflect/io/File.path()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67394');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67394" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.cmd.Property$class<br/>In method scala.tools.cmd.Property$class.loadProperties(Property, File)<br/>At Property.scala:[line 58]<br/>Sink method java/io/FileInputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/reflect/io/File.path()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67652');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67652" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.fusesource_embedded.hawtjni.runtime.Library<br/>In method scala.tools.fusesource_embedded.hawtjni.runtime.Library.extract(ArrayList, URL, String, String, File)<br/>At Library.java:[line 269]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source scala/tools/fusesource_embedded/hawtjni/runtime/Library.extract(Ljava/util/ArrayList;Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 0<br/>At Library.java:[line 218]<br/>At Library.java:[line 228]<br/>At Library.java:[line 242]<br/>At Library.java:[line 244]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67761');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67761" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.fusesource_embedded.hawtjni.runtime.Library<br/>In method scala.tools.fusesource_embedded.hawtjni.runtime.Library.file(String[])<br/>At Library.java:[line 242]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/fusesource_embedded/hawtjni/runtime/Library.file([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At Library.java:[line 153]<br/>At Library.java:[line 155]<br/>At Library.java:[line 157]<br/>At Library.java:[line 172]<br/>At Library.java:[line 174]<br/>At Library.java:[line 177]<br/>At Library.java:[line 218]<br/>At Library.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67910');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67910" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.fusesource_embedded.hawtjni.runtime.Library<br/>In method scala.tools.fusesource_embedded.hawtjni.runtime.Library.file(String[])<br/>At Library.java:[line 244]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/fusesource_embedded/hawtjni/runtime/Library.file([Ljava/lang/String;)Ljava/io/File; parameter 0<br/>At Library.java:[line 153]<br/>At Library.java:[line 155]<br/>At Library.java:[line 157]<br/>At Library.java:[line 172]<br/>At Library.java:[line 174]<br/>At Library.java:[line 177]<br/>At Library.java:[line 218]<br/>At Library.java:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68059');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68059" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.jline_embedded.console.ConsoleKeys<br/>In method scala.tools.jline_embedded.console.ConsoleKeys.loadKeys(String, URL)<br/>At ConsoleKeys.java:[line 79]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.getPath()Ljava/lang/String;<br/>Unknown source scala/tools/jline_embedded/console/ConsoleKeys.loadKeys(Ljava/lang/String;Ljava/net/URL;)V parameter 0<br/>At ConsoleKeys.java:[line 36]<br/>At ConsoleKeys.java:[line 79]<br/>At ConsoleReader.java:[line 251]<br/>At ConsoleReader.java:[line 2914]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68772');">
+<td>
+<span class="priority-1">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68772" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.Urls<br/>In method scala.tools.jline_embedded.internal.Urls.create(String)<br/>At Urls.java:[line 32]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/Urls.create(Ljava/lang/String;)Ljava/net/URL; parameter 0<br/>Method usage with tainted arguments detected<br/>At ConsoleReader.java:[line 291]<br/>At ConsoleReader.java:[line 299]<br/>At Configuration.java:[line 67]<br/>At Configuration.java:[line 116]<br/>At Configuration.java:[line 118]<br/>At Configuration.java:[line 127]<br/>At Configuration.java:[line 131]<br/>At Configuration.java:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70230');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70230" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.classpath.DirectoryFileLookup$class<br/>In method scala.tools.nsc.classpath.DirectoryFileLookup$class.getDirectory(DirectoryFileLookup, String)<br/>At DirectoryFlatClassPath.scala:[line 33]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/classpath/FileUtils$.dirPath(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/tools/nsc/classpath/FileUtils$.dirPath(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/tools/nsc/classpath/DirectoryFileLookup$class.getDirectory(Lscala/tools/nsc/classpath/DirectoryFileLookup;Ljava/lang/String;)Lscala/Option; parameter 0<br/>Method usage not detected<br/>At DirectoryFlatClassPath.scala:[line 32]<br/>At DirectoryFlatClassPath.scala:[line 41]<br/>At DirectoryFlatClassPath.scala:[line 54]<br/>At DirectoryFlatClassPath.scala:[line 67]<br/>At DirectoryFlatClassPath.scala:[line 99]<br/>At DirectoryFlatClassPath.scala:[line 118]<br/>At DirectoryFlatClassPath.scala:[line 128]<br/>At DirectoryFlatClassPath.scala:[line 154]<br/>At FileUtils.scala:[line 44]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70404');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70404" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.classpath.DirectoryFlatClassPath<br/>In method scala.tools.nsc.classpath.DirectoryFlatClassPath.findClassFile(String)<br/>At DirectoryFlatClassPath.scala:[line 107]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Predef$.genericWrapArray(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;<br/>Unknown source scala/StringContext.s(Lscala/collection/Seq;)Ljava/lang/String;<br/>At DirectoryFlatClassPath.scala:[line 107]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70488');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70488" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.classpath.DirectoryFlatSourcePath$$anonfun$5<br/>In method scala.tools.nsc.classpath.DirectoryFlatSourcePath$$anonfun$5.apply(String)<br/>At DirectoryFlatClassPath.scala:[line 144]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Predef$.genericWrapArray(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;<br/>Unknown source scala/StringContext.s(Lscala/collection/Seq;)Ljava/lang/String;<br/>At DirectoryFlatClassPath.scala:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70641');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70641" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.doc.html.HtmlFactory<br/>In method scala.tools.nsc.doc.html.HtmlFactory.siteRoot()<br/>At HtmlFactory.scala:[line 25]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/settings/MutableSettings$OutputSetting.value()Ljava/lang/Object;<br/>Unknown source scala/reflect/internal/settings/MutableSettings$SettingValue$class.value(Lscala/reflect/internal/settings/MutableSettings$SettingValue;)Ljava/lang/Object;<br/>At HtmlFactory.scala:[line 25]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70725');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70725" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.doc.html.Page<br/>In method scala.tools.nsc.doc.html.Page.createFileOutputStream(HtmlFactory, String)<br/>At Page.scala:[line 27]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/tools/nsc/doc/html/Page.createFileOutputStream(Lscala/tools/nsc/doc/html/HtmlFactory;Ljava/lang/String;)Ljava/io/FileOutputStream; parameter 0<br/>Unknown source scala/collection/immutable/List.mkString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/tools/nsc/doc/html/Page.absoluteLinkTo(Lscala/collection/immutable/List;)Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>Method usage not detected<br/>At Page.scala:[line 27]<br/>At Page.scala:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70572');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70572" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.doc.Settings$$anonfun$extUrlMapping$1<br/>In method scala.tools.nsc.doc.Settings$$anonfun$extUrlMapping$1.apply(String)<br/>At Settings.scala:[line 253]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/Tuple2._1()Ljava/lang/Object;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69287');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69287" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.Global<br/>In method scala.tools.nsc.Global.getFile(AbstractFile, String[], String)<br/>At Global.scala:[line 1698]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/collection/mutable/ArrayOps.last()Ljava/lang/Object;<br/>Unknown source scala/tools/nsc/Global.getFile(Lscala/reflect/io/AbstractFile;[Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At Global.scala:[line 1698]<br/>At Global.scala:[line 1702]<br/>At Global.scala:[line 1710]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71017');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71017" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.Global<br/>In method new scala.tools.nsc.interactive.Global(Settings, Reporter, String)<br/>At Global.scala:[line 132]<br/>Sink method java/io/FileReader.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/settings/MutableSettings$StringSetting.value()Ljava/lang/Object;<br/>Unknown source scala/reflect/internal/settings/MutableSettings$SettingValue$class.value(Lscala/reflect/internal/settings/MutableSettings$SettingValue;)Ljava/lang/Object;<br/>At Global.scala:[line 132]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71101');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71101" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.Global<br/>In method new scala.tools.nsc.interactive.Global(Settings, Reporter, String)<br/>At Global.scala:[line 137]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/settings/MutableSettings$StringSetting.value()Ljava/lang/Object;<br/>Unknown source scala/reflect/internal/settings/MutableSettings$SettingValue$class.value(Lscala/reflect/internal/settings/MutableSettings$SettingValue;)Ljava/lang/Object;<br/>At Global.scala:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71269');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71269" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.REPL$<br/>In method scala.tools.nsc.interactive.REPL$.toSourceFile(String)<br/>At REPL.scala:[line 152]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/interactive/REPL$.toSourceFile(Ljava/lang/String;)Lscala/reflect/internal/util/BatchSourceFile; parameter 0<br/>In REPL.scala<br/>At REPL.scala:[line 93]<br/>At REPL.scala:[line 108]<br/>At REPL.scala:[line 118]<br/>At REPL.scala:[line 121]<br/>At REPL.scala:[line 124]<br/>At REPL.scala:[line 126]<br/>At REPL.scala:[line 128]<br/>At REPL.scala:[line 130]<br/>At REPL.scala:[line 135]<br/>At REPL.scala:[line 115]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71583');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71583" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop<br/>In method scala.tools.nsc.interpreter.ILoop.require(String)<br/>At ILoop.scala:[line 627]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/interpreter/ILoop.require(Ljava/lang/String;)V parameter 0<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Method usage not detected<br/>At ILoop.scala:[line 625]<br/>At ILoop.scala:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72355');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72355" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.JavapClass$ClassLoaderOps$<br/>In method scala.tools.nsc.interpreter.JavapClass$ClassLoaderOps$.locate$extension(ScalaClassLoader, String)<br/>At JavapClass.scala:[line 621]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>Unknown source scala/util/Success.value()Ljava/lang/Object;<br/>At JavapClass.scala:[line 621]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72439');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72439" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.JavapClass$ClassLoaderOps$$anonfun$20<br/>In method scala.tools.nsc.interpreter.JavapClass$ClassLoaderOps$$anonfun$20.apply(URL)<br/>At JavapClass.scala:[line 608]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$ClassLoaderOps$$anonfun$20.apply(Ljava/net/URL;)Lscala/reflect/io/Path; parameter 0<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>Method usage not detected<br/>At JavapClass.scala:[line 608]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72666');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72666" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.Power$RichReplString<br/>In method scala.tools.nsc.interpreter.Power$RichReplString.u()<br/>At Power.scala:[line 258]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/interpreter/Power$RichReplString.s<br/>At Power.scala:[line 258]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73527');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73527" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class scala.tools.nsc.util.ClassPath$$anonfun$expandDir$2<br/>In method scala.tools.nsc.util.ClassPath$$anonfun$expandDir$2.apply(AbstractFile)<br/>At ClassPath.scala:[line 71]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/reflect/io/AbstractFile.name()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.ant.FastScalac<br/>In method scala.tools.ant.FastScalac.execute()<br/>At FastScalac.scala:[line 160]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/Option.get()Ljava/lang/Object;<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/reflect/internal/util/ScalaClassLoader$.originOfClass(Ljava/lang/Class;)Lscala/Option;<br/>Unknown source java/net/URL.getFile()Ljava/lang/String;<br/>At FastScalac.scala:[line 159]<br/>At FastScalac.scala:[line 160]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66258');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66258" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.ant.ScalacShared$$anonfun$1<br/>In method scala.tools.ant.ScalacShared$$anonfun$1.apply(String)<br/>At ScalacShared.scala:[line 21]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/ant/ScalacShared$$anonfun$1.apply(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At ScalacShared.scala:[line 21]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67236');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67236" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.cmd.Meta$StdOpts$SelfUpdate$$anonfun$2<br/>In method scala.tools.cmd.Meta$StdOpts$SelfUpdate$$anonfun$2.apply$mcV$sp()<br/>At Meta.scala:[line 60]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/cmd/Meta$StdOpts.selfUpdateName()Lscala/Option;<br/>Unknown source scala/Option.get()Ljava/lang/Object;<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>At Meta.scala:[line 60]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70161');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70161" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.backend.jvm.BytecodeWriters$DumpBytecodeWriter$class<br/>In method scala.tools.nsc.backend.jvm.BytecodeWriters$DumpBytecodeWriter$class.writeClass(BytecodeWriters$DumpBytecodeWriter, String, String, byte[], AbstractFile)<br/>At BytecodeWriters.scala:[line 138]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/reflect/io/File.path()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69109');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69109" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.CompilerCommand<br/>In method scala.tools.nsc.CompilerCommand.expandArg(String)<br/>At CompilerCommand.scala:[line 123]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/collection/immutable/StringOps.stripPrefix(Ljava/lang/String;)Ljava/lang/String;<br/>At CompilerCommand.scala:[line 123]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68926');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68926" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.CompileSocket<br/>In method new scala.tools.nsc.CompileSocket()<br/>At CompileSocket.scala:[line 65]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/nsc/Properties$.scalaHome()Ljava/lang/String;<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/util/PropertiesTrait$class.scalaHome(Lscala/util/PropertiesTrait;)Ljava/lang/String;<br/>At CompileSocket.scala:[line 62]<br/>At CompileSocket.scala:[line 65]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70839');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70839" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.doc.html.Page<br/>In method scala.tools.nsc.doc.html.Page.createFileOutputStream(HtmlFactory, String)<br/>At Page.scala:[line 32]<br/>Sink method java/io/FileOutputStream.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69193');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69193" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.GenericRunnerCommand<br/>In method scala.tools.nsc.GenericRunnerCommand.scala$tools$nsc$GenericRunnerCommand$$guessHowToRun(String)<br/>At GenericRunnerCommand.scala:[line 38]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/GenericRunnerCommand.scala$tools$nsc$GenericRunnerCommand$$guessHowToRun(Ljava/lang/String;)Lscala/tools/nsc/GenericRunnerCommand$HowToRun; parameter 0<br/>At GenericRunnerCommand.scala:[line 38]<br/>At GenericRunnerCommand.scala:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69401');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69401" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.Global<br/>In method scala.tools.nsc.Global.supplementTyperState(String)<br/>At Global.scala:[line 1117]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.jfile2path(Ljava/io/File;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71185');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71185" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.Global<br/>In method new scala.tools.nsc.interactive.Global(Settings, Reporter, String)<br/>At Global.scala:[line 133]<br/>Sink method java/io/FileWriter.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/settings/MutableSettings$StringSetting.value()Ljava/lang/Object;<br/>Unknown source scala/reflect/internal/settings/MutableSettings$SettingValue$class.value(Lscala/reflect/internal/settings/MutableSettings$SettingValue;)Ljava/lang/Object;<br/>At Global.scala:[line 133]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71446');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71446" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interactive.tests.InteractiveTestSettings$class<br/>In method scala.tools.nsc.interactive.tests.InteractiveTestSettings$class.liftedTree1$1(InteractiveTestSettings, Path)<br/>At InteractiveTestSettings.scala:[line 57]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/nsc/interactive/tests/InteractiveTestSettings$class.liftedTree1$1(Lscala/tools/nsc/interactive/tests/InteractiveTestSettings;Lscala/reflect/io/Path;)Ljava/lang/String; parameter 0<br/>At InteractiveTestSettings.scala:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71682');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71682" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop<br/>In method scala.tools.nsc.interpreter.ILoop.addClasspath(String)<br/>At ILoop.scala:[line 606]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/interpreter/ILoop.addClasspath(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ILoop.scala:[line 606]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71771');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71771" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop<br/>In method scala.tools.nsc.interpreter.ILoop.require(String)<br/>At ILoop.scala:[line 625]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/nsc/interpreter/ILoop.require(Ljava/lang/String;)V parameter 0<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Method usage not detected<br/>At ILoop.scala:[line 625]<br/>At ILoop.scala:[line 221]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N71870');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N71870" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop<br/>In method scala.tools.nsc.interpreter.ILoop.saveCommand(String)<br/>At ILoop.scala:[line 601]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/interpreter/ILoop.saveCommand(Ljava/lang/String;)Lscala/tools/nsc/interpreter/LoopCommands$Result; parameter 0<br/>Method usage not detected<br/>At ILoop.scala:[line 601]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N71959');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N71959" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop$$anonfun$process$1$$anonfun$scala$tools$nsc$interpreter$ILoop$$anonfun$$loopPostInit$1$1<br/>In method scala.tools.nsc.interpreter.ILoop$$anonfun$process$1$$anonfun$scala$tools$nsc$interpreter$ILoop$$anonfun$$loopPostInit$1$1.apply$mcV$sp()<br/>At ILoop.scala:[line 915]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.jfile2path(Ljava/io/File;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72028');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72028" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ILoop$$anonfun$withFile$1<br/>In method scala.tools.nsc.interpreter.ILoop$$anonfun$withFile$1.apply()<br/>At ILoop.scala:[line 580]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/interpreter/ILoop$$anonfun$withFile$1.filename$1<br/>At ILoop.scala:[line 580]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72231');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72231" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.JavapClass$$anonfun$tryFile$1<br/>In method scala.tools.nsc.interpreter.JavapClass$$anonfun$tryFile$1.apply()<br/>At JavapClass.scala:[line 135]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$MaybeClassLike$.asClassResource$extension(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$.MaybeClassLike(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$MaybeClassLike$.asClassResource$extension(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$$anonfun$tryFile$1.path$4<br/>Unknown source scala/tools/nsc/interpreter/JavapClass$.MaybeClassLike(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At JavapClass.scala:[line 135]<br/>At JavapClass.scala:[line 586]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72928');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72928" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.jline_embedded.FileBackedHistory$class<br/>In method scala.tools.nsc.interpreter.jline_embedded.FileBackedHistory$class.historyFile(FileBackedHistory)<br/>At FileBackedHistory.scala:[line 25]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path.$div(Lscala/reflect/io/Path;)Lscala/reflect/io/Path;<br/>Unknown source scala/Some.x()Ljava/lang/Object;<br/>Unknown source scala/tools/nsc/interpreter/jline_embedded/FileBackedHistory$class.secure(Lscala/tools/nsc/interpreter/jline_embedded/FileBackedHistory;Lscala/reflect/io/Path;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/interpreter/jline_embedded/FileBackedHistory$class.secure(Lscala/tools/nsc/interpreter/jline_embedded/FileBackedHistory;Lscala/reflect/io/Path;)Lscala/reflect/io/Path; parameter 0<br/>At FileBackedHistory.scala:[line 27]<br/>At FileBackedHistory.scala:[line 28]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72824');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72824" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.jline.FileBackedHistory$class<br/>In method scala.tools.nsc.interpreter.jline.FileBackedHistory$class.historyFile(FileBackedHistory)<br/>At FileBackedHistory.scala:[line 25]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path.$div(Lscala/reflect/io/Path;)Lscala/reflect/io/Path;<br/>Unknown source scala/Some.x()Ljava/lang/Object;<br/>Unknown source scala/tools/nsc/interpreter/jline/FileBackedHistory$class.secure(Lscala/tools/nsc/interpreter/jline/FileBackedHistory;Lscala/reflect/io/Path;)Lscala/reflect/io/Path; parameter 0<br/>Unknown source scala/tools/nsc/interpreter/jline/FileBackedHistory$class.secure(Lscala/tools/nsc/interpreter/jline/FileBackedHistory;Lscala/reflect/io/Path;)Lscala/reflect/io/Path;<br/>At FileBackedHistory.scala:[line 27]<br/>At FileBackedHistory.scala:[line 28]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72528');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72528" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.Power<br/>In method scala.tools.nsc.interpreter.Power.customBanner()<br/>At Power.scala:[line 116]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.jfile2path(Ljava/io/File;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N72597');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N72597" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.Power<br/>In method scala.tools.nsc.interpreter.Power.customInit()<br/>At Power.scala:[line 120]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.jfile2path(Ljava/io/File;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73032');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73032" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.io.Jar<br/>In method new scala.tools.nsc.io.Jar(File)<br/>At Jar.scala:[line 36]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.jfile2path(Ljava/io/File;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73101');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73101" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.io.Jar<br/>In method new scala.tools.nsc.io.Jar(String)<br/>At Jar.scala:[line 37]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/io/Jar.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At GenericRunnerCommand.scala:[line 47]<br/>In MainGenericRunner.scala<br/>At MainGenericRunner.scala:[line 15]<br/>At MainGenericRunner.scala:[line 69]<br/>At Jar.scala:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69470');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69470" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.JarRunner$<br/>In method scala.tools.nsc.JarRunner$.runJar(GenericRunnerSettings, String, Seq)<br/>At MainGenericRunner.scala:[line 18]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/nsc/JarRunner$.runJar(Lscala/tools/nsc/GenericRunnerSettings;Ljava/lang/String;Lscala/collection/Seq;)Lscala/util/Either; parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>At GenericRunnerCommand.scala:[line 47]<br/>In MainGenericRunner.scala<br/>At MainGenericRunner.scala:[line 18]<br/>At MainGenericRunner.scala:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69582');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69582" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.MainGenericRunner$$anonfun$3<br/>In method scala.tools.nsc.MainGenericRunner$$anonfun$3.apply(String)<br/>At MainGenericRunner.scala:[line 57]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/MainGenericRunner$$anonfun$3.apply(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Method usage not detected<br/>At MainGenericRunner.scala:[line 57]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69671');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69671" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.PhaseAssembly$$anonfun$scala$tools$nsc$PhaseAssembly$$graphToDotFile$5<br/>In method scala.tools.nsc.PhaseAssembly$$anonfun$scala$tools$nsc$PhaseAssembly$$graphToDotFile$5.apply(AbstractFile)<br/>At PhaseAssembly.scala:[line 293]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/PhaseAssembly$$anonfun$scala$tools$nsc$PhaseAssembly$$graphToDotFile$5.filename$1<br/>At PhaseAssembly.scala:[line 293]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69755');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69755" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.ScriptRunner<br/>In method scala.tools.nsc.ScriptRunner.runScript(GenericRunnerSettings, String, List)<br/>At ScriptRunner.scala:[line 203]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/ScriptRunner.runScript(Lscala/tools/nsc/GenericRunnerSettings;Ljava/lang/String;Lscala/collection/immutable/List;)Z parameter 1<br/>At GenericRunnerCommand.scala:[line 47]<br/>At MainGenericRunner.scala:[line 67]<br/>At ScriptRunner.scala:[line 203]<br/>At ScriptRunner.scala:[line 217]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69869');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69869" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.ScriptRunner<br/>In method scala.tools.nsc.ScriptRunner.scala$tools$nsc$ScriptRunner$$jarFileFor(String)<br/>At ScriptRunner.scala:[line 56]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/collection/immutable/StringOps.stripSuffix(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/ScriptRunner.scala$tools$nsc$ScriptRunner$$jarFileFor(Ljava/lang/String;)Lscala/reflect/io/File; parameter 0<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At ScriptRunner.scala:[line 57]<br/>At ScriptRunner.scala:[line 58]<br/>At ScriptRunner.scala:[line 142]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69988');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69988" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.ScriptRunner<br/>In method scala.tools.nsc.ScriptRunner.scala$tools$nsc$ScriptRunner$$runCompiled(GenericRunnerSettings, String, List)<br/>At ScriptRunner.scala:[line 186]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/ScriptRunner.scala$tools$nsc$ScriptRunner$$runCompiled(Lscala/tools/nsc/GenericRunnerSettings;Ljava/lang/String;Lscala/collection/immutable/List;)Z parameter 1<br/>Method usage not detected<br/>At ScriptRunner.scala:[line 186]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N70077');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N70077" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1<br/>In method scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1.jarOK$1(File)<br/>At ScriptRunner.scala:[line 143]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/ScriptRunner$$anonfun$withCompiledScript$1.scriptFile$1<br/>At ScriptRunner.scala:[line 143]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73397');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73397" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.util.ClassPath$<br/>In method scala.tools.nsc.util.ClassPath$.expandManifestPath(String)<br/>At ClassPath.scala:[line 78]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/tools/nsc/util/ClassPath$.expandManifestPath(Ljava/lang/String;)Lscala/collection/immutable/List; parameter 0<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>At GenericRunnerCommand.scala:[line 47]<br/>In MainGenericRunner.scala<br/>At MainGenericRunner.scala:[line 17]<br/>At MainGenericRunner.scala:[line 69]<br/>In ClassPath.scala<br/>At ClassPath.scala:[line 78]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73596');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73596" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.nsc.util.ShowPickled$$anonfun$fromFile$1<br/>In method scala.tools.nsc.util.ShowPickled$$anonfun$fromFile$1.apply()<br/>At ShowPickled.scala:[line 274]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/nsc/util/ShowPickled$$anonfun$fromFile$1.path$1<br/>At ShowPickled.scala:[line 274]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73734');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73734" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.partest.ScaladocModelTest<br/>In method scala.tools.partest.ScaladocModelTest.code()<br/>At ScaladocModelTest.scala:[line 53]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/collection/mutable/StringBuilder.toString()Ljava/lang/String;<br/>Unknown source scala/Predef$any2stringadd$.$plus$extension(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/collection/mutable/StringBuilder.append(Ljava/lang/Object;)Lscala/collection/mutable/StringBuilder;<br/>At ScaladocModelTest.scala:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73828');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73828" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.util.PathResolver$Defaults$<br/>In method scala.tools.util.PathResolver$Defaults$.scalaLibAsJar()<br/>At PathResolver.scala:[line 97]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Directory.$div(Lscala/reflect/io/Path;)Lscala/reflect/io/Path;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73951');">
+<td>
+<span class="priority-2">SECPTO</span>
+</td>
+<td>This API (scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;) writes to a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73951" style="display: none;">
+<a href="#PATH_TRAVERSAL_OUT">Bug type PATH_TRAVERSAL_OUT (click for details)</a>
+<br/>In class scala.tools.util.VerifyClass$<br/>In method scala.tools.util.VerifyClass$.checkClassesInJar(String, ClassLoader)<br/>At VerifyClass.scala:[line 21]<br/>Sink method scala/reflect/io/File$.apply(Lscala/reflect/io/Path;Lscala/io/Codec;)Lscala/reflect/io/File;<br/>Sink parameter 1<br/>Unknown source scala/reflect/io/Path$.string2path(Ljava/lang/String;)Lscala/reflect/io/Path;<br/>Unknown source scala/tools/util/VerifyClass$.checkClassesInJar(Ljava/lang/String;Ljava/lang/ClassLoader;)Lscala/collection/immutable/Map; parameter 1<br/>Method usage not detected<br/>In VerifyClass.scala<br/>At VerifyClass.scala:[line 21]<br/>At VerifyClass.scala:[line 31]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69025');">
+<td>
+<span class="priority-2">SECSCI</span>
+</td>
+<td>The command execution could be vulnerable to injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69025" style="display: none;">
+<a href="#SCALA_COMMAND_INJECTION">Bug type SCALA_COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.nsc.CompileSocket<br/>In method scala.tools.nsc.CompileSocket.startNewServer(String)<br/>At CompileSocket.scala:[line 90]<br/>Sink method scala/sys/process/Process$.apply(Lscala/collection/Seq;)Lscala/sys/process/ProcessBuilder;<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/CompileSocket.serverCommand(Lscala/collection/Seq;)Lscala/collection/Seq;<br/>Unknown source scala/collection/TraversableLike.filterNot(Lscala/Function1;)Ljava/lang/Object;<br/>At CompileSocket.scala:[line 86]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N70908');">
+<td>
+<span class="priority-2">SECSCI</span>
+</td>
+<td>The command execution could be vulnerable to injection</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N70908" style="display: none;">
+<a href="#SCALA_COMMAND_INJECTION">Bug type SCALA_COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.nsc.doc.html.page.diagram.DotProcess<br/>In method scala.tools.nsc.doc.html.page.diagram.DotProcess.feedToDot(String, String)<br/>At DotRunner.scala:[line 93]<br/>Sink method scala/sys/process/package$.stringSeqToProcess(Lscala/collection/Seq;)Lscala/sys/process/ProcessBuilder;<br/>Sink parameter 0<br/>Unknown source scala/collection/Seq$.apply(Lscala/collection/Seq;)Lscala/collection/GenTraversable;<br/>Unknown source scala/Predef$.wrapRefArray([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;<br/>Unknown source scala/tools/nsc/settings/MutableSettings$PathSetting.value()Ljava/lang/String;<br/>Unknown source scala/collection/TraversableOnce.mkString(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source scala/tools/nsc/util/ClassPath$.join(Lscala/collection/Seq;)Ljava/lang/String;<br/>At DotRunner.scala:[line 93]<br/>At MutableSettings.scala:[line 556]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N72745');">
+<td>
+<span class="priority-2">SECSCI</span>
+</td>
+<td>The command execution could be vulnerable to injection</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N72745" style="display: none;">
+<a href="#SCALA_COMMAND_INJECTION">Bug type SCALA_COMMAND_INJECTION (click for details)</a>
+<br/>In class scala.tools.nsc.interpreter.ProcessResult<br/>In method new scala.tools.nsc.interpreter.ProcessResult(String)<br/>At LoopCommands.scala:[line 19]<br/>Sink method scala/sys/process/Process$.apply(Ljava/lang/String;)Lscala/sys/process/ProcessBuilder;<br/>Sink parameter 0<br/>Unknown source scala/tools/nsc/interpreter/ProcessResult.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>At ILoop.scala:[line 506]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68173');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68173" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class scala.tools.jline_embedded.console.ConsoleKeys<br/>In method scala.tools.jline_embedded.console.ConsoleKeys.loadKeys(String, URL)<br/>At ConsoleKeys.java:[line 64]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/console/ConsoleKeys.loadKeys(Ljava/lang/String;Ljava/net/URL;)V parameter 0<br/>At ConsoleKeys.java:[line 36]<br/>At ConsoleReader.java:[line 251]<br/>At ConsoleReader.java:[line 2914]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68272');">
+<td>
+<span class="priority-2">SECSSSRFUC</span>
+</td>
+<td>This web server request could be used by an attacker to expose internal services and filesystem.</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68272" style="display: none;">
+<a href="#URLCONNECTION_SSRF_FD">Bug type URLCONNECTION_SSRF_FD (click for details)</a>
+<br/>In class scala.tools.jline_embedded.internal.Configuration<br/>In method scala.tools.jline_embedded.internal.Configuration.loadProperties(URL, Properties)<br/>At Configuration.java:[line 65]<br/>Sink method java/net/URL.openStream()Ljava/io/InputStream;<br/>Sink parameter 0<br/>Unknown source scala/tools/jline_embedded/internal/Configuration.loadProperties(Ljava/net/URL;Ljava/util/Properties;)V parameter 1<br/>At Configuration.java:[line 48]<br/>At Configuration.java:[line 51]<br/>At Configuration.java:[line 90]<br/>At Urls.java:[line 29]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73223');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to scala.tools.nsc.io.Socket$$anonfun$apply$1 (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73223" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class scala.tools.nsc.io.Socket$$anonfun$apply$1<br/>In method scala.tools.nsc.io.Socket$$anonfun$apply$1.apply()<br/>At Socket.scala:[line 29]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73281');">
+<td>
+<span class="priority-2">SECUS</span>
+</td>
+<td>Unencrypted socket to scala.tools.nsc.io.Socket$$anonfun$apply$2 (instead of SSLSocket)</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73281" style="display: none;">
+<a href="#UNENCRYPTED_SOCKET">Bug type UNENCRYPTED_SOCKET (click for details)</a>
+<br/>In class scala.tools.nsc.io.Socket$$anonfun$apply$2<br/>In method scala.tools.nsc.io.Socket$$anonfun$apply$2.apply()<br/>At Socket.scala:[line 30]<br/>Value remote host</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N73897');">
+<td>
+<span class="priority-2">SECUSS</span>
+</td>
+<td>Unencrypted server socket (instead of SSLServerSocket)</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N73897" style="display: none;">
+<a href="#UNENCRYPTED_SERVER_SOCKET">Bug type UNENCRYPTED_SERVER_SOCKET (click for details)</a>
+<br/>In class scala.tools.util.SocketServer<br/>In method scala.tools.util.SocketServer.createServerSocket()<br/>At SocketServer.scala:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N73339');">
+<td>
+<span class="priority-2">SECXXEDOC</span>
+</td>
+<td>The use of DocumentBuilder.parse(...) (DocumentBuilder) is vulnerable to XML External Entity attacks</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N73339" style="display: none;">
+<a href="#XXE_DOCUMENT">Bug type XXE_DOCUMENT (click for details)</a>
+<br/>In class scala.tools.nsc.plugins.PluginDescription$<br/>In method scala.tools.nsc.plugins.PluginDescription$.fromXML(InputStream)<br/>At PluginDescription.scala:[line 48]<br/>Value DocumentBuilder.parse(...)</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE">INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE: Information Exposure Through An Error Message</a>
+</h2>
+            
+<p>
+The sensitive information may be valuable information on its own (such as a password), or it may be useful for launching other, more deadly attacks. If an attack fails, an attacker may use error information provided by the server to launch another more focused attack. For example, an attempt to exploit a path traversal weakness (CWE-22) might yield the full pathname of the installed application. In turn, this could be used to select the proper number of ".." sequences to navigate to the targeted file. An attack using SQL injection (CWE-89) might not initially succeed, but an error message could reveal the malformed query, which would expose query logic and possibly even passwords or other sensitive information used within the query.
+</p>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>try {
+  out = httpResponse.getOutputStream()
+} catch (Exception e) {
+  e.printStackTrace(out);
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209: Information Exposure Through an Error Message</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/211.html">CWE-211: Information Exposure Through Externally-Generated Error Message</a><br/>
+</p>
+            
+        
+<h2>
+<a name="SCRIPT_ENGINE_INJECTION">SCRIPT_ENGINE_INJECTION: Potential code injection when using Script Engine</a>
+</h2>
+            
+<p>
+    Dynamic code is being evaluate. A careful analysis of the code construction should be made. Malicious code execution
+    could lead to data leakage or operating system compromised.
+</p>
+<p>
+    If the evaluation of user code is intended, a proper sandboxing should be applied (see references).
+</p>
+
+<p><b>Code at risk:</b></p>
+<p>
+<pre>
+public void runCustomTrigger(String script) {
+    ScriptEngineManager factory = new ScriptEngineManager();
+    ScriptEngine engine = factory.getEngineByName("JavaScript");
+
+    engine.eval(script); //Bad things can happen here.
+}</pre>
+</p>
+
+<p><b>Solution:</b></p>
+<p>
+Safe evaluation of JavaScript code using "Cloudbees Rhino Sandbox" library.<br/>
+<pre>
+public void runCustomTrigger(String script) {
+    SandboxContextFactory contextFactory = new SandboxContextFactory();
+    Context context = contextFactory.makeContext();
+    contextFactory.enterContext(context);
+    try {
+        ScriptableObject prototype = context.initStandardObjects();
+        prototype.setParentScope(null);
+        Scriptable scope = context.newObject(prototype);
+        scope.setPrototype(prototype);
+
+        context.evaluateString(scope,script, null, -1, null);
+    } finally {
+        context.exit();
+    }
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://github.com/cloudbees/rhino-sandbox">Cloudbees Rhino Sandbox</a>: Utility to create sandbox with Rhino (block access to all classes)<br/>
+<a href="https://codeutopia.net/blog/2009/01/02/sandboxing-rhino-in-java/">CodeUtopia.net: Sandboxing Rhino in Java</a><br/>
+<a href="https://blog.h3xstream.com/2014/11/remote-code-execution-by-design.html">Remote Code Execution .. by design</a>: Example of malicious payload. The samples given could be used to test sandboxing rules.<br/>
+<a href="https://cwe.mitre.org/data/definitions/94.html">CWE-94: Improper Control of Generation of Code ('Code Injection')</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/95.html">CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</a><br/>
+</p>
+
+        
+<h2>
+<a name="COMMAND_INJECTION">COMMAND_INJECTION: Potential Command Injection</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_OUT">PATH_TRAVERSAL_OUT: Potential Path Traversal (file write)</a>
+</h2>
+            
+<p>A file is opened to write to its contents. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be modified.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC-33: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        
+<h2>
+<a name="SCALA_COMMAND_INJECTION">SCALA_COMMAND_INJECTION: Potential Command Injection (Scala)</a>
+</h2>
+            
+<p>The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.</p>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>def executeCommand(value:String) = Action {
+    val result = value.!
+    Ok("Result:\n"+result)
+}</pre>
+</p>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Command_Injection">OWASP: Command Injection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection">OWASP: Top 10 2013-A1-Injection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/78.html">CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')</a>
+</p>
+
+        
+<h2>
+<a name="URLCONNECTION_SSRF_FD">URLCONNECTION_SSRF_FD: URLConnection Server-Side Request Forgery (SSRF) and File Disclosure</a>
+</h2>
+            
+<p>
+    Server-Side Request Forgery occur when a web server executes a request to a user supplied destination
+    parameter that is not validated. Such vulnerabilities could allow an attacker to access internal services
+    or to launch attacks from your web server.
+</p>
+<p>
+    URLConnection can be used with file:// protocol or other protocols to access local filesystem and potentially other services.
+<p>
+    <b>Vulnerable Code:</b>
+<pre>
+new URL(String url).openConnection()
+</pre>
+
+<pre>
+new URL(String url).openStream()
+</pre>
+
+<pre>
+new URL(String url).getContent()
+</pre>
+</p>
+<p>
+    <b>Solution/Countermeasures:</b><br/>
+    <ul>
+        <li>Don't accept URL destinations from users</li>
+        <li>Accept a destination key, and use it to look up the target destination associate with the key</li>
+        <li>White list URLs (if possible)</li>
+        <li>Validate that the beginning of the URL is part of a white list</li>
+    </ul>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a><br/>
+<a href="https://www.bishopfox.com/blog/2015/04/vulnerable-by-design-understanding-server-side-request-forgery/">Understanding Server-Side Request Forgery</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/73.html">CWE-73: External Control of File Name or Path</a><br/>
+<a href="https://www.pwntester.com/blog/2013/11/28/abusing-jar-downloads/">Abusing jar:// downloads</a><br />
+</p>
+            
+<h2>
+<a name="UNENCRYPTED_SOCKET">UNENCRYPTED_SOCKET: Unencrypted Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain socket (Cleartext communication):
+<pre>Socket soc = new Socket("www.google.com",80);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Socket (Secure communication):
+<pre>Socket soc = SSLSocketFactory.getDefault().createSocket("www.google.com", 443);</pre>
+</p>
+<p>Beyond using an SSL socket, you need to make sure your use of SSLSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="UNENCRYPTED_SERVER_SOCKET">UNENCRYPTED_SERVER_SOCKET: Unencrypted Server Socket</a>
+</h2>
+            
+<p>
+The communication channel used is not encrypted. The traffic could be read by an attacker intercepting the network traffic.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+Plain server socket (Cleartext communication):
+<pre>ServerSocket soc = new ServerSocket(1234);</pre>
+</p>
+<p>
+<b>Solution:</b><br/>
+SSL Server Socket (Secure communication):
+<pre>ServerSocket soc = SSLServerSocketFactory.getDefault().createServerSocket(1234);</pre>
+</p>
+<p>Beyond using an SSL server socket, you need to make sure your use of SSLServerSocketFactory does all the appropriate certificate validation checks to
+make sure you are not subject to man-in-the-middle attacks. Please read the OWASP Transport Layer Protection Cheat Sheet for details on how
+to do this correctly.
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2010-A9">OWASP: Top 10 2010-A9-Insufficient Transport Layer Protection</a><br/>
+<a href="https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure">OWASP: Top 10 2013-A6-Sensitive Data Exposure</a><br/>
+<a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet">OWASP: Transport Layer Protection Cheat Sheet</a><br/>
+<a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection">WASC-04: Insufficient Transport Layer Protection</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/319.html">CWE-319: Cleartext Transmission of Sensitive Information</a>
+</p>
+
+        
+<h2>
+<a name="XXE_DOCUMENT">XXE_DOCUMENT: XML parsing vulnerable to XXE (DocumentBuilder)</a>
+</h2>
+            
+<!--XXE_GENERIC_START-->
+<h3>Attack</h3>
+<p>XML External Entity (XXE) attacks can occur when an XML parser supports XML entities while processing XML received
+from an untrusted source.</p>
+<p><b>Risk 1: Expose local file content (XXE: <u>X</u>ML E<u>x</u>ternal <u>E</u>ntity)</b></p>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;!DOCTYPE foo [
+   &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt; ]&gt;
+&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</pre>
+</p>
+<b>Risk 2: Denial of service (XEE: <u>X</u>ML <u>E</u>ntity <u>E</u>xpansion)</b>
+<p>
+<pre>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE lolz [
+ &lt;!ENTITY lol &quot;lol&quot;&gt;
+ &lt;!ELEMENT lolz (#PCDATA)&gt;
+ &lt;!ENTITY lol1 &quot;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&amp;lol;&quot;&gt;
+ &lt;!ENTITY lol2 &quot;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&amp;lol1;&quot;&gt;
+ &lt;!ENTITY lol3 &quot;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&quot;&gt;
+[...]
+ &lt;!ENTITY lol9 &quot;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&quot;&gt;
+]&gt;
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</pre>
+</p>
+
+<h3>Solution</h3>
+<p>
+In order to avoid exposing dangerous feature of the XML parser, you can do the following change to the code.
+</p>
+<!--XXE_GENERIC_END-->
+
+<p><b>Vulnerable Code:</b></p>
+<p>
+<pre>
+DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+The following snippets show two available solutions. You can set one feature or both.
+</p>
+
+<p><b>Solution using "Secure processing" mode:</b></p>
+<p>
+This setting will protect you against Denial of Service attack and remote file access.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+
+<p><b>Solution disabling DTD:</b></p>
+<p>
+By disabling DTD, almost all XXE attacks will be prevented.
+<pre>
+DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+DocumentBuilder db = dbf.newDocumentBuilder();
+
+Document doc = db.parse(input);</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<!--XXE_GENERIC_START-->
+<a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611: Improper Restriction of XML External Entity Reference ('XXE')</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=61702260">CERT: IDS10-J. Prevent XML external entity attacks</a><br/>
+<a href="https://www.owasp.org/index.php/XML_External_Entity_%28XXE%29_Processing">OWASP.org: XML External Entity (XXE) Processing</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Expansion">WS-Attacks.org: XML Entity Expansion</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_External_Entity_DOS">WS-Attacks.org: XML External Entity DOS</a><br/>
+<a href="https://www.ws-attacks.org/index.php/XML_Entity_Reference_Attack">WS-Attacks.org: XML Entity Reference Attack</a><br/>
+<a href="https://blog.h3xstream.com/2014/06/identifx-xml-external-entity.html">Identifx XML External Entity vulnerability (XXE)</a><br/>
+<!--XXE_GENERIC_END-->
+<a href="http://xerces.apache.org/xerces2-j/features.html">Xerces2 complete features list</a>
+</p>
+
+        </body>
+</html>

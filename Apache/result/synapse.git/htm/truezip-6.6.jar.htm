@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/synapse.git/truezip-6.6.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>12335 lines of code analyzed,
+	in 351 classes, 
+	in 28 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">34</td>
+<td align="right">2.76</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+<td align="right">
+<b>2.76</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">34</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>34</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66735');">
+<td>
+<span class="priority-2">SECPR</span>
+</td>
+<td>This random generator (java.util.Random) is predictable</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66735" style="display: none;">
+<a href="#PREDICTABLE_RANDOM">Bug type PREDICTABLE_RANDOM (click for details)</a>
+<br/>In class de.schlichtherle.crypto.generators.DigestRandom<br/>In method new de.schlichtherle.crypto.generators.DigestRandom(Digest)<br/>At DigestRandom.java:[line 53]<br/>Value java.util.Random</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.Decrypt<br/>In method de.schlichtherle.Decrypt.runWithException(String[])<br/>At Decrypt.java:[line 69]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/Decrypt.runWithException([Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65625');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65625" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.Encrypt<br/>In method de.schlichtherle.Encrypt.runWithException(String[])<br/>At Encrypt.java:[line 67]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/Encrypt.runWithException([Ljava/lang/String;)Z parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66793');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66793" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(File, File, File)<br/>At File.java:[line 732]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66862');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66862" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(File, ArchiveDetector)<br/>At File.java:[line 427]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66931');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66931" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(File, File, ArchiveDetector)<br/>At File.java:[line 669]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67000');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67000" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(File, String, ArchiveDetector)<br/>At File.java:[line 547]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>At NZip.java:[line 377]<br/>At AbstractArchiveDetector.java:[line 56]<br/>At File.java:[line 522]<br/>At FileComboBoxBrowser.java:[line 76]<br/>At FileComboBoxBrowser.java:[line 118]<br/>At FileComboBoxBrowser.java:[line 175]<br/>At JFileTree.java:[line 189]<br/>At JFileTree.java:[line 262]<br/>At JFileTree.java:[line 271]<br/>At JFileTree.java:[line 273]<br/>At JFileTree.java:[line 276]<br/>At JFileTree.java:[line 278]<br/>At JFileTree.java:[line 281]<br/>At JFileTree.java:[line 289]<br/>At JFileTree.java:[line 605]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67219');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67219" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(File, String, ArchiveDetector)<br/>At File.java:[line 549]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>At NZip.java:[line 377]<br/>At AbstractArchiveDetector.java:[line 56]<br/>At File.java:[line 522]<br/>At FileComboBoxBrowser.java:[line 76]<br/>At FileComboBoxBrowser.java:[line 118]<br/>At FileComboBoxBrowser.java:[line 175]<br/>At JFileTree.java:[line 189]<br/>At JFileTree.java:[line 262]<br/>At JFileTree.java:[line 271]<br/>At JFileTree.java:[line 273]<br/>At JFileTree.java:[line 276]<br/>At JFileTree.java:[line 278]<br/>At JFileTree.java:[line 281]<br/>At JFileTree.java:[line 289]<br/>At JFileTree.java:[line 605]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67438');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67438" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(String, ArchiveDetector)<br/>At File.java:[line 467]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>At Decrypt.java:[line 69]<br/>At Encrypt.java:[line 67]<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 164]<br/>At NZip.java:[line 166]<br/>At NZip.java:[line 168]<br/>At NZip.java:[line 172]<br/>At NZip.java:[line 174]<br/>At NZip.java:[line 176]<br/>At NZip.java:[line 178]<br/>At NZip.java:[line 180]<br/>At NZip.java:[line 182]<br/>At NZip.java:[line 184]<br/>At NZip.java:[line 186]<br/>At NZip.java:[line 188]<br/>At NZip.java:[line 190]<br/>At NZip.java:[line 192]<br/>At NZip.java:[line 194]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]<br/>At NZip.java:[line 226]<br/>At NZip.java:[line 228]<br/>At NZip.java:[line 365]<br/>At NZip.java:[line 374]<br/>At NZip.java:[line 397]<br/>At NZip.java:[line 424]<br/>At NZip.java:[line 447]<br/>At NZip.java:[line 473]<br/>At NZip.java:[line 482]<br/>At NZip.java:[line 491]<br/>At NZip.java:[line 500]<br/>At NZip.java:[line 509]<br/>At AbstractArchiveDetector.java:[line 61]<br/>At File.java:[line 452]<br/>At FileComboBoxBrowser.java:[line 76]<br/>At FileComboBoxBrowser.java:[line 118]<br/>At FileComboBoxBrowser.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67877');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67877" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(String, ArchiveDetector)<br/>At File.java:[line 469]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>At Decrypt.java:[line 69]<br/>At Encrypt.java:[line 67]<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 164]<br/>At NZip.java:[line 166]<br/>At NZip.java:[line 168]<br/>At NZip.java:[line 172]<br/>At NZip.java:[line 174]<br/>At NZip.java:[line 176]<br/>At NZip.java:[line 178]<br/>At NZip.java:[line 180]<br/>At NZip.java:[line 182]<br/>At NZip.java:[line 184]<br/>At NZip.java:[line 186]<br/>At NZip.java:[line 188]<br/>At NZip.java:[line 190]<br/>At NZip.java:[line 192]<br/>At NZip.java:[line 194]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]<br/>At NZip.java:[line 226]<br/>At NZip.java:[line 228]<br/>At NZip.java:[line 365]<br/>At NZip.java:[line 374]<br/>At NZip.java:[line 397]<br/>At NZip.java:[line 424]<br/>At NZip.java:[line 447]<br/>At NZip.java:[line 473]<br/>At NZip.java:[line 482]<br/>At NZip.java:[line 491]<br/>At NZip.java:[line 500]<br/>At NZip.java:[line 509]<br/>At AbstractArchiveDetector.java:[line 61]<br/>At File.java:[line 452]<br/>At FileComboBoxBrowser.java:[line 76]<br/>At FileComboBoxBrowser.java:[line 118]<br/>At FileComboBoxBrowser.java:[line 146]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68316');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68316" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(String, String, ArchiveDetector)<br/>At File.java:[line 498]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>Method usage not detected<br/>At AbstractArchiveDetector.java:[line 66]<br/>At File.java:[line 481]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68410');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68410" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(String, String, ArchiveDetector)<br/>At File.java:[line 500]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Lde/schlichtherle/io/ArchiveDetector;)V parameter 1<br/>Method usage not detected<br/>At AbstractArchiveDetector.java:[line 66]<br/>At File.java:[line 481]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68504');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68504" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(URI, ArchiveDetector)<br/>At File.java:[line 604]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/File.unjarFileURI0(Ljava/net/URI;)Ljava/net/URI;<br/>Unknown source de/schlichtherle/io/File.unjarFileURI(Ljava/net/URI;)Ljava/net/URI;<br/>At File.java:[line 604]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68588');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68588" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.File<br/>In method new de.schlichtherle.io.File(URI, ArchiveDetector)<br/>At File.java:[line 606]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68657');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68657" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.Files<br/>In method de.schlichtherle.io.Files.getCanOrAbsFile(File)<br/>At Files.java:[line 106]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N68726');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N68726" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.Files<br/>In method de.schlichtherle.io.Files.normalize(File)<br/>At Files.java:[line 124]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source java/lang/StringBuffer.insert(ILjava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source de/schlichtherle/io/util/Paths.normalize(Ljava/lang/String;CIILjava/lang/StringBuffer;)I parameter 4<br/>Unknown source de/schlichtherle/io/util/Paths.normalize(Ljava/lang/String;C)Ljava/lang/String;<br/>Unknown source de/schlichtherle/io/util/Paths.normalize(Ljava/lang/String;CIILjava/lang/StringBuffer;)I parameter 0<br/>Unknown source de/schlichtherle/io/util/Paths.normalize(Ljava/lang/String;C)Ljava/lang/String; parameter 1<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getPath()Ljava/lang/String;<br/>At Files.java:[line 123]<br/>At Paths.java:[line 64]<br/>At Paths.java:[line 65]<br/>At Paths.java:[line 72]<br/>At Paths.java:[line 112]<br/>At Paths.java:[line 115]<br/>At Paths.java:[line 118]<br/>At Paths.java:[line 123]<br/>At Paths.java:[line 126]<br/>At Paths.java:[line 133]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N68930');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N68930" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.swing.FileComboBoxBrowser<br/>In method de.schlichtherle.io.swing.FileComboBoxBrowser.update(DefaultComboBoxModel, File, String)<br/>At FileComboBoxBrowser.java:[line 175]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/swing/FileComboBoxBrowser.update(Ljavax/swing/DefaultComboBoxModel;Ljava/io/File;Ljava/lang/String;)Z parameter 0<br/>At FileComboBoxBrowser.java:[line 76]<br/>At FileComboBoxBrowser.java:[line 118]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69019');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69019" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.swing.JFileTree<br/>In method de.schlichtherle.io.swing.JFileTree.onEditingStopped(ChangeEvent)<br/>At JFileTree.java:[line 281]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/swing/JFileTree.getDefaultSuffix()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source javax/swing/tree/TreeCellEditor.getCellEditorValue()Ljava/lang/Object;<br/>Unknown source de/schlichtherle/io/swing/JFileTree.defaultSuffix<br/>Unknown source de/schlichtherle/io/swing/JFileTree.getSuffix(Ljava/lang/String;)Ljava/lang/String; parameter 0<br/>Unknown source de/schlichtherle/io/swing/JFileTree.getSuffix(Ljava/lang/String;)Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/io/File.getName()Ljava/lang/String;<br/>Unknown source java/lang/Object.toString()Ljava/lang/String;<br/>At JFileTree.java:[line 189]<br/>At JFileTree.java:[line 262]<br/>At JFileTree.java:[line 271]<br/>At JFileTree.java:[line 273]<br/>At JFileTree.java:[line 276]<br/>At JFileTree.java:[line 278]<br/>At JFileTree.java:[line 289]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69198');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69198" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.swing.JFileTree<br/>In method de.schlichtherle.io.swing.JFileTree.substPath(TreePath, TreePath, TreePath)<br/>At JFileTree.java:[line 605]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69267');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69267" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.io.util.Temps<br/>In method de.schlichtherle.io.util.Temps.createTempFile(String)<br/>At Temps.java:[line 91]<br/>Sink method java/io/File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/io/util/Temps.directory<br/>At Temps.java:[line 91]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69346');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69346" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.key.passwd.swing.CreateKeyPanel<br/>In method de.schlichtherle.key.passwd.swing.CreateKeyPanel.getCreateKey()<br/>At CreateKeyPanel.java:[line 140]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/key/passwd/swing/AuthenticationPanel.getKeyFilePath()Ljava/lang/String;<br/>Unknown source javax/swing/JComboBox.getSelectedItem()Ljava/lang/Object;<br/>At CreateKeyPanel.java:[line 138]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69430');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69430" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.key.passwd.swing.PromptingKeyProviderUI<br/>In method de.schlichtherle.key.passwd.swing.PromptingKeyProviderUI.readKeyFile(String)<br/>At PromptingKeyProviderUI.java:[line 103]<br/>Sink method java/io/RandomAccessFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 1<br/>Unknown source de/schlichtherle/key/passwd/swing/PromptingKeyProviderUI.readKeyFile(Ljava/lang/String;)[B parameter 0<br/>Method usage not detected</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65699');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65699" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.exists(String[])<br/>At NZip.java:[line 500]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.exists([Ljava/lang/String;)Z parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 192]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65808');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65808" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.isArchive(String[])<br/>At NZip.java:[line 473]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.isArchive([Ljava/lang/String;)Z parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 186]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65917');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65917" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.isDirectory(String[])<br/>At NZip.java:[line 482]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.isDirectory([Ljava/lang/String;)Z parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 188]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66026');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66026" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.isFile(String[])<br/>At NZip.java:[line 491]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.isFile([Ljava/lang/String;)Z parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 190]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66135');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66135" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.length(String[])<br/>At NZip.java:[line 509]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.length([Ljava/lang/String;)Z parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 194]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66244');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66244" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.ls(String[], boolean, boolean)<br/>At NZip.java:[line 226]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source de/schlichtherle/NZip.ls([Ljava/lang/String;ZZ)V parameter 2<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 164]<br/>At NZip.java:[line 166]<br/>At NZip.java:[line 168]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]<br/>At NZip.java:[line 228]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66388');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66388" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.mkdir(String[], boolean)<br/>At NZip.java:[line 424]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.mkdir([Ljava/lang/String;Z)V parameter 1<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 178]<br/>At NZip.java:[line 180]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66507');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66507" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.rm(String[], boolean)<br/>At NZip.java:[line 447]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.rm([Ljava/lang/String;Z)V parameter 1<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 182]<br/>At NZip.java:[line 184]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66626');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66626" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.NZip<br/>In method de.schlichtherle.NZip.touch(String[])<br/>At NZip.java:[line 397]<br/>Sink method de/schlichtherle/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/NZip.touch([Ljava/lang/String;)V parameter 0<br/>At NZip.java:[line 143]<br/>At NZip.java:[line 176]<br/>At NZip.java:[line 206]<br/>At NZip.java:[line 214]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69504');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69504" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.util.zip.BasicZipFile<br/>In method new de.schlichtherle.util.zip.BasicZipFile(String)<br/>At BasicZipFile.java:[line 134]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/util/zip/BasicZipFile.&lt;init&gt;(Ljava/lang/String;)V parameter 0<br/>Method usage not detected<br/>At ZipFile.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N69588');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N69588" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.util.zip.BasicZipFile<br/>In method new de.schlichtherle.util.zip.BasicZipFile(String, String)<br/>At BasicZipFile.java:[line 161]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/util/zip/BasicZipFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V parameter 1<br/>Method usage not detected<br/>At ZipFile.java:[line 92]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N69672');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N69672" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class de.schlichtherle.util.zip.BasicZipFile<br/>In method new de.schlichtherle.util.zip.BasicZipFile(String, String, boolean, boolean)<br/>At BasicZipFile.java:[line 211]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source de/schlichtherle/util/zip/BasicZipFile.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ZZ)V parameter 3<br/>Method usage not detected<br/>At ZipFile.java:[line 141]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PREDICTABLE_RANDOM">PREDICTABLE_RANDOM: Predictable pseudorandom number generator</a>
+</h2>
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

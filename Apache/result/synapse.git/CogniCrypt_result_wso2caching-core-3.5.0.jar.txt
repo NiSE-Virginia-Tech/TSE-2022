@@ -1,0 +1,180 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 424.1 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.29
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.38
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 9
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.44
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r26
+		Type: byte[]
+		Statement: r26 = virtualinvoke r27.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMElement,java.lang.String)>
+		SHA-256: f6e74332f9d9cd819813701729d9ff7cc14f3df5cad5481e4fe94d611163b081
+		Secure: false
+	Object:
+		Variable: r27
+		Type: java.security.MessageDigest
+		Statement: r27 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMElement,java.lang.String)>
+		SHA-256: 49e1e0edfa15fe7c8529106cf15af2c444daef2670ac5485075ed1c273a145ab
+		Secure: false
+	Object:
+		Variable: r15
+		Type: byte[]
+		Statement: r15 = virtualinvoke r16.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMAttribute,java.lang.String)>
+		SHA-256: 59e82cc7b2d8727007e405f9a9f11bc17681eab4d719c6aeac4b9395efe7e394
+		Secure: false
+	Object:
+		Variable: r13
+		Type: byte[]
+		Statement: r13 = virtualinvoke r14.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMProcessingInstruction,java.lang.String)>
+		SHA-256: 68547dbbc17485c74f650880b7a06043ee1bc0bd7570865b947bf7c331b0be0a
+		Secure: false
+	Object:
+		Variable: r27
+		Type: java.security.MessageDigest
+		Statement: r27 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMDocument,java.lang.String)>
+		SHA-256: 49e1e0edfa15fe7c8529106cf15af2c444daef2670ac5485075ed1c273a145ab
+		Secure: true
+	Object:
+		Variable: r14
+		Type: java.security.MessageDigest
+		Statement: r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMProcessingInstruction,java.lang.String)>
+		SHA-256: dd5a35223ac3d702e37985147a367602650793e42d30b4edae12bc5871d73da
+		Secure: false
+	Object:
+		Variable: r26
+		Type: byte[]
+		Statement: r26 = virtualinvoke r27.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMDocument,java.lang.String)>
+		SHA-256: 756177a95bd983275f6e258815efb6d5db2ea00cff1ddf3012adc5b29eba103e
+		Secure: true
+	Object:
+		Variable: r12
+		Type: java.security.MessageDigest
+		Statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMText,java.lang.String)>
+		SHA-256: 6a4f03272086e21d5803ace36e9cff70f37ed5b796b90888e7c9e1e8255fdc2b
+		Secure: false
+	Object:
+		Variable: r11
+		Type: byte[]
+		Statement: r11 = virtualinvoke r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMText,java.lang.String)>
+		SHA-256: 28ab7dc1ccd92f04ff73f9bec6e53d1d6b84028d83bcf2093ba6514e5d17a1d4
+		Secure: false
+	Object:
+		Variable: r16
+		Type: java.security.MessageDigest
+		Statement: r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+		Method: <org.wso2.caching.digest.DOMHASHGenerator: byte[] getDigest(org.apache.axiom.om.OMAttribute,java.lang.String)>
+		SHA-256: c892fb39703998f8c91cf66ebaed97ae555c0cb0066dafb211b00a0c8f4e31f0
+		Secure: false
+
+Findings in Java Class: org.wso2.caching.digest.DOMHASHGenerator
+
+	 in Method: byte[] getDigest(org.apache.axiom.om.OMElement,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #49e1e0edfa15fe7c8529106cf15af2c444daef2670ac5485075ed1c273a145ab)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r27 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+
+
+	 in Method: byte[] getDigest(org.apache.axiom.om.OMProcessingInstruction,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #dd5a35223ac3d702e37985147a367602650793e42d30b4edae12bc5871d73da)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+
+
+	 in Method: byte[] getDigest(org.apache.axiom.om.OMAttribute,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c892fb39703998f8c91cf66ebaed97ae555c0cb0066dafb211b00a0c8f4e31f0)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r16 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+
+
+	 in Method: byte[] getDigest(org.apache.axiom.om.OMText,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6a4f03272086e21d5803ace36e9cff70f37ed5b796b90888e7c9e1e8255fdc2b)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r2)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 4
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 1.525 s
+

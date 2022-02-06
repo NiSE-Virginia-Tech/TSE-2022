@@ -1,0 +1,26 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 692.1 ms 
+Exception in thread "main" java.lang.RuntimeException: This operation requires resolving level HIERARCHY but org.glassfish.jersey.message.internal.AcceptableLanguageTag is at resolving level DANGLING
+If you are extending Soot, try to add the following call before calling soot.Main.main(..):
+Scene.v().addBasicClass(org.glassfish.jersey.message.internal.AcceptableLanguageTag,HIERARCHY);
+Otherwise, try whole-program mode (-w).
+	at soot.SootClass.checkLevelIgnoreResolving(SootClass.java:198)
+	at soot.SootClass.checkLevel(SootClass.java:180)
+	at soot.SootClass.isInterface(SootClass.java:1033)
+	at soot.FastHierarchy.canStoreType(FastHierarchy.java:282)
+	at soot.jimple.toolkits.callgraph.VirtualCalls.resolve(VirtualCalls.java:155)
+	at soot.jimple.toolkits.callgraph.VirtualCalls.resolve(VirtualCalls.java:135)
+	at soot.jimple.toolkits.callgraph.OnFlyCallGraphBuilder.addType(OnFlyCallGraphBuilder.java:582)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.processReceivers(CallGraphBuilder.java:211)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.process(CallGraphBuilder.java:131)
+	at soot.jimple.toolkits.callgraph.CallGraphBuilder.build(CallGraphBuilder.java:117)
+	at soot.jimple.toolkits.callgraph.CHATransformer.internalTransform(CHATransformer.java:51)
+	at soot.SceneTransformer.transform(SceneTransformer.java:36)
+	at soot.Transform.apply(Transform.java:102)
+	at soot.RadioScenePack.internalApply(RadioScenePack.java:68)
+	at soot.jimple.toolkits.callgraph.CallGraphPack.internalApply(CallGraphPack.java:58)
+	at soot.Pack.apply(Pack.java:117)
+	at crypto.HeadlessCryptoScanner.analyse(HeadlessCryptoScanner.java:198)
+	at crypto.HeadlessCryptoScanner.exec(HeadlessCryptoScanner.java:167)
+	at crypto.HeadlessCryptoScanner.main(HeadlessCryptoScanner.java:72)
+

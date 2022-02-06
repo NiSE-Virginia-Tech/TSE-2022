@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SpotBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+		    color: red;
+		    font-weight: bold;
+		}
+		.priority-2 {
+		    color: orange;
+		    font-weight: bold;
+		}
+		.priority-3 {
+		    color: green;
+		    font-weight: bold;
+		}
+		.priority-4 {
+		    color: blue;
+		    font-weight: bold;
+		}
+		</style>
+<script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+</head>
+<body>
+<h1>
+<a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+<h2>Project Information</h2>
+<p>Project: 
+		</p>
+<p>SpotBugs version: 3.1.12</p>
+<p>Code analyzed:</p>
+<ul>
+<li>/home/x/CryptoAPIDetect/dataset/group/streams.git/catalina-storeconfig.jar</li>
+</ul>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Metrics</h2>
+<p>1755 lines of code analyzed,
+	in 39 classes, 
+	in 1 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right"/>
+<td align="right">0.00</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">20</td>
+<td align="right">11.40</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+<td align="right">
+<b>11.40</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Contents</h2>
+<ul>
+<li>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</li>
+<li>
+<a href="#Details">Details</a>
+</li>
+</ul>
+<h1>Summary</h1>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_SECURITY">Security Warnings</a>
+</td>
+<td align="right">20</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>20</b>
+</td>
+</tr>
+</table>
+<h1>Warnings</h1>
+<p>Click on a warning row to see full context information.</p>
+<h2>
+<a name="Warnings_SECURITY">Security Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="0">
+<tr class="tableheader">
+<th align="left">Code</th>
+<th align="left">Warning</th>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65551');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65551" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.ConnectorStoreAppender<br/>In method org.apache.catalina.storeconfig.ConnectorStoreAppender.getJkHomeBase(String, File)<br/>At ConnectorStoreAppender.java:[line 301]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/ConnectorStoreAppender.getJkHomeBase(Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 1<br/>At ConnectorStoreAppender.java:[line 279]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65630');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65630" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.ConnectorStoreAppender<br/>In method org.apache.catalina.storeconfig.ConnectorStoreAppender.getJkHomeBase(String, File)<br/>At ConnectorStoreAppender.java:[line 303]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/ConnectorStoreAppender.getJkHomeBase(Ljava/lang/String;Ljava/io/File;)Ljava/io/File; parameter 1<br/>At ConnectorStoreAppender.java:[line 279]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65709');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65709" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.configBase(Context)<br/>At StandardContextSF.java:[line 302]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/Container.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65778');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65778" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.configBase(Context)<br/>At StandardContextSF.java:[line 304]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/Container.getName()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N65847');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N65847" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.filterWatchedResources(StandardContext, String[])<br/>At StandardContextSF.java:[line 336]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardContext.getConfigFile()Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At StandardContextSF.java:[line 336]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N65931');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N65931" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.getConfigFileWriter(Context)<br/>At StandardContextSF.java:[line 188]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/Context.getConfigFile()Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At StandardContextSF.java:[line 188]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66015');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66015" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.getConfigFileWriter(Context)<br/>At StandardContextSF.java:[line 191]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66084');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66084" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.store(PrintWriter, int, Object)<br/>At StandardContextSF.java:[line 94]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/util/ContextName.getBaseName()Ljava/lang/String;<br/>At StandardContextSF.java:[line 94]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66163');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/net/URI;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66163" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.storeContextSeparate(PrintWriter, int, StandardContext)<br/>At StandardContextSF.java:[line 122]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/net/URI;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardContext.getConfigFile()Ljava/net/URL;<br/>Unknown source java/net/URL.toURI()Ljava/net/URI;<br/>At StandardContextSF.java:[line 122]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66247');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66247" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StandardContextSF<br/>In method org.apache.catalina.storeconfig.StandardContextSF.storeContextSeparate(PrintWriter, int, StandardContext)<br/>At StandardContextSF.java:[line 125]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/io/File.getPath()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66316');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66316" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreContextAppender<br/>In method org.apache.catalina.storeconfig.StoreContextAppender.getAppBase(StandardHost)<br/>At StoreContextAppender.java:[line 87]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardHost.getAppBase()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66385');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66385" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreContextAppender<br/>In method org.apache.catalina.storeconfig.StoreContextAppender.getAppBase(StandardHost)<br/>At StoreContextAppender.java:[line 90]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardHost.getAppBase()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66454');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66454" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreContextAppender<br/>In method org.apache.catalina.storeconfig.StoreContextAppender.getDocBase(StandardContext, File)<br/>At StoreContextAppender.java:[line 105]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardContext.getOriginalDocBase()Ljava/lang/String;<br/>Unknown source org/apache/catalina/core/StandardContext.getDocBase()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66528');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66528" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreContextAppender<br/>In method org.apache.catalina.storeconfig.StoreContextAppender.getDocBase(StandardContext, File)<br/>At StoreContextAppender.java:[line 107]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/io/File;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/core/StandardContext.getOriginalDocBase()Ljava/lang/String;<br/>Unknown source org/apache/catalina/core/StandardContext.getDocBase()Ljava/lang/String;</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66602');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66602" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 138]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66696');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66696" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 140]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N66790');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N66790" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 142]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]<br/>At StoreFileMover.java:[line 142]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N66894');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N66894" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 144]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]<br/>At StoreFileMover.java:[line 142]<br/>At StoreFileMover.java:[line 144]</p>
+</td>
+</tr>
+<tr class="tablerow1" onclick="toggleRow('N67008');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow1">
+<td/>
+<td>
+<p id="N67008" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 152]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source java/sql/Timestamp.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/sql/Timestamp.&lt;init&gt;(J)V<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getTimeTag()Ljava/lang/String;<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]<br/>At StoreFileMover.java:[line 142]<br/>At StoreFileMover.java:[line 144]<br/>At StoreFileMover.java:[line 151]<br/>At StoreFileMover.java:[line 152]<br/>At StoreFileMover.java:[line 200]<br/>At StoreFileMover.java:[line 204]<br/>At StoreFileMover.java:[line 206]<br/>At StoreFileMover.java:[line 208]<br/>At StoreFileMover.java:[line 210]<br/>At StoreFileMover.java:[line 211]</p>
+</td>
+</tr>
+<tr class="tablerow0" onclick="toggleRow('N67227');">
+<td>
+<span class="priority-2">SECPTI</span>
+</td>
+<td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
+</tr>
+<tr class="detailrow0">
+<td/>
+<td>
+<p id="N67227" style="display: none;">
+<a href="#PATH_TRAVERSAL_IN">Bug type PATH_TRAVERSAL_IN (click for details)</a>
+<br/>In class org.apache.catalina.storeconfig.StoreFileMover<br/>In method org.apache.catalina.storeconfig.StoreFileMover.init()<br/>At StoreFileMover.java:[line 154]<br/>Sink method java/io/File.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V<br/>Sink parameter 0<br/>Unknown source java/lang/StringBuffer.append(Ljava/lang/String;)Ljava/lang/StringBuffer;<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getFilename()Ljava/lang/String;<br/>Unknown source java/sql/Timestamp.toString()Ljava/lang/String;<br/>Unknown source java/lang/StringBuffer.toString()Ljava/lang/String;<br/>Unknown source java/sql/Timestamp.&lt;init&gt;(J)V<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.filename<br/>Unknown source org/apache/catalina/storeconfig/StoreFileMover.getTimeTag()Ljava/lang/String;<br/>At StoreFileMover.java:[line 89]<br/>At StoreFileMover.java:[line 137]<br/>At StoreFileMover.java:[line 142]<br/>At StoreFileMover.java:[line 144]<br/>At StoreFileMover.java:[line 151]<br/>At StoreFileMover.java:[line 152]<br/>At StoreFileMover.java:[line 154]<br/>At StoreFileMover.java:[line 200]<br/>At StoreFileMover.java:[line 204]<br/>At StoreFileMover.java:[line 206]<br/>At StoreFileMover.java:[line 208]<br/>At StoreFileMover.java:[line 210]<br/>At StoreFileMover.java:[line 211]</p>
+</td>
+</tr>
+</table>
+<h1>
+<a name="Details">Details</a>
+</h1>
+<h2>
+<a name="PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN: Potential Path Traversal (file read)</a>
+</h2>
+            
+<p>A file is opened to read its content. The filename comes from an <b>input</b> parameter.
+If an unfiltered parameter is passed to this file API, files from an arbitrary filesystem location could be read.</p>
+<p>This rule identifies <b>potential</b> path traversal vulnerabilities. In many cases, the constructed file path cannot be controlled
+by the user. If that is the case, the reported instance is a false positive.</p>
+<br/>
+
+<p>
+    <b>Vulnerable Code:</b><br/>
+<pre>@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", image); //Weak point
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+
+<p>
+    <b>Solution:</b><br/>
+<pre>import org.apache.commons.io.FilenameUtils;
+
+@GET
+@Path("/images/{image}")
+@Produces("images/*")
+public Response getImage(@javax.ws.rs.PathParam("image") String image) {
+    File file = new File("resources/images/", FilenameUtils.getName(image)); //Fix
+
+    if (!file.exists()) {
+        return Response.status(Status.NOT_FOUND).build();
+    }
+
+    return Response.ok().entity(new FileInputStream(file)).build();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="http://projects.webappsec.org/w/page/13246952/Path%20Traversal">WASC: Path Traversal</a><br/>
+<a href="https://www.owasp.org/index.php/Path_Traversal">OWASP: Path Traversal</a><br/>
+<a href="https://capec.mitre.org/data/definitions/126.html">CAPEC-126: Path Traversal</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</a>
+</p>
+
+        </body>
+</html>

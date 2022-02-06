@@ -1,0 +1,151 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 945.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 5 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.2
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 5
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.67
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.71
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 7
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.86
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r31
+		Type: byte[]
+		Statement: r31 = virtualinvoke r32.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: b49780b2ca4c8d3c284aae2265b8fb696a1a11024ec5974db89ccba52ff4a7ac
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r16.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r17, r37)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 773741c8f88100107309debf810359ab2df8692544c804fb671ac54550b53b07
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r15.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r2)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: b9f4cf33ee378d60a7d9ad1db589551078cd38e416540aee65b99c27f213cf9c
+		Secure: false
+	Object:
+		Variable: r32
+		Type: java.security.MessageDigest
+		Statement: r32 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1146)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 303a388d7dd517f6fab097d8549089b3f1fcde3ab0f4ee8536bed5eb6f87d91
+		Secure: false
+	Object:
+		Variable: r37
+		Type: javax.crypto.Cipher
+		Statement: r37 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1136)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: d5cce632672a7e304bf24ffb046f790ac8ef81f6faae60766bd1d712885269fd
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r31, varReplacer1139)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: f9f51af0be8d892c7d530ea6631bf4bbc8d2c97b5db3802d67f099a2ba401b98
+		Secure: false
+	Object:
+		Variable: varReplacer1139
+		Type: java.lang.String
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r31, varReplacer1139)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: d98bdba2ba1b094e4bc938a0c10632980816f4d36449a6c7432de259b0371298
+		Secure: false
+
+Findings in Java Class: org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1
+
+	 in Method: javax.crypto.CipherInputStream init()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #303a388d7dd517f6fab097d8549089b3f1fcde3ab0f4ee8536bed5eb6f87d91)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r31 = virtualinvoke r32.<java.security.MessageDigest: byte[] digest()>()
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as prepared Key Material
+			at statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r31, varReplacer1139)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r15.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #d5cce632672a7e304bf24ffb046f790ac8ef81f6faae60766bd1d712885269fd)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: r37 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1136)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d5cce632672a7e304bf24ffb046f790ac8ef81f6faae60766bd1d712885269fd)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: specialinvoke $r16.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r17, r37)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 7
+
+	CogniCrypt found the following violations. For details see description above.
+	RequiredPredicateError: 2
+	IncompleteOperationError: 1
+	TypestateError: 1
+	ConstraintError: 1
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 35 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 38.99 s
+

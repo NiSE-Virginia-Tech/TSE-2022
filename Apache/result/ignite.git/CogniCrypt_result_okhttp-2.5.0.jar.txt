@@ -1,0 +1,191 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 602.2 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 0 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 6
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.17
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 8
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.3
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 4 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.4
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 5 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 6 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.6
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 7 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.7
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 8 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.8
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 9 of 10
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.9
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: r1 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: a1b58dbb324d26f11eff86c3157e97e792e2df026d07f323280486f5ab64aa13
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: r1 = virtualinvoke r6.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: okio.ByteString sha1(okio.ByteString)>
+		SHA-256: 97565d9824ce653a2abf738bf2a0d649c396a40a2a8aa58f7e07bab4424872a3
+		Secure: false
+	Object:
+		Variable: r6
+		Type: javax.net.ssl.SSLContext
+		Statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2370)
+		Method: <com.squareup.okhttp.OkHttpClient: javax.net.ssl.SSLSocketFactory getDefaultSSLSocketFactory()>
+		SHA-256: ec2d9740f2a6389cbb822954ca4e8e6eece5688b41c041993c106fec4e44ff9d
+		Secure: false
+	Object:
+		Variable: r7
+		Type: java.security.MessageDigest
+		Statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2284)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: 9bac6b477455ff2ab9d54ced4ba4d6041d402b064f799f5c3e8b76b9b0a94308
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: r1 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String shaBase64(java.lang.String)>
+		SHA-256: 1e21aa799111f30c518f19b5c85b9b1a7867502aace709e5ab0486cc96ba5f4f
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r1 = virtualinvoke r6.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: okio.ByteString sha1(okio.ByteString)>
+		SHA-256: eab2b3f08a6a6dc7ca019268d94dab383b2c78f1ef8970ed223da87514c3d4b4
+		Secure: false
+	Object:
+		Variable: r7
+		Type: java.security.MessageDigest
+		Statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2286)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String shaBase64(java.lang.String)>
+		SHA-256: 1fb7480bed09e3cb4ce495f6006f0d91042819da4dfe4cb9fe88e9d165b9054a
+		Secure: false
+	Object:
+		Variable: r6
+		Type: java.security.MessageDigest
+		Statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2287)
+		Method: <com.squareup.okhttp.internal.Util: okio.ByteString sha1(okio.ByteString)>
+		SHA-256: e6ef9c1e12940c3cafa24ee4167ad2c1899b30063de202aa28dac18de3ab3e40
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r1 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String md5Hex(java.lang.String)>
+		SHA-256: 9cfbfe5e62d6c153bc6d6a9c019b153cfca86efbd4653c6b49b5279d8cc3fbe7
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: r1 = virtualinvoke r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String shaBase64(java.lang.String)>
+		SHA-256: 627c055612afd4b1f369da5a6dbd0b298b90a97ceeb74cb33151e01ab5d3a0be
+		Secure: false
+
+Findings in Java Class: com.squareup.okhttp.internal.Util
+
+	 in Method: java.lang.String md5Hex(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9bac6b477455ff2ab9d54ced4ba4d6041d402b064f799f5c3e8b76b9b0a94308)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2284)
+
+
+	 in Method: java.lang.String shaBase64(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1fb7480bed09e3cb4ce495f6006f0d91042819da4dfe4cb9fe88e9d165b9054a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2286)
+
+
+	 in Method: okio.ByteString sha1(okio.ByteString)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e6ef9c1e12940c3cafa24ee4167ad2c1899b30063de202aa28dac18de3ab3e40)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2287)
+
+
+Findings in Java Class: com.squareup.okhttp.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory getDefaultSSLSocketFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generated Trust Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2371, varReplacer2371, varReplacer2371)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #ec2d9740f2a6389cbb822954ca4e8e6eece5688b41c041993c106fec4e44ff9d)
+			First parameter (with value "TLS") should be any of {TLSv1.2}
+			at statement: r6 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2370)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generated Key Manager
+			at statement: virtualinvoke r6.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2371, varReplacer2371, varReplacer2371)
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 10
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 4
+	RequiredPredicateError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 0 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 2.833 s
+

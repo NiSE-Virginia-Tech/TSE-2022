@@ -1,0 +1,128 @@
+[main] INFO crypto.HeadlessCryptoScanner - Using call graph algorithm CHA
+[main] INFO crypto.HeadlessCryptoScanner - Analysis soot setup done in 753.9 ms 
+[main] INFO crypto.analysis.CryptoScanner - Searching fo Seeds for analysis!
+[main] INFO crypto.analysis.CryptoScanner - Discovered 4 analysis seeds within 1 seconds!
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 1 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.25
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 2 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.5
+
+[main] INFO crypto.analysis.CryptoScanner - Analyzed Objects: 3 of 4
+[main] INFO crypto.analysis.CryptoScanner - Percentage Completed: 0.75
+
+Ruleset: 
+	java.security.AlgorithmParameters
+	javax.net.ssl.SSLParameters
+	java.security.DigestOutputStream
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.net.ssl.CertPathTrustManagerParameters
+	javax.net.ssl.SSLEngine
+	java.security.cert.PKIXParameters
+	javax.net.ssl.TrustManagerFactory
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.spec.PBEParameterSpec
+	javax.crypto.SecretKeyFactory
+	javax.crypto.CipherOutputStream
+	java.security.cert.PKIXBuilderParameters
+	javax.crypto.spec.GCMParameterSpec
+	java.security.KeyStore
+	javax.net.ssl.KeyManagerFactory
+	javax.net.ssl.SSLContext
+	java.security.spec.DSAGenParameterSpec
+	javax.crypto.KeyGenerator
+	javax.crypto.spec.IvParameterSpec
+	java.security.spec.DSAParameterSpec
+	javax.crypto.Cipher
+	java.security.cert.TrustAnchor
+	java.security.SecureRandom
+	javax.crypto.CipherInputStream
+	java.security.Key
+	javax.crypto.spec.PBEKeySpec
+	javax.crypto.Mac
+	void
+	javax.crypto.SecretKey
+	java.security.Signature
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPairGenerator
+	java.security.DigestInputStream
+	java.security.MessageDigest
+	java.security.KeyPair
+	javax.crypto.spec.SecretKeySpec
+	javax.crypto.spec.DHParameterSpec
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1462)
+		Method: <org.jboss.resteasy.client.core.marshallers.FormMarshaller: long createHash(java.lang.String)>
+		SHA-256: 6ebf4c079c652ac747bdb263895b391e6d03aa093f99a7354c437d3a8467cf95
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r7.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r1, r2)
+		Method: <org.jboss.resteasy.util.MethodHashing: long createHash(java.lang.String)>
+		SHA-256: 9f43103d7b4660f27e6a5d04f6d51a0beb379702a5ef4b27cd5e949236c00b71
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r7.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>(r1, r2)
+		Method: <org.jboss.resteasy.client.core.marshallers.FormMarshaller: long createHash(java.lang.String)>
+		SHA-256: 3d4516d8005828525bc1d192c0e3b9228e54d2e9eb75dc28f8b9d0eb71d31f62
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.MessageDigest
+		Statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer911)
+		Method: <org.jboss.resteasy.util.MethodHashing: long createHash(java.lang.String)>
+		SHA-256: e74f7c12a018f7f4047c3efd7995b3996e7dc9d7d4f589e15edd6500c5dbdfdb
+		Secure: false
+
+Findings in Java Class: org.jboss.resteasy.util.MethodHashing
+
+	 in Method: long createHash(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #9f43103d7b4660f27e6a5d04f6d51a0beb379702a5ef4b27cd5e949236c00b71)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r6.<java.io.DataOutputStream: void <init>(java.io.OutputStream)>($r7)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #e74f7c12a018f7f4047c3efd7995b3996e7dc9d7d4f589e15edd6500c5dbdfdb)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r4 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e74f7c12a018f7f4047c3efd7995b3996e7dc9d7d4f589e15edd6500c5dbdfdb)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer911)
+
+
+Findings in Java Class: org.jboss.resteasy.client.core.marshallers.FormMarshaller
+
+	 in Method: long createHash(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #3d4516d8005828525bc1d192c0e3b9228e54d2e9eb75dc28f8b9d0eb71d31f62)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r6.<java.io.DataOutputStream: void <init>(java.io.OutputStream)>($r7)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6ebf4c079c652ac747bdb263895b391e6d03aa093f99a7354c437d3a8467cf95)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1462)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6ebf4c079c652ac747bdb263895b391e6d03aa093f99a7354c437d3a8467cf95)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r4 = virtualinvoke r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CogniCrypt Summary ==========================
+	Number of CrySL rules: 39
+	Number of Objects Analyzed: 4
+
+	CogniCrypt found the following violations. For details see description above.
+	ConstraintError: 2
+	TypestateError: 2
+	IncompleteOperationError: 2
+=====================================================================
+[main] INFO crypto.analysis.CryptoScanner - Static Analysis took 1 seconds!
+[main] INFO crypto.HeadlessCryptoScanner - Analysis finished in 4.296 s
+
