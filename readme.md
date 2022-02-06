@@ -7,7 +7,7 @@ This file contains the origin benchmark (MUBench, Cryptobench, OWASP) and select
 
 For Apache project, we provided the selected project running result for our user study part, also we provide the git repo url and commit in `git_info.txt`.
 
-### Command we use to run the test 
+### Command we use to run the benchmark 
 
 The shell command we run for each tool:
 1. CrytoGuard:
