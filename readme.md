@@ -4,7 +4,7 @@
 
 **Authors: Ying Zhang, Md Mahir Asef Kabir, Ya Xiao, Daphne Yao, Na Meng**
 
-This file contains the origin benchmark (MUBench, Cryptobench, OWASP) and selected Apache projects outputs of all selected tools (CryptoGuard, Findsecbugs, CogniCrypt, Xanitizer, Sonarqube, CryptoTutor). Xantizer needs license for reading the result. 
+This repo contains the origin benchmark (MUBench, Cryptobench, OWASP) and selected Apache projects outputs of all selected tools (CryptoGuard, Findsecbugs, CogniCrypt, Xanitizer, Sonarqube, CryptoTutor). Xanitizer needs license for reading the result. 
 
 For Apache project, we provided the selected project running result for our user study part, also we provide the git repo url and commit in `git_info.txt`.
 
