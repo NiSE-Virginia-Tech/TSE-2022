@@ -1,6 +1,6 @@
 # TSE 2022 Experiment Result
 
-**Ying Zhang, Md Mahir Asef Kabir, Ya Xiao, Daphne Yao, Na Meng. Automatic Detection of Java Cryptographic API Misuses: Are We There Yet? *IEEE Transactions on Software Engineering* **
+**Ying Zhang, Md Mahir Asef Kabir, Ya Xiao, Daphne Yao, Na Meng. Automatic Detection of Java Cryptographic API Misuses: Are We There Yet? *IEEE Transactions on Software Engineering***
 
 This repo contains the origin benchmark (MUBench, Cryptobench, OWASP) and selected Apache projects outputs of all selected tools (CryptoGuard, Findsecbugs, CogniCrypt, Xanitizer, Sonarqube, CryptoTutor). Xanitizer needs license for reading the result. 
 
